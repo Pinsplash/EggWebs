@@ -1041,7 +1041,7 @@ int ProcessMove(std::ifstream& stReadFile)
 //needs to be breadth first
 //ret: 1 means move to a new head node
 //0 means go back in but with some pokemon excluded, leading to a different chain
-int RecursiveGroupCrawl(MoveLearner* tLearner)
+int GroupCrawl(MoveLearner* tLearner)
 {
 	int iCounter = 0;
 	while (!vLearnerQueue.empty())
@@ -1191,7 +1191,9 @@ int RecursiveGroupCrawl(MoveLearner* tLearner)
 				if (tChild.sEggGroup1 == tParent->sEggGroup1 || tChild.sEggGroup1 == tParent->sEggGroup2 || tChild.sEggGroup2 == tParent->sEggGroup1 || tChild.sEggGroup2 == tParent->sEggGroup2)
 				{
 					//don't already be explored
-					if (!tChild.bExplored /* && stoi(tChild.sLevel) <= iMaxLevel*/)//no! this check does not need to exist! if the move is anywhere in the level up learnset, it can hatch with the move
+					//if the child knows the move by level up, both parents must actually know the move to pass it on
+					//checking child's level is because the female parent must also know the move
+					if (!tChild.bExplored && (tChild.eLearnMethod != LEARNBY_LEVELUP || (stoi(tChild.sLevel) <= iMaxLevel && (tParent->eLearnMethod != LEARNBY_LEVELUP || stoi(tParent->sLevel) <= iMaxLevel))))
 					{
 						//can't be your own grandparent either!
 						bool bFoundInLineageAlready = false;
@@ -1469,11 +1471,11 @@ int main(int argc, char* argv[])
 				//std::cout << tLearner.sSpecies << " top level\n";
 				tLearner.bExplored = true;
 				vLearnerQueue.push_back(&tLearner);
-				int iResult = RecursiveGroupCrawl(&tLearner);
+				int iResult = GroupCrawl(&tLearner);
 				while (iResult == 0)
 				{
 					vLearnerQueue.push_back(&tLearner);
-					iResult = RecursiveGroupCrawl(&tLearner);
+					iResult = GroupCrawl(&tLearner);
 				}
 			}
 		}
@@ -1510,8 +1512,7 @@ int main(int argc, char* argv[])
 		for (; i >= 0; i--)
 		{
 			writingFile << ", " << tChain.vLineage[i]->sSpecies;
-			if (tChain.vLineage[i]->eLearnMethod == LEARNBY_LEVELUP && i == tChain.vLineage.size() - 1) writingFile << " (level " << tChain.vLineage[i]->sLevel << ")";
-			else if (tChain.vLineage[i]->eLearnMethod == LEARNBY_LEVELUP && i != tChain.vLineage.size() - 1) writingFile << " (level up)";
+			if (tChain.vLineage[i]->eLearnMethod == LEARNBY_LEVELUP) writingFile << " (level " << tChain.vLineage[i]->sLevel << ")";
 			else if (tChain.vLineage[i]->eLearnMethod == LEARNBY_TM) writingFile << " (by TM)";
 			else if (tChain.vLineage[i]->eLearnMethod == LEARNBY_TM_UNIVERSAL) writingFile << " (by universal TM)";
 			else if (tChain.vLineage[i]->eLearnMethod == LEARNBY_EGG) writingFile << " (egg move)";
