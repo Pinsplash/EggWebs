@@ -625,9 +625,13 @@ bool ValidateMatchup(MoveLearner tMother, MoveLearner tChild, MoveLearner tFathe
 		return false;
 
 	//if the child knows the move by level up, both parents must actually know the move to pass it on
-	if (!(tChild.eLearnMethod != LEARNBY_LEVELUP ||
+	if (!((tChild.eLearnMethod != LEARNBY_LEVELUP && tChild.sSpecies != tTarget.sSpecies) ||
 		(((tMother.eLearnMethod != LEARNBY_LEVELUP || stoi(tMother.sLevel) <= iMaxLevel) && !tMother.bIsDitto) &&
 		(tFather.eLearnMethod != LEARNBY_LEVELUP || stoi(tFather.sLevel) <= iMaxLevel))))
+		return false;
+
+	//just catch the mother species and level it up to this level
+	if (!tMother.bIsDitto && tChild.sSpecies != tTarget.sSpecies && tMother.eLearnMethod == LEARNBY_LEVELUP && stoi(tMother.sLevel) <= iMaxLevel)
 		return false;
 
 	//if the mother is a female-only species, they can only pass the move down if the baby learns it by levelup
