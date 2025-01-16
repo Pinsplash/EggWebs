@@ -139,6 +139,133 @@ static std::string sMaleOnlyMons[] = {
 	"Gallade"
 };
 
+static std::string sUniversalTMs[] = {
+	"Tera Blast",
+	"Confide",
+	"Round",
+	"Captivate",
+	"Return",
+	"Frustration",
+	"Snore",
+	"Facade",
+	"Swagger",
+	"Natural Gift",
+	"Endure",
+	"Bide",
+	"Sleep Talk",
+	"Attract",
+	"Secret Power",
+	"Rest",
+	"Hidden Power",
+	"Toxic",
+	"Protect",
+	"Double Team"
+};
+
+static std::string sTMsandHMs[] = {
+	"Focus Punch",
+	"Dragon Claw",
+	"Water Pulse",
+	"Calm Mind",
+	"Roar",
+	"Toxic",
+	"Hail",
+	"Bulk Up",
+	"Bullet Seed",
+	"Hidden Power",
+	"Sunny Day",
+	"Taunt",
+	"Ice Beam",
+	"Blizzard",
+	"Hyper Beam",
+	"Light Screen",
+	"Protect",
+	"Rain Dance",
+	"Giga Drain",
+	"Safeguard",
+	"Frustration",
+	"SolarBeam",
+	"Iron Tail",
+	"Thunderbolt",
+	"Thunder",
+	"Earthquake",
+	"Return",
+	"Dig",
+	"Psychic",
+	"Shadow Ball",
+	"Brick Break",
+	"Double Team",
+	"Reflect",
+	"Shock Wave",
+	"Flamethrower",
+	"Sludge Bomb",
+	"Sandstorm",
+	"Fire Blast",
+	"Rock Tomb",
+	"Aerial Ace",
+	"Torment",
+	"Facade",
+	"Secret Power",
+	"Rest",
+	"Attract",
+	"Thief",
+	"Steel Wing",
+	"Skill Swap",
+	"Snatch",
+	"Overheat",
+	"Roost",
+	"Focus Blast",
+	"Energy Ball",
+	"False Swipe",
+	"Brine",
+	"Fling",
+	"Charge Beam",
+	"Endure",
+	"Dragon Pulse",
+	"Drain Punch",
+	"Will-O-Wisp",
+	"Silver Wind",
+	"Embargo",
+	"Explosion",
+	"Shadow Claw",
+	"Payback",
+	"Recycle",
+	"Giga Impact",
+	"Rock Polish",
+	"Flash",
+	"Stone Edge",
+	"Avalanche",
+	"Thunder Wave",
+	"Gyro Ball",
+	"Swords Dance",
+	"Stealth Rock",
+	"Psych Up",
+	"Captivate",
+	"Dark Pulse",
+	"Rock Slide",
+	"X-Scissor",
+	"Sleep Talk",
+	"Natural Gift",
+	"Poison Jab",
+	"Dream Eater",
+	"Grass Knot",
+	"Swagger",
+	"Pluck",
+	"U-turn",
+	"Substitute",
+	"Flash Cannon",
+	"Trick Room",
+	"Cut",
+	"Fly",
+	"Surf",
+	"Strength",
+	"Defog",
+	"Whirlpool",
+	"Rock Smash",
+	"Waterfall",
+	"Rock Climb"
+};
+
 //a list of pokemon who can come from eggs (not accounting for egg groups that forbid this)
 static std::string sEggMons[] = {
 	"Bulbasaur",
@@ -446,6 +573,26 @@ bool IsMaleOnly(MoveLearner& tLearner)
 	for (int i = 0; i < 10; i++)
 	{
 		if (sMaleOnlyMons[i] == tLearner.sSpecies)
+			return true;
+	}
+	return false;
+}
+
+bool IsUniversalTM(std::string sMoveName)
+{
+	for (int i = 0; i < 20; i++)
+	{
+		if (sUniversalTMs[i] == sMoveName)
+			return true;
+	}
+	return false;
+}
+
+bool IsTMorHM(std::string sMoveName)
+{
+	for (int i = 0; i < 92; i++)
+	{
+		if (sTMsandHMs[i] == sMoveName)
 			return true;
 	}
 	return false;
@@ -1534,37 +1681,15 @@ int main(int argc, char* argv[])
 	for (MoveLearner& tLearner : vMoveLearners)
 	{
 		//a TM learn
-		if ((tLearner.eLearnMethod == LEARNBY_TM_UNIVERSAL || tLearner.eLearnMethod == LEARNBY_TM) && tLearner.sSpecies != tTarget.sSpecies)
+		if ((IsUniversalTM(tLearner.sMoveName) || tLearner.eLearnMethod == LEARNBY_TM) && tLearner.sSpecies != tTarget.sSpecies)
 		{
 			bool bFoundTMLearn = false;
 			//find if the target learns this by TM
 			for (MoveLearner& tTargetLearner : vTargetMoves)
-			{/*
-				std::cout << "testing learn: " << tTargetLearner.sSpecies << " learning " << tTargetLearner.sMoveName;
-				if (tTargetLearner.eLearnMethod == LEARNBY_LEVELUP) std::cout << " (level " << tTargetLearner.sLevel << ")";
-				else if (tTargetLearner.eLearnMethod == LEARNBY_TM) std::cout << " (by TM)";
-				else if (tTargetLearner.eLearnMethod == LEARNBY_TM_UNIVERSAL) std::cout << " (by universal TM)";
-				else if (tTargetLearner.eLearnMethod == LEARNBY_EGG) std::cout << " (egg move)";
-				else if (tTargetLearner.eLearnMethod == LEARNBY_SPECIAL) std::cout << " (special encounter)";
-				else if (tTargetLearner.eLearnMethod == LEARNBY_EVENT) std::cout << " (from an event)";
-				else std::cout << " (UNKNOWN REASON)";
-				if (!tTargetLearner.sForm.empty())
-					std::cout << " (" << tTargetLearner.sForm << ")";
-				std::cout << "\n";*/
+			{
 				if ((tTargetLearner.eLearnMethod == LEARNBY_TM_UNIVERSAL || tTargetLearner.eLearnMethod == LEARNBY_TM) && tLearner.sMoveName == tTargetLearner.sMoveName)
 				{
-					bFoundTMLearn = true;/*
-					std::cout << "found tm learn: " << tTargetLearner.sSpecies << " learning " << tTargetLearner.sMoveName;
-					if (tTargetLearner.eLearnMethod == LEARNBY_LEVELUP) std::cout << " (level " << tTargetLearner.sLevel << ")";
-					else if (tTargetLearner.eLearnMethod == LEARNBY_TM) std::cout << " (by TM)";
-					else if (tTargetLearner.eLearnMethod == LEARNBY_TM_UNIVERSAL) std::cout << " (by universal TM)";
-					else if (tTargetLearner.eLearnMethod == LEARNBY_EGG) std::cout << " (egg move)";
-					else if (tTargetLearner.eLearnMethod == LEARNBY_SPECIAL) std::cout << " (special encounter)";
-					else if (tTargetLearner.eLearnMethod == LEARNBY_EVENT) std::cout << " (from an event)";
-					else std::cout << " (UNKNOWN REASON)";
-					if (!tTargetLearner.sForm.empty())
-						std::cout << " (" << tTargetLearner.sForm << ")";
-					std::cout << "\n";*/
+					bFoundTMLearn = true;
 				}
 			}
 			if (!bFoundTMLearn)
@@ -1606,7 +1731,7 @@ int main(int argc, char* argv[])
 		//of course we can breed our moves onto own species
 		if (tLearner.sSpecies == tTarget.sSpecies)
 		{
-			if (tLearner.eLearnMethod == LEARNBY_TM_UNIVERSAL)
+			if (IsUniversalTM(tLearner.sMoveName))
 			{
 				std::cout << tLearner.sMoveName << " is a universal TM that almost all pokemon can learn and therefore pass on (ENTER to continue)\n";
 
@@ -1723,7 +1848,7 @@ int main(int argc, char* argv[])
 		//of course we can breed our moves onto own species
 		if (tLearner.sSpecies == tTarget.sSpecies)
 		{
-			if (tLearner.eLearnMethod == LEARNBY_TM_UNIVERSAL)
+			if (IsUniversalTM(tLearner.sMoveName))
 			{
 				writingFile << "  , " << tLearner.sMoveName << ": universal TM\n";
 			}
