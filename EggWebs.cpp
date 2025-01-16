@@ -1718,6 +1718,17 @@ int main(int argc, char* argv[])
 		}
 		writingFile << "\n";
 	}
+	for (MoveLearner& tLearner : vMoveLearners)
+	{
+		//of course we can breed our moves onto own species
+		if (tLearner.sSpecies == tTarget.sSpecies)
+		{
+			if (tLearner.eLearnMethod == LEARNBY_TM_UNIVERSAL)
+			{
+				writingFile << "  , " << tLearner.sMoveName << ": universal TM\n";
+			}
+		}
+	}
 	writingFile.close();
 	std::cout << "done\n";
 	std::string sHack;
