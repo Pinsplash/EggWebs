@@ -38,5 +38,5 @@
 
 # program input and output (put yours in the root folder)
 filename.txt
-output.csv
+*.csv
 target.txt

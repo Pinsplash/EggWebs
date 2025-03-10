@@ -17,6 +17,7 @@
 #include <cassert>
 #include <regex>
 #include "data_gen4.cpp"
+#include <list>
 //#include <windows.h>
 //using namespace std;
 
@@ -92,7 +93,7 @@ std::vector<BreedChain> vChains;
 
 MoveLearner tTarget;
 std::vector<MoveLearner> vTargetMoves;
-std::vector<MoveLearner*> vLearnerQueue;
+std::list<MoveLearner*> vLearnerQueue;
 std::vector<MoveLearner*> vUniversalPool;
 std::vector<std::string> vSpeciesBlacklist;
 std::vector<std::string> vTMLearnBlacklist;
@@ -1033,8 +1034,8 @@ int GroupCrawl(MoveLearner* tLearner, bool bUseUniversalPool)
 	int iCounter = 0;
 	while (!vLearnerQueue.empty())
 	{
-		MoveLearner* tFather = vLearnerQueue.back();
-		vLearnerQueue.pop_back();
+		MoveLearner* tFather = vLearnerQueue.front();
+		vLearnerQueue.pop_front();
 		iCounter++;
 
 		//std::cout << iCounter << "/" << vLearnerQueue.size() << "(" << tFather->sSpecies << "/" << tFather->sMoveName << ")\n";
