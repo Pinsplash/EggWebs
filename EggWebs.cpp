@@ -16,17 +16,28 @@
 #include <string_view>
 #include <cassert>
 #include <regex>
+#include "data_gen4.cpp"
 //#include <windows.h>
 //using namespace std;
 
 enum MoveLearnMethod
 {
+	METHOD_NOT_DEFINED,
 	LEARNBY_LEVELUP,
 	LEARNBY_TM,
 	LEARNBY_TM_UNIVERSAL,
 	LEARNBY_EGG,
 	LEARNBY_SPECIAL,
 	LEARNBY_EVENT
+};
+
+//group crawl result
+enum
+{
+	CR_SUCCESS,
+	CR_FAIL,
+	CR_REJECT_TOP_LEVEL,
+	CR_REJECT_MIDDLE
 };
 
 struct MoveLearner
@@ -82,7 +93,9 @@ std::vector<BreedChain> vChains;
 MoveLearner tTarget;
 std::vector<MoveLearner> vTargetMoves;
 std::vector<MoveLearner*> vLearnerQueue;
+std::vector<MoveLearner*> vUniversalPool;
 std::vector<std::string> vSpeciesBlacklist;
+std::vector<std::string> vTMLearnBlacklist;
 std::vector<std::string> vMovesDone;
 
 bool bExcludeSpecial = false;
@@ -90,447 +103,23 @@ bool bExcludeEvent = false;
 int iMaxLevel = 100;
 bool bFastForward = false;
 
-//baby pokemon are a unique case because they are in NED but they can evolve out of it
-//the egg groups are for the pokemon it will evolve into
-static std::string sBabyMons[] = {
-	"Pichu", "field", "fairy",
-	"Cleffa", "fairy", "fairy",
-	"Igglybuff", "fairy", "fairy",
-	"Togepi", "flying", "fairy",
-	"Tyrogue", "human-like", "human-like",
-	"Smoochum", "human-like", "human-like",
-	"Elekid", "human-like", "human-like",
-	"Magby", "human-like", "human-like",
-	"Azurill", "water 1", "fairy",
-	"Wynaut", "amorphous", "amorphous",
-	"Budew", "fairy", "grass",
-	"Chingling", "amorphous", "amorphous",
-	"Bonsly", "mineral", "mineral",
-	"Mime Jr.", "human-like", "human-like",
-	"Happiny", "fairy", "fairy",
-	"Munchlax", "monster", "monster",
-	"Riolu", "field", "human-like",
-	"Mantyke" "water 1", "water 1"
-};
-
-static std::string sFemaleOnlyMons[] = {
-	"Nidoran F",
-	"Chansey",
-	"Kangaskhan",
-	"Jynx",
-	"Miltank",
-	"Blissey",
-	"Illumise",
-	"Wormadam",
-	"Vespiquen",
-	"Froslass"
-};
-
-static std::string sMaleOnlyMons[] = {
-	"Nidoran M",
-	"Nidorino",
-	"Nidoking",
-	"Hitmonlee",
-	"Hitmonchan",
-	"Tauros",
-	"Hitmontop",
-	"Volbeat",
-	"Mothim",
-	"Gallade"
-};
-
-static std::string sUniversalTMs[] = {
-	"Tera Blast",
-	"Confide",
-	"Round",
-	"Captivate",
-	"Return",
-	"Frustration",
-	"Snore",
-	"Facade",
-	"Swagger",
-	"Natural Gift",
-	"Endure",
-	"Bide",
-	"Sleep Talk",
-	"Attract",
-	"Secret Power",
-	"Rest",
-	"Hidden Power",
-	"Toxic",
-	"Protect",
-	"Double Team"
-};
-
-static std::string sTMsandHMs[] = {
-	"Focus Punch",
-	"Dragon Claw",
-	"Water Pulse",
-	"Calm Mind",
-	"Roar",
-	"Toxic",
-	"Hail",
-	"Bulk Up",
-	"Bullet Seed",
-	"Hidden Power",
-	"Sunny Day",
-	"Taunt",
-	"Ice Beam",
-	"Blizzard",
-	"Hyper Beam",
-	"Light Screen",
-	"Protect",
-	"Rain Dance",
-	"Giga Drain",
-	"Safeguard",
-	"Frustration",
-	"SolarBeam",
-	"Iron Tail",
-	"Thunderbolt",
-	"Thunder",
-	"Earthquake",
-	"Return",
-	"Dig",
-	"Psychic",
-	"Shadow Ball",
-	"Brick Break",
-	"Double Team",
-	"Reflect",
-	"Shock Wave",
-	"Flamethrower",
-	"Sludge Bomb",
-	"Sandstorm",
-	"Fire Blast",
-	"Rock Tomb",
-	"Aerial Ace",
-	"Torment",
-	"Facade",
-	"Secret Power",
-	"Rest",
-	"Attract",
-	"Thief",
-	"Steel Wing",
-	"Skill Swap",
-	"Snatch",
-	"Overheat",
-	"Roost",
-	"Focus Blast",
-	"Energy Ball",
-	"False Swipe",
-	"Brine",
-	"Fling",
-	"Charge Beam",
-	"Endure",
-	"Dragon Pulse",
-	"Drain Punch",
-	"Will-O-Wisp",
-	"Silver Wind",
-	"Embargo",
-	"Explosion",
-	"Shadow Claw",
-	"Payback",
-	"Recycle",
-	"Giga Impact",
-	"Rock Polish",
-	"Flash",
-	"Stone Edge",
-	"Avalanche",
-	"Thunder Wave",
-	"Gyro Ball",
-	"Swords Dance",
-	"Stealth Rock",
-	"Psych Up",
-	"Captivate",
-	"Dark Pulse",
-	"Rock Slide",
-	"X-Scissor",
-	"Sleep Talk",
-	"Natural Gift",
-	"Poison Jab",
-	"Dream Eater",
-	"Grass Knot",
-	"Swagger",
-	"Pluck",
-	"U-turn",
-	"Substitute",
-	"Flash Cannon",
-	"Trick Room",
-	"Cut",
-	"Fly",
-	"Surf",
-	"Strength",
-	"Defog",
-	"Whirlpool",
-	"Rock Smash",
-	"Waterfall",
-	"Rock Climb"
-};
-
-//a list of pokemon who can come from eggs (not accounting for egg groups that forbid this)
-static std::string sEggMons[] = {
-	"Bulbasaur",
-	"Charmander",
-	"Squirtle",
-	"Caterpie",
-	"Weedle",
-	"Pidgey",
-	"Rattata",
-	"Spearow",
-	"Ekans",
-	"Pichu",
-	"Sandshrew",
-	"Nidoran F",
-	"Nidoran M",
-	"Cleffa",
-	"Vulpix",
-	"Igglybuff",
-	"Zubat",
-	"Oddish",
-	"Paras",
-	"Venonat",
-	"Diglett",
-	"Meowth",
-	"Psyduck",
-	"Mankey",
-	"Growlithe",
-	"Poliwag",
-	"Abra",
-	"Machop",
-	"Bellsprout",
-	"Tentacool",
-	"Geodude",
-	"Ponyta",
-	"Slowpoke",
-	"Magnemite",
-	"Farfetch'd",
-	"Doduo",
-	"Seel",
-	"Grimer",
-	"Shellder",
-	"Gastly",
-	"Onix",
-	"Drowzee",
-	"Krabby",
-	"Voltorb",
-	"Exeggcute",
-	"Cubone",
-	"Tyrogue",
-	"Lickitung",
-	"Koffing",
-	"Rhyhorn",
-	"Happiny",
-	"Chansey",
-	"Tangela",
-	"Kangaskhan",
-	"Horsea",
-	"Goldeen",
-	"Staryu",
-	"Mime Jr.",
-	"Mr. Mime",
-	"Scyther",
-	"Smoochum",
-	"Elekid",
-	"Magby",
-	"Pinsir",
-	"Tauros",
-	"Magikarp",
-	"Lapras",
-	"Ditto",
-	"Eevee",
-	"Porygon",
-	"Omanyte",
-	"Kabuto",
-	"Aerodactyl",
-	"Munchlax",
-	"Snorlax",
-	"Articuno",
-	"Zapdos",
-	"Moltres",
-	"Dratini",
-	"Mewtwo",
-	"Mew",
-	"Chikorita",
-	"Cyndaquil",
-	"Totodile",
-	"Sentret",
-	"Hoothoot",
-	"Ledyba",
-	"Spinarak",
-	"Chinchou",
-	"Togepi",
-	"Natu",
-	"Mareep",
-	"Azurill",
-	"Marill",
-	"Bonsly",
-	"Sudowoodo",
-	"Hoppip",
-	"Aipom",
-	"Sunkern",
-	"Yanma",
-	"Wooper",
-	"Murkrow",
-	"Misdreavus",
-	"Unown",
-	"Wynaut",
-	"Wobbuffet",
-	"Girafarig",
-	"Pineco",
-	"Dunsparce",
-	"Gligar",
-	"Snubbull",
-	"Qwilfish",
-	"Shuckle",
-	"Heracross",
-	"Sneasel",
-	"Teddiursa",
-	"Slugma",
-	"Swinub",
-	"Corsola",
-	"Remoraid",
-	"Delibird",
-	"Mantyke",
-	"Mantine",
-	"Skarmory",
-	"Houndour",
-	"Phanpy",
-	"Stantler",
-	"Smeargle",
-	"Miltank",
-	"Raikou",
-	"Entei",
-	"Suicune",
-	"Larvitar",
-	"Lugia",
-	"Ho-Oh",
-	"Celebi",
-	"Treecko",
-	"Torchic",
-	"Mudkip",
-	"Poochyena",
-	"Zigzagoon",
-	"Wurmple",
-	"Lotad",
-	"Seedot",
-	"Taillow",
-	"Wingull",
-	"Ralts",
-	"Surskit",
-	"Shroomish",
-	"Slakoth",
-	"Nincada",
-	"Whismur",
-	"Makuhita",
-	"Nosepass",
-	"Skitty",
-	"Sableye",
-	"Mawile",
-	"Aron",
-	"Meditite",
-	"Electrike",
-	"Plusle",
-	"Minun",
-	"Volbeat",
-	"Illumise",
-	"Budew",
-	"Roselia",
-	"Gulpin",
-	"Carvanha",
-	"Wailmer",
-	"Numel",
-	"Torkoal",
-	"Spoink",
-	"Spinda",
-	"Trapinch",
-	"Cacnea",
-	"Swablu",
-	"Zangoose",
-	"Seviper",
-	"Lunatone",
-	"Solrock",
-	"Barboach",
-	"Corphish",
-	"Baltoy",
-	"Lileep",
-	"Anorith",
-	"Feebas",
-	"Castform",
-	"Kecleon",
-	"Shuppet",
-	"Duskull",
-	"Tropius",
-	"Chingling",
-	"Chimecho",
-	"Absol",
-	"Snorunt",
-	"Spheal",
-	"Clamperl",
-	"Relicanth",
-	"Luvdisc",
-	"Bagon",
-	"Beldum",
-	"Regirock",
-	"Regice",
-	"Registeel",
-	"Latias",
-	"Latios",
-	"Kyogre",
-	"Groudon",
-	"Rayquaza",
-	"Jirachi",
-	"Deoxys",
-	"Turtwig",
-	"Chimchar",
-	"Piplup",
-	"Starly",
-	"Bidoof",
-	"Kricketot",
-	"Shinx",
-	"Cranidos",
-	"Shieldon",
-	"Burmy",
-	"Combee",
-	"Pachirisu",
-	"Buizel",
-	"Cherubi",
-	"Shellos",
-	"Drifloon",
-	"Buneary",
-	"Glameow",
-	"Stunky",
-	"Bronzor",
-	"Chatot",
-	"Spiritomb",
-	"Gible",
-	"Riolu",
-	"Hippopotas",
-	"Skorupi",
-	"Croagunk",
-	"Carnivine",
-	"Finneon",
-	"Snover",
-	"Rotom",
-	"Uxie",
-	"Mesprit",
-	"Azelf",
-	"Dialga",
-	"Palkia",
-	"Heatran",
-	"Regigigas",
-	"Giratina",
-	"Cresselia",
-	"Phione",
-	"Manaphy",
-	"Darkrai",
-	"Shaymin",
-	"Arceus"
-};
-
 bool is_number(const std::string& s)
 {
 	std::istringstream iss(s);
 	double d;
 	return iss >> std::noskipws >> d && iss.eof();
+}
+
+//true when either string in one pair of strings matches a string in another pair
+bool StringPairMatch(std::string p1s1, std::string p1s2, std::string p2s1, std::string p2s2)
+{
+	return p1s1 == p2s1 || p1s1 == p2s2 || p1s2 == p2s1 || p1s2 == p2s2;
+}
+
+//true when two pairs of strings are identical, including if the slots are flipped around
+bool StringPairIdent(std::string p1s1, std::string p1s2, std::string p2s1, std::string p2s2)
+{
+	return p1s1 + p1s2 == p2s1 + p2s2 || p1s1 + p1s2 == p2s2 + p2s1;
 }
 
 bool CanComeFromEgg(std::string sSpecies)
@@ -598,6 +187,17 @@ bool IsTMorHM(std::string sMoveName)
 	return false;
 }
 
+bool SpeciesCantUseTM(std::string sMoveName, std::string sSpecies)
+{
+	//each entry is species name followed by move it can't learn by TM
+	for (int i = 0; i < vTMLearnBlacklist.size(); i += 2)
+	{
+		if (vTMLearnBlacklist[i] == sSpecies && vTMLearnBlacklist[i + 1] == sMoveName)
+			return true;
+	}
+	return false;
+}
+
 void RecursiveCSVParse(std::string input, size_t iTokenStart, size_t iTokenEnd, std::vector<std::string>& sStrings)
 {
 	iTokenStart = iTokenEnd + 1;
@@ -621,6 +221,11 @@ static void EWSearchCleanup()
 	{
 		tChild.pPrevious = 0;
 		tChild.bExplored = false;
+	}
+	for (MoveLearner* tChild : vUniversalPool)
+	{
+		tChild->pPrevious = 0;
+		tChild->bExplored = false;
 	}
 	vLearnerQueue.clear();
 }
@@ -742,6 +347,10 @@ std::string ProcessLevelCell(std::string sTextLine, size_t& iPipeLocation, bool 
 
 bool ValidateMatchup(MoveLearner tMother, MoveLearner tChild, MoveLearner tFather, MoveLearner tLearner, bool bSkipNewGroupCheck)
 {
+	//you can't breed these methods
+	if (tMother.eLearnMethod == LEARNBY_EVENT || tMother.eLearnMethod == LEARNBY_SPECIAL)
+		return false;
+
 	//name of move must match
 	if (!tMother.bIsDitto && (tMother.sMoveName != tLearner.sMoveName))
 		return false;
@@ -763,27 +372,42 @@ bool ValidateMatchup(MoveLearner tMother, MoveLearner tChild, MoveLearner tFathe
 		return false;
 
 	//have to have a matching egg group
-	if (!tMother.bIsDitto && !(tMother.sEggGroup1 == tFather.sEggGroup1 || tMother.sEggGroup1 == tFather.sEggGroup2 || tMother.sEggGroup2 == tFather.sEggGroup1 || tMother.sEggGroup2 == tFather.sEggGroup2))
+	bool bCommonEggGroup = StringPairMatch(tMother.sEggGroup1, tMother.sEggGroup2, tFather.sEggGroup1, tFather.sEggGroup2);
+	if (!tMother.bIsDitto && !bCommonEggGroup)
 		return false;
 
 	//mother has to have a new egg group in order to produce good useful chains
-	if (!bSkipNewGroupCheck && !tMother.bIsDitto &&
-		!((tMother.sEggGroup1 != tFather.sEggGroup1 && tMother.sEggGroup1 != tFather.sEggGroup2) || (tMother.sEggGroup2 != tFather.sEggGroup1 && tMother.sEggGroup2 != tFather.sEggGroup2) || tChild.sSpecies == tTarget.sSpecies))
+	bool bNewEggGroup = !StringPairIdent(tMother.sEggGroup1, tMother.sEggGroup2, tFather.sEggGroup1, tFather.sEggGroup2);
+	bool bChildIsTargetSpecies = tChild.sSpecies == tTarget.sSpecies;
+	if (!bSkipNewGroupCheck && !tMother.bIsDitto && !bNewEggGroup && !bChildIsTargetSpecies)
 		return false;
 
 	//if the child knows the move by level up, both parents must actually know the move to pass it on
-	if (!((tChild.eLearnMethod != LEARNBY_LEVELUP && tChild.sSpecies != tTarget.sSpecies) ||
-		(((tMother.eLearnMethod != LEARNBY_LEVELUP || stoi(tMother.sLevel) <= iMaxLevel) && !tMother.bIsDitto) &&
-		(tFather.eLearnMethod != LEARNBY_LEVELUP || stoi(tFather.sLevel) <= iMaxLevel))))
+	bool bChildLearnsByLevelUp = tChild.eLearnMethod == LEARNBY_LEVELUP;
+	bool bMotherLearnsByLevelUp = tMother.eLearnMethod == LEARNBY_LEVELUP;
+	bool bFatherLearnsByLevelUp = tFather.eLearnMethod == LEARNBY_LEVELUP;
+	if (bChildLearnsByLevelUp && !(bMotherLearnsByLevelUp && bFatherLearnsByLevelUp))
 		return false;
+	if (bChildLearnsByLevelUp && !tMother.bIsDitto)
+	{
+		bool bMotherLearnsWithinMaximum = stoi(tMother.sLevel) <= iMaxLevel;
+		bool bFatherLearnsWithinMaximum = stoi(tFather.sLevel) <= iMaxLevel;
+		if (!bMotherLearnsWithinMaximum || !bFatherLearnsWithinMaximum || tMother.bIsDitto)
+			return false;
+	}
 
+	//if the mom can learn the move by level up below the level cap, there's no point in breeding the move onto it
 	//just catch the mother species and level it up to this level
-	if (!tMother.bIsDitto && tChild.sSpecies != tTarget.sSpecies && tMother.eLearnMethod == LEARNBY_LEVELUP && stoi(tMother.sLevel) <= iMaxLevel)
-		return false;
+	if (bMotherLearnsByLevelUp)
+	{
+		bool bMotherLearnsWithinMaximum = stoi(tMother.sLevel) <= iMaxLevel;
+		if (tMother.bIsDitto || (!bChildIsTargetSpecies && bMotherLearnsWithinMaximum))
+			return false;
+	}
 
 	//if the mother is a female-only species, they can only pass the move down if the baby learns it by levelup
 	//female-only mothers are always ok if they produce the target species as the moves don't have to be passed down further than that
-	if (!tMother.bIsDitto && (tMother.bFemaleOnly && (tChild.eLearnMethod != LEARNBY_LEVELUP && tChild.sSpecies != tTarget.sSpecies)))
+	if (!tMother.bIsDitto && tMother.bFemaleOnly && !bChildLearnsByLevelUp && !bChildIsTargetSpecies)
 		return false;
 
 	//no loop-de-loops in your family tree
@@ -798,6 +422,98 @@ bool ValidateMatchup(MoveLearner tMother, MoveLearner tChild, MoveLearner tFathe
 	if (bFoundInLineageAlready)
 		return false;
 	return true;
+}
+
+void ValidateMatchupGeneral(MoveLearner& tMother, MoveLearner& tFather, MoveLearner& tLearner)
+{
+	if (ValidateMatchup(tMother, tMother, tFather, tLearner, false))
+	{
+		//std::cout << tMother.sSpecies << " previous set to " << tFather->sSpecies << "\n";
+		tMother.pPrevious = &tFather;
+		if (!tMother.bFemaleOnly || tMother.sSpecies == tTarget.sSpecies)
+			vLearnerQueue.push_back(&tMother);
+		tMother.bExplored = true;
+	}
+}
+
+void ValidateMatchupMaleOnly(MoveLearner& tMother, MoveLearner& tChild, MoveLearner& tFather, MoveLearner& tLearner)
+{
+	if (tFather.sOGCS == tChild.sSpecies)
+	{
+		if (ValidateMatchup(tMother, tChild, tFather, tLearner, false))
+		{
+			//std::cout << tChild.sSpecies << " previous set to " << tMother->sSpecies << "\n";
+			tChild.pPrevious = &tMother;
+			tChild.bExplored = true;
+			vLearnerQueue.push_back(&tChild);
+		}
+	}
+}
+
+MoveLearner* MakeOffspringObject(MoveLearner& tFather, MoveLearner& tLearner, int i)
+{
+	MoveLearner* tMother;
+	bool bFound = false;
+	for (MoveLearner* tProspectiveLearner : vUniversalPool)
+	{
+		if (tProspectiveLearner->sMoveName == tLearner.sMoveName && tProspectiveLearner->sSpecies == sAllGroups[i])
+		{
+			return tProspectiveLearner;
+		}
+	}
+	tMother = new MoveLearner;
+	tMother->sMoveName = tLearner.sMoveName;
+	tMother->sSpecies = sAllGroups[i];
+	tMother->sEggGroup1 = sAllGroups[i + 1];
+	tMother->sEggGroup2 = sAllGroups[i + 2];
+	ValidateGroup(tMother->sEggGroup1, true);
+	ValidateGroup(tMother->sEggGroup2, true);
+	tMother->pPrevious = &tFather;
+	tMother->eLearnMethod = LEARNBY_TM_UNIVERSAL;
+	vUniversalPool.push_back(tMother);
+	return tMother;
+}
+
+void FindOffspringGeneral(MoveLearner& tFather, MoveLearner& tLearner, bool bUseUniversalPool)
+{
+	for (MoveLearner& tMother : vMoveLearners)
+	{
+		ValidateMatchupGeneral(tMother, tFather, tLearner);
+	}
+	if (bUseUniversalPool)
+	{
+		for (int i = 0; i < 1479; i += 3)
+		{
+			if (!SpeciesCantUseTM(tLearner.sMoveName, sAllGroups[i]))
+			{
+				//make a learner object for everyone who can learn this universal TM
+				//check if one exists already
+				MoveLearner* tMother = MakeOffspringObject(tFather, tLearner, i);
+				ValidateMatchupGeneral(*tMother, tFather, tLearner);
+			}
+		}
+	}
+}
+
+void FindOffspringMaleOnly(MoveLearner& tMother, MoveLearner& tFather, MoveLearner& tLearner, bool bUseUniversalPool)
+{
+	for (MoveLearner& tChild : vMoveLearners)
+	{
+		ValidateMatchupMaleOnly(tMother, tChild, tFather, tLearner);
+	}
+	if (bUseUniversalPool)
+	{
+		for (int i = 0; i < 1479; i += 3)
+		{
+			if (!SpeciesCantUseTM(tLearner.sMoveName, sAllGroups[i]))
+			{
+				//make a learner object for everyone who can learn this universal TM
+				//check if one exists already
+				MoveLearner* tChild = MakeOffspringObject(tFather, tLearner, i);
+				ValidateMatchupMaleOnly(tMother, *tChild, tFather, tLearner);
+			}
+		}
+	}
 }
 
 //this code MUST iterate on tables for EVERY form. the descriptors used for forms do not necessarily match between pages
@@ -904,7 +620,7 @@ void ProcessTargetFile(std::ifstream& stReadFile)
 				//std::cout << sMoveName << "\n";
 				MoveLearner tNewLearner;
 				tNewLearner.sMoveName = sMoveName;
-				tNewLearner.eLearnMethod = LEARNBY_TM;
+				tNewLearner.eLearnMethod = IsUniversalTM(sMoveName) ? LEARNBY_TM_UNIVERSAL : LEARNBY_TM;
 				vTargetMoves.push_back(tNewLearner);
 			}
 			else if (bBreedSection && sTextLine.find("learnlist/breed"))
@@ -934,6 +650,7 @@ int ProcessMove(std::ifstream& stReadFile)
 	bool bLevelupSection = false;
 	bool bLevelupSectionInside = false;
 	bool bTMSection = false;
+	bool bUniversalTM = false;
 	bool bTMSectionInside = false;
 	bool bBreedSection = false;
 	bool bBreedSectionInside = false;
@@ -973,6 +690,8 @@ int ProcessMove(std::ifstream& stReadFile)
 			sMoveName = sTextLine.substr(5, iNameEnd - 5);
 		}
 
+		bUniversalTM = IsUniversalTM(sMoveName);
+
 		if (!bLearnset && sTextLine == "==Learnset==")
 			bLearnset = true;
 		else if (bLearnset)
@@ -1002,30 +721,6 @@ int ProcessMove(std::ifstream& stReadFile)
 				//{{Movehead/Games|Normal|g1=none|g7=1|g7g={{gameabbrev7|SMUSUM}}|g8=2}}
 				//{{Moveentry/9|0098|Krabby|type=Water|1|Water 3|Water 3|−|49{{sup/3|FRLG}}|45|45|45|45|29|29}}
 				//{{Movefoot|Normal|9}}
-				
-				//This move is a TM that almost any pokemon can learn
-				//we detect by this one bit because the string could be broken up by <br>s
-				if (bTMSection && sTextLine.find("''except''") != std::string::npos)
-				{
-					//don't read down the table. it's telling which pokemon CAN'T use the TM
-					//the user is meant to only drag and drop pages for relevant moves. if we're on this page at all, we'll assume the target mon can learn it by TM
-					MoveLearner tNewLearner;
-					tNewLearner.sMoveName = sMoveName;
-					if (tTarget.sSpecies.empty())
-					{
-						std::cout << "\n target doesn't have name yet! does target.txt exist?\n";
-						std::cout << sTextLine << "\n";
-						return 1;
-					}
-					tNewLearner.sSpecies = tTarget.sSpecies;
-					tNewLearner.sEggGroup1 = tTarget.sEggGroup1;
-					tNewLearner.sEggGroup2 = tTarget.sEggGroup2;
-					tNewLearner.sLevel = "0";
-					tNewLearner.eLearnMethod = LEARNBY_TM_UNIVERSAL;
-					vMoveLearners.push_back(tNewLearner);
-					bLevelupSection = bLevelupSectionInside = bTMSection = bTMSectionInside = bBreedSection = bBreedSectionInside = bSpecialSectionInside = bEventSectionInside = false;
-					iHiddenColumns = 0;
-				}
 				if (bTMSection && sTextLine.find("g4tm=tutor") != std::string::npos)
 				{
 					//tutor move in gen 4, bail
@@ -1157,7 +852,7 @@ int ProcessMove(std::ifstream& stReadFile)
 						//then shift them over the parameters
 						if (tNewLearner.sSpecies == "Ralts" || tNewLearner.sSpecies == "Kirlia" || tNewLearner.sSpecies == "Gardevoir" || tNewLearner.sSpecies == "Gallade")
 						{
-							tNewLearner.sEggGroup1 = tNewLearner.sEggGroup2 = "Amorphous";
+							tNewLearner.sEggGroup1 = tNewLearner.sEggGroup2 = "amorphous";
 							iPipeLocation = sTextLine.find("|", iPipeLocation);
 							iPipeLocation++;
 							iPipeLocation = sTextLine.find("|", iPipeLocation);
@@ -1165,7 +860,7 @@ int ProcessMove(std::ifstream& stReadFile)
 						}
 						else if (tNewLearner.sSpecies == "Trapinch" || tNewLearner.sSpecies == "Vibrava" || tNewLearner.sSpecies == "Flygon")
 						{
-							tNewLearner.sEggGroup1 = tNewLearner.sEggGroup2 = "Bug";
+							tNewLearner.sEggGroup1 = tNewLearner.sEggGroup2 = "bug";
 							iPipeLocation = sTextLine.find("|", iPipeLocation);
 							iPipeLocation++;
 							iPipeLocation = sTextLine.find("|", iPipeLocation);
@@ -1272,62 +967,56 @@ int ProcessMove(std::ifstream& stReadFile)
 									tNewLearner.eLearnMethod = LEARNBY_TM;
 								else if (bBreedSection)
 									tNewLearner.eLearnMethod = LEARNBY_EGG;
-								/*
-								if (bSpecialSectionInside || bEventSectionInside)
-								{
-									std::cout << "Please enter minimum level of special encounter for " << sPokemonName << "\n";
-									std::getline(std::cin, tNewLearner.sLevel);
-								}
-								*/
 							}
-							//why the hell did this section exist???
-							/*
-							else if (sLevel != "âˆ’")//dash (holy fuck)
-							{
-								if (bTMSection)
-									tNewLearner.eLearnMethod = LEARNBY_TM;
-								else if (bBreedSection)
-									tNewLearner.eLearnMethod = LEARNBY_EGG;
-								else
-									tNewLearner.eLearnMethod = LEARNBY_LEVELUP;
-							}*/
 							if (sLevel != "âˆ’")//dash (holy fuck)
 							{
-								if (tNewLearner.eLearnMethod != LEARNBY_TM && tNewLearner.eLearnMethod != LEARNBY_EGG)
+								if (bUniversalTM && bTMSection)
 								{
-									tNewLearner.eLearnMethod = LEARNBY_LEVELUP;
-									if (tNewLearner.eLearnMethod != LEARNBY_LEVELUP)
-										tNewLearner.sLevel = "0";
-									else
+									//we're not a learner. we're actually one of the only pokemon NOT allowed to use the TM in question.
+									//add to a separate list. (each entry is species name followed by move it can't learn by TM)
+									vTMLearnBlacklist.push_back(tNewLearner.sSpecies);
+									vTMLearnBlacklist.push_back(sMoveName);
+								}
+								else
+								{
+									if (bLevelupSection)
+										tNewLearner.eLearnMethod = LEARNBY_LEVELUP;
+									//if (tNewLearner.eLearnMethod != LEARNBY_TM && tNewLearner.eLearnMethod != LEARNBY_TM_UNIVERSAL && tNewLearner.eLearnMethod != LEARNBY_EGG)
 									{
-										//must be a number or have a comma and space
-										bool bIsNumber = is_number(tNewLearner.sLevel);
-										size_t iCommaPlace = sLevel.find(",");
-										bool bHasComma = iCommaPlace != std::string::npos;
-										if (!bIsNumber && !bHasComma)
+										if (tNewLearner.eLearnMethod != LEARNBY_LEVELUP)
+											tNewLearner.sLevel = "0";
+										else
 										{
-											std::cout << "\n bad level value '" << sLevel << "'. iPipeLocation: " << iPipeLocation << "\n";
-											if (bIsNumber)
-												std::cout << "is a number\n";
-											else
-												std::cout << "is NOT a number\n";
-											if (bHasComma)
-												std::cout << "has a comma\n";
-											else
-												std::cout << "did NOT have a comma\n";
-											std::cout << "comma place: " << iCommaPlace << "\n";
-											std::cout << sTextLine << "\n";
-											return 1;
+											//must be a number or have a comma and space
+											bool bIsNumber = is_number(tNewLearner.sLevel);
+											size_t iCommaPlace = sLevel.find(",");
+											bool bHasComma = iCommaPlace != std::string::npos;
+											if (!bIsNumber && !bHasComma)
+											{
+												std::cout << "\n bad level value '" << sLevel << "'. iPipeLocation: " << iPipeLocation << "\n";
+												if (bIsNumber)
+													std::cout << "is a number\n";
+												else
+													std::cout << "is NOT a number\n";
+												if (bHasComma)
+													std::cout << "has a comma\n";
+												else
+													std::cout << "did NOT have a comma\n";
+												std::cout << "comma place: " << iCommaPlace << "\n";
+												std::cout << sTextLine << "\n";
+												return 1;
+											}
 										}
 									}
+									vMoveLearners.push_back(tNewLearner);
+									//std::cout << "vMoveLearners size: " << vMoveLearners.size() << "\n";
 								}
-								vMoveLearners.push_back(tNewLearner);
-								//std::cout << "vMoveLearners size: " << vMoveLearners.size() << "\n";
+								
 							}
 						}
 						else
 						{
-							//this means the move isn't available to the pokemon in our generation
+							//empty square means the move isn't available to the pokemon in our generation
 						}
 					}
 				}
@@ -1339,9 +1028,7 @@ int ProcessMove(std::ifstream& stReadFile)
 
 //start at an ancestor, end at target child
 //needs to be breadth first
-//ret: 1 means move to a new head node
-//0 means go back in but with some pokemon excluded, leading to a different chain
-int GroupCrawl(MoveLearner* tLearner)
+int GroupCrawl(MoveLearner* tLearner, bool bUseUniversalPool)
 {
 	int iCounter = 0;
 	while (!vLearnerQueue.empty())
@@ -1349,13 +1036,8 @@ int GroupCrawl(MoveLearner* tLearner)
 		MoveLearner* tFather = vLearnerQueue.back();
 		vLearnerQueue.pop_back();
 		iCounter++;
+
 		//std::cout << iCounter << "/" << vLearnerQueue.size() << "(" << tFather->sSpecies << "/" << tFather->sMoveName << ")\n";
-		//for (MoveLearner* move : vLearnerQueue)
-		{
-			//std::cout << move->sSpecies << "\n";
-			//if (move->sSpecies == "Drifloon")
-			//	std::cout << " ";
-		}
 
 		if (std::find(vSpeciesBlacklist.begin(), vSpeciesBlacklist.end(), tFather->sSpecies) != vSpeciesBlacklist.end())
 			continue;
@@ -1404,12 +1086,14 @@ int GroupCrawl(MoveLearner* tLearner)
 				EWSearchCleanup();
 				//add to a list of moves we've decided we're satisfied with
 				vMovesDone.push_back(tLearner->sMoveName);
-				return 1;
+				//return 1;
+				return CR_SUCCESS;
 			}
 			else if (sAnswer == "start")
 			{
 				EWSearchCleanup();
-				return 1;
+				//return 1;
+				return CR_REJECT_TOP_LEVEL;
 			}
 			else
 			{
@@ -1440,12 +1124,14 @@ int GroupCrawl(MoveLearner* tLearner)
 						//add to list
 						vSpeciesBlacklist.push_back(sMon);
 						EWSearchCleanup();
-						//if they wanted to exclude the head (same as "start")
 					}
+					//if they wanted to exclude the head (same as "start")
 					if (bHeadExclude)
-						return 1;
+						//return 1;
+						return CR_REJECT_TOP_LEVEL;
 					else
-						return 0;
+						//return 0;
+						return CR_REJECT_MIDDLE;
 				}
 				else
 				{
@@ -1465,48 +1151,24 @@ int GroupCrawl(MoveLearner* tLearner)
 					EWSearchCleanup();
 					//if they wanted to exclude the head (same as "start")
 					if (bHeadExclude)
-						return 1;
+						//return 1;
+						return CR_REJECT_TOP_LEVEL;
 					else
-						return 0;
+						//return 0;
+						return CR_REJECT_MIDDLE;
 				}
 			}
 		}
+
+		//find interesting offspring
+
 		//phione can only breed with ditto to create more phione, so it's not interesting
 		else if (!tFather->bIsPhione)
 		{
 			//manaphy can only breed with ditto
 			if (!tFather->bIsManaphy)
 			{
-				for (MoveLearner& tMother : vMoveLearners)
-				{
-					if (ValidateMatchup(tMother, tMother, *tFather, *tLearner, false))
-					{
-						//std::cout << tMother.sSpecies << " previous set to " << tFather->sSpecies << "\n";
-						tMother.pPrevious = tFather;
-						if (!tMother.bFemaleOnly || tMother.sSpecies == tTarget.sSpecies)
-							vLearnerQueue.push_back(&tMother);
-						//todo: find an instance where this code would be useful?
-						/*
-						//female-only mons must produce a male of their OGCS to be useful
-						if (!tMother.sOGCS.empty() && tMother.bFemaleOnly)
-						{
-							for (MoveLearner& tChild : vMoveLearners)
-							{
-								if (tMother.sOGCS == tChild.sSpecies)
-								{
-									if (ValidateMatchup(tMother, tChild, *tFather, *tLearner, false))
-									{
-										//std::cout << tChild.sSpecies << " previous set to " << tMother->sSpecies << "\n";
-										tChild.pPrevious = &tMother;
-										tChild.bExplored = true;
-										vLearnerQueue.push_back(&tChild);
-									}
-								}
-							}
-						}*/
-						tMother.bExplored = true;
-					}
-				}
+				FindOffspringGeneral(*tFather, *tLearner, bUseUniversalPool);
 			}
 			//male-only mons *have the ability* to breed with a ditto to produce a female of their OGCS
 			if (!tFather->sOGCS.empty() && (tFather->bMaleOnly || tFather->bIsManaphy))
@@ -1515,26 +1177,15 @@ int GroupCrawl(MoveLearner* tLearner)
 				//this is the only time breeding with a ditto would be useful
 				tMother.bIsDitto = true;
 				tMother.sSpecies = "Ditto";
-				for (MoveLearner& tChild : vMoveLearners)
-				{
-					if (tFather->sOGCS == tChild.sSpecies)
-					{
-						if (ValidateMatchup(tMother, tChild, *tFather, *tLearner, false))
-						{
-							//std::cout << tChild.sSpecies << " previous set to " << tMother->sSpecies << "\n";
-							tChild.pPrevious = &tMother;
-							tChild.bExplored = true;
-							vLearnerQueue.push_back(&tChild);
-						}
-					}
-				}
+				FindOffspringMaleOnly(tMother, *tFather, *tLearner, bUseUniversalPool);
 			}
 		}
 	}
 	//no path exists
-	std::cout << "Couldn't find a breed chain for " << tLearner->sMoveName << " that starts with " << tLearner->sSpecies << "\n";
+	std::cout << "Couldn't find a breed chain for " << tLearner->sMoveName << " that starts with " << tLearner->sSpecies << " " << (bUseUniversalPool ? "(universal pool)" : "(standard)") << "\n";
 	EWSearchCleanup();
-	return 2;
+	//return 2;
+	return CR_FAIL;
 }
 
 int main(int argc, char* argv[])
@@ -1681,7 +1332,7 @@ int main(int argc, char* argv[])
 	for (MoveLearner& tLearner : vMoveLearners)
 	{
 		//a TM learn
-		if ((IsUniversalTM(tLearner.sMoveName) || tLearner.eLearnMethod == LEARNBY_TM) && tLearner.sSpecies != tTarget.sSpecies)
+		if ((tLearner.eLearnMethod == LEARNBY_TM_UNIVERSAL || tLearner.eLearnMethod == LEARNBY_TM) && tLearner.sSpecies != tTarget.sSpecies)
 		{
 			bool bFoundTMLearn = false;
 			//find if the target learns this by TM
@@ -1730,19 +1381,7 @@ int main(int argc, char* argv[])
 	{
 		//of course we can breed our moves onto own species
 		if (tLearner.sSpecies == tTarget.sSpecies)
-		{
-			if (IsUniversalTM(tLearner.sMoveName))
-			{
-				std::cout << tLearner.sMoveName << " is a universal TM that almost all pokemon can learn and therefore pass on (ENTER to continue)\n";
-
-				if (!bFastForward)
-				{
-					std::string sHack;
-					std::getline(std::cin, sHack);
-				}
-			}
 			continue;
-		}
 
 		if (std::find(vSpeciesBlacklist.begin(), vSpeciesBlacklist.end(), tLearner.sSpecies) != vSpeciesBlacklist.end())
 			continue;
@@ -1758,51 +1397,27 @@ int main(int argc, char* argv[])
 			if (tLearner.eLearnMethod != LEARNBY_LEVELUP || stoi(tLearner.sLevel) <= iMaxLevel)
 			{
 				//female-only mons need a compatible male
-				if (tLearner.bFemaleOnly /* && !tLearner.sOGCS.empty()*/)
-				{
-					//todo: use case. when does this ever matter?
-					/*
-					for (MoveLearner& tFather : vMoveLearners)
-					{
-						if (!tFather.bFemaleOnly)
-						{
-							if (ValidateMatchup(tLearner, tLearner, tFather, tLearner, true))
-							{
-								for (MoveLearner& tChild : vMoveLearners)
-								{
-									if (tLearner.sOGCS == tChild.sSpecies)
-									{
-										if (ValidateMatchup(tLearner, tChild, tFather, tLearner, true))
-										{
-											//std::cout << tFather.sSpecies << " previous set to " << tLearner->sSpecies << "\n";
-											tFather.pPrevious = &tLearner;
-											//std::cout << tLearner.sSpecies << " top level\n";
-											tFather.bExplored = true;
-											tLearner.bExplored = true;
-											vLearnerQueue.push_back(&tFather);
-											int iResult = GroupCrawl(&tFather);
-											while (iResult == 0)
-											{
-												vLearnerQueue.push_back(&tFather);
-												iResult = GroupCrawl(&tFather);
-											}
-										}
-									}
-								}
-							}
-						}
-					}*/
-				}
-				else
+				if (!tLearner.bFemaleOnly)
 				{
 					//std::cout << tLearner.sSpecies << " top level\n";
 					tLearner.bExplored = true;
 					vLearnerQueue.push_back(&tLearner);
-					int iResult = GroupCrawl(&tLearner);
-					while (iResult == 0)
+					int iResult = GroupCrawl(&tLearner, false);
+					while (iResult == CR_REJECT_MIDDLE)
 					{
 						vLearnerQueue.push_back(&tLearner);
-						iResult = GroupCrawl(&tLearner);
+						iResult = GroupCrawl(&tLearner, false);
+					}
+					EWSearchCleanup();
+					if (iResult == CR_FAIL && IsUniversalTM(tLearner.sMoveName))
+					{
+						vLearnerQueue.push_back(&tLearner);
+						iResult = GroupCrawl(&tLearner, true);
+						while (iResult == CR_REJECT_MIDDLE)
+						{
+							vLearnerQueue.push_back(&tLearner);
+							iResult = GroupCrawl(&tLearner, true);
+						}
 					}
 				}
 			}
