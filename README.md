@@ -1,5 +1,5 @@
 # EggWebs
-EggWebs is a program that finds breeding chains targeting a specified move and Pokemon that meet conditions you set.
+EggWebs is a program that finds breeding chains that meet conditions you set.
 
 EggWebs currently only works for Generation 4 and has only been tested in HGSS scenarios.
 
