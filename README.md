@@ -6,7 +6,7 @@ EggWebs currently only works for HGSS.
 ### Data
 EggWebs gets data from Bulbapedia pages saved to your computer. It requires the learnset page of the Pokemon you want to breed the move(s) onto, and the pages of all moves you want to put on the Pokemon.
 
-To properly save the pages, go to them on Bulbapedia and then press `Alt`+`Shift`+`E`, or in the URL, replace `wiki/` with `w/index.php?action=edit&title=`. If you have a Bulbapedia account, you can simply click **Edit source**.
+To properly save the pages, go to them on Bulbapedia and then press `Alt`+`Shift`+`E`, or in the URL, replace `wiki/` with `w/index.php?action=edit&title=`. If you're logged into the wiki, you can simply click **Edit source**.
 
 In any case, you should now have a textbox on screen. Copy everything in it to a new file on your computer. The learnset page must be named `target.txt`. The others can be named anything, but to avoid confusion, you'll want to name them after the moves they're for.
 
