@@ -697,6 +697,11 @@ int ProcessMove(std::ifstream& stReadFile)
 			bLearnset = true;
 		else if (bLearnset)
 		{
+			if (sTextLine.find("Movefoot") != std::string::npos)
+			{
+				bLevelupSection = bLevelupSectionInside = bTMSection = bTMSectionInside = bBreedSection = bBreedSectionInside = bSpecialSectionInside = bEventSectionInside = false;
+				iHiddenColumns = 0;
+			}
 			if (!bLevelupSection && sTextLine == "===By [[Level|leveling up]]===")
 				bLevelupSection = true;
 			else if (!bTMSection && (sTextLine == "===By [[TM]]===" || sTextLine == "===By [[TM]]/[[HM]]===" || sTextLine == "===By [[TM]]/[[TR]]===" || sTextLine == "===By [[TM]]/[[Move Tutor]]===" || sTextLine == "===By [[TM]]/[[TR]]/[[Move Tutor]]==="))
@@ -730,11 +735,14 @@ int ProcessMove(std::ifstream& stReadFile)
 					bBreedSection = false;
 					continue;
 				}
+				//moved up
+				/*
 				if (sTextLine.find("Movefoot") != std::string::npos)
 				{
 					bLevelupSection = bLevelupSectionInside = bTMSection = bTMSectionInside = bBreedSection = bBreedSectionInside = bSpecialSectionInside = bEventSectionInside = false;
 					iHiddenColumns = 0;
 				}
+				*/
 				if (sTextLine.find("Movehead/Games") != std::string::npos || sTextLine.find("Movehead/TMGames") != std::string::npos)
 				{
 					//make sure g4 is applicable
