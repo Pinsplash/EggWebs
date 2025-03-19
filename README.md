@@ -27,7 +27,7 @@ Fast forward mode automatically accepts whatever chains EggWebs presents you fir
 
 When a breeding chain is found, it will be presented to you.
 * To accept the chain, just press `Enter`. When a chain is accepted, no other chains for that move will be shown.
-* Chains can be rejected by entering the name of a certain species. Multiple species can be excluded at once by separating their names with commas, including ones not present in the chain. Use this to exclude Pokemon you can't get. The species names you enter will be excluded from all breeding chains EggWebs presents you from thereon, including chains for other moves.
+* Chains can be rejected by entering the name of a species in the chain. Multiple species can be excluded at once by separating their names with commas, including ones not present in the chain. Use this to exclude Pokemon you can't get. The species names you enter will be excluded from all breeding chains EggWebs presents you from thereon, including chains for other moves.
 * You can also enter `start` to skip over chains that start with the species that originally learns the move using the method in question. This does not exclude the entire species; it may appear again in other chains learning different moves and/or by different methods.
 
 When the program is done, a list of all chains you accepted will be written to `output.csv` in the same place you put the Bulbapedia pages.
