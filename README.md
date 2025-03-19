@@ -1,7 +1,7 @@
 # EggWebs
 EggWebs is a program that finds breeding chains that meet conditions you set.
 
-EggWebs currently only works for Generation 4 and has only been tested in HGSS scenarios.
+EggWebs currently only works for HGSS.
 
 ### Data
 EggWebs gets data from Bulbapedia pages saved to your computer. It requires the learnset page of the Pokemon you want to breed the move(s) onto, and the pages of all moves you want to put on the Pokemon.
