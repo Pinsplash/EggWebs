@@ -520,8 +520,9 @@ void FindOffspringMaleOnly(MoveLearner& tMother, MoveLearner& tFather, MoveLearn
 //this code MUST iterate on tables for EVERY form. the descriptors used for forms do not necessarily match between pages
 //for example, plant cloak, sandy cloak, and trash cloak wormadam might all be able to learn a certain move, but on the move's page, the forms are simply referred to as "all forms"
 //this means the user will have to manually filter out chains for moves that are not relevant to their form
-void ProcessTargetFile(std::ifstream& stReadFile)
+int ProcessTargetFile(std::ifstream& stReadFile)
 {
+	int iMoves = 0;
 	std::string sTextLine;
 	//no "inside" vars cause learnset pages are split up by generation and we trust the user to put in the correct page
 	bool bLevelupSection = false;
@@ -603,6 +604,7 @@ void ProcessTargetFile(std::ifstream& stReadFile)
 				tNewLearner.sLevel = sLevel;
 				tNewLearner.eLearnMethod = LEARNBY_LEVELUP;
 				vTargetMoves.push_back(tNewLearner);
+				iMoves++;
 			}
 			else if (bTMSection && sTextLine.find("learnlist/tm"))
 			{
@@ -623,6 +625,7 @@ void ProcessTargetFile(std::ifstream& stReadFile)
 				tNewLearner.sMoveName = sMoveName;
 				tNewLearner.eLearnMethod = IsUniversalTM(sMoveName) ? LEARNBY_TM_UNIVERSAL : LEARNBY_TM;
 				vTargetMoves.push_back(tNewLearner);
+				iMoves++;
 			}
 			else if (bBreedSection && sTextLine.find("learnlist/breed"))
 			{
@@ -639,9 +642,11 @@ void ProcessTargetFile(std::ifstream& stReadFile)
 				tNewLearner.sMoveName = sMoveName;
 				tNewLearner.eLearnMethod = LEARNBY_EGG;
 				vTargetMoves.push_back(tNewLearner);
+				iMoves++;
 			}
 		}
 	}
+	return iMoves;
 }
 
 int ProcessMove(std::ifstream& stReadFile)
@@ -1240,12 +1245,21 @@ int main(int argc, char* argv[])
 	if (sAnswer == "1")
 		bFastForward = true;
 
-	std::ifstream stTargetReadFile("target.txt");
-	ProcessTargetFile(stTargetReadFile);
-	stTargetReadFile.close();
-
 	if (bDebug)
 	{
+		std::ifstream stTargetReadFile("target.txt");
+		int iMoves = ProcessTargetFile(stTargetReadFile);
+		stTargetReadFile.close();
+
+		if (iMoves == 0) std::cout << "\n\nWARNING: ";
+		std::cout << "Found " << iMoves << " moves for target pokemon.\n";
+		if (iMoves == 0)
+		{
+			std::string sFuck;
+			std::getline(std::cin, sFuck);
+			return 0;
+		}
+
 		std::ifstream stReadFile2("filename.txt");
 		if (ProcessMove(stReadFile2) == 1)
 		{
@@ -1264,6 +1278,26 @@ int main(int argc, char* argv[])
 	}
 	else
 	{
+		//always get target.txt before anything else
+		for (int i = 1; i < argc; i++)
+		{
+			std::string sPath = argv[i];
+			if (sPath.find("target.txt") != std::string::npos)
+			{
+				std::ifstream stTargetReadFile(sPath);
+				int iMoves = ProcessTargetFile(stTargetReadFile);
+				stTargetReadFile.close();
+
+				if (iMoves == 0) std::cout << "\n\nWARNING: ";
+				std::cout << "Found " << iMoves << " moves for target pokemon.\n";
+				if (iMoves == 0)
+				{
+					std::string sFuck;
+					std::getline(std::cin, sFuck);
+					return 0;
+				}
+			}
+		}
 		for (int i = 1;  i < argc; i++)
 		{
 			if (argc > 1)
