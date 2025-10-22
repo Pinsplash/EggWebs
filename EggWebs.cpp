@@ -103,6 +103,7 @@ bool bExcludeSpecial = false;
 bool bExcludeEvent = false;
 int iMaxLevel = 100;
 bool bFastForward = false;
+bool bNoUniversalTMParents = false;
 
 bool is_number(const std::string& s)
 {
@@ -366,6 +367,11 @@ bool ValidateMatchup(MoveLearner tMother, MoveLearner tChild, MoveLearner tFathe
 
 	//manaphy can only breed with ditto and can only produce phione
 	if (tMother.bIsManaphy || tChild.bIsManaphy)
+		return false;
+
+	//if user requested, mother must learn the move by a means other than a universal TM (used for level golf)
+	//unless mother species is target species, which is okay
+	if (bNoUniversalTMParents && tMother.eLearnMethod == LEARNBY_TM_UNIVERSAL && tMother.sSpecies != tTarget.sSpecies)
 		return false;
 
 	//have to be straight
@@ -1244,6 +1250,11 @@ int main(int argc, char* argv[])
 	std::getline(std::cin, sAnswer);
 	if (sAnswer == "1")
 		bFastForward = true;
+
+	std::cout << "Enter 1 to avoid ancestors that can only learn a move by universal TM (level golf).\nOtherwise, enter nothing\n>";
+	std::getline(std::cin, sAnswer);
+	if (sAnswer == "1")
+		bNoUniversalTMParents = true;
 
 	if (bDebug)
 	{

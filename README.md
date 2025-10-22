@@ -25,6 +25,8 @@ Enter the maximum level that Pokemon involved in the chains can be. You will sti
 
 Fast forward mode automatically accepts whatever chains EggWebs presents you first. These may be useful or they may not.
 
+You can choose to hide chains where anyone other than the target species can only learn a move by a universal TM. This is likely not useful for you.
+
 When a breeding chain is found, it will be presented to you.
 * To accept the chain, just press `Enter`. When a chain is accepted, no other chains for that move will be shown.
 * Chains can be rejected by entering the name of a species in the chain. Multiple species can be excluded at once by separating their names with commas, including ones not present in the chain. Use this to exclude Pokemon you can't get. The species names you enter will be excluded from all breeding chains EggWebs presents you from thereon, including chains for other moves.
