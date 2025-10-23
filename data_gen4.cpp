@@ -64,7 +64,8 @@ static std::string sUniversalTMs[] = {
 	"Hidden Power",
 	"Toxic",
 	"Protect",
-	"Double Team"
+	"Double Team",
+	"Substitute"//2025: Why was substitute missing!? If I discover something about this later, I really need to note it here
 };
 
 static std::string sTMsandHMs[] = {

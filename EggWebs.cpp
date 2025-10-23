@@ -1013,7 +1013,7 @@ int ProcessMove(std::ifstream& stReadFile)
 											bool bHasComma = iCommaPlace != std::string::npos;
 											if (!bIsNumber && !bHasComma)
 											{
-												std::cout << "\n bad level value '" << sLevel << "'. iPipeLocation: " << iPipeLocation << "\n";
+												std::cout << "\nbad level value '" << sLevel << "'. iPipeLocation: " << iPipeLocation << "\n";
 												if (bIsNumber)
 													std::cout << "is a number\n";
 												else
