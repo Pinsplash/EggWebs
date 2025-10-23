@@ -1410,20 +1410,12 @@ int main(int argc, char* argv[])
 
 	for (MoveLearner& tTargetLearner : vTargetMoves)
 	{
-		//we don't need chains for level up moves that are below the level cap
+		//it may be pointless to find this move, but we trust the user to know what they're doing
+		//(for instance, a move might be levelup, but also a tm, and the level threshold is far away, so it would be of interest to look at it anyway)
 		if (tTargetLearner.eLearnMethod == LEARNBY_LEVELUP && stoi(tTargetLearner.sLevel) <= iMaxLevel)
-		{
-			std::cout << "don't need to learn about " << tTargetLearner.sMoveName << "\n";
-			for (MoveLearner& tLearner : vMoveLearners)
-			{
-				if (tLearner.sMoveName == tTargetLearner.sMoveName /* && tLearner.sSpecies == tTargetLearner.sSpecies && tLearner.sLevel == tTargetLearner.sLevel && tLearner.eLearnMethod == LEARNBY_LEVELUP*/)
-					tLearner.bEraseMe = true;
-			}
-		}
+			std::cout << "Note: " << tTargetLearner.sMoveName << " is a levelup move below the level cap.\n";
 	}
-	//clear out the unneeded moves
-	vMoveLearners.erase(remove_if(vMoveLearners.begin(), vMoveLearners.end(), [](MoveLearner x) { return x.bEraseMe; }), vMoveLearners.end());
-
+	
 	//print out our data so far
 	for (MoveLearner tLearner : vMoveLearners)
 		std::cout << tLearner.sMoveName << ": " << tLearner.InfoStr() << "\n";
