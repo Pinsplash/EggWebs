@@ -1290,11 +1290,13 @@ int main(int argc, char* argv[])
 	else
 	{
 		//always get target.txt before anything else
+		bool bFoundTargetFile = false;
 		for (int i = 1; i < argc; i++)
 		{
 			std::string sPath = argv[i];
 			if (sPath.find("target.txt") != std::string::npos)
 			{
+				bFoundTargetFile = true;
 				std::ifstream stTargetReadFile(sPath);
 				int iMoves = ProcessTargetFile(stTargetReadFile);
 				stTargetReadFile.close();
@@ -1308,6 +1310,13 @@ int main(int argc, char* argv[])
 					return 0;
 				}
 			}
+		}
+		if (!bFoundTargetFile)
+		{
+			std::cout << "Error: target.txt missing.\n";
+			std::string sFuck;
+			std::getline(std::cin, sFuck);
+			return 0;
 		}
 		for (int i = 1;  i < argc; i++)
 		{
