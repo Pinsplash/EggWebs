@@ -13,8 +13,6 @@ In any case, you should now have a textbox on screen. Copy everything in it to a
 ### Usage
 Select target.txt and the moves you want to put on the Pokemon. Then drag and drop them all at once onto the exe. Any number of moves at once will work. The program will be able to do less repeat work if you drop every move you're interested in at once.
 
-Enter the egg groups of the target Pokemon. Case insensitive, otherwise enter them exactly how they are typically written.
-
 Then give a response based on whether you want to exclude certain learn methods:
 * Nothing: Don't exclude anything
 * `1`: Exclude "special" encounters. These Pokemon are obtained through uncommon means like being transferred from a side game.

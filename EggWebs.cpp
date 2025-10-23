@@ -556,6 +556,15 @@ int ProcessTargetFile(std::ifstream& stReadFile)
 
 			tTarget.sSpecies = sSpecies;
 			std::cout << "TARGET IS " << tTarget.sSpecies << "\n";
+			
+			for (int i = 0; i < 1479; i++)
+			{
+				if (tTarget.sSpecies == sAllGroups[i])
+				{
+					tTarget.sEggGroup1 = sAllGroups[i + 1];
+					tTarget.sEggGroup2 = sAllGroups[i + 2];
+				}
+			}
 		}
 		//just check header templates instead of actual headers because they're all unique in this case
 		else if (sTextLine.find("learnlist/levelh") != std::string::npos)
@@ -1208,27 +1217,8 @@ int GroupCrawl(MoveLearner* tLearner, bool bUseUniversalPool)
 	return CR_FAIL;
 }
 
-int main(int argc, char* argv[])
+int GetSettings()
 {
-	bool bDebug = argc == 1;
-
-	//user input. it must be up here for all data to be populated properly
-	std::cout << "Enter target pokemon's first egg group (order doesn't matter)\nIf the target is a baby pokemon, enter the first egg group of its evolved form\n>";
-	std::getline(std::cin, tTarget.sEggGroup1);
-	if (ValidateGroup(tTarget.sEggGroup1, false))
-		return 0;
-	std::cout << "Enter target pokemon's second egg group (if there is only one, just press Enter)\nIf the target is a baby pokemon, again pretend it's its evolved form\n>";
-	std::getline(std::cin, tTarget.sEggGroup2);
-	if (!tTarget.sEggGroup2.empty())
-	{
-		if (ValidateGroup(tTarget.sEggGroup2, false))
-			return 0;
-	}
-	else
-	{
-		tTarget.sEggGroup2 = tTarget.sEggGroup1;
-	}
-
 	std::cout << "Enter 1 to exclude \"special\" encounters (eg pokewalker)\nEnter 2 to exclude event pokemon\nEnter 3 to exclude both\nEnter nothing to include both\n>";
 	std::string sAnswer;
 	std::getline(std::cin, sAnswer);
@@ -1256,7 +1246,15 @@ int main(int argc, char* argv[])
 	if (sAnswer == "1")
 		bNoUniversalTMParents = true;
 
-	if (bDebug)
+	return 1;
+}
+
+int main(int argc, char* argv[])
+{
+	if (GetSettings() == 0)
+		return 0;
+
+	if (argc == 1)
 	{
 		std::ifstream stTargetReadFile("target.txt");
 		int iMoves = ProcessTargetFile(stTargetReadFile);
