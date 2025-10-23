@@ -1280,7 +1280,7 @@ int main(int argc, char* argv[])
 			stReadFile2.close();
 			return 0;
 		}
-		if (vMoveLearners.back().sMoveName.empty())
+		if (!vMoveLearners.empty() && vMoveLearners.back().sMoveName.empty())
 		{
 			std::cout << "\n Didn't find move name\n";
 			return 0;
