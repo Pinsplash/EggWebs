@@ -1474,27 +1474,8 @@ void WriteOutput()
 	writingFile.close();
 }
 
-int main(int argc, char* argv[])
+void PreSearch()
 {
-	if (GetSettings() == 0)
-		return 0;
-
-	if (argc == 1)
-	{
-		//this means we launched from visual studio, so all of the file names are hardcoded
-		if (ProcessFilesDebug() == 0)
-			return 0;
-	}
-	else
-	{
-		if (ProcessFilesNormal(argc, argv) == 0)
-			return 0;
-	}
-
-	SplitMultiLevelLearns();
-
-	FindTMsOfInterest();
-
 	for (MoveLearner& tTargetLearner : vTargetMoves)
 	{
 		//it may be pointless to find this move, but we trust the user to know what they're doing
@@ -1502,7 +1483,7 @@ int main(int argc, char* argv[])
 		if (tTargetLearner.eLearnMethod == LEARNBY_LEVELUP && stoi(tTargetLearner.sLevel) <= iMaxLevel)
 			std::cout << "Note: " << tTargetLearner.sMoveName << " is a levelup move below the level cap.\n";
 	}
-	
+
 	//print out our data so far
 	for (MoveLearner tLearner : vMoveLearners)
 		std::cout << tLearner.sMoveName << ": " << tLearner.InfoStr() << "\n";
@@ -1510,6 +1491,12 @@ int main(int argc, char* argv[])
 	std::cout << "Starting the chain search.\n";
 
 	std::sort(vMoveLearners.begin(), vMoveLearners.end(), sortMoves);
+}
+
+//the old search method which went ancestor->child
+//this approach can't deal very well with converging paths
+void OldSearchStart()
+{
 	for (MoveLearner& tLearner : vMoveLearners)
 	{
 		//of course we can breed our moves onto own species
@@ -1567,6 +1554,32 @@ int main(int argc, char* argv[])
 
 		EWSearchCleanup();
 	}
+}
+
+int main(int argc, char* argv[])
+{
+	if (GetSettings() == 0)
+		return 0;
+
+	if (argc == 1)
+	{
+		//this means we launched from visual studio, so all of the file names are hardcoded
+		if (ProcessFilesDebug() == 0)
+			return 0;
+	}
+	else
+	{
+		if (ProcessFilesNormal(argc, argv) == 0)
+			return 0;
+	}
+
+	SplitMultiLevelLearns();
+
+	FindTMsOfInterest();
+
+	PreSearch();
+	
+	OldSearchStart();
 
 	WriteOutput();
 	
