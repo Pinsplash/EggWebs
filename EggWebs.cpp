@@ -449,7 +449,7 @@ static bool ValidateMatchup(MoveLearner tMother, MoveLearner tChild, MoveLearner
 	return true;
 }
 
-static MoveLearner* NewMakeOffspringObject(MoveLearner& tLearner, int i)
+static MoveLearner* MakeOffspringObject(MoveLearner& tLearner, int i)
 {
 	MoveLearner* tMother;
 	bool bFound = false;
@@ -1436,7 +1436,7 @@ static void SearchRetryLoop(MoveLearner* tLearner, MoveLearner* tBottomChild)
 	}
 }
 
-static void NewSearchStart()
+static void SearchStart()
 {
 	bool bFoundTargetLearner = false;
 	for (MoveLearner& tFatherMove : vMoveLearners)
@@ -1464,7 +1464,7 @@ static void NewSearchStart()
 					if (sAllGroups[i] == vTargetMoves[0].sSpecies && !SpeciesCantUseTM(tFatherMove.sMoveName, sAllGroups[i]))
 					{
 						//make a learner object for everyone who can learn this universal TM
-						MoveLearner* tChild = NewMakeOffspringObject(tFatherMove, i);
+						MoveLearner* tChild = MakeOffspringObject(tFatherMove, i);
 						SearchRetryLoop(tChild, tChild);
 						break;
 					}
@@ -1501,8 +1501,7 @@ int main(int argc, char* argv[])
 
 	PreSearch();
 	
-	//OldSearchStart();
-	NewSearchStart();
+	SearchStart();
 
 	WriteOutput();
 	
