@@ -1249,112 +1249,110 @@ int GetSettings()
 	return 1;
 }
 
-int main(int argc, char* argv[])
+int ProcessFilesDebug()
 {
-	if (GetSettings() == 0)
+	std::ifstream stTargetReadFile("target.txt");
+	int iMoves = ProcessTargetFile(stTargetReadFile);
+	stTargetReadFile.close();
+
+	if (iMoves == 0) std::cout << "\n\nWARNING: ";
+	std::cout << "Found " << iMoves << " moves for target pokemon.\n";
+	if (iMoves == 0)
+	{
+		std::string sFuck;
+		std::getline(std::cin, sFuck);
 		return 0;
+	}
 
-	if (argc == 1)
+	std::ifstream stReadFile2("filename.txt");
+	if (ProcessMove(stReadFile2) == 1)
 	{
-		std::ifstream stTargetReadFile("target.txt");
-		int iMoves = ProcessTargetFile(stTargetReadFile);
-		stTargetReadFile.close();
-
-		if (iMoves == 0) std::cout << "\n\nWARNING: ";
-		std::cout << "Found " << iMoves << " moves for target pokemon.\n";
-		if (iMoves == 0)
-		{
-			std::string sFuck;
-			std::getline(std::cin, sFuck);
-			return 0;
-		}
-
-		std::ifstream stReadFile2("filename.txt");
-		if (ProcessMove(stReadFile2) == 1)
-		{
-			std::cout << "Error\n";
-			std::string sFuck;
-			std::getline(std::cin, sFuck);
-			stReadFile2.close();
-			return 0;
-		}
-		if (!vMoveLearners.empty() && vMoveLearners.back().sMoveName.empty())
-		{
-			std::cout << "\n Didn't find move name\n";
-			return 0;
-		}
+		std::cout << "Error\n";
+		std::string sFuck;
+		std::getline(std::cin, sFuck);
 		stReadFile2.close();
+		return 0;
 	}
-	else
+	if (!vMoveLearners.empty() && vMoveLearners.back().sMoveName.empty())
 	{
-		//always get target.txt before anything else
-		bool bFoundTargetFile = false;
-		for (int i = 1; i < argc; i++)
-		{
-			std::string sPath = argv[i];
-			if (sPath.find("target.txt") != std::string::npos)
-			{
-				bFoundTargetFile = true;
-				std::ifstream stTargetReadFile(sPath);
-				int iMoves = ProcessTargetFile(stTargetReadFile);
-				stTargetReadFile.close();
+		std::cout << "\n Didn't find move name\n";
+		return 0;
+	}
+	stReadFile2.close();
+	return 1;
+}
 
-				if (iMoves == 0) std::cout << "\n\nWARNING: ";
-				std::cout << "Found " << iMoves << " moves for target pokemon.\n";
-				if (iMoves == 0)
-				{
-					std::string sFuck;
-					std::getline(std::cin, sFuck);
-					return 0;
-				}
-			}
-		}
-		if (!bFoundTargetFile)
+int ProcessFilesNormal(int argc, char* argv[])
+{
+	//always get target.txt before anything else
+	bool bFoundTargetFile = false;
+	for (int i = 1; i < argc; i++)
+	{
+		std::string sPath = argv[i];
+		if (sPath.find("target.txt") != std::string::npos)
 		{
-			std::cout << "Error: target.txt missing.\n";
-			std::string sFuck;
-			std::getline(std::cin, sFuck);
-			return 0;
-		}
-		for (int i = 1;  i < argc; i++)
-		{
-			if (argc > 1)
-				std::cout << i << "/" << argc << " " << argv[i] << "\n";
-			std::string sPath = (argc == 1) ? "filename.txt" : argv[i];
-			std::ifstream stReadFile(sPath);
-			if (sPath.find("target.txt") != std::string::npos)
-				continue;
-			else if (sPath.find("output.csv") != std::string::npos)
-				continue;
-			else if (sPath.find(".txt") != std::string::npos)
-			{
-				if (ProcessMove(stReadFile) == 1)
-				{
-					std::cout << "Error\n";
-					std::string sFuck;
-					std::getline(std::cin, sFuck);
-					stReadFile.close();
-					return 0;
-				}
+			bFoundTargetFile = true;
+			std::ifstream stTargetReadFile(sPath);
+			int iMoves = ProcessTargetFile(stTargetReadFile);
+			stTargetReadFile.close();
 
-				if (vMoveLearners.back().sMoveName.empty())
-				{
-					std::cout << "\n Didn't find move name\n";
-					if (argc > 1)
-						std::cout << "file " << argv[i] << "\n";
-					return 0;
-				}
+			if (iMoves == 0) std::cout << "\n\nWARNING: ";
+			std::cout << "Found " << iMoves << " moves for target pokemon.\n";
+			if (iMoves == 0)
+			{
+				std::string sFuck;
+				std::getline(std::cin, sFuck);
+				return 0;
 			}
-			if (argc > 1)
-				std::cout << "finished " << argv[i] << "\n";
-			stReadFile.close();
 		}
 	}
-	//std::string sFuck;
-	//std::getline(std::cin, sFuck);
+	if (!bFoundTargetFile)
+	{
+		std::cout << "Error: target.txt missing.\n";
+		std::string sFuck;
+		std::getline(std::cin, sFuck);
+		return 0;
+	}
+	for (int i = 1; i < argc; i++)
+	{
+		if (argc > 1)
+			std::cout << i << "/" << argc << " " << argv[i] << "\n";
+		std::string sPath = (argc == 1) ? "filename.txt" : argv[i];
+		std::ifstream stReadFile(sPath);
+		if (sPath.find("target.txt") != std::string::npos)
+			continue;
+		else if (sPath.find("output.csv") != std::string::npos)
+			continue;
+		else if (sPath.find(".txt") != std::string::npos)
+		{
+			if (ProcessMove(stReadFile) == 1)
+			{
+				std::cout << "Error\n";
+				std::string sFuck;
+				std::getline(std::cin, sFuck);
+				stReadFile.close();
+				return 0;
+			}
 
-	//Sometimes a move can be learned at multiple levels. Bulbapedia writes them as comma separated values
-	//we want each level to be its own data point
+			if (vMoveLearners.back().sMoveName.empty())
+			{
+				std::cout << "\n Didn't find move name\n";
+				if (argc > 1)
+					std::cout << "file " << argv[i] << "\n";
+				return 0;
+			}
+		}
+		if (argc > 1)
+			std::cout << "finished " << argv[i] << "\n";
+		stReadFile.close();
+	}
+	return 1;
+}
+
+//Sometimes a move can be learned at multiple levels. Bulbapedia writes them as comma separated values
+//we want each level to be its own data point
+void SplitMultiLevelLearns()
+{
 	std::vector<MoveLearner> vNewMoves;
 	for (MoveLearner& tLearner : vMoveLearners)
 	{
@@ -1387,9 +1385,12 @@ int main(int argc, char* argv[])
 	vMoveLearners.insert(vMoveLearners.end(), vNewMoves.begin(), vNewMoves.end());
 	//clear out the old ones
 	vMoveLearners.erase(remove_if(vMoveLearners.begin(), vMoveLearners.end(), [](MoveLearner x) { return x.bEraseMe; }), vMoveLearners.end());
+}
 
-	//normally we don't care about TM learners as top-level ancestors, cause if we have a TM, we'd usually just teach it directly to the target mon
-	//however there are cases where the target mon can't learn the move by TM, but can learn it by levelup or egg, so we'd have to teach it to someone else first
+//normally we don't care about TM learners as top-level ancestors, cause if we have a TM, we'd usually just teach it directly to the target mon
+//however there are cases where the target mon can't learn the move by TM, but can learn it by levelup or egg, so we'd have to teach it to someone else first
+void FindTMsOfInterest()
+{
 	for (MoveLearner& tLearner : vMoveLearners)
 	{
 		//a TM learn
@@ -1414,6 +1415,77 @@ int main(int argc, char* argv[])
 			}
 		}
 	}
+}
+
+void WriteOutput()
+{
+	std::ofstream writingFile;
+	writingFile.open("output.csv");
+	//print chains
+	std::cout << vChains.size() << " chains\n";
+	for (BreedChain tChain : vChains)
+	{
+		if (tChain.vLineage.empty())
+		{
+			writingFile << "empty chain?\n";
+			continue;
+		}
+		int i = tChain.vLineage.size() - 1;
+		if (tChain.vLineage[i]->eLearnMethod == LEARNBY_LEVELUP)
+			writingFile << tChain.vLineage[i]->sLevel;
+		else if (tChain.vLineage[i]->eLearnMethod == LEARNBY_SPECIAL)
+			writingFile << "special! level unlisted";
+		else if (tChain.vLineage[i]->eLearnMethod == LEARNBY_EVENT)
+			writingFile << "event! level unlisted";
+		else if (tChain.vLineage[i]->eLearnMethod == LEARNBY_TM)
+			writingFile << "TM";
+		else if (tChain.vLineage[i]->eLearnMethod == LEARNBY_TM_UNIVERSAL)
+			writingFile << "TM (universal)";
+		else if (tChain.vLineage[i]->eLearnMethod == LEARNBY_EGG)
+			writingFile << "evolve then breed";
+		writingFile << ", " << tChain.vLineage[i]->sMoveName;
+		//for (std::vector<MoveLearner*>::reverse_iterator tLearner = tChain.vLineage.rbegin(); tLearner != tChain.vLineage.rend(); ++tLearner)
+		//for (MoveLearner* tLearner : tChain.vLineage)
+		for (; i >= 0; i--)
+		{
+			writingFile << ", " << tChain.vLineage[i]->InfoStr();
+		}
+		writingFile << "\n";
+	}
+	for (MoveLearner& tLearner : vMoveLearners)
+	{
+		//of course we can breed our moves onto own species
+		if (tLearner.sSpecies == tTarget.sSpecies)
+		{
+			if (IsUniversalTM(tLearner.sMoveName))
+			{
+				writingFile << "  , " << tLearner.sMoveName << ": universal TM\n";
+			}
+		}
+	}
+	writingFile.close();
+}
+
+int main(int argc, char* argv[])
+{
+	if (GetSettings() == 0)
+		return 0;
+
+	if (argc == 1)
+	{
+		//this means we launched from visual studio, so all of the file names are hardcoded
+		if (ProcessFilesDebug() == 0)
+			return 0;
+	}
+	else
+	{
+		if (ProcessFilesNormal(argc, argv) == 0)
+			return 0;
+	}
+
+	SplitMultiLevelLearns();
+
+	FindTMsOfInterest();
 
 	for (MoveLearner& tTargetLearner : vTargetMoves)
 	{
@@ -1478,51 +1550,8 @@ int main(int argc, char* argv[])
 		EWSearchCleanup();
 	}
 
-	std::ofstream writingFile;
-	writingFile.open("output.csv");
-	//print chains
-	std::cout << vChains.size() << " chains\n";
-	for (BreedChain tChain : vChains)
-	{
-		if (tChain.vLineage.empty())
-		{
-			writingFile << "empty chain?\n";
-			continue;
-		}
-		int i = tChain.vLineage.size() - 1;
-		if (tChain.vLineage[i]->eLearnMethod == LEARNBY_LEVELUP)
-			writingFile << tChain.vLineage[i]->sLevel;
-		else if (tChain.vLineage[i]->eLearnMethod == LEARNBY_SPECIAL)
-			writingFile << "special! level unlisted";
-		else if (tChain.vLineage[i]->eLearnMethod == LEARNBY_EVENT)
-			writingFile << "event! level unlisted";
-		else if (tChain.vLineage[i]->eLearnMethod == LEARNBY_TM)
-			writingFile << "TM";
-		else if (tChain.vLineage[i]->eLearnMethod == LEARNBY_TM_UNIVERSAL)
-			writingFile << "TM (universal)";
-		else if (tChain.vLineage[i]->eLearnMethod == LEARNBY_EGG)
-			writingFile << "evolve then breed";
-		writingFile << ", " << tChain.vLineage[i]->sMoveName;
-		//for (std::vector<MoveLearner*>::reverse_iterator tLearner = tChain.vLineage.rbegin(); tLearner != tChain.vLineage.rend(); ++tLearner)
-		//for (MoveLearner* tLearner : tChain.vLineage)
-		for (; i >= 0; i--)
-		{
-			writingFile << ", " << tChain.vLineage[i]->InfoStr();
-		}
-		writingFile << "\n";
-	}
-	for (MoveLearner& tLearner : vMoveLearners)
-	{
-		//of course we can breed our moves onto own species
-		if (tLearner.sSpecies == tTarget.sSpecies)
-		{
-			if (IsUniversalTM(tLearner.sMoveName))
-			{
-				writingFile << "  , " << tLearner.sMoveName << ": universal TM\n";
-			}
-		}
-	}
-	writingFile.close();
+	WriteOutput();
+	
 	std::cout << "done\n";
 	std::string sHack;
 	std::getline(std::cin, sHack);
