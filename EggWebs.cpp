@@ -29,7 +29,8 @@ enum MoveLearnMethod
 	LEARNBY_TM_UNIVERSAL,
 	LEARNBY_EGG,
 	LEARNBY_SPECIAL,
-	LEARNBY_EVENT
+	LEARNBY_EVENT,
+	LAST_LEARN_METHOD
 };
 
 //group crawl result
@@ -99,11 +100,10 @@ std::vector<std::string> vSpeciesBlacklist;
 std::vector<std::string> vTMLearnBlacklist;
 std::vector<std::string> vMovesDone;
 
-bool bExcludeSpecial = false;
-bool bExcludeEvent = false;
+std::vector<bool> vOriginalFatherExcludes = { false, false, false, false, false, false, false, false };
+std::vector<bool> vMotherExcludes =			{ false, false, false, false, false, false, false, false };
 int iMaxLevel = 100;
 bool bFastForward = false;
-bool bNoUniversalTMParents = false;
 
 bool is_number(const std::string& s)
 {
@@ -371,7 +371,7 @@ bool ValidateMatchup(MoveLearner tMother, MoveLearner tChild, MoveLearner tFathe
 
 	//if user requested, mother must learn the move by a means other than a universal TM (used for level golf)
 	//unless mother species is target species, which is okay
-	if (bNoUniversalTMParents && tMother.eLearnMethod == LEARNBY_TM_UNIVERSAL && tMother.sSpecies != tTarget.sSpecies)
+	if (vMotherExcludes[tMother.eLearnMethod] && tMother.sSpecies != tTarget.sSpecies)
 		return false;
 
 	//have to be straight
@@ -1219,17 +1219,30 @@ int GroupCrawl(MoveLearner* tLearner, bool bUseUniversalPool)
 
 int GetSettings()
 {
-	std::cout << "Enter 1 to exclude \"special\" encounters (eg pokewalker)\nEnter 2 to exclude event pokemon\nEnter 3 to exclude both\nEnter nothing to include both\n>";
+	std::cout << "Enter the number associated with each method of learning a move that you don't want the original father(s) to know.\nEnter nothing to allow all methods.\n";
+	std::cout << "1: Level up\n";
+	std::cout << "2: TM\n";
+	std::cout << "3: Universal TM\n";
+	std::cout << "4: Special (eg pokewalker)\n";
+	std::cout << "5: Event\n>";
 	std::string sAnswer;
 	std::getline(std::cin, sAnswer);
-	if (sAnswer == "1")
-		bExcludeSpecial = true;
-	if (sAnswer == "2")
-		bExcludeEvent = true;
-	if (sAnswer == "3")
-		bExcludeEvent = bExcludeSpecial = true;
+	if (sAnswer.find("1") != std::string::npos) vOriginalFatherExcludes[LEARNBY_LEVELUP] = true;
+	if (sAnswer.find("2") != std::string::npos) vOriginalFatherExcludes[LEARNBY_TM] = true;
+	if (sAnswer.find("3") != std::string::npos) vOriginalFatherExcludes[LEARNBY_TM_UNIVERSAL] = true;
+	if (sAnswer.find("4") != std::string::npos) vOriginalFatherExcludes[LEARNBY_SPECIAL] = true;
+	if (sAnswer.find("5") != std::string::npos) vOriginalFatherExcludes[LEARNBY_EVENT] = true;
 
-	std::cout << "Enter maximum level the pokemon involved in chains may be at\n>";
+	std::cout << "As above, but for controlling how mothers can learn a move (not counting ones of the target species).\n>";
+	std::string sAnswer;
+	std::getline(std::cin, sAnswer);
+	if (sAnswer.find("1") != std::string::npos) vMotherExcludes[LEARNBY_LEVELUP] = true;
+	if (sAnswer.find("2") != std::string::npos) vMotherExcludes[LEARNBY_TM] = true;
+	if (sAnswer.find("3") != std::string::npos) vMotherExcludes[LEARNBY_TM_UNIVERSAL] = true;
+	if (sAnswer.find("4") != std::string::npos) vMotherExcludes[LEARNBY_SPECIAL] = true;
+	if (sAnswer.find("5") != std::string::npos) vMotherExcludes[LEARNBY_EVENT] = true;
+
+	std::cout << "Enter maximum level the pokemon involved in chains may be at.\nEnter nothing to set no limit\n>";
 	std::getline(std::cin, sAnswer);
 	if (sAnswer.empty())
 		iMaxLevel = 100;
@@ -1240,11 +1253,6 @@ int GetSettings()
 	std::getline(std::cin, sAnswer);
 	if (sAnswer == "1")
 		bFastForward = true;
-
-	std::cout << "Enter 1 to avoid ancestors that can only learn a move by universal TM (level golf).\nOtherwise, enter nothing\n>";
-	std::getline(std::cin, sAnswer);
-	if (sAnswer == "1")
-		bNoUniversalTMParents = true;
 
 	return 1;
 }
@@ -1508,45 +1516,55 @@ int main(int argc, char* argv[])
 		if (tLearner.sSpecies == tTarget.sSpecies)
 			continue;
 
+		//species blacklist
 		if (std::find(vSpeciesBlacklist.begin(), vSpeciesBlacklist.end(), tLearner.sSpecies) != vSpeciesBlacklist.end())
 			continue;
 
+		//user already accepted a chain for this move?
 		if (std::find(vMovesDone.begin(), vMovesDone.end(), tLearner.sMoveName) != vMovesDone.end())
 			continue;
-		
-		if (((tLearner.eLearnMethod != LEARNBY_TM_UNIVERSAL && tLearner.eLearnMethod != LEARNBY_TM) || tLearner.bTMOfInterest) &&
-			tLearner.eLearnMethod != LEARNBY_EGG &&
-			(tLearner.eLearnMethod != LEARNBY_SPECIAL || !bExcludeSpecial) &&
-			(tLearner.eLearnMethod != LEARNBY_EVENT || !bExcludeEvent))
+
+		//reject TM starts unless it's a TM of interest
+		if ((tLearner.eLearnMethod == LEARNBY_TM_UNIVERSAL || tLearner.eLearnMethod == LEARNBY_TM) && !tLearner.bTMOfInterest)
+			continue;
+
+		//reject egg starts always
+		if (tLearner.eLearnMethod == LEARNBY_EGG)
+			continue;
+
+		//reject user-specified starts
+		if (vOriginalFatherExcludes[tLearner.eLearnMethod])
+			continue;
+
+		//level cap
+		if (tLearner.eLearnMethod == LEARNBY_LEVELUP && stoi(tLearner.sLevel) > iMaxLevel)
+			continue;
+
+		//female-only mons need a compatible male
+		if (tLearner.bFemaleOnly)
+			continue;
+
+		//std::cout << tLearner.sSpecies << " top level\n";
+		tLearner.bExplored = true;
+		vLearnerQueue.push_back(&tLearner);
+		int iResult = GroupCrawl(&tLearner, false);
+		while (iResult == CR_REJECT_MIDDLE)
 		{
-			if (tLearner.eLearnMethod != LEARNBY_LEVELUP || stoi(tLearner.sLevel) <= iMaxLevel)
+			vLearnerQueue.push_back(&tLearner);
+			iResult = GroupCrawl(&tLearner, false);
+		}
+		EWSearchCleanup();
+		if (iResult == CR_FAIL && IsUniversalTM(tLearner.sMoveName))
+		{
+			vLearnerQueue.push_back(&tLearner);
+			iResult = GroupCrawl(&tLearner, true);
+			while (iResult == CR_REJECT_MIDDLE)
 			{
-				//female-only mons need a compatible male
-				if (!tLearner.bFemaleOnly)
-				{
-					//std::cout << tLearner.sSpecies << " top level\n";
-					tLearner.bExplored = true;
-					vLearnerQueue.push_back(&tLearner);
-					int iResult = GroupCrawl(&tLearner, false);
-					while (iResult == CR_REJECT_MIDDLE)
-					{
-						vLearnerQueue.push_back(&tLearner);
-						iResult = GroupCrawl(&tLearner, false);
-					}
-					EWSearchCleanup();
-					if (iResult == CR_FAIL && IsUniversalTM(tLearner.sMoveName))
-					{
-						vLearnerQueue.push_back(&tLearner);
-						iResult = GroupCrawl(&tLearner, true);
-						while (iResult == CR_REJECT_MIDDLE)
-						{
-							vLearnerQueue.push_back(&tLearner);
-							iResult = GroupCrawl(&tLearner, true);
-						}
-					}
-				}
+				vLearnerQueue.push_back(&tLearner);
+				iResult = GroupCrawl(&tLearner, true);
 			}
 		}
+
 		EWSearchCleanup();
 	}
 
