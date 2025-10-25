@@ -38,5 +38,8 @@
 
 # program input and output (put yours in the root folder)
 filename.txt
+filename2.txt
+filename3.txt
+filename4.txt
 *.csv
 target.txt
