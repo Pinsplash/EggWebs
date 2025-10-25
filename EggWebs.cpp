@@ -416,7 +416,7 @@ static bool ValidateMatchup(std::vector<bool>& bClosedList, std::vector<MoveLear
 		return false;
 
 	//don't already be explored (don't read into this)
-	if (bClosedList[tMother.iID] || bClosedList[tChild.iID])
+	if (bClosedList[tFather.iID])
 		return false;
 
 	//manaphy can only breed with ditto and can only produce phione
@@ -485,12 +485,12 @@ static bool ValidateMatchup(std::vector<bool>& bClosedList, std::vector<MoveLear
 
 	//make sure father wasn't already in the family tree (incest is redundant and leads to recursion)
 	bool bFoundInLineageAlready = false;
-	MoveLearner* pParent = pParentList[tBottomChild.iID];
-	while (pParent && !bFoundInLineageAlready)
+	MoveLearner* pCurrentLearner = &tBottomChild;
+	while (pCurrentLearner && !bFoundInLineageAlready)
 	{
-		if (pParent->sSpecies == tFather.sSpecies)
+		if (pCurrentLearner->sSpecies == tFather.sSpecies)
 			bFoundInLineageAlready = true;
-		pParent = pParentList[pParent->iID];
+		pCurrentLearner = pParentList[pCurrentLearner->iID];
 	}
 	if (bFoundInLineageAlready)
 		return false;
@@ -1086,7 +1086,6 @@ static int ProcessFilesNormal(int argc, char* argv[])
 //we want each level to be its own data point
 static void SplitMultiLevelLearns()
 {
-	std::vector<MoveLearner> vNewMoves;
 	for (MoveLearner& tLearner : vMoveLearners)
 	{
 		std::vector<std::string> sLevels;
@@ -1110,12 +1109,10 @@ static void SplitMultiLevelLearns()
 				tNewLearner.sMoveName = tLearner.sMoveName;
 				tNewLearner.eLearnMethod = tLearner.eLearnMethod;
 				tNewLearner.bCanComeFromEgg = tLearner.bCanComeFromEgg;
-				vNewMoves.push_back(tNewLearner);
+				AddMoveToMainList(tNewLearner);
 			}
 		}
 	}
-	//add split up moves into the main std::vector
-	vMoveLearners.insert(vMoveLearners.end(), vNewMoves.begin(), vNewMoves.end());
 	//clear out the old ones
 	vMoveLearners.erase(remove_if(vMoveLearners.begin(), vMoveLearners.end(), [](MoveLearner x) { return x.bEraseMe; }), vMoveLearners.end());
 }
@@ -1237,11 +1234,12 @@ static int FindFatherForMove(std::vector<bool>& bClosedList, std::vector<MoveLea
 				for (int i = 0; i < iCombo; i++)
 				{
 					MoveLearner* pMove = vLearns[i];
-					if (pMove)// && pMove->eLearnMethod != LEARNBY_EGG)
+					if (pMove)
 					{
 						bool bMoveIsOurs = pMove->sMoveName == tLearner->sMoveName;
 						int iResult = CR_SUCCESS;
-						if (!bMoveIsOurs)
+						//even if it's not an egg move, we still want to actually let the user know about the chain, and the simplest way to do that is to go through here again
+						if (!bMoveIsOurs)// && pMove->eLearnMethod == LEARNBY_EGG)
 							iResult = SearchRetryLoop(pMove, pMove);
 						if (iResult == CR_SUCCESS)
 							tComboData.SetSatisfied(pMove->sMoveName, true);
@@ -1252,6 +1250,12 @@ static int FindFatherForMove(std::vector<bool>& bClosedList, std::vector<MoveLea
 			else
 				continue;
 		}
+
+		//user already accepted a chain for this move? (might have happened during SearchRetryLoop call above)
+		if (std::find(vMovesDone.begin(), vMovesDone.end(), tFather.sMoveName) != vMovesDone.end())
+			continue;
+
+		std::cout << "FindFatherForMove got " << tFather.sSpecies << " (tLearner " << tLearner->sSpecies << ", tBottomChild " << tBottomChild->sSpecies << ")\n";
 
 		bClosedList[tFather.iID] = true;
 
@@ -1264,7 +1268,15 @@ static int FindFatherForMove(std::vector<bool>& bClosedList, std::vector<MoveLea
 		}
 		else if (pParentList[tBottomChild->iID])
 		{
+			//check to make sure one of our nested calls to this function did not end in rejecting a node
 			MoveLearner* tCurrentLearner = tBottomChild;
+			while (pParentList[tCurrentLearner->iID])
+			{
+				if (tCurrentLearner->bRejected)
+					return CR_FAIL;
+				tCurrentLearner = pParentList[tCurrentLearner->iID];
+			}
+			tCurrentLearner = tBottomChild;
 			std::cout << "\nChain for " << tLearner->sMoveName << ": ";
 			std::cout << tCurrentLearner->InfoStr();
 			while (pParentList[tCurrentLearner->iID])
@@ -1290,16 +1302,16 @@ static int FindFatherForMove(std::vector<bool>& bClosedList, std::vector<MoveLea
 			if (bFastForward || sAnswer.empty())
 			{
 				//record chain for output
-				MoveLearner* tRecord = &tFather;
+				MoveLearner* tRecord = tBottomChild;
 				BreedChain tNewChain;
-				while (pParentList[tRecord->iID])
+				while (tRecord)
 				{
 					//std::cout << " " << tRecord->sSpecies;
 					tNewChain.vLineage.push_back(tRecord);
 					tRecord = pParentList[tRecord->iID];
 				}
 				//std::cout << " " << tRecord->sSpecies;
-				tNewChain.vLineage.push_back(tRecord);
+				//tNewChain.vLineage.push_back(tRecord);
 				//std::cout << "\n";
 				vChains.push_back(tNewChain);
 				//add to a list of moves we've decided we're satisfied with
