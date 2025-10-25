@@ -358,7 +358,7 @@ static bool ValidateMatchup(MoveLearner tMother, MoveLearner tChild, MoveLearner
 		return false;
 
 	//must learn the move in question
-	if (!tMother.bIsDitto && (tMother.sMoveName != tBottomChild.sMoveName))
+	if (!tMother.bIsDitto && (tMother.sMoveName != tBottomChild.sMoveName || tFather.sMoveName != tBottomChild.sMoveName))
 		return false;
 
 	//no reason to breed with own species. this doesn't produce interesting chains
@@ -1317,13 +1317,16 @@ static int FindFatherForMove(MoveLearner* tLearner, MoveLearner* tBottomChild)
 		if (!ValidateMatchup(*tLearner, *tLearner, tFather, *tBottomChild, false))
 			continue;
 
+		tFather.bExplored = true;
+
+		//std::cout << tLearner->iID << " parent set to " << tFather.iID << "\n";
 		tLearner->pParent = &tFather;
 		if (tFather.eLearnMethod == LEARNBY_EGG)
 		{
 			//okay, now find a father that this one can learn it from
 			FindFatherForMove(&tFather, tBottomChild);
 		}
-		else
+		else if (tBottomChild->pParent)
 		{
 			MoveLearner* tCurrentLearner = tBottomChild;
 			std::cout << "\nChain for " << tLearner->sMoveName << ": ";
@@ -1417,13 +1420,14 @@ static int FindFatherForMove(MoveLearner* tLearner, MoveLearner* tBottomChild)
 							if (tMarkLearner->iID == iID)
 								tMarkLearner->bRejected = true;
 					}
-					EWSearchCleanup();
 				}
+				EWSearchCleanup();
 				return CR_REJECTED;
 			}
 		}
 	}
 	//if there are no fathers left to look at, leave
+	EWSearchCleanup();
 	return CR_FAIL;
 }
 
@@ -1450,7 +1454,9 @@ static void SearchStart()
 			if (tFatherMove.sSpecies == tTargetMove.sSpecies && tFatherMove.sMoveName == tTargetMove.sMoveName)
 			{
 				bFoundTargetLearner = true;
-				SearchRetryLoop(&tFatherMove, &tTargetMove);
+				SearchRetryLoop(&tFatherMove, &tFatherMove);
+				if (std::find(vMovesDone.begin(), vMovesDone.end(), tFatherMove.sMoveName) != vMovesDone.end())
+					break;
 			}
 		}
 		if (!bFoundTargetLearner)
@@ -1472,7 +1478,8 @@ static void SearchStart()
 			}
 			else
 			{
-				assert(false);
+				//std::cout << "Couldn't find instance of " << vTargetMoves[0].sSpecies << " learning " << tFatherMove.sMoveName << "\n";
+				//assert(false);
 			}
 		}
 	}
