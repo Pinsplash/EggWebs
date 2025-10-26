@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="core.cpp" />
     <ClCompile Include="data_gen4.cpp" />
     <ClCompile Include="EggWebs.cpp" />
   </ItemGroup>

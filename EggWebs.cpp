@@ -140,11 +140,8 @@ struct ComboBreedData
 	}
 };
 
-std::vector<MoveLearner> vMoveLearners;
-//std::vector<BreedChain> vChains;
 std::string g_sTargetSpecies;
-//TODO: why is this * unlike vMoveLearners and vTargetMoves?
-std::vector<MoveLearner*> vUniversalPool;
+std::vector<MoveLearner*> vMoveLearners;
 std::vector<std::string> vTMLearnBlacklist;
 std::vector<std::string> vMovesDone;
 std::vector<std::string> vMovesBeingExplored;
@@ -155,6 +152,9 @@ int iMaxLevel = 100;
 bool bFastForward = false;
 int iLearnerCount = 0;
 ComboBreedData tComboData;
+
+//there should be no reason for a breeding chain to EVER be this long
+int iMaxDepth = 20;
 
 //for some reason my brain thinks this is called "is_numeric" so i'm putting that text here for the next time i'm searching for this
 static bool is_number(const std::string& s)
@@ -186,36 +186,36 @@ static bool CanComeFromEgg(std::string sSpecies)
 	return false;
 }
 
-static bool IsBabyPokemon(MoveLearner& tLearner)
+static bool IsBabyPokemon(MoveLearner* tLearner)
 {
-	for (int i = 0; i < 53; i += 3)
+	for (int i = 0; i < 18; i++)
 	{
-		if (sBabyMons[i] == tLearner.sSpecies)
+		if (sBabyMons[i].sSpecies == tLearner->sSpecies)
 		{
-			std::cout << tLearner.sSpecies << " is a baby\n";
-			tLearner.sEggGroup1 = sBabyMons[i + 1];
-			tLearner.sEggGroup2 = sBabyMons[i + 2];
+			std::cout << tLearner->sSpecies << " is a baby\n";
+			tLearner->sEggGroup1 = sBabyMons[i].sEggGroup1;
+			tLearner->sEggGroup2 = sBabyMons[i].sEggGroup2;
 			return true;
 		}
 	}
 	return false;
 }
 
-static bool IsFemaleOnly(MoveLearner& tLearner)
+static bool IsFemaleOnly(MoveLearner* tLearner)
 {
 	for (int i = 0; i < 10; i++)
 	{
-		if (sFemaleOnlyMons[i] == tLearner.sSpecies)
+		if (sFemaleOnlyMons[i] == tLearner->sSpecies)
 			return true;
 	}
 	return false;
 }
 
-static bool IsMaleOnly(MoveLearner& tLearner)
+static bool IsMaleOnly(MoveLearner* tLearner)
 {
 	for (int i = 0; i < 10; i++)
 	{
-		if (sMaleOnlyMons[i] == tLearner.sSpecies)
+		if (sMaleOnlyMons[i] == tLearner->sSpecies)
 			return true;
 	}
 	return false;
@@ -269,17 +269,17 @@ static void RecursiveCSVParse(std::string input, size_t iTokenStart, size_t iTok
 }
 
 //sort by method, and sort level moves by level (lower ones first)
-static bool sortMoves(const MoveLearner& a, const MoveLearner& b)
+static bool sortMoves(const MoveLearner* a, const MoveLearner* b)
 {
-	if (a.eLearnMethod == b.eLearnMethod && b.eLearnMethod == LEARNBY_LEVELUP)
+	if (a->eLearnMethod == b->eLearnMethod && b->eLearnMethod == LEARNBY_LEVELUP)
 	{
 		//if (!is_number(a.sLevel) || !is_number(a.sLevel))
 		//	return true;
-		return std::stoi(a.sLevel) < std::stoi(b.sLevel);
+		return std::stoi(a->sLevel) < std::stoi(b->sLevel);
 	}
 	else
 	{
-		return a.eLearnMethod > b.eLearnMethod;
+		return a->eLearnMethod > b->eLearnMethod;
 	}
 }
 
@@ -325,22 +325,22 @@ static int ValidateGroup(std::string& sGroupName, bool bQuiet)
 	}
 }
 
-static void AddMoveToMainList(MoveLearner tNewLearner)
+static void AddMoveToMainList(MoveLearner* tNewLearner)
 {
-	tNewLearner.iID = iLearnerCount;
+	tNewLearner->iID = iLearnerCount;
 	iLearnerCount++;
 	vMoveLearners.push_back(tNewLearner);
-	if (iCombo)
+	if (iCombo && tNewLearner->eLearnMethod != LEARNBY_TM_UNIVERSAL)
 	{
-		tComboData.AddMove(tNewLearner.sMoveName);
+		tComboData.AddMove(tNewLearner->sMoveName);
 	}
 }
 
 static MoveLearner* GetLearnerFromMainList(int iWantedID)
 {
-	for (MoveLearner& tLearner : vMoveLearners)
-		if (tLearner.iID == iWantedID)
-			return &tLearner;
+	for (MoveLearner* tLearner : vMoveLearners)
+		if (tLearner->iID == iWantedID)
+			return tLearner;
 }
 
 static std::string ProcessAnnotatedCell(std::string sTextLine, size_t& iPipeLocation, size_t iValue1End, size_t& iSupStart, bool bQuiet)
@@ -402,22 +402,22 @@ static std::string ProcessLevelCell(std::string sTextLine, size_t& iPipeLocation
 }
 
 //bSkipNewGroupCheck is false in every call to this function. just for debug purposes?
-static bool ValidateMatchup(std::vector<bool>& bClosedList, std::vector<MoveLearner*>& pParentList, MoveLearner tMother, MoveLearner tChild, MoveLearner tFather, MoveLearner tBottomChild, bool bSkipNewGroupCheck)
+static bool ValidateMatchup(std::vector<bool>& bClosedList, std::vector<MoveLearner*>& pParentList, MoveLearner tMother, MoveLearner tChild, MoveLearner* tFather, MoveLearner tBottomChild, bool bSkipNewGroupCheck)
 {
 	//you can't breed these methods
 	if (tMother.eLearnMethod == LEARNBY_EVENT || tMother.eLearnMethod == LEARNBY_SPECIAL)
 		return false;
 
 	//must learn the move in question
-	if (!tMother.bIsDitto && (tMother.sMoveName != tBottomChild.sMoveName || tFather.sMoveName != tBottomChild.sMoveName))
+	if (!tMother.bIsDitto && (tMother.sMoveName != tBottomChild.sMoveName || tFather->sMoveName != tBottomChild.sMoveName))
 		return false;
 
 	//no reason to breed with own species. this doesn't produce interesting chains
-	if (tMother.sSpecies == tFather.sSpecies || tChild.sSpecies == tFather.sSpecies)
+	if (tMother.sSpecies == tFather->sSpecies || tChild.sSpecies == tFather->sSpecies)
 		return false;
 
 	//don't already be explored (don't read into this)
-	if (bClosedList[tFather.iID])
+	if (bClosedList[tFather->iID])
 		return false;
 
 	//manaphy can only breed with ditto and can only produce phione
@@ -430,42 +430,42 @@ static bool ValidateMatchup(std::vector<bool>& bClosedList, std::vector<MoveLear
 		return false;
 
 	//have to be straight
-	if ((tMother.bFemaleOnly && tFather.bFemaleOnly) || (tMother.bMaleOnly && tFather.bMaleOnly))
+	if ((tMother.bFemaleOnly && tFather->bFemaleOnly) || (tMother.bMaleOnly && tFather->bMaleOnly))
 		return false;
 
 	//have to have a matching egg group
-	bool bCommonEggGroup = StringPairMatch(tMother.sEggGroup1, tMother.sEggGroup2, tFather.sEggGroup1, tFather.sEggGroup2);
+	bool bCommonEggGroup = StringPairMatch(tMother.sEggGroup1, tMother.sEggGroup2, tFather->sEggGroup1, tFather->sEggGroup2);
 	if (!tMother.bIsDitto && !bCommonEggGroup)
 		return false;
 
 	//mother has to have a new egg group in order to produce good useful chains
-	bool bNewEggGroup = !StringPairIdent(tMother.sEggGroup1, tMother.sEggGroup2, tFather.sEggGroup1, tFather.sEggGroup2);
+	bool bNewEggGroup = !StringPairIdent(tMother.sEggGroup1, tMother.sEggGroup2, tFather->sEggGroup1, tFather->sEggGroup2);
 	bool bChildIsTargetSpecies = tChild.sSpecies == tBottomChild.sSpecies;
 	if (!bSkipNewGroupCheck && !tMother.bIsDitto && !bNewEggGroup && !bChildIsTargetSpecies)
 		return false;
 
 	//level cap
-	if (tFather.eLearnMethod == LEARNBY_LEVELUP && stoi(tFather.sLevel) > iMaxLevel)
+	if (tFather->eLearnMethod == LEARNBY_LEVELUP && stoi(tFather->sLevel) > iMaxLevel)
 		return false;
 
 	//blacklist
-	if (tFather.bRejected)
+	if (tFather->bRejected)
 		return false;
 
 	//fathers must be male, mothers must be female or ditto
-	if (tFather.bFemaleOnly || tMother.bMaleOnly)
+	if (tFather->bFemaleOnly || tMother.bMaleOnly)
 		return false;
 
 	//if the child knows the move by level up, both parents must actually know the move to pass it on
 	bool bChildLearnsByLevelUp = tChild.eLearnMethod == LEARNBY_LEVELUP;
 	bool bMotherLearnsByLevelUp = tMother.eLearnMethod == LEARNBY_LEVELUP;
-	bool bFatherLearnsByLevelUp = tFather.eLearnMethod == LEARNBY_LEVELUP;
+	bool bFatherLearnsByLevelUp = tFather->eLearnMethod == LEARNBY_LEVELUP;
 	if (bChildLearnsByLevelUp && !(bMotherLearnsByLevelUp && bFatherLearnsByLevelUp))
 		return false;
 	if (bChildLearnsByLevelUp && !tMother.bIsDitto)
 	{
 		bool bMotherLearnsWithinMaximum = stoi(tMother.sLevel) <= iMaxLevel;
-		bool bFatherLearnsWithinMaximum = stoi(tFather.sLevel) <= iMaxLevel;
+		bool bFatherLearnsWithinMaximum = stoi(tFather->sLevel) <= iMaxLevel;
 		if (!bMotherLearnsWithinMaximum || !bFatherLearnsWithinMaximum || tMother.bIsDitto)
 			return false;
 	}
@@ -489,7 +489,7 @@ static bool ValidateMatchup(std::vector<bool>& bClosedList, std::vector<MoveLear
 	MoveLearner* pCurrentLearner = &tBottomChild;
 	while (pCurrentLearner && !bFoundInLineageAlready)
 	{
-		if (pCurrentLearner->sSpecies == tFather.sSpecies)
+		if (pCurrentLearner->sSpecies == tFather->sSpecies)
 			bFoundInLineageAlready = true;
 		pCurrentLearner = pParentList[pCurrentLearner->iID];
 	}
@@ -498,56 +498,46 @@ static bool ValidateMatchup(std::vector<bool>& bClosedList, std::vector<MoveLear
 	return true;
 }
 
-static MoveLearner* MakeOffspringObject(MoveLearner& tLearner, int i)
+static MoveLearner* MakeOffspringObject(std::string sWantedMoveName, int i)
 {
-	MoveLearner* tMother;
-	bool bFound = false;
+	/*
 	//check if one exists already
-	for (MoveLearner* tProspectiveLearner : vUniversalPool)
+	for (MoveLearner* tProspectiveLearner : vMoveLearners)
 	{
-		if (tProspectiveLearner->sMoveName == tLearner.sMoveName && tProspectiveLearner->sSpecies == sAllGroups[i])
+		if (tProspectiveLearner->sMoveName == sWantedMoveName && tProspectiveLearner->sSpecies == sAllGroups[i].sSpecies)
 		{
 			return tProspectiveLearner;
 		}
 	}
-	tMother = new MoveLearner;
-	tMother->sMoveName = tLearner.sMoveName;
-	tMother->sSpecies = sAllGroups[i];
-	tMother->sEggGroup1 = sAllGroups[i + 1];
-	tMother->sEggGroup2 = sAllGroups[i + 2];
+	*/
+	MoveLearner* tMother = new MoveLearner;
+	tMother->sMoveName = sWantedMoveName;
+	tMother->sSpecies = sAllGroups[i].sSpecies;
+	tMother->sEggGroup1 = sAllGroups[i].sEggGroup1;
+	tMother->sEggGroup2 = sAllGroups[i].sEggGroup2;
 	ValidateGroup(tMother->sEggGroup1, true);
 	ValidateGroup(tMother->sEggGroup2, true);
 	tMother->eLearnMethod = LEARNBY_TM_UNIVERSAL;
-	tMother->iID = iLearnerCount;
-	iLearnerCount++;
-	vUniversalPool.push_back(tMother);
+	AddMoveToMainList(tMother);
 	return tMother;
 }
 
 //search in list to see if father has a learn for this move
 //TODO: some work to be done here concerning special/event methods, but what exactly?
-static bool FatherSatisfiesMoves(MoveLearner tFather, std::vector<MoveLearner*>& vLearns)
+static bool FatherSatisfiesMoves(MoveLearner* tFather, std::vector<MoveLearner*>& vLearns)
 {
 	for (int i = 0; i < iCombo; i++)
 	{
 		if (!tComboData.bSatisfiedStatus[i])
 		{
 			bool bGood = false;
-			for (MoveLearner& tLearner : vMoveLearners)
+			for (MoveLearner* tLearner : vMoveLearners)
 			{
-				if (tFather.sSpecies == tLearner.sSpecies && tLearner.sMoveName == tComboData.sMoves[i])
+				if (tFather->sSpecies == tLearner->sSpecies && tLearner->sMoveName == tComboData.sMoves[i])
 				{
-					vLearns[i] = &tLearner;
+					vLearns[i] = tLearner;
 					bGood = true;
 				}
-			}
-
-			if (IsUniversalTM(tComboData.sMoves[i]) && !SpeciesCantUseTM(tComboData.sMoves[i], tFather.sSpecies))
-			{
-				for (int i = 0; i < 1479; i += 3)
-					if (sAllGroups[i] == tFather.sSpecies)
-						vLearns[i] = MakeOffspringObject(tFather, i);
-				bGood = true;
 			}
 
 			if (!bGood)
@@ -685,8 +675,8 @@ static int ProcessMove(std::ifstream& stReadFile)
 				int iOffsetColumns = 4 - iHiddenColumns;
 				if ((bLevelupSectionInside || bTMSectionInside || bBreedSectionInside || bSpecialSectionInside || bEventSectionInside) && sTextLine.find("Moveentry") != std::string::npos)
 				{
-					MoveLearner tNewLearner;
-					tNewLearner.sMoveName = sMoveName;
+					MoveLearner* tNewLearner = new MoveLearner;
+					tNewLearner->sMoveName = sMoveName;
 					size_t iFormParamStart = sTextLine.find("formsig=");
 
 					//read over template name
@@ -719,8 +709,8 @@ static int ProcessMove(std::ifstream& stReadFile)
 					{
 						iPipeLocation = iPokemonNameEnd;
 					}
-					tNewLearner.sSpecies = sPokemonName;
-					if (tNewLearner.sSpecies.empty())
+					tNewLearner->sSpecies = sPokemonName;
+					if (tNewLearner->sSpecies.empty())
 					{
 						std::cout << "\n no name for pokemon\n";
 						std::cout << sTextLine << "\n";
@@ -728,13 +718,13 @@ static int ProcessMove(std::ifstream& stReadFile)
 					}
 					if (sDexNumber == "0029")
 					{
-						tNewLearner.sSpecies = "Nidoran F";
+						tNewLearner->sSpecies = "Nidoran F";
 					}
 					else if (sDexNumber == "0032")
 					{
-						tNewLearner.sSpecies = "Nidoran M";
+						tNewLearner->sSpecies = "Nidoran M";
 					}
-					tNewLearner.bCanComeFromEgg = CanComeFromEgg(tNewLearner.sSpecies);
+					tNewLearner->bCanComeFromEgg = CanComeFromEgg(tNewLearner->sSpecies);
 					//if (!tNewLearner.bCanComeFromEgg)
 					//	std::cout << tNewLearner.sSpecies << " can't come from egg\n";
 					iPipeLocation++;
@@ -757,11 +747,11 @@ static int ProcessMove(std::ifstream& stReadFile)
 					//find if we are a baby pokemon
 					//bulba breed learnset tables will SOMETIMES list the egg groups of the evolved pokemon, but not always.
 					//we'll provide that data ourself just in case
-					tNewLearner.bBaby = IsBabyPokemon(tNewLearner);
-					tNewLearner.bFemaleOnly = IsFemaleOnly(tNewLearner);
-					tNewLearner.bMaleOnly = IsMaleOnly(tNewLearner);
+					tNewLearner->bBaby = IsBabyPokemon(tNewLearner);
+					tNewLearner->bFemaleOnly = IsFemaleOnly(tNewLearner);
+					tNewLearner->bMaleOnly = IsMaleOnly(tNewLearner);
 					//babies just got their egg groups, skip ahead
-					if (tNewLearner.bBaby)
+					if (tNewLearner->bBaby)
 					{
 						iPipeLocation = sTextLine.find("|", iPipeLocation);
 						iPipeLocation++;
@@ -772,17 +762,17 @@ static int ProcessMove(std::ifstream& stReadFile)
 					{
 						//these pokemon had only one egg group before gen 8, and bulba's tables now list them both
 						//then shift them over the parameters
-						if (tNewLearner.sSpecies == "Ralts" || tNewLearner.sSpecies == "Kirlia" || tNewLearner.sSpecies == "Gardevoir" || tNewLearner.sSpecies == "Gallade")
+						if (tNewLearner->sSpecies == "Ralts" || tNewLearner->sSpecies == "Kirlia" || tNewLearner->sSpecies == "Gardevoir" || tNewLearner->sSpecies == "Gallade")
 						{
-							tNewLearner.sEggGroup1 = tNewLearner.sEggGroup2 = "amorphous";
+							tNewLearner->sEggGroup1 = tNewLearner->sEggGroup2 = "amorphous";
 							iPipeLocation = sTextLine.find("|", iPipeLocation);
 							iPipeLocation++;
 							iPipeLocation = sTextLine.find("|", iPipeLocation);
 							iPipeLocation++;
 						}
-						else if (tNewLearner.sSpecies == "Trapinch" || tNewLearner.sSpecies == "Vibrava" || tNewLearner.sSpecies == "Flygon")
+						else if (tNewLearner->sSpecies == "Trapinch" || tNewLearner->sSpecies == "Vibrava" || tNewLearner->sSpecies == "Flygon")
 						{
-							tNewLearner.sEggGroup1 = tNewLearner.sEggGroup2 = "bug";
+							tNewLearner->sEggGroup1 = tNewLearner->sEggGroup2 = "bug";
 							iPipeLocation = sTextLine.find("|", iPipeLocation);
 							iPipeLocation++;
 							iPipeLocation = sTextLine.find("|", iPipeLocation);
@@ -803,7 +793,7 @@ static int ProcessMove(std::ifstream& stReadFile)
 								return 1;
 							}
 							iPipeLocation = iEggGroup1NameEnd;
-							tNewLearner.sEggGroup1 = sEggGroup1Name;
+							tNewLearner->sEggGroup1 = sEggGroup1Name;
 							iPipeLocation++;
 
 							//egg group 2 (always exists)
@@ -819,27 +809,27 @@ static int ProcessMove(std::ifstream& stReadFile)
 								return 1;
 							}
 							iPipeLocation = iEggGroup2NameEnd;
-							tNewLearner.sEggGroup2 = sEggGroup2Name;
+							tNewLearner->sEggGroup2 = sEggGroup2Name;
 							iPipeLocation++;
 						}
 					}
-					if (tNewLearner.sSpecies == "Nidoran F") tNewLearner.sOGCS = "Nidoran M";
+					if (tNewLearner->sSpecies == "Nidoran F") tNewLearner->sOGCS = "Nidoran M";
 					//not until generation 5!? what lmao
 					//else if (tNewLearner.sSpecies == "Nidoran M" || tNewLearner.sSpecies == "Nidorino" || tNewLearner.sSpecies == "Nidoking") tNewLearner.sOGCS = "Nidoran F";
-					else if (tNewLearner.sSpecies == "Illumise") tNewLearner.sOGCS = "Volbeat";
+					else if (tNewLearner->sSpecies == "Illumise") tNewLearner->sOGCS = "Volbeat";
 					//not until generation 5!? what lmao
-					//else if (tNewLearner.sSpecies == "Volbeat") tNewLearner.sOGCS = "Illumise";
-					else if (tNewLearner.sSpecies == "Wormadam") tNewLearner.sOGCS = "Burmy";
-					else if (tNewLearner.sSpecies == "Mothim") tNewLearner.sOGCS = "Burmy";
-					else if (tNewLearner.sSpecies == "Vespiquen") tNewLearner.sOGCS = "Combee";
-					else if (tNewLearner.sSpecies == "Froslass") tNewLearner.sOGCS = "Snorunt";
-					else if (tNewLearner.sSpecies == "Gallade") tNewLearner.sOGCS = "Ralts";
-					else if (tNewLearner.sSpecies == "Manaphy")
+					//else if (tNewLearner.sSpecies == "Volbeat") tNewLearner->sOGCS = "Illumise";
+					else if (tNewLearner->sSpecies == "Wormadam") tNewLearner->sOGCS = "Burmy";
+					else if (tNewLearner->sSpecies == "Mothim") tNewLearner->sOGCS = "Burmy";
+					else if (tNewLearner->sSpecies == "Vespiquen") tNewLearner->sOGCS = "Combee";
+					else if (tNewLearner->sSpecies == "Froslass") tNewLearner->sOGCS = "Snorunt";
+					else if (tNewLearner->sSpecies == "Gallade") tNewLearner->sOGCS = "Ralts";
+					else if (tNewLearner->sSpecies == "Manaphy")
 					{
-						tNewLearner.sOGCS = "Phione";
-						tNewLearner.bIsManaphy = true;
+						tNewLearner->sOGCS = "Phione";
+						tNewLearner->bIsManaphy = true;
 					}
-					else if (tNewLearner.sSpecies == "Phione") tNewLearner.bIsPhione = true;
+					else if (tNewLearner->sSpecies == "Phione") tNewLearner->bIsPhione = true;
 
 					//form parameter commonly put between egg group 2 and levels
 					size_t iNextValueEnd = sTextLine.find("|", iPipeLocation);
@@ -849,7 +839,7 @@ static int ProcessMove(std::ifstream& stReadFile)
 						size_t iEqualLocation = iPipeLocation + 5;
 						size_t iFormNameEnd = std::min(sTextLine.find("|", iEqualLocation), sTextLine.find("{{", iEqualLocation));
 						std::string sFormName = sTextLine.substr(iEqualLocation, iFormNameEnd - iEqualLocation);
-						tNewLearner.sForm = sFormName;
+						tNewLearner->sForm = sFormName;
 						iPipeLocation = iNextValueEnd;
 						iPipeLocation++;
 					}
@@ -858,14 +848,14 @@ static int ProcessMove(std::ifstream& stReadFile)
 					//this avoids a crash with Solar Beam
 					if (bSpecialSectionInside)
 					{
-						tNewLearner.eLearnMethod = LEARNBY_SPECIAL;
-						tNewLearner.sLevel = "0";
+						tNewLearner->eLearnMethod = LEARNBY_SPECIAL;
+						tNewLearner->sLevel = "0";
 						AddMoveToMainList(tNewLearner);
 					}
 					else if (bEventSectionInside)
 					{
-						tNewLearner.eLearnMethod = LEARNBY_EVENT;
-						tNewLearner.sLevel = "0";
+						tNewLearner->eLearnMethod = LEARNBY_EVENT;
+						tNewLearner->sLevel = "0";
 						AddMoveToMainList(tNewLearner);
 					}
 					else
@@ -880,15 +870,15 @@ static int ProcessMove(std::ifstream& stReadFile)
 						}
 						std::string sLevel = ProcessLevelCell(sTextLine, iPipeLocation, false);
 						//std::cout << "ProcessLevelCell A " << sPokemonName << " returned " << sLevel << " iOffsetColumns: " << iOffsetColumns << " iPipeLocation: " << iPipeLocation << "\n";
-						tNewLearner.sLevel = sLevel;
+						tNewLearner->sLevel = sLevel;
 						if (!sLevel.empty())
 						{
 							if (sLevel == "âœ”")//check (holy fuck)
 							{
 								if (bTMSection)
-									tNewLearner.eLearnMethod = LEARNBY_TM;
+									tNewLearner->eLearnMethod = LEARNBY_TM;
 								else if (bBreedSection)
-									tNewLearner.eLearnMethod = LEARNBY_EGG;
+									tNewLearner->eLearnMethod = LEARNBY_EGG;
 							}
 							if (sLevel != "âˆ’")//dash (holy fuck)
 							{
@@ -896,21 +886,21 @@ static int ProcessMove(std::ifstream& stReadFile)
 								{
 									//we're not a learner. we're actually one of the only pokemon NOT allowed to use the TM in question.
 									//add to a separate list. (each entry is species name followed by move it can't learn by TM)
-									vTMLearnBlacklist.push_back(tNewLearner.sSpecies);
+									vTMLearnBlacklist.push_back(tNewLearner->sSpecies);
 									vTMLearnBlacklist.push_back(sMoveName);
 								}
 								else
 								{
 									if (bLevelupSection)
-										tNewLearner.eLearnMethod = LEARNBY_LEVELUP;
+										tNewLearner->eLearnMethod = LEARNBY_LEVELUP;
 									//if (tNewLearner.eLearnMethod != LEARNBY_TM && tNewLearner.eLearnMethod != LEARNBY_TM_UNIVERSAL && tNewLearner.eLearnMethod != LEARNBY_EGG)
 									{
-										if (tNewLearner.eLearnMethod != LEARNBY_LEVELUP)
-											tNewLearner.sLevel = "0";
+										if (tNewLearner->eLearnMethod != LEARNBY_LEVELUP)
+											tNewLearner->sLevel = "0";
 										else
 										{
 											//must be a number or have a comma and space
-											bool bIsNumber = is_number(tNewLearner.sLevel);
+											bool bIsNumber = is_number(tNewLearner->sLevel);
 											size_t iCommaPlace = sLevel.find(",");
 											bool bHasComma = iCommaPlace != std::string::npos;
 											if (!bIsNumber && !bHasComma)
@@ -931,7 +921,7 @@ static int ProcessMove(std::ifstream& stReadFile)
 										}
 									}
 									AddMoveToMainList(tNewLearner);
-									//std::cout << "vMoveLearners size: " << vMoveLearners.size() << "\n";
+									std::cout << "vMoveLearners size: " << vMoveLearners.size() << "\n";
 								}
 								
 							}
@@ -1020,7 +1010,7 @@ static int ProcessFilesDebug()
 		stReadFile2.close();
 		return 0;
 	}
-	if (!vMoveLearners.empty() && vMoveLearners.back().sMoveName.empty())
+	if (!vMoveLearners.empty() && vMoveLearners.back()->sMoveName.empty())
 	{
 		std::cout << "\n Didn't find move name\n";
 		return 0;
@@ -1038,7 +1028,7 @@ static int ProcessFilesDebug()
 			stReadFilei.close();
 			return 0;
 		}
-		if (!vMoveLearners.empty() && vMoveLearners.back().sMoveName.empty())
+		if (!vMoveLearners.empty() && vMoveLearners.back()->sMoveName.empty())
 		{
 			std::cout << "\n Didn't find move name\n";
 			return 0;
@@ -1069,7 +1059,7 @@ static int ProcessFilesNormal(int argc, char* argv[])
 				return 0;
 			}
 
-			if (vMoveLearners.back().sMoveName.empty())
+			if (vMoveLearners.back()->sMoveName.empty())
 			{
 				std::cout << "\n Didn't find move name\n";
 				if (argc > 1)
@@ -1088,61 +1078,64 @@ static int ProcessFilesNormal(int argc, char* argv[])
 //we want each level to be its own data point
 static void SplitMultiLevelLearns()
 {
-	for (MoveLearner& tLearner : vMoveLearners)
+	//for (MoveLearner* tLearner : vMoveLearners)
+	for (int i = 0; i < vMoveLearners.size(); i++)
 	{
+		MoveLearner* tLearner = vMoveLearners[i];
+		//std::cout << std::to_string(i) << "\n";
 		std::vector<std::string> sLevels;
-		size_t iLevelEnd = tLearner.sLevel.find(",");
+		size_t iLevelEnd = tLearner->sLevel.find(",");
 		if (iLevelEnd != std::string::npos)
 		{
-			tLearner.bEraseMe = true;
-			std::string sFirstLevel = tLearner.sLevel.substr(0, iLevelEnd);
+			tLearner->bEraseMe = true;
+			std::string sFirstLevel = tLearner->sLevel.substr(0, iLevelEnd);
 			//std::cout << sFirstLevel << " count: " << iLevelEnd << "\n";
 			sLevels.push_back(sFirstLevel);
 			size_t iLevelStart = iLevelEnd + 2;
-			RecursiveCSVParse(tLearner.sLevel, iLevelStart, iLevelEnd, sLevels);
+			RecursiveCSVParse(tLearner->sLevel, iLevelStart, iLevelEnd, sLevels);
 			for (std::string sLevel : sLevels)
 			{
-				MoveLearner tNewLearner;
-				tNewLearner.sSpecies = tLearner.sSpecies;
-				tNewLearner.sForm = tLearner.sForm;
-				tNewLearner.sEggGroup1 = tLearner.sEggGroup1;
-				tNewLearner.sEggGroup2 = tLearner.sEggGroup2;
-				tNewLearner.sLevel = sLevel;
-				tNewLearner.sMoveName = tLearner.sMoveName;
-				tNewLearner.eLearnMethod = tLearner.eLearnMethod;
-				tNewLearner.bCanComeFromEgg = tLearner.bCanComeFromEgg;
+				MoveLearner* tNewLearner = new MoveLearner;
+				tNewLearner->sSpecies = tLearner->sSpecies;
+				tNewLearner->sForm = tLearner->sForm;
+				tNewLearner->sEggGroup1 = tLearner->sEggGroup1;
+				tNewLearner->sEggGroup2 = tLearner->sEggGroup2;
+				tNewLearner->sLevel = sLevel;
+				tNewLearner->sMoveName = tLearner->sMoveName;
+				tNewLearner->eLearnMethod = tLearner->eLearnMethod;
+				tNewLearner->bCanComeFromEgg = tLearner->bCanComeFromEgg;
 				AddMoveToMainList(tNewLearner);
 			}
 		}
 	}
 	//clear out the old ones
-	vMoveLearners.erase(remove_if(vMoveLearners.begin(), vMoveLearners.end(), [](MoveLearner x) { return x.bEraseMe; }), vMoveLearners.end());
+	vMoveLearners.erase(remove_if(vMoveLearners.begin(), vMoveLearners.end(), [](MoveLearner* x) { return x->bEraseMe; }), vMoveLearners.end());
 }
 
 //normally we don't care about TM learners as top-level ancestors, cause if we have a TM, we'd usually just teach it directly to the target mon
 //however there are cases where the target mon can't learn the move by TM, but can learn it by levelup or egg, so we'd have to teach it to someone else first
 static void FindTMsOfInterest()
 {
-	for (MoveLearner& tLearner : vMoveLearners)
+	for (MoveLearner* tLearner : vMoveLearners)
 	{
 		//a TM learn
-		if ((tLearner.eLearnMethod == LEARNBY_TM_UNIVERSAL || tLearner.eLearnMethod == LEARNBY_TM) && tLearner.sSpecies != g_sTargetSpecies)
+		if ((tLearner->eLearnMethod == LEARNBY_TM_UNIVERSAL || tLearner->eLearnMethod == LEARNBY_TM) && tLearner->sSpecies != g_sTargetSpecies)
 		{
 			bool bFoundTMLearn = false;
 			//find if the target learns this by TM
-			for (MoveLearner& tTargetLearner : vMoveLearners)
+			for (MoveLearner* tTargetLearner : vMoveLearners)
 			{
-				if (tTargetLearner.sSpecies == g_sTargetSpecies && (tTargetLearner.eLearnMethod == LEARNBY_TM_UNIVERSAL || tTargetLearner.eLearnMethod == LEARNBY_TM) && tLearner.sMoveName == tTargetLearner.sMoveName)
+				if (tTargetLearner->sSpecies == g_sTargetSpecies && (tTargetLearner->eLearnMethod == LEARNBY_TM_UNIVERSAL || tTargetLearner->eLearnMethod == LEARNBY_TM) && tLearner->sMoveName == tTargetLearner->sMoveName)
 				{
 					bFoundTMLearn = true;
 				}
 			}
 			if (!bFoundTMLearn)
 			{
-				tLearner.bTMOfInterest = true;///*
-				std::cout << tLearner.sSpecies << " learning " << tLearner.sMoveName << tLearner.MethodStr();
-				if (!tLearner.sForm.empty())
-					std::cout << " (" << tLearner.sForm << ")";
+				tLearner->bTMOfInterest = true;///*
+				std::cout << tLearner->sSpecies << " learning " << tLearner->sMoveName << tLearner->MethodStr();
+				if (!tLearner->sForm.empty())
+					std::cout << " (" << tLearner->sForm << ")";
 				std::cout << " was a TM of interest\n";//*/
 			}
 		}
@@ -1184,14 +1177,14 @@ static void WriteOutput(std::vector<BreedChain>& vChains)
 		}
 		writingFile << "\n";
 	}
-	for (MoveLearner& tLearner : vMoveLearners)
+	for (MoveLearner* tLearner : vMoveLearners)
 	{
 		//of course we can breed our moves onto own species
-		if (tLearner.sSpecies == g_sTargetSpecies)
+		if (tLearner->sSpecies == g_sTargetSpecies)
 		{
-			if (IsUniversalTM(tLearner.sMoveName))
+			if (IsUniversalTM(tLearner->sMoveName))
 			{
-				writingFile << "  , " << tLearner.sMoveName << ": universal TM\n";
+				writingFile << "  , " << tLearner->sMoveName << ": universal TM\n";
 			}
 		}
 	}
@@ -1200,17 +1193,17 @@ static void WriteOutput(std::vector<BreedChain>& vChains)
 
 static void PreSearch()
 {
-	for (MoveLearner& tTargetLearner : vMoveLearners)
+	for (MoveLearner* tTargetLearner : vMoveLearners)
 	{
 		//it may be pointless to find this move, but we trust the user to know what they're doing
 		//(for instance, a move might be levelup, but also a tm, and the level threshold is far away, so it would be of interest to look at it anyway)
-		if (tTargetLearner.sSpecies == g_sTargetSpecies && tTargetLearner.eLearnMethod == LEARNBY_LEVELUP && stoi(tTargetLearner.sLevel) <= iMaxLevel)
-			std::cout << "Note: " << tTargetLearner.sMoveName << " is a levelup move below the level cap.\n";
+		if (tTargetLearner->sSpecies == g_sTargetSpecies && tTargetLearner->eLearnMethod == LEARNBY_LEVELUP && stoi(tTargetLearner->sLevel) <= iMaxLevel)
+			std::cout << "Note: " << tTargetLearner->sMoveName << " is a levelup move below the level cap.\n";
 	}
 
 	//print out our data so far
-	for (MoveLearner tLearner : vMoveLearners)
-		std::cout << tLearner.sMoveName << ": " << tLearner.InfoStr() << "\n";
+	for (MoveLearner* tLearner : vMoveLearners)
+		std::cout << tLearner->sMoveName << ": " << tLearner->InfoStr() << "\n";
 
 	std::cout << "Starting the chain search.\n";
 
@@ -1221,8 +1214,10 @@ int SearchRetryLoop(std::vector<BreedChain>& vChains, MoveLearner* tLearner, Mov
 
 static int FindFatherForMove(std::vector<BreedChain>& vChains, std::vector<bool>& bClosedList, std::vector<MoveLearner*>& pParentList, MoveLearner* tLearner, MoveLearner* tBottomChild)
 {
-	for (MoveLearner& tFather : vMoveLearners)
+	//for (MoveLearner* tFather : vMoveLearners)
+	for (int i = 0; i < vMoveLearners.size(); i++)
 	{
+		MoveLearner* tFather = vMoveLearners[i];
 		//for the moment we assume mother is child's species
 		if (!ValidateMatchup(bClosedList, pParentList, *tLearner, *tLearner, tFather, *tBottomChild, false))
 			continue;
@@ -1246,16 +1241,16 @@ static int FindFatherForMove(std::vector<BreedChain>& vChains, std::vector<bool>
 						{
 							iResult = SearchRetryLoop(vChains, pMove, pMove);
 							//iResult = SearchRetryLoop(vNewChains, pMove, pMove);//try this later
+							if (iResult == CR_SUCCESS)
+							{
+								vChains.insert(std::end(vChains), std::begin(vNewChains), std::end(vNewChains));
+								tComboData.SetSatisfied(pMove->sMoveName, true);
+							}
 						}
-						else if (pMove->eLearnMethod == LEARNBY_EGG)
+						else if (pMove->eLearnMethod == LEARNBY_EGG || vOriginalFatherExcludes[pMove->eLearnMethod])
 						{
 							bBadLearn = true;
 							break;
-						}
-						if (iResult == CR_SUCCESS)
-						{
-							vChains.insert(std::end(vChains), std::begin(vNewChains), std::end(vNewChains));
-							tComboData.SetSatisfied(pMove->sMoveName, true);
 						}
 					}
 				}
@@ -1268,19 +1263,19 @@ static int FindFatherForMove(std::vector<BreedChain>& vChains, std::vector<bool>
 		}
 
 		//user already accepted a chain for this move? (might have happened during SearchRetryLoop call above)
-		if (std::find(vMovesDone.begin(), vMovesDone.end(), tFather.sMoveName) != vMovesDone.end())
+		if (std::find(vMovesDone.begin(), vMovesDone.end(), tFather->sMoveName) != vMovesDone.end())
 			continue;
 
 		//std::cout << "FindFatherForMove got " << tFather.sSpecies << " (tLearner " << tLearner->sSpecies << ", tBottomChild " << tBottomChild->sSpecies << ")\n";
 
-		bClosedList[tFather.iID] = true;
+		bClosedList[tFather->iID] = true;
 
 		//std::cout << tLearner->iID << " parent set to " << tFather.iID << "\n";
-		pParentList[tLearner->iID] = &tFather;
-		if (tFather.eLearnMethod == LEARNBY_EGG)
+		pParentList[tLearner->iID] = tFather;
+		if (tFather->eLearnMethod == LEARNBY_EGG || vOriginalFatherExcludes[tFather->eLearnMethod])
 		{
 			//okay, now find a father that this one can learn it from
-			FindFatherForMove(vChains, bClosedList, pParentList, &tFather, tBottomChild);
+			FindFatherForMove(vChains, bClosedList, pParentList, tFather, tBottomChild);
 		}
 		else if (pParentList[tBottomChild->iID])
 		{
@@ -1364,10 +1359,7 @@ static int FindFatherForMove(std::vector<BreedChain>& vChains, std::vector<bool>
 							str = "Mr. Mime";
 						std::cout << "Excluding pokemon species \"" << str << "\"\n";
 						//mark everything with this species name
-						for (MoveLearner& tMarkLearner : vMoveLearners)
-							if (tMarkLearner.sSpecies == str)
-								tMarkLearner.bRejected = true;
-						for (MoveLearner* tMarkLearner : vUniversalPool)
+						for (MoveLearner* tMarkLearner : vMoveLearners)
 							if (tMarkLearner->sSpecies == str)
 								tMarkLearner->bRejected = true;
 					}
@@ -1375,10 +1367,7 @@ static int FindFatherForMove(std::vector<BreedChain>& vChains, std::vector<bool>
 					{
 						int iID = stoi(str);
 						std::cout << "Excluding ID \"" << str << "\"\n";
-						for (MoveLearner& tMarkLearner : vMoveLearners)
-							if (tMarkLearner.iID == iID)
-								tMarkLearner.bRejected = true;
-						for (MoveLearner* tMarkLearner : vUniversalPool)
+						for (MoveLearner* tMarkLearner : vMoveLearners)
 							if (tMarkLearner->iID == iID)
 								tMarkLearner->bRejected = true;
 					}
@@ -1424,46 +1413,42 @@ static int SearchRetryLoop(std::vector<BreedChain>& vChains, MoveLearner* tLearn
 
 static void SearchStart(std::vector<BreedChain>& vChains)
 {
-	bool bFoundTargetLearner = false;
-	for (MoveLearner& tFatherMove : vMoveLearners)
+	//for (MoveLearner* tFatherMove : vMoveLearners)
+	for (int i = 0; i < vMoveLearners.size(); i++)
 	{
+		MoveLearner* tFatherMove = vMoveLearners[i];
 		//user already accepted a chain for this move?
-		if (std::find(vMovesDone.begin(), vMovesDone.end(), tFatherMove.sMoveName) != vMovesDone.end())
+		if (std::find(vMovesDone.begin(), vMovesDone.end(), tFatherMove->sMoveName) != vMovesDone.end())
 			continue;
 
-		if (tFatherMove.sSpecies == g_sTargetSpecies)
+		if (tFatherMove->sSpecies == g_sTargetSpecies)
 		{
-			bFoundTargetLearner = true;
-			SearchRetryLoop(vChains, &tFatherMove, &tFatherMove);
+			SearchRetryLoop(vChains, tFatherMove, tFatherMove);
 			//not sure why i put this here. break makes us stop searching prematurely.
 			//if (std::find(vMovesDone.begin(), vMovesDone.end(), tFatherMove.sMoveName) != vMovesDone.end())
 				//break;
 		}
+	}
+}
 
-		if (!bFoundTargetLearner)
+static void GenerateUniversalTMLearns()
+{
+	std::vector<std::string> vTMNames;
+	for (int i = 0; i < vMoveLearners.size(); i++)
+	{
+		MoveLearner* tLearn = vMoveLearners[i];
+		if (IsUniversalTM(tLearn->sMoveName))
 		{
-			if (IsUniversalTM(tFatherMove.sMoveName))
-			{
-				//root child doesn't have a learner object for this... yet
-				//TODO: Major optimization needed...
-				for (int i = 0; i < 1479; i += 3)
-				{
-					if (sAllGroups[i] == g_sTargetSpecies && !SpeciesCantUseTM(tFatherMove.sMoveName, sAllGroups[i]))
-					{
-						//make a learner object for everyone who can learn this universal TM
-						MoveLearner* tChild = MakeOffspringObject(tFatherMove, i);
-						SearchRetryLoop(vChains, tChild, tChild);
-						break;
-					}
-				}
-			}
+			if (std::find(vTMNames.begin(), vTMNames.end(), tLearn->sMoveName) != vTMNames.end())
+				continue;
 			else
-			{
-				//std::cout << "Couldn't find instance of " << vTargetMoves[0].sSpecies << " learning " << tFatherMove.sMoveName << "\n";
-				//assert(false);
-			}
+				vTMNames.push_back(tLearn->sMoveName);
 		}
 	}
+	for (int i = 0; i < vTMNames.size(); i++)
+		for (int j = 0; j < 493; j++)
+			if (!SpeciesCantUseTM(vTMNames[i], sAllGroups[j].sSpecies))
+				MakeOffspringObject(vTMNames[i], j);
 }
 
 int main(int argc, char* argv[])
@@ -1484,6 +1469,8 @@ int main(int argc, char* argv[])
 	}
 
 	SplitMultiLevelLearns();
+
+	GenerateUniversalTMLearns();
 
 	FindTMsOfInterest();
 

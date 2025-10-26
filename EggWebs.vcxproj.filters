@@ -21,5 +21,8 @@
     <ClCompile Include="data_gen4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="core.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
