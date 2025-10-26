@@ -141,12 +141,13 @@ struct ComboBreedData
 };
 
 std::vector<MoveLearner> vMoveLearners;
-std::vector<BreedChain> vChains;
+//std::vector<BreedChain> vChains;
 std::string g_sTargetSpecies;
 //TODO: why is this * unlike vMoveLearners and vTargetMoves?
 std::vector<MoveLearner*> vUniversalPool;
 std::vector<std::string> vTMLearnBlacklist;
 std::vector<std::string> vMovesDone;
+std::vector<std::string> vMovesBeingExplored;
 
 std::vector<bool> vOriginalFatherExcludes = { false, false, false, false, false, false, false, false };
 std::vector<bool> vMotherExcludes =			{ false, false, false, false, false, false, false, false };
@@ -997,13 +998,14 @@ static int GetSettings(int argc)
 		if (sAnswer == "-4")
 			iCombo = 4;
 	}
-	else if (argc >= 4 && argc <= 6)
+	else if (argc >= 3 && argc <= 5)
 	{
-		std::cout << "You gave " << std::to_string(argc - 2) << " move files. Find a chain that fits them all onto the target at once? 1 for yes.\n>";
+		std::cout << "You gave " << std::to_string(argc - 1) << " move files. Find a chain that fits them all onto the target at once? 1 for yes.\n>";
+		std::getline(std::cin, sAnswer);
 		if (sAnswer == "1")
-			iCombo = argc - 2;
+			iCombo = argc - 1;
 	}
-
+	//std::cout << std::to_string(argc) << " args.\n";
 	return 1;
 }
 
@@ -1147,7 +1149,7 @@ static void FindTMsOfInterest()
 	}
 }
 
-static void WriteOutput()
+static void WriteOutput(std::vector<BreedChain>& vChains)
 {
 	std::ofstream writingFile;
 	writingFile.open("output.csv");
@@ -1215,9 +1217,9 @@ static void PreSearch()
 	std::sort(vMoveLearners.begin(), vMoveLearners.end(), sortMoves);
 }
 
-int SearchRetryLoop(MoveLearner* tLearner, MoveLearner* tBottomChild);
+int SearchRetryLoop(std::vector<BreedChain>& vChains, MoveLearner* tLearner, MoveLearner* tBottomChild);
 
-static int FindFatherForMove(std::vector<bool>& bClosedList, std::vector<MoveLearner*>& pParentList, MoveLearner* tLearner, MoveLearner* tBottomChild)
+static int FindFatherForMove(std::vector<BreedChain>& vChains, std::vector<bool>& bClosedList, std::vector<MoveLearner*>& pParentList, MoveLearner* tLearner, MoveLearner* tBottomChild)
 {
 	for (MoveLearner& tFather : vMoveLearners)
 	{
@@ -1228,6 +1230,7 @@ static int FindFatherForMove(std::vector<bool>& bClosedList, std::vector<MoveLea
 		//if in combo mode, father must learn all of the moves yet to be satisfied
 		if (iCombo)
 		{
+			bool bBadLearn = false;
 			std::vector<MoveLearner*> vLearns = { nullptr, nullptr, nullptr, nullptr };
 			if (FatherSatisfiesMoves(tFather, vLearns))
 			{
@@ -1236,18 +1239,31 @@ static int FindFatherForMove(std::vector<bool>& bClosedList, std::vector<MoveLea
 					MoveLearner* pMove = vLearns[i];
 					if (pMove)
 					{
-						bool bMoveIsOurs = pMove->sMoveName == tLearner->sMoveName;
 						int iResult = CR_SUCCESS;
 						//even if it's not an egg move, we still want to actually let the user know about the chain, and the simplest way to do that is to go through here again
-						if (!bMoveIsOurs)// && pMove->eLearnMethod == LEARNBY_EGG)
-							iResult = SearchRetryLoop(pMove, pMove);
+						std::vector<BreedChain> vNewChains;
+						if (std::find(vMovesBeingExplored.begin(), vMovesBeingExplored.end(), pMove->sMoveName) == vMovesBeingExplored.end() && pMove->eLearnMethod != LEARNBY_EGG)
+						{
+							iResult = SearchRetryLoop(vChains, pMove, pMove);
+							//iResult = SearchRetryLoop(vNewChains, pMove, pMove);//try this later
+						}
+						else if (pMove->eLearnMethod == LEARNBY_EGG)
+						{
+							bBadLearn = true;
+							break;
+						}
 						if (iResult == CR_SUCCESS)
+						{
+							vChains.insert(std::end(vChains), std::begin(vNewChains), std::end(vNewChains));
 							tComboData.SetSatisfied(pMove->sMoveName, true);
+						}
 					}
 				}
 			}
-			//don't use vLearns here, it is not necessarily complete data if we're in this branch
 			else
+				bBadLearn = true;
+			//Caution: if FatherSatisfiesMoves returns false, vLearns is not necessarily complete data
+			if (bBadLearn)
 				continue;
 		}
 
@@ -1255,7 +1271,7 @@ static int FindFatherForMove(std::vector<bool>& bClosedList, std::vector<MoveLea
 		if (std::find(vMovesDone.begin(), vMovesDone.end(), tFather.sMoveName) != vMovesDone.end())
 			continue;
 
-		std::cout << "FindFatherForMove got " << tFather.sSpecies << " (tLearner " << tLearner->sSpecies << ", tBottomChild " << tBottomChild->sSpecies << ")\n";
+		//std::cout << "FindFatherForMove got " << tFather.sSpecies << " (tLearner " << tLearner->sSpecies << ", tBottomChild " << tBottomChild->sSpecies << ")\n";
 
 		bClosedList[tFather.iID] = true;
 
@@ -1264,7 +1280,7 @@ static int FindFatherForMove(std::vector<bool>& bClosedList, std::vector<MoveLea
 		if (tFather.eLearnMethod == LEARNBY_EGG)
 		{
 			//okay, now find a father that this one can learn it from
-			FindFatherForMove(bClosedList, pParentList, &tFather, tBottomChild);
+			FindFatherForMove(vChains, bClosedList, pParentList, &tFather, tBottomChild);
 		}
 		else if (pParentList[tBottomChild->iID])
 		{
@@ -1379,7 +1395,7 @@ static int FindFatherForMove(std::vector<bool>& bClosedList, std::vector<MoveLea
 //imagine we want a Chikorita with Leech Seed and Hidden Power (and without using the HP TM) you can go Slowking -> Chikorita -> Exeggcute -> Chikorita
 //this would really be a combination of two chains, one that goes Exeggcute -> Chikorita (for Leech Seed) and one that goes Slowking -> Chikorita -> Exeggcute (for Hidden Power)
 //for the 2nd one, we need to understand that Chikorita is not the true target (tBottomChild) but rather Exeggcute is
-static int FindChain(MoveLearner* tLearner, MoveLearner* tBottomChild)
+static int FindChain(std::vector<BreedChain>& vChains, MoveLearner* tLearner, MoveLearner* tBottomChild)
 {
 	std::vector<bool> bClosedList;
 	bClosedList.resize(iLearnerCount);
@@ -1390,20 +1406,23 @@ static int FindChain(MoveLearner* tLearner, MoveLearner* tBottomChild)
 	std::fill(pParentList.begin(), pParentList.end(), nullptr);
 
 
-	return FindFatherForMove(bClosedList, pParentList, tLearner, tBottomChild);
+	return FindFatherForMove(vChains, bClosedList, pParentList, tLearner, tBottomChild);
 }
 
-static int SearchRetryLoop(MoveLearner* tLearner, MoveLearner* tBottomChild)
+static int SearchRetryLoop(std::vector<BreedChain>& vChains, MoveLearner* tLearner, MoveLearner* tBottomChild)
 {
-	int iResult = FindChain(tLearner, tBottomChild);
+	assert(std::find(vMovesBeingExplored.begin(), vMovesBeingExplored.end(), tLearner->sMoveName) == vMovesBeingExplored.end());
+	vMovesBeingExplored.push_back(tLearner->sMoveName);
+	int iResult = FindChain(vChains, tLearner, tBottomChild);
 	while (iResult == CR_REJECTED)
 	{
-		iResult = FindChain(tLearner, tBottomChild);
+		iResult = FindChain(vChains, tLearner, tBottomChild);
 	}
+	vMovesBeingExplored.erase(std::remove(vMovesBeingExplored.begin(), vMovesBeingExplored.end(), tLearner->sMoveName), vMovesBeingExplored.end());
 	return iResult;
 }
 
-static void SearchStart()
+static void SearchStart(std::vector<BreedChain>& vChains)
 {
 	bool bFoundTargetLearner = false;
 	for (MoveLearner& tFatherMove : vMoveLearners)
@@ -1415,9 +1434,10 @@ static void SearchStart()
 		if (tFatherMove.sSpecies == g_sTargetSpecies)
 		{
 			bFoundTargetLearner = true;
-			SearchRetryLoop(&tFatherMove, &tFatherMove);
-			if (std::find(vMovesDone.begin(), vMovesDone.end(), tFatherMove.sMoveName) != vMovesDone.end())
-				break;
+			SearchRetryLoop(vChains, &tFatherMove, &tFatherMove);
+			//not sure why i put this here. break makes us stop searching prematurely.
+			//if (std::find(vMovesDone.begin(), vMovesDone.end(), tFatherMove.sMoveName) != vMovesDone.end())
+				//break;
 		}
 
 		if (!bFoundTargetLearner)
@@ -1432,7 +1452,7 @@ static void SearchStart()
 					{
 						//make a learner object for everyone who can learn this universal TM
 						MoveLearner* tChild = MakeOffspringObject(tFatherMove, i);
-						SearchRetryLoop(tChild, tChild);
+						SearchRetryLoop(vChains, tChild, tChild);
 						break;
 					}
 				}
@@ -1468,10 +1488,11 @@ int main(int argc, char* argv[])
 	FindTMsOfInterest();
 
 	PreSearch();
-	
-	SearchStart();
 
-	WriteOutput();
+	std::vector<BreedChain> vChains;
+	SearchStart(vChains);
+
+	WriteOutput(vChains);
 	
 	std::cout << "done\n";
 	std::string sHack;
