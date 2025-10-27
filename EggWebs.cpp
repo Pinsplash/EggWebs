@@ -1220,15 +1220,17 @@ static void PreSearch()
 
 int SearchRetryLoop(std::vector<BreedChain>& vChains, MoveLearner* tLearner);
 
+bool bMainLoopDebug = false;
+
 static int FindFatherForMove(std::vector<BreedChain>& vChains, std::vector<bool>& bClosedList, std::vector<MoveLearner*>& pParentList, int iDepth, MoveLearner* tLearner, MoveLearner* tBottomChild)
 {
 	iDepth++;
-	//std::cout << "Finding father to teach " << tLearner->sSpecies << " " << tLearner->sMoveName << " to pass to " << tBottomChild->sSpecies << " (" << std::to_string(iDepth) << ")\n";
+	if (bMainLoopDebug) std::cout << "Finding father to teach " << tLearner->sSpecies << " " << tLearner->sMoveName << " to pass to " << tBottomChild->sSpecies << " (" << std::to_string(iDepth) << ")\n";
 	if (iDepth >= iMaxDepth)
 	{
 		//didn't actually explore node
 		bClosedList[tLearner->iID] = false;
-		//std::cout << "Giving up on " << tLearner->sSpecies << " learning " << tLearner->sMoveName << " to pass to " << tBottomChild->sSpecies << " because chain is too long (" << std::to_string(iDepth) << ")\n";
+		if (bMainLoopDebug) std::cout << "Giving up on " << tLearner->sSpecies << " learning " << tLearner->sMoveName << " to pass to " << tBottomChild->sSpecies << " because chain is too long (" << std::to_string(iDepth) << ")\n";
 		return CR_FAIL;
 	}
 	//for (MoveLearner* tFather : vMoveLearners)
@@ -1239,7 +1241,7 @@ static int FindFatherForMove(std::vector<BreedChain>& vChains, std::vector<bool>
 		if (!ValidateMatchup(bClosedList, pParentList, *tLearner, *tLearner, tFather, *tBottomChild, false))
 			continue;
 
-		//std::cout << tFather->sSpecies << " can teach " << tLearner->sSpecies << " " << tLearner->sMoveName << " to pass to " << tBottomChild->sSpecies << " (" << std::to_string(iDepth) << ")\n";
+		if (bMainLoopDebug) std::cout << tFather->sSpecies << " can teach " << tLearner->sSpecies << " " << tLearner->sMoveName << " to pass to " << tBottomChild->sSpecies << " (" << std::to_string(iDepth) << ")\n";
 
 		//if in combo mode, father must learn all of the moves yet to be satisfied
 		bool bBadForCombo = false;
@@ -1271,7 +1273,6 @@ static int FindFatherForMove(std::vector<BreedChain>& vChains, std::vector<bool>
 							{
 								tComboData.SetSatisfied(tBottomChild->sMoveName, false);
 								bBadForCombo = true;
-								//std::cout << "Couldn't find chain for " << pMove->sSpecies << " learning " << pMove->sMoveName << "\n";
 							}
 						}
 						/*
@@ -1290,7 +1291,7 @@ static int FindFatherForMove(std::vector<BreedChain>& vChains, std::vector<bool>
 			}
 			else
 			{
-				//std::cout << tFather->sSpecies << " learning " << tLearner->sMoveName << " to pass to " << tBottomChild->sSpecies << " was bad because it can't learn " << tComboData.sMoves[iSatisfy] << " (" << std::to_string(iDepth) << ")\n";
+				if (bMainLoopDebug) std::cout << tFather->sSpecies << " learning " << tLearner->sMoveName << " to pass to " << tBottomChild->sSpecies << " was bad because it can't learn " << tComboData.sMoves[iSatisfy] << " (" << std::to_string(iDepth) << ")\n";
 				bBadLearn = true;
 			}
 			//Caution: if FatherSatisfiesMoves returns false, vLearns is not necessarily complete data
@@ -1301,8 +1302,6 @@ static int FindFatherForMove(std::vector<BreedChain>& vChains, std::vector<bool>
 		//user already accepted a chain for this move? (might have happened during SearchRetryLoop call above)
 		if (std::find(vMovesDone.begin(), vMovesDone.end(), tFather->sMoveName) != vMovesDone.end())
 			continue;
-
-		//std::cout << "FindFatherForMove got " << tFather->sSpecies << " (tLearner " << tLearner->sSpecies << ", tBottomChild " << tBottomChild->sSpecies << ")\n";
 
 		bClosedList[tFather->iID] = true;
 
@@ -1325,7 +1324,7 @@ static int FindFatherForMove(std::vector<BreedChain>& vChains, std::vector<bool>
 			{
 				if (tCurrentLearner->bRejected)
 				{
-					//std::cout << "Giving up on " << tLearner->sSpecies << " learning " << tLearner->sMoveName << " to pass to " << tBottomChild->sSpecies << " because " << tCurrentLearner->sSpecies << " ID " << tCurrentLearner->iID << " was rejected (" << std::to_string(iDepth) << ")\n";
+					if (bMainLoopDebug) std::cout << "Giving up on " << tLearner->sSpecies << " learning " << tLearner->sMoveName << " to pass to " << tBottomChild->sSpecies << " because " << tCurrentLearner->sSpecies << " ID " << tCurrentLearner->iID << " was rejected (" << std::to_string(iDepth) << ")\n";
 					return CR_FAIL;
 				}
 				tCurrentLearner = pParentList[tCurrentLearner->iID];
@@ -1420,7 +1419,7 @@ static int FindFatherForMove(std::vector<BreedChain>& vChains, std::vector<bool>
 		}
 	}
 	//if there are no fathers left to look at, leave
-	//std::cout << "No father to teach " << tLearner->sSpecies << " " << tLearner->sMoveName << " to pass to " << tBottomChild->sSpecies << " (" << std::to_string(iDepth) << ")\n";
+	if (bMainLoopDebug) std::cout << "No father to teach " << tLearner->sSpecies << " " << tLearner->sMoveName << " to pass to " << tBottomChild->sSpecies << " (" << std::to_string(iDepth) << ")\n";
 	return CR_FAIL;
 }
 
