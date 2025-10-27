@@ -1445,7 +1445,7 @@ static int FindChain(std::vector<BreedChain>& vChains, MoveLearner* tLearner, Mo
 
 static int SearchRetryLoop(std::vector<BreedChain>& vChains, MoveLearner* tLearner)
 {
-	//std::cout << "_Starting search to teach " << tLearner->sSpecies << " " << tLearner->sMoveName << "\n";
+	if (bMainLoopDebug) std::cout << "_Starting search to teach " << tLearner->sSpecies << " " << tLearner->sMoveName << "\n";
 	assert(std::find(vMovesBeingExplored.begin(), vMovesBeingExplored.end(), tLearner->sMoveName) == vMovesBeingExplored.end());
 	vMovesBeingExplored.push_back(tLearner->sMoveName);
 	int iResult = CR_REJECTED;
