@@ -1291,7 +1291,7 @@ static int SuggestChain(BreedChain tChain, MoveLearner* tBottomChild)
 
 int SearchRetryLoop(std::vector<BreedChain>& vChains, MoveLearner* tLearner, bool bNested);
 
-bool bMainLoopDebug = true;
+bool bMainLoopDebug = false;
 
 static int FindFatherForMove(std::vector<BreedChain>& vChains, std::vector<bool>& bClosedList, std::vector<MoveLearner*>& pParentList, int iDepth, MoveLearner* tLearner, MoveLearner* tBottomChild)
 {
