@@ -523,8 +523,9 @@ static MoveLearner* MakeOffspringObject(std::string sWantedMoveName, int i)
 }
 
 //search in list to see if father has a learn for this move
+//return value: -1 = all good, any other number = the entry in tComboData was not satisfied
 //TODO: some work to be done here concerning special/event methods, but what exactly?
-static bool FatherSatisfiesMoves(MoveLearner* tFather, std::vector<MoveLearner*>& vLearns)
+static int FatherSatisfiesMoves(MoveLearner* tFather, std::vector<MoveLearner*>& vLearns)
 {
 	for (int i = 0; i < iCombo; i++)
 	{
@@ -541,10 +542,10 @@ static bool FatherSatisfiesMoves(MoveLearner* tFather, std::vector<MoveLearner*>
 			}
 
 			if (!bGood)
-				return false;
+				return i;
 		}
 	}
-	return true;
+	return -1;
 }
 
 static int ProcessMove(std::ifstream& stReadFile)
@@ -1217,15 +1218,17 @@ static void PreSearch()
 	std::sort(vMoveLearners.begin(), vMoveLearners.end(), sortMoves);
 }
 
-int SearchRetryLoop(std::vector<BreedChain>& vChains, MoveLearner* tLearner, MoveLearner* tBottomChild);
+int SearchRetryLoop(std::vector<BreedChain>& vChains, MoveLearner* tLearner);
 
 static int FindFatherForMove(std::vector<BreedChain>& vChains, std::vector<bool>& bClosedList, std::vector<MoveLearner*>& pParentList, int iDepth, MoveLearner* tLearner, MoveLearner* tBottomChild)
 {
 	iDepth++;
+	//std::cout << "Finding father to teach " << tLearner->sSpecies << " " << tLearner->sMoveName << " to pass to " << tBottomChild->sSpecies << " (" << std::to_string(iDepth) << ")\n";
 	if (iDepth >= iMaxDepth)
 	{
 		//didn't actually explore node
 		bClosedList[tLearner->iID] = false;
+		//std::cout << "Giving up on " << tLearner->sSpecies << " learning " << tLearner->sMoveName << " to pass to " << tBottomChild->sSpecies << " because chain is too long (" << std::to_string(iDepth) << ")\n";
 		return CR_FAIL;
 	}
 	//for (MoveLearner* tFather : vMoveLearners)
@@ -1236,13 +1239,16 @@ static int FindFatherForMove(std::vector<BreedChain>& vChains, std::vector<bool>
 		if (!ValidateMatchup(bClosedList, pParentList, *tLearner, *tLearner, tFather, *tBottomChild, false))
 			continue;
 
+		//std::cout << tFather->sSpecies << " can teach " << tLearner->sSpecies << " " << tLearner->sMoveName << " to pass to " << tBottomChild->sSpecies << " (" << std::to_string(iDepth) << ")\n";
+
 		//if in combo mode, father must learn all of the moves yet to be satisfied
 		bool bBadForCombo = false;
 		if (iCombo)
 		{
 			bool bBadLearn = false;
 			std::vector<MoveLearner*> vLearns = { nullptr, nullptr, nullptr, nullptr };
-			if (FatherSatisfiesMoves(tFather, vLearns))
+			int iSatisfy = FatherSatisfiesMoves(tFather, vLearns);
+			if (iSatisfy == -1)
 			{
 				for (int i = 0; i < iCombo; i++)
 				{
@@ -1252,10 +1258,10 @@ static int FindFatherForMove(std::vector<BreedChain>& vChains, std::vector<bool>
 						int iResult = CR_SUCCESS;
 						//even if it's not an egg move, we still want to actually let the user know about the chain, and the simplest way to do that is to go through here again
 						std::vector<BreedChain> vNewChains;
-						if (std::find(vMovesBeingExplored.begin(), vMovesBeingExplored.end(), pMove->sMoveName) == vMovesBeingExplored.end() && pMove->eLearnMethod != LEARNBY_EGG)
+						if (std::find(vMovesBeingExplored.begin(), vMovesBeingExplored.end(), pMove->sMoveName) == vMovesBeingExplored.end())// && pMove->eLearnMethod != LEARNBY_EGG)
 						{
 							tComboData.SetSatisfied(tBottomChild->sMoveName, true);
-							iResult = SearchRetryLoop(vChains, pMove, pMove);
+							iResult = SearchRetryLoop(vChains, pMove);
 							//iResult = SearchRetryLoop(vNewChains, pMove, pMove);//try this later
 							if (iResult == CR_SUCCESS)
 							{
@@ -1268,11 +1274,13 @@ static int FindFatherForMove(std::vector<BreedChain>& vChains, std::vector<bool>
 								//std::cout << "Couldn't find chain for " << pMove->sSpecies << " learning " << pMove->sMoveName << "\n";
 							}
 						}
+						/*
 						else if (pMove->eLearnMethod == LEARNBY_EGG)
 						{
 							bBadLearn = true;
 							break;
 						}
+						*/
 						else if (vOriginalFatherExcludes[pMove->eLearnMethod])
 						{
 							break;
@@ -1282,7 +1290,7 @@ static int FindFatherForMove(std::vector<BreedChain>& vChains, std::vector<bool>
 			}
 			else
 			{
-				//std::cout << tFather->sSpecies << " learning " << tFather->sMoveName << " was a bad learn\n";
+				//std::cout << tFather->sSpecies << " learning " << tLearner->sMoveName << " to pass to " << tBottomChild->sSpecies << " was bad because it can't learn " << tComboData.sMoves[iSatisfy] << " (" << std::to_string(iDepth) << ")\n";
 				bBadLearn = true;
 			}
 			//Caution: if FatherSatisfiesMoves returns false, vLearns is not necessarily complete data
@@ -1305,6 +1313,7 @@ static int FindFatherForMove(std::vector<BreedChain>& vChains, std::vector<bool>
 			//okay, now find a father that this one can learn it from
 			int iResult = FindFatherForMove(vChains, bClosedList, pParentList, iDepth, tFather, tBottomChild);
 			//if we get success here, the deeper call already suggested the chain and the user already accepted it
+			//return now to ensure SearchRetryLoop returns the correct result
 			if (iResult == CR_SUCCESS)
 				return CR_SUCCESS;
 		}
@@ -1315,7 +1324,10 @@ static int FindFatherForMove(std::vector<BreedChain>& vChains, std::vector<bool>
 			while (tCurrentLearner)
 			{
 				if (tCurrentLearner->bRejected)
+				{
+					//std::cout << "Giving up on " << tLearner->sSpecies << " learning " << tLearner->sMoveName << " to pass to " << tBottomChild->sSpecies << " because " << tCurrentLearner->sSpecies << " ID " << tCurrentLearner->iID << " was rejected (" << std::to_string(iDepth) << ")\n";
 					return CR_FAIL;
+				}
 				tCurrentLearner = pParentList[tCurrentLearner->iID];
 			}
 			tCurrentLearner = tBottomChild;
@@ -1408,6 +1420,7 @@ static int FindFatherForMove(std::vector<BreedChain>& vChains, std::vector<bool>
 		}
 	}
 	//if there are no fathers left to look at, leave
+	//std::cout << "No father to teach " << tLearner->sSpecies << " " << tLearner->sMoveName << " to pass to " << tBottomChild->sSpecies << " (" << std::to_string(iDepth) << ")\n";
 	return CR_FAIL;
 }
 
@@ -1431,14 +1444,15 @@ static int FindChain(std::vector<BreedChain>& vChains, MoveLearner* tLearner, Mo
 	return FindFatherForMove(vChains, bClosedList, pParentList, iDepth, tLearner, tBottomChild);
 }
 
-static int SearchRetryLoop(std::vector<BreedChain>& vChains, MoveLearner* tLearner, MoveLearner* tBottomChild)
+static int SearchRetryLoop(std::vector<BreedChain>& vChains, MoveLearner* tLearner)
 {
+	//std::cout << "_Starting search to teach " << tLearner->sSpecies << " " << tLearner->sMoveName << "\n";
 	assert(std::find(vMovesBeingExplored.begin(), vMovesBeingExplored.end(), tLearner->sMoveName) == vMovesBeingExplored.end());
 	vMovesBeingExplored.push_back(tLearner->sMoveName);
 	int iResult = CR_REJECTED;
 	while (iResult == CR_REJECTED)
 	{
-		iResult = FindChain(vChains, tLearner, tBottomChild);
+		iResult = FindChain(vChains, tLearner, tLearner);
 	}
 	vMovesBeingExplored.erase(std::remove(vMovesBeingExplored.begin(), vMovesBeingExplored.end(), tLearner->sMoveName), vMovesBeingExplored.end());
 	return iResult;
@@ -1456,7 +1470,7 @@ static void SearchStart(std::vector<BreedChain>& vChains)
 
 		if (tFatherMove->sSpecies == g_sTargetSpecies)
 		{
-			SearchRetryLoop(vChains, tFatherMove, tFatherMove);
+			SearchRetryLoop(vChains, tFatherMove);
 			//not sure why i put this here. break makes us stop searching prematurely.
 			//if (std::find(vMovesDone.begin(), vMovesDone.end(), tFatherMove.sMoveName) != vMovesDone.end())
 				//break;
