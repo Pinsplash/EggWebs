@@ -279,7 +279,7 @@ static bool sortMoves(const MoveLearner* a, const MoveLearner* b)
 	}
 	else
 	{
-		return a->eLearnMethod > b->eLearnMethod;
+		return a->eLearnMethod < b->eLearnMethod;
 	}
 }
 
@@ -975,6 +975,13 @@ static int GetSettings(int argc)
 	else
 		iMaxLevel = stoi(sAnswer);
 
+	std::cout << "Enter maximum length of breeding chains (recommend 20 if you want to be 100% sure if a certain chain exists).\n>";
+	std::getline(std::cin, sAnswer);
+	if (sAnswer.empty())
+		iMaxDepth = 20;
+	else
+		iMaxDepth = stoi(sAnswer);
+
 	std::cout << "Enter 1 to turn on fast forward mode. This will automatically accept all breed chains the program suggests.\nOtherwise, enter nothing\n>";
 	std::getline(std::cin, sAnswer);
 	if (sAnswer == "1")
@@ -1212,8 +1219,15 @@ static void PreSearch()
 
 int SearchRetryLoop(std::vector<BreedChain>& vChains, MoveLearner* tLearner, MoveLearner* tBottomChild);
 
-static int FindFatherForMove(std::vector<BreedChain>& vChains, std::vector<bool>& bClosedList, std::vector<MoveLearner*>& pParentList, MoveLearner* tLearner, MoveLearner* tBottomChild)
+static int FindFatherForMove(std::vector<BreedChain>& vChains, std::vector<bool>& bClosedList, std::vector<MoveLearner*>& pParentList, int iDepth, MoveLearner* tLearner, MoveLearner* tBottomChild)
 {
+	iDepth++;
+	if (iDepth >= iMaxDepth)
+	{
+		//didn't actually explore node
+		bClosedList[tLearner->iID] = false;
+		return CR_FAIL;
+	}
 	//for (MoveLearner* tFather : vMoveLearners)
 	for (int i = 0; i < vMoveLearners.size(); i++)
 	{
@@ -1223,6 +1237,7 @@ static int FindFatherForMove(std::vector<BreedChain>& vChains, std::vector<bool>
 			continue;
 
 		//if in combo mode, father must learn all of the moves yet to be satisfied
+		bool bBadForCombo = false;
 		if (iCombo)
 		{
 			bool bBadLearn = false;
@@ -1239,24 +1254,37 @@ static int FindFatherForMove(std::vector<BreedChain>& vChains, std::vector<bool>
 						std::vector<BreedChain> vNewChains;
 						if (std::find(vMovesBeingExplored.begin(), vMovesBeingExplored.end(), pMove->sMoveName) == vMovesBeingExplored.end() && pMove->eLearnMethod != LEARNBY_EGG)
 						{
+							tComboData.SetSatisfied(tBottomChild->sMoveName, true);
 							iResult = SearchRetryLoop(vChains, pMove, pMove);
 							//iResult = SearchRetryLoop(vNewChains, pMove, pMove);//try this later
 							if (iResult == CR_SUCCESS)
 							{
 								vChains.insert(std::end(vChains), std::begin(vNewChains), std::end(vNewChains));
-								tComboData.SetSatisfied(pMove->sMoveName, true);
+							}
+							else
+							{
+								tComboData.SetSatisfied(tBottomChild->sMoveName, false);
+								bBadForCombo = true;
+								//std::cout << "Couldn't find chain for " << pMove->sSpecies << " learning " << pMove->sMoveName << "\n";
 							}
 						}
-						else if (pMove->eLearnMethod == LEARNBY_EGG || vOriginalFatherExcludes[pMove->eLearnMethod])
+						else if (pMove->eLearnMethod == LEARNBY_EGG)
 						{
 							bBadLearn = true;
+							break;
+						}
+						else if (vOriginalFatherExcludes[pMove->eLearnMethod])
+						{
 							break;
 						}
 					}
 				}
 			}
 			else
+			{
+				//std::cout << tFather->sSpecies << " learning " << tFather->sMoveName << " was a bad learn\n";
 				bBadLearn = true;
+			}
 			//Caution: if FatherSatisfiesMoves returns false, vLearns is not necessarily complete data
 			if (bBadLearn)
 				continue;
@@ -1266,7 +1294,7 @@ static int FindFatherForMove(std::vector<BreedChain>& vChains, std::vector<bool>
 		if (std::find(vMovesDone.begin(), vMovesDone.end(), tFather->sMoveName) != vMovesDone.end())
 			continue;
 
-		//std::cout << "FindFatherForMove got " << tFather.sSpecies << " (tLearner " << tLearner->sSpecies << ", tBottomChild " << tBottomChild->sSpecies << ")\n";
+		//std::cout << "FindFatherForMove got " << tFather->sSpecies << " (tLearner " << tLearner->sSpecies << ", tBottomChild " << tBottomChild->sSpecies << ")\n";
 
 		bClosedList[tFather->iID] = true;
 
@@ -1275,13 +1303,16 @@ static int FindFatherForMove(std::vector<BreedChain>& vChains, std::vector<bool>
 		if (tFather->eLearnMethod == LEARNBY_EGG || vOriginalFatherExcludes[tFather->eLearnMethod])
 		{
 			//okay, now find a father that this one can learn it from
-			FindFatherForMove(vChains, bClosedList, pParentList, tFather, tBottomChild);
+			int iResult = FindFatherForMove(vChains, bClosedList, pParentList, iDepth, tFather, tBottomChild);
+			//if we get success here, the deeper call already suggested the chain and the user already accepted it
+			if (iResult == CR_SUCCESS)
+				return CR_SUCCESS;
 		}
-		else if (pParentList[tBottomChild->iID])
+		else if (pParentList[tBottomChild->iID] && !bBadForCombo)
 		{
 			//check to make sure one of our nested calls to this function did not end in rejecting a node
 			MoveLearner* tCurrentLearner = tBottomChild;
-			while (pParentList[tCurrentLearner->iID])
+			while (tCurrentLearner)
 			{
 				if (tCurrentLearner->bRejected)
 					return CR_FAIL;
@@ -1359,17 +1390,17 @@ static int FindFatherForMove(std::vector<BreedChain>& vChains, std::vector<bool>
 							str = "Mr. Mime";
 						std::cout << "Excluding pokemon species \"" << str << "\"\n";
 						//mark everything with this species name
-						for (MoveLearner* tMarkLearner : vMoveLearners)
-							if (tMarkLearner->sSpecies == str)
-								tMarkLearner->bRejected = true;
+						for (int iMarkLearner = 0; iMarkLearner < vMoveLearners.size(); iMarkLearner++)
+							if (vMoveLearners[iMarkLearner]->sSpecies == str)
+								vMoveLearners[iMarkLearner]->bRejected = true;
 					}
 					else
 					{
 						int iID = stoi(str);
 						std::cout << "Excluding ID \"" << str << "\"\n";
-						for (MoveLearner* tMarkLearner : vMoveLearners)
-							if (tMarkLearner->iID == iID)
-								tMarkLearner->bRejected = true;
+						for (int iMarkLearner = 0; iMarkLearner < vMoveLearners.size(); iMarkLearner++)
+							if (vMoveLearners[iMarkLearner]->iID == iID)
+								vMoveLearners[iMarkLearner]->bRejected = true;
 					}
 				}
 				return CR_REJECTED;
@@ -1386,6 +1417,8 @@ static int FindFatherForMove(std::vector<BreedChain>& vChains, std::vector<bool>
 //for the 2nd one, we need to understand that Chikorita is not the true target (tBottomChild) but rather Exeggcute is
 static int FindChain(std::vector<BreedChain>& vChains, MoveLearner* tLearner, MoveLearner* tBottomChild)
 {
+	int iDepth = 0;
+
 	std::vector<bool> bClosedList;
 	bClosedList.resize(iLearnerCount);
 	std::fill(bClosedList.begin(), bClosedList.end(), false);
@@ -1395,14 +1428,14 @@ static int FindChain(std::vector<BreedChain>& vChains, MoveLearner* tLearner, Mo
 	std::fill(pParentList.begin(), pParentList.end(), nullptr);
 
 
-	return FindFatherForMove(vChains, bClosedList, pParentList, tLearner, tBottomChild);
+	return FindFatherForMove(vChains, bClosedList, pParentList, iDepth, tLearner, tBottomChild);
 }
 
 static int SearchRetryLoop(std::vector<BreedChain>& vChains, MoveLearner* tLearner, MoveLearner* tBottomChild)
 {
 	assert(std::find(vMovesBeingExplored.begin(), vMovesBeingExplored.end(), tLearner->sMoveName) == vMovesBeingExplored.end());
 	vMovesBeingExplored.push_back(tLearner->sMoveName);
-	int iResult = FindChain(vChains, tLearner, tBottomChild);
+	int iResult = CR_REJECTED;
 	while (iResult == CR_REJECTED)
 	{
 		iResult = FindChain(vChains, tLearner, tBottomChild);
