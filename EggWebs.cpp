@@ -30,6 +30,7 @@ enum MoveLearnMethod
 	LEARNBY_EGG,
 	LEARNBY_SPECIAL,
 	LEARNBY_EVENT,
+	LEARNBY_TUTOR,
 	LAST_LEARN_METHOD
 };
 
@@ -71,6 +72,7 @@ struct MoveLearner
 		else if (eLearnMethod == LEARNBY_EGG) return " (egg move)";
 		else if (eLearnMethod == LEARNBY_SPECIAL) return " (special encounter)";
 		else if (eLearnMethod == LEARNBY_EVENT) return " (from an event)";
+		else if (eLearnMethod == LEARNBY_TUTOR) return " (tutor)";
 		else if (bIsDitto) return "";
 		else return " (UNKNOWN REASON)";
 	}
@@ -146,8 +148,8 @@ std::vector<std::string> vTMLearnBlacklist;
 std::vector<std::string> vMovesDone;
 std::vector<std::string> vMovesBeingExplored;
 
-std::vector<bool> vOriginalFatherExcludes = { false, false, false, false, false, false, false, false };
-std::vector<bool> vMotherExcludes =			{ false, false, false, false, false, false, false, false };
+std::vector<bool> vOriginalFatherExcludes = { false, false, false, false, false, false, false, false, false };
+std::vector<bool> vMotherExcludes =			{ false, false, false, false, false, false, false, false, false };
 int iMaxLevel = 100;
 bool bFastForward = false;
 int iLearnerCount = 0;
@@ -405,7 +407,7 @@ static std::string ProcessLevelCell(std::string sTextLine, size_t& iPipeLocation
 static bool ValidateMatchup(std::vector<bool>& bClosedList, std::vector<MoveLearner*>& pParentList, MoveLearner tMother, MoveLearner tChild, MoveLearner* tFather, MoveLearner tBottomChild, bool bSkipNewGroupCheck)
 {
 	//you can't breed these methods
-	if (tMother.eLearnMethod == LEARNBY_EVENT || tMother.eLearnMethod == LEARNBY_SPECIAL)
+	if (tMother.eLearnMethod == LEARNBY_EVENT || tMother.eLearnMethod == LEARNBY_SPECIAL || tMother.eLearnMethod == LEARNBY_TUTOR)
 		return false;
 
 	//must learn the move in question
@@ -554,9 +556,10 @@ static int ProcessMove(std::ifstream& stReadFile)
 	bool bLearnset = false;
 	bool bLevelupSection = false;
 	bool bLevelupSectionInside = false;
-	bool bTMSection = false;
+	bool bTMTutorSection = false;
+	bool bSectionIsTutor = false;
 	bool bUniversalTM = false;
-	bool bTMSectionInside = false;
+	bool bTMTutorSectionInside = false;
 	bool bBreedSection = false;
 	bool bBreedSectionInside = false;
 	//these work a little differently because the sections have each generation in its own table
@@ -603,13 +606,19 @@ static int ProcessMove(std::ifstream& stReadFile)
 		{
 			if (sTextLine.find("Movefoot") != std::string::npos)
 			{
-				bLevelupSection = bLevelupSectionInside = bTMSection = bTMSectionInside = bBreedSection = bBreedSectionInside = bSpecialSectionInside = bEventSectionInside = false;
+				bLevelupSection = bLevelupSectionInside = bTMTutorSection = bTMTutorSectionInside = bBreedSection = bBreedSectionInside = bSpecialSectionInside = bEventSectionInside = false;
 				iHiddenColumns = 0;
 			}
 			if (!bLevelupSection && sTextLine == "===By [[Level|leveling up]]===")
 				bLevelupSection = true;
-			else if (!bTMSection && (sTextLine == "===By [[TM]]===" || sTextLine == "===By [[TM]]/[[HM]]===" || sTextLine == "===By [[TM]]/[[TR]]===" || sTextLine == "===By [[TM]]/[[Move Tutor]]===" || sTextLine == "===By [[TM]]/[[TR]]/[[Move Tutor]]==="))
-				bTMSection = true;
+			else if (!bTMTutorSection && (
+				sTextLine == "===By [[TM]]===" || 
+				sTextLine == "===By [[Move Tutor]]===" || 
+				sTextLine == "===By [[TM]]/[[HM]]===" || 
+				sTextLine == "===By [[TM]]/[[TR]]===" || 
+				sTextLine == "===By [[TM]]/[[Move Tutor]]===" || 
+				sTextLine == "===By [[TM]]/[[TR]]/[[Move Tutor]]==="))
+				bTMTutorSection = true;
 			else if (!bBreedSection && sTextLine == "===By {{pkmn|breeding}}===")
 				bBreedSection = true;
 			else if (!bSpecialSection && sTextLine == "===Special move===")
@@ -626,27 +635,13 @@ static int ProcessMove(std::ifstream& stReadFile)
 				bSpecialSectionInside = true;
 			else if (bEventSection && sTextLine == "====[[Generation IV]]====")
 				bEventSectionInside = true;
-			else if (bLevelupSection || bTMSection || bBreedSection || bSpecialSectionInside || bEventSectionInside)
+			else if (bLevelupSection || bTMTutorSection || bBreedSection || bSpecialSectionInside || bEventSectionInside)
 			{
 				//{{Movehead/Games|Normal|g1=none|g7=1|g7g={{gameabbrev7|SMUSUM}}|g8=2}}
 				//{{Moveentry/9|0098|Krabby|type=Water|1|Water 3|Water 3|−|49{{sup/3|FRLG}}|45|45|45|45|29|29}}
 				//{{Movefoot|Normal|9}}
-				if (bTMSection && sTextLine.find("g4tm=tutor") != std::string::npos)
-				{
-					//tutor move in gen 4, bail
-					bLevelupSection = false;
-					bTMSection = false;
-					bBreedSection = false;
-					continue;
-				}
-				//moved up
-				/*
-				if (sTextLine.find("Movefoot") != std::string::npos)
-				{
-					bLevelupSection = bLevelupSectionInside = bTMSection = bTMSectionInside = bBreedSection = bBreedSectionInside = bSpecialSectionInside = bEventSectionInside = false;
-					iHiddenColumns = 0;
-				}
-				*/
+				if (bTMTutorSection && sTextLine.find("g4tm=tutor") != std::string::npos)
+					bSectionIsTutor = true;
 				if (sTextLine.find("Movehead/Games") != std::string::npos || sTextLine.find("Movehead/TMGames") != std::string::npos)
 				{
 					//make sure g4 is applicable
@@ -654,7 +649,7 @@ static int ProcessMove(std::ifstream& stReadFile)
 					{
 						//no pokemon can learn this by level up in gen 4, exit fast
 						bLevelupSection = false;
-						bTMSection = false;
+						bTMTutorSection = false;
 						bBreedSection = false;
 						continue;
 					}
@@ -663,8 +658,8 @@ static int ProcessMove(std::ifstream& stReadFile)
 						//worth checking
 						if (bLevelupSection)
 							bLevelupSectionInside = true;
-						if (bTMSection)
-							bTMSectionInside = true;
+						if (bTMTutorSection)
+							bTMTutorSectionInside = true;
 						if (bBreedSection)
 							bBreedSectionInside = true;
 						//if generations before 4 are hidden from the table, we have to watch out for them
@@ -674,7 +669,7 @@ static int ProcessMove(std::ifstream& stReadFile)
 					}
 				}
 				int iOffsetColumns = 4 - iHiddenColumns;
-				if ((bLevelupSectionInside || bTMSectionInside || bBreedSectionInside || bSpecialSectionInside || bEventSectionInside) && sTextLine.find("Moveentry") != std::string::npos)
+				if ((bLevelupSectionInside || bTMTutorSectionInside || bBreedSectionInside || bSpecialSectionInside || bEventSectionInside) && sTextLine.find("Moveentry") != std::string::npos)
 				{
 					MoveLearner* tNewLearner = new MoveLearner;
 					tNewLearner->sMoveName = sMoveName;
@@ -876,14 +871,14 @@ static int ProcessMove(std::ifstream& stReadFile)
 						{
 							if (sLevel == "âœ”")//check (holy fuck)
 							{
-								if (bTMSection)
-									tNewLearner->eLearnMethod = LEARNBY_TM;
+								if (bTMTutorSection)
+									tNewLearner->eLearnMethod = bSectionIsTutor ? LEARNBY_TUTOR : LEARNBY_TM;
 								else if (bBreedSection)
 									tNewLearner->eLearnMethod = LEARNBY_EGG;
 							}
 							if (sLevel != "âˆ’")//dash (holy fuck)
 							{
-								if (bUniversalTM && bTMSection)
+								if (bUniversalTM && bTMTutorSection && !bSectionIsTutor)
 								{
 									//we're not a learner. we're actually one of the only pokemon NOT allowed to use the TM in question.
 									//add to a separate list. (each entry is species name followed by move it can't learn by TM)
@@ -953,6 +948,7 @@ static int GetSettings(int argc)
 	std::cout << "3: Universal TM\n";
 	std::cout << "4: Special (eg pokewalker)\n";
 	std::cout << "5: Event\n";
+	std::cout << "6: Tutor\n";
 	std::cout << "Note: Chains that are made redundant by using a TM directly on the target species are already hidden.\n>";
 	std::getline(std::cin, sAnswer);
 	if (sAnswer.find("1") != std::string::npos) vOriginalFatherExcludes[LEARNBY_LEVELUP] = true;
@@ -960,6 +956,7 @@ static int GetSettings(int argc)
 	if (sAnswer.find("3") != std::string::npos) vOriginalFatherExcludes[LEARNBY_TM_UNIVERSAL] = true;
 	if (sAnswer.find("4") != std::string::npos) vOriginalFatherExcludes[LEARNBY_SPECIAL] = true;
 	if (sAnswer.find("5") != std::string::npos) vOriginalFatherExcludes[LEARNBY_EVENT] = true;
+	if (sAnswer.find("6") != std::string::npos) vOriginalFatherExcludes[LEARNBY_TUTOR] = true;
 
 	std::cout << "As above, but for controlling how mothers can learn a move (not counting ones of the target species).\n>";
 	std::getline(std::cin, sAnswer);
@@ -968,6 +965,7 @@ static int GetSettings(int argc)
 	if (sAnswer.find("3") != std::string::npos) vMotherExcludes[LEARNBY_TM_UNIVERSAL] = true;
 	if (sAnswer.find("4") != std::string::npos) vMotherExcludes[LEARNBY_SPECIAL] = true;
 	if (sAnswer.find("5") != std::string::npos) vMotherExcludes[LEARNBY_EVENT] = true;
+	if (sAnswer.find("6") != std::string::npos) vMotherExcludes[LEARNBY_TUTOR] = true;
 
 	std::cout << "Enter maximum level the pokemon involved in chains may be at.\nEnter nothing to set no limit\n>";
 	std::getline(std::cin, sAnswer);
@@ -1176,6 +1174,8 @@ static void WriteOutput(std::vector<BreedChain>& vChains)
 			writingFile << "TM (universal)";
 		else if (tChain.vLineage[i]->eLearnMethod == LEARNBY_EGG)
 			writingFile << "evolve then breed";
+		else if (tChain.vLineage[i]->eLearnMethod == LEARNBY_TUTOR)
+			writingFile << "tutor";
 		writingFile << ", " << tChain.vLineage[i]->sMoveName;
 		//for (std::vector<MoveLearner*>::reverse_iterator tLearner = tChain.vLineage.rbegin(); tLearner != tChain.vLineage.rend(); ++tLearner)
 		//for (MoveLearner* tLearner : tChain.vLineage)
