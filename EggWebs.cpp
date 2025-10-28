@@ -441,9 +441,12 @@ static bool ValidateMatchup(std::vector<bool>& bClosedList, std::vector<MoveLear
 		return false;
 
 	//mother has to have a new egg group in order to produce good useful chains
-	bool bNewEggGroup = !StringPairIdent(tMother.sEggGroup1, tMother.sEggGroup2, tFather->sEggGroup1, tFather->sEggGroup2);
+	//2nd check means we avoid cases such as monster/grass vs grass/grass counting as good
+	bool bNewEggGroup = !StringPairIdent(tMother.sEggGroup1, tMother.sEggGroup2, tFather->sEggGroup1, tFather->sEggGroup2) && (tMother.sEggGroup1 != tMother.sEggGroup2);
+	//it's okay for egg groups to be bad if the father learns the move by a different method than the child
+	bool bNewMethod = tFather->eLearnMethod != tChild.eLearnMethod;
 	bool bChildIsTargetSpecies = tChild.sSpecies == tBottomChild.sSpecies;
-	if (!bSkipNewGroupCheck && !tMother.bIsDitto && !bNewEggGroup && !bChildIsTargetSpecies)
+	if (!bSkipNewGroupCheck && !tMother.bIsDitto && !bNewEggGroup && !bChildIsTargetSpecies && !bNewMethod)
 		return false;
 
 	//level cap
@@ -1346,7 +1349,10 @@ static int FindFatherForMove(std::vector<BreedChain>& vChains, std::vector<bool>
 						}
 						else if (tFather->eLearnMethod == LEARNBY_EGG)
 						{
-							bBadLearn = true;
+							//need to let this learner go down to FindFatherForMove
+							//in this chain... (Ingrain) Chikorita <- Tangela <- (Flail) <- Lotad <- Totodile
+							//...Lotad will get incorrectly passed over
+							//bBadLearn = true;
 							break;
 						}
 						else if (vOriginalFatherExcludes[pMove->eLearnMethod])
@@ -1375,7 +1381,7 @@ static int FindFatherForMove(std::vector<BreedChain>& vChains, std::vector<bool>
 		//std::cout << tLearner->iID << " parent set to " << tFather.iID << "\n";
 		pParentList[tLearner->iID] = tFather;
 		//if we went to SearchRetryLoop, no point in trying to continue this chain
-		if ((tFather->eLearnMethod == LEARNBY_EGG || vOriginalFatherExcludes[tFather->eLearnMethod]) && (!iCombo || bBadForCombo))
+		if (tFather->eLearnMethod == LEARNBY_EGG || (vOriginalFatherExcludes[tFather->eLearnMethod] && (!iCombo || bBadForCombo)))
 		{
 			//okay, now find a father that this one can learn it from
 			int iResult = FindFatherForMove(vChains, bClosedList, pParentList, iDepth, tFather, tBottomChild);
