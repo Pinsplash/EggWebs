@@ -1449,8 +1449,7 @@ static void CreatePriorEvolutionLearns()
 		int iInfo = GetSpeciesInfo(OriginalForm);
 		int OriginalSlot = iInfo;
 		//entries are grouped by evolution family, and the largest family is 8 - the eeveelutions
-		//Eevee and Glaceon have to travel 7 indices to reach each other
-		int MaxEvoLineSize = 7;
+		int MaxEvoLineSize = 8;
 		int MaxSlot = iInfo + MaxEvoLineSize;
 		for (int iEvo = 0; iEvo < sAllGroups[OriginalSlot].Evolutions.size(); iEvo++)
 		{
