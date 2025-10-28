@@ -1,4 +1,6 @@
 # EggWebs
+This readme is for v2.0 which has not officially released yet. Refer to the readme in the v1.0 release.
+
 EggWebs is a program that finds breeding chains that meet conditions you set.
 
 EggWebs currently only works for HGSS and has only been tested in a handful of cases.
