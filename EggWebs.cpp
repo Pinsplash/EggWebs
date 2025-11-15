@@ -78,12 +78,18 @@ struct MoveLearner
 
 		return s1 + s2;
 	}
-	std::string InfoStr()
+	std::string InfoStr(bool bInCSV)
 	{
+		std::string s1;
 		if (!sForm.empty())
-			return tMonInfo->sSpecies + MethodStr() + " (" + sForm + ")";
+			s1 = tMonInfo->sSpecies + MethodStr() + " (" + sForm + ")";
 		else
-			return tMonInfo->sSpecies + MethodStr();
+			s1 = tMonInfo->sSpecies + MethodStr();
+
+		if (bInCSV && !LearnedAsSpecies.empty())
+			return "\"" + s1 + "\"";
+		else
+			return s1;
 	}
 };
 
@@ -1083,7 +1089,7 @@ static void WriteOutput(std::vector<BreedChain>& vChains)
 		//for (MoveLearner* tLearner : tChain.vLineage)
 		for (; i >= 0; i--)
 		{
-			writingFile << ", " << tChain.vLineage[i]->InfoStr();
+			writingFile << ", " << tChain.vLineage[i]->InfoStr(true);
 		}
 		writingFile << "\n";
 	}
@@ -1092,9 +1098,9 @@ static void WriteOutput(std::vector<BreedChain>& vChains)
 		//of course we can breed our moves onto own species
 		if (tLearner->tMonInfo->sSpecies == g_sTargetSpecies)
 		{
-			if (IsUniversalTM(tLearner->sMoveName))
+			if (IsUniversalTM(tLearner->sMoveName) && tLearner->eLearnMethod == LEARNBY_TM_UNIVERSAL)
 			{
-				writingFile << "  , " << tLearner->sMoveName << ": universal TM\n";
+				writingFile << ", " << tLearner->sMoveName << ": universal TM\n";
 			}
 		}
 	}
@@ -1115,7 +1121,7 @@ static void PreSearch()
 
 	//print out our data so far
 	for (MoveLearner* tLearner : vMoveLearners)
-		std::cout << tLearner->sMoveName << ": " << tLearner->InfoStr() << "\n";
+		std::cout << tLearner->sMoveName << ": " << tLearner->InfoStr(false) << "\n";
 
 	std::cout << "Starting the chain search.\n";
 }
@@ -1124,15 +1130,15 @@ static int SuggestChain(BreedChain tChain, MoveLearner* tBottomChild)
 {
 	MoveLearner* tCurrentLearner = tBottomChild;
 	std::cout << "\nChain for " << tChain.vLineage[0]->sMoveName << ": ";
-	std::cout << tChain.vLineage[0]->InfoStr();
+	std::cout << tChain.vLineage[0]->InfoStr(false);
 	for (int iLearner = 1; iLearner < tChain.vLineage.size(); iLearner++)
 	{
-		std::cout << " <- " << tChain.vLineage[iLearner]->InfoStr();
+		std::cout << " <- " << tChain.vLineage[iLearner]->InfoStr(false);
 	}
 	std::cout << "\nTo accept this chain, enter nothing\nEnter the name of a pokemon species to avoid it in future chains\nEnter a corresponding ID from below to avoid chains involving that Pokemon learning that move that way\n";
 	for (int iLearner = 0; iLearner < tChain.vLineage.size(); iLearner++)
 	{
-		std::cout << "ID: " << tChain.vLineage[iLearner]->iID << " for " << tChain.vLineage[iLearner]->sMoveName << " on " << tChain.vLineage[iLearner]->InfoStr() << "\n";
+		std::cout << "ID: " << tChain.vLineage[iLearner]->iID << " for " << tChain.vLineage[iLearner]->sMoveName << " on " << tChain.vLineage[iLearner]->InfoStr(false) << "\n";
 	}
 	if (tCurrentLearner->sLevel == "1")
 		std::cout << "This move is learned at level 1. Carefully consider if you can obtain this pokemon at level 1 before accepting the chain. Also consider if you can use a move reminder before rejecting it.\n";
@@ -1368,6 +1374,36 @@ static int FindChain(std::vector<BreedChain>& vChains, MoveLearner* tLearner, Mo
 	return FindFatherForMove(vChains, bClosedList, pParentList, iDepth, tLearner, tBottomChild);
 }
 
+static int SuggestChainCombo(std::vector<BreedChain>& vChains, MoveLearner* tLearner)
+{
+	int iResult = CR_SUCCESS;
+	bool bAllChainsAccepted = true;
+	for (int iChain = 0; iChain < vChains.size(); iChain++)
+	{
+		//std::cout << "\n" << iChain + 1 << "/" << vChains.size() << "\n";
+		iResult = SuggestChain(vChains[iChain], tLearner);
+		if (iResult == CR_REJECTED)
+		{
+			//SuggestChain already marked all the bad nodes, just go back to the top of the while loop now
+			bAllChainsAccepted = false;
+			break;
+		}
+	}
+	if (bAllChainsAccepted)
+	{
+		for (int iChain = 0; iChain < vChains.size(); iChain++)
+		{
+			//add to a list of moves we've decided we're satisfied with
+			vMovesDone.push_back(vChains[iChain].vLineage[0]->sMoveName);
+		}
+	}
+	else
+	{
+		vChains.clear();
+	}
+	return iResult;
+}
+
 static int SearchRetryLoop(std::vector<BreedChain>& vChains, MoveLearner* tLearner, bool bNested)
 {
 	if (bMainLoopDebug) std::cout << "_Starting search to teach " << tLearner->tMonInfo->sSpecies << " " << tLearner->sMoveName << "\n";
@@ -1385,29 +1421,18 @@ static int SearchRetryLoop(std::vector<BreedChain>& vChains, MoveLearner* tLearn
 			}
 			else
 			{
-				bool bAllChainsAccepted = true;
-				for (int iChain = 0; iChain < vChains.size(); iChain++)
+				if (iCombo)
 				{
-					iResult = SuggestChain(vChains[iChain], tLearner);
-					if (iResult == CR_REJECTED)
-					{
-						//SuggestChain already marked all the bad nodes, just go back to the top of the while loop now
-						bAllChainsAccepted = false;
-						break;
-					}
-				}
-				if (bAllChainsAccepted)
-				{
-					for (int iChain = 0; iChain < vChains.size(); iChain++)
-					{
-						//add to a list of moves we've decided we're satisfied with
-						vMovesDone.push_back(vChains[iChain].vLineage[0]->sMoveName);
-					}
+					iResult = SuggestChainCombo(vChains, tLearner);
 				}
 				else
 				{
-					vChains.clear();
+					//std::cout << "\n" << vChains.size() << "\n";
+					iResult = SuggestChain(vChains.back(), tLearner);
+					if (iResult == CR_REJECTED)
+						vChains.pop_back();
 				}
+				
 			}
 		}
 	}
