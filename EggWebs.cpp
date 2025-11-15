@@ -823,7 +823,6 @@ static int ProcessMove(std::ifstream& stReadFile)
 										}
 									}
 									AddMoveToMainList(tNewLearner);
-									std::cout << "vMoveLearners size: " << vMoveLearners.size() << "\n";
 								}
 								
 							}
@@ -955,7 +954,7 @@ static int ProcessFilesNormal(int argc, char* argv[])
 	for (int i = 1; i < argc; i++)
 	{
 		if (argc > 1)
-			std::cout << i << "/" << argc << " " << argv[i] << "\n";
+			std::cout << i << "/" << argc - 1 << " " << argv[i] << "\n";
 		std::string sPath = (argc == 1) ? "filename.txt" : argv[i];
 		std::ifstream stReadFile(sPath);
 		if (sPath.find("output.csv") != std::string::npos)
@@ -1192,6 +1191,21 @@ static int SuggestChain(BreedChain tChain, MoveLearner* tBottomChild)
 	}
 }
 
+static bool LearnerCannotBeTopLevel(MoveLearner* tLearner)
+{
+	//if you learn it by egg, then you must have a relevant father, thus the chain needs to be longer!
+	if (tLearner->eLearnMethod == LEARNBY_EGG)
+		return true;
+
+	if (tLearner->eLearnMethod == LEARNBY_TM || tLearner->eLearnMethod == LEARNBY_TM_UNIVERSAL)
+	{
+		//this tells us that the target mon is not compatible with this TM. in which case, this mon is effectively learning the move by egg
+		if (!tLearner->bTMOfInterest)
+			return true;
+	}
+	return false;
+}
+
 int SearchRetryLoop(std::vector<BreedChain>& vChains, MoveLearner* tLearner, bool bNested);
 int FindFatherForMove(std::vector<BreedChain>& vChains, std::vector<bool>& bClosedList, std::vector<MoveLearner*>& pParentList, int iDepth, MoveLearner* tLearner, MoveLearner* tBottomChild);
 
@@ -1229,7 +1243,7 @@ static int TestFather(std::vector<BreedChain>& vChains, std::vector<bool>& bClos
 							bBadForCombo = true;
 						}
 					}
-					else if (tFather->eLearnMethod == LEARNBY_EGG)
+					else if (LearnerCannotBeTopLevel(tFather))
 					{
 						//need to let this learner go down to FindFatherForMove
 						//in this chain... (Ingrain) Chikorita <- Tangela <- (Flail) <- Lotad <- Totodile
@@ -1263,7 +1277,7 @@ static int TestFather(std::vector<BreedChain>& vChains, std::vector<bool>& bClos
 	//std::cout << tLearner->iID << " parent set to " << tFather.iID << "\n";
 	pParentList[tLearner->iID] = tFather;
 	//if we went to SearchRetryLoop, no point in trying to continue this chain
-	if (tFather->eLearnMethod == LEARNBY_EGG || (vOriginalFatherExcludes[tFather->eLearnMethod] && (!iCombo || bBadForCombo)))
+	if (LearnerCannotBeTopLevel(tFather) || (vOriginalFatherExcludes[tFather->eLearnMethod] && (!iCombo || bBadForCombo)))
 	{
 		//okay, now find a father that this one can learn it from
 		int iResult = FindFatherForMove(vChains, bClosedList, pParentList, iDepth, tFather, tBottomChild);
@@ -1403,6 +1417,7 @@ static int SearchRetryLoop(std::vector<BreedChain>& vChains, MoveLearner* tLearn
 
 static void SearchStart(std::vector<BreedChain>& vChains)
 {
+	std::cout << "Learner count: " << vMoveLearners.size() << "\n";
 	for (int i = 0; i < vMoveLearners.size(); i++)
 	{
 		MoveLearner* tMove = vMoveLearners[i];
