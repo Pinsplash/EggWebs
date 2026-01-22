@@ -41,13 +41,29 @@ enum
 	CR_REJECTED
 };
 
+std::string g_sTargetSpecies;
+std::vector<std::string> vTMLearnBlacklist;
+std::vector<std::string> vMovesDone;
+std::vector<std::string> vMovesBeingExplored;
+std::vector<std::string> vRequireFather;
+
+std::vector<bool> vOriginalFatherExcludes = { false, false, false, false, false, false, false, false, false };
+std::vector<bool> vMotherExcludes = { false, false, false, false, false, false, false, false, false };
+int iMaxLevel = 100;
+bool bFastForward = false;
+bool bNoMoves = false;
+int iLearnerCount = 0;
+
+//there should be no reason for a breeding chain to EVER be this long
+int iMaxDepth = 20;
+
 struct MoveLearner
 {
 	std::string sForm;
 	std::string sLevel;
 	std::string sMoveName;
 	std::string LearnedAsSpecies;
-	MoveLearnMethod eLearnMethod;
+	MoveLearnMethod eLearnMethod = METHOD_NOT_DEFINED;
 	SpeciesInfo* tMonInfo;
 	bool bBaby = false;
 	bool bTMOfInterest = false;
@@ -80,6 +96,8 @@ struct MoveLearner
 	}
 	std::string InfoStr(bool bInCSV)
 	{
+		if (bNoMoves)
+			return tMonInfo->sSpecies;
 		std::string s1;
 		if (!sForm.empty())
 			s1 = tMonInfo->sSpecies + MethodStr() + " (" + sForm + ")";
@@ -92,6 +110,7 @@ struct MoveLearner
 			return s1;
 	}
 };
+std::vector<MoveLearner*> vMoveLearners;
 
 struct BreedChain
 {
@@ -149,22 +168,7 @@ struct ComboBreedData
 		assert(false);//didn't find move we wanted to set
 	}
 };
-
-std::string g_sTargetSpecies;
-std::vector<MoveLearner*> vMoveLearners;
-std::vector<std::string> vTMLearnBlacklist;
-std::vector<std::string> vMovesDone;
-std::vector<std::string> vMovesBeingExplored;
-
-std::vector<bool> vOriginalFatherExcludes = { false, false, false, false, false, false, false, false, false };
-std::vector<bool> vMotherExcludes =			{ false, false, false, false, false, false, false, false, false };
-int iMaxLevel = 100;
-bool bFastForward = false;
-int iLearnerCount = 0;
 ComboBreedData tComboData;
-
-//there should be no reason for a breeding chain to EVER be this long
-int iMaxDepth = 20;
 
 //for some reason my brain thinks this is called "is_numeric" so i'm putting that text here for the next time i'm searching for this
 static bool is_number(const std::string& s)
@@ -520,6 +524,14 @@ static MoveLearner* MakeUniversalTMLearn(std::string sWantedMoveName, int i)
 	return tLearner;
 }
 
+static MoveLearner* MakeMovelessLearn(std::string sWantedMoveName, int i)
+{
+	MoveLearner* tLearner = new MoveLearner;
+	tLearner->tMonInfo = &sAllGroups[i];
+	AddMoveToMainList(tLearner);
+	return tLearner;
+}
+
 //search in list to see if father has a learn for this move
 //return value: -1 = all good, any other number = the entry in tComboData was not satisfied
 //TODO: some work to be done here concerning special/event methods, but what exactly?
@@ -847,43 +859,76 @@ static int ProcessMove(std::ifstream& stReadFile)
 
 static int GetSettings(int argc)
 {
-	std::cout << "Enter the name of the species that you want the move(s) to go on.\n>";
+	std::cout << "Enter the name of the species that you want the move(s) to go on. Put '(nomoves)' before the name to use no-move mode.\n>";
 	std::string sAnswer;
 	std::getline(std::cin, sAnswer);
+
+	if (sAnswer.find("(nomoves)") != std::string::npos)
+	{
+		std::cout << "Using no-move mode. Everything related to moves will be foregone. Use this for passing natures or similar things.\n";
+		bNoMoves = true;
+		sAnswer = sAnswer.substr(9);
+	}
+
 	sAnswer[0] = toupper(sAnswer[0]);
 	g_sTargetSpecies = sAnswer;
+	std::cout << "Target species: '" << g_sTargetSpecies << "'\n";
 
-	std::cout << "Enter the number associated with each method of learning a move that you don't want the original father(s) to know.\nEnter nothing to allow all methods.\n";
-	std::cout << "1: Level up\n";
-	std::cout << "2: TM\n";
-	std::cout << "3: Universal TM\n";
-	std::cout << "4: Special (eg pokewalker)\n";
-	std::cout << "5: Event\n";
-	std::cout << "6: Tutor\n";
-	std::cout << "Note: Chains that are made redundant by using a TM directly on the target species are already hidden.\n>";
-	std::getline(std::cin, sAnswer);
-	if (sAnswer.find("1") != std::string::npos) vOriginalFatherExcludes[LEARNBY_LEVELUP] = true;
-	if (sAnswer.find("2") != std::string::npos) vOriginalFatherExcludes[LEARNBY_TM] = true;
-	if (sAnswer.find("3") != std::string::npos) vOriginalFatherExcludes[LEARNBY_TM_UNIVERSAL] = true;
-	if (sAnswer.find("4") != std::string::npos) vOriginalFatherExcludes[LEARNBY_SPECIAL] = true;
-	if (sAnswer.find("5") != std::string::npos) vOriginalFatherExcludes[LEARNBY_EVENT] = true;
-	if (sAnswer.find("6") != std::string::npos) vOriginalFatherExcludes[LEARNBY_TUTOR] = true;
+	if (!bNoMoves)
+	{
+		std::cout << "Enter the number associated with each method of learning a move that you don't want the original father(s) to know.\nEnter nothing to allow all methods.\n";
+		std::cout << "1: Level up\n";
+		std::cout << "2: TM\n";
+		std::cout << "3: Universal TM\n";
+		std::cout << "4: Special (eg pokewalker)\n";
+		std::cout << "5: Event\n";
+		std::cout << "6: Tutor\n";
+		std::cout << "Note: Chains that are made redundant by using a TM directly on the target species are already hidden.\n>";
+		std::getline(std::cin, sAnswer);
+		if (sAnswer.find("1") != std::string::npos) vOriginalFatherExcludes[LEARNBY_LEVELUP] = true;
+		if (sAnswer.find("2") != std::string::npos) vOriginalFatherExcludes[LEARNBY_TM] = true;
+		if (sAnswer.find("3") != std::string::npos) vOriginalFatherExcludes[LEARNBY_TM_UNIVERSAL] = true;
+		if (sAnswer.find("4") != std::string::npos) vOriginalFatherExcludes[LEARNBY_SPECIAL] = true;
+		if (sAnswer.find("5") != std::string::npos) vOriginalFatherExcludes[LEARNBY_EVENT] = true;
+		if (sAnswer.find("6") != std::string::npos) vOriginalFatherExcludes[LEARNBY_TUTOR] = true;
 
-	std::cout << "As above, but for controlling how mothers can learn a move (not counting ones of the target species).\n>";
-	std::getline(std::cin, sAnswer);
-	if (sAnswer.find("1") != std::string::npos) vMotherExcludes[LEARNBY_LEVELUP] = true;
-	if (sAnswer.find("2") != std::string::npos) vMotherExcludes[LEARNBY_TM] = true;
-	if (sAnswer.find("3") != std::string::npos) vMotherExcludes[LEARNBY_TM_UNIVERSAL] = true;
-	if (sAnswer.find("4") != std::string::npos) vMotherExcludes[LEARNBY_SPECIAL] = true;
-	if (sAnswer.find("5") != std::string::npos) vMotherExcludes[LEARNBY_EVENT] = true;
-	if (sAnswer.find("6") != std::string::npos) vMotherExcludes[LEARNBY_TUTOR] = true;
+		std::cout << "As above, but for controlling how mothers can learn a move (not counting ones of the target species).\n>";
+		std::getline(std::cin, sAnswer);
+		if (sAnswer.find("1") != std::string::npos) vMotherExcludes[LEARNBY_LEVELUP] = true;
+		if (sAnswer.find("2") != std::string::npos) vMotherExcludes[LEARNBY_TM] = true;
+		if (sAnswer.find("3") != std::string::npos) vMotherExcludes[LEARNBY_TM_UNIVERSAL] = true;
+		if (sAnswer.find("4") != std::string::npos) vMotherExcludes[LEARNBY_SPECIAL] = true;
+		if (sAnswer.find("5") != std::string::npos) vMotherExcludes[LEARNBY_EVENT] = true;
+		if (sAnswer.find("6") != std::string::npos) vMotherExcludes[LEARNBY_TUTOR] = true;
 
-	std::cout << "Enter maximum level the pokemon involved in chains may be at.\nEnter nothing to set no limit\n>";
+		std::cout << "Enter maximum level the pokemon involved in chains may be at.\nEnter nothing to set no limit\n>";
+		std::getline(std::cin, sAnswer);
+		if (sAnswer.empty())
+			iMaxLevel = 100;
+		else
+			iMaxLevel = stoi(sAnswer);
+	}
+
+	std::cout << "Enter a comma-separated list of Pokemon who are allowed to be the top-level ancestor, or enter nothing.\n>";
 	std::getline(std::cin, sAnswer);
-	if (sAnswer.empty())
-		iMaxLevel = 100;
-	else
-		iMaxLevel = stoi(sAnswer);
+	if (!sAnswer.empty())
+	{
+		std::vector<std::string> strings;
+		size_t iNameEnd = sAnswer.find(",");
+		if (iNameEnd != std::string::npos)
+		{
+			std::string sFirstName = sAnswer.substr(0, iNameEnd);
+			strings.push_back(sFirstName);
+			size_t iLevelStart = iNameEnd + 2;
+			RecursiveCSVParse(sAnswer, iLevelStart, iNameEnd, strings);
+			for (std::string sName : strings)
+			{
+				sName[0] = toupper(sName[0]);
+				std::cout << "Allowed father: '" << sName << "'\n";
+				vRequireFather.push_back(sName);
+			}
+		}
+	}
 
 	std::cout << "Enter maximum length of breeding chains (recommend 20 if you want to be 100% sure if a certain chain exists).\n>";
 	std::getline(std::cin, sAnswer);
@@ -1120,8 +1165,16 @@ static void PreSearch()
 	}
 
 	//print out our data so far
-	for (MoveLearner* tLearner : vMoveLearners)
-		std::cout << tLearner->sMoveName << ": " << tLearner->InfoStr(false) << "\n";
+	if (!bNoMoves)
+	{
+		for (MoveLearner* tLearner : vMoveLearners)
+			std::cout << tLearner->sMoveName << ": " << tLearner->InfoStr(false) << "\n";
+	}
+	else
+	{
+		for (MoveLearner* tLearner : vMoveLearners)
+			std::cout << tLearner->tMonInfo->sSpecies << "\n";
+	}
 
 	std::cout << "Starting the chain search.\n";
 }
@@ -1129,19 +1182,29 @@ static void PreSearch()
 static int SuggestChain(BreedChain tChain, MoveLearner* tBottomChild)
 {
 	MoveLearner* tCurrentLearner = tBottomChild;
-	std::cout << "\nChain for " << tChain.vLineage[0]->sMoveName << ": ";
+	if (!bNoMoves)
+		std::cout << "\nChain for " << tChain.vLineage[0]->sMoveName << ": ";
+	else
+		std::cout << "\nChain: ";
 	std::cout << tChain.vLineage[0]->InfoStr(false);
 	for (int iLearner = 1; iLearner < tChain.vLineage.size(); iLearner++)
 	{
 		std::cout << " <- " << tChain.vLineage[iLearner]->InfoStr(false);
 	}
-	std::cout << "\nTo accept this chain, enter nothing\nEnter the name of a pokemon species to avoid it in future chains\nEnter a corresponding ID from below to avoid chains involving that Pokemon learning that move that way\n";
-	for (int iLearner = 0; iLearner < tChain.vLineage.size(); iLearner++)
+	if (!bNoMoves)
 	{
-		std::cout << "ID: " << tChain.vLineage[iLearner]->iID << " for " << tChain.vLineage[iLearner]->sMoveName << " on " << tChain.vLineage[iLearner]->InfoStr(false) << "\n";
+		std::cout << "\nTo accept this chain, enter nothing\nEnter the name of a pokemon species to avoid it in future chains\nEnter a corresponding ID from below to avoid chains involving that Pokemon learning that move that way\n";
+		for (int iLearner = 0; iLearner < tChain.vLineage.size(); iLearner++)
+		{
+			std::cout << "ID: " << tChain.vLineage[iLearner]->iID << " for " << tChain.vLineage[iLearner]->sMoveName << " on " << tChain.vLineage[iLearner]->InfoStr(false) << "\n";
+		}
+		if (tCurrentLearner->sLevel == "1")
+			std::cout << "This move is learned at level 1. Carefully consider if you can obtain this pokemon at level 1 before accepting the chain. Also consider if you can use a move reminder before rejecting it.\n";
 	}
-	if (tCurrentLearner->sLevel == "1")
-		std::cout << "This move is learned at level 1. Carefully consider if you can obtain this pokemon at level 1 before accepting the chain. Also consider if you can use a move reminder before rejecting it.\n";
+	else
+	{
+		std::cout << "\nTo accept this chain, enter nothing\nEnter the name of a pokemon species to avoid it in future chains\n";
+	}
 	std::cout << ">";
 	std::string sAnswer;
 	if (!bFastForward)
@@ -1201,6 +1264,9 @@ static bool LearnerCannotBeTopLevel(MoveLearner* tLearner)
 {
 	//if you learn it by egg, then you must have a relevant father, thus the chain needs to be longer!
 	if (tLearner->eLearnMethod == LEARNBY_EGG)
+		return true;
+
+	if (vRequireFather.size() && std::find(vRequireFather.begin(), vRequireFather.end(), tLearner->tMonInfo->sSpecies) == vRequireFather.end())
 		return true;
 
 	if (tLearner->eLearnMethod == LEARNBY_TM || tLearner->eLearnMethod == LEARNBY_TM_UNIVERSAL)
@@ -1477,6 +1543,12 @@ static void GenerateUniversalTMLearns()
 				MakeUniversalTMLearn(vTMNames[i], j);
 }
 
+static void GenerateMovelessLearns()
+{
+	for (int j = 0; j < 493; j++)
+		MakeMovelessLearn("N/A", j);
+}
+
 //we must tell evolved pokemon about moves that only their prior evolutions could learn
 //we cannot depend on EW to suggest something like Oddish -> Gloom -> Bellossom. ValidateMatchup would throw this out.
 //additionally, this is how we will account for Shedinja being in a different egg group than Nincada.
@@ -1539,24 +1611,29 @@ int main(int argc, char* argv[])
 {
 	if (GetSettings(argc) == 0)
 		return 0;
-
-	if (argc == 1)
+	if (bNoMoves)
 	{
-		//this means we launched from visual studio, so all of the file names are hardcoded
-		if (ProcessFilesDebug() == 0)
-			return 0;
+		GenerateMovelessLearns();
 	}
 	else
 	{
-		if (ProcessFilesNormal(argc, argv) == 0)
-			return 0;
+		if (argc == 1)
+		{
+			//this means we launched from visual studio, so all of the file names are hardcoded
+			if (ProcessFilesDebug() == 0)
+				return 0;
+		}
+		else
+		{
+			if (ProcessFilesNormal(argc, argv) == 0)
+				return 0;
+		}
+
+		SplitMultiLevelLearns();
+		GenerateUniversalTMLearns();
+		CreatePriorEvolutionLearns();
+		FindTMsOfInterest();
 	}
-
-	SplitMultiLevelLearns();
-	GenerateUniversalTMLearns();
-	CreatePriorEvolutionLearns();
-
-	FindTMsOfInterest();
 
 	PreSearch();
 
