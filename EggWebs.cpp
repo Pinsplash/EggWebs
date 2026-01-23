@@ -8,162 +8,68 @@
 #include <complex>
 #include <numeric>
 #include <string_view>
-#include <cassert>
 #include <regex>
-#include "data_gen4.cpp"
+#include "core.h"
 #include <list>
-//#include <windows.h>
-//using namespace std;
 
-enum MoveLearnMethod
-{
-	METHOD_NOT_DEFINED,
-	LEARNBY_LEVELUP,
-	LEARNBY_TM,
-	LEARNBY_TM_UNIVERSAL,
-	LEARNBY_EGG,
-	LEARNBY_SPECIAL,
-	LEARNBY_EVENT,
-	LEARNBY_TUTOR,
-	LAST_LEARN_METHOD
-};
 
-//group crawl result
-enum
-{
-	CR_SUCCESS,
-	CR_FAIL,
-	CR_REJECTED
-};
 
 std::string g_sTargetSpecies;
 std::vector<std::string> vTMLearnBlacklist;
 std::vector<std::string> vMovesDone;
 std::vector<std::string> vMovesBeingExplored;
 std::vector<std::string> vRequireFather;
-
+std::vector<MoveLearner*> vMoveLearners;
+ComboBreedData tComboData;
+GameData* g_pTargetGame;
 std::vector<bool> vOriginalFatherExcludes = { false, false, false, false, false, false, false, false, false };
 std::vector<bool> vMotherExcludes = { false, false, false, false, false, false, false, false, false };
 int iMaxLevel = 100;
 bool bFastForward = false;
 bool bNoMoves = false;
 int iLearnerCount = 0;
+int iCombo = 0;
 
 //there should be no reason for a breeding chain to EVER be this long
 int iMaxDepth = 20;
 
-struct MoveLearner
+std::vector<GameData> tGames =
 {
-	std::string sForm;
-	std::string sLevel;
-	std::string sMoveName;
-	std::string LearnedAsSpecies;
-	MoveLearnMethod eLearnMethod = METHOD_NOT_DEFINED;
-	SpeciesInfo* tMonInfo;
-	bool bBaby = false;
-	bool bTMOfInterest = false;
-	bool bFemaleOnly = false;
-	bool bMaleOnly = false;
-	bool bIsDitto = false;
-	bool bEraseMe = false;
-	bool bRejected = false;
-	int iID = -1;
-	std::string MethodStr()
-	{
-		std::string s1;
-		if (eLearnMethod == LEARNBY_LEVELUP) s1 = " (level " + sLevel;
-		else if (eLearnMethod == LEARNBY_TM) s1 = " (by TM";
-		else if (eLearnMethod == LEARNBY_TM_UNIVERSAL) s1 = " (by universal TM";
-		else if (eLearnMethod == LEARNBY_EGG) s1 = " (egg move";
-		else if (eLearnMethod == LEARNBY_SPECIAL) s1 = " (special encounter";
-		else if (eLearnMethod == LEARNBY_EVENT) s1 = " (from an event";
-		else if (eLearnMethod == LEARNBY_TUTOR) s1 = " (tutor";
-		else if (bIsDitto) s1 = "";
-		else s1 = " (UNKNOWN REASON";
-
-		std::string s2;
-		if (LearnedAsSpecies.empty())
-			s2 = ")";
-		else
-			s2 = ", learned as " + LearnedAsSpecies + ")";
-
-		return s1 + s2;
-	}
-	std::string InfoStr(bool bInCSV)
-	{
-		if (bNoMoves)
-			return tMonInfo->sSpecies;
-		std::string s1;
-		if (!sForm.empty())
-			s1 = tMonInfo->sSpecies + MethodStr() + " (" + sForm + ")";
-		else
-			s1 = tMonInfo->sSpecies + MethodStr();
-
-		if (bInCSV && !LearnedAsSpecies.empty())
-			return "\"" + s1 + "\"";
-		else
-			return s1;
-	}
-};
-std::vector<MoveLearner*> vMoveLearners;
-
-struct BreedChain
-{
-	std::vector<MoveLearner*> vLineage;
+	{"Red/Blue", "red-blue", 1, "RB"},
+	{"Yellow", "yellow", 1, "Y"},
+	{"Gold/Silver", "gold-silver", 2, "GS"},
+	{"Crystal", "crystal", 2, "C"},
+	{"Ruby/Sapphire", "ruby-sapphire", 3, "RS"},
+	{"FireRed/LeafGreen", "firered-leafgreen", 3, "FRLG"},
+	{"Emerald", "emerald", 3, "E"},
+	{"Diamond/Pearl", "diamond-pearl", 4, "DP"},
+	{"Platinum", "platinum", 4, "Pt"},
+	{"HeartGold/SoulSilver", "heartgold-soulsilver", 4, "HGSS"},
+	{"Black/White", "black-white", 5, "BW"},
+	{"Black 2/White 2", "black-2-white-2", 5, "B2W2"},
+	{"X/Y", "x-y", 6, "XY"},
+	{"Omega Ruby/Alpha Sapphire", "omega-ruby-alpha-sapphire", 6, "ORAS"},
+	{"Sun/Moon", "sun-moon", 7, "SM"},
+	{"Ultra Sun/Ultra Moon", "ultra-sun-ultra-moon", 7, "USUM"},
+	{"Let's Go Pikachu/Eevee", "lets-go-pikachu-eevee", 7, "PE"},
+	{"Sword/Shield", "sword-shield", 8, "SwSh"},
+	{"Brilliant Diamond/Shining Pearl", "brilliant-diamond-shining-pearl", 8, "BDSP"},
+	{"Legends: Arceus", "legends-arceus", 8, "LA"},
+	{"Scarlet/Violet", "scarlet-violet", 9, "SV"},
+	{"Legends: Z-A", "legends-za", 9, "ZA"}
 };
 
-int iCombo = 0;
-
-struct ComboBreedData
+extern Generation tGeneration1;
+extern Generation tGeneration2;
+extern Generation tGeneration3;
+extern Generation tGeneration4;
+std::vector<Generation*> pGenerations =
 {
-	std::vector<std::string> sMoves;
-	std::vector<bool> bSatisfiedStatus = { false, false, false, false };
-	//0 = no
-	//1 = yes
-	//2 = move not in data
-	int IsMoveSatisfied(std::string sWantedMove)
-	{
-		for (int i = 0; i < iCombo; i++)
-		{
-			if (sMoves[i] == sWantedMove)
-				return bSatisfiedStatus[i] ? 1 : 0;
-		}
-		return 2;
-	}
-	bool AllMovesSatisfied()
-	{
-		for (int i = 0; i < iCombo; i++)
-		{
-			if (!bSatisfiedStatus[i])
-				return false;
-		}
-		return true;
-	}
-	void AddMove(std::string sMove, bool bSatisfied = false)
-	{
-		if (std::find(sMoves.begin(), sMoves.end(), sMove) != sMoves.end())
-		{
-			return;//only want the names of moves, and we only want a name one time
-		}
-		sMoves.push_back(sMove);
-		assert(sMoves.size() <= iCombo);
-		assert(sMoves.size() <= 4);
-		bSatisfiedStatus[sMoves.size() - 1] = bSatisfied;
-	}
-	void SetSatisfied(std::string sWantedMove, bool bSatisfied)
-	{
-		for (int i = 0; i < iCombo; i++)
-		{
-			if (sMoves[i] == sWantedMove)
-			{
-				bSatisfiedStatus[i] = bSatisfied;
-				return;
-			}
-		}
-		assert(false);//didn't find move we wanted to set
-	}
+	&tGeneration1,
+	&tGeneration2,
+	&tGeneration3,
+	&tGeneration4
 };
-ComboBreedData tComboData;
 
 //for some reason my brain thinks this is called "is_numeric" so i'm putting that text here for the next time i'm searching for this
 static bool is_number(const std::string& s)
@@ -193,21 +99,11 @@ static bool StringPairIdent(std::string p1s1, std::string p1s2, std::string p2s1
 	return p1s1 + p1s2 == p2s1 + p2s2 || p1s1 + p1s2 == p2s2 + p2s1;
 }
 
-static bool CanComeFromEgg(std::string sSpecies)
+static bool IsBabyPokemon(std::string TargetSpecies, Generation* generation)
 {
-	for (int i = 0; i < 256; i++)
+	for (int i = 0; i < generation->sBabyMons.size(); i++)
 	{
-		if (sEggMons[i] == sSpecies)
-			return true;
-	}
-	return false;
-}
-
-static bool IsBabyPokemon(std::string TargetSpecies)
-{
-	for (int i = 0; i < 18; i++)
-	{
-		if (sBabyMons[i] == TargetSpecies)
+		if (generation->sBabyMons[i] == TargetSpecies)
 		{
 			return true;
 		}
@@ -215,41 +111,41 @@ static bool IsBabyPokemon(std::string TargetSpecies)
 	return false;
 }
 
-static bool IsFemaleOnly(std::string TargetSpecies)
+static bool IsFemaleOnly(std::string TargetSpecies, Generation* generation)
 {
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < generation->sFemaleOnlyMons.size(); i++)
 	{
-		if (sFemaleOnlyMons[i] == TargetSpecies)
+		if (generation->sFemaleOnlyMons[i] == TargetSpecies)
 			return true;
 	}
 	return false;
 }
 
-static bool IsMaleOnly(std::string TargetSpecies)
+static bool IsMaleOnly(std::string TargetSpecies, Generation* generation)
 {
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < generation->sMaleOnlyMons.size(); i++)
 	{
-		if (sMaleOnlyMons[i] == TargetSpecies)
+		if (generation->sMaleOnlyMons[i] == TargetSpecies)
 			return true;
 	}
 	return false;
 }
 
-static bool IsUniversalTM(std::string sMoveName)
+static bool IsUniversalTM(std::string sMoveName, Generation* generation)
 {
-	for (int i = 0; i < 20; i++)
+	for (int i = 0; i < generation->sUniversalTMs.size(); i++)
 	{
-		if (sUniversalTMs[i] == sMoveName)
+		if (generation->sUniversalTMs[i] == sMoveName)
 			return true;
 	}
 	return false;
 }
 
-static bool IsTMorHM(std::string sMoveName)
+static bool IsTMorHM(std::string sMoveName, Generation* generation)
 {
-	for (int i = 0; i < 92; i++)
+	for (int i = 0; i < generation->sTMsandHMs.size(); i++)
 	{
-		if (sTMsandHMs[i] == sMoveName)
+		if (generation->sTMsandHMs[i] == sMoveName)
 			return true;
 	}
 	return false;
@@ -266,10 +162,10 @@ static bool SpeciesCantUseTM(std::string sMoveName, std::string sSpecies)
 	return false;
 }
 
-static int GetSpeciesInfo(std::string sWantedName)
+static int GetSpeciesInfo(std::string sWantedName, Generation* generation)
 {
-	for (int iInfo = 0; iInfo < 493; iInfo++)
-		if (sWantedName == sAllGroups[iInfo].sSpecies)
+	for (int iInfo = 0; iInfo < generation->sAllGroups.size(); iInfo++)
+		if (sWantedName == generation->sAllGroups[iInfo].sSpecies)
 			return iInfo;
 	return -1;
 }
@@ -347,11 +243,11 @@ static int ValidateGroup(std::string& sGroupName, bool bQuiet)
 	}
 }
 
-static void AddMoveToMainList(MoveLearner* tNewLearner)
+static void AddMoveToMainList(MoveLearner* tNewLearner, Generation* generation)
 {
-	tNewLearner->bBaby = IsBabyPokemon(tNewLearner->tMonInfo->sSpecies);
-	tNewLearner->bFemaleOnly = IsFemaleOnly(tNewLearner->tMonInfo->sSpecies);
-	tNewLearner->bMaleOnly = IsMaleOnly(tNewLearner->tMonInfo->sSpecies);
+	tNewLearner->bBaby = IsBabyPokemon(tNewLearner->tMonInfo->sSpecies, generation);
+	tNewLearner->bFemaleOnly = IsFemaleOnly(tNewLearner->tMonInfo->sSpecies, generation);
+	tNewLearner->bMaleOnly = IsMaleOnly(tNewLearner->tMonInfo->sSpecies, generation);
 	tNewLearner->iID = iLearnerCount;
 	iLearnerCount++;
 	vMoveLearners.push_back(tNewLearner);
@@ -375,7 +271,7 @@ static std::string ProcessAnnotatedCell(std::string sTextLine, size_t& iPipeLoca
 	size_t iValue2End = sTextLine.find("}}", iValue2Start);
 	std::string sValue2 = sTextLine.substr(iValue2Start, iValue2End - iValue2Start);
 	//if (!bQuiet) std::cout << "\nProcessAnnotatedCell: " << sValue2 << "\n";
-	if (sValue2.find("SS") != std::string::npos)
+	if (sValue2.find(g_pTargetGame->sAcronym) != std::string::npos)
 	{
 		//the value is for our game
 		//if (!bQuiet) std::cout << "sValue2: " << sValue2 << "\n";
@@ -506,8 +402,6 @@ static bool ValidateMatchup(std::vector<bool>& bClosedList, std::vector<MoveLear
 	//make sure father wasn't already in the family tree (incest is redundant and leads to recursion)
 	//also avoid going to egg groups we already went to. this should interact fine with combo mode because every call to SearchRetryLoop uses a different parent list
 	bool bRedundant = false;
-	bool bAlreadyFoundEggGroup1 = false;
-	bool bAlreadyFoundEggGroup2 = false;
 	MoveLearner* pCurrentLearner = &tBottomChild;
 	std::string sOldCommonEggGroup;
 	/*
@@ -521,10 +415,6 @@ static bool ValidateMatchup(std::vector<bool>& bClosedList, std::vector<MoveLear
 		//std::cout << " " << pCurrentLearner->tMonInfo->sSpecies;
 		if (pCurrentLearner->tMonInfo->sSpecies == tFather->tMonInfo->sSpecies)
 			bRedundant = true;
-		if (pCurrentLearner->tMonInfo->sEggGroup1 == tFather->tMonInfo->sEggGroup1 || pCurrentLearner->tMonInfo->sEggGroup2 == tFather->tMonInfo->sEggGroup1)
-			bAlreadyFoundEggGroup1 = true;
-		if (pCurrentLearner->tMonInfo->sEggGroup1 == tFather->tMonInfo->sEggGroup2 || pCurrentLearner->tMonInfo->sEggGroup2 == tFather->tMonInfo->sEggGroup2)
-			bAlreadyFoundEggGroup2 = true;
 		if (sOldCommonEggGroup == sNewCommonEggGroup)
 		{
 			//std::cout << " (" << sNewCommonEggGroup << ")" << " " << tFather->tMonInfo->sSpecies << " REDUNDANT EGG GROUPS";
@@ -550,21 +440,21 @@ static bool ValidateMatchup(std::vector<bool>& bClosedList, std::vector<MoveLear
 	return true;
 }
 
-static MoveLearner* MakeUniversalTMLearn(std::string sWantedMoveName, int i)
+static MoveLearner* MakeUniversalTMLearn(std::string sWantedMoveName, int i, Generation* generation)
 {
 	MoveLearner* tLearner = new MoveLearner;
 	tLearner->sMoveName = sWantedMoveName;
-	tLearner->tMonInfo = &sAllGroups[i];
+	tLearner->tMonInfo = &generation->sAllGroups[i];
 	tLearner->eLearnMethod = LEARNBY_TM_UNIVERSAL;
-	AddMoveToMainList(tLearner);
+	AddMoveToMainList(tLearner, generation);
 	return tLearner;
 }
 
-static MoveLearner* MakeMovelessLearn(std::string sWantedMoveName, int i)
+static MoveLearner* MakeMovelessLearn(std::string sWantedMoveName, int i, Generation* generation)
 {
 	MoveLearner* tLearner = new MoveLearner;
-	tLearner->tMonInfo = &sAllGroups[i];
-	AddMoveToMainList(tLearner);
+	tLearner->tMonInfo = &generation->sAllGroups[i];
+	AddMoveToMainList(tLearner, generation);
 	return tLearner;
 }
 
@@ -611,16 +501,10 @@ static int ProcessMove(std::ifstream& stReadFile)
 	bool bSpecialSectionInside = false;
 	bool bEventSection = false;
 	bool bEventSectionInside = false;
-	int iHiddenColumns = 0;
+	int iTargetColumn = 0;
 	std::string sMoveName;
 	while (std::getline(stReadFile, sTextLine))
 	{
-		//if (sMoveName == "Solar Beam")
-		{
-			//std::cout << sTextLine;
-			//std::string sFuck;
-			//std::getline(std::cin, sFuck);
-		}
 		// Skip any blank lines
 		if (sTextLine.size() == 0)
 			continue;
@@ -642,7 +526,7 @@ static int ProcessMove(std::ifstream& stReadFile)
 			sMoveName = sTextLine.substr(5, iNameEnd - 5);
 		}
 
-		bUniversalTM = IsUniversalTM(sMoveName);
+		bUniversalTM = IsUniversalTM(sMoveName, g_pTargetGame->GetGeneration());
 
 		if (!bLearnset && sTextLine == "==Learnset==")
 			bLearnset = true;
@@ -651,7 +535,7 @@ static int ProcessMove(std::ifstream& stReadFile)
 			if (sTextLine.find("Movefoot") != std::string::npos)
 			{
 				bLevelupSection = bLevelupSectionInside = bTMTutorSection = bTMTutorSectionInside = bBreedSection = bBreedSectionInside = bSpecialSectionInside = bEventSectionInside = false;
-				iHiddenColumns = 0;
+				iTargetColumn = 0;
 			}
 			if (!bLevelupSection && sTextLine == "===By [[Level|leveling up]]===")
 				bLevelupSection = true;
@@ -675,23 +559,23 @@ static int ProcessMove(std::ifstream& stReadFile)
 				bEventSection = true;
 				bSpecialSection = false;
 			}
-			else if (bSpecialSection && sTextLine == "====[[Generation IV]]====")
+			else if (bSpecialSection && sTextLine == g_pTargetGame->GetGeneration()->sBulbaHeader)
 				bSpecialSectionInside = true;
-			else if (bEventSection && sTextLine == "====[[Generation IV]]====")
+			else if (bEventSection && sTextLine == g_pTargetGame->GetGeneration()->sBulbaHeader)
 				bEventSectionInside = true;
 			else if (bLevelupSection || bTMTutorSection || bBreedSection || bSpecialSectionInside || bEventSectionInside)
 			{
 				//{{Movehead/Games|Normal|g1=none|g7=1|g7g={{gameabbrev7|SMUSUM}}|g8=2}}
 				//{{Moveentry/9|0098|Krabby|type=Water|1|Water 3|Water 3|−|49{{sup/3|FRLG}}|45|45|45|45|29|29}}
 				//{{Movefoot|Normal|9}}
-				if (bTMTutorSection && sTextLine.find("g4tm=tutor") != std::string::npos)
+				if (bTMTutorSection && sTextLine.find("g" + std::to_string(g_pTargetGame->iGeneration) + "tm=tutor") != std::string::npos)
 					bSectionIsTutor = true;
 				if (sTextLine.find("Movehead/Games") != std::string::npos || sTextLine.find("Movehead/TMGames") != std::string::npos)
 				{
-					//make sure g4 is applicable
-					if (sTextLine.find("g4=none") != std::string::npos)
+					//make sure generation is applicable
+					if (sTextLine.find("g" + std::to_string(g_pTargetGame->iGeneration) + "=none") != std::string::npos)
 					{
-						//no pokemon can learn this by level up in gen 4, exit fast
+						//no pokemon can learn this by level up in target gen, exit fast
 						bLevelupSection = false;
 						bTMTutorSection = false;
 						bBreedSection = false;
@@ -706,13 +590,52 @@ static int ProcessMove(std::ifstream& stReadFile)
 							bTMTutorSectionInside = true;
 						if (bBreedSection)
 							bBreedSectionInside = true;
-						//if generations before 4 are hidden from the table, we have to watch out for them
-						if (sTextLine.find("g3=none") != std::string::npos) iHiddenColumns++;
-						if (sTextLine.find("g2=none") != std::string::npos) iHiddenColumns++;
-						if (sTextLine.find("g1=none") != std::string::npos) iHiddenColumns++;
+						//watch out for games/generations hidden from table
+						iTargetColumn = g_pTargetGame->iGeneration;
+						if (g_pTargetGame->iGeneration >= 2)
+							if (sTextLine.find("g1=none") != std::string::npos)
+								iTargetColumn--;
+						if (g_pTargetGame->iGeneration >= 3)
+							if (sTextLine.find("g2=none") != std::string::npos)
+								iTargetColumn--;
+						if (g_pTargetGame->iGeneration >= 4)
+							if (sTextLine.find("g3=none") != std::string::npos)
+								iTargetColumn--;
+						if (g_pTargetGame->iGeneration >= 5)
+						{
+							if (sTextLine.find("g5=2") != std::string::npos && g_pTargetGame->sInternalName != "black-white")
+								iTargetColumn++;
+							if (sTextLine.find("g4=none") != std::string::npos)
+								iTargetColumn--;
+						}
+						if (g_pTargetGame->iGeneration >= 6)
+							if (sTextLine.find("g5=none") != std::string::npos)
+								iTargetColumn--;
+						if (g_pTargetGame->iGeneration >= 7)
+						{
+							if (sTextLine.find("g7=2") != std::string::npos && (g_pTargetGame->sInternalName != "sun-moon" && g_pTargetGame->sInternalName != "ultra-sun-ultra-moon"))
+								iTargetColumn++;
+							if (sTextLine.find("g6=none") != std::string::npos)
+								iTargetColumn--;
+						}
+						if (g_pTargetGame->iGeneration >= 8)
+						{
+							if (sTextLine.find("g8=2") != std::string::npos && g_pTargetGame->sInternalName != "sword-shield")
+								iTargetColumn++;
+							if (sTextLine.find("g8=3") != std::string::npos && (g_pTargetGame->sInternalName != "sword-shield" && g_pTargetGame->sInternalName != "brilliant-diamond-shining-pearl"))
+								iTargetColumn++;
+							if (sTextLine.find("g7=none") != std::string::npos)
+								iTargetColumn--;
+						}
+						if (g_pTargetGame->iGeneration >= 9)
+						{
+							if (sTextLine.find("g9=2") != std::string::npos && (g_pTargetGame->sInternalName != "scarlet-violet"))
+								iTargetColumn++;
+							if (sTextLine.find("g8=none") != std::string::npos)
+								iTargetColumn--;
+						}
 					}
 				}
-				int iOffsetColumns = 4 - iHiddenColumns;
 				if ((bLevelupSectionInside || bTMTutorSectionInside || bBreedSectionInside || bSpecialSectionInside || bEventSectionInside) && sTextLine.find("Moveentry") != std::string::npos)
 				{
 					MoveLearner* tNewLearner = new MoveLearner;
@@ -749,14 +672,14 @@ static int ProcessMove(std::ifstream& stReadFile)
 					{
 						iPipeLocation = iPokemonNameEnd;
 					}
-					tNewLearner->tMonInfo = &sAllGroups[GetSpeciesInfo(sPokemonName)];
+					tNewLearner->tMonInfo = &g_pTargetGame->GetGeneration()->sAllGroups[GetSpeciesInfo(sPokemonName, g_pTargetGame->GetGeneration())];
 					if (sDexNumber == "0029")
 					{
-						tNewLearner->tMonInfo = &sAllGroups[GetSpeciesInfo("Nidoran F")];
+						tNewLearner->tMonInfo = &g_pTargetGame->GetGeneration()->sAllGroups[GetSpeciesInfo("Nidoran F", g_pTargetGame->GetGeneration())];
 					}
 					else if (sDexNumber == "0032")
 					{
-						tNewLearner->tMonInfo = &sAllGroups[GetSpeciesInfo("Nidoran M")];
+						tNewLearner->tMonInfo = &g_pTargetGame->GetGeneration()->sAllGroups[GetSpeciesInfo("Nidoran M", g_pTargetGame->GetGeneration())];
 					}
 					if (!tNewLearner->tMonInfo)
 					{
@@ -806,26 +729,27 @@ static int ProcessMove(std::ifstream& stReadFile)
 					{
 						tNewLearner->eLearnMethod = LEARNBY_SPECIAL;
 						tNewLearner->sLevel = "0";
-						AddMoveToMainList(tNewLearner);
+						AddMoveToMainList(tNewLearner, g_pTargetGame->GetGeneration());
 					}
 					else if (bEventSectionInside)
 					{
 						tNewLearner->eLearnMethod = LEARNBY_EVENT;
 						tNewLearner->sLevel = "0";
-						AddMoveToMainList(tNewLearner);
+						AddMoveToMainList(tNewLearner, g_pTargetGame->GetGeneration());
 					}
 					else
 					{
 						//levels
 						//skip over any unwanted columns
-						while (iOffsetColumns > 1)
+						int iSkippedColumns = 1;
+						while (iTargetColumn > iSkippedColumns)
 						{
 							std::string sLevel = ProcessLevelCell(sTextLine, iPipeLocation, true);
-							//std::cout << "ProcessLevelCell B " << sPokemonName << " returned " << sLevel << " iOffsetColumns: " << iOffsetColumns << " iPipeLocation: " << iPipeLocation << "\n";
-							iOffsetColumns--;
+							//std::cout << "ProcessLevelCell B " << sPokemonName << " returned " << sLevel << " iTargetColumn: " << iTargetColumn << " iPipeLocation: " << iPipeLocation << "\n";
+							iSkippedColumns++;
 						}
 						std::string sLevel = ProcessLevelCell(sTextLine, iPipeLocation, false);
-						//std::cout << "ProcessLevelCell A " << sPokemonName << " returned " << sLevel << " iOffsetColumns: " << iOffsetColumns << " iPipeLocation: " << iPipeLocation << "\n";
+						//std::cout << "ProcessLevelCell A " << sPokemonName << " returned " << sLevel << " iTargetColumn: " << iTargetColumn << " iPipeLocation: " << iPipeLocation << "\n";
 						tNewLearner->sLevel = sLevel;
 						if (!sLevel.empty())
 						{
@@ -876,7 +800,7 @@ static int ProcessMove(std::ifstream& stReadFile)
 											}
 										}
 									}
-									AddMoveToMainList(tNewLearner);
+									AddMoveToMainList(tNewLearner, g_pTargetGame->GetGeneration());
 								}
 								
 							}
@@ -895,8 +819,19 @@ static int ProcessMove(std::ifstream& stReadFile)
 
 static int GetSettings(int argc)
 {
-	std::cout << "Enter the name of the species that you want the move(s) to go on. Put '(nomoves)' before the name to use no-move mode.\n>";
+	for (int iGame = 0; iGame < tGames.size(); iGame++)
+	{
+		std::cout << iGame << " " << tGames[iGame].sUIName << "\n";
+	}
+	std::cout << "Enter the number associated with your target game.\n>";
 	std::string sAnswer;
+	std::getline(std::cin, sAnswer);
+	if (sAnswer.empty())
+		g_pTargetGame = &tGames[0];
+	else
+		g_pTargetGame = &tGames[stoi(sAnswer)];
+
+	std::cout << "Enter the name of the species that you want the move(s) to go on. Put '(nomoves)' before the name to use no-move mode.\n>";
 	std::getline(std::cin, sAnswer);
 
 	if (sAnswer.find("(nomoves)") != std::string::npos)
@@ -1099,7 +1034,7 @@ static void SplitMultiLevelLearns()
 				tNewLearner->sLevel = sLevel;
 				tNewLearner->sMoveName = tLearner->sMoveName;
 				tNewLearner->eLearnMethod = tLearner->eLearnMethod;
-				AddMoveToMainList(tNewLearner);
+				AddMoveToMainList(tNewLearner, g_pTargetGame->GetGeneration());
 			}
 		}
 	}
@@ -1179,7 +1114,7 @@ static void WriteOutput(std::vector<BreedChain>& vChains)
 		//of course we can breed our moves onto own species
 		if (tLearner->tMonInfo->sSpecies == g_sTargetSpecies)
 		{
-			if (IsUniversalTM(tLearner->sMoveName) && tLearner->eLearnMethod == LEARNBY_TM_UNIVERSAL)
+			if (IsUniversalTM(tLearner->sMoveName, g_pTargetGame->GetGeneration()) && tLearner->eLearnMethod == LEARNBY_TM_UNIVERSAL)
 			{
 				writingFile << ", " << tLearner->sMoveName << ": universal TM\n";
 			}
@@ -1561,13 +1496,13 @@ static void SearchStart(std::vector<BreedChain>& vChains)
 	}
 }
 
-static void GenerateUniversalTMLearns()
+static void GenerateUniversalTMLearns(Generation* generation)
 {
 	std::vector<std::string> vTMNames;
 	for (int i = 0; i < vMoveLearners.size(); i++)
 	{
 		MoveLearner* tLearn = vMoveLearners[i];
-		if (IsUniversalTM(tLearn->sMoveName))
+		if (IsUniversalTM(tLearn->sMoveName, generation))
 		{
 			if (std::find(vTMNames.begin(), vTMNames.end(), tLearn->sMoveName) != vTMNames.end())
 				continue;
@@ -1576,37 +1511,37 @@ static void GenerateUniversalTMLearns()
 		}
 	}
 	for (int i = 0; i < vTMNames.size(); i++)
-		for (int j = 0; j < 493; j++)
-			if (!SpeciesCantUseTM(vTMNames[i], sAllGroups[j].sSpecies))
-				MakeUniversalTMLearn(vTMNames[i], j);
+		for (int j = 0; j < generation->sAllGroups.size(); j++)
+			if (!SpeciesCantUseTM(vTMNames[i], generation->sAllGroups[j].sSpecies))
+				MakeUniversalTMLearn(vTMNames[i], j, generation);
 }
 
-static void GenerateMovelessLearns()
+static void GenerateMovelessLearns(Generation* generation)
 {
-	for (int j = 0; j < 493; j++)
-		MakeMovelessLearn("N/A", j);
+	for (int j = 0; j < generation->sAllGroups.size(); j++)
+		MakeMovelessLearn("N/A", j, generation);
 }
 
 //we must tell evolved pokemon about moves that only their prior evolutions could learn
 //we cannot depend on EW to suggest something like Oddish -> Gloom -> Bellossom. ValidateMatchup would throw this out.
 //additionally, this is how we will account for Shedinja being in a different egg group than Nincada.
-static void CreatePriorEvolutionLearns()
+static void CreatePriorEvolutionLearns(Generation* generation)
 {
 	for (int iLearn = 0; iLearn < vMoveLearners.size(); iLearn++)
 	{
 		MoveLearner* pLearn = vMoveLearners[iLearn];
 		std::string OriginalForm = pLearn->tMonInfo->sSpecies;
-		int iInfo = GetSpeciesInfo(OriginalForm);
+		int iInfo = GetSpeciesInfo(OriginalForm, generation);
 		int OriginalSlot = iInfo;
 		//entries are grouped by evolution family, and the largest family is 8 - the eeveelutions
 		int MaxEvoLineSize = 8;
 		int MaxSlot = iInfo + MaxEvoLineSize;
-		for (int iEvo = 0; iEvo < sAllGroups[OriginalSlot].Evolutions.size(); iEvo++)
+		for (int iEvo = 0; iEvo < generation->sAllGroups[OriginalSlot].Evolutions.size(); iEvo++)
 		{
-			std::string Target = sAllGroups[OriginalSlot].Evolutions[iEvo];
+			std::string Target = generation->sAllGroups[OriginalSlot].Evolutions[iEvo];
 			for (iInfo = OriginalSlot; iInfo < MaxSlot; iInfo++)
 			{
-				if (Target == sAllGroups[iInfo].sSpecies)
+				if (Target == generation->sAllGroups[iInfo].sSpecies)
 				{
 					//copy learns that are of methods new to the species
 					//iterate through all of the higher form's moves to see if any are of the same name and method
@@ -1635,9 +1570,9 @@ static void CreatePriorEvolutionLearns()
 						tNewLearner->sForm = pLearn->sForm;
 						tNewLearner->sLevel = pLearn->sLevel;
 						tNewLearner->sMoveName = pLearn->sMoveName;
-						tNewLearner->tMonInfo = &sAllGroups[GetSpeciesInfo(Target)];
+						tNewLearner->tMonInfo = &generation->sAllGroups[GetSpeciesInfo(Target, generation)];
 						tNewLearner->LearnedAsSpecies = pLearn->LearnedAsSpecies.empty() ? OriginalForm : pLearn->LearnedAsSpecies;
-						AddMoveToMainList(tNewLearner);
+						AddMoveToMainList(tNewLearner, generation);
 					}
 				}
 			}
@@ -1651,7 +1586,7 @@ int main(int argc, char* argv[])
 		return 0;
 	if (bNoMoves)
 	{
-		GenerateMovelessLearns();
+		GenerateMovelessLearns(g_pTargetGame->GetGeneration());
 	}
 	else
 	{
@@ -1668,8 +1603,8 @@ int main(int argc, char* argv[])
 		}
 
 		SplitMultiLevelLearns();
-		GenerateUniversalTMLearns();
-		CreatePriorEvolutionLearns();
+		GenerateUniversalTMLearns(g_pTargetGame->GetGeneration());
+		CreatePriorEvolutionLearns(g_pTargetGame->GetGeneration());
 		FindTMsOfInterest();
 	}
 

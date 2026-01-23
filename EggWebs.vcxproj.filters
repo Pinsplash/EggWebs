@@ -18,10 +18,19 @@
     <ClCompile Include="EggWebs.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="core.h">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="data_gen4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="core.cpp">
+    <ClCompile Include="data_gen3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="data_gen2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="data_gen1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
