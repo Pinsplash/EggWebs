@@ -1,9 +1,4 @@
-﻿/*
-{
-{Moveentry/8|0192|Sunflora|type=Grass|1|Grass|Grass|25|21|21{{sup/5|BW}}<br>25{{sup/5|B2W2}}|25|25||25|25|STAB='''}}
-*/
-
-#include <iostream>
+﻿#include <iostream>
 #include <string>
 #include <algorithm>
 #include <fstream>
@@ -179,9 +174,17 @@ static bool is_number(const std::string& s)
 }
 
 //true when either string in one pair of strings matches a string in another pair
-static bool StringPairMatch(std::string p1s1, std::string p1s2, std::string p2s1, std::string p2s2)
+static std::string StringPairMatch(std::string p1s1, std::string p1s2, std::string p2s1, std::string p2s2)
 {
-	return p1s1 == p2s1 || p1s1 == p2s2 || p1s2 == p2s1 || p1s2 == p2s2;
+	if (p1s1 == p2s1)
+		return p1s1;
+	if (p1s1 == p2s2)
+		return p1s1;
+	if (p1s2 == p2s1)
+		return p1s2;
+	if (p1s2 == p2s2)
+		return p1s2;
+	return "";
 }
 
 //true when two pairs of strings are identical, including if the slots are flipped around
@@ -452,17 +455,16 @@ static bool ValidateMatchup(std::vector<bool>& bClosedList, std::vector<MoveLear
 		return false;
 
 	//have to have a matching egg group
-	bool bCommonEggGroup = StringPairMatch(tMother->tMonInfo->sEggGroup1, tMother->tMonInfo->sEggGroup2, tFather->tMonInfo->sEggGroup1, tFather->tMonInfo->sEggGroup2);
-	if (!tMother->bIsDitto && !bCommonEggGroup)
+	std::string sNewCommonEggGroup = StringPairMatch(tMother->tMonInfo->sEggGroup1, tMother->tMonInfo->sEggGroup2, tFather->tMonInfo->sEggGroup1, tFather->tMonInfo->sEggGroup2);
+	if (!tMother->bIsDitto && sNewCommonEggGroup.empty())
 		return false;
 
 	//mother has to have a new egg group in order to produce good useful chains
-	//2nd check means we avoid cases such as monster/grass vs grass/grass counting as good
-	bool bNewEggGroup = !StringPairIdent(tMother->tMonInfo->sEggGroup1, tMother->tMonInfo->sEggGroup2, tFather->tMonInfo->sEggGroup1, tFather->tMonInfo->sEggGroup2) && (tMother->tMonInfo->sEggGroup1 != tMother->tMonInfo->sEggGroup2);
+	bool bNewEggGroup = !StringPairIdent(tMother->tMonInfo->sEggGroup1, tMother->tMonInfo->sEggGroup2, tFather->tMonInfo->sEggGroup1, tFather->tMonInfo->sEggGroup2);
 	//it's okay for egg groups to be bad if the father learns the move by a different method than the child
 	bool bNewMethod = tFather->eLearnMethod != tChild->eLearnMethod;
-	bool bChildIsTargetSpecies = tChild->tMonInfo->sSpecies == tBottomChild.tMonInfo->sSpecies;
-	if (!bSkipNewGroupCheck && !tMother->bIsDitto && !bNewEggGroup && !bChildIsTargetSpecies && !bNewMethod)
+	//why did we have a check for !bChildIsTargetSpecies here? this was causing venonat <- caterpie to be valid
+	if (!bSkipNewGroupCheck && !tMother->bIsDitto && !bNewEggGroup && !bNewMethod)
 		return false;
 
 	//level cap
@@ -488,6 +490,7 @@ static bool ValidateMatchup(std::vector<bool>& bClosedList, std::vector<MoveLear
 
 	//if the mom can learn the move by level up below the level cap, there's no point in breeding the move onto it
 	//just catch the mother species and level it up to this level
+	bool bChildIsTargetSpecies = tChild->tMonInfo->sSpecies == tBottomChild.tMonInfo->sSpecies;
 	if (bMotherLearnsByLevelUp)
 	{
 		bool bMotherLearnsWithinMaximum = stoi(tMother->sLevel) <= iMaxLevel;
@@ -501,16 +504,49 @@ static bool ValidateMatchup(std::vector<bool>& bClosedList, std::vector<MoveLear
 		return false;
 
 	//make sure father wasn't already in the family tree (incest is redundant and leads to recursion)
-	bool bFoundInLineageAlready = false;
+	//also avoid going to egg groups we already went to. this should interact fine with combo mode because every call to SearchRetryLoop uses a different parent list
+	bool bRedundant = false;
+	bool bAlreadyFoundEggGroup1 = false;
+	bool bAlreadyFoundEggGroup2 = false;
 	MoveLearner* pCurrentLearner = &tBottomChild;
-	while (pCurrentLearner && !bFoundInLineageAlready)
+	std::string sOldCommonEggGroup;
+	/*
+	if (pParentList[pCurrentLearner->iID])
 	{
+		sOldCommonEggGroup = StringPairMatch(pCurrentLearner->tMonInfo->sEggGroup1, pCurrentLearner->tMonInfo->sEggGroup2, pParentList[pCurrentLearner->iID]->tMonInfo->sEggGroup1, pParentList[pCurrentLearner->iID]->tMonInfo->sEggGroup2);
+	}
+	*/
+	while (pCurrentLearner && !bRedundant)
+	{
+		//std::cout << " " << pCurrentLearner->tMonInfo->sSpecies;
 		if (pCurrentLearner->tMonInfo->sSpecies == tFather->tMonInfo->sSpecies)
-			bFoundInLineageAlready = true;
+			bRedundant = true;
+		if (pCurrentLearner->tMonInfo->sEggGroup1 == tFather->tMonInfo->sEggGroup1 || pCurrentLearner->tMonInfo->sEggGroup2 == tFather->tMonInfo->sEggGroup1)
+			bAlreadyFoundEggGroup1 = true;
+		if (pCurrentLearner->tMonInfo->sEggGroup1 == tFather->tMonInfo->sEggGroup2 || pCurrentLearner->tMonInfo->sEggGroup2 == tFather->tMonInfo->sEggGroup2)
+			bAlreadyFoundEggGroup2 = true;
+		if (sOldCommonEggGroup == sNewCommonEggGroup)
+		{
+			//std::cout << " (" << sNewCommonEggGroup << ")" << " " << tFather->tMonInfo->sSpecies << " REDUNDANT EGG GROUPS";
+			bRedundant = true;
+		}
+		if (pCurrentLearner && pParentList[pCurrentLearner->iID])
+		{
+			sOldCommonEggGroup = StringPairMatch(
+				pCurrentLearner->tMonInfo->sEggGroup1, 
+				pCurrentLearner->tMonInfo->sEggGroup2, 
+				pParentList[pCurrentLearner->iID]->tMonInfo->sEggGroup1, 
+				pParentList[pCurrentLearner->iID]->tMonInfo->sEggGroup2);
+			//std::cout << " (" << sOldCommonEggGroup << ")";
+		}
 		pCurrentLearner = pParentList[pCurrentLearner->iID];
 	}
-	if (bFoundInLineageAlready)
+	if (bRedundant)
+	{
+		//std::cout << "\n";
 		return false;
+	}
+	//std::cout << " (" << sNewCommonEggGroup << ")" << " " << tFather->tMonInfo->sSpecies << "\n";
 	return true;
 }
 
@@ -1346,7 +1382,7 @@ static int TestFather(std::vector<BreedChain>& vChains, std::vector<bool>& bClos
 
 	bClosedList[tFather->iID] = true;
 
-	//std::cout << tLearner->iID << " parent set to " << tFather.iID << "\n";
+	//std::cout << tLearner->iID << " parent set to " << tFather->iID << "\n";
 	pParentList[tLearner->iID] = tFather;
 	//if we went to SearchRetryLoop, no point in trying to continue this chain
 	if (LearnerCannotBeTopLevel(tFather) || (vOriginalFatherExcludes[tFather->eLearnMethod] && (!iCombo || bBadForCombo)))
@@ -1356,6 +1392,8 @@ static int TestFather(std::vector<BreedChain>& vChains, std::vector<bool>& bClos
 		//return now to ensure SearchRetryLoop returns the correct result
 		if (iResult == CR_SUCCESS)
 			return CR_SUCCESS;
+		else
+			pParentList[tLearner->iID] = nullptr;
 	}
 	else if ((iCombo || pParentList[tBottomChild->iID]) && !bBadForCombo)
 	{
