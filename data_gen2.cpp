@@ -40,18 +40,18 @@ Generation tGeneration2 = {
 },
 //sUniversalTMs
 {
-"Return",
-"Frustration",
-"Swagger",
-"Endure",
-"Sleep Talk",
 "Attract",
-"Rest",
-"Hidden Power",
-"Toxic",
-"Protect",
 "Double Team",
-"Substitute"
+"Endure",
+"Frustration",
+"Hidden Power",
+"Protect",
+"Rest",
+"Return",
+"Sleep Talk",
+"Snore",
+"Swagger",
+"Toxic"
 },
 //sTMsandHMs
 {

@@ -63,12 +63,14 @@ extern Generation tGeneration1;
 extern Generation tGeneration2;
 extern Generation tGeneration3;
 extern Generation tGeneration4;
+extern Generation tGeneration5;
 std::vector<Generation*> pGenerations =
 {
 	&tGeneration1,
 	&tGeneration2,
 	&tGeneration3,
-	&tGeneration4
+	&tGeneration4,
+	&tGeneration5
 };
 
 //for some reason my brain thinks this is called "is_numeric" so i'm putting that text here for the next time i'm searching for this
@@ -1533,8 +1535,8 @@ static void CreatePriorEvolutionLearns(Generation* generation)
 		std::string OriginalForm = pLearn->tMonInfo->sSpecies;
 		int iInfo = GetSpeciesInfo(OriginalForm, generation);
 		int OriginalSlot = iInfo;
-		//entries are grouped by evolution family, and the largest family is 8 - the eeveelutions
-		int MaxEvoLineSize = 8;
+		//entries are grouped by evolution family, and the largest family is 9 - the eeveelutions
+		int MaxEvoLineSize = 9;
 		int MaxSlot = iInfo + MaxEvoLineSize;
 		for (int iEvo = 0; iEvo < generation->sAllGroups[OriginalSlot].Evolutions.size(); iEvo++)
 		{

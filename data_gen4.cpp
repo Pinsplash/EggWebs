@@ -57,22 +57,21 @@ Generation tGeneration4 = {
 },
 //sUniversalTMs
 {
-"Captivate",
-"Return",
-"Frustration",
-"Facade",
-"Swagger",
-"Natural Gift",
-"Endure",
-"Sleep Talk",
 "Attract",
-"Secret Power",
-"Rest",
-"Hidden Power",
-"Toxic",
-"Protect",
+"Captivate",
 "Double Team",
-"Substitute"
+"Endure",
+"Facade",
+"Frustration",
+"Hidden Power",
+"Natural Gift",
+"Protect",
+"Rest",
+"Return",
+"Secret Power",
+"Sleep Talk",
+"Swagger",
+"Toxic"
 },
 //sTMsandHMs
 {

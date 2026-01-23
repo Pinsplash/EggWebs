@@ -28,10 +28,11 @@ Generation tGeneration1 = {
 },
 //sUniversalTMs
 {
-"Rest",
-"Toxic",
+"Bide",
 "Double Team",
-"Substitute"
+"Rage",
+"Rest",
+"Toxic"
 },
 //sTMsandHMs
 {
