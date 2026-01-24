@@ -35,28 +35,28 @@ int iMaxDepth = 20;
 
 std::vector<GameData> tGames =
 {
-	{"Red/Blue", "red-blue", GENERATION_1, "RB"},
-	{"Yellow", "yellow", GENERATION_1, "Y"},
-	{"Gold/Silver", "gold-silver", GENERATION_2, "GS"},
-	{"Crystal", "crystal", GENERATION_2, "C"},
-	{"Ruby/Sapphire", "ruby-sapphire", GENERATION_3, "RS"},
-	{"FireRed/LeafGreen", "firered-leafgreen", GENERATION_3, "FRLG"},
-	{"Emerald", "emerald", GENERATION_3, "E"},
-	{"Diamond/Pearl", "diamond-pearl", GENERATION_4, "DP"},
-	{"Platinum", "platinum", GENERATION_4, "Pt"},
-	{"HeartGold/SoulSilver", "heartgold-soulsilver", GENERATION_4, "HGSS"},
-	{"Black/White", "black-white", GENERATION_5, "BW"},
-	{"Black 2/White 2", "black-2-white-2", GENERATION_5, "B2W2"},
-	{"X/Y", "x-y", GENERATION_6, "XY"},
-	{"Omega Ruby/Alpha Sapphire", "omega-ruby-alpha-sapphire", GENERATION_6, "ORAS"},
-	{"Sun/Moon", "sun-moon", GENERATION_7, "SM"},
-	{"Ultra Sun/Ultra Moon", "ultra-sun-ultra-moon", GENERATION_7, "USUM"},
-	{"Let's Go Pikachu/Eevee", "lets-go-pikachu-eevee", GENERATION_7, "PE"},
-	{"Sword/Shield", "sword-shield", GENERATION_8, "SwSh"},
-	{"Brilliant Diamond/Shining Pearl", "brilliant-diamond-shining-pearl", GENERATION_8_BDSP, "BDSP"},
-	{"Legends: Arceus", "legends-arceus", GENERATION_8, "LA"},
-	{"Scarlet/Violet", "scarlet-violet", GENERATION_9, "SV"},
-	{"Legends: Z-A", "legends-za", GENERATION_9, "ZA"}
+	{"Red/Blue",						"red-blue",							GENERATION_1,		"RB",	false},
+	{"Yellow",							"yellow",							GENERATION_1,		"Y",	false},
+	{"Gold/Silver",						"gold-silver",						GENERATION_2,		"GS",	true},
+	{"Crystal",							"crystal",							GENERATION_2,		"C",	true},
+	{"Ruby/Sapphire",					"ruby-sapphire",					GENERATION_3,		"RS",	true},
+	{"FireRed/LeafGreen",				"firered-leafgreen",				GENERATION_3,		"FRLG",	true},
+	{"Emerald",							"emerald",							GENERATION_3,		"E",	true},
+	{"Diamond/Pearl",					"diamond-pearl",					GENERATION_4,		"DP",	true},
+	{"Platinum",						"platinum",							GENERATION_4,		"Pt",	true},
+	{"HeartGold/SoulSilver",			"heartgold-soulsilver",				GENERATION_4,		"HGSS",	true},
+	{"Black/White",						"black-white",						GENERATION_5,		"BW",	true},
+	{"Black 2/White 2",					"black-2-white-2",					GENERATION_5,		"B2W2",	true},
+	{"X/Y",								"x-y",								GENERATION_6,		"XY",	true},
+	{"Omega Ruby/Alpha Sapphire",		"omega-ruby-alpha-sapphire",		GENERATION_6,		"ORAS",	true},
+	{"Sun/Moon",						"sun-moon",							GENERATION_7,		"SM",	true},
+	{"Ultra Sun/Ultra Moon",			"ultra-sun-ultra-moon",				GENERATION_7,		"USUM",	true},
+	{"Let's Go Pikachu/Eevee",			"lets-go-pikachu-eevee",			GENERATION_7,		"PE",	false},
+	{"Sword/Shield",					"sword-shield",						GENERATION_8,		"SwSh",	true},
+	{"Brilliant Diamond/Shining Pearl",	"brilliant-diamond-shining-pearl",	GENERATION_8_BDSP,	"BDSP",	true},
+	{"Legends: Arceus",					"legends-arceus",					GENERATION_8,		"LA",	false},
+	{"Scarlet/Violet",					"scarlet-violet",					GENERATION_9,		"SV",	true},
+	{"Legends: Z-A",					"legends-za",						GENERATION_9,		"ZA",	false}
 };
 
 extern Generation tGeneration1;
@@ -68,6 +68,7 @@ extern Generation tGeneration6;
 extern Generation tGeneration7;
 extern Generation tGeneration8;
 extern Generation tGeneration8_BDSP;
+extern Generation tGeneration9;
 std::vector<Generation*> pGenerations =
 {
 	&tGeneration1,
@@ -78,7 +79,8 @@ std::vector<Generation*> pGenerations =
 	&tGeneration6,
 	&tGeneration7,
 	&tGeneration8,
-	&tGeneration8_BDSP
+	&tGeneration8_BDSP,
+	&tGeneration9
 };
 
 //for some reason my brain thinks this is called "is_numeric" so i'm putting that text here for the next time i'm searching for this
@@ -131,12 +133,19 @@ static bool IsFemaleOnly(std::string TargetSpecies, Generation* generation)
 	return false;
 }
 
-static bool IsMaleOnly(std::string TargetSpecies, Generation* generation)
+static bool IsMaleOnly(std::string TargetSpecies, std::string Form, Generation* generation)
 {
 	for (int i = 0; i < generation->sMaleOnlyMons.size(); i++)
 	{
 		if (generation->sMaleOnlyMons[i] == TargetSpecies)
+		{
+			if (generation->iNumber >= GENERATION_9 && TargetSpecies == "Ursaluna")
+			{
+				//ursaluna's bloodmoon form is male only, but the rest of the teddiursa line is any gender
+				return Form == "Bloodmoon";
+			}
 			return true;
+		}
 	}
 	return false;
 }
@@ -252,7 +261,7 @@ static void AddMoveToMainList(MoveLearner* tNewLearner, Generation* generation)
 {
 	tNewLearner->bBaby = IsBabyPokemon(tNewLearner->tMonInfo->sSpecies, generation);
 	tNewLearner->bFemaleOnly = IsFemaleOnly(tNewLearner->tMonInfo->sSpecies, generation);
-	tNewLearner->bMaleOnly = IsMaleOnly(tNewLearner->tMonInfo->sSpecies, generation);
+	tNewLearner->bMaleOnly = IsMaleOnly(tNewLearner->tMonInfo->sSpecies, tNewLearner->sForm, generation);
 	tNewLearner->iID = iLearnerCount;
 	iLearnerCount++;
 	vMoveLearners.push_back(tNewLearner);

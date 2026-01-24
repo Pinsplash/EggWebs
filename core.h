@@ -50,6 +50,7 @@ struct GameData
 	std::string sInternalName;
 	GenerationNumber iGeneration;
 	std::string sAcronym;
+	bool bHasBreeding = true;
 	Generation* GetGeneration()
 	{
 		return pGenerations[iGeneration];
