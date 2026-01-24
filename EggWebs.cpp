@@ -143,16 +143,6 @@ static bool IsUniversalTM(std::string sMoveName, Generation* generation)
 	return false;
 }
 
-static bool IsTMorHM(std::string sMoveName, Generation* generation)
-{
-	for (int i = 0; i < generation->sTMsandHMs.size(); i++)
-	{
-		if (generation->sTMsandHMs[i] == sMoveName)
-			return true;
-	}
-	return false;
-}
-
 static bool SpeciesCantUseTM(std::string sMoveName, std::string sSpecies)
 {
 	//each entry is species name followed by move it can't learn by TM
@@ -674,15 +664,13 @@ static int ProcessMove(std::ifstream& stReadFile)
 					{
 						iPipeLocation = iPokemonNameEnd;
 					}
-					tNewLearner->tMonInfo = &g_pTargetGame->GetGeneration()->sAllGroups[GetSpeciesInfo(sPokemonName, g_pTargetGame->GetGeneration())];
 					if (sDexNumber == "0029")
-					{
-						tNewLearner->tMonInfo = &g_pTargetGame->GetGeneration()->sAllGroups[GetSpeciesInfo("Nidoran F", g_pTargetGame->GetGeneration())];
-					}
+						sPokemonName = "Nidoran F";
 					else if (sDexNumber == "0032")
-					{
-						tNewLearner->tMonInfo = &g_pTargetGame->GetGeneration()->sAllGroups[GetSpeciesInfo("Nidoran M", g_pTargetGame->GetGeneration())];
-					}
+						sPokemonName = "Nidoran M";
+					else if (sDexNumber == "0669")
+						sPokemonName = "Flabebe";
+					tNewLearner->tMonInfo = &g_pTargetGame->GetGeneration()->sAllGroups[GetSpeciesInfo(sPokemonName, g_pTargetGame->GetGeneration())];
 					if (!tNewLearner->tMonInfo)
 					{
 						std::cout << "\n unknown pokemon\n";

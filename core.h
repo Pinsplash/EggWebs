@@ -25,7 +25,6 @@ struct Generation
 	std::vector<std::string> sFemaleOnlyMons;
 	std::vector<std::string> sMaleOnlyMons;
 	std::vector<std::string> sUniversalTMs;
-	std::vector<std::string> sTMsandHMs;
 	std::vector<SpeciesInfo> sAllGroups;
 };
 

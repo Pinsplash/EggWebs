@@ -133,6 +133,7 @@
     <ClCompile Include="data_gen3.cpp" />
     <ClCompile Include="data_gen4.cpp" />
     <ClCompile Include="data_gen5.cpp" />
+    <ClCompile Include="data_gen6.cpp" />
     <ClCompile Include="EggWebs.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

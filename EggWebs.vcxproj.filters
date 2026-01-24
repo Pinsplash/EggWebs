@@ -36,5 +36,8 @@
     <ClCompile Include="data_gen5.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="data_gen6.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
