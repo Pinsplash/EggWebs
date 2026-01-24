@@ -1,12 +1,12 @@
-#ifndef DATA_GEN6
-#define DATA_GEN6
+#ifndef DATA_GEN7
+#define DATA_GEN7
 #pragma once
 #include "core.h"
 
-extern Generation tGeneration6;
+extern Generation tGeneration7;
 #endif
-Generation tGeneration6 = {
-6,
+Generation tGeneration7 = {
+7,
 "====[[Generation VI]]====",
 //sBabyMons https://bulbapedia.bulbagarden.net/wiki/Baby_Pok%C3%A9mon
 {
@@ -47,7 +47,11 @@ Generation tGeneration6 = {
 "Mandibuzz",
 "Flabebe",
 "Floette",
-"Florges"
+"Florges",
+"Salazzle",
+"Bounsweet",
+"Steenee",
+"Tsareena"
 },
 //sMaleOnlyMons
 {
@@ -71,10 +75,9 @@ Generation tGeneration6 = {
 "Attract",
 "Confide",
 "Double Team",
-"Facade",
 "Frustration",
 "Hidden Power",
-"Protect",
+"Protect"
 "Rest",
 "Return",
 "Round",
@@ -804,6 +807,92 @@ Generation tGeneration6 = {
 {"Zygarde", "No Eggs Discovered", "No Eggs Discovered", {}},
 {"Diancie", "No Eggs Discovered", "No Eggs Discovered", {}},
 {"Hoopa", "No Eggs Discovered", "No Eggs Discovered", {}},
-{"Volcanion", "No Eggs Discovered", "No Eggs Discovered", {}}
+{"Volcanion", "No Eggs Discovered", "No Eggs Discovered", {}},
+{"Rowlet", "Flying", "Flying", {"Dartrix"}},
+{"Dartrix", "Flying", "Flying", {"Decidueye"}},
+{"Decidueye", "Flying", "Flying", {}},
+{"Litten", "Field", "Field", {"Torracat"}},
+{"Torracat", "Field", "Field", {"Incineroar"}},
+{"Incineroar", "Field", "Field", {}},
+{"Popplio", "Water 1", "Field", {"Brionne"}},
+{"Brionne", "Water 1", "Field", {"Primarina"}},
+{"Primarina", "Water 1", "Field", {}},
+{"Pikipek", "Flying", "Flying", {"Trumbeak"}},
+{"Trumbeak", "Flying", "Flying", {"Toucannon"}},
+{"Toucannon", "Flying", "Flying", {}},
+{"Yungoos", "Field", "Field", {"Gumshoos"}},
+{"Gumshoos", "Field", "Field", {}},
+{"Grubbin", "Bug", "Bug", {"Charjabug"}},
+{"Charjabug", "Bug", "Bug", {"Vikavolt"}},
+{"Vikavolt", "Bug", "Bug", {}},
+{"Crabrawler", "Water 3", "Water 3", {"Crabominable"}},
+{"Crabominable", "Water 3", "Water 3", {}},
+{"Oricorio", "Flying", "Flying", {}},
+{"Cutiefly", "Bug", "Fairy", {"Ribombee"}},
+{"Ribombee", "Bug", "Fairy", {}},
+{"Rockruff", "Field", "Field", {"Lycanroc"}},
+{"Lycanroc", "Field", "Field", {}},
+{"Wishiwashi", "Water 2", "Water 2", {}},
+{"Mareanie", "Water 1", "Water 1", {"Toxapex"}},
+{"Toxapex", "Water 1", "Water 1", {}},
+{"Mudbray", "Field", "Field", {"Mudsdale"}},
+{"Mudsdale", "Field", "Field", {}},
+{"Dewpider", "Water 1", "Bug", {"Araquanid"}},
+{"Araquanid", "Water 1", "Bug", {}},
+{"Fomantis", "Grass", "Grass", {"Lurantis"}},
+{"Lurantis", "Grass", "Grass", {}},
+{"Morelull", "Grass", "Grass", {"Shiinotic"}},
+{"Shiinotic", "Grass", "Grass", {}},
+{"Salandit", "Monster", "Dragon", {"Salazzle"}},
+{"Salazzle", "Monster", "Dragon", {}},
+{"Stufful", "Field", "Field", {"Bewear"}},
+{"Bewear", "Field", "Field", {}},
+{"Bounsweet", "Grass", "Grass", {"Steenee"}},
+{"Steenee", "Grass", "Grass", {"Tsareena"}},
+{"Tsareena", "Grass", "Grass", {}},
+{"Comfey", "Grass", "Grass", {}},
+{"Oranguru", "Field", "Field", {"Passimian"}},
+{"Passimian", "Field", "Field", {}},
+{"Wimpod", "Bug", "Water 3", {"Golisopod"}},
+{"Golisopod", "Bug", "Water 3", {}},
+{"Sandygast", "Amorphous", "Amorphous", {"Palossand"}},
+{"Palossand", "Amorphous", "Amorphous", {}},
+{"Pyukumuku", "Water 1", "Water 1", {}},
+{"Type: Null", "No Eggs Discovered", "No Eggs Discovered", {"Silvally"}},
+{"Silvally", "No Eggs Discovered", "No Eggs Discovered", {}},
+{"Minior", "Mineral", "Mineral", {}},
+{"Komala", "Field", "Field", {}},
+{"Turtonator", "Monster", "Dragon", {}},
+{"Togedemaru", "Field", "Fairy", {}},
+{"Mimikyu", "Amorphous", "Amorphous", {}},
+{"Bruxish", "Water 2", "Water 2", {}},
+{"Drampa", "Monster", "Dragon", {}},
+{"Dhelmise", "Mineral", "Mineral", {}},
+{"Jangmo-o", "Dragon", "Dragon", {"Hakamo-o"}},
+{"Hakamo-o", "Dragon", "Dragon", {"Kommo-o"}},
+{"Kommo-o", "Dragon", "Dragon", {}},
+{"Tapu Koko", "No Eggs Discovered", "No Eggs Discovered", {}},
+{"Tapu Lele", "No Eggs Discovered", "No Eggs Discovered", {}},
+{"Tapu Bulu", "No Eggs Discovered", "No Eggs Discovered", {}},
+{"Tapu Fini", "No Eggs Discovered", "No Eggs Discovered", {}},
+{"Cosmog", "No Eggs Discovered", "No Eggs Discovered", {}},
+{"Cosmoem", "No Eggs Discovered", "No Eggs Discovered", {}},
+{"Solgaleo", "No Eggs Discovered", "No Eggs Discovered", {}},
+{"Lunala", "No Eggs Discovered", "No Eggs Discovered", {}},
+{"Nihilego", "No Eggs Discovered", "No Eggs Discovered", {}},
+{"Buzzwole", "No Eggs Discovered", "No Eggs Discovered", {}},
+{"Pheromosa", "No Eggs Discovered", "No Eggs Discovered", {}},
+{"Xurkitree", "No Eggs Discovered", "No Eggs Discovered", {}},
+{"Celesteela", "No Eggs Discovered", "No Eggs Discovered", {}},
+{"Kartana", "No Eggs Discovered", "No Eggs Discovered", {}},
+{"Guzzlord", "No Eggs Discovered", "No Eggs Discovered", {}},
+{"Necrozma", "No Eggs Discovered", "No Eggs Discovered", {}},
+{"Magearna", "No Eggs Discovered", "No Eggs Discovered", {}},
+{"Marshadow", "No Eggs Discovered", "No Eggs Discovered", {}},
+{"Poipole", "No Eggs Discovered", "No Eggs Discovered", {"Naganadel"}},
+{"Naganadel", "No Eggs Discovered", "No Eggs Discovered", {}},
+{"Stakataka", "No Eggs Discovered", "No Eggs Discovered", {}},
+{"Blacephalon", "No Eggs Discovered", "No Eggs Discovered", {}},
+{"Zeraora", "No Eggs Discovered", "No Eggs Discovered", {}}
 }
 };

@@ -64,13 +64,17 @@ extern Generation tGeneration2;
 extern Generation tGeneration3;
 extern Generation tGeneration4;
 extern Generation tGeneration5;
+extern Generation tGeneration6;
+extern Generation tGeneration7;
 std::vector<Generation*> pGenerations =
 {
 	&tGeneration1,
 	&tGeneration2,
 	&tGeneration3,
 	&tGeneration4,
-	&tGeneration5
+	&tGeneration5,
+	&tGeneration6,
+	&tGeneration7
 };
 
 //for some reason my brain thinks this is called "is_numeric" so i'm putting that text here for the next time i'm searching for this
@@ -133,13 +137,18 @@ static bool IsMaleOnly(std::string TargetSpecies, Generation* generation)
 	return false;
 }
 
-static bool IsUniversalTM(std::string sMoveName, Generation* generation)
+static bool IsUniversalTM(std::string sMoveName, GameData* game)
 {
+	Generation* generation = game->GetGeneration();
 	for (int i = 0; i < generation->sUniversalTMs.size(); i++)
 	{
 		if (generation->sUniversalTMs[i] == sMoveName)
 			return true;
 	}
+	//Secret Power is only a TM in ORAS in gen 6
+	//this is the only such difference in generation 6 like this which is relevant to EggWebs, so we'll do a tiny hack here
+	if (game->iGeneration == 6 && game->sInternalName == "omega-ruby-alpha-sapphire" && sMoveName == "Secret Power")
+		return true;
 	return false;
 }
 
@@ -518,7 +527,7 @@ static int ProcessMove(std::ifstream& stReadFile)
 			sMoveName = sTextLine.substr(5, iNameEnd - 5);
 		}
 
-		bUniversalTM = IsUniversalTM(sMoveName, g_pTargetGame->GetGeneration());
+		bUniversalTM = IsUniversalTM(sMoveName, g_pTargetGame);
 
 		if (!bLearnset && sTextLine == "==Learnset==")
 			bLearnset = true;
@@ -1104,7 +1113,7 @@ static void WriteOutput(std::vector<BreedChain>& vChains)
 		//of course we can breed our moves onto own species
 		if (tLearner->tMonInfo->sSpecies == g_sTargetSpecies)
 		{
-			if (IsUniversalTM(tLearner->sMoveName, g_pTargetGame->GetGeneration()) && tLearner->eLearnMethod == LEARNBY_TM_UNIVERSAL)
+			if (IsUniversalTM(tLearner->sMoveName, g_pTargetGame) && tLearner->eLearnMethod == LEARNBY_TM_UNIVERSAL)
 			{
 				writingFile << ", " << tLearner->sMoveName << ": universal TM\n";
 			}
@@ -1492,7 +1501,7 @@ static void GenerateUniversalTMLearns(Generation* generation)
 	for (int i = 0; i < vMoveLearners.size(); i++)
 	{
 		MoveLearner* tLearn = vMoveLearners[i];
-		if (IsUniversalTM(tLearn->sMoveName, generation))
+		if (IsUniversalTM(tLearn->sMoveName, g_pTargetGame))
 		{
 			if (std::find(vTMNames.begin(), vTMNames.end(), tLearn->sMoveName) != vTMNames.end())
 				continue;
