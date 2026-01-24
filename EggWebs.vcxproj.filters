@@ -42,5 +42,14 @@
     <ClCompile Include="data_gen7.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="data_gen8.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="data_bdsp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="data_gen9.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
