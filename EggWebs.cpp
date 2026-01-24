@@ -53,7 +53,7 @@ std::vector<GameData> tGames =
 	{"Ultra Sun/Ultra Moon", "ultra-sun-ultra-moon", GENERATION_7, "USUM"},
 	{"Let's Go Pikachu/Eevee", "lets-go-pikachu-eevee", GENERATION_7, "PE"},
 	{"Sword/Shield", "sword-shield", GENERATION_8, "SwSh"},
-	{"Brilliant Diamond/Shining Pearl", "brilliant-diamond-shining-pearl", GENERATION_8, "BDSP"},
+	{"Brilliant Diamond/Shining Pearl", "brilliant-diamond-shining-pearl", GENERATION_8_BDSP, "BDSP"},
 	{"Legends: Arceus", "legends-arceus", GENERATION_8, "LA"},
 	{"Scarlet/Violet", "scarlet-violet", GENERATION_9, "SV"},
 	{"Legends: Z-A", "legends-za", GENERATION_9, "ZA"}
@@ -67,6 +67,7 @@ extern Generation tGeneration5;
 extern Generation tGeneration6;
 extern Generation tGeneration7;
 extern Generation tGeneration8;
+extern Generation tGeneration8_BDSP;
 std::vector<Generation*> pGenerations =
 {
 	&tGeneration1,
@@ -76,7 +77,8 @@ std::vector<Generation*> pGenerations =
 	&tGeneration5,
 	&tGeneration6,
 	&tGeneration7,
-	&tGeneration8
+	&tGeneration8,
+	&tGeneration8_BDSP
 };
 
 //for some reason my brain thinks this is called "is_numeric" so i'm putting that text here for the next time i'm searching for this
