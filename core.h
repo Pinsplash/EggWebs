@@ -15,9 +15,22 @@ struct SpeciesInfo
 	std::vector<std::string> Evolutions;
 };
 
+enum GenerationNumber
+{
+	GENERATION_1,
+	GENERATION_2,
+	GENERATION_3,
+	GENERATION_4,
+	GENERATION_5,
+	GENERATION_6,
+	GENERATION_7,
+	GENERATION_8,
+	GENERATION_9
+};
+
 struct Generation
 {
-	int iNumber;
+	GenerationNumber iNumber;
 	std::string sBulbaHeader;
 	//baby pokemon are a unique case because they are in NED but they can evolve out of it
 	//the egg groups are for the pokemon it will evolve into
@@ -34,7 +47,7 @@ struct GameData
 {
 	std::string sUIName;
 	std::string sInternalName;
-	int iGeneration;
+	GenerationNumber iGeneration;
 	std::string sAcronym;
 	Generation* GetGeneration()
 	{

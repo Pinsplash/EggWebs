@@ -6,7 +6,7 @@
 extern Generation tGeneration6;
 #endif
 Generation tGeneration6 = {
-6,
+GENERATION_6,
 "====[[Generation VI]]====",
 //sBabyMons https://bulbapedia.bulbagarden.net/wiki/Baby_Pok%C3%A9mon
 {

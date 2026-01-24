@@ -6,7 +6,7 @@
 extern Generation tGeneration2;
 #endif
 Generation tGeneration2 = {
-2,
+GENERATION_2,
 "====[[Generation II]]====",
 //sBabyMons
 {

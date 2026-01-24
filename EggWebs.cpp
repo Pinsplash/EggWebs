@@ -35,28 +35,28 @@ int iMaxDepth = 20;
 
 std::vector<GameData> tGames =
 {
-	{"Red/Blue", "red-blue", 1, "RB"},
-	{"Yellow", "yellow", 1, "Y"},
-	{"Gold/Silver", "gold-silver", 2, "GS"},
-	{"Crystal", "crystal", 2, "C"},
-	{"Ruby/Sapphire", "ruby-sapphire", 3, "RS"},
-	{"FireRed/LeafGreen", "firered-leafgreen", 3, "FRLG"},
-	{"Emerald", "emerald", 3, "E"},
-	{"Diamond/Pearl", "diamond-pearl", 4, "DP"},
-	{"Platinum", "platinum", 4, "Pt"},
-	{"HeartGold/SoulSilver", "heartgold-soulsilver", 4, "HGSS"},
-	{"Black/White", "black-white", 5, "BW"},
-	{"Black 2/White 2", "black-2-white-2", 5, "B2W2"},
-	{"X/Y", "x-y", 6, "XY"},
-	{"Omega Ruby/Alpha Sapphire", "omega-ruby-alpha-sapphire", 6, "ORAS"},
-	{"Sun/Moon", "sun-moon", 7, "SM"},
-	{"Ultra Sun/Ultra Moon", "ultra-sun-ultra-moon", 7, "USUM"},
-	{"Let's Go Pikachu/Eevee", "lets-go-pikachu-eevee", 7, "PE"},
-	{"Sword/Shield", "sword-shield", 8, "SwSh"},
-	{"Brilliant Diamond/Shining Pearl", "brilliant-diamond-shining-pearl", 8, "BDSP"},
-	{"Legends: Arceus", "legends-arceus", 8, "LA"},
-	{"Scarlet/Violet", "scarlet-violet", 9, "SV"},
-	{"Legends: Z-A", "legends-za", 9, "ZA"}
+	{"Red/Blue", "red-blue", GENERATION_1, "RB"},
+	{"Yellow", "yellow", GENERATION_1, "Y"},
+	{"Gold/Silver", "gold-silver", GENERATION_2, "GS"},
+	{"Crystal", "crystal", GENERATION_2, "C"},
+	{"Ruby/Sapphire", "ruby-sapphire", GENERATION_3, "RS"},
+	{"FireRed/LeafGreen", "firered-leafgreen", GENERATION_3, "FRLG"},
+	{"Emerald", "emerald", GENERATION_3, "E"},
+	{"Diamond/Pearl", "diamond-pearl", GENERATION_4, "DP"},
+	{"Platinum", "platinum", GENERATION_4, "Pt"},
+	{"HeartGold/SoulSilver", "heartgold-soulsilver", GENERATION_4, "HGSS"},
+	{"Black/White", "black-white", GENERATION_5, "BW"},
+	{"Black 2/White 2", "black-2-white-2", GENERATION_5, "B2W2"},
+	{"X/Y", "x-y", GENERATION_6, "XY"},
+	{"Omega Ruby/Alpha Sapphire", "omega-ruby-alpha-sapphire", GENERATION_6, "ORAS"},
+	{"Sun/Moon", "sun-moon", GENERATION_7, "SM"},
+	{"Ultra Sun/Ultra Moon", "ultra-sun-ultra-moon", GENERATION_7, "USUM"},
+	{"Let's Go Pikachu/Eevee", "lets-go-pikachu-eevee", GENERATION_7, "PE"},
+	{"Sword/Shield", "sword-shield", GENERATION_8, "SwSh"},
+	{"Brilliant Diamond/Shining Pearl", "brilliant-diamond-shining-pearl", GENERATION_8, "BDSP"},
+	{"Legends: Arceus", "legends-arceus", GENERATION_8, "LA"},
+	{"Scarlet/Violet", "scarlet-violet", GENERATION_9, "SV"},
+	{"Legends: Z-A", "legends-za", GENERATION_9, "ZA"}
 };
 
 extern Generation tGeneration1;
@@ -66,6 +66,7 @@ extern Generation tGeneration4;
 extern Generation tGeneration5;
 extern Generation tGeneration6;
 extern Generation tGeneration7;
+extern Generation tGeneration8;
 std::vector<Generation*> pGenerations =
 {
 	&tGeneration1,
@@ -74,7 +75,8 @@ std::vector<Generation*> pGenerations =
 	&tGeneration4,
 	&tGeneration5,
 	&tGeneration6,
-	&tGeneration7
+	&tGeneration7,
+	&tGeneration8
 };
 
 //for some reason my brain thinks this is called "is_numeric" so i'm putting that text here for the next time i'm searching for this
@@ -147,7 +149,7 @@ static bool IsUniversalTM(std::string sMoveName, GameData* game)
 	}
 	//Secret Power is only a TM in ORAS in gen 6
 	//this is the only such difference in generation 6 like this which is relevant to EggWebs, so we'll do a tiny hack here
-	if (game->iGeneration == 6 && game->sInternalName == "omega-ruby-alpha-sapphire" && sMoveName == "Secret Power")
+	if (game->iGeneration == GENERATION_6 && game->sInternalName == "omega-ruby-alpha-sapphire" && sMoveName == "Secret Power")
 		return true;
 	return false;
 }
@@ -593,33 +595,33 @@ static int ProcessMove(std::ifstream& stReadFile)
 							bBreedSectionInside = true;
 						//watch out for games/generations hidden from table
 						iTargetColumn = g_pTargetGame->iGeneration;
-						if (g_pTargetGame->iGeneration >= 2)
+						if (g_pTargetGame->iGeneration >= GENERATION_2)
 							if (sTextLine.find("g1=none") != std::string::npos)
 								iTargetColumn--;
-						if (g_pTargetGame->iGeneration >= 3)
+						if (g_pTargetGame->iGeneration >= GENERATION_3)
 							if (sTextLine.find("g2=none") != std::string::npos)
 								iTargetColumn--;
-						if (g_pTargetGame->iGeneration >= 4)
+						if (g_pTargetGame->iGeneration >= GENERATION_4)
 							if (sTextLine.find("g3=none") != std::string::npos)
 								iTargetColumn--;
-						if (g_pTargetGame->iGeneration >= 5)
+						if (g_pTargetGame->iGeneration >= GENERATION_5)
 						{
 							if (sTextLine.find("g5=2") != std::string::npos && g_pTargetGame->sInternalName != "black-white")
 								iTargetColumn++;
 							if (sTextLine.find("g4=none") != std::string::npos)
 								iTargetColumn--;
 						}
-						if (g_pTargetGame->iGeneration >= 6)
+						if (g_pTargetGame->iGeneration >= GENERATION_6)
 							if (sTextLine.find("g5=none") != std::string::npos)
 								iTargetColumn--;
-						if (g_pTargetGame->iGeneration >= 7)
+						if (g_pTargetGame->iGeneration >= GENERATION_7)
 						{
 							if (sTextLine.find("g7=2") != std::string::npos && (g_pTargetGame->sInternalName != "sun-moon" && g_pTargetGame->sInternalName != "ultra-sun-ultra-moon"))
 								iTargetColumn++;
 							if (sTextLine.find("g6=none") != std::string::npos)
 								iTargetColumn--;
 						}
-						if (g_pTargetGame->iGeneration >= 8)
+						if (g_pTargetGame->iGeneration >= GENERATION_8)
 						{
 							if (sTextLine.find("g8=2") != std::string::npos && g_pTargetGame->sInternalName != "sword-shield")
 								iTargetColumn++;
@@ -628,7 +630,7 @@ static int ProcessMove(std::ifstream& stReadFile)
 							if (sTextLine.find("g7=none") != std::string::npos)
 								iTargetColumn--;
 						}
-						if (g_pTargetGame->iGeneration >= 9)
+						if (g_pTargetGame->iGeneration >= GENERATION_9)
 						{
 							if (sTextLine.find("g9=2") != std::string::npos && (g_pTargetGame->sInternalName != "scarlet-violet"))
 								iTargetColumn++;

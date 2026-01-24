@@ -6,8 +6,8 @@
 extern Generation tGeneration7;
 #endif
 Generation tGeneration7 = {
-7,
-"====[[Generation VI]]====",
+GENERATION_7,
+"====[[Generation VII]]====",
 //sBabyMons https://bulbapedia.bulbagarden.net/wiki/Baby_Pok%C3%A9mon
 {
 "Pichu",
@@ -893,6 +893,8 @@ Generation tGeneration7 = {
 {"Naganadel", "No Eggs Discovered", "No Eggs Discovered", {}},
 {"Stakataka", "No Eggs Discovered", "No Eggs Discovered", {}},
 {"Blacephalon", "No Eggs Discovered", "No Eggs Discovered", {}},
-{"Zeraora", "No Eggs Discovered", "No Eggs Discovered", {}}
+{"Zeraora", "No Eggs Discovered", "No Eggs Discovered", {}},
+{"Meltan", "No Eggs Discovered", "No Eggs Discovered", {"Melmetal"}},
+{"Melmetal", "No Eggs Discovered", "No Eggs Discovered", {}}
 }
 };
