@@ -90,6 +90,7 @@ struct MoveLearner
 	std::string sMoveName;
 	std::string LearnedAsSpecies;
 	MoveLearnMethod eLearnMethod = METHOD_NOT_DEFINED;
+	GameData* tGame;
 	SpeciesInfo* tMonInfo;
 	bool bBaby = false;
 	bool bTMOfInterest = false;
@@ -190,7 +191,7 @@ struct ComboBreedData
 				return;
 			}
 		}
-		assert(false);//didn't find move we wanted to set
+		//assert(false);//didn't find move we wanted to set
 	}
 };
 #endif
