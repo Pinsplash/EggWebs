@@ -595,7 +595,7 @@ static int ProcessMove(std::ifstream& stReadFile)
 				if (sTextLine.find("Movehead/Games") != std::string::npos || sTextLine.find("Movehead/TMGames") != std::string::npos)
 				{
 					bMoveTableHeader = true;
-					iTargetColumn = g_pTargetGame->iGeneration;
+					iTargetColumn = iRealGenerationNumber;
 				}
 				if (bMoveTableHeader)
 				{
