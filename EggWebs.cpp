@@ -1106,6 +1106,7 @@ static void FindTMsOfInterest()
 
 static void WriteOutput(std::vector<BreedChain>& vChains)
 {
+	vChains.erase(remove_if(vChains.begin(), vChains.end(), [](BreedChain x) { return !x.bSuggested; }), vChains.end());
 	std::ofstream writingFile;
 	writingFile.open("output.csv");
 	//print chains
@@ -1182,24 +1183,25 @@ static void PreSearch()
 	std::cout << "Starting the chain search.\n";
 }
 
-static int SuggestChain(BreedChain tChain, MoveLearner* tBottomChild)
+static int SuggestChain(BreedChain* tChain, MoveLearner* tBottomChild)
 {
+	tChain->bSuggested = true;
 	MoveLearner* tCurrentLearner = tBottomChild;
 	if (!bNoMoves)
-		std::cout << "\nChain for " << tChain.vLineage[0]->sMoveName << ": ";
+		std::cout << "\nChain for " << tChain->vLineage[0]->sMoveName << ": ";
 	else
 		std::cout << "\nChain: ";
-	std::cout << tChain.vLineage[0]->InfoStr(false);
-	for (int iLearner = 1; iLearner < tChain.vLineage.size(); iLearner++)
+	std::cout << tChain->vLineage[0]->InfoStr(false);
+	for (int iLearner = 1; iLearner < tChain->vLineage.size(); iLearner++)
 	{
-		std::cout << " <- " << tChain.vLineage[iLearner]->InfoStr(false);
+		std::cout << " <- " << tChain->vLineage[iLearner]->InfoStr(false);
 	}
 	if (!bNoMoves)
 	{
 		std::cout << "\nTo accept this chain, enter nothing\nEnter the name of a pokemon species to avoid it in future chains\nEnter a corresponding ID from below to avoid chains involving that Pokemon learning that move that way\n";
-		for (int iLearner = 0; iLearner < tChain.vLineage.size(); iLearner++)
+		for (int iLearner = 0; iLearner < tChain->vLineage.size(); iLearner++)
 		{
-			std::cout << "ID: " << tChain.vLineage[iLearner]->iID << " for " << tChain.vLineage[iLearner]->sMoveName << " on " << tChain.vLineage[iLearner]->InfoStr(false) << "\n";
+			std::cout << "ID: " << tChain->vLineage[iLearner]->iID << " for " << tChain->vLineage[iLearner]->sMoveName << " on " << tChain->vLineage[iLearner]->InfoStr(false) << "\n";
 		}
 		if (tCurrentLearner->sLevel == "1")
 			std::cout << "This move is learned at level 1. Carefully consider if you can obtain this pokemon at level 1 before accepting the chain. Also consider if you can use a move reminder before rejecting it.\n";
@@ -1452,7 +1454,7 @@ static int SuggestChainCombo(std::vector<BreedChain>& vChains, MoveLearner* tLea
 	for (int iChain = 0; iChain < vChains.size(); iChain++)
 	{
 		//std::cout << "\n" << iChain + 1 << "/" << vChains.size() << "\n";
-		iResult = SuggestChain(vChains[iChain], tLearner);
+		iResult = SuggestChain(&vChains[iChain], tLearner);
 		if (iResult == CR_REJECTED)
 		{
 			//SuggestChain already marked all the bad nodes, just go back to the top of the while loop now
@@ -1470,6 +1472,10 @@ static int SuggestChainCombo(std::vector<BreedChain>& vChains, MoveLearner* tLea
 	}
 	else
 	{
+		for (int iChain = 0; iChain < vChains.size(); iChain++)
+		{
+			tComboData.SetSatisfied(vChains[iChain].vLineage[0]->sMoveName, false);
+		}
 		vChains.clear();
 	}
 	return iResult;
@@ -1499,7 +1505,7 @@ static int SearchRetryLoop(std::vector<BreedChain>& vChains, MoveLearner* tLearn
 				else
 				{
 					//std::cout << "\n" << vChains.size() << "\n";
-					iResult = SuggestChain(vChains.back(), tLearner);
+					iResult = SuggestChain(&vChains.back(), tLearner);
 					if (iResult == CR_REJECTED)
 						vChains.pop_back();
 				}

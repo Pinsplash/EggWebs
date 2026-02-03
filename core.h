@@ -141,6 +141,7 @@ struct MoveLearner
 struct BreedChain
 {
 	std::vector<MoveLearner*> vLineage;
+	bool bSuggested = false;
 };
 
 extern int iCombo;
