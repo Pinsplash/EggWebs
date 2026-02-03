@@ -164,12 +164,12 @@ static bool IsUniversalTM(std::string sMoveName, GameData* tGame)
 	return false;
 }
 
-static bool SpeciesCantUseTM(std::string sMoveName, std::string sSpecies)
+static bool SpeciesCantUseTM(std::string sMoveName, std::string sSpecies, std::string sInternalGameName)
 {
 	//each entry is species name followed by move it can't learn by TM
-	for (int i = 0; i < vTMLearnBlacklist.size(); i += 2)
+	for (int i = 0; i < vTMLearnBlacklist.size(); i += 3)
 	{
-		if (vTMLearnBlacklist[i] == sSpecies && vTMLearnBlacklist[i + 1] == sMoveName)
+		if (vTMLearnBlacklist[i] == sSpecies && vTMLearnBlacklist[i + 1] == sMoveName && vTMLearnBlacklist[i + 2] == sInternalGameName)
 			return true;
 	}
 	return false;
@@ -341,6 +341,10 @@ static bool ValidateMatchup(std::vector<bool>& bClosedList, std::vector<MoveLear
 {
 	//you can't breed these methods
 	if (tChild->eLearnMethod == LEARNBY_EVENT || tChild->eLearnMethod == LEARNBY_SPECIAL || tChild->eLearnMethod == LEARNBY_TUTOR)
+		return false;
+
+	//parents have to exist on the target game (for now...)
+	if (tMother->tGame != tFather->tGame || tMother->tGame != g_pTargetGame)
 		return false;
 
 	//must learn the move in question
@@ -701,7 +705,13 @@ static int ProcessMove(std::ifstream& stReadFile)
 						sPokemonName = "Nidoran M";
 					else if (sDexNumber == "0669")
 						sPokemonName = "Flabebe";
-					tNewLearner->tMonInfo = &g_pTargetGame->GetGeneration()->sAllGroups[GetSpeciesInfo(sPokemonName, g_pTargetGame->GetGeneration())];
+					int iInternalSpeciesIndex = GetSpeciesInfo(sPokemonName, g_pTargetGame);
+					if (iInternalSpeciesIndex != -1)
+						tNewLearner->tMonInfo = &g_pTargetGame->GetGeneration()->sAllGroups[iInternalSpeciesIndex];
+					else
+						//pokemon is not in desired game, go to next line down
+						//do NOT exit the table early because later games may have usable pokemon further down the table
+						continue;
 					if (!tNewLearner->tMonInfo)
 					{
 						std::cout << "\n unknown pokemon\n";
@@ -789,6 +799,7 @@ static int ProcessMove(std::ifstream& stReadFile)
 									//add to a separate list. (each entry is species name followed by move it can't learn by TM)
 									vTMLearnBlacklist.push_back(tNewLearner->tMonInfo->sSpecies);
 									vTMLearnBlacklist.push_back(sMoveName);
+									vTMLearnBlacklist.push_back(g_pTargetGame->sInternalName);
 								}
 								else
 								{
@@ -1553,6 +1564,8 @@ static void CreatePriorEvolutionLearns(GameData* tGame)
 		MoveLearner* pLearn = vMoveLearners[iLearn];
 		std::string OriginalForm = pLearn->tMonInfo->sSpecies;
 		int iInfo = GetSpeciesInfo(OriginalForm, tGame);
+		if (iInfo == -1)
+			continue;
 		int OriginalSlot = iInfo;
 		//entries are grouped by evolution family, and the largest family is 9 - the eeveelutions
 		int MaxEvoLineSize = 9;
@@ -1591,7 +1604,9 @@ static void CreatePriorEvolutionLearns(GameData* tGame)
 						tNewLearner->sForm = pLearn->sForm;
 						tNewLearner->sLevel = pLearn->sLevel;
 						tNewLearner->sMoveName = pLearn->sMoveName;
-						tNewLearner->tMonInfo = &generation->sAllGroups[GetSpeciesInfo(Target, generation)];
+						int iInfoIndex = GetSpeciesInfo(Target, tGame);
+						assert(iInfoIndex != -1);
+						tNewLearner->tMonInfo = &tGame->GetGeneration()->sAllGroups[iInfoIndex];
 						tNewLearner->LearnedAsSpecies = pLearn->LearnedAsSpecies.empty() ? OriginalForm : pLearn->LearnedAsSpecies;
 						AddMoveToMainList(tNewLearner, tGame);
 					}
