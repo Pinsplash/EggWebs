@@ -297,9 +297,9 @@ static std::string ProcessAnnotatedCell(std::string sTextLine, size_t& iPipeLoca
 		//if (!bQuiet) std::cout << "our value is a different one\n";
 		size_t iPipePos = sTextLine.find("|", iValue2End);
 		size_t iSupPos = sTextLine.find("{{sup", iValue2End);
-		if (iPipePos < iSupPos)
+		if (iPipePos <= iSupPos)
 		{
-			//pipe comes before another sup. this means the move isn't learnable in the given game
+			//pipe comes before another sup, or neither were found (they will both equal npos). this means the move isn't learnable in the given game
 			//if (!bQuiet) std::cout << "We had no value\n";
 			iPipeLocation = iPipePos + 1;
 			return "";
@@ -515,6 +515,7 @@ static int ProcessMove(std::ifstream& stReadFile)
 	bool bSpecialSectionInside = false;
 	bool bEventSection = false;
 	bool bEventSectionInside = false;
+	bool bMoveTableHeader = false;
 	int iTargetColumn = 0;
 	std::string sMoveName;
 	while (std::getline(stReadFile, sTextLine))
@@ -548,7 +549,7 @@ static int ProcessMove(std::ifstream& stReadFile)
 		{
 			if (sTextLine.find("Movefoot") != std::string::npos)
 			{
-				bLevelupSection = bLevelupSectionInside = bTMTutorSection = bTMTutorSectionInside = bBreedSection = bBreedSectionInside = bSpecialSectionInside = bEventSectionInside = false;
+				bLevelupSection = bLevelupSectionInside = bTMTutorSection = bTMTutorSectionInside = bBreedSection = bBreedSectionInside = bSpecialSectionInside = bEventSectionInside = bMoveTableHeader = false;
 				iTargetColumn = 0;
 			}
 			if (!bLevelupSection && sTextLine == "===By [[Level|leveling up]]===")
@@ -582,12 +583,20 @@ static int ProcessMove(std::ifstream& stReadFile)
 				//{{Movehead/Games|Normal|g1=none|g7=1|g7g={{gameabbrev7|SMUSUM}}|g8=2}}
 				//{{Moveentry/9|0098|Krabby|type=Water|1|Water 3|Water 3|−|49{{sup/3|FRLG}}|45|45|45|45|29|29}}
 				//{{Movefoot|Normal|9}}
-				if (bTMTutorSection && sTextLine.find("g" + std::to_string(g_pTargetGame->iGeneration) + "tm=tutor") != std::string::npos)
+				int iRealGenerationNumber = g_pTargetGame->iGeneration + 1;
+				if (g_pTargetGame->iGeneration >= GENERATION_8_BDSP)
+					iRealGenerationNumber--;
+				if (bTMTutorSection && sTextLine.find("g" + std::to_string(iRealGenerationNumber) + "tm=tutor") != std::string::npos)
 					bSectionIsTutor = true;
 				if (sTextLine.find("Movehead/Games") != std::string::npos || sTextLine.find("Movehead/TMGames") != std::string::npos)
 				{
+					bMoveTableHeader = true;
+					iTargetColumn = g_pTargetGame->iGeneration;
+				}
+				if (bMoveTableHeader)
+				{
 					//make sure generation is applicable
-					if (sTextLine.find("g" + std::to_string(g_pTargetGame->iGeneration) + "=none") != std::string::npos)
+					if (sTextLine.find("g" + std::to_string(iRealGenerationNumber) + "=none") != std::string::npos)
 					{
 						//no pokemon can learn this by level up in target gen, exit fast
 						bLevelupSection = false;
@@ -605,7 +614,6 @@ static int ProcessMove(std::ifstream& stReadFile)
 						if (bBreedSection)
 							bBreedSectionInside = true;
 						//watch out for games/generations hidden from table
-						iTargetColumn = g_pTargetGame->iGeneration;
 						if (g_pTargetGame->iGeneration >= GENERATION_2)
 							if (sTextLine.find("g1=none") != std::string::npos)
 								iTargetColumn--;
@@ -652,6 +660,7 @@ static int ProcessMove(std::ifstream& stReadFile)
 				}
 				if ((bLevelupSectionInside || bTMTutorSectionInside || bBreedSectionInside || bSpecialSectionInside || bEventSectionInside) && sTextLine.find("Moveentry") != std::string::npos)
 				{
+					bMoveTableHeader = false;
 					MoveLearner* tNewLearner = new MoveLearner;
 					tNewLearner->sMoveName = sMoveName;
 					size_t iFormParamStart = sTextLine.find("formsig=");
