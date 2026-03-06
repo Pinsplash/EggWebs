@@ -85,7 +85,12 @@ GENERATION_9,
 },
 //sUniversalTMs https://bulbapedia.bulbagarden.net/w/index.php?search=%22Every+Pok%C3%A9mon+can+learn+this+move+by%22&title=Special%3ASearch&go=Go
 {
-
+	"Endure",
+	"Facade",
+	"Protect",
+	"Rest",
+	"Sleep Talk",
+	"Tera Blast"
 },
 //sAllGroups https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_breeding_attributes https://bulbapedia.bulbagarden.net/wiki/List_of_cross-generational_evolutionary_lines
 {
