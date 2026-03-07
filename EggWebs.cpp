@@ -164,6 +164,22 @@ static bool IsUniversalTM(std::string sMoveName, GameData* tGame)
 	return false;
 }
 
+static bool IsSketchableMove(std::string sMoveName, GameData* tGame)
+{
+	//NOTE: In Gen 2, Sketch could not copy a move if it failed, even due to status conditions like sleep.
+	if (tGame->iGeneration == GENERATION_2 && (sMoveName == "Transform" || sMoveName == "Mimic"//last move used is forgotten
+		|| sMoveName == "Metronome" || sMoveName == "Mirror Move" || sMoveName == "Sleep Talk"//last move used is the move that was called, not the move in question
+		|| sMoveName == "Self-Destruct" || sMoveName == "Explosion"))//successful execution means the target is gone
+		return false;
+	//moves below are explicitly not allowed to be Sketched.
+	if (tGame->iGeneration >= GENERATION_4 && sMoveName == "Chatter")
+		return false;
+	if (tGame->iGeneration >= GENERATION_9 && (sMoveName == "Dark Void" || sMoveName == "Hyperspace Fury" || sMoveName == "Revival Blessing" || sMoveName == "Tera Starstorm" || 
+		sMoveName == "Wicked Torque" || sMoveName == "Blazing Torque" || sMoveName == "Noxious Torque" || sMoveName == "Magical Torque" || sMoveName == "Combat Torque"))
+		return false;
+	return true;
+}
+
 static bool SpeciesCantUseTM(std::string sMoveName, std::string sSpecies, std::string sInternalGameName)
 {
 	//each entry is species name followed by move it can't learn by TM
@@ -340,7 +356,12 @@ static std::string ProcessLevelCell(std::string sTextLine, size_t& iPipeLocation
 static bool ValidateMatchup(std::vector<bool>& bClosedList, std::vector<MoveLearner*>& pParentList, MoveLearner* tMother, MoveLearner* tChild, MoveLearner* tFather, MoveLearner tBottomChild, bool bSkipNewGroupCheck)
 {
 	//you can't breed these methods
-	if (tChild->eLearnMethod == LEARNBY_EVENT || tChild->eLearnMethod == LEARNBY_SPECIAL || (tChild->eLearnMethod == LEARNBY_TUTOR && !(tChild->tGame->iGeneration == GENERATION_2 && tChild->tGame->sInternalName == "crystal")))
+	//in crystal, tutor moves work like TM moves
+	//normally we can think of Sketch similar to learning a move by egg, but only if we can access a double battle, which we assume to be true gen3+
+	//there's also the option to Sketch it off a Ditto that transformed into the learner, but Sketch always fails on transformed pokemon in gen2
+	if (tChild->eLearnMethod == LEARNBY_EVENT || tChild->eLearnMethod == LEARNBY_SPECIAL ||
+		(tChild->eLearnMethod == LEARNBY_TUTOR && !(tChild->tGame->iGeneration == GENERATION_2 && tChild->tGame->sInternalName == "crystal")) || 
+		(tChild->eLearnMethod == LEARNBY_SKETCH && tChild->tGame->iGeneration <= GENERATION_2))
 		return false;
 
 	//parents have to exist on the target game (for now...)
@@ -369,8 +390,9 @@ static bool ValidateMatchup(std::vector<bool>& bClosedList, std::vector<MoveLear
 		return false;
 
 	//have to have a matching egg group
+	//Sketch works across egg groups
 	std::string sNewCommonEggGroup = StringPairMatch(tMother->tMonInfo->sEggGroup1, tMother->tMonInfo->sEggGroup2, tFather->tMonInfo->sEggGroup1, tFather->tMonInfo->sEggGroup2);
-	if (!tMother->bIsDitto && sNewCommonEggGroup.empty())
+	if (!tMother->bIsDitto && tChild->eLearnMethod != LEARNBY_SKETCH && sNewCommonEggGroup.empty())
 		return false;
 
 	//mother has to have a new egg group in order to produce good useful chains
@@ -476,6 +498,16 @@ static MoveLearner* MakeMovelessLearn(std::string sWantedMoveName, int i, GameDa
 	return tLearner;
 }
 
+static MoveLearner* MakeSmeargleLearn(std::string sWantedMoveName, GameData* tGame)
+{
+	MoveLearner* tLearner = new MoveLearner;
+	tLearner->sMoveName = sWantedMoveName;
+	tLearner->tMonInfo = tGame->GetGeneration()->GetSpeciesInfo("Smeargle");
+	tLearner->eLearnMethod = LEARNBY_SKETCH;
+	AddMoveToMainList(tLearner, tGame);
+	return tLearner;
+}
+
 //search in list to see if father has a learn for this move
 //return value: -1 = all good, any other number = the entry in tComboData was not satisfied
 //TODO: some work to be done here concerning special/event methods, but what exactly?
@@ -520,10 +552,13 @@ static int ProcessMove(std::ifstream& stReadFile)
 	bool bEventSection = false;
 	bool bEventSectionInside = false;
 	bool bMoveTableHeader = false;
+	bool bJustGotMoveName = false;
 	int iTargetColumn = 0;
 	std::string sMoveName;
 	while (std::getline(stReadFile, sTextLine))
 	{
+		bJustGotMoveName = false;
+
 		// Skip any blank lines
 		if (sTextLine.size() == 0)
 			continue;
@@ -531,6 +566,7 @@ static int ProcessMove(std::ifstream& stReadFile)
 		if (sTextLine.find("|name=") != std::string::npos)
 		{
 			sMoveName = sTextLine.substr(6);
+			bJustGotMoveName = true;
 		}
 
 		//sometimes the box containing the move name will have pipes at the ends of lines instead of the start
@@ -543,6 +579,13 @@ static int ProcessMove(std::ifstream& stReadFile)
 			size_t iNameEnd = std::min(iPipePos, iSpacePos);
 			iNameEnd = std::min(iNameEnd, iSpace2Pos);
 			sMoveName = sTextLine.substr(5, iNameEnd - 5);
+			bJustGotMoveName = true;
+		}
+
+		//Smeargle can learn move by Sketch
+		if (bJustGotMoveName && IsSketchableMove(sMoveName, g_pTargetGame))
+		{
+			MakeSmeargleLearn(sMoveName, g_pTargetGame);
 		}
 
 		bUniversalTM = IsUniversalTM(sMoveName, g_pTargetGame);
@@ -834,7 +877,6 @@ static int ProcessMove(std::ifstream& stReadFile)
 									}
 									AddMoveToMainList(tNewLearner, g_pTargetGame);
 								}
-								
 							}
 						}
 						else
@@ -1133,6 +1175,8 @@ static void WriteOutput(std::vector<BreedChain>& vChains)
 			writingFile << "evolve then breed";
 		else if (tChain.vLineage[i]->eLearnMethod == LEARNBY_TUTOR)
 			writingFile << "tutor";
+		else if (tChain.vLineage[i]->eLearnMethod == LEARNBY_SKETCH)
+			writingFile << "Sketch";
 		writingFile << ", " << tChain.vLineage[i]->sMoveName;
 		//for (std::vector<MoveLearner*>::reverse_iterator tLearner = tChain.vLineage.rbegin(); tLearner != tChain.vLineage.rend(); ++tLearner)
 		//for (MoveLearner* tLearner : tChain.vLineage)

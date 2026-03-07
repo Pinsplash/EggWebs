@@ -40,6 +40,15 @@ struct Generation
 	std::vector<std::string> sMaleOnlyMons;
 	std::vector<std::string> sUniversalTMs;
 	std::vector<SpeciesInfo> sAllGroups;
+	SpeciesInfo* GetSpeciesInfo(std::string sWantedSpecies)
+	{
+		for (int iMon = 0; iMon < sAllGroups.size(); iMon++)
+		{
+			if (sAllGroups[iMon].sSpecies == sWantedSpecies)
+				return &sAllGroups[iMon];
+		}
+		return NULL;
+	}
 };
 
 extern std::vector<Generation*> pGenerations;
@@ -70,6 +79,7 @@ enum MoveLearnMethod
 	LEARNBY_SPECIAL,
 	LEARNBY_EVENT,
 	LEARNBY_TUTOR,
+	LEARNBY_SKETCH,
 	LAST_LEARN_METHOD
 };
 
@@ -110,6 +120,7 @@ struct MoveLearner
 		else if (eLearnMethod == LEARNBY_SPECIAL) s1 = " (special encounter";
 		else if (eLearnMethod == LEARNBY_EVENT) s1 = " (from an event";
 		else if (eLearnMethod == LEARNBY_TUTOR) s1 = " (tutor";
+		else if (eLearnMethod == LEARNBY_SKETCH) s1 = " (Sketch";
 		else if (bIsDitto) s1 = "";
 		else s1 = " (UNKNOWN REASON";
 
