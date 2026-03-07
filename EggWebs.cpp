@@ -340,7 +340,7 @@ static std::string ProcessLevelCell(std::string sTextLine, size_t& iPipeLocation
 static bool ValidateMatchup(std::vector<bool>& bClosedList, std::vector<MoveLearner*>& pParentList, MoveLearner* tMother, MoveLearner* tChild, MoveLearner* tFather, MoveLearner tBottomChild, bool bSkipNewGroupCheck)
 {
 	//you can't breed these methods
-	if (tChild->eLearnMethod == LEARNBY_EVENT || tChild->eLearnMethod == LEARNBY_SPECIAL || tChild->eLearnMethod == LEARNBY_TUTOR)
+	if (tChild->eLearnMethod == LEARNBY_EVENT || tChild->eLearnMethod == LEARNBY_SPECIAL || (tChild->tGame->sInternalName != "crystal" && tChild->eLearnMethod == LEARNBY_TUTOR))
 		return false;
 
 	//parents have to exist on the target game (for now...)
