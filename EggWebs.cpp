@@ -150,7 +150,7 @@ static bool SpeciesCantUseTM(std::string MoveName, std::string Species, std::str
 	return false;
 }
 
-static int GetSpeciesInfo(std::string WantedName, GameData* Game)
+static int GetSpeciesInfoFromGame(std::string WantedName, GameData* Game)
 {
 	for (int iInfo = 0; iInfo < Game->GetGeneration()->MonData.size(); iInfo++)
 		if (WantedName == Game->GetGeneration()->MonData[iInfo].SpeciesName)
@@ -206,6 +206,13 @@ static MoveLearner* GetLearnerFromMainList(int WantedID)
 	for (MoveLearner* tLearner : g_MoveLearners)
 		if (tLearner->LearnID == WantedID)
 			return tLearner;
+}
+
+static MoveLearner* IterateLearnersBySpecies(int StartID, std::string WantedSpecies)
+{
+	for (int iLearnID = StartID; iLearnID < g_MoveLearners.size(); iLearnID++)
+		if (g_MoveLearners[iLearnID]->LearnMonInfo->SpeciesName == WantedSpecies)
+			return g_MoveLearners[iLearnID];
 }
 
 static std::string ProcessAnnotatedCell(std::string TextLine, size_t& PipeLocation, size_t Value1End, size_t& SupStart, bool Quiet)
@@ -285,7 +292,7 @@ static bool ValidateMatchup(std::vector<bool>& ClosedList, std::vector<MoveLearn
 		return false;
 
 	//no reason to breed with own species. this doesn't produce interesting chains
-	if (Mother->LearnInfo->SpeciesName == Father->LearnInfo->SpeciesName || Child->LearnInfo->SpeciesName == Father->LearnInfo->SpeciesName)
+	if (Mother->LearnMonInfo->SpeciesName == Father->LearnMonInfo->SpeciesName || Child->LearnMonInfo->SpeciesName == Father->LearnMonInfo->SpeciesName)
 		return false;
 
 	//don't already be explored (don't read into this)
@@ -294,22 +301,22 @@ static bool ValidateMatchup(std::vector<bool>& ClosedList, std::vector<MoveLearn
 
 	//user requested ways that mothers must not learn a move
 	//unless mother species is target species, which is okay
-	if (g_MotherExcludes[Mother->LearnMethod] && Mother->LearnInfo->SpeciesName != g_TargetSpecies)
+	if (g_MotherExcludes[Mother->LearnMethod] && Mother->LearnMonInfo->SpeciesName != g_TargetSpecies)
 		return false;
 
 	//have to be straight
-	if ((Mother->LearnInfo->GenderRatio == GR_FEMALE_ONLY && Father->LearnInfo->GenderRatio == GR_FEMALE_ONLY)
-		||(Mother->LearnInfo->GenderRatio == GR_MALE_ONLY && Father->LearnInfo->GenderRatio == GR_MALE_ONLY))
+	if ((Mother->LearnMonInfo->GenderRatio == GR_FEMALE_ONLY && Father->LearnMonInfo->GenderRatio == GR_FEMALE_ONLY)
+		||(Mother->LearnMonInfo->GenderRatio == GR_MALE_ONLY && Father->LearnMonInfo->GenderRatio == GR_MALE_ONLY))
 		return false;
 
 	//have to have a matching egg group
 	//Sketch works across egg groups
-	std::string NewCommonEggGroup = StringPairMatch(Mother->LearnInfo->EggGroup1, Mother->LearnInfo->EggGroup2, Father->LearnInfo->EggGroup1, Father->LearnInfo->EggGroup2);
-	if (Child->LearnMethod != LEARNBY_SKETCH && NewCommonEggGroup.empty())
+	std::string NewCommonEggGroup = StringPairMatch(Mother->LearnMonInfo->EggGroup1, Mother->LearnMonInfo->EggGroup2, Father->LearnMonInfo->EggGroup1, Father->LearnMonInfo->EggGroup2);
+	if (NewCommonEggGroup.empty())
 		return false;
 
 	//mother has to have a new egg group in order to produce good useful chains
-	bool NewEggGroup = !StringPairIdent(Mother->LearnInfo->EggGroup1, Mother->LearnInfo->EggGroup2, Father->LearnInfo->EggGroup1, Father->LearnInfo->EggGroup2);
+	bool NewEggGroup = !StringPairIdent(Mother->LearnMonInfo->EggGroup1, Mother->LearnMonInfo->EggGroup2, Father->LearnMonInfo->EggGroup1, Father->LearnMonInfo->EggGroup2);
 	//it's okay for egg groups to be bad if the father learns the move by a different method than the child
 	bool NewMethod = Father->LearnMethod != Child->LearnMethod;
 	//why did we have a check for !bChildIsTargetSpecies here? this was causing venonat <- caterpie to be valid
@@ -334,16 +341,16 @@ static bool ValidateMatchup(std::vector<bool>& ClosedList, std::vector<MoveLearn
 		return false;
 
 	//fathers must be male, mothers must be female
-	if (Father->LearnInfo->GenderRatio == GR_FEMALE_ONLY || Mother->LearnInfo->GenderRatio == GR_MALE_ONLY)
+	if (Father->LearnMonInfo->GenderRatio == GR_FEMALE_ONLY || Mother->LearnMonInfo->GenderRatio == GR_MALE_ONLY)
 		return false;
 
 	//Gender-unknown Pokémon can only breed with Ditto. this makes them uninteresting for EggWebs aside from Shedinja because the offspring Nincada is gender known.
-	if (Father->LearnInfo->GenderRatio == GR_UNKNOWN && Father->LearnInfo->SpeciesName != "Shedinja")
+	if (Father->LearnMonInfo->GenderRatio == GR_UNKNOWN && Father->LearnMonInfo->SpeciesName != "Shedinja")
 		return false;
 
 	//if the mom can learn the move by level up below the level cap, there's no point in breeding the move onto it
 	//just catch the mother species and level it up to this level
-	bool ChildIsTargetSpecies = Child->LearnInfo->SpeciesName == BottomChild.LearnInfo->SpeciesName;
+	bool ChildIsTargetSpecies = Child->LearnMonInfo->SpeciesName == BottomChild.LearnMonInfo->SpeciesName;
 	if (MotherLearnsByLevelUp)
 	{
 		bool MotherLearnsWithinMaximum = stoi(Mother->LearnLevel) <= g_MaxLevel;
@@ -353,7 +360,7 @@ static bool ValidateMatchup(std::vector<bool>& ClosedList, std::vector<MoveLearn
 
 	//if the mother is a female-only species, they can only pass the move down if the baby learns it by levelup
 	//female-only mothers are always ok if they produce the target species as the moves don't have to be passed down further than that
-	if (Mother->LearnInfo->GenderRatio == GR_FEMALE_ONLY && !ChildLearnsByLevelUp && !ChildIsTargetSpecies)
+	if (Mother->LearnMonInfo->GenderRatio == GR_FEMALE_ONLY && !ChildLearnsByLevelUp && !ChildIsTargetSpecies)
 		return false;
 
 	//make sure father wasn't already in the family tree (incest is redundant and leads to recursion)
@@ -364,26 +371,26 @@ static bool ValidateMatchup(std::vector<bool>& ClosedList, std::vector<MoveLearn
 	/*
 	if (pParentList[pCurrentLearner->LearnID])
 	{
-		sOldCommonEggGroup = StringPairMatch(pCurrentLearner->LearnInfo->EggGroup1, pCurrentLearner->LearnInfo->EggGroup2, pParentList[pCurrentLearner->LearnID]->LearnInfo->EggGroup1, pParentList[pCurrentLearner->LearnID]->LearnInfo->EggGroup2);
+		sOldCommonEggGroup = StringPairMatch(pCurrentLearner->LearnMonInfo->EggGroup1, pCurrentLearner->LearnMonInfo->EggGroup2, pParentList[pCurrentLearner->LearnID]->LearnMonInfo->EggGroup1, pParentList[pCurrentLearner->LearnID]->LearnMonInfo->EggGroup2);
 	}
 	*/
 	while (CurrentLearner && !Redundant)
 	{
-		//std::cout << " " << pCurrentLearner->LearnInfo->sSpecies;
-		if (CurrentLearner->LearnInfo->SpeciesName == Father->LearnInfo->SpeciesName)
+		//std::cout << " " << pCurrentLearner->LearnMonInfo->sSpecies;
+		if (CurrentLearner->LearnMonInfo->SpeciesName == Father->LearnMonInfo->SpeciesName)
 			Redundant = true;
 		if (OldCommonEggGroup == NewCommonEggGroup)
 		{
-			//std::cout << " (" << sNewCommonEggGroup << ")" << " " << tFather->LearnInfo->sSpecies << " REDUNDANT EGG GROUPS";
+			//std::cout << " (" << sNewCommonEggGroup << ")" << " " << tFather->LearnMonInfo->sSpecies << " REDUNDANT EGG GROUPS";
 			Redundant = true;
 		}
 		if (CurrentLearner && ParentList[CurrentLearner->LearnID])
 		{
 			OldCommonEggGroup = StringPairMatch(
-				CurrentLearner->LearnInfo->EggGroup1, 
-				CurrentLearner->LearnInfo->EggGroup2, 
-				ParentList[CurrentLearner->LearnID]->LearnInfo->EggGroup1, 
-				ParentList[CurrentLearner->LearnID]->LearnInfo->EggGroup2);
+				CurrentLearner->LearnMonInfo->EggGroup1, 
+				CurrentLearner->LearnMonInfo->EggGroup2, 
+				ParentList[CurrentLearner->LearnID]->LearnMonInfo->EggGroup1, 
+				ParentList[CurrentLearner->LearnID]->LearnMonInfo->EggGroup2);
 			//std::cout << " (" << sOldCommonEggGroup << ")";
 		}
 		CurrentLearner = ParentList[CurrentLearner->LearnID];
@@ -393,7 +400,7 @@ static bool ValidateMatchup(std::vector<bool>& ClosedList, std::vector<MoveLearn
 		//std::cout << "\n";
 		return false;
 	}
-	//std::cout << " (" << sNewCommonEggGroup << ")" << " " << tFather->LearnInfo->sSpecies << "\n";
+	//std::cout << " (" << sNewCommonEggGroup << ")" << " " << tFather->LearnMonInfo->sSpecies << "\n";
 	return true;
 }
 
@@ -401,7 +408,7 @@ static MoveLearner* MakeUniversalTMLearn(std::string WantedMoveName, int i, Game
 {
 	MoveLearner* Learner = new MoveLearner;
 	Learner->MoveName = WantedMoveName;
-	Learner->LearnInfo = &Game->GetGeneration()->MonData[i];
+	Learner->LearnMonInfo = &Game->GetGeneration()->MonData[i];
 	Learner->LearnMethod = LEARNBY_TM_UNIVERSAL;
 	AddMoveToMainList(Learner, Game);
 	return Learner;
@@ -410,7 +417,7 @@ static MoveLearner* MakeUniversalTMLearn(std::string WantedMoveName, int i, Game
 static MoveLearner* MakeMovelessLearn(std::string WantedMoveName, int i, GameData* Game)
 {
 	MoveLearner* Learner = new MoveLearner;
-	Learner->LearnInfo = &Game->GetGeneration()->MonData[i];
+	Learner->LearnMonInfo = &Game->GetGeneration()->MonData[i];
 	AddMoveToMainList(Learner, Game);
 	return Learner;
 }
@@ -419,7 +426,7 @@ static MoveLearner* MakeSmeargleLearn(std::string WantedMoveName, GameData* Game
 {
 	MoveLearner* Learner = new MoveLearner;
 	Learner->MoveName = WantedMoveName;
-	Learner->LearnInfo = Game->GetGeneration()->GetSpeciesInfo("Smeargle");
+	Learner->LearnMonInfo = Game->GetGeneration()->GetSpeciesInfo("Smeargle");
 	Learner->LearnMethod = LEARNBY_SKETCH;
 	AddMoveToMainList(Learner, Game);
 	return Learner;
@@ -437,7 +444,7 @@ static int FatherSatisfiesMoves(MoveLearner* Father, std::vector<MoveLearner*>& 
 			bool Good = false;
 			for (MoveLearner* Learner : g_MoveLearners)
 			{
-				if (Father->LearnInfo->SpeciesName == Learner->LearnInfo->SpeciesName && Learner->MoveName == g_ComboData.ComboMoves[i])
+				if (Father->LearnMonInfo->SpeciesName == Learner->LearnMonInfo->SpeciesName && Learner->MoveName == g_ComboData.ComboMoves[i])
 				{
 					Learns[i] = Learner;
 					Good = true;
@@ -665,14 +672,14 @@ static int ProcessMove(std::ifstream& ReadFile)
 						PokemonName = "Nidoran M";
 					else if (DexNumber == "0669")
 						PokemonName = "Flabebe";
-					int iInternalSpeciesIndex = GetSpeciesInfo(PokemonName, g_TargetGame);
+					int iInternalSpeciesIndex = GetSpeciesInfoFromGame(PokemonName, g_TargetGame);
 					if (iInternalSpeciesIndex != -1)
-						NewLearner->LearnInfo = &g_TargetGame->GetGeneration()->MonData[iInternalSpeciesIndex];
+						NewLearner->LearnMonInfo = &g_TargetGame->GetGeneration()->MonData[iInternalSpeciesIndex];
 					else
 						//pokemon is not in desired game, go to next line down
 						//do NOT exit the table early because later games may have usable pokemon further down the table
 						continue;
-					if (!NewLearner->LearnInfo)
+					if (!NewLearner->LearnMonInfo)
 					{
 						std::cout << "\n unknown pokemon\n";
 						std::cout << TextLine << "\n";
@@ -757,7 +764,7 @@ static int ProcessMove(std::ifstream& ReadFile)
 								{
 									//we're not a learner. we're actually one of the only pokemon NOT allowed to use the TM in question.
 									//add to a separate list. (each entry is species name followed by move it can't learn by TM)
-									g_TMLearnBlacklist.push_back(NewLearner->LearnInfo->SpeciesName);
+									g_TMLearnBlacklist.push_back(NewLearner->LearnMonInfo->SpeciesName);
 									g_TMLearnBlacklist.push_back(MoveName);
 									g_TMLearnBlacklist.push_back(g_TargetGame->InternalName);
 								}
@@ -1020,7 +1027,7 @@ static void SplitMultiLevelLearns()
 			for (std::string LearnLevel : LearnLevels)
 			{
 				MoveLearner* NewLearner = new MoveLearner;
-				NewLearner->LearnInfo = Learner->LearnInfo;
+				NewLearner->LearnMonInfo = Learner->LearnMonInfo;
 				NewLearner->FormName = Learner->FormName;
 				NewLearner->LearnLevel = LearnLevel;
 				NewLearner->MoveName = Learner->MoveName;
@@ -1040,13 +1047,13 @@ static void FindTMsOfInterest()
 	for (MoveLearner* Learner : g_MoveLearners)
 	{
 		//a TM learn
-		if ((Learner->LearnMethod == LEARNBY_TM_UNIVERSAL || Learner->LearnMethod == LEARNBY_TM) && Learner->LearnInfo->SpeciesName != g_TargetSpecies)
+		if ((Learner->LearnMethod == LEARNBY_TM_UNIVERSAL || Learner->LearnMethod == LEARNBY_TM) && Learner->LearnMonInfo->SpeciesName != g_TargetSpecies)
 		{
 			bool FoundTMLearn = false;
 			//find if the target learns this by TM
 			for (MoveLearner* TargetLearner : g_MoveLearners)
 			{
-				if (TargetLearner->LearnInfo->SpeciesName == g_TargetSpecies && (TargetLearner->LearnMethod == LEARNBY_TM_UNIVERSAL || TargetLearner->LearnMethod == LEARNBY_TM) && Learner->MoveName == TargetLearner->MoveName)
+				if (TargetLearner->LearnMonInfo->SpeciesName == g_TargetSpecies && (TargetLearner->LearnMethod == LEARNBY_TM_UNIVERSAL || TargetLearner->LearnMethod == LEARNBY_TM) && Learner->MoveName == TargetLearner->MoveName)
 				{
 					FoundTMLearn = true;
 				}
@@ -1054,7 +1061,7 @@ static void FindTMsOfInterest()
 			if (!FoundTMLearn)
 			{
 				Learner->TMOfInterest = true;///*
-				std::cout << Learner->LearnInfo->SpeciesName << " learning " << Learner->MoveName << Learner->MethodStr();
+				std::cout << Learner->LearnMonInfo->SpeciesName << " learning " << Learner->MoveName << Learner->MethodStr();
 				if (!Learner->FormName.empty())
 					std::cout << " (" << Learner->FormName << ")";
 				std::cout << " was a TM of interest\n";//*/
@@ -1106,7 +1113,7 @@ static void WriteOutput(std::vector<BreedChain>& Chains)
 	for (MoveLearner* Learner : g_MoveLearners)
 	{
 		//of course we can breed our moves onto own species
-		if (Learner->LearnInfo->SpeciesName == g_TargetSpecies)
+		if (Learner->LearnMonInfo->SpeciesName == g_TargetSpecies)
 		{
 			if (IsUniversalTM(Learner->MoveName, g_TargetGame) && Learner->LearnMethod == LEARNBY_TM_UNIVERSAL)
 			{
@@ -1125,7 +1132,7 @@ static void PreSearch()
 	{
 		//it may be pointless to find this move, but we trust the user to know what they're doing
 		//(for instance, a move might be levelup, but also a tm, and the level threshold is far away, so it would be of interest to look at it anyway)
-		if (TargetLearner->LearnInfo->SpeciesName == g_TargetSpecies && TargetLearner->LearnMethod == LEARNBY_LEVELUP && stoi(TargetLearner->LearnLevel) <= g_MaxLevel)
+		if (TargetLearner->LearnMonInfo->SpeciesName == g_TargetSpecies && TargetLearner->LearnMethod == LEARNBY_LEVELUP && stoi(TargetLearner->LearnLevel) <= g_MaxLevel)
 			std::cout << "Note: " << TargetLearner->MoveName << " is a levelup move below the level cap.\n";
 	}
 
@@ -1138,7 +1145,7 @@ static void PreSearch()
 	else
 	{
 		for (MoveLearner* Learner : g_MoveLearners)
-			std::cout << Learner->LearnInfo->SpeciesName << "\n";
+			std::cout << Learner->LearnMonInfo->SpeciesName << "\n";
 	}
 
 	std::cout << "Starting the chain search.\n";
@@ -1210,16 +1217,14 @@ static int SuggestChain(BreedChain* Chain, MoveLearner* BottomChild)
 				std::cout << "Excluding pokemon species \"" << str << "\"\n";
 				//mark everything with this species name
 				for (int iMarkLearner = 0; iMarkLearner < g_MoveLearners.size(); iMarkLearner++)
-					if (g_MoveLearners[iMarkLearner]->LearnInfo->SpeciesName == str || g_MoveLearners[iMarkLearner]->LearnedAsSpecies == str)
+					if (g_MoveLearners[iMarkLearner]->LearnMonInfo->SpeciesName == str || g_MoveLearners[iMarkLearner]->LearnedAsSpecies == str)
 						g_MoveLearners[iMarkLearner]->UserRejected = true;
 			}
 			else
 			{
 				int LearnID = stoi(str);
 				std::cout << "Excluding ID \"" << str << "\"\n";
-				for (int iMarkLearner = 0; iMarkLearner < g_MoveLearners.size(); iMarkLearner++)
-					if (g_MoveLearners[iMarkLearner]->LearnID == LearnID)
-						g_MoveLearners[iMarkLearner]->UserRejected = true;
+				GetLearnerFromMainList(LearnID)->UserRejected = true;
 			}
 		}
 		return CR_REJECTED;
@@ -1232,7 +1237,7 @@ static bool LearnerCannotBeTopLevel(MoveLearner* Learner)
 	if (Learner->LearnMethod == LEARNBY_EGG)
 		return true;
 
-	if (g_RequireFather.size() && std::find(g_RequireFather.begin(), g_RequireFather.end(), Learner->LearnInfo->SpeciesName) == g_RequireFather.end())
+	if (g_RequireFather.size() && std::find(g_RequireFather.begin(), g_RequireFather.end(), Learner->LearnMonInfo->SpeciesName) == g_RequireFather.end())
 		return true;
 
 	if (Learner->LearnMethod == LEARNBY_TM || Learner->LearnMethod == LEARNBY_TM_UNIVERSAL)
@@ -1298,7 +1303,7 @@ static int TestFather(std::vector<BreedChain>& Chains, std::vector<bool>& Closed
 		}
 		else
 		{
-			if (g_MainLoopDebug) std::cout << Father->LearnInfo->SpeciesName << " learning " << Learner->MoveName << " to pass to " << BottomChild->LearnInfo->SpeciesName << " was bad because it can't learn " << g_ComboData.ComboMoves[Satisfy] << " (" << std::to_string(Depth) << ")\n";
+			if (g_MainLoopDebug) std::cout << Father->LearnMonInfo->SpeciesName << " learning " << Learner->MoveName << " to pass to " << BottomChild->LearnMonInfo->SpeciesName << " was bad because it can't learn " << g_ComboData.ComboMoves[Satisfy] << " (" << std::to_string(Depth) << ")\n";
 			BadLearn = true;
 		}
 		//Caution: if FatherSatisfiesMoves returns false, vLearns is not necessarily complete data
@@ -1333,7 +1338,7 @@ static int TestFather(std::vector<BreedChain>& Chains, std::vector<bool>& Closed
 		{
 			if (CurrentLearner->UserRejected)
 			{
-				if (g_MainLoopDebug) std::cout << "Giving up on " << Learner->LearnInfo->SpeciesName << " learning " << Learner->MoveName << " to pass to " << BottomChild->LearnInfo->SpeciesName << " because " << CurrentLearner->LearnInfo->SpeciesName << " ID " << CurrentLearner->LearnID << " was rejected (" << std::to_string(Depth) << ")\n";
+				if (g_MainLoopDebug) std::cout << "Giving up on " << Learner->LearnMonInfo->SpeciesName << " learning " << Learner->MoveName << " to pass to " << BottomChild->LearnMonInfo->SpeciesName << " because " << CurrentLearner->LearnMonInfo->SpeciesName << " ID " << CurrentLearner->LearnID << " was rejected (" << std::to_string(Depth) << ")\n";
 				return CR_FAIL;
 			}
 			CurrentLearner = ParentList[CurrentLearner->LearnID];
@@ -1359,22 +1364,49 @@ static int TestFather(std::vector<BreedChain>& Chains, std::vector<bool>& Closed
 static int FindFatherForMove(std::vector<BreedChain>& Chains, std::vector<bool>& ClosedList, std::vector<MoveLearner*>& ParentList, int Depth, MoveLearner* Learner, MoveLearner* BottomChild)
 {
 	Depth++;
-	if (g_MainLoopDebug) std::cout << "Finding father to teach " << Learner->LearnInfo->SpeciesName << " " << Learner->MoveName << " to pass to " << BottomChild->LearnInfo->SpeciesName << " (" << std::to_string(Depth) << ")\n";
+	if (g_MainLoopDebug) std::cout << "Finding father to teach " << Learner->LearnMonInfo->SpeciesName << " " << Learner->MoveName << " to pass to " << BottomChild->LearnMonInfo->SpeciesName << " (" << std::to_string(Depth) << ")\n";
 	if (Depth >= g_MaxDepth)
 	{
 		//didn't actually explore node
 		ClosedList[Learner->LearnID] = false;
-		if (g_MainLoopDebug) std::cout << "Giving up on " << Learner->LearnInfo->SpeciesName << " learning " << Learner->MoveName << " to pass to " << BottomChild->LearnInfo->SpeciesName << " because chain is too long (" << std::to_string(Depth) << ")\n";
+		if (g_MainLoopDebug) std::cout << "Giving up on " << Learner->LearnMonInfo->SpeciesName << " learning " << Learner->MoveName << " to pass to " << BottomChild->LearnMonInfo->SpeciesName << " because chain is too long (" << std::to_string(Depth) << ")\n";
 		return CR_FAIL;
 	}
 	for (int i = 0; i < g_MoveLearners.size(); i++)
 	{
 		MoveLearner* Father = g_MoveLearners[i];
-		//for the moment we assume mother is child's species
+
+		//some male-only pokemon have a female-only counterpart that can create an egg containing the male.
+		//this can matter because something might differ between them about how/if they learn a move
+		//those same female pokemon can also come from an egg made by the male breeding with a ditto starting in gen 5
+		//however we need not worry about that; the fathers will already be considered naturally since they're in the same egg group
+		if (Learner->LearnMonInfo->GenderRatio == GR_MALE_ONLY)
+		{
+			bool Good = false;
+			if (Learner->LearnMonInfo->SpeciesName == "Volbeat")
+			{
+				for (MoveLearner* AltMother = IterateLearnersBySpecies(0, "Illumise"); AltMother; AltMother = IterateLearnersBySpecies(AltMother->LearnID, "Illumise"))
+				{
+					if (ValidateMatchup(ClosedList, ParentList, AltMother, Learner, Father, *BottomChild, false))
+						Good = true;
+				}
+			}
+			else if (Learner->LearnMonInfo->SpeciesName == "Nidoran M")
+			{
+				for (MoveLearner* AltMother = IterateLearnersBySpecies(0, "Nidoran F"); AltMother; AltMother = IterateLearnersBySpecies(AltMother->LearnID, "Nidoran F"))
+				{
+					if (ValidateMatchup(ClosedList, ParentList, AltMother, Learner, Father, *BottomChild, false))
+						Good = true;
+				}
+			}
+			if (!Good)
+				continue;
+		}
+
 		if (!ValidateMatchup(ClosedList, ParentList, Learner, Learner, Father, *BottomChild, false))
 			continue;
 
-		if (g_MainLoopDebug) std::cout << Father->LearnInfo->SpeciesName << " can teach " << Learner->LearnInfo->SpeciesName << " " << Learner->MoveName << " to pass to " << BottomChild->LearnInfo->SpeciesName << " (" << std::to_string(Depth) << ")\n";
+		if (g_MainLoopDebug) std::cout << Father->LearnMonInfo->SpeciesName << " can teach " << Learner->LearnMonInfo->SpeciesName << " " << Learner->MoveName << " to pass to " << BottomChild->LearnMonInfo->SpeciesName << " (" << std::to_string(Depth) << ")\n";
 
 		int Result = TestFather(Chains, ClosedList, ParentList, Depth, Father, Learner, BottomChild);
 		if (Result == CR_REJECTED)
@@ -1384,7 +1416,7 @@ static int FindFatherForMove(std::vector<BreedChain>& Chains, std::vector<bool>&
 			return CR_SUCCESS;
 	}
 	//if there are no fathers left to look at, leave
-	if (g_MainLoopDebug) std::cout << "No father to teach " << Learner->LearnInfo->SpeciesName << " " << Learner->MoveName << " to pass to " << BottomChild->LearnInfo->SpeciesName << " (" << std::to_string(Depth) << ")\n";
+	if (g_MainLoopDebug) std::cout << "No father to teach " << Learner->LearnMonInfo->SpeciesName << " " << Learner->MoveName << " to pass to " << BottomChild->LearnMonInfo->SpeciesName << " (" << std::to_string(Depth) << ")\n";
 	return CR_FAIL;
 }
 
@@ -1444,7 +1476,7 @@ static int SuggestChainCombo(std::vector<BreedChain>& Chains, MoveLearner* Learn
 
 static int SearchRetryLoop(std::vector<BreedChain>& Chains, MoveLearner* Learner, bool Nested)
 {
-	if (g_MainLoopDebug) std::cout << "_Starting search to teach " << Learner->LearnInfo->SpeciesName << " " << Learner->MoveName << "\n";
+	if (g_MainLoopDebug) std::cout << "_Starting search to teach " << Learner->LearnMonInfo->SpeciesName << " " << Learner->MoveName << "\n";
 	assert(std::find(g_MovesBeingExplored.begin(), g_MovesBeingExplored.end(), Learner->MoveName) == g_MovesBeingExplored.end());
 	g_MovesBeingExplored.push_back(Learner->MoveName);
 	int Result = CR_REJECTED;
@@ -1488,7 +1520,7 @@ static void SearchStart(std::vector<BreedChain>& Chains)
 		if (std::find(g_MovesDone.begin(), g_MovesDone.end(), Move->MoveName) != g_MovesDone.end())
 			continue;
 
-		if (Move->LearnInfo->SpeciesName == g_TargetSpecies)
+		if (Move->LearnMonInfo->SpeciesName == g_TargetSpecies)
 		{
 			SearchRetryLoop(Chains, Move, false);
 		}
@@ -1529,8 +1561,8 @@ static void CreatePriorEvolutionLearns(GameData* Game)
 	for (int iLearn = 0; iLearn < g_MoveLearners.size(); iLearn++)
 	{
 		MoveLearner* Learn = g_MoveLearners[iLearn];
-		std::string OriginalForm = Learn->LearnInfo->SpeciesName;
-		int iInfo = GetSpeciesInfo(OriginalForm, Game);
+		std::string OriginalForm = Learn->LearnMonInfo->SpeciesName;
+		int iInfo = GetSpeciesInfoFromGame(OriginalForm, Game);
 		if (iInfo == -1)
 			continue;
 		int OriginalSlot = iInfo;
@@ -1551,7 +1583,7 @@ static void CreatePriorEvolutionLearns(GameData* Game)
 					for (int iHigherMove = 0; iHigherMove < g_MoveLearners.size(); iHigherMove++)
 					{
 						MoveLearner* HigherMove = g_MoveLearners[iHigherMove];
-						if (Target == HigherMove->LearnInfo->SpeciesName && Learn->MoveName == HigherMove->MoveName && Learn->LearnMethod == HigherMove->LearnMethod)
+						if (Target == HigherMove->LearnMonInfo->SpeciesName && Learn->MoveName == HigherMove->MoveName && Learn->LearnMethod == HigherMove->LearnMethod)
 						{
 							FoundDuplicate = true;
 							break;
@@ -1571,9 +1603,9 @@ static void CreatePriorEvolutionLearns(GameData* Game)
 						NewLearner->FormName = Learn->FormName;
 						NewLearner->LearnLevel = Learn->LearnLevel;
 						NewLearner->MoveName = Learn->MoveName;
-						int iInfoIndex = GetSpeciesInfo(Target, Game);
+						int iInfoIndex = GetSpeciesInfoFromGame(Target, Game);
 						assert(iInfoIndex != -1);
-						NewLearner->LearnInfo = &Game->GetGeneration()->MonData[iInfoIndex];
+						NewLearner->LearnMonInfo = &Game->GetGeneration()->MonData[iInfoIndex];
 						NewLearner->LearnedAsSpecies = Learn->LearnedAsSpecies.empty() ? OriginalForm : Learn->LearnedAsSpecies;
 						AddMoveToMainList(NewLearner, Game);
 					}
