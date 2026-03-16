@@ -206,13 +206,15 @@ static MoveLearner* GetLearnerFromMainList(int WantedID)
 	for (MoveLearner* tLearner : g_MoveLearners)
 		if (tLearner->LearnID == WantedID)
 			return tLearner;
+	return NULL;
 }
 
-static MoveLearner* IterateLearnersBySpecies(int StartID, std::string WantedSpecies)
+static MoveLearner* IterateLearnersBySpecies(int StartID, std::string WantedSpecies, std::string WantedMove)
 {
 	for (int iLearnID = StartID; iLearnID < g_MoveLearners.size(); iLearnID++)
-		if (g_MoveLearners[iLearnID]->LearnMonInfo->SpeciesName == WantedSpecies)
+		if (g_MoveLearners[iLearnID]->LearnMonInfo->SpeciesName == WantedSpecies && g_MoveLearners[iLearnID]->MoveName == WantedMove)
 			return g_MoveLearners[iLearnID];
+	return NULL;
 }
 
 static std::string ProcessAnnotatedCell(std::string TextLine, size_t& PipeLocation, size_t Value1End, size_t& SupStart, bool Quiet)
@@ -345,8 +347,15 @@ static bool ValidateMatchup(std::vector<bool>& ClosedList, std::vector<MoveLearn
 		return false;
 
 	//Gender-unknown Pokémon can only breed with Ditto. this makes them uninteresting for EggWebs aside from Shedinja because the offspring Nincada is gender known.
-	if (Father->LearnMonInfo->GenderRatio == GR_UNKNOWN && Father->LearnMonInfo->SpeciesName != "Shedinja")
-		return false;
+	if (Father->LearnMonInfo->GenderRatio == GR_UNKNOWN)
+	{
+		//BUT, it has to be a move that Nincada can learn
+		//TODO: Really? find a situation where shedinja can be used to teach nincada something
+		//if (Father->LearnMonInfo->SpeciesName == "Shedinja")
+			//return IterateLearnersBySpecies(0, "Nincada", Father->MoveName);
+		//else
+			return false;
+	}
 
 	//if the mom can learn the move by level up below the level cap, there's no point in breeding the move onto it
 	//just catch the mother species and level it up to this level
@@ -1385,25 +1394,20 @@ static int FindFatherForMove(std::vector<BreedChain>& Chains, std::vector<bool>&
 			bool Good = false;
 			if (Learner->LearnMonInfo->SpeciesName == "Volbeat")
 			{
-				for (MoveLearner* AltMother = IterateLearnersBySpecies(0, "Illumise"); AltMother; AltMother = IterateLearnersBySpecies(AltMother->LearnID, "Illumise"))
-				{
+				for (MoveLearner* AltMother = IterateLearnersBySpecies(0, "Illumise", Learner->MoveName); AltMother; AltMother = IterateLearnersBySpecies(AltMother->LearnID, "Illumise", Learner->MoveName))
 					if (ValidateMatchup(ClosedList, ParentList, AltMother, Learner, Father, *BottomChild, false))
 						Good = true;
-				}
 			}
 			else if (Learner->LearnMonInfo->SpeciesName == "Nidoran M")
 			{
-				for (MoveLearner* AltMother = IterateLearnersBySpecies(0, "Nidoran F"); AltMother; AltMother = IterateLearnersBySpecies(AltMother->LearnID, "Nidoran F"))
-				{
+				for (MoveLearner* AltMother = IterateLearnersBySpecies(0, "Nidoran F", Learner->MoveName); AltMother; AltMother = IterateLearnersBySpecies(AltMother->LearnID, "Nidoran F", Learner->MoveName))
 					if (ValidateMatchup(ClosedList, ParentList, AltMother, Learner, Father, *BottomChild, false))
 						Good = true;
-				}
 			}
 			if (!Good)
 				continue;
 		}
-
-		if (!ValidateMatchup(ClosedList, ParentList, Learner, Learner, Father, *BottomChild, false))
+		else if (!ValidateMatchup(ClosedList, ParentList, Learner, Learner, Father, *BottomChild, false))
 			continue;
 
 		if (g_MainLoopDebug) std::cout << Father->LearnMonInfo->SpeciesName << " can teach " << Learner->LearnMonInfo->SpeciesName << " " << Learner->MoveName << " to pass to " << BottomChild->LearnMonInfo->SpeciesName << " (" << std::to_string(Depth) << ")\n";

@@ -342,7 +342,7 @@ Generation g_Generation4 = {
 {"Vigoroth", "Field", "Field", GR_TYPICAL, {"Slaking"}},
 {"Slaking", "Field", "Field", GR_TYPICAL, {}},
 {"Nincada", "Bug", "Bug", GR_UNKNOWN, {"Ninjask", "Shedinja"}},
-{"Ninjask", "Bug", "Bug", GR_TYPICAL, {}},
+{"Ninjask", "Bug", "Bug", GR_TYPICAL, {"Shedinja"}},//a small hack: in this gen, shedinja will copy the moves ninjask learned at the time it evolved from nincada
 {"Shedinja", "Bug", "Bug", GR_UNKNOWN, {}},
 {"Whismur", "Monster", "Field", GR_TYPICAL, {"Loudred"}},
 {"Loudred", "Monster", "Field", GR_TYPICAL, {"Exploud"}},
