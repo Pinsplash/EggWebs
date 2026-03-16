@@ -3,12 +3,11 @@
 #pragma once
 #include "core.h"
 
-extern Generation tGeneration5;
+extern Generation g_Generation5;
 #endif
-Generation tGeneration5 = {
-GENERATION_5,
+Generation g_Generation5 = {
 "====[[Generation V]]====",
-//sUniversalTMs https://bulbapedia.bulbagarden.net/w/index.php?search=%22Every+Pok%C3%A9mon+can+learn+this+move+by%22&title=Special%3ASearch&go=Go
+//UniversalTMs https://bulbapedia.bulbagarden.net/w/index.php?search=%22Every+Pok%C3%A9mon+can+learn+this+move+by%22&title=Special%3ASearch&go=Go
 {
 "Attract",
 "Double Team",
@@ -22,7 +21,7 @@ GENERATION_5,
 "Swagger",
 "Toxic"
 },
-//sAllGroups https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_breeding_attributes https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number
+//MonData https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_breeding_attributes https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number
 {
 {"Bulbasaur", "Monster", "Grass", GR_TYPICAL, {"Ivysaur"}},
 {"Ivysaur", "Monster", "Grass", GR_TYPICAL, {"Venusaur"}},

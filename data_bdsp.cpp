@@ -3,12 +3,11 @@
 #pragma once
 #include "core.h"
 
-extern Generation tGeneration8_BDSP;
+extern Generation g_Generation8_BDSP;
 #endif
-Generation tGeneration8_BDSP = {
-GENERATION_8_BDSP,
+Generation g_Generation8_BDSP = {
 "====[[Generation VIII]]====",
-//sUniversalTMs
+//UniversalTMs
 {
 "Attract",
 "Double Team",
@@ -19,7 +18,7 @@ GENERATION_8_BDSP,
 "Sleep Talk",
 "Swagger"
 },
-//sAllGroups
+//MonData
 {
 {"Bulbasaur", "Monster", "Grass", GR_TYPICAL, {"Ivysaur"}},
 {"Ivysaur", "Monster", "Grass", GR_TYPICAL, {"Venusaur"}},

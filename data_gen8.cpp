@@ -3,12 +3,11 @@
 #pragma once
 #include "core.h"
 
-extern Generation tGeneration8;
+extern Generation g_Generation8;
 #endif
-Generation tGeneration8 = {
-GENERATION_8,
+Generation g_Generation8 = {
 "====[[Generation VIII]]====",
-//sUniversalTMs https://bulbapedia.bulbagarden.net/w/index.php?search=%22Every+Pok%C3%A9mon+can+learn+this+move+by%22&title=Special%3ASearch&go=Go
+//UniversalTMs https://bulbapedia.bulbagarden.net/w/index.php?search=%22Every+Pok%C3%A9mon+can+learn+this+move+by%22&title=Special%3ASearch&go=Go
 {
 "Attract",
 "Endure",
@@ -19,7 +18,7 @@ GENERATION_8,
 "Sleep Talk",
 "Snore"
 },
-//sAllGroups https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_breeding_attributes https://bulbapedia.bulbagarden.net/wiki/List_of_cross-generational_evolutionary_lines
+//MonData https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_breeding_attributes https://bulbapedia.bulbagarden.net/wiki/List_of_cross-generational_evolutionary_lines
 {
 {"Bulbasaur", "Monster", "Grass", GR_TYPICAL, {"Ivysaur"}},
 {"Ivysaur", "Monster", "Grass", GR_TYPICAL, {"Venusaur"}},

@@ -15,9 +15,9 @@ enum GenderRatio
 
 struct SpeciesInfo
 {
-	std::string sSpecies;
-	std::string sEggGroup1;
-	std::string sEggGroup2;
+	std::string SpeciesName;
+	std::string EggGroup1;
+	std::string EggGroup2;
 	GenderRatio GenderRatio;
 
 	//used for populating root-form-exclusive moves to evolved forms of species
@@ -40,38 +40,37 @@ enum GenerationNumber
 
 struct Generation
 {
-	GenerationNumber iNumber;
-	std::string sBulbaHeader;
-	std::vector<std::string> sUniversalTMs;
-	std::vector<SpeciesInfo> sAllGroups;
+	std::string BulbaHeader;
+	std::vector<std::string> UniversalTMs;
+	std::vector<SpeciesInfo> MonData;
 	SpeciesInfo* GetSpeciesInfo(std::string sWantedSpecies)
 	{
-		for (int iMon = 0; iMon < sAllGroups.size(); iMon++)
+		for (int iMon = 0; iMon < MonData.size(); iMon++)
 		{
-			if (sAllGroups[iMon].sSpecies == sWantedSpecies)
-				return &sAllGroups[iMon];
+			if (MonData[iMon].SpeciesName == sWantedSpecies)
+				return &MonData[iMon];
 		}
 		return NULL;
 	}
 };
 
-extern std::vector<Generation*> pGenerations;
+extern std::vector<Generation*> g_Generations;
 
 struct GameData
 {
-	std::string sUIName;
-	std::string sInternalName;
-	GenerationNumber iGeneration;
-	std::string sAcronym;
-	bool bHasBreeding = true;
+	std::string UIName;
+	std::string InternalName;
+	GenerationNumber GenerationNum;
+	std::string Acronym;
+	bool HasBreeding = true;
 	Generation* GetGeneration()
 	{
-		return pGenerations[iGeneration];
+		return g_Generations[GenerationNum];
 	}
 };
 
 
-extern std::vector<GameData> tGames;
+extern std::vector<GameData> g_Games;
 
 enum MoveLearnMethod
 {
@@ -95,32 +94,32 @@ enum
 	CR_REJECTED
 };
 
-extern bool bNoMoves;
+extern bool g_NoMoves;
 
 struct MoveLearner
 {
-	std::string sForm;
-	std::string sLevel;
-	std::string sMoveName;
+	std::string FormName;
+	std::string LearnLevel;
+	std::string MoveName;
 	std::string LearnedAsSpecies;
-	MoveLearnMethod eLearnMethod = METHOD_NOT_DEFINED;
-	GameData* tGame;
-	SpeciesInfo* tMonInfo;
-	bool bTMOfInterest = false;
-	bool bEraseMe = false;
-	bool bRejected = false;
-	int iID = -1;
+	MoveLearnMethod LearnMethod = METHOD_NOT_DEFINED;
+	GameData* LearnsInGame;
+	SpeciesInfo* LearnInfo;
+	bool TMOfInterest = false;
+	bool EraseMe = false;
+	bool UserRejected = false;
+	int LearnID = -1;
 	std::string MethodStr()
 	{
 		std::string s1;
-		if (eLearnMethod == LEARNBY_LEVELUP) s1 = " (level " + sLevel;
-		else if (eLearnMethod == LEARNBY_TM) s1 = " (by TM";
-		else if (eLearnMethod == LEARNBY_TM_UNIVERSAL) s1 = " (by universal TM";
-		else if (eLearnMethod == LEARNBY_EGG) s1 = " (egg move";
-		else if (eLearnMethod == LEARNBY_SPECIAL) s1 = " (special encounter";
-		else if (eLearnMethod == LEARNBY_EVENT) s1 = " (from an event";
-		else if (eLearnMethod == LEARNBY_TUTOR) s1 = " (tutor";
-		else if (eLearnMethod == LEARNBY_SKETCH) s1 = " (Sketch";
+		if (LearnMethod == LEARNBY_LEVELUP) s1 = " (level " + LearnLevel;
+		else if (LearnMethod == LEARNBY_TM) s1 = " (by TM";
+		else if (LearnMethod == LEARNBY_TM_UNIVERSAL) s1 = " (by universal TM";
+		else if (LearnMethod == LEARNBY_EGG) s1 = " (egg move";
+		else if (LearnMethod == LEARNBY_SPECIAL) s1 = " (special encounter";
+		else if (LearnMethod == LEARNBY_EVENT) s1 = " (from an event";
+		else if (LearnMethod == LEARNBY_TUTOR) s1 = " (tutor";
+		else if (LearnMethod == LEARNBY_SKETCH) s1 = " (Sketch";
 		else s1 = " (UNKNOWN REASON";
 
 		std::string s2;
@@ -131,17 +130,17 @@ struct MoveLearner
 
 		return s1 + s2;
 	}
-	std::string InfoStr(bool bInCSV)
+	std::string InfoStr(bool InCSV)
 	{
-		if (bNoMoves)
-			return tMonInfo->sSpecies;
+		if (g_NoMoves)
+			return LearnInfo->SpeciesName;
 		std::string s1;
-		if (!sForm.empty())
-			s1 = tMonInfo->sSpecies + MethodStr() + " (" + sForm + ")";
+		if (!FormName.empty())
+			s1 = LearnInfo->SpeciesName + MethodStr() + " (" + FormName + ")";
 		else
-			s1 = tMonInfo->sSpecies + MethodStr();
+			s1 = LearnInfo->SpeciesName + MethodStr();
 
-		if (bInCSV && !LearnedAsSpecies.empty())
+		if (InCSV && !LearnedAsSpecies.empty())
 			return "\"" + s1 + "\"";
 		else
 			return s1;
@@ -150,55 +149,55 @@ struct MoveLearner
 
 struct BreedChain
 {
-	std::vector<MoveLearner*> vLineage;
-	bool bSuggested = false;
+	std::vector<MoveLearner*> Lineage;
+	bool Suggested = false;
 };
 
-extern int iCombo;
+extern int g_Combo;
 
 struct ComboBreedData
 {
-	std::vector<std::string> sMoves;
-	std::vector<bool> bSatisfiedStatus = { false, false, false, false };
+	std::vector<std::string> ComboMoves;
+	std::vector<bool> SatisfiedStatus = { false, false, false, false };
 	//0 = no
 	//1 = yes
 	//2 = move not in data
-	int IsMoveSatisfied(std::string sWantedMove)
+	int IsMoveSatisfied(std::string WantedMove)
 	{
-		for (int i = 0; i < iCombo; i++)
+		for (int i = 0; i < g_Combo; i++)
 		{
-			if (sMoves[i] == sWantedMove)
-				return bSatisfiedStatus[i] ? 1 : 0;
+			if (ComboMoves[i] == WantedMove)
+				return SatisfiedStatus[i] ? 1 : 0;
 		}
 		return 2;
 	}
 	bool AllMovesSatisfied()
 	{
-		for (int i = 0; i < iCombo; i++)
+		for (int i = 0; i < g_Combo; i++)
 		{
-			if (!bSatisfiedStatus[i])
+			if (!SatisfiedStatus[i])
 				return false;
 		}
 		return true;
 	}
-	void AddMove(std::string sMove, bool bSatisfied = false)
+	void AddMove(std::string Move, bool Satisfied = false)
 	{
-		if (std::find(sMoves.begin(), sMoves.end(), sMove) != sMoves.end())
+		if (std::find(ComboMoves.begin(), ComboMoves.end(), Move) != ComboMoves.end())
 		{
 			return;//only want the names of moves, and we only want a name one time
 		}
-		sMoves.push_back(sMove);
-		assert(sMoves.size() <= iCombo);
-		assert(sMoves.size() <= 4);
-		bSatisfiedStatus[sMoves.size() - 1] = bSatisfied;
+		ComboMoves.push_back(Move);
+		assert(ComboMoves.size() <= g_Combo);
+		assert(ComboMoves.size() <= 4);
+		SatisfiedStatus[ComboMoves.size() - 1] = Satisfied;
 	}
-	void SetSatisfied(std::string sWantedMove, bool bSatisfied)
+	void SetSatisfied(std::string WantedMove, bool Satisfied)
 	{
-		for (int i = 0; i < iCombo; i++)
+		for (int i = 0; i < g_Combo; i++)
 		{
-			if (sMoves[i] == sWantedMove)
+			if (ComboMoves[i] == WantedMove)
 			{
-				bSatisfiedStatus[i] = bSatisfied;
+				SatisfiedStatus[i] = Satisfied;
 				return;
 			}
 		}

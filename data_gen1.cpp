@@ -3,12 +3,11 @@
 #pragma once
 #include "core.h"
 
-extern Generation tGeneration1;
+extern Generation g_Generation1;
 #endif
-Generation tGeneration1 = {
-GENERATION_1,
+Generation g_Generation1 = {
 "====[[Generation I]]====",
-//sUniversalTMs
+//UniversalTMs
 {
 "Bide",
 "Double Team",
@@ -16,7 +15,7 @@ GENERATION_1,
 "Rest",
 "Toxic"
 },
-//sAllGroups
+//MonData
 {
 {"Bulbasaur", "Monster", "Grass", GR_UNKNOWN, {"Ivysaur"}},
 {"Ivysaur", "Monster", "Grass", GR_UNKNOWN, {"Venusaur"}},
