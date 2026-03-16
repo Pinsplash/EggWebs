@@ -243,7 +243,7 @@ Generation g_Generation8 = {
 {"Gallade", "Human-Like", "Amorphous", GR_MALE_ONLY, {}},
 {"Nincada", "Bug", "Bug", GR_UNKNOWN, {"Ninjask", "Shedinja"}},
 {"Ninjask", "Bug", "Bug", GR_TYPICAL, {}},
-{"Shedinja", "Mineral", "Mineral", GR_UNKNOWN, {}},
+{"Shedinja", "Bug", "Bug", GR_UNKNOWN, {}},
 {"Whismur", "Monster", "Field", GR_TYPICAL, {"Loudred"}},
 {"Loudred", "Monster", "Field", GR_TYPICAL, {"Exploud"}},
 {"Exploud", "Monster", "Field", GR_TYPICAL, {}},

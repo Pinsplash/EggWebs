@@ -1555,7 +1555,6 @@ static void GenerateMovelessLearns(GameData* Game)
 
 //we must tell evolved pokemon about moves that only their prior evolutions could learn
 //we cannot depend on EW to suggest something like Oddish -> Gloom -> Bellossom. ValidateMatchup would throw this out.
-//additionally, this is how we will account for Shedinja being in a different egg group than Nincada.
 static void CreatePriorEvolutionLearns(GameData* Game)
 {
 	for (int iLearn = 0; iLearn < g_MoveLearners.size(); iLearn++)
