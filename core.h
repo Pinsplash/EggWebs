@@ -5,11 +5,20 @@
 #include <vector>
 #include <cassert>
 
+enum GenderRatio
+{
+	GR_TYPICAL,//anything that can be male or female both
+	GR_MALE_ONLY,
+	GR_FEMALE_ONLY,
+	GR_UNKNOWN
+};
+
 struct SpeciesInfo
 {
 	std::string sSpecies;
 	std::string sEggGroup1;
 	std::string sEggGroup2;
+	GenderRatio GenderRatio;
 
 	//used for populating root-form-exclusive moves to evolved forms of species
 	std::vector<std::string> Evolutions;
@@ -33,11 +42,6 @@ struct Generation
 {
 	GenerationNumber iNumber;
 	std::string sBulbaHeader;
-	//baby pokemon are a unique case because they are in NED but they can evolve out of it
-	//the egg groups are for the pokemon it will evolve into
-	std::vector<std::string> sBabyMons;
-	std::vector<std::string> sFemaleOnlyMons;
-	std::vector<std::string> sMaleOnlyMons;
 	std::vector<std::string> sUniversalTMs;
 	std::vector<SpeciesInfo> sAllGroups;
 	SpeciesInfo* GetSpeciesInfo(std::string sWantedSpecies)
@@ -102,11 +106,7 @@ struct MoveLearner
 	MoveLearnMethod eLearnMethod = METHOD_NOT_DEFINED;
 	GameData* tGame;
 	SpeciesInfo* tMonInfo;
-	bool bBaby = false;
 	bool bTMOfInterest = false;
-	bool bFemaleOnly = false;
-	bool bMaleOnly = false;
-	bool bIsDitto = false;
 	bool bEraseMe = false;
 	bool bRejected = false;
 	int iID = -1;
@@ -121,7 +121,6 @@ struct MoveLearner
 		else if (eLearnMethod == LEARNBY_EVENT) s1 = " (from an event";
 		else if (eLearnMethod == LEARNBY_TUTOR) s1 = " (tutor";
 		else if (eLearnMethod == LEARNBY_SKETCH) s1 = " (Sketch";
-		else if (bIsDitto) s1 = "";
 		else s1 = " (UNKNOWN REASON";
 
 		std::string s2;

@@ -111,45 +111,6 @@ static bool StringPairIdent(std::string p1s1, std::string p1s2, std::string p2s1
 	return p1s1 + p1s2 == p2s1 + p2s2 || p1s1 + p1s2 == p2s2 + p2s1;
 }
 
-static bool IsBabyPokemon(std::string TargetSpecies, GameData* tGame)
-{
-	for (int i = 0; i < tGame->GetGeneration()->sBabyMons.size(); i++)
-	{
-		if (tGame->GetGeneration()->sBabyMons[i] == TargetSpecies)
-		{
-			return true;
-		}
-	}
-	return false;
-}
-
-static bool IsFemaleOnly(std::string TargetSpecies, GameData* tGame)
-{
-	for (int i = 0; i < tGame->GetGeneration()->sFemaleOnlyMons.size(); i++)
-	{
-		if (tGame->GetGeneration()->sFemaleOnlyMons[i] == TargetSpecies)
-			return true;
-	}
-	return false;
-}
-
-static bool IsMaleOnly(std::string TargetSpecies, std::string Form, GameData* tGame)
-{
-	for (int i = 0; i < tGame->GetGeneration()->sMaleOnlyMons.size(); i++)
-	{
-		if (tGame->GetGeneration()->sMaleOnlyMons[i] == TargetSpecies)
-		{
-			if (tGame->GetGeneration()->iNumber >= GENERATION_9 && TargetSpecies == "Ursaluna")
-			{
-				//ursaluna's bloodmoon form is male only, but the rest of the teddiursa line is any gender
-				return Form == "Bloodmoon";
-			}
-			return true;
-		}
-	}
-	return false;
-}
-
 static bool IsUniversalTM(std::string sMoveName, GameData* tGame)
 {
 	for (int i = 0; i < tGame->GetGeneration()->sUniversalTMs.size(); i++)
@@ -230,53 +191,8 @@ static bool sortMoves(const MoveLearner* a, const MoveLearner* b)
 	}
 }
 
-//0 = all good
-//1 = egg group exists but isn't good for breeding
-//2 = egg group doesn't exist
-static int ValidateGroup(std::string& sGroupName, bool bQuiet)
-{
-	std::transform(sGroupName.begin(), sGroupName.end(), sGroupName.begin(), ::tolower);
-	sGroupName = std::regex_replace(sGroupName, std::regex("^ +| +$|( ) +"), "$1");
-	if (sGroupName == "amorphous" ||
-		sGroupName == "bug" ||
-		sGroupName == "dragon" ||
-		sGroupName == "fairy" ||
-		sGroupName == "field" ||
-		sGroupName == "flying" ||
-		sGroupName == "grass" ||
-		sGroupName == "human-like" ||
-		sGroupName == "mineral" ||
-		sGroupName == "monster" ||
-		sGroupName == "water 1" ||
-		sGroupName == "water 2" ||
-		sGroupName == "water 3") return 0;
-	else if (sGroupName == "ditto" || sGroupName == "no eggs discovered")
-	{
-		if (!bQuiet)
-		{
-			std::cout << "This egg group can't be used for breeding moves\n";
-			std::string str;
-			std::getline(std::cin, str);
-		}
-		return 1;
-	}
-	else
-	{
-		if (!bQuiet)
-		{
-			std::cout << "Didn't recognize egg group '" << sGroupName << "'\n";
-			std::string str;
-			std::getline(std::cin, str);
-		}
-		return 2;
-	}
-}
-
 static void AddMoveToMainList(MoveLearner* tNewLearner, GameData* tGame)
 {
-	tNewLearner->bBaby = IsBabyPokemon(tNewLearner->tMonInfo->sSpecies, tGame);
-	tNewLearner->bFemaleOnly = IsFemaleOnly(tNewLearner->tMonInfo->sSpecies, tGame);
-	tNewLearner->bMaleOnly = IsMaleOnly(tNewLearner->tMonInfo->sSpecies, tNewLearner->sForm, tGame);
 	tNewLearner->iID = iLearnerCount;
 	tNewLearner->tGame = tGame;
 	iLearnerCount++;
@@ -369,7 +285,7 @@ static bool ValidateMatchup(std::vector<bool>& bClosedList, std::vector<MoveLear
 		return false;
 
 	//must learn the move in question
-	if (!tMother->bIsDitto && (tMother->sMoveName != tBottomChild.sMoveName || tFather->sMoveName != tBottomChild.sMoveName))
+	if (tMother->sMoveName != tBottomChild.sMoveName || tFather->sMoveName != tBottomChild.sMoveName)
 		return false;
 
 	//no reason to breed with own species. this doesn't produce interesting chains
@@ -386,13 +302,14 @@ static bool ValidateMatchup(std::vector<bool>& bClosedList, std::vector<MoveLear
 		return false;
 
 	//have to be straight
-	if ((tMother->bFemaleOnly && tFather->bFemaleOnly) || (tMother->bMaleOnly && tFather->bMaleOnly))
+	if ((tMother->tMonInfo->GenderRatio == GR_FEMALE_ONLY && tFather->tMonInfo->GenderRatio == GR_FEMALE_ONLY)
+		||(tMother->tMonInfo->GenderRatio == GR_MALE_ONLY && tFather->tMonInfo->GenderRatio == GR_MALE_ONLY))
 		return false;
 
 	//have to have a matching egg group
 	//Sketch works across egg groups
 	std::string sNewCommonEggGroup = StringPairMatch(tMother->tMonInfo->sEggGroup1, tMother->tMonInfo->sEggGroup2, tFather->tMonInfo->sEggGroup1, tFather->tMonInfo->sEggGroup2);
-	if (!tMother->bIsDitto && tChild->eLearnMethod != LEARNBY_SKETCH && sNewCommonEggGroup.empty())
+	if (tChild->eLearnMethod != LEARNBY_SKETCH && sNewCommonEggGroup.empty())
 		return false;
 
 	//mother has to have a new egg group in order to produce good useful chains
@@ -400,15 +317,15 @@ static bool ValidateMatchup(std::vector<bool>& bClosedList, std::vector<MoveLear
 	//it's okay for egg groups to be bad if the father learns the move by a different method than the child
 	bool bNewMethod = tFather->eLearnMethod != tChild->eLearnMethod;
 	//why did we have a check for !bChildIsTargetSpecies here? this was causing venonat <- caterpie to be valid
-	if (!bSkipNewGroupCheck && !tMother->bIsDitto && !bNewEggGroup && !bNewMethod)
+	if (!bSkipNewGroupCheck && !bNewEggGroup && !bNewMethod)
 		return false;
 
 	//level cap
 	//bulbapedia only says "If both parents know a move that the baby can learn via leveling up, the Pokémon will inherit that move."
 	//it doesn't say how the parents have to learn the move, just that both parents need to know the move at the time of breeding
 	//if they know it by levelup though, then we do need to check that they learn it before the level cap
-	bool bFatherLearnsByLevelUp = tFather->eLearnMethod == LEARNBY_LEVELUP && !tFather->bIsDitto;
-	bool bMotherLearnsByLevelUp = tMother->eLearnMethod == LEARNBY_LEVELUP && !tMother->bIsDitto;
+	bool bFatherLearnsByLevelUp = tFather->eLearnMethod == LEARNBY_LEVELUP;
+	bool bMotherLearnsByLevelUp = tMother->eLearnMethod == LEARNBY_LEVELUP;
 	bool bChildLearnsByLevelUp = tChild->eLearnMethod == LEARNBY_LEVELUP;
 	if (bFatherLearnsByLevelUp && stoi(tFather->sLevel) > iMaxLevel)
 		return false;
@@ -420,8 +337,12 @@ static bool ValidateMatchup(std::vector<bool>& bClosedList, std::vector<MoveLear
 	if (tFather->bRejected)
 		return false;
 
-	//fathers must be male, mothers must be female or ditto
-	if (tFather->bFemaleOnly || tMother->bMaleOnly)
+	//fathers must be male, mothers must be female
+	if (tFather->tMonInfo->GenderRatio == GR_FEMALE_ONLY || tMother->tMonInfo->GenderRatio == GR_MALE_ONLY)
+		return false;
+
+	//Gender-unknown Pokémon can only breed with Ditto. this makes them uninteresting for EggWebs aside from Shedinja because the offspring Nincada is gender known.
+	if (tFather->tMonInfo->GenderRatio == GR_UNKNOWN && tFather->tMonInfo->sSpecies != "Shedinja")
 		return false;
 
 	//if the mom can learn the move by level up below the level cap, there's no point in breeding the move onto it
@@ -430,13 +351,13 @@ static bool ValidateMatchup(std::vector<bool>& bClosedList, std::vector<MoveLear
 	if (bMotherLearnsByLevelUp)
 	{
 		bool bMotherLearnsWithinMaximum = stoi(tMother->sLevel) <= iMaxLevel;
-		if (tMother->bIsDitto || (!bChildIsTargetSpecies && bMotherLearnsWithinMaximum))
+		if (!bChildIsTargetSpecies && bMotherLearnsWithinMaximum)
 			return false;
 	}
 
 	//if the mother is a female-only species, they can only pass the move down if the baby learns it by levelup
 	//female-only mothers are always ok if they produce the target species as the moves don't have to be passed down further than that
-	if (!tMother->bIsDitto && tMother->bFemaleOnly && !bChildLearnsByLevelUp && !bChildIsTargetSpecies)
+	if (tMother->tMonInfo->GenderRatio == GR_FEMALE_ONLY && !bChildLearnsByLevelUp && !bChildIsTargetSpecies)
 		return false;
 
 	//make sure father wasn't already in the family tree (incest is redundant and leads to recursion)
