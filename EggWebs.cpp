@@ -271,11 +271,9 @@ static bool ValidateMatchup(std::vector<bool>& ClosedList, std::vector<MoveLearn
 {
 	//you can't breed these methods
 	//in crystal, tutor moves work like TM moves
-	//normally we can think of Sketch similar to learning a move by egg, but only if we can access a double battle, which we assume to be true gen3+
-	//there's also the option to Sketch it off a Ditto that tranFormNameed into the learner, but Sketch always fails on tranFormNameed pokemon in gen2
-	if (Child->LearnMethod == LEARNBY_EVENT || Child->LearnMethod == LEARNBY_SPECIAL ||
-		(Child->LearnMethod == LEARNBY_TUTOR && !(Child->LearnsInGame->GenerationNum == GENERATION_2 && Child->LearnsInGame->InternalName == "crystal")) ||
-		(Child->LearnMethod == LEARNBY_SKETCH && Child->LearnsInGame->GenerationNum <= GENERATION_2))
+	//Sketch is here because if we can copy a move, then doing so should be the first action of the chain. any breeding before that serves no purpose.
+	if (Child->LearnMethod == LEARNBY_EVENT || Child->LearnMethod == LEARNBY_SPECIAL || Child->LearnMethod == LEARNBY_SKETCH ||
+		(Child->LearnMethod == LEARNBY_TUTOR && !(Child->LearnsInGame->GenerationNum == GENERATION_2 && Child->LearnsInGame->InternalName == "crystal")))
 		return false;
 
 	//parents have to exist on the target game (for now...)
