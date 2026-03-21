@@ -211,7 +211,7 @@ static MoveLearner* GetLearnerFromMainList(int WantedID)
 
 static MoveLearner* IterateLearnersBySpecies(int StartID, std::string WantedSpecies, std::string WantedMove)
 {
-	for (int iLearnID = StartID; iLearnID < g_MoveLearners.size(); iLearnID++)
+	for (int iLearnID = StartID + 1; iLearnID < g_MoveLearners.size(); iLearnID++)
 		if (g_MoveLearners[iLearnID]->LearnMonInfo->SpeciesName == WantedSpecies && g_MoveLearners[iLearnID]->MoveName == WantedMove)
 			return g_MoveLearners[iLearnID];
 	return NULL;
@@ -352,7 +352,7 @@ static bool ValidateMatchup(std::vector<bool>& ClosedList, std::vector<MoveLearn
 		//BUT, it has to be a move that Nincada can learn
 		//TODO: Really? find a situation where shedinja can be used to teach nincada something
 		//if (Father->LearnMonInfo->SpeciesName == "Shedinja")
-			//return IterateLearnersBySpecies(0, "Nincada", Father->MoveName);
+			//return IterateLearnersBySpecies(-1, "Nincada", Father->MoveName);
 		//else
 			return false;
 	}
@@ -1394,13 +1394,13 @@ static int FindFatherForMove(std::vector<BreedChain>& Chains, std::vector<bool>&
 			bool Good = false;
 			if (Learner->LearnMonInfo->SpeciesName == "Volbeat")
 			{
-				for (MoveLearner* AltMother = IterateLearnersBySpecies(0, "Illumise", Learner->MoveName); AltMother; AltMother = IterateLearnersBySpecies(AltMother->LearnID, "Illumise", Learner->MoveName))
+				for (MoveLearner* AltMother = IterateLearnersBySpecies(-1, "Illumise", Learner->MoveName); AltMother; AltMother = IterateLearnersBySpecies(AltMother->LearnID, "Illumise", Learner->MoveName))
 					if (ValidateMatchup(ClosedList, ParentList, AltMother, Learner, Father, *BottomChild, false))
 						Good = true;
 			}
 			else if (Learner->LearnMonInfo->SpeciesName == "Nidoran M")
 			{
-				for (MoveLearner* AltMother = IterateLearnersBySpecies(0, "Nidoran F", Learner->MoveName); AltMother; AltMother = IterateLearnersBySpecies(AltMother->LearnID, "Nidoran F", Learner->MoveName))
+				for (MoveLearner* AltMother = IterateLearnersBySpecies(-1, "Nidoran F", Learner->MoveName); AltMother; AltMother = IterateLearnersBySpecies(AltMother->LearnID, "Nidoran F", Learner->MoveName))
 					if (ValidateMatchup(ClosedList, ParentList, AltMother, Learner, Father, *BottomChild, false))
 						Good = true;
 			}
