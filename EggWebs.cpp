@@ -1323,7 +1323,7 @@ static int SuggestChain(BreedChain* Chain, MoveLearner* BottomChild)
 		{
 			if (!is_number(str))
 			{
-				NameEnd = Answer.find("-evo");
+				NameEnd = str.find("-evo");
 				if (NameEnd != std::string::npos)
 				{
 					str = str.substr(0, NameEnd);
