@@ -127,7 +127,7 @@ static bool IsUniversalTM(std::string MoveName, GameData* Game)
 static bool IsSketchableMove(std::string MoveName, GameData* Game)
 {
 	//NOTE: In Gen 2, Sketch could not copy a move if it failed, even due to status conditions like sleep.
-	if (Game->GenerationNum == GENERATION_2 && (MoveName == "TranFormName" || MoveName == "Mimic"//last move used is forgotten
+	if (Game->GenerationNum == GENERATION_2 && (MoveName == "Transform" || MoveName == "Mimic"//last move used is forgotten
 		|| MoveName == "Metronome" || MoveName == "Mirror Move" || MoveName == "Sleep Talk"//last move used is the move that was called, not the move in question
 		|| MoveName == "Self-Destruct" || MoveName == "Explosion"))//successful execution means the target is gone
 		return false;
