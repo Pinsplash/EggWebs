@@ -63,6 +63,7 @@ struct GameData
 	GenerationNumber GenerationNum;
 	std::string Acronym;
 	bool HasBreeding = true;
+	bool GameIsAllowed = false;
 	Generation* GetGeneration()
 	{
 		return g_Generations[GenerationNum];
@@ -95,6 +96,7 @@ enum
 };
 
 extern bool g_NoMoves;
+extern GameData* g_TargetGame;
 
 struct MoveLearner
 {
@@ -123,12 +125,14 @@ struct MoveLearner
 		else s1 = " (UNKNOWN REASON";
 
 		std::string s2;
-		if (LearnedAsSpecies.empty())
-			s2 = ")";
-		else
-			s2 = ", learned as " + LearnedAsSpecies + ")";
+		if (!LearnedAsSpecies.empty())
+			s2 = ", learned as " + LearnedAsSpecies;
 
-		return s1 + s2;
+		std::string s3;
+		if (LearnsInGame != g_TargetGame)
+			s3 = ", transfer from " + LearnsInGame->Acronym;
+
+		return s1 + s2 + s3 + ")";
 	}
 	std::string InfoStr(bool InCSV)
 	{
@@ -140,7 +144,7 @@ struct MoveLearner
 		else
 			s1 = LearnMonInfo->SpeciesName + MethodStr();
 
-		if (InCSV && !LearnedAsSpecies.empty())
+		if (InCSV && (!LearnedAsSpecies.empty() || LearnsInGame != g_TargetGame))
 			return "\"" + s1 + "\"";
 		else
 			return s1;

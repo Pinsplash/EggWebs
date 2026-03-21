@@ -28,6 +28,7 @@ bool g_FastForward = false;
 bool g_NoMoves = false;
 int g_LearnerCount = 0;
 int g_Combo = 0;
+bool g_CrossGeneration = false;
 
 //there should be no reason for a breeding chain to EVER be this long
 int g_MaxDepth = 20;
@@ -202,6 +203,18 @@ static void AddMoveToMainList(MoveLearner* NewLearner, GameData* Game)
 	}
 }
 
+static void AddMoveToMainList(MoveLearner* NewLearner, int GameNum)
+{
+	NewLearner->LearnID = g_LearnerCount;
+	NewLearner->LearnsInGame = &g_Games[GameNum];
+	g_LearnerCount++;
+	g_MoveLearners.push_back(NewLearner);
+	if (g_Combo && NewLearner->LearnMethod != LEARNBY_TM_UNIVERSAL)
+	{
+		g_ComboData.AddMove(NewLearner->MoveName);
+	}
+}
+
 static MoveLearner* GetLearnerFromMainList(int WantedID)
 {
 	for (MoveLearner* tLearner : g_MoveLearners)
@@ -243,42 +256,31 @@ static SpeciesInfo* IterateEvolutions(int& iEvo, std::string OriginalForm, GameD
 	return NULL;
 }
 
-static std::string ProcessAnnotatedCell(std::string TextLine, size_t& PipeLocation, size_t Value1End, size_t& SupStart, bool Quiet)
+//sometimes there are annotations inside a cell to say that the value varies by game
+static void ProcessAnnotatedCell(std::vector<std::string>& GameList, std::string TextLine, size_t& ValueStart, bool Quiet)
 {
-	//sometimes there are annotations inside a cell to say that the value varies by game
-	size_t Value2Start = Value1End + 1;
-	size_t Value2End = TextLine.find("}}", Value2Start);
-	std::string Value2 = TextLine.substr(Value2Start, Value2End - Value2Start);
-	//if (!Quiet) std::cout << "\nProcessAnnotatedCell: " << Value2 << "\n";
-	if (Value2.find(g_TargetGame->Acronym) != std::string::npos)
+	size_t SupStart = TextLine.find("{{sup/");
+	if (SupStart != std::string::npos)
 	{
-		//the value is for our game
-		//if (!Quiet) std::cout << "Value2: " << Value2 << "\n";
-		return TextLine.substr(PipeLocation, SupStart);
+		size_t SupEnd = TextLine.find("}}");
+		size_t AcroStart = SupStart + 8;
+		std::string Acronym = TextLine.substr(AcroStart, SupEnd - AcroStart);
+		//push acronym followed by the value for the game
+		GameList.push_back(Acronym);
+		GameList.push_back(TextLine.substr(0, SupStart));
+		size_t NextSupStart = TextLine.find("{{sup/", SupStart + 1);
+		if (NextSupStart != std::string::npos)
+		{
+			TextLine = TextLine.substr(SupEnd + 6);
+			if (!TextLine.empty())
+				ProcessAnnotatedCell(GameList, TextLine, ValueStart, Quiet);
+		}
 	}
 	else
-	{
-		//our value is a different one. look to next sup template
-		//if (!Quiet) std::cout << "our value is a different one\n";
-		size_t PipePos = TextLine.find("|", Value2End);
-		size_t SupPos = TextLine.find("{{sup", Value2End);
-		if (PipePos <= SupPos)
-		{
-			//pipe comes before another sup, or neither were found (they will both equal npos). this means the move isn't learnable in the given game
-			//if (!Quiet) std::cout << "We had no value\n";
-			PipeLocation = PipePos + 1;
-			return "";
-		}
-		else
-		{
-			//sup comes first
-			return ProcessAnnotatedCell(TextLine, PipeLocation, PipePos, SupStart, Quiet);
-		}
-	}
+		assert(0);//then why did we end up here?
 }
 
-//this function's input is NOT stripped to just the cell's value, it's the whole row with a position pointing to the cell in question
-static std::string ProcesLearnLevelCell(std::string TextLine, size_t& PipeLocation, bool Quiet)
+static std::string ProcessLevelCell(std::string TextLine, size_t& PipeLocation, bool Quiet)
 {
 	size_t Value1End = TextLine.find("|", PipeLocation);
 	if (Value1End == std::string::npos)
@@ -290,7 +292,12 @@ static std::string ProcesLearnLevelCell(std::string TextLine, size_t& PipeLocati
 	size_t SupStart = Value1.find("{{sup");
 	if (SupStart != std::string::npos)
 	{
-		return ProcessAnnotatedCell(TextLine, PipeLocation, Value1End, SupStart, Quiet);
+		Value1End = TextLine.find("}}|", PipeLocation);
+		assert(Value1End != std::string::npos);
+		std::string Value2 = TextLine.substr(PipeLocation, Value1End - PipeLocation + 2);
+		PipeLocation = Value1End + 2;
+		PipeLocation++;
+		return Value2;
 	}
 	else
 	{
@@ -311,9 +318,10 @@ static bool ValidateMatchup(std::vector<bool>& ClosedList, std::vector<MoveLearn
 		(Child->LearnMethod == LEARNBY_TUTOR && !(Child->LearnsInGame->GenerationNum == GENERATION_2 && Child->LearnsInGame->InternalName == "crystal")))
 		return false;
 
-	//parents have to exist on the target game (for now...)
-	if (Mother->LearnsInGame != Father->LearnsInGame || Mother->LearnsInGame != g_TargetGame)
-		return false;
+	//parents have to exist on the target gen for now
+	if (!g_CrossGeneration)
+		if (Mother->LearnsInGame->GenerationNum != Father->LearnsInGame->GenerationNum || Mother->LearnsInGame->GenerationNum != g_TargetGame->GenerationNum)
+			return false;
 
 	//must learn the move in question
 	if (Mother->MoveName != BottomChild.MoveName || Father->MoveName != BottomChild.MoveName)
@@ -777,12 +785,17 @@ static int ProcessMove(std::ifstream& ReadFile)
 						int SkippedColumns = 1;
 						while (TargetColumn > SkippedColumns)
 						{
-							std::string LearnLevel = ProcesLearnLevelCell(TextLine, PipeLocation, true);
-							//std::cout << "ProcesLearnLevelCell B " << sPokemonName << " returned " << LearnLevel << " iTargetColumn: " << iTargetColumn << " iPipeLocation: " << iPipeLocation << "\n";
+							std::string LearnLevel = ProcessLevelCell(TextLine, PipeLocation, true);
+							//std::cout << "ProcessLevelCell B " << sPokemonName << " returned " << LearnLevel << " iTargetColumn: " << iTargetColumn << " iPipeLocation: " << iPipeLocation << "\n";
 							SkippedColumns++;
 						}
-						std::string LearnLevel = ProcesLearnLevelCell(TextLine, PipeLocation, false);
-						//std::cout << "ProcesLearnLevelCell A " << sPokemonName << " returned " << LearnLevel << " iTargetColumn: " << iTargetColumn << " iPipeLocation: " << iPipeLocation << "\n";
+						std::string LearnLevel = ProcessLevelCell(TextLine, PipeLocation, false);
+						size_t LevelEnd = LearnLevel.find("game: ");
+						if (LevelEnd != std::string::npos)
+						{
+							LearnLevel = LearnLevel.substr(0, LevelEnd);
+						}
+						//std::cout << "ProcessLevelCell A " << sPokemonName << " returned " << LearnLevel << " iTargetColumn: " << iTargetColumn << " iPipeLocation: " << iPipeLocation << "\n";
 						NewLearner->LearnLevel = LearnLevel;
 						if (!LearnLevel.empty())
 						{
@@ -807,33 +820,8 @@ static int ProcessMove(std::ifstream& ReadFile)
 								{
 									if (LevelupSection)
 										NewLearner->LearnMethod = LEARNBY_LEVELUP;
-									//if (tNewLearner.LearnMethod != LEARNBY_TM && tNewLearner.LearnMethod != LEARNBY_TM_UNIVERSAL && tNewLearner.LearnMethod != LEARNBY_EGG)
-									{
-										if (NewLearner->LearnMethod != LEARNBY_LEVELUP)
-											NewLearner->LearnLevel = "0";
-										else
-										{
-											//must be a number or have a comma and space
-											bool IsNumber = is_number(NewLearner->LearnLevel);
-											size_t CommaPlace = LearnLevel.find(",");
-											bool HasComma = CommaPlace != std::string::npos;
-											if (!IsNumber && !HasComma)
-											{
-												std::cout << "\nbad level value '" << LearnLevel << "'. iPipeLocation: " << PipeLocation << "\n";
-												if (IsNumber)
-													std::cout << "is a number\n";
-												else
-													std::cout << "is NOT a number\n";
-												if (HasComma)
-													std::cout << "has a comma\n";
-												else
-													std::cout << "did NOT have a comma\n";
-												std::cout << "comma place: " << CommaPlace << "\n";
-												std::cout << TextLine << "\n";
-												return 1;
-											}
-										}
-									}
+									if (NewLearner->LearnMethod != LEARNBY_LEVELUP)
+										NewLearner->LearnLevel = "0";
 									AddMoveToMainList(NewLearner, g_TargetGame);
 								}
 							}
@@ -852,17 +840,37 @@ static int ProcessMove(std::ifstream& ReadFile)
 
 static int GetSettings(int argc)
 {
-	for (int iGame = 0; iGame < g_Games.size(); iGame++)
+	for (char iGame = 'A'; iGame - 'A' < g_Games.size(); iGame++)
 	{
-		std::cout << iGame << " " << g_Games[iGame].UIName << "\n";
+		std::cout << iGame << " " << g_Games[iGame - 'A'].UIName << "\n";
 	}
-	std::cout << "Enter the number associated with your target game.\n>";
+	std::cout << "Enter the letter associated with your target game. Case sensitive.\n>";
 	std::string Answer;
 	std::getline(std::cin, Answer);
 	if (Answer.empty())
 		g_TargetGame = &g_Games[0];
 	else
-		g_TargetGame = &g_Games[stoi(Answer)];
+		g_TargetGame = &g_Games[Answer[0] - 'A'];
+
+	g_TargetGame->GameIsAllowed = true;
+
+	std::cout << "Now enter the letter for each game you will allow for breeding chains. Type \"all\" to use all games.\n>";
+	std::getline(std::cin, Answer);
+	if (Answer == "all" || Answer == "ALL")
+	{
+		for (int iGame = 0; iGame < g_Games.size(); iGame++)
+		{
+			g_Games[iGame].GameIsAllowed = true;
+		}
+	}
+	int Len = Answer.length();
+	for (int iChar = 0; iChar < Len; iChar++)
+	{
+		char c = Answer[iChar];
+		if (g_Games[c - 'A'].GenerationNum > g_TargetGame->GenerationNum)
+			break;
+		g_Games[c - 'A'].GameIsAllowed = true;
+	}
 
 	std::cout << "Enter the name of the species that you want the move(s) to go on. Put '(nomoves)' before the name to use no-move mode.\n>";
 	std::getline(std::cin, Answer);
@@ -1040,6 +1048,22 @@ static int ProcessFilesNormal(int argc, char* argv[])
 	return 1;
 }
 
+static MoveLearner* CloneLearner(MoveLearner* OldLearner)
+{
+	MoveLearner* NewLearner = new MoveLearner;
+	NewLearner->FormName = OldLearner->FormName;
+	NewLearner->LearnLevel = OldLearner->LearnLevel;
+	NewLearner->MoveName = OldLearner->MoveName;
+	NewLearner->LearnedAsSpecies = OldLearner->LearnedAsSpecies;
+	NewLearner->LearnMethod = OldLearner->LearnMethod;
+	NewLearner->LearnsInGame = OldLearner->LearnsInGame;
+	NewLearner->LearnMonInfo = OldLearner->LearnMonInfo;
+	NewLearner->TMOfInterest = OldLearner->TMOfInterest;
+	NewLearner->EraseMe = OldLearner->EraseMe;
+	NewLearner->UserRejected = OldLearner->UserRejected;
+	return NewLearner;
+}
+
 //Sometimes a move can be learned at multiple levels. Bulbapedia writes them as comma separated values
 //we want each level to be its own data point
 static void SplitMultiLevelLearns()
@@ -1053,7 +1077,6 @@ static void SplitMultiLevelLearns()
 		size_t LevelEnd = Learner->LearnLevel.find(",");
 		if (LevelEnd != std::string::npos)
 		{
-			Learner->EraseMe = true;
 			std::string FirstLevel = Learner->LearnLevel.substr(0, LevelEnd);
 			//std::cout << sFirstLevel << " count: " << iLevelEnd << "\n";
 			LearnLevels.push_back(FirstLevel);
@@ -1061,14 +1084,11 @@ static void SplitMultiLevelLearns()
 			RecursiveCSVParse(Learner->LearnLevel, LevelStart, LevelEnd, LearnLevels);
 			for (std::string LearnLevel : LearnLevels)
 			{
-				MoveLearner* NewLearner = new MoveLearner;
-				NewLearner->LearnMonInfo = Learner->LearnMonInfo;
-				NewLearner->FormName = Learner->FormName;
+				MoveLearner* NewLearner = CloneLearner(Learner);
 				NewLearner->LearnLevel = LearnLevel;
-				NewLearner->MoveName = Learner->MoveName;
-				NewLearner->LearnMethod = Learner->LearnMethod;
 				AddMoveToMainList(NewLearner, g_TargetGame);
 			}
+			Learner->EraseMe = true;
 		}
 	}
 	//clear out the old ones
@@ -1686,12 +1706,7 @@ static void CreatePriorEvolutionLearns(GameData* Game)
 					else
 					{
 						//std::cout << "Copied " + pLearn->MoveName + " from " + OriginalForm + " to " + Target + "\n";
-						MoveLearner* NewLearner = new MoveLearner;
-						NewLearner->TMOfInterest = Learn->TMOfInterest;
-						NewLearner->LearnMethod = Learn->LearnMethod;
-						NewLearner->FormName = Learn->FormName;
-						NewLearner->LearnLevel = Learn->LearnLevel;
-						NewLearner->MoveName = Learn->MoveName;
+						MoveLearner* NewLearner = CloneLearner(Learn);
 						int iInfoIndex = GetSpeciesInfoFromGame(Target, Game);
 						assert(iInfoIndex != -1);
 						NewLearner->LearnMonInfo = &Game->GetGeneration()->MonData[iInfoIndex];
@@ -1702,6 +1717,47 @@ static void CreatePriorEvolutionLearns(GameData* Game)
 			}
 		}
 	}
+}
+
+static void ParseGameAnnotations()
+{
+	for (int iLearn = 0; iLearn < g_MoveLearners.size(); iLearn++)
+	{
+		MoveLearner* Learner = g_MoveLearners[iLearn];
+		size_t SupStart = Learner->LearnLevel.find("{{sup/");
+		if (SupStart != std::string::npos)
+		{
+			size_t ValueStart = 0;
+			std::vector<std::string> GameList;
+			ProcessAnnotatedCell(GameList, Learner->LearnLevel, ValueStart, true);
+			for (int iStr = 0; iStr < GameList.size(); iStr += 2)
+			{
+				std::string Acronym = GameList[iStr];
+				//search through the game list to find a game with an acronym that is contained within our string
+				GameData* FoundGame = NULL;
+				for (int iGame = 0; iGame < g_Games.size(); iGame++)
+				{
+					GameData* Game = &g_Games[iGame];
+					bool FoundAcronym = Acronym.find(Game->Acronym) != std::string::npos;
+					//if we found "GS", make sure it's actually GS and not "hGSs"
+					if (FoundAcronym && Game->Acronym == "GS" && Acronym.find("HGSS") != std::string::npos)
+						FoundAcronym = false;
+					if (FoundAcronym)
+					{
+						MoveLearner* NewLearner = CloneLearner(Learner);
+						NewLearner->LearnLevel = GameList[iStr + 1];
+						FoundGame = Game;
+						//put this call here instead of after the loop. if a string is "DPPt" we'd rather make nodes for both DP and Pt than awkwardly picking one or the other
+						AddMoveToMainList(NewLearner, iGame);
+					}
+				}
+				assert(FoundGame);
+			}
+			Learner->EraseMe = true;
+		}
+	}
+	g_MoveLearners.erase(remove_if(g_MoveLearners.begin(), g_MoveLearners.end(), [](MoveLearner* x) { return x->EraseMe; }), g_MoveLearners.end());
+	g_MoveLearners.erase(remove_if(g_MoveLearners.begin(), g_MoveLearners.end(), [](MoveLearner* x) { return !x->LearnsInGame->GameIsAllowed; }), g_MoveLearners.end());
 }
 
 int main(int argc, char* argv[])
@@ -1730,6 +1786,7 @@ int main(int argc, char* argv[])
 		GenerateUniversalTMLearns(g_TargetGame);
 		CreatePriorEvolutionLearns(g_TargetGame);
 		FindTMsOfInterest();
+		ParseGameAnnotations();
 	}
 
 	PreSearch();
