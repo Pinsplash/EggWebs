@@ -863,13 +863,16 @@ static int GetSettings(int argc)
 			g_Games[iGame].GameIsAllowed = true;
 		}
 	}
-	int Len = Answer.length();
-	for (int iChar = 0; iChar < Len; iChar++)
+	else
 	{
-		char c = Answer[iChar];
-		if (g_Games[c - 'A'].GenerationNum > g_TargetGame->GenerationNum)
-			break;
-		g_Games[c - 'A'].GameIsAllowed = true;
+		int Len = Answer.length();
+		for (int iChar = 0; iChar < Len; iChar++)
+		{
+			char c = Answer[iChar];
+			if (g_Games[c - 'A'].GenerationNum > g_TargetGame->GenerationNum)
+				break;
+			g_Games[c - 'A'].GameIsAllowed = true;
+		}
 	}
 
 	std::cout << "Enter the name of the species that you want the move(s) to go on. Put '(nomoves)' before the name to use no-move mode.\n>";
