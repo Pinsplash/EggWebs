@@ -1291,8 +1291,8 @@ static int SuggestChain(BreedChain* Chain, MoveLearner* BottomChild)
 		{
 			std::string FirstName = Answer.substr(0, NameEnd);
 			strings.push_back(FirstName);
-			size_t LevelStart = NameEnd + 2;
-			RecursiveCSVParse(Answer, LevelStart, NameEnd, strings);
+			size_t NameStart = NameEnd + 2;
+			RecursiveCSVParse(Answer, NameStart, NameEnd, strings);
 		}
 		else
 			strings.push_back(Answer);
