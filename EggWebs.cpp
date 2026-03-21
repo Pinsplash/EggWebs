@@ -218,29 +218,54 @@ static MoveLearner* IterateLearnersBySpecies(int StartID, std::string WantedSpec
 	return NULL;
 }
 
+static SpeciesInfo* IterateEvolutions(int& iEvo, std::string OriginalForm, GameData* Game)
+{
+	OriginalForm[0] = toupper(OriginalForm[0]);
+	int iInfo = GetSpeciesInfoFromGame(OriginalForm, Game);
+	if (iInfo == -1)
+		return NULL;
+	int OriginalSlot = iInfo;
+	//entries are grouped by evolution family, and the largest family is 9 - the eeveelutions
+	int MaxEvoLineSize = 9;
+	int MaxSlot = iInfo + MaxEvoLineSize;
+	for (; iEvo < Game->GetGeneration()->MonData[OriginalSlot].Evolutions.size(); iEvo++)
+	{
+		std::string Target = Game->GetGeneration()->MonData[OriginalSlot].Evolutions[iEvo];
+		for (iInfo = OriginalSlot; iInfo < MaxSlot; iInfo++)
+		{
+			if (Target == Game->GetGeneration()->MonData[iInfo].SpeciesName)
+			{
+				iEvo++;
+				return &Game->GetGeneration()->MonData[iInfo];
+			}
+		}
+	}
+	return NULL;
+}
+
 static std::string ProcessAnnotatedCell(std::string TextLine, size_t& PipeLocation, size_t Value1End, size_t& SupStart, bool Quiet)
 {
 	//sometimes there are annotations inside a cell to say that the value varies by game
 	size_t Value2Start = Value1End + 1;
 	size_t Value2End = TextLine.find("}}", Value2Start);
-	std::string sValue2 = TextLine.substr(Value2Start, Value2End - Value2Start);
-	//if (!bQuiet) std::cout << "\nProcessAnnotatedCell: " << sValue2 << "\n";
-	if (sValue2.find(g_TargetGame->Acronym) != std::string::npos)
+	std::string Value2 = TextLine.substr(Value2Start, Value2End - Value2Start);
+	//if (!Quiet) std::cout << "\nProcessAnnotatedCell: " << Value2 << "\n";
+	if (Value2.find(g_TargetGame->Acronym) != std::string::npos)
 	{
 		//the value is for our game
-		//if (!bQuiet) std::cout << "sValue2: " << sValue2 << "\n";
+		//if (!Quiet) std::cout << "Value2: " << Value2 << "\n";
 		return TextLine.substr(PipeLocation, SupStart);
 	}
 	else
 	{
 		//our value is a different one. look to next sup template
-		//if (!bQuiet) std::cout << "our value is a different one\n";
+		//if (!Quiet) std::cout << "our value is a different one\n";
 		size_t PipePos = TextLine.find("|", Value2End);
 		size_t SupPos = TextLine.find("{{sup", Value2End);
 		if (PipePos <= SupPos)
 		{
 			//pipe comes before another sup, or neither were found (they will both equal npos). this means the move isn't learnable in the given game
-			//if (!bQuiet) std::cout << "We had no value\n";
+			//if (!Quiet) std::cout << "We had no value\n";
 			PipeLocation = PipePos + 1;
 			return "";
 		}
@@ -1169,6 +1194,58 @@ static void PreSearch()
 	std::cout << "Starting the chain search.\n";
 }
 
+static void ExcludeSpecies(std::string str)
+{
+	str[0] = toupper(str[0]);
+	if (str == "Nidoran m")
+		str = "Nidoran M";
+	if (str == "Nidoran f")
+		str = "Nidoran F";
+	if (str == "Mime jr." || str == "Mime jr" || str == "Mime Jr")
+		str = "Mime Jr.";
+	if (str == "Mr. mime" || str == "Mr mime" || str == "Mr Mime")
+		str = "Mr. Mime";
+	bool FoundSpecies = false;
+	//mark everything with this species name
+	for (int iMarkLearner = 0; iMarkLearner < g_MoveLearners.size(); iMarkLearner++)
+	{
+		if (g_MoveLearners[iMarkLearner]->LearnMonInfo->SpeciesName == str || g_MoveLearners[iMarkLearner]->LearnedAsSpecies == str)
+		{
+			g_MoveLearners[iMarkLearner]->UserRejected = true;
+			FoundSpecies = true;
+		}
+	}
+	if (FoundSpecies)
+	{
+		std::cout << "Excluding pokemon species \"" << str << "\"\n";
+		g_ExcludedSpecies.push_back(str);
+	}
+	else
+		std::cout << "WARNING: Pokemon \"" << str << "\" not found. Check spelling. If this species can't learn the move, it doesn't need to be excluded.\n";
+}
+
+static void ExcludeID(BreedChain* Chain, std::string str)
+{
+	int LearnID = stoi(str);
+	//ensure id is part of suggested chain to keep user from excluding a node they care about
+	bool FoundID = false;
+	for (int iLearner = 0; iLearner < Chain->Lineage.size(); iLearner++)
+	{
+		if (Chain->Lineage[iLearner]->LearnID == LearnID)
+		{
+			FoundID = true;
+			break;
+		}
+	}
+	if (FoundID)
+	{
+		std::cout << "Excluding ID \"" << str << "\"\n";
+		GetLearnerFromMainList(LearnID)->UserRejected = true;
+	}
+	else
+		std::cout << "WARNING: ID \"" << str << "\" not found.\n";
+}
+
 static int SuggestChain(BreedChain* Chain, MoveLearner* BottomChild)
 {
 	Chain->Suggested = true;
@@ -1223,52 +1300,26 @@ static int SuggestChain(BreedChain* Chain, MoveLearner* BottomChild)
 		{
 			if (!is_number(str))
 			{
-				str[0] = toupper(str[0]);
-				if (str == "Nidoran m")
-					str = "Nidoran M";
-				if (str == "Nidoran f")
-					str = "Nidoran F";
-				if (str == "Mime jr." || str == "Mime jr" || str == "Mime Jr")
-					str = "Mime Jr.";
-				if (str == "Mr. mime" || str == "Mr mime" || str == "Mr Mime")
-					str = "Mr. Mime";
-				bool FoundSpecies = false;
-				//mark everything with this species name
-				for (int iMarkLearner = 0; iMarkLearner < g_MoveLearners.size(); iMarkLearner++)
+				NameEnd = Answer.find("-evo");
+				if (NameEnd != std::string::npos)
 				{
-					if (g_MoveLearners[iMarkLearner]->LearnMonInfo->SpeciesName == str || g_MoveLearners[iMarkLearner]->LearnedAsSpecies == str)
+					str = str.substr(0, NameEnd);
+					int iEvo = 0;
+					for (SpeciesInfo* EvolvedInfo = IterateEvolutions(iEvo, str, g_TargetGame); EvolvedInfo; EvolvedInfo = IterateEvolutions(iEvo, str, g_TargetGame))
 					{
-						g_MoveLearners[iMarkLearner]->UserRejected = true;
-						FoundSpecies = true;
+						int i2ndEvo = 0;
+						for (SpeciesInfo* Evolved2ndInfo = IterateEvolutions(i2ndEvo, EvolvedInfo->SpeciesName, g_TargetGame); Evolved2ndInfo; Evolved2ndInfo = IterateEvolutions(i2ndEvo, EvolvedInfo->SpeciesName, g_TargetGame))
+						{
+							ExcludeSpecies(Evolved2ndInfo->SpeciesName);
+						}
+						ExcludeSpecies(EvolvedInfo->SpeciesName);
 					}
 				}
-				if (FoundSpecies)
-				{
-					std::cout << "Excluding pokemon species \"" << str << "\"\n";
-					g_ExcludedSpecies.push_back(str);
-				}
-				else
-					std::cout << "WARNING: Pokemon \"" << str << "\" not found.\n";
+				ExcludeSpecies(str);
 			}
 			else
 			{
-				int LearnID = stoi(str);
-				bool FoundID = false;
-				for (int iLearner = 0; iLearner < Chain->Lineage.size(); iLearner++)
-				{
-					if (Chain->Lineage[iLearner]->LearnID == LearnID)
-					{
-						FoundID = true;
-						break;
-					}
-				}
-				if (FoundID)
-				{
-					std::cout << "Excluding ID \"" << str << "\"\n";
-					GetLearnerFromMainList(LearnID)->UserRejected = true;
-				}
-				else
-					std::cout << "WARNING: ID \"" << str << "\" not found.\n";
+				ExcludeID(Chain, str);
 			}
 		}
 		return CR_REJECTED;
