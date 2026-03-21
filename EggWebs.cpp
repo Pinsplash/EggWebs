@@ -1232,7 +1232,6 @@ static int SuggestChain(BreedChain* Chain, MoveLearner* BottomChild)
 					str = "Mime Jr.";
 				if (str == "Mr. mime" || str == "Mr mime" || str == "Mr Mime")
 					str = "Mr. Mime";
-				std::cout << "Excluding pokemon species \"" << str << "\"\n";
 				bool FoundSpecies = false;
 				//mark everything with this species name
 				for (int iMarkLearner = 0; iMarkLearner < g_MoveLearners.size(); iMarkLearner++)
@@ -1243,16 +1242,33 @@ static int SuggestChain(BreedChain* Chain, MoveLearner* BottomChild)
 						FoundSpecies = true;
 					}
 				}
-				if (!FoundSpecies)
-					std::cout << "WARNING: \"" << str << "\" not found.\n";
-				else
+				if (FoundSpecies)
+				{
+					std::cout << "Excluding pokemon species \"" << str << "\"\n";
 					g_ExcludedSpecies.push_back(str);
+				}
+				else
+					std::cout << "WARNING: Pokemon \"" << str << "\" not found.\n";
 			}
 			else
 			{
 				int LearnID = stoi(str);
-				std::cout << "Excluding ID \"" << str << "\"\n";
-				GetLearnerFromMainList(LearnID)->UserRejected = true;
+				bool FoundID = false;
+				for (int iLearner = 0; iLearner < Chain->Lineage.size(); iLearner++)
+				{
+					if (Chain->Lineage[iLearner]->LearnID == LearnID)
+					{
+						FoundID = true;
+						break;
+					}
+				}
+				if (FoundID)
+				{
+					std::cout << "Excluding ID \"" << str << "\"\n";
+					GetLearnerFromMainList(LearnID)->UserRejected = true;
+				}
+				else
+					std::cout << "WARNING: ID \"" << str << "\" not found.\n";
 			}
 		}
 		return CR_REJECTED;
