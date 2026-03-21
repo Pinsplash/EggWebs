@@ -1742,9 +1742,14 @@ static void ParseGameAnnotations()
 				{
 					GameData* Game = &g_Games[iGame];
 					bool FoundAcronym = Acronym.find(Game->Acronym) != std::string::npos;
-					//if we found "GS", make sure it's actually GS and not "hGSs"
-					if (FoundAcronym && Game->Acronym == "GS" && Acronym.find("HGSS") != std::string::npos)
-						FoundAcronym = false;
+					//avoid finding a small acronym inside a bigger one
+					if (FoundAcronym)
+					{
+						if (Game->Acronym == "GS" && Acronym.find("HGSS") != std::string::npos)
+							FoundAcronym = false;
+						if (Game->Acronym == "Y" && Acronym.find("XY") != std::string::npos)
+							FoundAcronym = false;
+					}
 					if (FoundAcronym)
 					{
 						MoveLearner* NewLearner = CloneLearner(Learner);
