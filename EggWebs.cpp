@@ -17,6 +17,7 @@ std::vector<std::string> g_TMLearnBlacklist;
 std::vector<std::string> g_MovesDone;
 std::vector<std::string> g_MovesBeingExplored;
 std::vector<std::string> g_RequireFather;
+std::vector<std::string> g_ExcludedSpecies;
 std::vector<MoveLearner*> g_MoveLearners;
 ComboBreedData g_ComboData;
 GameData* g_TargetGame;
@@ -1130,6 +1131,14 @@ static void WriteOutput(std::vector<BreedChain>& Chains)
 			}
 		}
 	}
+	if (!g_ExcludedSpecies.empty())
+	{
+		writingFile << "Excluded species:";
+		for (std::string Species : g_ExcludedSpecies)
+		{
+			writingFile << ", " << Species;
+		}
+	}
 	writingFile.close();
 }
 
@@ -1224,10 +1233,20 @@ static int SuggestChain(BreedChain* Chain, MoveLearner* BottomChild)
 				if (str == "Mr. mime" || str == "Mr mime" || str == "Mr Mime")
 					str = "Mr. Mime";
 				std::cout << "Excluding pokemon species \"" << str << "\"\n";
+				bool FoundSpecies = false;
 				//mark everything with this species name
 				for (int iMarkLearner = 0; iMarkLearner < g_MoveLearners.size(); iMarkLearner++)
+				{
 					if (g_MoveLearners[iMarkLearner]->LearnMonInfo->SpeciesName == str || g_MoveLearners[iMarkLearner]->LearnedAsSpecies == str)
+					{
 						g_MoveLearners[iMarkLearner]->UserRejected = true;
+						FoundSpecies = true;
+					}
+				}
+				if (!FoundSpecies)
+					std::cout << "WARNING: \"" << str << "\" not found.\n";
+				else
+					g_ExcludedSpecies.push_back(str);
 			}
 			else
 			{
