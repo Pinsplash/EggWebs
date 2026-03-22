@@ -35,27 +35,25 @@ int g_MaxDepth = 20;
 
 std::vector<GameData> g_Games =
 {
-	{"Red/Blue",						"red-blue",							GENERATION_1,		"RB",	false},
-	{"Yellow",							"yellow",							GENERATION_1,		"Y",	false},
-	{"Gold/Silver",						"gold-silver",						GENERATION_2,		"GS",	true},
-	{"Crystal",							"crystal",							GENERATION_2,		"C",	true},
-	{"Ruby/Sapphire",					"ruby-sapphire",					GENERATION_3,		"RS",	true},
-	{"FireRed/LeafGreen",				"firered-leafgreen",				GENERATION_3,		"FRLG",	true},
-	{"Emerald",							"emerald",							GENERATION_3,		"E",	true},
-	{"Diamond/Pearl",					"diamond-pearl",					GENERATION_4,		"DP",	true},
-	{"Platinum",						"platinum",							GENERATION_4,		"Pt",	true},
-	{"HeartGold/SoulSilver",			"heartgold-soulsilver",				GENERATION_4,		"HGSS",	true},
-	{"Black/White",						"black-white",						GENERATION_5,		"BW",	true},
-	{"Black 2/White 2",					"black-2-white-2",					GENERATION_5,		"B2W2",	true},
-	{"X/Y",								"x-y",								GENERATION_6,		"XY",	true},
-	{"Omega Ruby/Alpha Sapphire",		"omega-ruby-alpha-sapphire",		GENERATION_6,		"ORAS",	true},
-	{"Sun/Moon",						"sun-moon",							GENERATION_7,		"SM",	true},
-	{"Ultra Sun/Ultra Moon",			"ultra-sun-ultra-moon",				GENERATION_7,		"USUM",	true},
-	{"Sword/Shield",					"sword-shield",						GENERATION_8,		"SwSh",	true},
-	{"Brilliant Diamond/Shining Pearl",	"brilliant-diamond-shining-pearl",	GENERATION_8_BDSP,	"BDSP",	true},
-	{"Legends: Arceus",					"legends-arceus",					GENERATION_8,		"LA",	false},
-	{"Scarlet/Violet",					"scarlet-violet",					GENERATION_9,		"SV",	true},
-	{"Legends: Z-A",					"legends-za",						GENERATION_9,		"ZA",	false}
+	{"Red/Blue",						"red-blue",							GENERATION_1,		"RB"},
+	{"Yellow",							"yellow",							GENERATION_1,		"Y"},
+	{"Gold/Silver",						"gold-silver",						GENERATION_2,		"GS"},
+	{"Crystal",							"crystal",							GENERATION_2,		"C"},
+	{"Ruby/Sapphire",					"ruby-sapphire",					GENERATION_3,		"RS"},
+	{"FireRed/LeafGreen",				"firered-leafgreen",				GENERATION_3,		"FRLG"},
+	{"Emerald",							"emerald",							GENERATION_3,		"E"},
+	{"Diamond/Pearl",					"diamond-pearl",					GENERATION_4,		"DP"},
+	{"Platinum",						"platinum",							GENERATION_4,		"Pt"},
+	{"HeartGold/SoulSilver",			"heartgold-soulsilver",				GENERATION_4,		"HGSS"},
+	{"Black/White",						"black-white",						GENERATION_5,		"BW"},
+	{"Black 2/White 2",					"black-2-white-2",					GENERATION_5,		"B2W2"},
+	{"X/Y",								"x-y",								GENERATION_6,		"XY"},
+	{"Omega Ruby/Alpha Sapphire",		"omega-ruby-alpha-sapphire",		GENERATION_6,		"ORAS"},
+	{"Sun/Moon",						"sun-moon",							GENERATION_7,		"SM"},
+	{"Ultra Sun/Ultra Moon",			"ultra-sun-ultra-moon",				GENERATION_7,		"USUM"},
+	{"Sword/Shield",					"sword-shield",						GENERATION_8,		"SwSh"},
+	{"Brilliant Diamond/Shining Pearl",	"brilliant-diamond-shining-pearl",	GENERATION_8_BDSP,	"BDSP"},
+	{"Scarlet/Violet",					"scarlet-violet",					GENERATION_9,		"SV"}
 };
 
 extern Generation g_Generation1;

@@ -62,7 +62,6 @@ struct GameData
 	std::string InternalName;
 	GenerationNumber GenerationNum;
 	std::string Acronym;
-	bool HasBreeding = true;
 	bool GameIsAllowed = false;
 	Generation* GetGeneration()
 	{
