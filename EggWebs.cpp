@@ -853,24 +853,28 @@ static int GetSettings(int argc)
 
 	g_TargetGame->GameIsAllowed = true;
 
-	std::cout << "Now enter the letter for each game you will allow for breeding chains. Type \"all\" to use all games.\n>";
-	std::getline(std::cin, Answer);
-	if (Answer == "all" || Answer == "ALL")
+	//gen8+ do not transfer moves when taking a pokemon to a different game (unless it's the same one in a version pair, which we don't care about)
+	if (g_TargetGame->GenerationNum < GENERATION_8)
 	{
-		for (int iGame = 0; iGame < g_Games.size(); iGame++)
+		std::cout << "Now enter the letter for each game you will allow for breeding chains. Type \"all\" to use all games.\n>";
+		std::getline(std::cin, Answer);
+		if (Answer == "all" || Answer == "ALL")
 		{
-			g_Games[iGame].GameIsAllowed = true;
+			for (int iGame = 0; iGame < g_Games.size(); iGame++)
+			{
+				g_Games[iGame].GameIsAllowed = true;
+			}
 		}
-	}
-	else
-	{
-		int Len = Answer.length();
-		for (int iChar = 0; iChar < Len; iChar++)
+		else
 		{
-			char c = Answer[iChar];
-			if (g_Games[c - 'A'].GenerationNum > g_TargetGame->GenerationNum)
-				break;
-			g_Games[c - 'A'].GameIsAllowed = true;
+			int Len = Answer.length();
+			for (int iChar = 0; iChar < Len; iChar++)
+			{
+				char c = Answer[iChar];
+				if (g_Games[c - 'A'].GenerationNum > g_TargetGame->GenerationNum)
+					break;
+				g_Games[c - 'A'].GameIsAllowed = true;
+			}
 		}
 	}
 
