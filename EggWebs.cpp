@@ -51,7 +51,6 @@ std::vector<GameData> g_Games =
 	{"Omega Ruby/Alpha Sapphire",		"omega-ruby-alpha-sapphire",		GENERATION_6,		"ORAS",	true},
 	{"Sun/Moon",						"sun-moon",							GENERATION_7,		"SM",	true},
 	{"Ultra Sun/Ultra Moon",			"ultra-sun-ultra-moon",				GENERATION_7,		"USUM",	true},
-	{"Let's Go Pikachu/Eevee",			"lets-go-pikachu-eevee",			GENERATION_7,		"PE",	false},
 	{"Sword/Shield",					"sword-shield",						GENERATION_8,		"SwSh",	true},
 	{"Brilliant Diamond/Shining Pearl",	"brilliant-diamond-shining-pearl",	GENERATION_8_BDSP,	"BDSP",	true},
 	{"Legends: Arceus",					"legends-arceus",					GENERATION_8,		"LA",	false},
