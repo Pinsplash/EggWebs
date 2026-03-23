@@ -7,6 +7,7 @@ extern Generation g_Generation8;
 #endif
 Generation g_Generation8 = {
 "====[[Generation VIII]]====",
+GAMECOMBO_SWSH_BDSP,
 //UniversalTMs https://bulbapedia.bulbagarden.net/w/index.php?search=%22Every+Pok%C3%A9mon+can+learn+this+move+by%22&title=Special%3ASearch&go=Go
 {
 "Attract",

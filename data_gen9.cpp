@@ -7,6 +7,7 @@ extern Generation g_Generation9;
 #endif
 Generation g_Generation9 = {
 "====[[Generation IX]]====",
+GAME_SCARLET_VIOLET,
 //UniversalTMs https://bulbapedia.bulbagarden.net/w/index.php?search=%22Every+Pok%C3%A9mon+can+learn+this+move+by%22&title=Special%3ASearch&go=Go
 {
 	"Endure",

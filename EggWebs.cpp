@@ -32,30 +32,6 @@ int g_Combo = 0;
 //there should be no reason for a breeding chain to EVER be this long
 int g_MaxDepth = 20;
 
-enum
-{
-	GAME_RED_BLUE,
-	GAME_YELLOW,
-	GAME_GOLD_SILVER,
-	GAME_CRYSTAL,
-	GAME_RUBY_SAPPHIRE,
-	GAME_FIRERED_LEAFGREEN,
-	GAME_EMERALD,
-	GAME_DIAMOND_PEARL,
-	GAME_PLATINUM,
-	GAME_HEARTGOLD_SOULSILVER,
-	GAME_BLACK1_WHITE1,
-	GAME_BLACK2_WHITE2,
-	GAME_X_Y,
-	GAME_OMEGA_RUBY_ALPHA_SAPPHIRE,
-	GAME_SUN_MOON,
-	GAME_ULTRASUN_ULTRAMOON,
-	GAME_SWORD_SHIELD,
-	GAME_BRILLIANT_DIAMOND_SHINING_PEARL,
-	GAME_SCARLET_VIOLET,
-	GAME_INVALID
-};
-
 std::vector<GameData> g_Games =
 {
 	{"Red/Blue",						GENERATION_1,		"RB",	GAME_RED_BLUE},
@@ -147,15 +123,25 @@ static bool IsUniversalTM(std::string MoveName, GameData* Game)
 
 static bool IsSketchableMove(std::string MoveName, GameData* Game)
 {
+	GameData* RealGame = Game;
+	if (RealGame->GenerationNum == GENERATION_1)
+	{
+		if (g_Games[GAME_GOLD_SILVER].GameIsAllowed)
+			RealGame = &g_Games[GAME_GOLD_SILVER];
+		else if (g_Games[GAME_CRYSTAL].GameIsAllowed)
+			RealGame = &g_Games[GAME_CRYSTAL];
+		else
+			return false;
+	}
 	//NOTE: In Gen 2, Sketch could not copy a move if it failed, even due to status conditions like sleep.
-	if (Game->GenerationNum == GENERATION_2 && (MoveName == "Transform" || MoveName == "Mimic"//last move used is forgotten
+	if (RealGame->GenerationNum == GENERATION_2 && (MoveName == "Transform" || MoveName == "Mimic"//last move used is forgotten
 		|| MoveName == "Metronome" || MoveName == "Mirror Move" || MoveName == "Sleep Talk"//last move used is the move that was called, not the move in question
 		|| MoveName == "Self-Destruct" || MoveName == "Explosion"))//successful execution means the target is gone
 		return false;
 	//moves below are explicitly not allowed to be Sketched.
-	if (Game->GenerationNum >= GENERATION_4 && MoveName == "Chatter")
+	if (RealGame->GenerationNum >= GENERATION_4 && MoveName == "Chatter")
 		return false;
-	if (Game->GenerationNum >= GENERATION_9 && (MoveName == "Dark Void" || MoveName == "Hyperspace Fury" || MoveName == "Revival Blessing" || MoveName == "Tera Starstorm" || 
+	if (RealGame->GenerationNum >= GENERATION_9 && (MoveName == "Dark Void" || MoveName == "Hyperspace Fury" || MoveName == "Revival Blessing" || MoveName == "Tera Starstorm" ||
 		MoveName == "Wicked Torque" || MoveName == "Blazing Torque" || MoveName == "Noxious Torque" || MoveName == "Magical Torque" || MoveName == "Combat Torque"))
 		return false;
 	return true;
@@ -215,6 +201,177 @@ static bool sortMoves(const MoveLearner* a, const MoveLearner* b)
 	}
 	else
 		return a->LearnsInGame->GameNum > b->LearnsInGame->GameNum;
+}
+
+static int IterateGameCombo(int& Iterator, int ComboNum)
+{
+	if (ComboNum < GAME_INVALID)
+	{
+		Iterator = -1;
+		return ComboNum;
+	}
+	else if (ComboNum > GAME_INVALID)
+	{
+		switch (ComboNum)
+		{
+		case GAMECOMBO_ALL_GEN1:
+			switch (Iterator)
+			{
+			case 0:
+				Iterator++;
+				return GAME_RED_BLUE;
+			case 1:
+				Iterator++;
+				return GAME_YELLOW;
+			default:
+				Iterator = -1;
+				return -1;
+			}
+		case GAMECOMBO_ALL_GEN2:
+			switch (Iterator)
+			{
+			case 0:
+				Iterator++;
+				return GAME_GOLD_SILVER;
+			case 1:
+				Iterator++;
+				return GAME_CRYSTAL;
+			default:
+				Iterator = -1;
+				return -1;
+			}
+		case GAMECOMBO_RSE:
+			switch (Iterator)
+			{
+			case 0:
+				Iterator++;
+				return GAME_RUBY_SAPPHIRE;
+			case 1:
+				Iterator++;
+				return GAME_EMERALD;
+			default:
+				Iterator = -1;
+				return -1;
+			}
+		case GAMECOMBO_ALL_GEN3:
+			switch (Iterator)
+			{
+			case 0:
+				Iterator++;
+				return GAME_RUBY_SAPPHIRE;
+			case 1:
+				Iterator++;
+				return GAME_FIRERED_LEAFGREEN;
+			case 2:
+				Iterator++;
+				return GAME_EMERALD;
+			default:
+				Iterator = -1;
+				return -1;
+			}
+		case GAMECOMBO_DPP:
+			switch (Iterator)
+			{
+			case 0:
+				Iterator++;
+				return GAME_DIAMOND_PEARL;
+			case 1:
+				Iterator++;
+				return GAME_PLATINUM;
+			default:
+				Iterator = -1;
+				return -1;
+			}
+		case GAMECOMBO_PLAT_HGSS:
+			switch (Iterator)
+			{
+			case 0:
+				Iterator++;
+				return GAME_PLATINUM;
+			case 1:
+				Iterator++;
+				return GAME_HEARTGOLD_SOULSILVER;
+			default:
+				Iterator = -1;
+				return -1;
+			}
+		case GAMECOMBO_ALL_GEN4:
+			switch (Iterator)
+			{
+			case 0:
+				Iterator++;
+				return GAME_DIAMOND_PEARL;
+			case 1:
+				Iterator++;
+				return GAME_PLATINUM;
+			case 2:
+				Iterator++;
+				return GAME_HEARTGOLD_SOULSILVER;
+			default:
+				Iterator = -1;
+				return -1;
+			}
+		case GAMECOMBO_ALL_GEN5:
+			switch (Iterator)
+			{
+			case 0:
+				Iterator++;
+				return GAME_BLACK1_WHITE1;
+			case 1:
+				Iterator++;
+				return GAME_BLACK2_WHITE2;
+			default:
+				Iterator = -1;
+				return -1;
+			}
+		case GAMECOMBO_ALL_GEN6:
+			switch (Iterator)
+			{
+			case 0:
+				Iterator++;
+				return GAME_X_Y;
+			case 1:
+				Iterator++;
+				return GAME_OMEGA_RUBY_ALPHA_SAPPHIRE;
+			default:
+				Iterator = -1;
+				return -1;
+			}
+		case GAMECOMBO_SM_USUM:
+			switch (Iterator)
+			{
+			case 0:
+				Iterator++;
+				return GAME_SUN_MOON;
+			case 1:
+				Iterator++;
+				return GAME_ULTRASUN_ULTRAMOON;
+			default:
+				Iterator = -1;
+				return -1;
+			}
+		case GAMECOMBO_SWSH_BDSP:
+			switch (Iterator)
+			{
+			case 0:
+				Iterator++;
+				return GAME_SWORD_SHIELD;
+			case 1:
+				Iterator++;
+				return GAME_BRILLIANT_DIAMOND_SHINING_PEARL;
+			default:
+				Iterator = -1;
+				return -1;
+			}
+		default:
+			assert(0);
+		}
+	}
+	else
+	{
+		Iterator = -1;
+		return -1;
+	}
 }
 
 static void AddMoveToMainList(MoveLearner* NewLearner, GameData* Game)
@@ -346,6 +503,8 @@ static void ProcessAnnotatedCell(std::vector<std::string>& GameList, std::string
 
 static std::string ProcessLevelCell(std::string TextLine, size_t& PipeLocation, bool Quiet)
 {
+	if (TextLine.find("{{tt|", PipeLocation + 1) != std::string::npos)
+		std::cout << " ";
 	size_t Value1End = TextLine.find("|", PipeLocation + 1);
 	bool EndOfRow = false;
 	if (Value1End == std::string::npos)
@@ -550,11 +709,21 @@ static MoveLearner* MakeMovelessLearn(std::string WantedMoveName, int i, GameDat
 
 static MoveLearner* MakeSmeargleLearn(std::string WantedMoveName, GameData* Game)
 {
+	GameData* RealGame = Game;
+	if (RealGame->GenerationNum == GENERATION_1)
+	{
+		if (g_Games[GAME_GOLD_SILVER].GameIsAllowed)
+			RealGame = &g_Games[GAME_GOLD_SILVER];
+		else if (g_Games[GAME_CRYSTAL].GameIsAllowed)
+			RealGame = &g_Games[GAME_CRYSTAL];
+		else
+			return NULL;
+	}
 	MoveLearner* Learner = new MoveLearner;
 	Learner->MoveName = WantedMoveName;
-	Learner->LearnMonInfo = Game->GetGeneration()->GetSpeciesInfo("Smeargle");
+	Learner->LearnMonInfo = RealGame->GetGeneration()->GetSpeciesInfo("Smeargle");
 	Learner->LearnMethod = LEARNBY_SKETCH;
-	AddMoveToMainList(Learner, Game);
+	AddMoveToMainList(Learner, RealGame);
 	return Learner;
 }
 
@@ -681,7 +850,7 @@ static int ProcessMove(std::ifstream& ReadFile)
 				SpecialSectionInside = true;
 				for (int iGame = 0; iGame < g_Games.size(); iGame++)
 					if (TextLine == g_Games[iGame].GetGeneration()->BulbaHeader)
-						GameForSpecialSection = iGame;
+						GameForSpecialSection = g_Games[iGame].GetGeneration()->GameCombo;
 				assert(GameForSpecialSection != -1);
 			}
 			else if (EventSection && TextLine.find("====[[") != std::string::npos)
@@ -689,7 +858,7 @@ static int ProcessMove(std::ifstream& ReadFile)
 				EventSectionInside = true;
 				for (int iGame = 0; iGame < g_Games.size(); iGame++)
 					if (TextLine == g_Games[iGame].GetGeneration()->BulbaHeader)
-						GameForSpecialSection = iGame;
+						GameForSpecialSection = g_Games[iGame].GetGeneration()->GameCombo;
 				assert(GameForSpecialSection != -1);
 			}
 			else if (LevelupSection || TMTutorSection || BreedSection || SpecialSectionInside || EventSectionInside)
@@ -718,11 +887,8 @@ static int ProcessMove(std::ifstream& ReadFile)
 							GamesToColumns.push_back(GAME_RED_BLUE);
 						else if (TableHeaderLine.find("g1g={{gameabbrev1|Y}}") != std::string::npos)
 							GamesToColumns.push_back(GAME_YELLOW);
-						else if (g_Games[GAME_RED_BLUE].GameIsAllowed)
-							GamesToColumns.push_back(GAME_RED_BLUE);
 						else
-							GamesToColumns.push_back(GAME_YELLOW);
-						//std::cout << "Added " << g_Games[GamesToColumns.back()].UIName << " for Generation 1\n";
+							GamesToColumns.push_back(GAMECOMBO_ALL_GEN1);
 					}
 					if (g_TargetGame->GenerationNum >= GENERATION_2 && TableHeaderLine.find("g2=none") == std::string::npos)
 					{
@@ -730,32 +896,21 @@ static int ProcessMove(std::ifstream& ReadFile)
 							GamesToColumns.push_back(GAME_GOLD_SILVER);
 						else if (TableHeaderLine.find("g2g={{gameabbrev2|C}}") != std::string::npos)
 							GamesToColumns.push_back(GAME_CRYSTAL);
-						else if (g_Games[GAME_GOLD_SILVER].GameIsAllowed)
-							GamesToColumns.push_back(GAME_GOLD_SILVER);
 						else
-							GamesToColumns.push_back(GAME_CRYSTAL);
-						//std::cout << "Added " << g_Games[GamesToColumns.back()].UIName << " for Generation 2\n";
+							GamesToColumns.push_back(GAMECOMBO_ALL_GEN2);
 					}
 					if (g_TargetGame->GenerationNum >= GENERATION_3 && TableHeaderLine.find("g3=none") == std::string::npos)
 					{
-						if (TableHeaderLine.find("g3g={{gameabbrev3|RS}}") != std::string::npos || TableHeaderLine.find("g3g={{gameabbrev3|RuSa}}") != std::string::npos)
+						if (TableHeaderLine.find("g3g={{gameabbrev3|RS}}") != std::string::npos|| TableHeaderLine.find("g3g={{gameabbrev3|RuSa}}") != std::string::npos)
 							GamesToColumns.push_back(GAME_RUBY_SAPPHIRE);
-						else if (TableHeaderLine.find("g3g={{gameabbrev3|RSE}}") != std::string::npos || TableHeaderLine.find("g3g={{gameabbrev3|RuSaEm}}") != std::string::npos)
-						{
-							if (g_Games[GAME_RUBY_SAPPHIRE].GameIsAllowed)
-								GamesToColumns.push_back(GAME_RUBY_SAPPHIRE);
-							else
-								GamesToColumns.push_back(GAME_EMERALD);
-						}
 						else if (TableHeaderLine.find("g3g={{gameabbrev3|FRLG}}") != std::string::npos)
 							GamesToColumns.push_back(GAME_FIRERED_LEAFGREEN);
-						else if (g_Games[GAME_RUBY_SAPPHIRE].GameIsAllowed)
-							GamesToColumns.push_back(GAME_RUBY_SAPPHIRE);
-						else if (g_Games[GAME_EMERALD].GameIsAllowed)
+						else if (TableHeaderLine.find("g3g={{gameabbrev3|E}}") != std::string::npos)
 							GamesToColumns.push_back(GAME_EMERALD);
+						else if (TableHeaderLine.find("g3g={{gameabbrev3|RSE}}") != std::string::npos || TableHeaderLine.find("g3g={{gameabbrev3|RuSaEm}}") != std::string::npos)
+							GamesToColumns.push_back(GAMECOMBO_RSE);
 						else
-							GamesToColumns.push_back(GAME_FIRERED_LEAFGREEN);
-						//std::cout << "Added " << g_Games[GamesToColumns.back()].UIName << " for Generation 3\n";
+							GamesToColumns.push_back(GAMECOMBO_ALL_GEN3);
 					}
 					if (g_TargetGame->GenerationNum >= GENERATION_4 && TableHeaderLine.find("g4=none") == std::string::npos)
 					{
@@ -763,41 +918,25 @@ static int ProcessMove(std::ifstream& ReadFile)
 							GamesToColumns.push_back(GAME_DIAMOND_PEARL);
 						else if (TableHeaderLine.find("g4g={{gameabbrev4|Pt}}") != std::string::npos)
 							GamesToColumns.push_back(GAME_PLATINUM);
-						else if (TableHeaderLine.find("g4g={{gameabbrev4|DPP}}") != std::string::npos || TableHeaderLine.find("g4g={{gameabbrev4|DPPt}}") != std::string::npos)
-						{
-							if (g_Games[GAME_DIAMOND_PEARL].GameIsAllowed)
-								GamesToColumns.push_back(GAME_DIAMOND_PEARL);
-							else
-								GamesToColumns.push_back(GAME_PLATINUM);
-						}
-						else if (TableHeaderLine.find("g4g={{gameabbrev4|PtHGSS}}") != std::string::npos)
-						{
-							if (g_Games[GAME_PLATINUM].GameIsAllowed)
-								GamesToColumns.push_back(GAME_PLATINUM);
-							else
-								GamesToColumns.push_back(GAME_HEARTGOLD_SOULSILVER);
-						}
 						else if (TableHeaderLine.find("g4g={{gameabbrev4|HGSS}}") != std::string::npos)
 							GamesToColumns.push_back(GAME_HEARTGOLD_SOULSILVER);
-						else if (g_Games[GAME_DIAMOND_PEARL].GameIsAllowed)
-							GamesToColumns.push_back(GAME_DIAMOND_PEARL);
-						else if (g_Games[GAME_PLATINUM].GameIsAllowed)
-							GamesToColumns.push_back(GAME_PLATINUM);
+						else if (TableHeaderLine.find("g4g={{gameabbrev4|DPP}}") != std::string::npos || TableHeaderLine.find("g4g={{gameabbrev4|DPPt}}") != std::string::npos)
+							GamesToColumns.push_back(GAMECOMBO_DPP);
+						else if (TableHeaderLine.find("g4g={{gameabbrev4|PtHGSS}}") != std::string::npos)
+							GamesToColumns.push_back(GAMECOMBO_PLAT_HGSS);
 						else
-							GamesToColumns.push_back(GAME_HEARTGOLD_SOULSILVER);
-						//std::cout << "Added " << g_Games[GamesToColumns.back()].UIName << " for Generation 4\n";
+							GamesToColumns.push_back(GAMECOMBO_ALL_GEN4);
 					}
 					if (g_TargetGame->GenerationNum >= GENERATION_5 && TableHeaderLine.find("g5=none") == std::string::npos)
 					{
 						if (TableHeaderLine.find("g5g={{gameabbrev5|BW}}") != std::string::npos || TableHeaderLine.find("g5g={{gameabbrev5|BlWh}}") != std::string::npos)
 							GamesToColumns.push_back(GAME_BLACK1_WHITE1);
-						else if (TableHeaderLine.find("g5g={{gameabbrev5|B2W2}}") != std::string::npos || TableHeaderLine.find("g5g={{gameabbrev5|BW2}}") != std::string::npos || TableHeaderLine.find("g5g={{gameabbrev5|Bl2Wh2}}") != std::string::npos)
+						else if (TableHeaderLine.find("g5g={{gameabbrev5|B2W2}}") != std::string::npos
+							|| TableHeaderLine.find("g5g={{gameabbrev5|BW2}}") != std::string::npos
+							|| TableHeaderLine.find("g5g={{gameabbrev5|Bl2Wh2}}") != std::string::npos)
 							GamesToColumns.push_back(GAME_BLACK2_WHITE2);
-						else if (g_Games[GAME_BLACK1_WHITE1].GameIsAllowed)
-							GamesToColumns.push_back(GAME_BLACK1_WHITE1);
 						else
-							GamesToColumns.push_back(GAME_BLACK2_WHITE2);
-						//std::cout << "Added " << g_Games[GamesToColumns.back()].UIName << " for Generation 5\n";
+							GamesToColumns.push_back(GAMECOMBO_ALL_GEN5);
 					}
 					if (g_TargetGame->GenerationNum >= GENERATION_6 && TableHeaderLine.find("g6=none") == std::string::npos)
 					{
@@ -805,11 +944,8 @@ static int ProcessMove(std::ifstream& ReadFile)
 							GamesToColumns.push_back(GAME_X_Y);
 						else if (TableHeaderLine.find("g6g={{gameabbrev6|ORAS}}") != std::string::npos)
 							GamesToColumns.push_back(GAME_OMEGA_RUBY_ALPHA_SAPPHIRE);
-						else if (g_Games[GAME_X_Y].GameIsAllowed)
-							GamesToColumns.push_back(GAME_X_Y);
 						else
-							GamesToColumns.push_back(GAME_OMEGA_RUBY_ALPHA_SAPPHIRE);
-						//std::cout << "Added " << g_Games[GamesToColumns.back()].UIName << " for Generation 6\n";
+							GamesToColumns.push_back(GAMECOMBO_ALL_GEN6);
 					}
 					if (g_TargetGame->GenerationNum >= GENERATION_7 && TableHeaderLine.find("g7=none") == std::string::npos)
 					{
@@ -819,13 +955,8 @@ static int ProcessMove(std::ifstream& ReadFile)
 							GamesToColumns.push_back(GAME_ULTRASUN_ULTRAMOON);
 						else if (TableHeaderLine.find("g7g={{gameabbrev7|PE}}") != std::string::npos)
 							GamesToColumns.push_back(GAME_INVALID);
-						else if (g_Games[GAME_SUN_MOON].GameIsAllowed)
-							GamesToColumns.push_back(GAME_SUN_MOON);
-						else if (g_Games[GAME_ULTRASUN_ULTRAMOON].GameIsAllowed)
-							GamesToColumns.push_back(GAME_ULTRASUN_ULTRAMOON);
 						else
-							GamesToColumns.push_back(GAME_INVALID);
-						//std::cout << "Added " << g_Games[GamesToColumns.back()].UIName << " for Generation 7\n";
+							GamesToColumns.push_back(GAMECOMBO_SM_USUM);
 					}
 					if (g_TargetGame->GenerationNum >= GENERATION_8 && TableHeaderLine.find("g8=none") == std::string::npos)
 					{
@@ -835,13 +966,8 @@ static int ProcessMove(std::ifstream& ReadFile)
 							GamesToColumns.push_back(GAME_BRILLIANT_DIAMOND_SHINING_PEARL);
 						else if (TableHeaderLine.find("g8g={{gameabbrev8|LA}}") != std::string::npos)
 							GamesToColumns.push_back(GAME_INVALID);
-						else if (g_Games[GAME_SWORD_SHIELD].GameIsAllowed)
-							GamesToColumns.push_back(GAME_SWORD_SHIELD);
-						else if (g_Games[GAME_BRILLIANT_DIAMOND_SHINING_PEARL].GameIsAllowed)
-							GamesToColumns.push_back(GAME_BRILLIANT_DIAMOND_SHINING_PEARL);
 						else
-							GamesToColumns.push_back(GAME_INVALID);
-						//std::cout << "Added " << g_Games[GamesToColumns.back()].UIName << " for Generation 8\n";
+							GamesToColumns.push_back(GAMECOMBO_SWSH_BDSP);
 					}
 					if (g_TargetGame->GenerationNum >= GENERATION_9 && TableHeaderLine.find("g9=none") == std::string::npos)
 					{
@@ -849,11 +975,8 @@ static int ProcessMove(std::ifstream& ReadFile)
 							GamesToColumns.push_back(GAME_SCARLET_VIOLET);
 						else if (TableHeaderLine.find("g9g={{gameabbrev9|ZA}}") != std::string::npos)
 							GamesToColumns.push_back(GAME_INVALID);
-						else if (g_Games[GAME_SCARLET_VIOLET].GameIsAllowed)
-							GamesToColumns.push_back(GAME_SCARLET_VIOLET);
 						else
-							GamesToColumns.push_back(GAME_INVALID);
-						//std::cout << "Added " << g_Games[GamesToColumns.back()].UIName << " for Generation 9\n";
+							GamesToColumns.push_back(GAME_SCARLET_VIOLET);
 					}
 				}
 				if (MoveTableHeader)
@@ -961,7 +1084,15 @@ static int ProcessMove(std::ifstream& ReadFile)
 						NewLearner->LearnMethod = LEARNBY_SPECIAL;
 						NewLearner->LearnLevel = "0";
 						NewLearner->LearnMonInfo = LearnMonInfo;
-						AddMoveToMainList(NewLearner, GameForSpecialSection);
+						int GameInCombo = 0;
+						int GameNum = IterateGameCombo(GameInCombo, GameForSpecialSection);
+						while (GameNum != -1)
+						{
+							AddMoveToMainList(NewLearner, GameNum);
+							GameNum = IterateGameCombo(GameInCombo, GameForSpecialSection);
+							if (GameInCombo == -1)
+								break;
+						}
 					}
 					else if (EventSectionInside)
 					{
@@ -971,7 +1102,15 @@ static int ProcessMove(std::ifstream& ReadFile)
 						NewLearner->LearnMethod = LEARNBY_EVENT;
 						NewLearner->LearnLevel = "0";
 						NewLearner->LearnMonInfo = LearnMonInfo;
-						AddMoveToMainList(NewLearner, GameForSpecialSection);
+						int GameInCombo = 0;
+						int GameNum = IterateGameCombo(GameInCombo, GameForSpecialSection);
+						while (GameNum != -1)
+						{
+							AddMoveToMainList(NewLearner, GameNum);
+							GameNum = IterateGameCombo(GameInCombo, GameForSpecialSection);
+							if (GameInCombo == -1)
+								break;
+						}
 					}
 					else
 					{
@@ -998,11 +1137,19 @@ static int ProcessMove(std::ifstream& ReadFile)
 								{
 									if (UniversalTM && TMTutorSection && !SectionIsTutor)
 									{
-										//we're not a learner. we're actually one of the only pokemon NOT allowed to use the TM in question.
-										//add to a separate list. (each entry is species name followed by move it can't learn by TM)
-										g_TMLearnBlacklist.push_back(LearnMonInfo->SpeciesName);
-										g_TMLearnBlacklist.push_back(MoveName);
-										g_TMLearnBlacklist.push_back(std::to_string(GamesToColumns[iCol]));
+										int GameInCombo = 0;
+										int GameNum = IterateGameCombo(GameInCombo, GamesToColumns[iCol]);
+										while (GameNum != -1)
+										{
+											//we're not a learner. we're actually one of the only pokemon NOT allowed to use the TM in question.
+											//add to a separate list. (each entry is species name followed by move it can't learn by TM)
+											g_TMLearnBlacklist.push_back(LearnMonInfo->SpeciesName);
+											g_TMLearnBlacklist.push_back(MoveName);
+											g_TMLearnBlacklist.push_back(std::to_string(GameNum));
+											GameNum = IterateGameCombo(GameInCombo, GamesToColumns[iCol]);
+											if (GameInCombo == -1)
+												break;
+										}
 									}
 									else
 									{
@@ -1014,7 +1161,15 @@ static int ProcessMove(std::ifstream& ReadFile)
 										NewLearner->LearnMonInfo = LearnMonInfo;
 										if (NewLearner->LearnMethod != LEARNBY_LEVELUP)
 											NewLearner->LearnLevel = "0";
-										AddMoveToMainList(NewLearner, GamesToColumns[iCol]);
+										int GameInCombo = 0;
+										int GameNum = IterateGameCombo(GameInCombo, GamesToColumns[iCol]);
+										while (GameNum != -1)
+										{
+											AddMoveToMainList(NewLearner, GameNum);
+											GameNum = IterateGameCombo(GameInCombo, GamesToColumns[iCol]);
+											if (GameInCombo == -1)
+												break;
+										}
 									}
 								}
 							}
@@ -1054,8 +1209,10 @@ static int GetSettings(int argc)
 		std::getline(std::cin, Answer);
 		if (Answer == "all" || Answer == "ALL")
 		{
-			for (int iGame = GAME_RED_BLUE; iGame < g_TargetGame->GameNum; iGame++)
+			for (int iGame = GAME_RED_BLUE; g_Games[iGame].GenerationNum <= g_Games[g_TargetGame->GameNum].GenerationNum; iGame++)
 			{
+				if (g_TargetGame->GenerationNum < GENERATION_3 && g_Games[iGame].GenerationNum >= GENERATION_3)
+					break;
 				g_Games[iGame].GameIsAllowed = true;
 			}
 		}
@@ -1923,7 +2080,7 @@ static void CreatePriorEvolutionLearns(GameData* Game)
 		for (int iEvo = 0; iEvo < Game->GetGeneration()->MonData[OriginalSlot].Evolutions.size(); iEvo++)
 		{
 			std::string Target = Game->GetGeneration()->MonData[OriginalSlot].Evolutions[iEvo];
-			for (iInfo = OriginalSlot; iInfo < MaxSlot; iInfo++)
+			for (iInfo = OriginalSlot; iInfo < MaxSlot && iInfo < Game->GetGeneration()->MonData.size(); iInfo++)
 			{
 				if (Target == Game->GetGeneration()->MonData[iInfo].SpeciesName)
 				{

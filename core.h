@@ -38,9 +38,45 @@ enum GenerationNumber
 	GENERATION_9
 };
 
+enum
+{
+	GAME_RED_BLUE,
+	GAME_YELLOW,
+	GAME_GOLD_SILVER,
+	GAME_CRYSTAL,
+	GAME_RUBY_SAPPHIRE,
+	GAME_FIRERED_LEAFGREEN,
+	GAME_EMERALD,
+	GAME_DIAMOND_PEARL,
+	GAME_PLATINUM,
+	GAME_HEARTGOLD_SOULSILVER,
+	GAME_BLACK1_WHITE1,
+	GAME_BLACK2_WHITE2,
+	GAME_X_Y,
+	GAME_OMEGA_RUBY_ALPHA_SAPPHIRE,
+	GAME_SUN_MOON,
+	GAME_ULTRASUN_ULTRAMOON,
+	GAME_SWORD_SHIELD,
+	GAME_BRILLIANT_DIAMOND_SHINING_PEARL,
+	GAME_SCARLET_VIOLET,
+	GAME_INVALID,
+	GAMECOMBO_ALL_GEN1,
+	GAMECOMBO_ALL_GEN2,
+	GAMECOMBO_RSE,
+	GAMECOMBO_ALL_GEN3,
+	GAMECOMBO_DPP,
+	GAMECOMBO_PLAT_HGSS,
+	GAMECOMBO_ALL_GEN4,
+	GAMECOMBO_ALL_GEN5,
+	GAMECOMBO_ALL_GEN6,
+	GAMECOMBO_SM_USUM,
+	GAMECOMBO_SWSH_BDSP
+};
+
 struct Generation
 {
 	std::string BulbaHeader;
+	int GameCombo;
 	std::vector<std::string> UniversalTMs;
 	std::vector<SpeciesInfo> MonData;
 	SpeciesInfo* GetSpeciesInfo(std::string sWantedSpecies)
@@ -128,7 +164,7 @@ struct MoveLearner
 
 		std::string s3;
 		if (LearnsInGame != g_TargetGame)
-			s3 = ", transfer from " + LearnsInGame->Acronym;
+			s3 = ", in " + LearnsInGame->Acronym;
 
 		return s1 + s2 + s3 + ")";
 	}

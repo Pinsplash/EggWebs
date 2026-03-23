@@ -7,6 +7,7 @@ extern Generation g_Generation1;
 #endif
 Generation g_Generation1 = {
 "====[[Generation I]]====",
+GAMECOMBO_ALL_GEN1,
 //UniversalTMs
 {
 "Bide",

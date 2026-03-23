@@ -6,7 +6,8 @@
 extern Generation g_Generation8_BDSP;
 #endif
 Generation g_Generation8_BDSP = {
-"====[[Generation VIII]]====",
+"eggwebs_invalid",
+GAMECOMBO_SWSH_BDSP,
 //UniversalTMs
 {
 "Attract",
