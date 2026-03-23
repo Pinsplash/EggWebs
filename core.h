@@ -59,16 +59,15 @@ extern std::vector<Generation*> g_Generations;
 struct GameData
 {
 	std::string UIName;
-	std::string InternalName;
 	GenerationNumber GenerationNum;
 	std::string Acronym;
+	int GameNum;
 	bool GameIsAllowed = false;
 	Generation* GetGeneration()
 	{
 		return g_Generations[GenerationNum];
 	}
 };
-
 
 extern std::vector<GameData> g_Games;
 
