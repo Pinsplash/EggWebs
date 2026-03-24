@@ -4,6 +4,14 @@ basic tests
 Leech Seed and Grass Knot on Chikorita (gen 4) (multiple possible chains)
 Chain for Grass Knot: Ivysaur (by TM) <- Slowpoke (by TM) <- Lotad (by TM) <- Hoppip (by TM) <- Skitty (by TM) <- Pachirisu (special encounter)
 Chain for Leech Seed: Chikorita (egg move) <- Ivysaur (level 1)
+OR
+Chain for Leech Seed: Smeargle (Sketch, in RS)
+Chain for Grass Knot: Chikorita (by TM) <- Nuzleaf (by TM) <- Smeargle (Sketch)
+
+Hidden Power, Shadow Ball, and Thunderbolt on Mismagius (gen 4) (multiple possible chains)
+Chain for Hidden Power: Raichu (by universal TM) <- Walrein (by universal TM) <- Slowking (level 1)
+Chain for Thunderbolt: Gastly (by TM, in RS) <- Castform (by TM) <- Raichu (level 1)
+Chain for Shadow Ball: Mismagius (by TM) <- Gastly (level 29)
 
 
 basic illegal tests

@@ -1817,12 +1817,30 @@ static int TestFather(std::vector<BreedChain>& Chains, std::vector<bool>& Closed
 				{
 					int Result = CR_SUCCESS;
 					std::vector<BreedChain> NewChains;
-					if (std::find(g_MovesBeingExplored.begin(), g_MovesBeingExplored.end(), pMove->MoveName) == g_MovesBeingExplored.end() && Father->LearnMethod != LEARNBY_EGG)
+					bool AlreadyGotMove = std::find(g_MovesBeingExplored.begin(), g_MovesBeingExplored.end(), pMove->MoveName) != g_MovesBeingExplored.end();
+					//check g_MovesBeingExplored AND now Chains too. checking both just seems to make the most sense?
+					//we were having problems with a mismagius wanting to know hidden power/shadow ball/thunderbolt
+					for (int iChain = 0; iChain < Chains.size(); iChain++)
+					{
+						if (Chains[iChain].Lineage[0]->MoveName == pMove->MoveName)
+						{
+							AlreadyGotMove = true;
+						}
+					}
+					if (!AlreadyGotMove && Father->LearnMethod != LEARNBY_EGG)
 					{
 						g_ComboData.SetSatisfied(BottomChild->MoveName, true);
 						Result = SearchRetryLoop(NewChains, pMove, true);
 						if (Result == CR_SUCCESS)
 						{
+							/*
+							for (int iNewChain = 0; iNewChain < NewChains.size(); iNewChain++)
+							{
+								std::cout << std::to_string(Depth) << " Adding chain for " << NewChains[iNewChain].Lineage[0]->MoveName << " to list (location A) (";
+								for (int i = 0; i < Chains.size(); i++) { std::cout << Chains[i].Lineage[0]->MoveName << ", "; }
+								std::cout << ")\n";
+							}
+							*/
 							for (int iChain = 0; iChain < Chains.size(); iChain++)
 							{
 								for (int iNewChain = 0; iNewChain < NewChains.size(); iNewChain++)
@@ -1832,10 +1850,6 @@ static int TestFather(std::vector<BreedChain>& Chains, std::vector<bool>& Closed
 										assert(0);
 									}
 								}
-							}
-							for (int iNewChain = 0; iNewChain < NewChains.size(); iNewChain++)
-							{
-								//std::cout << "Adding chain for " << NewChains[iNewChain].Lineage[0]->MoveName << " to list (location A)\n";
 							}
 							Chains.insert(std::end(Chains), std::begin(NewChains), std::end(NewChains));
 							assert(!g_Combo || Chains.size() <= g_Combo);
@@ -1908,13 +1922,14 @@ static int TestFather(std::vector<BreedChain>& Chains, std::vector<bool>& Closed
 		BreedChain NewChain;
 		while (Record)
 		{
-			//std::cout << " " << tRecord->sSpecies;
 			NewChain.Lineage.push_back(Record);
 			Record = ParentList[Record->LearnID];
 		}
-		//std::cout << " " << tRecord->sSpecies;
-		//tNewChain.Lineage.push_back(tRecord);
-		//std::cout << "\n";
+		/*
+		std::cout << std::to_string(Depth) << " Adding chain for " << NewChain.Lineage[0]->MoveName << " to list (location B) (";
+		for (int i = 0; i < Chains.size(); i++) { std::cout << Chains[i].Lineage[0]->MoveName << ", "; }
+		std::cout << ")\n";
+		*/
 		for (int iChain = 0; iChain < Chains.size(); iChain++)
 		{
 			if (Chains[iChain].Lineage[0]->MoveName == NewChain.Lineage[0]->MoveName)
@@ -1922,7 +1937,6 @@ static int TestFather(std::vector<BreedChain>& Chains, std::vector<bool>& Closed
 				assert(0);
 			}
 		}
-		//std::cout << "Adding chain for " << NewChain.Lineage[0]->MoveName << " to list (location B)\n";
 		Chains.push_back(NewChain);
 		assert(!g_Combo || Chains.size() <= g_Combo);
 		return CR_SUCCESS;
@@ -1986,7 +2000,11 @@ static int FindFatherForMove(std::vector<BreedChain>& Chains, std::vector<bool>&
 		{
 			//if we ever find a reason not call clear here, write it here
 			//if we don't clear, we sometimes have random duplicate chains that make no sense
-			//std::cout << "Clearing chains (location A)\n";
+			/*
+			std::cout << std::to_string(Depth) << " Clearing chains (location A) (";
+			for (int i = 0; i < Chains.size(); i++) { std::cout << Chains[i].Lineage[0]->MoveName << ", "; }
+			std::cout << ")\n";
+			*/
 			Chains.clear();
 			continue;
 		}
@@ -2055,8 +2073,12 @@ static int SuggestChainCombo(std::vector<BreedChain>& Chains, MoveLearner* Learn
 		{
 			g_ComboData.SetSatisfied(Chains[iChain].Lineage[0]->MoveName, false);
 		}
+		/*
+		std::cout << "Clearing chains (location B) (";
+		for (int i = 0; i < Chains.size(); i++) { std::cout << Chains[i].Lineage[0]->MoveName << ", "; }
+		std::cout << ")\n";
+		*/
 		Chains.clear();
-		//std::cout << "Clearing chains (location B)\n";
 	}
 	return Result;
 }
@@ -2081,6 +2103,11 @@ static int SearchRetryLoop(std::vector<BreedChain>& Chains, MoveLearner* Learner
 			//this learner is necessarily top-level. exit fast.
 			BreedChain NewChain;
 			NewChain.Lineage.push_back(Learner);
+			/*
+			std::cout << "Adding chain for " << NewChain.Lineage[0]->MoveName << " to list (location C) (";
+			for (int i = 0; i < Chains.size(); i++) { std::cout << Chains[i].Lineage[0]->MoveName << ", "; }
+			std::cout << ")\n";
+			*/
 			for (int iChain = 0; iChain < Chains.size(); iChain++)
 			{
 				if (Chains[iChain].Lineage[0]->MoveName == NewChain.Lineage[0]->MoveName)
@@ -2088,7 +2115,6 @@ static int SearchRetryLoop(std::vector<BreedChain>& Chains, MoveLearner* Learner
 					assert(0);
 				}
 			}
-			//std::cout << "Adding chain for " << NewChain.Lineage[0]->MoveName << " to list (location C)\n";
 			Chains.push_back(NewChain);
 			assert(!g_Combo || Chains.size() <= g_Combo);
 			Result = CR_SUCCESS;
