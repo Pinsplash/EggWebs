@@ -14,6 +14,7 @@
 
 std::string g_TargetSpecies;
 std::vector<std::string> g_TMLearnBlacklist;
+std::vector<std::string> g_MovesToLearn;
 std::vector<std::string> g_MovesDone;
 std::vector<std::string> g_MovesBeingExplored;
 std::vector<std::string> g_RequireFather;
@@ -123,6 +124,10 @@ static bool IsUniversalTM(std::string MoveName, GameData* Game)
 
 static bool IsSketchableMove(std::string MoveName, GameData* Game)
 {
+	//smeargle is not in sword and shield
+	if (Game->GameNum == GAME_SWORD_SHIELD)
+		return false;
+
 	GameData* RealGame = Game;
 	if (RealGame->GenerationNum == GENERATION_1)
 	{
@@ -189,7 +194,7 @@ static bool sortMoves(const MoveLearner* a, const MoveLearner* b)
 {
 	if (a->LearnsInGame == b->LearnsInGame)
 	{
-		if (a->LearnedAsSpecies.empty() == b->LearnedAsSpecies.empty())
+		if (!a->OriginalLearn == !b->OriginalLearn)
 		{
 			if (a->LearnMethod == b->LearnMethod && b->LearnMethod == LEARNBY_LEVELUP)
 				return std::stoi(a->LearnLevel) < std::stoi(b->LearnLevel);
@@ -197,7 +202,7 @@ static bool sortMoves(const MoveLearner* a, const MoveLearner* b)
 				return a->LearnMethod < b->LearnMethod;
 		}
 		else
-			return a->LearnedAsSpecies.empty();
+			return !a->OriginalLearn;
 	}
 	else
 		return a->LearnsInGame->GameNum > b->LearnsInGame->GameNum;
@@ -365,6 +370,8 @@ static int IterateGameCombo(int& Iterator, int ComboNum)
 			}
 		default:
 			assert(0);
+			Iterator = -1;
+			return -1;
 		}
 	}
 	else
@@ -383,9 +390,13 @@ static void AddMoveToMainList(MoveLearner* NewLearner, GameData* Game)
 	NewLearner->LearnsInGame = Game;
 	g_LearnerCount++;
 	g_MoveLearners.push_back(NewLearner);
-	if (g_Combo && NewLearner->LearnMethod != LEARNBY_TM_UNIVERSAL)
+	if (g_Combo)
 	{
-		g_ComboData.AddMove(NewLearner->MoveName);
+		//TODO: find out why we were doing this check and explain it here. this was causing a vector-out-of-range crash because we weren't adding a move to the list.
+		//if (NewLearner->LearnMethod != LEARNBY_TM_UNIVERSAL)
+		{
+			g_ComboData.AddMove(NewLearner->MoveName);
+		}
 	}
 }
 
@@ -503,8 +514,6 @@ static void ProcessAnnotatedCell(std::vector<std::string>& GameList, std::string
 
 static std::string ProcessLevelCell(std::string TextLine, size_t& PipeLocation, bool Quiet)
 {
-	if (TextLine.find("{{tt|", PipeLocation + 1) != std::string::npos)
-		std::cout << " ";
 	size_t Value1End = TextLine.find("|", PipeLocation + 1);
 	bool EndOfRow = false;
 	if (Value1End == std::string::npos)
@@ -550,12 +559,14 @@ static bool ValidateMatchup(std::vector<bool>& ClosedList, std::vector<MoveLearn
 	//if the child learns the move by TM, they have to be in their base form. if the baby can't learn the move at the time of hatching, it won't suddenly learn it when evolving
 	//(eg ninjask and swords dance, because nincada can't learn it)
 	//egg moves already take care of this naturally because bulba lists base forms in their tables and we call CreatePriorEvolutionLearns().
-	if ((Child->LearnMethod == LEARNBY_TM || Child->LearnMethod == LEARNBY_TM_UNIVERSAL) && Child->LearnMonInfo != GetBaseForm(Child->LearnMonInfo->SpeciesName, Child->LearnsInGame))
+	if ((Child->LearnMethod == LEARNBY_TM || Child->LearnMethod == LEARNBY_TM_UNIVERSAL) && Child->OriginalLearn != NULL)
 		return false;
 
 	//if mother learns by egg, the father has to be in the same game in order for them to breed
-	if (Mother->LearnMethod == LEARNBY_EGG && Father->LearnsInGame != Mother->LearnsInGame)
-		return false;
+	// 
+	//removed because this prevents smokescreen whismur case (cyndaquil in dpp breeds with whismur in hgss)
+	//if (Mother->LearnMethod == LEARNBY_EGG && Father->LearnsInGame != Mother->LearnsInGame)
+		//return false;
 
 	//must learn the move in question
 	if (Mother->MoveName != BottomChild.MoveName || Father->MoveName != BottomChild.MoveName)
@@ -709,6 +720,17 @@ static MoveLearner* MakeMovelessLearn(std::string WantedMoveName, int i, GameDat
 
 static MoveLearner* MakeSmeargleLearn(std::string WantedMoveName, GameData* Game)
 {
+	if (!IsSketchableMove(WantedMoveName, Game))
+		return NULL;
+
+	//already made a smeargle learn for this move in this game?
+	for (int iLearner = 0; iLearner < g_MoveLearners.size(); iLearner++)
+	{
+		MoveLearner* Learner = g_MoveLearners[iLearner];
+		if (Learner->LearnMethod == LEARNBY_SKETCH && Learner->MoveName == WantedMoveName && Learner->LearnsInGame == Game)
+			return NULL;
+	}
+
 	GameData* RealGame = Game;
 	if (RealGame->GenerationNum == GENERATION_1)
 	{
@@ -719,6 +741,7 @@ static MoveLearner* MakeSmeargleLearn(std::string WantedMoveName, GameData* Game
 		else
 			return NULL;
 	}
+
 	MoveLearner* Learner = new MoveLearner;
 	Learner->MoveName = WantedMoveName;
 	Learner->LearnMonInfo = RealGame->GetGeneration()->GetSpeciesInfo("Smeargle");
@@ -762,7 +785,6 @@ static int ProcessMove(std::ifstream& ReadFile)
 	bool LevelupSectionInside = false;
 	bool TMTutorSection = false;
 	bool SectionIsTutor = false;
-	bool UniversalTM = false;
 	bool TMTutorSectionInside = false;
 	bool BreedSection = false;
 	bool BreedSectionInside = false;
@@ -803,13 +825,8 @@ static int ProcessMove(std::ifstream& ReadFile)
 			JustGotMoveName = true;
 		}
 
-		//Smeargle can learn move by Sketch
-		if (JustGotMoveName && IsSketchableMove(MoveName, g_TargetGame))
-		{
-			MakeSmeargleLearn(MoveName, g_TargetGame);
-		}
-
-		UniversalTM = IsUniversalTM(MoveName, g_TargetGame);
+		if (JustGotMoveName)
+			g_MovesToLearn.push_back(MoveName);
 
 		if (!Learnset && TextLine == "==Learnset==")
 			Learnset = true;
@@ -1031,20 +1048,6 @@ static int ProcessMove(std::ifstream& ReadFile)
 						PokemonName = "Nidoran M";
 					else if (DexNumber == "0669")
 						PokemonName = "Flabebe";
-					int iInternalSpeciesIndex = GetSpeciesInfoFromGame(PokemonName, g_TargetGame);
-					SpeciesInfo* LearnMonInfo;
-					if (iInternalSpeciesIndex != -1)
-						LearnMonInfo = &g_TargetGame->GetGeneration()->MonData[iInternalSpeciesIndex];
-					else
-						//pokemon is not in desired game, go to next line down
-						//do NOT exit the table early because later games may have usable pokemon further down the table
-						continue;
-					if (LearnMonInfo->SpeciesName.empty())
-					{
-						std::cout << "\n unknown pokemon\n";
-						std::cout << TextLine << "\n";
-						return 1;
-					}
 
 					//type 1
 					PipeLocation = TextLine.find("|", PipeLocation + 1);
@@ -1078,17 +1081,24 @@ static int ProcessMove(std::ifstream& ReadFile)
 					//this avoids a crash with Solar Beam
 					if (SpecialSectionInside)
 					{
-						MoveLearner* NewLearner = new MoveLearner;
-						NewLearner->MoveName = MoveName;
-						NewLearner->FormName = FormNameName;
-						NewLearner->LearnMethod = LEARNBY_SPECIAL;
-						NewLearner->LearnLevel = "0";
-						NewLearner->LearnMonInfo = LearnMonInfo;
 						int GameInCombo = 0;
 						int GameNum = IterateGameCombo(GameInCombo, GameForSpecialSection);
 						while (GameNum != -1)
 						{
-							AddMoveToMainList(NewLearner, GameNum);
+							GameData* LearnersGame = &g_Games[GameNum];
+							MoveLearner* NewLearner = new MoveLearner;
+							NewLearner->MoveName = MoveName;
+							NewLearner->FormName = FormNameName;
+							NewLearner->LearnMethod = LEARNBY_SPECIAL;
+							NewLearner->LearnLevel = "0";
+							int iInternalSpeciesIndex = GetSpeciesInfoFromGame(PokemonName, LearnersGame);
+							if (!(iInternalSpeciesIndex == -1 && GameNum == GAME_BRILLIANT_DIAMOND_SHINING_PEARL && stoi(DexNumber) > 493))
+							{
+								assert(iInternalSpeciesIndex != -1);
+								NewLearner->LearnMonInfo = &LearnersGame->GetGeneration()->MonData[iInternalSpeciesIndex];
+								AddMoveToMainList(NewLearner, GameNum);
+								MakeSmeargleLearn(MoveName, LearnersGame);
+							}
 							GameNum = IterateGameCombo(GameInCombo, GameForSpecialSection);
 							if (GameInCombo == -1)
 								break;
@@ -1096,17 +1106,24 @@ static int ProcessMove(std::ifstream& ReadFile)
 					}
 					else if (EventSectionInside)
 					{
-						MoveLearner* NewLearner = new MoveLearner;
-						NewLearner->MoveName = MoveName;
-						NewLearner->FormName = FormNameName;
-						NewLearner->LearnMethod = LEARNBY_EVENT;
-						NewLearner->LearnLevel = "0";
-						NewLearner->LearnMonInfo = LearnMonInfo;
 						int GameInCombo = 0;
 						int GameNum = IterateGameCombo(GameInCombo, GameForSpecialSection);
 						while (GameNum != -1)
 						{
-							AddMoveToMainList(NewLearner, GameNum);
+							GameData* LearnersGame = &g_Games[GameNum];
+							MoveLearner* NewLearner = new MoveLearner;
+							NewLearner->MoveName = MoveName;
+							NewLearner->FormName = FormNameName;
+							NewLearner->LearnMethod = LEARNBY_EVENT;
+							NewLearner->LearnLevel = "0";
+							int iInternalSpeciesIndex = GetSpeciesInfoFromGame(PokemonName, LearnersGame);
+							if (!(iInternalSpeciesIndex == -1 && GameNum == GAME_BRILLIANT_DIAMOND_SHINING_PEARL && stoi(DexNumber) > 493))
+							{
+								assert(iInternalSpeciesIndex != -1);
+								NewLearner->LearnMonInfo = &LearnersGame->GetGeneration()->MonData[iInternalSpeciesIndex];
+								AddMoveToMainList(NewLearner, GameNum);
+								MakeSmeargleLearn(MoveName, LearnersGame);
+							}
 							GameNum = IterateGameCombo(GameInCombo, GameForSpecialSection);
 							if (GameInCombo == -1)
 								break;
@@ -1135,41 +1152,38 @@ static int ProcessMove(std::ifstream& ReadFile)
 								}
 								if (LearnLevel.find("âˆ’") == std::string::npos && LearnLevel.find("â€“") == std::string::npos)//dash (holy fuck)
 								{
-									if (UniversalTM && TMTutorSection && !SectionIsTutor)
+									int GameInCombo = 0;
+									int GameNum = IterateGameCombo(GameInCombo, GamesToColumns[iCol]);
+									while (GameNum != -1)
 									{
-										int GameInCombo = 0;
-										int GameNum = IterateGameCombo(GameInCombo, GamesToColumns[iCol]);
-										while (GameNum != -1)
+										GameData* LearnersGame = &g_Games[GameNum];
+										int iInternalSpeciesIndex = GetSpeciesInfoFromGame(PokemonName, LearnersGame);
+										if (!(iInternalSpeciesIndex == -1 && GameNum == GAME_BRILLIANT_DIAMOND_SHINING_PEARL && stoi(DexNumber) > 493))
 										{
-											//we're not a learner. we're actually one of the only pokemon NOT allowed to use the TM in question.
-											//add to a separate list. (each entry is species name followed by move it can't learn by TM)
-											g_TMLearnBlacklist.push_back(LearnMonInfo->SpeciesName);
-											g_TMLearnBlacklist.push_back(MoveName);
-											g_TMLearnBlacklist.push_back(std::to_string(GameNum));
-											GameNum = IterateGameCombo(GameInCombo, GamesToColumns[iCol]);
-											if (GameInCombo == -1)
-												break;
+											assert(iInternalSpeciesIndex != -1);
+											if (TMTutorSection && !SectionIsTutor && IsUniversalTM(MoveName, LearnersGame))
+											{
+												g_TMLearnBlacklist.push_back(LearnersGame->GetGeneration()->MonData[iInternalSpeciesIndex].SpeciesName);
+												g_TMLearnBlacklist.push_back(MoveName);
+												g_TMLearnBlacklist.push_back(std::to_string(GameNum));
+											}
+											else
+											{
+												MoveLearner* NewLearner = new MoveLearner;
+												NewLearner->MoveName = MoveName;
+												NewLearner->FormName = FormNameName;
+												NewLearner->LearnLevel = LearnLevel;
+												NewLearner->LearnMethod = LearnMethod;
+												if (NewLearner->LearnMethod != LEARNBY_LEVELUP)
+													NewLearner->LearnLevel = "0";
+												NewLearner->LearnMonInfo = &LearnersGame->GetGeneration()->MonData[iInternalSpeciesIndex];
+												AddMoveToMainList(NewLearner, GameNum);
+												MakeSmeargleLearn(MoveName, LearnersGame);
+											}
 										}
-									}
-									else
-									{
-										MoveLearner* NewLearner = new MoveLearner;
-										NewLearner->MoveName = MoveName;
-										NewLearner->FormName = FormNameName;
-										NewLearner->LearnLevel = LearnLevel;
-										NewLearner->LearnMethod = LearnMethod;
-										NewLearner->LearnMonInfo = LearnMonInfo;
-										if (NewLearner->LearnMethod != LEARNBY_LEVELUP)
-											NewLearner->LearnLevel = "0";
-										int GameInCombo = 0;
-										int GameNum = IterateGameCombo(GameInCombo, GamesToColumns[iCol]);
-										while (GameNum != -1)
-										{
-											AddMoveToMainList(NewLearner, GameNum);
-											GameNum = IterateGameCombo(GameInCombo, GamesToColumns[iCol]);
-											if (GameInCombo == -1)
-												break;
-										}
+										GameNum = IterateGameCombo(GameInCombo, GamesToColumns[iCol]);
+										if (GameInCombo == -1)
+											break;
 									}
 								}
 							}
@@ -1328,7 +1342,7 @@ static int GetSettings(int argc)
 		if (Answer == "-4")
 			g_Combo = 4;
 	}
-	else if (argc >= 3 && argc <= 5)
+	else if (argc >= 3 && argc <= 5 && g_TargetGame->GenerationNum <= GENERATION_5)
 	{
 		std::cout << "You gave " << std::to_string(argc - 1) << " move files. Find a chain that fits them all onto the target at once? 1 for yes.\n>";
 		std::getline(std::cin, Answer);
@@ -1359,7 +1373,7 @@ static int ProcessFilesDebug()
 	//the + 1 is correct because these file names start counting from 1 (or technically 2) instead of 0
 	for (int i = 2; i < g_Combo + 1; i++)
 	{
-		std::ifstream ReadFilei("filename" + std::to_string(g_Combo) + ".txt");
+		std::ifstream ReadFilei("filename" + std::to_string(i) + ".txt");
 		if (ProcessMove(ReadFilei) == 1)
 		{
 			std::cout << "Error\n";
@@ -1375,6 +1389,8 @@ static int ProcessFilesDebug()
 		}
 		ReadFilei.close();
 	}
+	if (g_Combo && g_TargetGame->GenerationNum >= GENERATION_6)
+		g_Combo = 0;
 	return 1;
 }
 
@@ -1421,7 +1437,7 @@ static MoveLearner* CloneLearner(MoveLearner* OldLearner)
 	NewLearner->LearnLevel = OldLearner->LearnLevel;
 	assert(!NewLearner->LearnLevel.empty() || OldLearner->LearnMethod != LEARNBY_LEVELUP);
 	NewLearner->MoveName = OldLearner->MoveName;
-	NewLearner->LearnedAsSpecies = OldLearner->LearnedAsSpecies;
+	NewLearner->OriginalLearn = OldLearner->OriginalLearn;
 	NewLearner->LearnMethod = OldLearner->LearnMethod;
 	NewLearner->LearnsInGame = OldLearner->LearnsInGame;
 	NewLearner->LearnMonInfo = OldLearner->LearnMonInfo;
@@ -1538,7 +1554,7 @@ static void WriteOutput(std::vector<BreedChain>& Chains)
 		//of course we can breed our moves onto own species
 		if (Learner->LearnMonInfo->SpeciesName == g_TargetSpecies)
 		{
-			if (IsUniversalTM(Learner->MoveName, g_TargetGame) && Learner->LearnMethod == LEARNBY_TM_UNIVERSAL)
+			if (Learner->LearnMethod == LEARNBY_TM_UNIVERSAL)
 			{
 				writingFile << ", " << Learner->MoveName << ": universal TM\n";
 			}
@@ -1579,31 +1595,37 @@ static bool PreSearch()
 			std::cout << Learner->LearnMonInfo->SpeciesName << "\n";
 	}
 
-	if (g_Combo)
+	//in the illegal paras scenario, paras has to be alive in gen 3-4 to learn bullet seed (tm), but paras learning leech seed (egg only) requires it to hatch in gen 5
+	std::vector<int> HatchableGens;
+	for (int iMoveToLearn = 0; iMoveToLearn < g_MovesToLearn.size(); iMoveToLearn++)
 	{
-		//in the illegal paras scenario, paras has to be alive in gen 3-4 to learn bullet seed (tm), but paras learning leech seed (egg only) requires it to hatch in gen 5
-		std::vector<int> HatchableGens;
-		for (int iMoveToLearn = 0; iMoveToLearn < g_Combo; iMoveToLearn++)
+		//std::cout << "Search for " << g_MovesToLearn[iMoveToLearn] << "\n";
+		HatchableGens.resize(g_Generations.size());
+		for (MoveLearner* Learner : g_MoveLearners)
 		{
-			std::cout << "Search for " << g_ComboData.ComboMoves[iMoveToLearn] << "\n";
-			HatchableGens.resize(g_Generations.size());
-			for (MoveLearner* Learner : g_MoveLearners)
+			if (Learner->LearnMonInfo->SpeciesName == g_TargetSpecies && g_MovesToLearn[iMoveToLearn] == Learner->MoveName)
 			{
-				if (Learner->LearnMonInfo->SpeciesName == g_TargetSpecies && g_ComboData.ComboMoves[iMoveToLearn] == Learner->MoveName)
-				{
-					std::cout << "Found match for " << g_ComboData.ComboMoves[iMoveToLearn] << " in " << Learner->LearnsInGame->UIName << "\n";
-					HatchableGens[Learner->LearnsInGame->GenerationNum] += 1;
-					break;
-				}
+				//std::cout << "Found match for " << g_MovesToLearn[iMoveToLearn] << " in " << Learner->LearnsInGame->UIName << "\n";
+				HatchableGens[Learner->LearnsInGame->GenerationNum] += 1;
+				break;
 			}
 		}
+	}
 
-		if (std::find(HatchableGens.begin(), HatchableGens.end(), g_Combo) == HatchableGens.end())
+	if (std::find(HatchableGens.begin(), HatchableGens.end(), g_MovesToLearn.size()) == HatchableGens.end() && g_MovesToLearn.size() <= 4)
+	{
+		if (g_Combo)
 		{
 			std::cout << "Illegal move combination: No generation where hatching " << g_TargetSpecies << " is possible.\n";
 			std::string Hack;
 			std::getline(std::cin, Hack);
 			return false;
+		}
+		else
+		{
+			std::cout << "Warning: EggWebs detected that there is no way to put all of the given moves onto " << g_TargetSpecies << " at the same time,\nbut it may still suggest breeding chains for moves individually. Press Enter to continue anyway.\n";
+			std::string Hack;
+			std::getline(std::cin, Hack);
 		}
 	}
 
@@ -1626,9 +1648,10 @@ static void ExcludeSpecies(std::string str)
 	//mark everything with this species name
 	for (int iMarkLearner = 0; iMarkLearner < g_MoveLearners.size(); iMarkLearner++)
 	{
-		if (g_MoveLearners[iMarkLearner]->LearnMonInfo->SpeciesName == str || g_MoveLearners[iMarkLearner]->LearnedAsSpecies == str)
+		MoveLearner* MarkLearner = g_MoveLearners[iMarkLearner];
+		if (MarkLearner->LearnMonInfo->SpeciesName == str || (MarkLearner->OriginalLearn && MarkLearner->OriginalLearn->LearnMonInfo->SpeciesName == str))
 		{
-			g_MoveLearners[iMarkLearner]->UserRejected = true;
+			MarkLearner->UserRejected = true;
 			FoundSpecies = true;
 		}
 	}
@@ -1698,6 +1721,9 @@ static int SuggestChain(BreedChain* Chain, MoveLearner* BottomChild)
 		std::cout << "\n";
 	if (g_FastForward || Answer.empty())
 	{
+		//combo mode handles this elsewhere
+		if (!g_Combo)
+			g_MovesDone.push_back(Chain->Lineage[0]->MoveName);
 		return CR_SUCCESS;
 	}
 	else
@@ -1768,6 +1794,13 @@ bool g_MainLoopDebug = false;
 
 static int TestFather(std::vector<BreedChain>& Chains, std::vector<bool>& ClosedList, std::vector<MoveLearner*>& ParentList, int Depth, MoveLearner* Father, MoveLearner* Learner, MoveLearner* BottomChild)
 {
+	for (int iChain = 0; iChain < Chains.size(); iChain++)
+	{
+		if (Chains[iChain].Lineage[0]->MoveName == Learner->MoveName)
+		{
+			assert(0);
+		}
+	}
 	//if in combo mode, father must learn all of the moves yet to be satisfied
 	bool BadForCombo = false;
 	if (g_Combo)
@@ -1790,7 +1823,22 @@ static int TestFather(std::vector<BreedChain>& Chains, std::vector<bool>& Closed
 						Result = SearchRetryLoop(NewChains, pMove, true);
 						if (Result == CR_SUCCESS)
 						{
+							for (int iChain = 0; iChain < Chains.size(); iChain++)
+							{
+								for (int iNewChain = 0; iNewChain < NewChains.size(); iNewChain++)
+								{
+									if (Chains[iChain].Lineage[0]->MoveName == NewChains[iNewChain].Lineage[0]->MoveName)
+									{
+										assert(0);
+									}
+								}
+							}
+							for (int iNewChain = 0; iNewChain < NewChains.size(); iNewChain++)
+							{
+								//std::cout << "Adding chain for " << NewChains[iNewChain].Lineage[0]->MoveName << " to list (location A)\n";
+							}
 							Chains.insert(std::end(Chains), std::begin(NewChains), std::end(NewChains));
+							assert(!g_Combo || Chains.size() <= g_Combo);
 						}
 						else
 						{
@@ -1867,7 +1915,16 @@ static int TestFather(std::vector<BreedChain>& Chains, std::vector<bool>& Closed
 		//std::cout << " " << tRecord->sSpecies;
 		//tNewChain.Lineage.push_back(tRecord);
 		//std::cout << "\n";
+		for (int iChain = 0; iChain < Chains.size(); iChain++)
+		{
+			if (Chains[iChain].Lineage[0]->MoveName == NewChain.Lineage[0]->MoveName)
+			{
+				assert(0);
+			}
+		}
+		//std::cout << "Adding chain for " << NewChain.Lineage[0]->MoveName << " to list (location B)\n";
 		Chains.push_back(NewChain);
+		assert(!g_Combo || Chains.size() <= g_Combo);
 		return CR_SUCCESS;
 	}
 	return CR_REJECTED;//signals to continue in loop
@@ -1875,6 +1932,13 @@ static int TestFather(std::vector<BreedChain>& Chains, std::vector<bool>& Closed
 
 static int FindFatherForMove(std::vector<BreedChain>& Chains, std::vector<bool>& ClosedList, std::vector<MoveLearner*>& ParentList, int Depth, MoveLearner* Learner, MoveLearner* BottomChild)
 {
+	for (int iChain = 0; iChain < Chains.size(); iChain++)
+	{
+		if (Chains[iChain].Lineage[0]->MoveName == Learner->MoveName)
+		{
+			assert(0);
+		}
+	}
 	Depth++;
 	if (g_MainLoopDebug) std::cout << "Finding father to teach " << Learner->LearnMonInfo->SpeciesName << " " << Learner->MoveName << " to pass to " << BottomChild->LearnMonInfo->SpeciesName << " (" << std::to_string(Depth) << ")\n";
 	if (Depth >= g_MaxDepth)
@@ -1919,7 +1983,13 @@ static int FindFatherForMove(std::vector<BreedChain>& Chains, std::vector<bool>&
 
 		int Result = TestFather(Chains, ClosedList, ParentList, Depth, Father, Learner, BottomChild);
 		if (Result == CR_REJECTED)
+		{
+			//if we ever find a reason not call clear here, write it here
+			//if we don't clear, we sometimes have random duplicate chains that make no sense
+			//std::cout << "Clearing chains (location A)\n";
+			Chains.clear();
 			continue;
+		}
 		//return now to ensure SearchRetryLoop returns the correct result
 		if (Result == CR_SUCCESS)
 			return CR_SUCCESS;
@@ -1935,6 +2005,13 @@ static int FindFatherForMove(std::vector<BreedChain>& Chains, std::vector<bool>&
 //for the 2nd one, we need to understand that Chikorita is not the true target (tBottomChild) but rather Exeggcute is
 static int FindChain(std::vector<BreedChain>& Chains, MoveLearner* Learner, MoveLearner* BottomChild)
 {
+	for (int iChain = 0; iChain < Chains.size(); iChain++)
+	{
+		if (Chains[iChain].Lineage[0]->MoveName == Learner->MoveName)
+		{
+			assert(0);
+		}
+	}
 	int Depth = 0;
 
 	std::vector<bool> ClosedList;
@@ -1979,19 +2056,48 @@ static int SuggestChainCombo(std::vector<BreedChain>& Chains, MoveLearner* Learn
 			g_ComboData.SetSatisfied(Chains[iChain].Lineage[0]->MoveName, false);
 		}
 		Chains.clear();
+		//std::cout << "Clearing chains (location B)\n";
 	}
 	return Result;
 }
 
 static int SearchRetryLoop(std::vector<BreedChain>& Chains, MoveLearner* Learner, bool Nested)
 {
+	for (int iChain = 0; iChain < Chains.size(); iChain++)
+	{
+		if (Chains[iChain].Lineage[0]->MoveName == Learner->MoveName)
+		{
+			assert(0);
+		}
+	}
 	if (g_MainLoopDebug) std::cout << "_Starting search to teach " << Learner->LearnMonInfo->SpeciesName << " " << Learner->MoveName << "\n";
 	assert(std::find(g_MovesBeingExplored.begin(), g_MovesBeingExplored.end(), Learner->MoveName) == g_MovesBeingExplored.end());
 	g_MovesBeingExplored.push_back(Learner->MoveName);
 	int Result = CR_REJECTED;
 	while (Result == CR_REJECTED)
 	{
-		Result = FindChain(Chains, Learner, Learner);
+		if (Learner->LearnMethod == LEARNBY_SKETCH)
+		{
+			//this learner is necessarily top-level. exit fast.
+			BreedChain NewChain;
+			NewChain.Lineage.push_back(Learner);
+			for (int iChain = 0; iChain < Chains.size(); iChain++)
+			{
+				if (Chains[iChain].Lineage[0]->MoveName == NewChain.Lineage[0]->MoveName)
+				{
+					assert(0);
+				}
+			}
+			//std::cout << "Adding chain for " << NewChain.Lineage[0]->MoveName << " to list (location C)\n";
+			Chains.push_back(NewChain);
+			assert(!g_Combo || Chains.size() <= g_Combo);
+			Result = CR_SUCCESS;
+		}
+		else
+		{
+			Result = FindChain(Chains, Learner, Learner);
+		}
+
 		if (Result == CR_SUCCESS)
 		{
 			if (Nested)
@@ -2011,7 +2117,6 @@ static int SearchRetryLoop(std::vector<BreedChain>& Chains, MoveLearner* Learner
 					if (Result == CR_REJECTED)
 						Chains.pop_back();
 				}
-				
 			}
 		}
 	}
@@ -2042,7 +2147,7 @@ static void GenerateUniversalTMLearns(GameData* Game)
 	for (int i = 0; i < g_MoveLearners.size(); i++)
 	{
 		MoveLearner* Learn = g_MoveLearners[i];
-		if (IsUniversalTM(Learn->MoveName, g_TargetGame))
+		if (IsUniversalTM(Learn->MoveName, Learn->LearnsInGame))
 		{
 			if (std::find(TMNames.begin(), TMNames.end(), Learn->MoveName) != TMNames.end())
 				continue;
@@ -2109,7 +2214,7 @@ static void CreatePriorEvolutionLearns(GameData* Game)
 						int iInfoIndex = GetSpeciesInfoFromGame(Target, Game);
 						assert(iInfoIndex != -1);
 						NewLearner->LearnMonInfo = &Game->GetGeneration()->MonData[iInfoIndex];
-						NewLearner->LearnedAsSpecies = Learn->LearnedAsSpecies.empty() ? OriginalForm : Learn->LearnedAsSpecies;
+						NewLearner->OriginalLearn = Learn->OriginalLearn == NULL ? Learn : Learn->OriginalLearn;
 						AddMoveToMainList(NewLearner, Game);
 					}
 				}

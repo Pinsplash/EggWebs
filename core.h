@@ -137,10 +137,10 @@ struct MoveLearner
 	std::string FormName;
 	std::string LearnLevel;
 	std::string MoveName;
-	std::string LearnedAsSpecies;
 	MoveLearnMethod LearnMethod = METHOD_NOT_DEFINED;
-	GameData* LearnsInGame;
-	SpeciesInfo* LearnMonInfo;
+	GameData* LearnsInGame = NULL;
+	SpeciesInfo* LearnMonInfo = NULL;
+	MoveLearner* OriginalLearn = NULL;
 	bool TMOfInterest = false;
 	bool EraseMe = false;
 	bool UserRejected = false;
@@ -159,8 +159,8 @@ struct MoveLearner
 		else s1 = " (UNKNOWN REASON";
 
 		std::string s2;
-		if (!LearnedAsSpecies.empty())
-			s2 = ", learned as " + LearnedAsSpecies;
+		if (OriginalLearn)
+			s2 = ", learned as " + OriginalLearn->LearnMonInfo->SpeciesName;
 
 		std::string s3;
 		if (LearnsInGame != g_TargetGame)
@@ -178,7 +178,7 @@ struct MoveLearner
 		else
 			s1 = LearnMonInfo->SpeciesName + MethodStr();
 
-		if (InCSV && (!LearnedAsSpecies.empty() || LearnsInGame != g_TargetGame))
+		if (InCSV && (OriginalLearn || LearnsInGame != g_TargetGame))
 			return "\"" + s1 + "\"";
 		else
 			return s1;

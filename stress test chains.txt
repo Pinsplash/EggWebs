@@ -1,7 +1,7 @@
-all of these movesets are designed to test combo mode. all of the answers shown below are correct.
+all of these movesets are designed to test different features (mainly combo mode). all of the answers shown below are correct.
 
 basic tests
-Leech Seed and Grass Knot on Chikorita (gen 4)
+Leech Seed and Grass Knot on Chikorita (gen 4) (multiple possible chains)
 Chain for Grass Knot: Ivysaur (by TM) <- Slowpoke (by TM) <- Lotad (by TM) <- Hoppip (by TM) <- Skitty (by TM) <- Pachirisu (special encounter)
 Chain for Leech Seed: Chikorita (egg move) <- Ivysaur (level 1)
 
@@ -19,17 +19,7 @@ Bullet Seed and Leech Seed on Paras (gen 5)
 Illegal move combination: No generation where hatching Paras is possible.
 
 Sucker Punch and Leaf Blade on Shiftry (gen 6)
-Illegal move combination: No generation where hatching Shiftry is possible.
-
-Reflect and AncientPower on Charizard (gen 2)
-Illegal move combination: No generation where hatching Charizard is possible.
-
-Fissure and Hone Claws on Charizard (gen 7)
-Illegal move combination: No generation where hatching Charizard is possible.
-
-Curse and Beat Up on Mimikyu (gen 9)
-Illegal move combination: No generation where hatching Mimikyu is possible.
-(pokemon can be traded between swsh, bdsp, la, sv (and za?) but moves will not come with)
+Warning: EggWebs detected that there is no way to put all of the given moves onto Shiftry at the same time.
 
 
 tests understanding evolution to help with breeding
@@ -40,17 +30,21 @@ Chain for Encore: Chatot (egg move) <- Togetic (level 19)
 
 tests learning accurate to game level (as opposed to generation level)
 SmokeScreen on Whismur (level cap 5, hgss)
-this should eventually suggest Cyndaquil (level 4, transfer from Pt)
+this should eventually suggest Cyndaquil (level 4, in Pt)
 
 
 tests understanding breeding with ditto
 Hi Jump Kick and Mach Punch Hitmontop (gen 3)
 Chain for Mach Punch: Hitmonlee (egg move, learned as Tyrogue) <- Hitmonchan (level 20)
 Chain for High Jump Kick: Hitmontop (egg move, learned as Tyrogue) <- Hitmonlee (level 26)
+OR
+Chain for High Jump Kick: Hitmonchan (egg move, learned as Tyrogue) <- Hitmonlee (level 26)
+Chain for Mach Punch: Hitmontop (egg move, learned as Tyrogue) <- Hitmonchan (level 20)
 
 
-tests understanding shedinja mechanics
-Silver Wind and Swords Dance on Shedinja (gen 4)
-Chain for Silver Wind: Ninjask (egg move, learned as Nincada) <- Venomoth (level 1)
-Chain for Swords Dance: Shedinja (level 25, learned as Ninjask) <- Ninjask (level 25)
-in gen 5, this should report illegal because shedinja will no longer copy the move ninjask learns upon evolving
+tests multiple moves coming from the same ancestor
+Ice Beam, Ice Shard, Rapid Spin, and Toxic on Delibird (gen 5)
+Chain for Ice Shard: Smeargle (Sketch)
+Chain for Rapid Spin: Smeargle (Sketch)
+Chain for Toxic: Smeargle (Sketch)
+Chain for Ice Beam: Delibird (by TM) <- Smeargle (Sketch)

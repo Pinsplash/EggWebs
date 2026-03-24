@@ -9,6 +9,7 @@ Generation g_Generation2 = {
 "====[[Generation II]]====",
 GAMECOMBO_ALL_GEN2,
 //UniversalTMs
+//NOTE: Curse is technically a universal TM in gen 2, but since Bulbapedia doesn't treat it like one, we don't either
 {
 "Attract",
 "Double Team",
