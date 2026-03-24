@@ -21,4 +21,4 @@ Chains can be rejected by entering the name of a species in the chain. Multiple 
 
 When the program is done, a list of all chains you accepted will be written to `output.csv` in the same place you put the Bulbapedia pages.
 
-EggWebs is NOT team validator. EggWebs assumes that all moves you give it are intended to be acquired through breeding and it will only work toward that end.
+EggWebs is NOT a team validator. EggWebs assumes that all moves you give it are intended to be acquired through breeding and it will only work toward that end.
