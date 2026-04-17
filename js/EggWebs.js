@@ -195,9 +195,17 @@ function SpeciesCantUseTM(MoveName, Species, InternalGameName)
 
 function GetSpeciesInfoFromGame(WantedName, Game)
 {
-	for (let iInfo = 0; iInfo < GetGeneration(Game)["MonData"].length; iInfo++)
-		if (WantedName === GetGeneration(Game)["MonData"][iInfo]["SpeciesName"])
+	let Generation = GetGeneration(Game);
+	let MonData = Generation["MonData"];
+	for (let iInfo = 0; iInfo < MonData.length; iInfo++)
+	{
+		let Info = MonData[iInfo];
+		let SpeciesName = Info["SpeciesName"];
+		if (WantedName === SpeciesName)
+		{
 			return iInfo;
+		}
+	}
 	return -1;
 }
 
@@ -222,184 +230,151 @@ function sortMoves(a, b)
 		return a["LearnsInGame"]["GameNum"] > b["LearnsInGame"]["GameNum"];
 }
 
-function IterateGameCombo(Iterator, ComboNum)
+function IterateGameCombo(GameInCombo, ComboNum)
 {
 	if (ComboNum < GAME_INVALID)
 	{
-		Iterator.value = -1;
-		return ComboNum;
+		return [-1, ComboNum];
 	}
 	else if (ComboNum > GAME_INVALID)
 	{
 		switch (ComboNum)
 		{
 		case GAMECOMBO_ALL_GEN1:
-			switch (Iterator.value)
+			switch (GameInCombo)
 			{
 			case 0:
-				Iterator.value++;
-				return GAME_RED_BLUE;
+				return [GameInCombo + 1, GAME_RED_BLUE];
 			case 1:
-				Iterator.value++;
-				return GAME_YELLOW;
+				return [GameInCombo + 1, GAME_YELLOW];
 			default:
-				Iterator.value = -1;
-				return -1;
+				return [-1, -1];
 			}
 		case GAMECOMBO_ALL_GEN2:
-			switch (Iterator.value)
+			switch (GameInCombo)
 			{
 			case 0:
-				Iterator.value++;
-				return GAME_GOLD_SILVER;
+				return [GameInCombo + 1, GAME_GOLD_SILVER];
 			case 1:
-				Iterator.value++;
-				return GAME_CRYSTAL;
+				return [GameInCombo + 1, GAME_CRYSTAL];
 			default:
-				Iterator.value = -1;
-				return -1;
+				return [-1, -1];
 			}
 		case GAMECOMBO_RSE:
-			switch (Iterator.value)
+			switch (GameInCombo)
 			{
 			case 0:
-				Iterator.value++;
-				return GAME_RUBY_SAPPHIRE;
+				return [GameInCombo + 1, GAME_RUBY_SAPPHIRE];
 			case 1:
-				Iterator.value++;
-				return GAME_EMERALD;
+				return [GameInCombo + 1, GAME_EMERALD];
 			default:
-				Iterator.value = -1;
-				return -1;
+				return [-1, -1];
 			}
 		case GAMECOMBO_ALL_GEN3:
-			switch (Iterator.value)
+			switch (GameInCombo)
 			{
 			case 0:
-				Iterator.value++;
-				return GAME_RUBY_SAPPHIRE;
+				return [GameInCombo + 1, GAME_RUBY_SAPPHIRE];
 			case 1:
-				Iterator.value++;
-				return GAME_FIRERED_LEAFGREEN;
+				return [GameInCombo + 1, GAME_FIRERED_LEAFGREEN];
 			case 2:
-				Iterator.value++;
-				return GAME_EMERALD;
+				return [GameInCombo + 1, GAME_EMERALD];
 			default:
-				Iterator.value = -1;
-				return -1;
+				return [-1, -1];
 			}
 		case GAMECOMBO_DPP:
-			switch (Iterator.value)
+			switch (GameInCombo)
 			{
 			case 0:
-				Iterator.value++;
-				return GAME_DIAMOND_PEARL;
+				return [GameInCombo + 1, GAME_DIAMOND_PEARL];
 			case 1:
-				Iterator.value++;
-				return GAME_PLATINUM;
+				return [GameInCombo + 1, GAME_PLATINUM];
 			default:
-				Iterator.value = -1;
-				return -1;
+				return [-1, -1];
 			}
 		case GAMECOMBO_PLAT_HGSS:
-			switch (Iterator.value)
+			switch (GameInCombo)
 			{
 			case 0:
-				Iterator.value++;
-				return GAME_PLATINUM;
+				return [GameInCombo + 1, GAME_PLATINUM];
 			case 1:
-				Iterator.value++;
-				return GAME_HEARTGOLD_SOULSILVER;
+				return [GameInCombo + 1, GAME_HEARTGOLD_SOULSILVER];
 			default:
-				Iterator.value = -1;
-				return -1;
+				return [-1, -1];
 			}
 		case GAMECOMBO_ALL_GEN4:
-			switch (Iterator.value)
+			switch (GameInCombo)
 			{
 			case 0:
-				Iterator.value++;
-				return GAME_DIAMOND_PEARL;
+				return [GameInCombo + 1, GAME_DIAMOND_PEARL];
 			case 1:
-				Iterator.value++;
-				return GAME_PLATINUM;
+				return [GameInCombo + 1, GAME_PLATINUM];
 			case 2:
-				Iterator.value++;
-				return GAME_HEARTGOLD_SOULSILVER;
+				return [GameInCombo + 1, GAME_HEARTGOLD_SOULSILVER];
 			default:
-				Iterator.value = -1;
-				return -1;
+				return [-1, -1];
 			}
 		case GAMECOMBO_ALL_GEN5:
-			switch (Iterator.value)
+			switch (GameInCombo)
 			{
 			case 0:
-				Iterator.value++;
-				return GAME_BLACK1_WHITE1;
+				return [GameInCombo + 1, GAME_BLACK1_WHITE1];
 			case 1:
-				Iterator.value++;
-				return GAME_BLACK2_WHITE2;
+				return [GameInCombo + 1, GAME_BLACK2_WHITE2];
 			default:
-				Iterator.value = -1;
-				return -1;
+				return [-1, -1];
 			}
 		case GAMECOMBO_ALL_GEN6:
-			switch (Iterator.value)
+			switch (GameInCombo)
 			{
 			case 0:
-				Iterator.value++;
-				return GAME_X_Y;
+				return [GameInCombo + 1, GAME_X_Y];
 			case 1:
-				Iterator.value++;
-				return GAME_OMEGA_RUBY_ALPHA_SAPPHIRE;
+				return [GameInCombo + 1, GAME_OMEGA_RUBY_ALPHA_SAPPHIRE];
 			default:
-				Iterator.value = -1;
-				return -1;
+				return [-1, -1];
 			}
 		case GAMECOMBO_SM_USUM:
-			switch (Iterator.value)
+			switch (GameInCombo)
 			{
 			case 0:
-				Iterator.value++;
-				return GAME_SUN_MOON;
+				return [GameInCombo + 1, GAME_SUN_MOON];
 			case 1:
-				Iterator.value++;
-				return GAME_ULTRASUN_ULTRAMOON;
+				return [GameInCombo + 1, GAME_ULTRASUN_ULTRAMOON];
 			default:
-				Iterator.value = -1;
-				return -1;
+				return [-1, -1];
 			}
 		case GAMECOMBO_SWSH_BDSP:
-			switch (Iterator.value)
+			switch (GameInCombo)
 			{
 			case 0:
-				Iterator.value++;
-				return GAME_SWORD_SHIELD;
+				return [GameInCombo + 1, GAME_SWORD_SHIELD];
 			case 1:
-				Iterator.value++;
-				return GAME_BRILLIANT_DIAMOND_SHINING_PEARL;
+				return [GameInCombo + 1, GAME_BRILLIANT_DIAMOND_SHINING_PEARL];
 			default:
-				Iterator.value = -1;
-				return -1;
+				return [-1, -1];
 			}
 		default:
 			debugger;
-			Iterator.value = -1;
-			return -1;
+			return [-1, -1];
 		}
 	}
 	else
 	{
-		Iterator.value = -1;
-		return -1;
+		return [-1, -1];
 	}
 }
 
 function AddMoveToMainListGame(NewLearner, Game)
 {
 	if (!Game["GameIsAllowed"])
+	{
+		console.log(Game["Acronym"] + " not allowed");
 		return;
+	}
 
+	console.log("ID: " + g_LearnerCount);
+	if (g_LearnerCount > 5000) debugger;
 	NewLearner["LearnID"] = g_LearnerCount;
 	NewLearner["LearnsInGame"] = Game;
 	g_LearnerCount++;
@@ -443,15 +418,14 @@ function IterateEvolutions(iEvo, OriginalForm, Game)
 	//entries are grouped by evolution family, and the largest family is 9 - the eeveelutions
 	let MaxEvoLineSize = 9;
 	let MaxSlot = iInfo + MaxEvoLineSize;
-	for (; iEvo.value < GetGeneration(Game)["MonData"][OriginalSlot]["Evolutions"].length; iEvo.value++)
+	for (; iEvo < GetGeneration(Game)["MonData"][OriginalSlot]["Evolutions"].length; iEvo++)
 	{
-		let Target = GetGeneration(Game)["MonData"][OriginalSlot]["Evolutions"][iEvo.value];
+		let Target = GetGeneration(Game)["MonData"][OriginalSlot]["Evolutions"][iEvo];
 		for (iInfo = OriginalSlot; iInfo < MaxSlot; iInfo++)
 		{
 			if (Target === GetGeneration(Game)["MonData"][iInfo]["SpeciesName"])
 			{
-				iEvo.value++;
-				return GetGeneration(Game)["MonData"][iInfo];
+				return [GetGeneration(Game)["MonData"][iInfo], iEvo + 1];
 			}
 		}
 	}
@@ -501,14 +475,16 @@ function SpeciesShareEvoLine(Species1, Species2, Game)
 }
 
 //sometimes there are annotations inside a cell to say that the value varies by game
-function ProcessAnnotatedCell( GameList, TextLine, ValueStart, Quiet)
+function ProcessAnnotatedCell(GameList, TextLine, ValueStart, Quiet)
 {
 	let SupStart = TextLine.indexOf("{{sup/");
 	if (SupStart !== -1)
 	{
 		let SupEnd = TextLine.indexOf("}}");
 		let AcroStart = SupStart + 8;
-		let Acronym = TextLine.substring(AcroStart, SupEnd - AcroStart);
+		let Acronym = TextLine.substring(AcroStart, SupEnd);
+		if (SupEnd === -1)
+			Acronym = TextLine.substring(AcroStart);
 		//push acronym followed by the value for the game
 		GameList.push(Acronym);
 		GameList.push(TextLine.substring(0, SupStart));
@@ -526,36 +502,34 @@ function ProcessAnnotatedCell( GameList, TextLine, ValueStart, Quiet)
 
 function ProcessLevelCell(TextLine, PipeLocation)
 {
-	let Value1End = TextLine.indexOf("|", PipeLocation.value + 1);
+	let Value1End = TextLine.indexOf("|", PipeLocation + 1);
 	let EndOfRow = false;
 	if (Value1End === -1)
 	{
 		EndOfRow = true;
-		Value1End = TextLine.indexOf("}}", PipeLocation.value + 1);
+		Value1End = TextLine.indexOf("}}", PipeLocation + 1);
 	}
-	let Value1 = TextLine.substring(PipeLocation.value + 1, Value1End - (PipeLocation.value + 1));
+	let Value1 = TextLine.substring(PipeLocation + 1, Value1End);
 	if (!Value1)
 	{
-		PipeLocation.value++;
-		return Value1;
+		return [Value1, PipeLocation + 1];
 	}
 	let SupStart = Value1.indexOf("{{sup");
 	if (SupStart !== -1)
 	{
-		Value1End = TextLine.indexOf("}}|", PipeLocation.value + 1);
+		Value1End = TextLine.indexOf("}}|", PipeLocation + 1);
 		if (Value1End === -1)
 			debugger;
-		let Value2 = TextLine.substring(PipeLocation.value + 1, Value1End - (PipeLocation.value - 1));
-		PipeLocation.value = Value1End + 2;
-		return Value2;
+		let Value2 = TextLine.substring(PipeLocation + 1, Value1End);
+		return [Value2, Value1End + 2];
 	}
 	else
 	{
 		//no fancy stuff, just a number in here then
-		PipeLocation.value = Value1End;
+		PipeLocation = Value1End;
 		if (EndOfRow)
-			PipeLocation.value++;
-		return Value1;
+			PipeLocation++;
+		return [Value1, PipeLocation];
 	}
 }
 
@@ -790,13 +764,14 @@ function MakeArbitraryLearn(PokemonName, DexNumber, MoveName, GameNum, GameInCom
 	if (!(iInternalSpeciesIndex === -1 && GameNum === GAME_BRILLIANT_DIAMOND_SHINING_PEARL && DexNumber > 493))
 	{
 		if (iInternalSpeciesIndex === -1)
+		{
 			debugger;
+		}
 		NewLearner["LearnMonInfo"] = GetGeneration(LearnersGame)["MonData"][iInternalSpeciesIndex];
 		AddMoveToMainListInt(NewLearner, GameNum);
 		MakeSmeargleLearn(MoveName, LearnersGame);
 	}
-	GameNum.value = IterateGameCombo(GameInCombo, GameForSpecialSection);
-	return GameInCombo;
+	return IterateGameCombo(GameInCombo, GameForSpecialSection);
 }
 
 function ProcessMove(ReadFile)
@@ -845,7 +820,7 @@ function ProcessMove(ReadFile)
 			let Space2Pos = TextLine.indexOf(" |");
 			let NameEnd = Math.min(PipePos, SpacePos);
 			NameEnd = Math.min(NameEnd, Space2Pos);
-			MoveName = TextLine.substring(5, NameEnd - 5);
+			MoveName = TextLine.substring(5, NameEnd);
 			JustGotMoveName = true;
 		}
 
@@ -1045,23 +1020,23 @@ function ProcessMove(ReadFile)
 
 					//pokedex number, use this to correct nidoran names
 					let NumberEnd = TextLine.indexOf("|", PipeLocation + 1);
-					let DexNumber = TextLine.substring(PipeLocation + 1, NumberEnd - (PipeLocation + 1));
+					let DexNumber = TextLine.substring(PipeLocation + 1, NumberEnd);
 					PipeLocation = NumberEnd;
 
 					//pokemon name
 					let PokemonNameEnd = TextLine.indexOf("|", PipeLocation + 1);
-					let PokemonName = TextLine.substring(PipeLocation + 1, PokemonNameEnd - (PipeLocation + 1));
+					let PokemonName = TextLine.substring(PipeLocation + 1, PokemonNameEnd);
 					let FormName;
 					if (PokemonName.indexOf("formsig=") !== -1)
 					{
 						//we actually just read the form name
 						PokemonNameEnd++;
 						let RealPokemonNameEnd = TextLine.indexOf("|", PokemonNameEnd);
-						PokemonName = TextLine.substring(PokemonNameEnd, RealPokemonNameEnd - PokemonNameEnd);
+						PokemonName = TextLine.substring(PokemonNameEnd, RealPokemonNameEnd);
 
 						let EqualLocation = PipeLocation + 9;
 						let FormNameEnd = TextLine.indexOf("|", EqualLocation);
-						FormName = TextLine.substring(EqualLocation, FormNameEnd - EqualLocation);
+						FormName = TextLine.substring(EqualLocation, FormNameEnd);
 
 						PipeLocation = RealPokemonNameEnd;
 					}
@@ -1094,12 +1069,12 @@ function ProcessMove(ReadFile)
 
 					//form parameter commonly put between egg group 2 and levels
 					let NextValueEnd = TextLine.indexOf("|", PipeLocation + 1);
-					let NextValue = TextLine.substring(PipeLocation + 1, NextValueEnd - (PipeLocation + 1));
+					let NextValue = TextLine.substring(PipeLocation + 1, NextValueEnd);
 					if (NextValue.indexOf("form=") !== -1)
 					{
 						let EqualLocation = PipeLocation + 6;
 						let FormNameEnd = Math.min(TextLine.indexOf("|", EqualLocation), TextLine.indexOf("{{", EqualLocation));
-						FormName = TextLine.substring(EqualLocation, FormNameEnd - EqualLocation);
+						FormName = TextLine.substring(EqualLocation, FormNameEnd);
 						PipeLocation = NextValueEnd;
 					}
 
@@ -1107,22 +1082,28 @@ function ProcessMove(ReadFile)
 					//this avoids a crash with Solar Beam
 					if (SpecialSectionInside)
 					{
-						let GameInCombo = 0;
-						let GameNum = IterateGameCombo(GameInCombo, GameForSpecialSection);
+						let IterData = IterateGameCombo(0, GameForSpecialSection);
+						let GameInCombo = IterData[0];
+						let GameNum = IterData[1];
 						while (GameNum !== -1)
 						{
-							MakeArbitraryLearn(PokemonName, DexNumber, MoveName, GameNum, GameInCombo, GameForSpecialSection, LEARNBY_SPECIAL, FormName);
+							IterData = MakeArbitraryLearn(PokemonName, DexNumber, MoveName, GameNum, GameInCombo, GameForSpecialSection, LEARNBY_SPECIAL, FormName);
+							GameInCombo = IterData[0];
+							GameNum = IterData[1];
 							if (GameInCombo === -1)
 								break;
 						}
 					}
 					else if (EventSectionInside)
 					{
-						let GameInCombo = 0;
-						let GameNum = IterateGameCombo(GameInCombo, GameForSpecialSection);
+						let IterData = IterateGameCombo(0, GameForSpecialSection);
+						let GameInCombo = IterData[0];
+						let GameNum = IterData[1];
 						while (GameNum !== -1)
 						{
-							MakeArbitraryLearn(PokemonName, DexNumber, MoveName, GameNum, GameInCombo, GameForSpecialSection, LEARNBY_EVENT, FormName);
+							IterData = MakeArbitraryLearn(PokemonName, DexNumber, MoveName, GameNum, GameInCombo, GameForSpecialSection, LEARNBY_EVENT, FormName);
+							GameInCombo = IterData[0];
+							GameNum = IterData[1];
 							if (GameInCombo === -1)
 								break;
 						}
@@ -1132,7 +1113,9 @@ function ProcessMove(ReadFile)
 						//levels
 						for (let iCol = 0; iCol < GamesToColumns.length; iCol++)
 						{
-							let LearnLevel = ProcessLevelCell(TextLine, PipeLocation);
+							let RetVal = ProcessLevelCell(TextLine, PipeLocation);
+							let LearnLevel = RetVal[0];
+							PipeLocation = RetVal[1];
 							let LevelEnd = LearnLevel.indexOf("game: ");
 							if (LevelEnd !== -1)
 							{
@@ -1150,8 +1133,9 @@ function ProcessMove(ReadFile)
 								}
 								if (LearnLevel.indexOf("âˆ’") === -1 && LearnLevel.indexOf("â€“") === -1)//dash (holy fuck)
 								{
-									let GameInCombo = 0;
-									let GameNum = IterateGameCombo(GameInCombo, GamesToColumns[iCol]);
+									let IterData = IterateGameCombo(0, GamesToColumns[iCol]);
+									let GameInCombo = IterData[0];
+									let GameNum = IterData[1];
 									while (GameNum !== -1)
 									{
 										let LearnersGame = g_Games[GameNum];
@@ -1175,7 +1159,9 @@ function ProcessMove(ReadFile)
 												MakeSmeargleLearn(MoveName, LearnersGame);
 											}
 										}
-										GameNum = IterateGameCombo(GameInCombo, GamesToColumns[iCol]);
+										IterData = IterateGameCombo(GameInCombo, GamesToColumns[iCol]);
+										GameInCombo = IterData[0];
+										GameNum = IterData[1];
 										if (GameInCombo === -1)
 											break;
 									}
@@ -1294,8 +1280,12 @@ function SplitMultiLevelLearns()
 	for (let iLearner = 0; iLearner < g_MoveLearners.length; iLearner++)
 	{
 		let Learner = g_MoveLearners[iLearner];
+		if (Learner["LearnMethod"] !== LEARNBY_LEVELUP)
+			continue;
 		//console.log(std::to_string(i) + "\n";
 		let LearnLevels = Learner["LearnLevel"].split(",");
+		if (LearnLevels.length <= 1)
+			continue;
 		for (let iLevel = 0; iLevel < LearnLevels.length; iLevel++)
 		{
 			let Level = LearnLevels[iLevel];
@@ -1452,7 +1442,10 @@ function PreSearch()
 			if (Learner["LearnMonInfo"]["SpeciesName"] === g_TargetSpecies && g_MovesToLearn[iMoveToLearn] === Learner["MoveName"])
 			{
 				console.log("Found match for " + g_MovesToLearn[iMoveToLearn] + " in " + Learner["LearnsInGame"]["UIName"]);
-				HatchableGens[Learner["LearnsInGame"]["GenerationNum"]] += 1;
+				if (HatchableGens[Learner["LearnsInGame"]["GenerationNum"]])
+					HatchableGens[Learner["LearnsInGame"]["GenerationNum"]] += 1;
+				else
+					HatchableGens[Learner["LearnsInGame"]["GenerationNum"]] = 1;
 				break;
 			}
 		}
@@ -1577,11 +1570,15 @@ function SuggestChain(Chain, BottomChild)
 				{
 					str = str.substring(0, NameEnd);
 					let iEvo = 0;
-					for (let EvolvedInfo = IterateEvolutions(iEvo, str, g_TargetGame); EvolvedInfo; EvolvedInfo = IterateEvolutions(iEvo, str, g_TargetGame))
+					for (let iRetVal1 = IterateEvolutions(iEvo, str, g_TargetGame); iRetVal1[0]; iRetVal1 = IterateEvolutions(iEvo, str, g_TargetGame))
 					{
+						let EvolvedInfo = iRetVal1[0];
+						iEvo = iRetVal1[1];
 						let i2ndEvo = 0;
-						for (let Evolved2ndInfo = IterateEvolutions(i2ndEvo, EvolvedInfo["SpeciesName"], g_TargetGame); Evolved2ndInfo; Evolved2ndInfo = IterateEvolutions(i2ndEvo, EvolvedInfo["SpeciesName"], g_TargetGame))
+						for (let iRetVal2 = IterateEvolutions(i2ndEvo, EvolvedInfo["SpeciesName"], g_TargetGame); iRetVal2[0]; iRetVal2 = IterateEvolutions(i2ndEvo, EvolvedInfo["SpeciesName"], g_TargetGame))
 						{
+							let Evolved2ndInfo = iRetVal2[0];
+							iEvo = iRetVal2[1];
 							ExcludeSpecies(Evolved2ndInfo["SpeciesName"]);
 						}
 						ExcludeSpecies(EvolvedInfo["SpeciesName"]);
@@ -1898,7 +1895,7 @@ function SuggestChainCombo(Chains, Learner)
 		for (let i = 0; i < Chains.length; i++) { console.log(Chains[i]["Lineage"][0]["MoveName"] + ", "; }
 		console.log(")\n";
 		*/
-		Chains = [];
+		Chains.value = [];
 	}
 	return Result;
 }
@@ -1916,6 +1913,7 @@ function SearchRetryLoop(Chains, Learner, Nested)
 	if (g_MovesBeingExplored.includes(Learner["MoveName"]))
 		debugger;
 	g_MovesBeingExplored.push(Learner["MoveName"]);
+	//console.log("C " + g_MovesBeingExplored);
 	let Result = CR_REJECTED;
 	while (Result === CR_REJECTED)
 	{
@@ -1967,8 +1965,11 @@ function SearchRetryLoop(Chains, Learner, Nested)
 	for (let iMove = g_MovesBeingExplored.length - 1; iMove >= 0; iMove--)
 	{
 		let Explore = g_MovesBeingExplored[iMove];
-		if (Learner["MoveName"] === Explore["MoveName"])
+		if (Learner["MoveName"] === Explore)
+		{
+			//console.log("A " + g_MovesBeingExplored);
 			g_MovesBeingExplored.splice(iMove, 1);
+		}
 	}
 	return Result;
 }
@@ -2078,7 +2079,8 @@ function ParseGameAnnotations()
 	for (let iLearn = 0; iLearn < g_MoveLearners.length; iLearn++)
 	{
 		let Learner = g_MoveLearners[iLearn];
-		let SupStart = Learner["LearnLevel"].indexOf("{{sup/");
+		let LearnLevel = Learner["LearnLevel"];
+		let SupStart = LearnLevel.toString().indexOf("{{sup/");
 		if (SupStart !== -1)
 		{
 			let ValueStart = 0;
@@ -2118,11 +2120,14 @@ function ParseGameAnnotations()
 			Learner["EraseMe"] = true;
 		}
 	}
-	for (let iLearn = 0; iLearn < g_MoveLearners.length; iLearn++)
+	for (let iLearn = g_MovesBeingExplored.length - 1; iLearn >= 0; iLearn--)
 	{
 		let Learner = g_MoveLearners[iLearn];
 		if (Learner["EraseMe"] || !Learner["LearnsInGame"]["GameIsAllowed"])
+		{
+			//console.log("B " + g_MovesBeingExplored);
 			g_MovesBeingExplored.splice(iLearn, 1);
+		}
 	}
 }
 
