@@ -15,7 +15,7 @@ GAMECOMBO_SM_USUM,
 "Double Team",
 "Frustration",
 "Hidden Power",
-"Protect"
+"Protect",
 "Rest",
 "Return",
 "Round",

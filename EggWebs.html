@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>EggWebs</title>
+</head>
+<body>
+<input type="file" id="input" multiple />
+
+<button type="button" onclick="main()">Go</button>
+<br>
+<span id="gamelistspan1">Target game:</span>
+<span id="gamelistspan2">Usable games:</span>
+<button type="button" onclick="SelectAllGames()" id="allgamesbutton">All Applicable Games</button>
+<button type="button" onclick="SelectOnlyTargetGame()" id="selecttargetbutton">Only Target Game</button>
+<br>
+<textarea id="targetspecies" rows="1" cols="50"></textarea><label for="targetspecies">Target Species</label>
+<br>
+<input type="checkbox" id="nomoves"/><label for="nomoves">No Moves (use for things like passing natures)</label>
+<br>
+<div id="movesettings">
+    <p>Check the boxes associated with each method of learning a move that you don't want the original father(s) to know.</p>
+    <input type="checkbox" id="levelup1"/><label for="levelup1">Level up</label>
+    <br>
+    <input type="checkbox" id="tm1"/><label for="tm1">TM</label>
+    <br>
+    <input type="checkbox" id="universaltm1"/><label for="universaltm1">Universal TM</label>
+    <br>
+    <input type="checkbox" id="special1"/><label for="special1">Special (eg pokewalker)</label>
+    <br>
+    <input type="checkbox" id="event1"/><label for="event1">Event</label>
+    <br>
+    <input type="checkbox" id="tutor1"/><label for="tutor1">Tutor</label>
+    <br>
+    <p>As above, but for controlling how mothers can learn a move (not counting ones of the target species).</p>
+    <input type="checkbox" id="levelup2"/><label for="levelup2">Level up</label>
+    <br>
+    <input type="checkbox" id="tm2"/><label for="tm2">TM</label>
+    <br>
+    <input type="checkbox" id="universaltm2"/><label for="universaltm2">Universal TM</label>
+    <br>
+    <input type="checkbox" id="special2"/><label for="special2">Special (eg pokewalker)</label>
+    <br>
+    <input type="checkbox" id="event2"/><label for="event2">Event</label>
+    <br>
+    <input type="checkbox" id="tutor2"/><label for="tutor2">Tutor</label>
+    <br>
+    <input type="number" id="maxlevel" value="100"/><label for="maxlevel">Max Level</label>
+</div>
+<p>Comma-separated list of Pokemon who are allowed to be the top-level ancestor.</p>
+<textarea id="requirefathers" rows="1" cols="50"></textarea><label for="requirefathers"></label>
+<br>
+<input type="number" id="maxdepth" value="20"/><label for="maxdepth">Max Chain Length</label>
+<br>
+<input type="checkbox" id="combomode"/><label for="combomode">Combo Mode (find chains that allow for all given moves to be put on the Pokemon at the same time)</label>
+<script src="js/core.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/data_bdsp.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/data_gen1.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/data_gen2.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/data_gen3.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/data_gen4.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/data_gen5.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/data_gen6.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/data_gen7.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/data_gen8.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/data_gen9.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/EggWebs.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

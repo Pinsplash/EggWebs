@@ -43,3 +43,4 @@ filename3.txt
 filename4.txt
 *.csv
 target.txt
+/.idea
