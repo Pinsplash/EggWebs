@@ -1131,7 +1131,7 @@ function ProcessMove(ReadFile)
 									else if (BreedSection)
 										LearnMethod = LEARNBY_EGG;
 								}
-								if (LearnLevel.indexOf("−") === -1)
+								if (LearnLevel.indexOf("−") === -1)//big dash. do not replace with hyphen.
 								{
 									let IterData = IterateGameCombo(0, GamesToColumns[iCol]);
 									let GameInCombo = IterData[0];
