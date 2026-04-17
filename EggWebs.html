@@ -15,7 +15,7 @@
 <br>
 <textarea id="targetspecies" rows="1" cols="50"></textarea><label for="targetspecies">Target Species</label>
 <br>
-<input type="checkbox" id="nomoves"/><label for="nomoves">No Moves (use for things like passing natures)</label>
+<input type="checkbox" id="nomoves" onclick="ToggleMoveSettings()"/><label for="nomoves">No Moves (use for things like passing natures)</label>
 <br>
 <div id="movesettings">
     <p>Check the boxes associated with each method of learning a move that you don't want the original father(s) to know.</p>
@@ -51,7 +51,7 @@
 <br>
 <input type="number" id="maxdepth" value="20"/><label for="maxdepth">Max Chain Length</label>
 <br>
-<input type="checkbox" id="combomode"/><label for="combomode">Combo Mode (find chains that allow for all given moves to be put on the Pokemon at the same time)</label>
+<span id="combomodespan"><input type="checkbox" id="combomode"/><label for="combomode">Combo Mode (fit all moves on the Pokemon at the same time, generally not needed Gen 6+)</label></span>
 <script src="js/core.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/data_bdsp.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/data_gen1.js" type="text/javascript" charset="utf-8"></script>

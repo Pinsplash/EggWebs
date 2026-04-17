@@ -785,7 +785,7 @@ function FatherSatisfiesMoves(Father, Learns)
 function MakeArbitraryLearn(PokemonName, DexNumber, MoveName, GameNum, GameInCombo, GameForSpecialSection, LearnMethod, FormName)
 {
 	let LearnersGame = g_Games[GameNum];
-	let NewLearner = new MoveLearner(FormName, 0, MoveName, LearnMethod);
+	let NewLearner = MoveLearner(FormName, 0, MoveName, LearnMethod);
 	let iInternalSpeciesIndex = GetSpeciesInfoFromGame(PokemonName, LearnersGame);
 	if (!(iInternalSpeciesIndex === -1 && GameNum === GAME_BRILLIANT_DIAMOND_SHINING_PEARL && DexNumber > 493))
 	{
@@ -820,7 +820,7 @@ function ProcessMove(ReadFile)
 	let MoveName;
 	let GamesToColumns = [];
 	let GameForSpecialSection = -1;
-	let Lines = ReadFile.split("\n");
+	let Lines = ReadFile.split("\r\n");
 	for (let iLine = 0; iLine < Lines.length; iLine++)
 	{
 		let TextLine = Lines[iLine];
@@ -859,10 +859,10 @@ function ProcessMove(ReadFile)
 			if (TextLine.indexOf("Movefoot") !== -1)
 			{
 				LevelupSection = LevelupSectionInside = TMTutorSection = TMTutorSectionInside = BreedSection = BreedSectionInside = SpecialSectionInside = EventSectionInside = MoveTableHeader = false;
-				GamesToColumns.clear();
+				GamesToColumns = [];
 				//console.log("GamesToColumns cleared (" + MoveName + ") A\n";
 				GameForSpecialSection = -1;
-				TableHeaderLine.clear();
+				TableHeaderLine = [];
 			}
 			if (!LevelupSection && TextLine === "===By [[Level|leveling up]]===")
 				LevelupSection = true;
@@ -1168,7 +1168,7 @@ function ProcessMove(ReadFile)
 											}
 											else
 											{
-												let NewLearner = new MoveLearner(FormName, LearnLevel, MoveName, LearnMethod, "", GetGeneration(LearnersGame)["MonData"][iInternalSpeciesIndex]);
+												let NewLearner = MoveLearner(FormName, LearnLevel, MoveName, LearnMethod, "", GetGeneration(LearnersGame)["MonData"][iInternalSpeciesIndex]);
 												if (NewLearner["LearnMethod"] !== LEARNBY_LEVELUP)
 													NewLearner["LearnLevel"] = "0";
 												AddMoveToMainListInt(NewLearner, GameNum);
@@ -1196,14 +1196,7 @@ function ProcessMove(ReadFile)
 
 function GetSettings(FileCount)
 {
-	let GameList = "";
-	let abc = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
-	for (let iGame = 0; iGame < g_Games.length; iGame++)
-	{
-		GameList += abc[iGame] + " " + g_Games[iGame]["UIName"] + "\n";
-	}
-
-	for (let iGame = GAME_RED_BLUE; iGame <= g_Games.length; iGame++)
+	for (let iGame = GAME_RED_BLUE; iGame < g_Games.length; iGame++)
 	{
 		let Game = g_Games[iGame];
 		Game["GameIsAllowed"] = document.getElementById(Game["Acronym"] + "2").checked;
@@ -1250,14 +1243,11 @@ function GetSettings(FileCount)
 
 	g_MaxDepth = document.getElementById("maxdepth").value;
 
-	if (FileCount >= 2 && FileCount <= 4 && g_TargetGame["GenerationNum"] <= GENERATION_5 && document.getElementById("combomode").checked)
-	{
+	//do not check generation. gens 6-7 may have situations where a moveset has to be made in an earlier game before being transferred.
+	if (FileCount >= 2 && FileCount <= 4 && document.getElementById("combomode").checked)
 		g_Combo = FileCount;
-	}
 	else
 		g_Combo = 0;
-	//console.log(std::to_string(argc) + " args.\n";
-	return 1;
 }
 
 async function ProcessFiles(Files)
@@ -1266,23 +1256,21 @@ async function ProcessFiles(Files)
 	{
 		if (Files.length > 1)
 			console.log(iFile + "/" + Files.length + " " + Files[iFile]);
-		let Path = (Files.length === 1) ? "filename.txt" : Files[iFile];
-		if (Path.indexOf("output.csv") !== -1)
-			continue;
-		else if (Path.indexOf(".txt") !== -1)
+		const file = Files.item(iFile);
+		const text = await file.text();
+		let OldLearnCount = g_MoveLearners.length;
+		if (ProcessMove(text) === 1)
 		{
-			const file = Files.item(iFile);
-			const text = await file.text();
-			if (ProcessMove(text) === 1)
-			{
-				debugger;
-			}
-
-			if (!g_MoveLearners[g_MoveLearners.length - 1]["MoveName"])
-			{
-				//didn't find move name
-				debugger;
-			}
+			debugger;
+		}
+		if (+OldLearnCount === +g_MoveLearners.length || +g_MoveLearners.length === 0)
+		{
+			debugger;//no data obtained from file
+		}
+		else if (!g_MoveLearners[g_MoveLearners.length - 1]["MoveName"])
+		{
+			//didn't find move name
+			debugger;
 		}
 		if (Files.length > 1)
 			console.log("finished " + Files[iFile] + "\n");
@@ -1292,7 +1280,7 @@ async function ProcessFiles(Files)
 
 function CloneLearner(OldLearner)
 {
-	let NewLearner = new MoveLearner(OldLearner["FormName"], OldLearner["LearnLevel"], OldLearner["MoveName"], OldLearner["LearnMethod"], OldLearner["LearnsInGame"],
+	let NewLearner = MoveLearner(OldLearner["FormName"], OldLearner["LearnLevel"], OldLearner["MoveName"], OldLearner["LearnMethod"], OldLearner["LearnsInGame"],
 		OldLearner["LearnMonInfo"], OldLearner["OriginalLearn"], OldLearner["TMOfInterest"], OldLearner["EraseMe"], OldLearner["UserRejected"], "LearnID");
 	if (!NewLearner["LearnLevel"] && OldLearner["LearnMethod"] === LEARNBY_LEVELUP)
 		debugger;
@@ -1457,13 +1445,13 @@ function PreSearch()
 	let HatchableGens = [];
 	for (let iMoveToLearn = 0; iMoveToLearn < g_MovesToLearn.length; iMoveToLearn++)
 	{
-		//console.log("Search for " + g_MovesToLearn[iMoveToLearn] + "\n";
+		console.log("Search for " + g_MovesToLearn[iMoveToLearn]);
 		for (let iLearner = 0; iLearner < g_MoveLearners.length; iLearner++)
 		{
 			let Learner = g_MoveLearners[iLearner];
 			if (Learner["LearnMonInfo"]["SpeciesName"] === g_TargetSpecies && g_MovesToLearn[iMoveToLearn] === Learner["MoveName"])
 			{
-				//console.log("Found match for " + g_MovesToLearn[iMoveToLearn] + " in " + Learner["LearnsInGame"]->UIName + "\n";
+				console.log("Found match for " + g_MovesToLearn[iMoveToLearn] + " in " + Learner["LearnsInGame"]["UIName"]);
 				HatchableGens[Learner["LearnsInGame"]["GenerationNum"]] += 1;
 				break;
 			}
@@ -1844,7 +1832,7 @@ function FindFatherForMove(Chains, ClosedList, ParentList, Depth, Learner, Botto
 			for (let i = 0; i < Chains.length; i++) { console.log(Chains[i]["Lineage"][0]["MoveName"] + ", "; }
 			console.log(")\n";
 			*/
-			Chains.clear();
+			Chains = [];
 			continue;
 		}
 		//return now to ensure SearchRetryLoop returns the correct result
@@ -1910,7 +1898,7 @@ function SuggestChainCombo(Chains, Learner)
 		for (let i = 0; i < Chains.length; i++) { console.log(Chains[i]["Lineage"][0]["MoveName"] + ", "; }
 		console.log(")\n";
 		*/
-		Chains.clear();
+		Chains = [];
 	}
 	return Result;
 }
@@ -2138,18 +2126,17 @@ function ParseGameAnnotations()
 	}
 }
 
-function main()
+async function main()
 {
 	let Files = document.getElementById("input").files
-	if (GetSettings(Files.length) === 0)
-		return;
+	GetSettings(Files.length);
 	if (g_NoMoves)
 	{
 		GenerateMovelessLearns(g_TargetGame);
 	}
 	else
 	{
-		ProcessFiles(Files);
+		await ProcessFiles(Files);
 		SplitMultiLevelLearns();
 		GenerateUniversalTMLearns(g_TargetGame);
 		CreatePriorEvolutionLearns(g_TargetGame);
@@ -2177,6 +2164,7 @@ function SelectTargetGame(GameNum)
 		document.getElementById("gamelistspan2").style.display = "inline";
 		document.getElementById("allgamesbutton").style.display = "inline";
 		document.getElementById("selecttargetbutton").style.display = "inline";
+		document.getElementById("combomodespan").style.display = "inline";
 	}
 	else
 	{
@@ -2185,6 +2173,7 @@ function SelectTargetGame(GameNum)
 		document.getElementById("gamelistspan2").style.display = "none";
 		document.getElementById("allgamesbutton").style.display = "none";
 		document.getElementById("selecttargetbutton").style.display = "none";
+		document.getElementById("combomodespan").style.display = "none";
 	}
 	let Checkbox = document.getElementById(g_TargetGame["Acronym"] + "2");
 	Checkbox.checked = true;
@@ -2219,6 +2208,18 @@ function SelectOnlyTargetGame()
 	Checkboxes.forEach((element) => element.checked = false);
 	let Checkbox = document.getElementById(g_TargetGame["Acronym"] + "2");
 	Checkbox.checked = true;
+}
+
+function ToggleMoveSettings()
+{
+	if (document.getElementById("nomoves").checked)
+	{
+		document.getElementById("movesettings").style.display = "none";
+	}
+	else
+	{
+		document.getElementById("movesettings").style.display = "block";
+	}
 }
 
 let span1 = document.getElementById("gamelistspan1");
