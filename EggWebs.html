@@ -7,7 +7,7 @@
             background-color:cornflowerblue;
             margin-top:7px;
         }
-        .settingstext {
+        p {
             margin:0;
         }
         html, body {
@@ -21,9 +21,37 @@
             background-color:royalblue;
             overflow:overlay;
         }
+        #mainview {
+            float:left;
+            width:75%;
+            height:100%;
+        }
+        .pokemonbox {
+            display:inline-block;
+            text-align:center;
+            vertical-align:top;
+            position:relative;
+        }
+        .egggroupicon {
+            position:absolute;
+            width:42px;
+            height:42px;
+        }
+        .optionbox {
+            position:absolute;
+            top:42px;
+            border:1px black solid;
+        }
+        .optionlisting {
+            background-color:white;
+        }
+        .optionlisting:hover {
+            background-color:lightgray;
+        }
     </style>
 </head>
 <body>
+<div id="mainview"></div>
 <div id="sidebar">
     <button type="button" onclick="main()">Go</button>
     <div class="settingcontainer">
