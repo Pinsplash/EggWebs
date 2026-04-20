@@ -36,6 +36,36 @@ const g_Generations =
 	];
 
 
+const AltParents =
+	[
+		"Volbeat", "Illumise",
+		"Nidoran M", "Nidoran F"
+	];
+
+const MatchupResultStrings =
+	[
+		"",//MATCHUP_SUCCESS
+		"Child's learn method doesn't allow it to be passed down the move",//MR_BAD_CHILD_METHOD
+		"Child's base form must be able to know TM for it to be passed down",//CHILD_BY_TM_NEEDS_BASE_FORM
+		"Different move",//DIFFERENT_MOVE
+		"Redundant: Breeding with own species",//BREEDING_SELF
+		"Already considered father",//FATHER_ON_CLOSED_LIST
+		"User requested mother can't learn move by this method",//MOTHER_EXCLUDED_METHOD
+		"Impossible to breed due to gender ratios (and not same evolution line)",//MALE_FEMALE_ONLY_INCOMPATIBLE
+		"No egg group in common",//NO_EGG_GROUP_MATCH
+		"Redundant: No new egg group or learn method (and not same evolution line)",//NO_NEW_EGG_GROUP
+		"Father learns move at level above maximum",//FATHER_LEVEL_ABOVE_MAX
+		"Mother learns move at level above maximum",//MOTHER_LEVEL_ABOVE_MAX
+		"Father was rejected by user",//FATHER_REJECTED
+		"Father is female only species",//FATHER_FEMALE_ONLY
+		"Mother is male only species",//MOTHER_MALE_ONLY
+		"Gender unknown Pokemon cannot pass moves to another evolution line",//NONBINARY_POINTLESS
+		"Redundant: Mother learns move at level below maximum",//MOTHER_LEVEL_BELOW_MAX
+		"Female-only mothers can only pass down a move if the child learns it by level up",//FEMALE_ONLY_MOM_NEEDS_LEVELUP_CHILD
+		"Redundant: Father already part of breeding chain",//FATHER_ALREADY_IN_CHAIN
+		"Redundant: Already went to this egg group",//EGG_GROUP_ALREADY_IN_CHAIN
+	];
+
 function GetSpeciesInfo(WantedGen, WantedSpecies)
 {
 	for (let iMon = 0; iMon < WantedGen["MonData"].length; iMon++)
@@ -48,7 +78,7 @@ function GetGeneration(WantedGame)
 	return g_Generations[WantedGame["GenerationNum"]];
 }
 
-function MethodStr(WantedLearn)
+function MethodStr(WantedLearn, Delimiter)
 {
 	let str;
 	if (WantedLearn["LearnMethod"] === LEARNBY_LEVELUP) str = "Level " + WantedLearn["LearnLevel"];
@@ -62,10 +92,10 @@ function MethodStr(WantedLearn)
 	else str = "UNKNOWN REASON";
 
 	if (WantedLearn["OriginalLearn"])
-		str += "\nLearned as " + WantedLearn["OriginalLearn"]["LearnMonInfo"]["SpeciesName"];
+		str += Delimiter + "Learned as " + WantedLearn["OriginalLearn"]["LearnMonInfo"]["SpeciesName"];
 
 	if (WantedLearn["LearnsInGame"] !== g_TargetGame)
-		str += "\nin " + WantedLearn["LearnsInGame"]["Acronym"];
+		str += Delimiter + "in " + WantedLearn["LearnsInGame"]["Acronym"];
 
 	return str;
 }
@@ -80,7 +110,7 @@ function InfoStr(WantedLearn)
 	if (WantedLearn["FormName"])
 		str += "\n" + WantedLearn["FormName"];
 
-	str += "\n" + MethodStr(WantedLearn);
+	str += "\n" + MethodStr(WantedLearn, "\n");
 
 	return str;
 }
@@ -92,13 +122,14 @@ function ComboAddMove(MoveName, Satisfied)
 		return;//only want the names of moves, and we only want a name one time
 	}
 	g_ComboData["ComboMoves"].push(MoveName);
-	if (g_ComboData["ComboMoves"].length <= g_Combo || g_ComboData["ComboMoves"].length <= 4)
+	if (!(g_ComboData["ComboMoves"].length <= g_Combo || g_ComboData["ComboMoves"].length <= 4))
 		debugger;
 	g_ComboData["SatisfiedStatus"][g_ComboData["ComboMoves"].length - 1] = Satisfied;
 }
 
 function ComboSetSatisfied(WantedMove, Satisfied)
 {
+	console.log(WantedMove + (Satisfied ? " Satisfied" : " Not satisfied"));
 	for (let iMove = 0; iMove < g_Combo; iMove++)
 	{
 		if (g_ComboData["ComboMoves"][iMove] === WantedMove)
@@ -194,6 +225,7 @@ function GetSpeciesInfoFromGame(WantedName, Game)
 	if (!Generation)
 		debugger;
 	let MonData = Generation["MonData"];
+	//console.log("WantedName: ", WantedName);
 	for (let iInfo = 0; iInfo < MonData.length; iInfo++)
 	{
 		let Info = MonData[iInfo];
@@ -370,9 +402,10 @@ function AddMoveToMainListGame(NewLearner, Game)
 		return;
 	}
 
-	console.log("ID: " + g_MoveLearners.length);
-	if (g_MoveLearners.length > 5000) debugger;
-	NewLearner["LearnID"] = g_MoveLearners.length;
+	console.log("ID: " + g_NextLearnerID);
+	if (g_NextLearnerID > 5000) debugger;
+	NewLearner["LearnID"] = g_NextLearnerID;
+	g_NextLearnerID++;
 	NewLearner["LearnsInGame"] = Game;
 	g_MoveLearners.push(NewLearner);
 	if (g_Combo)
@@ -389,19 +422,24 @@ function AddMoveToMainListInt(NewLearner, GameNum)
 {
 	AddMoveToMainListGame(NewLearner, g_Games[GameNum]);
 }
-/*
+
 function GetLearnerFromMainList(WantedID)
 {
 	for (let iLearn = 0; iLearn < g_MoveLearners.length; iLearn++)
 		if (g_MoveLearners[iLearn]["LearnID"] === WantedID)
-			return g_MoveLearners[iLearn]["LearnID"];
+			return g_MoveLearners[iLearn];
 }
-*/
+
 function IterateLearnersBySpecies(StartID, WantedSpecies, WantedMove)
 {
-	for (let iLearnID = StartID + 1; iLearnID < g_MoveLearners.length; iLearnID++)
-		if (g_MoveLearners[iLearnID]["LearnMonInfo"]["SpeciesName"] === WantedSpecies && g_MoveLearners[iLearnID]["MoveName"] === WantedMove)
-			return g_MoveLearners[iLearnID];
+	for (let iLearnID = StartID + 1; iLearnID < g_NextLearnerID; iLearnID++)
+	{
+		let Learner = GetLearnerFromMainList(iLearnID);
+		if (!Learner)
+			continue;
+		if (Learner["LearnMonInfo"]["SpeciesName"] === WantedSpecies && Learner["MoveName"] === WantedMove)
+			return Learner;
+	}
 }
 
 function IterateEvolutions(iEvo, OriginalForm, Game)
@@ -481,11 +519,10 @@ function ProcessAnnotatedCell(GameList, TextLine, ValueStart, Quiet)
 		let SupEnd = TextLine.indexOf("}}");
 		let AcroStart = SupStart + 8;
 		let Acronym = TextLine.substring(AcroStart, SupEnd);
-		if (SupEnd === -1)
-			Acronym = TextLine.substring(AcroStart);
+		let Val = TextLine.substring(0, SupStart);
 		//push acronym followed by the value for the game
 		GameList.push(Acronym);
-		GameList.push(TextLine.substring(0, SupStart));
+		GameList.push(Val);
 		let NextSupStart = TextLine.indexOf("{{sup/", SupStart + 1);
 		if (NextSupStart !== -1)
 		{
@@ -518,7 +555,7 @@ function ProcessLevelCell(TextLine, PipeLocation)
 		Value1End = TextLine.indexOf("}}|", PipeLocation + 1);
 		if (Value1End === -1)
 			debugger;
-		let Value2 = TextLine.substring(PipeLocation + 1, Value1End);
+		let Value2 = TextLine.substring(PipeLocation + 1, Value1End + 2);
 		return [Value2, Value1End + 2];
 	}
 	else
@@ -539,13 +576,13 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 	//Sketch is here because if we can copy a move, then doing so should be the first action of the chain. any breeding before that serves no purpose.
 	if (Child["LearnMethod"] === LEARNBY_EVENT || Child["LearnMethod"] === LEARNBY_SPECIAL || Child["LearnMethod"] === LEARNBY_SKETCH ||
 		(Child["LearnMethod"] === LEARNBY_TUTOR && !(Child["LearnsInGame"]["GenerationNum"] === GENERATION_2 && Child["LearnsInGame"]["GameNum"] === GAME_CRYSTAL)))
-		return false;
+		return BAD_CHILD_METHOD;
 
 	//if the child learns the move by TM, they have to be in their base form. if the baby can't learn the move at the time of hatching, it won't suddenly learn it when evolving
 	//(eg ninjask and swords dance, because nincada can't learn it)
 	//egg moves already take care of this naturally because bulba lists base forms in their tables and we call CreatePriorEvolutionLearns().
 	if ((Child["LearnMethod"] === LEARNBY_TM || Child["LearnMethod"] === LEARNBY_TM_UNIVERSAL) && Child["OriginalLearn"])
-		return false;
+		return CHILD_BY_TM_NEEDS_BASE_FORM;
 
 	//if mother learns by egg, the father has to be in the same game in order for them to breed
 	// 
@@ -555,20 +592,20 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 
 	//must learn the move in question
 	if (Mother["MoveName"] !== BottomChild["MoveName"] || Father["MoveName"] !== BottomChild["MoveName"])
-		return false;
+		return DIFFERENT_MOVE;
 
 	//no reason to breed with own species. this doesn't produce Interesting chains
 	if (Mother["LearnMonInfo"]["SpeciesName"] === Father["LearnMonInfo"]["SpeciesName"] || Child["LearnMonInfo"]["SpeciesName"] === Father["LearnMonInfo"]["SpeciesName"])
-		return false;
+		return BREEDING_SELF;
 
 	//don't already be explored (don't read into this)
 	if (ClosedList[Father["LearnID"]])
-		return false;
+		return FATHER_ON_CLOSED_LIST;
 
 	//user requested ways that mothers must not learn a move
 	//unless mother species is target species, which is okay
 	if (g_MotherExcludes[Mother["LearnMethod"]] && Mother["LearnMonInfo"]["SpeciesName"] !== g_TargetSpecies)
-		return false;
+		return MOTHER_EXCLUDED_METHOD;
 
 	//third parameter weirdness: we had a case where a leafeon wanted to breed with something from ruby/sapphire.
 	//this was causing an assert inside the function to be hit since leafeon is gen 4 and couldn't be found in gen 3 data
@@ -580,21 +617,20 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 	if ((Mother["LearnMonInfo"]["GenderRatio"] === GR_FEMALE_ONLY && Father["LearnMonInfo"]["GenderRatio"] === GR_FEMALE_ONLY)
 		|| (Mother["LearnMonInfo"]["GenderRatio"] === GR_MALE_ONLY && Father["LearnMonInfo"]["GenderRatio"] === GR_MALE_ONLY))
 		if (!SameEvolutionLine)
-			return false;
+			return MALE_FEMALE_ONLY_INCOMPATIBLE;
 
 	//have to have a matching egg group
-	//Sketch works across egg groups
 	let NewCommonEggGroup = StringPairMatch(Mother["LearnMonInfo"]["EggGroup1"], Mother["LearnMonInfo"]["EggGroup2"], Father["LearnMonInfo"]["EggGroup1"], Father["LearnMonInfo"]["EggGroup2"]);
 	if (!NewCommonEggGroup)
-		return false;
+		return NO_EGG_GROUP_MATCH;
 
-	//mother has to have a new egg group in order to produce good useful chains
+	//father has to have a new egg group in order to produce good useful chains
 	let NewEggGroup = !StringPairIdent(Mother["LearnMonInfo"]["EggGroup1"], Mother["LearnMonInfo"]["EggGroup2"], Father["LearnMonInfo"]["EggGroup1"], Father["LearnMonInfo"]["EggGroup2"]);
 	//it's okay for egg groups to be bad if the father learns the move by a different method than the child
 	let NewMethod = Father["LearnMethod"] !== Child["LearnMethod"];
 	//why did we have a check for !bChildIsTargetSpecies here? this was causing venonat <- caterpie to be valid
 	if (!SkipNewGroupCheck && !NewEggGroup && !NewMethod && !SameEvolutionLine)
-		return false;
+		return NO_NEW_EGG_GROUP;
 
 	//level cap
 	//bulbapedia only says "If both parents know a move that the baby can learn via leveling up, the Pokémon will inherit that move."
@@ -603,22 +639,22 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 	let FatherLearnsByLevelUp = Father["LearnMethod"] === LEARNBY_LEVELUP;
 	let MotherLearnsByLevelUp = Mother["LearnMethod"] === LEARNBY_LEVELUP;
 	let ChildLearnsByLevelUp = Child["LearnMethod"] === LEARNBY_LEVELUP;
-	if (FatherLearnsByLevelUp && Father["LearnLevel"] > g_MaxLevel)
-		return false;
+	if (FatherLearnsByLevelUp && +Father["LearnLevel"] > +g_MaxLevel)
+		return FATHER_LEVEL_ABOVE_MAX;
 
-	if (MotherLearnsByLevelUp && Mother["LearnLevel"] > g_MaxLevel)
-		return false;
+	if (MotherLearnsByLevelUp && +Mother["LearnLevel"] > +g_MaxLevel)
+		return MOTHER_LEVEL_ABOVE_MAX;
 
 	//blacklist
 	if (Father["UserRejected"])
-		return false;
+		return FATHER_REJECTED;
 
 	//fathers must be male, mothers must be female
 	if (Father["LearnMonInfo"]["GenderRatio"] === GR_FEMALE_ONLY || Mother["LearnMonInfo"]["GenderRatio"] === GR_MALE_ONLY)
 		if (!SameEvolutionLine)
-			return false;
+			return Father["LearnMonInfo"]["GenderRatio"] === GR_FEMALE_ONLY ? FATHER_FEMALE_ONLY : MOTHER_MALE_ONLY;
 
-	//Gender-unknown Pokémon can only breed with Ditto. this makes them unInteresting for EggWebs aside from Shedinja because the offspring Nincada is gender known.
+	//Gender-unknown Pokémon can only breed with Ditto. this makes them uninteresting for EggWebs aside from Shedinja because the offspring Nincada is gender known.
 	if (Father["LearnMonInfo"]["GenderRatio"] === GR_UNKNOWN)
 	{
 		//BUT, it has to be a move that Nincada can learn
@@ -626,7 +662,7 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 		//if (Father["LearnMonInfo"]["SpeciesName"] === "Shedinja")
 			//return IterateLearnersBySpecies(-1, "Nincada", Father["MoveName"]);
 		//else
-			return false;
+			return NONBINARY_POINTLESS;
 	}
 
 	//if the mom can learn the move by level up below the level cap, there's no point in breeding the move onto it
@@ -634,19 +670,18 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 	let ChildIsTargetSpecies = Child["LearnMonInfo"]["SpeciesName"] === BottomChild["LearnMonInfo"]["SpeciesName"];
 	if (MotherLearnsByLevelUp)
 	{
-		let MotherLearnsWithinMaximum = Mother["LearnLevel"] <= g_MaxLevel;
+		let MotherLearnsWithinMaximum = +Mother["LearnLevel"] <= +g_MaxLevel;
 		if (!ChildIsTargetSpecies && MotherLearnsWithinMaximum)
-			return false;
+			return MOTHER_LEVEL_BELOW_MAX;
 	}
 
 	//if the mother is a female-only species, they can only pass the move down if the baby learns it by levelup
 	//female-only mothers are always ok if they produce the target species as the moves don't have to be passed down further than that
 	if (Mother["LearnMonInfo"]["GenderRatio"] === GR_FEMALE_ONLY && !ChildLearnsByLevelUp && !ChildIsTargetSpecies)
-		return false;
+		return FEMALE_ONLY_MOM_NEEDS_LEVELUP_CHILD;
 
 	//make sure father wasn't already in the family tree (incest is redundant and leads to recursion)
 	//also avoid going to egg groups we already went to. this should leteract fine with combo mode because every call to SearchRetryLoop uses a different parent list
-	let Redundant = false;
 	let CurrentLearner = BottomChild;
 	let OldCommonEggGroup = "";
 	/*
@@ -655,15 +690,15 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 		sOldCommonEggGroup = StringPairMatch(pCurrentLearner["LearnMonInfo"]->EggGroup1, pCurrentLearner["LearnMonInfo"]->EggGroup2, pParentList[pCurrentLearner["LearnID"]]["LearnMonInfo"]->EggGroup1, pParentList[pCurrentLearner["LearnID"]]["LearnMonInfo"]->EggGroup2);
 	}
 	*/
-	while (CurrentLearner && !Redundant)
+	while (CurrentLearner)
 	{
 		//console.log(" " + pCurrentLearner["LearnMonInfo"]->sSpecies;
 		if (CurrentLearner["LearnMonInfo"]["SpeciesName"] === Father["LearnMonInfo"]["SpeciesName"])
-			Redundant = true;
+			return FATHER_ALREADY_IN_CHAIN;
 		if (OldCommonEggGroup === NewCommonEggGroup)
 		{
 			//console.log(" (" + sNewCommonEggGroup + ")" + " " + tFather["LearnMonInfo"]->sSpecies + " REDUNDANT EGG GROUPS";
-			Redundant = true;
+			return EGG_GROUP_ALREADY_IN_CHAIN;
 		}
 		if (CurrentLearner && ParentList[CurrentLearner["LearnID"]])
 		{
@@ -676,13 +711,8 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 		}
 		CurrentLearner = ParentList[CurrentLearner["LearnID"]];
 	}
-	if (Redundant)
-	{
-		//console.log("\n";
-		return false;
-	}
 	//console.log(" (" + sNewCommonEggGroup + ")" + " " + tFather["LearnMonInfo"]->sSpecies + "\n";
-	return true;
+	return MATCHUP_SUCCESS;
 }
 
 function MakeUniversalTMLearn(WantedMoveName, i, Game)
@@ -1129,7 +1159,7 @@ function ProcessMove(ReadFile)
 									else if (BreedSection)
 										LearnMethod = LEARNBY_EGG;
 								}
-								if (LearnLevel.indexOf("−") === -1)//big dash. do not replace with hyphen.
+								if (LearnLevel.indexOf("−") === -1 && LearnLevel.indexOf("–") === -1)//big dashes. do not replace with hyphen. yes these are different.
 								{
 									let IterData = IterateGameCombo(0, GamesToColumns[iCol]);
 									let GameInCombo = IterData[0];
@@ -1329,7 +1359,7 @@ function FindTMsOfInterest()
 			if (!FoundTMLearn)
 			{
 				Learner["TMOfInterest"] = true;///*
-				console.log(Learner["LearnMonInfo"]["SpeciesName"] + " learning " + Learner["MoveName"] + MethodStr(Learner));
+				console.log(Learner["LearnMonInfo"]["SpeciesName"] + " learning " + Learner["MoveName"] + MethodStr(Learner, ", "));
 				if (Learner["FormName"])
 					console.log(" (" + Learner["FormName"] + ")");
 				console.log(" was a TM of Interest\n");//*/
@@ -1347,7 +1377,7 @@ function PreSearch()
 		let TargetLearner = g_MoveLearners[iTargetLearner];
 		//it may be pointless to find this move, but we trust the user to know what they're doing
 		//(for instance, a move might be levelup, but also a tm, and the level threshold is far away, so it would be of Interest to look at it anyway)
-		if (TargetLearner["LearnMonInfo"]["SpeciesName"] === g_TargetSpecies && TargetLearner["LearnMethod"] === LEARNBY_LEVELUP && TargetLearner["LearnLevel"] <= g_MaxLevel)
+		if (TargetLearner["LearnMonInfo"]["SpeciesName"] === g_TargetSpecies && TargetLearner["LearnMethod"] === LEARNBY_LEVELUP && +TargetLearner["LearnLevel"] <= +g_MaxLevel)
 			console.log("Note: " + TargetLearner["MoveName"] + " is a levelup move below the level cap.");
 	}
 
@@ -1579,7 +1609,34 @@ function LearnerCannotBeTopLevel(Learner)
 	return false;
 }
 
-let g_MainLoopDebug = false;
+function LogChains(Chains)
+{
+	for (let iChain = 0; iChain < Chains.length; iChain++)
+	{
+		console.log(Chains[iChain]["Lineage"][0]["MoveName"]);
+		let Lineage = Chains[iChain]["Lineage"];
+		for (let iLearner = 0; iLearner < Lineage.length; iLearner++)
+		{
+			console.log(" " + Lineage[iLearner]["LearnMonInfo"]["SpeciesName"]);
+		}
+	}
+	console.log(")");
+}
+
+function LogChainAdd(NewChain, Chains, Depth, Location)
+{
+	let Learner = NewChain["Lineage"][0];
+	console.log(Depth + " Adding chain for " + Learner["MoveName"] + " to list (" + Learner["LearnMonInfo"]["SpeciesName"] + ", " + MethodStr(Learner, ", ") + ", location " + Location + ") (");
+	LogChains(Chains);
+}
+
+function LogChainClear(Chains, Depth, Location)
+{
+	console.log(Depth + " Clearing chains (location " + Location + ") (");
+	LogChains(Chains);
+}
+
+let g_MainLoopDebug = true;
 
 function TestFather(Chains, ClosedList, ParentList, Depth, Father, Learner, BottomChild)
 {
@@ -1624,14 +1681,10 @@ function TestFather(Chains, ClosedList, ParentList, Depth, Father, Learner, Bott
 						Result = RetVal[1];
 						if (Result === CR_SUCCESS)
 						{
-							/*
 							for (let iNewChain = 0; iNewChain < NewChains.length; iNewChain++)
 							{
-								console.log(std::to_string(Depth) + " Adding chain for " + NewChains[iNewChain]["Lineage"][0]["MoveName"] + " to list (location A) (";
-								for (let i = 0; i < Chains.length; i++) { console.log(Chains[i]["Lineage"][0]["MoveName"] + ", "; }
-								console.log(")\n";
+								LogChainAdd(NewChains[iNewChain], Chains, Depth, "A");
 							}
-							*/
 							for (let iChain = 0; iChain < Chains.length; iChain++)
 							{
 								for (let iNewChain = 0; iNewChain < NewChains.length; iNewChain++)
@@ -1642,7 +1695,7 @@ function TestFather(Chains, ClosedList, ParentList, Depth, Father, Learner, Bott
 									}
 								}
 							}
-							Chains = Chains.append(NewChains);
+							Chains = Chains.concat(NewChains);
 							if (g_Combo && Chains.length > g_Combo)
 								debugger;
 						}
@@ -1670,7 +1723,7 @@ function TestFather(Chains, ClosedList, ParentList, Depth, Father, Learner, Bott
 		else
 		{
 			if (g_MainLoopDebug)
-				console.log(Father["LearnMonInfo"]["SpeciesName"] + " learning " + Learner["MoveName"] + " to pass to " + BottomChild["LearnMonInfo"]["SpeciesName"] + " was bad because it can't learn " + g_ComboData["ComboMoves"][Satisfy] + " (" + Depth + ")");
+				console.log(Depth + " " + Father["LearnMonInfo"]["SpeciesName"] + " learning " + Learner["MoveName"] + " to pass to " + BottomChild["LearnMonInfo"]["SpeciesName"] + " was bad because it can't learn " + g_ComboData["ComboMoves"][Satisfy]);
 			BadLearn = true;
 		}
 		//Caution: if FatherSatisfiesMoves returns false, vLearns is not necessarily complete data
@@ -1704,8 +1757,8 @@ function TestFather(Chains, ClosedList, ParentList, Depth, Father, Learner, Bott
 			if (CurrentLearner["UserRejected"])
 			{
 				if (g_MainLoopDebug)
-					console.log("Giving up on " + Learner["LearnMonInfo"]["SpeciesName"] + " learning " + Learner["MoveName"] + " to pass to " + BottomChild["LearnMonInfo"]["SpeciesName"] + " because " + CurrentLearner["LearnMonInfo"]["SpeciesName"] + " ID "
-						+ CurrentLearner["LearnID"] + " was rejected (" + Depth + ")");
+					console.log(Depth + " Giving up on " + Learner["LearnMonInfo"]["SpeciesName"] + " learning " + Learner["MoveName"] + " to pass to " + BottomChild["LearnMonInfo"]["SpeciesName"] + " because " + CurrentLearner["LearnMonInfo"]["SpeciesName"] + " ID "
+						+ CurrentLearner["LearnID"] + " was rejected");
 				return [Chains, CR_FAIL];
 			}
 			CurrentLearner = ParentList[CurrentLearner["LearnID"]];
@@ -1718,11 +1771,7 @@ function TestFather(Chains, ClosedList, ParentList, Depth, Father, Learner, Bott
 			NewChain["Lineage"].push(Record);
 			Record = ParentList[Record["LearnID"]];
 		}
-		/*
-		console.log(std::to_string(Depth) + " Adding chain for " + NewChain["Lineage"][0]["MoveName"] + " to list (location B) (";
-		for (let i = 0; i < Chains.length; i++) { console.log(Chains[i]["Lineage"][0]["MoveName"] + ", "; }
-		console.log(")\n";
-		*/
+		LogChainAdd(NewChain, Chains, Depth, "B");
 		for (let iChain = 0; iChain < Chains.length; iChain++)
 			if (Chains[iChain]["Lineage"][0]["MoveName"] === NewChain["Lineage"][0]["MoveName"])
 				debugger;
@@ -1732,6 +1781,37 @@ function TestFather(Chains, ClosedList, ParentList, Depth, Father, Learner, Bott
 		return [Chains, CR_SUCCESS];
 	}
 	return [Chains, CR_REJECTED];//signals to continue in loop
+}
+
+function LogMatchupResult(Depth, Result, Father, Learner, UsingAltMother)
+{
+	console.log(Depth + " " + Father["LearnMonInfo"]["SpeciesName"] + " (" + MethodStr(Father, ", ") + ") CANNOT teach "
+		+ Learner["LearnMonInfo"]["SpeciesName"] + " " + Learner["MoveName"] + ": "
+		+ MatchupResultStrings[Result] + (UsingAltMother ? " (alt mother)" : ""));
+}
+
+function TryAlternateMothers(Learner, ClosedList, ParentList, Father, BottomChild, Depth)
+{
+	for (let iAlt = 0; iAlt < AltParents.length; iAlt++)
+	{
+		if (Learner["LearnMonInfo"]["SpeciesName"] === AltParents[iAlt])
+		{
+			for (let AltMother = IterateLearnersBySpecies(-1, AltParents[iAlt + 1], Learner["MoveName"]); AltMother; AltMother = IterateLearnersBySpecies(AltMother["LearnID"], AltParents[iAlt + 1], Learner["MoveName"]))
+			{
+				let Result = ValidateMatchup(ClosedList, ParentList, AltMother, Learner, Father, BottomChild, false);
+				if (Result === MATCHUP_SUCCESS)
+					return true;
+				else if (g_MainLoopDebug && !MatchupResultIsBoring(Result))
+					LogMatchupResult(Depth, Result, Father, Learner, true);
+			}
+		}
+	}
+	return false;
+}
+
+function MatchupResultIsBoring(Result)
+{
+	return Result === DIFFERENT_MOVE || Result === NO_EGG_GROUP_MATCH;
 }
 
 function FindFatherForMove(Chains, ClosedList, ParentList, Depth, Learner, BottomChild)
@@ -1744,17 +1824,26 @@ function FindFatherForMove(Chains, ClosedList, ParentList, Depth, Learner, Botto
 		}
 	}
 	Depth++;
-	if (g_MainLoopDebug) console.log("Finding father to teach " + Learner["LearnMonInfo"]["SpeciesName"] + " " + Learner["MoveName"] + " to pass to " + BottomChild["LearnMonInfo"]["SpeciesName"] + " (" + Depth + ")");
+	if (Depth === 1)
+	{
+		if (g_MainLoopDebug) console.log(Depth + " Finding father to teach " + BottomChild["LearnMonInfo"]["SpeciesName"] + " " + BottomChild["MoveName"]);
+	}
+	else
+	{
+		if (g_MainLoopDebug) console.log(Depth + " Finding father to teach " + Learner["LearnMonInfo"]["SpeciesName"] + " " + Learner["MoveName"] + " (" + MethodStr(Learner, ", ") + ") to pass to " + BottomChild["LearnMonInfo"]["SpeciesName"]);
+	}
 	if (Depth >= g_MaxDepth)
 	{
 		//didn't actually explore node
 		ClosedList[Learner["LearnID"]] = false;
-		if (g_MainLoopDebug) console.log("Giving up on " + Learner["LearnMonInfo"]["SpeciesName"] + " learning " + Learner["MoveName"] + " to pass to " + BottomChild["LearnMonInfo"]["SpeciesName"] + " because chain is too long (" + Depth + ")");
+		if (g_MainLoopDebug) console.log(Depth + " Giving up on " + Learner["LearnMonInfo"]["SpeciesName"] + " learning " + Learner["MoveName"] + " to pass to " + BottomChild["LearnMonInfo"]["SpeciesName"] + " because chain is too long");
 		return [Chains, CR_FAIL];
 	}
 	for (let i = 0; i < g_MoveLearners.length; i++)
 	{
 		let Father = g_MoveLearners[i];
+		//if (Father["MoveName"] === "Shadow Ball" && BottomChild["MoveName"] === "Shadow Ball" && Father["LearnMonInfo"]["SpeciesName"] === "Gastly" && Father["LearnMethod"] === LEARNBY_LEVELUP)
+			//debugger;
 		//some male-only pokemon have a female-only counterpart that can create an egg containing the male.
 		//this can matter because something might differ between them about how/if they learn a move
 		//those same female pokemon can also come from an egg made by the male breeding with a ditto starting in gen 5
@@ -1762,26 +1851,20 @@ function FindFatherForMove(Chains, ClosedList, ParentList, Depth, Learner, Botto
 		let GoodAltSpecies = false;
 		if (Learner["LearnMonInfo"]["GenderRatio"] === GR_MALE_ONLY)
 		{
-			if (Learner["LearnMonInfo"]["SpeciesName"] === "Volbeat")
-			{
-				for (let AltMother = IterateLearnersBySpecies(-1, "Illumise", Learner["MoveName"]); AltMother; AltMother = IterateLearnersBySpecies(AltMother["LearnID"], "Illumise", Learner["MoveName"]))
-					if (ValidateMatchup(ClosedList, ParentList, AltMother, Learner, Father, BottomChild, false))
-						GoodAltSpecies = true;
-			}
-			else if (Learner["LearnMonInfo"]["SpeciesName"] === "Nidoran M")
-			{
-				for (let AltMother = IterateLearnersBySpecies(-1, "Nidoran F", Learner["MoveName"]); AltMother; AltMother = IterateLearnersBySpecies(AltMother["LearnID"], "Nidoran F", Learner["MoveName"]))
-					if (ValidateMatchup(ClosedList, ParentList, AltMother, Learner, Father, BottomChild, false))
-						GoodAltSpecies = true;
-			}
+			GoodAltSpecies = TryAlternateMothers(Learner, ClosedList, ParentList, Father, BottomChild, Depth);
 		}
 
 		if (!GoodAltSpecies)
 		{
-			if (!ValidateMatchup(ClosedList, ParentList, Learner, Learner, Father, BottomChild, false))
+			let Result = ValidateMatchup(ClosedList, ParentList, Learner, Learner, Father, BottomChild, false);
+			if (Result !== MATCHUP_SUCCESS)
+			{
+				if (g_MainLoopDebug && !MatchupResultIsBoring(Result))
+					LogMatchupResult(Depth, Result, Father, Learner, false);
 				continue;
+			}
 
-			if (g_MainLoopDebug) console.log(Father["LearnMonInfo"]["SpeciesName"] + " can teach " + Learner["LearnMonInfo"]["SpeciesName"] + " " + Learner["MoveName"] + " to pass to " + BottomChild["LearnMonInfo"]["SpeciesName"] + " (" + Depth + ")");
+			if (g_MainLoopDebug) console.log(Depth + " " + Father["LearnMonInfo"]["SpeciesName"] + " (" + MethodStr(Father, ", ") + ") can teach " + Learner["LearnMonInfo"]["SpeciesName"] + " " + Learner["MoveName"] + " to pass to " + BottomChild["LearnMonInfo"]["SpeciesName"]);
 		}
 
 		let RetVal = TestFather(Chains, ClosedList, ParentList, Depth, Father, Learner, BottomChild);
@@ -1791,12 +1874,11 @@ function FindFatherForMove(Chains, ClosedList, ParentList, Depth, Learner, Botto
 		{
 			//if we ever find a reason not call clear here, write it here
 			//if we don't clear, we sometimes have random duplicate chains that make no sense
-			/*
-			console.log(std::to_string(Depth) + " Clearing chains (location A) (";
-			for (let i = 0; i < Chains.length; i++) { console.log(Chains[i]["Lineage"][0]["MoveName"] + ", "; }
-			console.log(")\n";
-			*/
+			LogChainClear(Chains, Depth, "A");
 			Chains = [];
+			//same deal as above. clear this or else there are weird duplicate chains
+			if (g_MainLoopDebug) console.log("Reset satisfy state");
+			g_ComboData["SatisfiedStatus"] = [false, false, false, false];
 			continue;
 		}
 		//return now to ensure SearchRetryLoop returns the correct result
@@ -1804,7 +1886,7 @@ function FindFatherForMove(Chains, ClosedList, ParentList, Depth, Learner, Botto
 			return [Chains, CR_SUCCESS];
 	}
 	//if there are no fathers left to look at, leave
-	if (g_MainLoopDebug) console.log("No father to teach " + Learner["LearnMonInfo"]["SpeciesName"] + " " + Learner["MoveName"] + " to pass to " + BottomChild["LearnMonInfo"]["SpeciesName"] + " (" + Depth + ")");
+	if (g_MainLoopDebug) console.log(Depth + " No father to teach " + Learner["LearnMonInfo"]["SpeciesName"] + " " + Learner["MoveName"] + " (" + MethodStr(Learner, ", ") + ") to pass to " + BottomChild["LearnMonInfo"]["SpeciesName"]);
 	return [Chains, CR_FAIL];
 }
 
@@ -1830,8 +1912,12 @@ function FindChain(Chains, Learner, BottomChild)
 
 function SuggestChainCombo(Chains)
 {
+	console.log(Chains.length + " chains");
+	if (Chains.length !== g_Combo)
+		debugger;
 	for (let iChain = 0; iChain < Chains.length; iChain++)
 	{
+		console.log("Printing chain for " + Chains[iChain]["Lineage"][0]["MoveName"]);
 		SuggestChain(Chains[iChain]);
 	}
 }
@@ -1845,7 +1931,7 @@ function SearchRetryLoop(Chains, Learner, Nested)
 			debugger;
 		}
 	}
-	if (g_MainLoopDebug) console.log("_Starting search to teach " + Learner["LearnMonInfo"]["SpeciesName"] + " " + Learner["MoveName"]);
+	if (g_MainLoopDebug) console.log("Starting search to teach " + Learner["LearnMonInfo"]["SpeciesName"] + " " + Learner["MoveName"]);
 	if (g_MovesBeingExplored.includes(Learner["MoveName"]))
 		debugger;
 	g_MovesBeingExplored.push(Learner["MoveName"]);
@@ -1856,13 +1942,9 @@ function SearchRetryLoop(Chains, Learner, Nested)
 		if (Learner["LearnMethod"] === LEARNBY_SKETCH)
 		{
 			//this learner is necessarily top-level. exit fast.
-			let NewChain = [];
+			let NewChain = BreedChain([], false);
 			NewChain["Lineage"].push(Learner);
-			/*
-			console.log("Adding chain for " + NewChain["Lineage"][0]["MoveName"] + " to list (location C) (";
-			for (let i = 0; i < Chains.length; i++) { console.log(Chains[i]["Lineage"][0]["MoveName"] + ", "; }
-			console.log(")\n";
-			*/
+			LogChainAdd(NewChain, Chains, "N/A", "C");
 			for (let iChain = 0; iChain < Chains.length; iChain++)
 				if (Chains[iChain]["Lineage"][0]["MoveName"] === NewChain["Lineage"][0]["MoveName"])
 					debugger;
@@ -1918,6 +2000,17 @@ function SearchStart()
 		let Move = g_MoveLearners[i];
 		if (Move["LearnMonInfo"]["SpeciesName"] === g_TargetSpecies)
 		{
+			let AlreadyGotMove = false;
+			for (let iChain = 0; iChain < Chains.length; iChain++)
+			{
+				if (Chains[iChain]["Lineage"][0]["MoveName"] === Move["MoveName"])
+				{
+					AlreadyGotMove = true;
+					break;
+				}
+			}
+			if (AlreadyGotMove)
+				continue;
 			let RetVal = SearchRetryLoop(Chains, Move, false);
 			Chains = RetVal[0];
 		}
@@ -2045,6 +2138,7 @@ function ParseGameAnnotations()
 						FoundGame = Game;
 						//put this call here instead of after the loop. if a string is "DPPt" we'd rather make nodes for both DP and Pt than awkwardly picking one or the other
 						AddMoveToMainListInt(NewLearner, iGame);
+						break;
 					}
 				}
 				if (!FoundGame)
@@ -2053,13 +2147,12 @@ function ParseGameAnnotations()
 			Learner["EraseMe"] = true;
 		}
 	}
-	for (let iLearn = g_MovesBeingExplored.length - 1; iLearn >= 0; iLearn--)
+	for (let iLearn = g_MoveLearners.length - 1; iLearn >= 0; iLearn--)
 	{
 		let Learner = g_MoveLearners[iLearn];
 		if (Learner["EraseMe"] || !Learner["LearnsInGame"]["GameIsAllowed"])
 		{
-			//console.log("B " + g_MovesBeingExplored);
-			g_MovesBeingExplored.splice(iLearn, 1);
+			g_MoveLearners.splice(iLearn, 1);
 		}
 	}
 }

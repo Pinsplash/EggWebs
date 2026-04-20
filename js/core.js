@@ -69,6 +69,28 @@ const LEARNBY_TUTOR = 7;
 const LEARNBY_SKETCH = 8;
 const LAST_LEARN_METHOD = 9;
 
+//matchup results
+const MATCHUP_SUCCESS = 0;
+const BAD_CHILD_METHOD = 1;
+const CHILD_BY_TM_NEEDS_BASE_FORM = 2;
+const DIFFERENT_MOVE = 3;
+const BREEDING_SELF = 4;
+const FATHER_ON_CLOSED_LIST = 5;
+const MOTHER_EXCLUDED_METHOD = 6;
+const MALE_FEMALE_ONLY_INCOMPATIBLE = 7;
+const NO_EGG_GROUP_MATCH = 8;
+const NO_NEW_EGG_GROUP = 9;
+const FATHER_LEVEL_ABOVE_MAX = 10;
+const MOTHER_LEVEL_ABOVE_MAX = 11;
+const FATHER_REJECTED = 12;
+const FATHER_FEMALE_ONLY = 13;
+const MOTHER_MALE_ONLY = 14;
+const NONBINARY_POINTLESS = 15;
+const MOTHER_LEVEL_BELOW_MAX = 16;
+const FEMALE_ONLY_MOM_NEEDS_LEVELUP_CHILD = 17;
+const FATHER_ALREADY_IN_CHAIN = 18;
+const EGG_GROUP_ALREADY_IN_CHAIN = 19;
+
 //group crawl results
 const CR_SUCCESS = 0;
 const CR_FAIL = 1;
@@ -88,3 +110,4 @@ let g_MaxLevel = 100;
 let g_NoMoves = false;
 let g_Combo = 0;
 let g_MaxDepth = 20;
+let g_NextLearnerID = 0;
