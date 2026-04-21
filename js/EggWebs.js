@@ -403,7 +403,6 @@ function AddMoveToMainListGame(NewLearner, Game)
 	}
 
 	//console.log("ID: " + g_NextLearnerID);
-	if (g_NextLearnerID > 5000) debugger;
 	NewLearner["LearnID"] = g_NextLearnerID;
 	g_NextLearnerID++;
 	NewLearner["LearnsInGame"] = Game;
@@ -1373,11 +1372,11 @@ function PreSearch()
 	//print out our data so far
 	if (!g_NoMoves)
 	{
-		//for (let iLearner = 0; iLearner < g_MoveLearners.length; iLearner++) console.log(g_MoveLearners[iLearner]["MoveName"] + ": " + InfoStr(g_MoveLearners[iLearner]));
+		for (let iLearner = 0; iLearner < g_MoveLearners.length; iLearner++) console.log(g_MoveLearners[iLearner]["MoveName"] + ": " + InfoStr(g_MoveLearners[iLearner]));
 	}
 	else
 	{
-		//for (let iLearner = 0; iLearner < g_MoveLearners.length; iLearner++) console.log(g_MoveLearners[iLearner]["LearnMonInfo"]["SpeciesName"]);
+		for (let iLearner = 0; iLearner < g_MoveLearners.length; iLearner++) console.log(g_MoveLearners[iLearner]["LearnMonInfo"]["SpeciesName"]);
 	}
 
 	//in the illegal paras scenario, paras has to be alive in gen 3-4 to learn bullet seed (tm), but paras learning leech seed (egg only) requires it to hatch in gen 5
@@ -1391,16 +1390,15 @@ function PreSearch()
 			if (Learner["LearnMonInfo"]["SpeciesName"] === g_TargetSpecies && g_MovesToLearn[iMoveToLearn] === Learner["MoveName"])
 			{
 				console.log("Found match for " + g_MovesToLearn[iMoveToLearn] + " in " + Learner["LearnsInGame"]["UIName"]);
-				if (HatchableGens[Learner["LearnsInGame"]["GenerationNum"]])
-					HatchableGens[Learner["LearnsInGame"]["GenerationNum"]] += 1;
+				if (HatchableGens[Learner["LearnsInGame"]["GameNum"]])
+					HatchableGens[Learner["LearnsInGame"]["GameNum"]] += 1;
 				else
-					HatchableGens[Learner["LearnsInGame"]["GenerationNum"]] = 1;
-				break;
+					HatchableGens[Learner["LearnsInGame"]["GameNum"]] = 1;
 			}
 		}
 	}
 
-	if (!HatchableGens.includes(g_MovesToLearn.length) && g_MovesToLearn.length <= 4)
+	if (!HatchableGens.some((x) => x >= g_MovesToLearn.length) && g_MovesToLearn.length <= 4)
 	{
 		if (g_Combo)
 		{
@@ -1570,10 +1568,32 @@ function SuggestChain(Chain)
 		PokemonImage.src = "images/pokemon/" + Learner["LearnMonInfo"]["SpeciesName"] + ".png";
 		PokemonBox.appendChild(PokemonImage);
 
+		if (Learner["LearnMonInfo"]["GenderRatio"] !== GR_TYPICAL)
+		{
+			let NextLearner = Chain["Lineage"][iLearner - 1];
+			if (NextLearner && Learner["LearnMonInfo"]["GenderRatio"] === NextLearner["LearnMonInfo"]["GenderRatio"])
+			{
+				let DittoImage = document.createElement("img");
+				DittoImage.src = "images/pokemon/Ditto.png";
+				DittoImage.className = "dittoicon";
+				DittoImage.style.left = "84px";
+				DittoImage.style.top = "84px";
+				PokemonBox.appendChild(DittoImage);
+			}
+		}
+
 		let InfoText = document.createElement("p");
 		InfoText.innerText = InfoStr(Learner);
 		PokemonBox.appendChild(InfoText);
 		ChainBox.appendChild(PokemonBox);
+
+		if (iLearner !== 0)
+		{
+			let Arrow = document.createElement("p");
+			Arrow.innerHTML = "→";
+			Arrow.className = "chainarrow";
+			ChainBox.appendChild(Arrow);
+		}
 	}
 	document.getElementById("mainview").appendChild(ChainBox);
 }
@@ -1950,6 +1970,7 @@ function SearchRetryLoop(Chains, Learner, Nested, MacroDepth)
 	{
 		if (!Nested)
 		{
+			document.getElementById("mainview").innerHTML = "";
 			if (g_Combo)
 			{
 				SuggestChainCombo(Chains);
@@ -1974,6 +1995,10 @@ function SearchRetryLoop(Chains, Learner, Nested, MacroDepth)
 
 function SearchStart()
 {
+	let Para = document.createElement("p");
+	Para.innerText = "Nothing";
+	document.getElementById("mainview").appendChild(Para);
+
 	let Chains = [];
 	console.log("Learner count: " + g_MoveLearners.length + "\n");
 	for (let i = 0; i < g_MoveLearners.length; i++)
