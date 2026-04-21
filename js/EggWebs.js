@@ -127,9 +127,9 @@ function ComboAddMove(MoveName, Satisfied)
 	g_ComboData["SatisfiedStatus"][g_ComboData["ComboMoves"].length - 1] = Satisfied;
 }
 
-function ComboSetSatisfied(WantedMove, Satisfied)
+function ComboSetSatisfied(WantedMove, Satisfied, Location)
 {
-	console.log(WantedMove + (Satisfied ? " Satisfied" : " Not satisfied"));
+	console.log(WantedMove + (Satisfied ? " Satisfied" : " Not satisfied") + " (location " + Location + ")");
 	for (let iMove = 0; iMove < g_Combo; iMove++)
 	{
 		if (g_ComboData["ComboMoves"][iMove] === WantedMove)
@@ -1616,13 +1616,13 @@ function LogChainAdd(NewChain, Chains, Depth, MacroDepth, Location)
 	console.log(Depth + " " + MacroDepth + " Adding chain for " + Learner["MoveName"] + " to list (" + Learner["LearnMonInfo"]["SpeciesName"] + ", " + MethodStr(Learner, ", ") + ", location " + Location + ") (");
 	LogChains(Chains);
 }
-
+/*
 function LogChainClear(Chains, Depth, MacroDepth, Location)
 {
 	console.log(Depth + " " + MacroDepth + " Clearing chains (location " + Location + ") (");
 	LogChains(Chains);
 }
-
+*/
 let g_MainLoopDebug = true;
 
 function TestFather(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, Learner, BottomChild)
@@ -1665,7 +1665,7 @@ function TestFather(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, L
 					{
 						if (!LearnerCannotBeTopLevel(Father))
 						{
-							ComboSetSatisfied(BottomChild["MoveName"], true);
+							ComboSetSatisfied(BottomChild["MoveName"], true, "A");
 							let RetVal = SearchRetryLoop(NewChains, pMove, true, MacroDepth);
 							NewChains = RetVal[0];
 							Result = RetVal[1];
@@ -1690,7 +1690,7 @@ function TestFather(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, L
 							}
 							else
 							{
-								ComboSetSatisfied(BottomChild["MoveName"], false);
+								ComboSetSatisfied(BottomChild["MoveName"], false, "B");
 								BadForCombo = true;
 							}
 						}
@@ -1711,7 +1711,7 @@ function TestFather(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, L
 		//Caution: if FatherSatisfiesMoves returns false, vLearns is not necessarily complete data
 		//it doesn't seem to make sense to check for BadForCombo here. we want to go to the code below around the other place we're checking this variable.
 		if (BadLearn /*|| BadForCombo*/)
-			return [Chains, CR_REJECTED];//signals to continue in loop
+			return [Chains, CR_FAIL];
 	}
 
 	ClosedList[Father["LearnID"]] = true;
@@ -1763,7 +1763,7 @@ function TestFather(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, L
 			debugger;
 		return [Chains, CR_SUCCESS];
 	}
-	return [Chains, CR_REJECTED];//signals to continue in loop
+	return [Chains, CR_FAIL];
 }
 
 function LogMatchupResult(Depth, MacroDepth, Result, Father, Learner, UsingAltMother)
@@ -1854,7 +1854,9 @@ function FindFatherForMove(Chains, ClosedList, ParentList, Depth, MacroDepth, Le
 		let RetVal = TestFather(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, Learner, BottomChild);
 		Chains = RetVal[0];
 		let Result = RetVal[1];
-		if (Result === CR_REJECTED)
+		//this code was initially concerning rejection by user input from when the program worked on a CLI. do we need it anymore?
+		/*
+		if (Result === CR_FAIL)
 		{
 			for (let iChain = 0; iChain < Chains.length; iChain++)
 			{
@@ -1862,8 +1864,7 @@ function FindFatherForMove(Chains, ClosedList, ParentList, Depth, MacroDepth, Le
 				{
 					if (g_ComboData["ComboMoves"][iMove] === Chains[iChain]["Lineage"][0]["MoveName"])
 					{
-						console.log("Set " + g_ComboData["ComboMoves"][iMove] + " to not satisfied");
-						g_ComboData["SatisfiedStatus"][iMove] = false;
+						ComboSetSatisfied(g_ComboData["ComboMoves"][iMove], false, "C");
 						break;
 					}
 				}
@@ -1872,6 +1873,7 @@ function FindFatherForMove(Chains, ClosedList, ParentList, Depth, MacroDepth, Le
 			Chains = [];
 			continue;
 		}
+		*/
 		//return now to ensure SearchRetryLoop returns the correct result
 		if (Result === CR_SUCCESS)
 			return [Chains, CR_SUCCESS];
@@ -1933,6 +1935,7 @@ function SearchRetryLoop(Chains, Learner, Nested, MacroDepth)
 	//putting them directly on another pokemon is fine though
 	if (Nested && !LearnerCannotBeTopLevel(Learner))
 	{
+		if (g_MainLoopDebug) console.log(Learner["LearnMonInfo"]["SpeciesName"] + " can learn " + Learner["MoveName"] + " directly");
 		let NewChain = BreedChain([Learner]);
 		Chains.push(NewChain);
 		Result = CR_SUCCESS;

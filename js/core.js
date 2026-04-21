@@ -94,7 +94,7 @@ const EGG_GROUP_ALREADY_IN_CHAIN = 19;
 //group crawl results
 const CR_SUCCESS = 0;
 const CR_FAIL = 1;
-const CR_REJECTED = 2;
+//const CR_REJECTED = 2;
 
 let g_TargetSpecies = "";
 let g_TMLearnBlacklist = [];
