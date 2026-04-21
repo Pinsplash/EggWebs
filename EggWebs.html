@@ -3,6 +3,9 @@
 <head>
     <title>EggWebs</title>
     <style>
+        * {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
         .settingcontainer {
             background-color:cornflowerblue;
             margin-top:7px;
@@ -25,6 +28,7 @@
             float:left;
             width:75%;
             height:100%;
+            text-align:center;
         }
         .pokemonbox {
             display:inline-block;
@@ -59,6 +63,9 @@
         .optionlisting:hover {
             background-color:lightgray;
         }
+        .chainbox {
+            margin:30px;
+        }
     </style>
 </head>
 <body>
@@ -77,7 +84,7 @@
         <button type="button" onclick="SelectOnlyTargetGame()" id="selecttargetbutton">Only Target Game</button>
     </div>
     <div class="settingcontainer">
-        <textarea id="targetspecies" rows="1" cols="50"></textarea><label for="targetspecies">Target Species</label>
+        <textarea id="targetspecies" rows="1" cols="30"></textarea><label for="targetspecies">Target Species</label>
     </div>
     <div class="settingcontainer">
         <input type="checkbox" id="nomoves" onclick="ToggleMoveSettings()"/><label for="nomoves">No Moves (use for things like passing natures)</label>
@@ -117,7 +124,7 @@
     </div>
     <div class="settingcontainer">
         <p class="settingstext">Comma-separated list of Pokemon who are allowed to be the top-level ancestor.</p>
-        <textarea id="requirefathers" rows="1" cols="50"></textarea><label for="requirefathers"></label>
+        <textarea id="requirefathers" rows="1" cols="30"></textarea><label for="requirefathers"></label>
     </div>
     <div class="settingcontainer">
         <input type="number" id="maxdepth" value="20"/><label for="maxdepth">Max Chain Length</label>

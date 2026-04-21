@@ -1535,6 +1535,7 @@ function SuggestChain(Chain)
 		Paragraph.innerText = "Chain for " + Chain["Lineage"][0]["MoveName"] + ": ";
 	else
 		Paragraph.innerText = "Chain: ";
+	Paragraph.style.fontSize = "1.5em";
 	ChainBox.appendChild(Paragraph);
 	for (let iLearner = Chain["Lineage"].length - 1; iLearner >= 0; iLearner--)
 	{
