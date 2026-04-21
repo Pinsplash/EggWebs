@@ -398,11 +398,11 @@ function AddMoveToMainListGame(NewLearner, Game)
 {
 	if (!Game["GameIsAllowed"])
 	{
-		console.log(Game["Acronym"] + " not allowed");
+		//console.log(Game["Acronym"] + " not allowed");
 		return;
 	}
 
-	console.log("ID: " + g_NextLearnerID);
+	//console.log("ID: " + g_NextLearnerID);
 	if (g_NextLearnerID > 5000) debugger;
 	NewLearner["LearnID"] = g_NextLearnerID;
 	g_NextLearnerID++;
@@ -422,25 +422,14 @@ function AddMoveToMainListInt(NewLearner, GameNum)
 {
 	AddMoveToMainListGame(NewLearner, g_Games[GameNum]);
 }
-
+/*
 function GetLearnerFromMainList(WantedID)
 {
 	for (let iLearn = 0; iLearn < g_MoveLearners.length; iLearn++)
 		if (g_MoveLearners[iLearn]["LearnID"] === WantedID)
 			return g_MoveLearners[iLearn];
 }
-
-function IterateLearnersBySpecies(StartID, WantedSpecies, WantedMove)
-{
-	for (let iLearnID = StartID + 1; iLearnID < g_NextLearnerID; iLearnID++)
-	{
-		let Learner = GetLearnerFromMainList(iLearnID);
-		if (!Learner)
-			continue;
-		if (Learner["LearnMonInfo"]["SpeciesName"] === WantedSpecies && Learner["MoveName"] === WantedMove)
-			return Learner;
-	}
-}
+*/
 
 function IterateEvolutions(iEvo, OriginalForm, Game)
 {
@@ -594,6 +583,9 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 	if (Mother["MoveName"] !== BottomChild["MoveName"] || Father["MoveName"] !== BottomChild["MoveName"])
 		return DIFFERENT_MOVE;
 
+	//if (Mother["MoveName"] === "Shadow Ball" && Father["LearnMonInfo"]["SpeciesName"] === "Gastly" && Mother["LearnMonInfo"]["SpeciesName"] === "Mismagius" && BottomChild["LearnMonInfo"]["SpeciesName"] === "Mismagius" && Father["LearnMethod"] === LEARNBY_LEVELUP)
+		//debugger;
+
 	//no reason to breed with own species. this doesn't produce Interesting chains
 	if (Mother["LearnMonInfo"]["SpeciesName"] === Father["LearnMonInfo"]["SpeciesName"] || Child["LearnMonInfo"]["SpeciesName"] === Father["LearnMonInfo"]["SpeciesName"])
 		return BREEDING_SELF;
@@ -654,15 +646,10 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 		if (!SameEvolutionLine)
 			return Father["LearnMonInfo"]["GenderRatio"] === GR_FEMALE_ONLY ? FATHER_FEMALE_ONLY : MOTHER_MALE_ONLY;
 
-	//Gender-unknown Pokémon can only breed with Ditto. this makes them uninteresting for EggWebs aside from Shedinja because the offspring Nincada is gender known.
+	//Gender-unknown Pokémon can only breed with Ditto. this makes them uninteresting for EggWebs (aside from Shedinja MAYBE because the offspring Nincada is gender known)
 	if (Father["LearnMonInfo"]["GenderRatio"] === GR_UNKNOWN)
 	{
-		//BUT, it has to be a move that Nincada can learn
-		//undo: Really? find a situation where shedinja can be used to teach nincada something
-		//if (Father["LearnMonInfo"]["SpeciesName"] === "Shedinja")
-			//return IterateLearnersBySpecies(-1, "Nincada", Father["MoveName"]);
-		//else
-			return NONBINARY_POINTLESS;
+		return NONBINARY_POINTLESS;
 	}
 
 	//if the mom can learn the move by level up below the level cap, there's no point in breeding the move onto it
@@ -712,6 +699,10 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 		CurrentLearner = ParentList[CurrentLearner["LearnID"]];
 	}
 	//console.log(" (" + sNewCommonEggGroup + ")" + " " + tFather["LearnMonInfo"]->sSpecies + "\n";
+
+	if (Mother["MoveName"] === "Shadow Ball" && Father["LearnMonInfo"]["SpeciesName"] === "Gastly" && Mother["LearnMonInfo"]["SpeciesName"] === "Mismagius" && BottomChild["LearnMonInfo"]["SpeciesName"] === "Mismagius" && Father["LearnMethod"] === LEARNBY_LEVELUP)
+		debugger;
+
 	return MATCHUP_SUCCESS;
 }
 
@@ -1224,7 +1215,7 @@ function GetSettings(FileCount)
 	let Species = document.getElementById("targetspecies").value;
 	Species = Species.charAt(0).toUpperCase() + Species.slice(1);
 	g_TargetSpecies = Species;
-	console.log("Target species: '" + g_TargetSpecies + "'");
+	//console.log("Target species: '" + g_TargetSpecies + "'");
 
 	if (!g_NoMoves)
 	{
@@ -1270,8 +1261,7 @@ async function ProcessFiles(Files)
 {
 	for (let iFile = 0; iFile < Files.length; iFile++)
 	{
-		if (Files.length > 1)
-			console.log(iFile + "/" + Files.length + " " + Files[iFile]);
+		//if (Files.length > 1) console.log(iFile + "/" + Files.length + " " + Files[iFile]);
 		const file = Files.item(iFile);
 		const text = await file.text();
 		let OldLearnCount = g_MoveLearners.length;
@@ -1288,8 +1278,7 @@ async function ProcessFiles(Files)
 			//didn't find move name
 			debugger;
 		}
-		if (Files.length > 1)
-			console.log("finished " + Files[iFile] + "\n");
+		//if (Files.length > 1) console.log("finished " + Files[iFile] + "\n");
 	}
 	return 1;
 }
@@ -1384,13 +1373,11 @@ function PreSearch()
 	//print out our data so far
 	if (!g_NoMoves)
 	{
-		for (let iLearner = 0; iLearner < g_MoveLearners.length; iLearner++)
-			console.log(g_MoveLearners[iLearner]["MoveName"] + ": " + InfoStr(g_MoveLearners[iLearner]));
+		//for (let iLearner = 0; iLearner < g_MoveLearners.length; iLearner++) console.log(g_MoveLearners[iLearner]["MoveName"] + ": " + InfoStr(g_MoveLearners[iLearner]));
 	}
 	else
 	{
-		for (let iLearner = 0; iLearner < g_MoveLearners.length; iLearner++)
-			console.log(g_MoveLearners[iLearner]["LearnMonInfo"]["SpeciesName"]);
+		//for (let iLearner = 0; iLearner < g_MoveLearners.length; iLearner++) console.log(g_MoveLearners[iLearner]["LearnMonInfo"]["SpeciesName"]);
 	}
 
 	//in the illegal paras scenario, paras has to be alive in gen 3-4 to learn bullet seed (tm), but paras learning leech seed (egg only) requires it to hatch in gen 5
@@ -1623,22 +1610,22 @@ function LogChains(Chains)
 	console.log(")");
 }
 
-function LogChainAdd(NewChain, Chains, Depth, Location)
+function LogChainAdd(NewChain, Chains, Depth, MacroDepth, Location)
 {
 	let Learner = NewChain["Lineage"][0];
-	console.log(Depth + " Adding chain for " + Learner["MoveName"] + " to list (" + Learner["LearnMonInfo"]["SpeciesName"] + ", " + MethodStr(Learner, ", ") + ", location " + Location + ") (");
+	console.log(Depth + " " + MacroDepth + " Adding chain for " + Learner["MoveName"] + " to list (" + Learner["LearnMonInfo"]["SpeciesName"] + ", " + MethodStr(Learner, ", ") + ", location " + Location + ") (");
 	LogChains(Chains);
 }
 
-function LogChainClear(Chains, Depth, Location)
+function LogChainClear(Chains, Depth, MacroDepth, Location)
 {
-	console.log(Depth + " Clearing chains (location " + Location + ") (");
+	console.log(Depth + " " + MacroDepth + " Clearing chains (location " + Location + ") (");
 	LogChains(Chains);
 }
 
 let g_MainLoopDebug = true;
 
-function TestFather(Chains, ClosedList, ParentList, Depth, Father, Learner, BottomChild)
+function TestFather(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, Learner, BottomChild)
 {
 	for (let iChain = 0; iChain < Chains.length; iChain++)
 	{
@@ -1673,49 +1660,44 @@ function TestFather(Chains, ClosedList, ParentList, Depth, Father, Learner, Bott
 							AlreadyGotMove = true;
 						}
 					}
-					if (!AlreadyGotMove && Father["LearnMethod"] !== LEARNBY_EGG)
+					//this check has to be separate from the one directly below. we don't want to hit the break statements and miss iterating on a move we need to iterate on.
+					if (!AlreadyGotMove)
 					{
-						ComboSetSatisfied(BottomChild["MoveName"], true);
-						let RetVal = SearchRetryLoop(NewChains, pMove, true);
-						NewChains = RetVal[0];
-						Result = RetVal[1];
-						if (Result === CR_SUCCESS)
+						if (!LearnerCannotBeTopLevel(Father))
 						{
-							for (let iNewChain = 0; iNewChain < NewChains.length; iNewChain++)
-							{
-								LogChainAdd(NewChains[iNewChain], Chains, Depth, "A");
-							}
-							for (let iChain = 0; iChain < Chains.length; iChain++)
+							ComboSetSatisfied(BottomChild["MoveName"], true);
+							let RetVal = SearchRetryLoop(NewChains, pMove, true, MacroDepth);
+							NewChains = RetVal[0];
+							Result = RetVal[1];
+							if (Result === CR_SUCCESS)
 							{
 								for (let iNewChain = 0; iNewChain < NewChains.length; iNewChain++)
 								{
-									if (Chains[iChain]["Lineage"][0]["MoveName"] === NewChains[iNewChain]["Lineage"][0]["MoveName"])
+									LogChainAdd(NewChains[iNewChain], Chains, Depth, MacroDepth, "A");
+								}
+								for (let iChain = 0; iChain < Chains.length; iChain++)
+								{
+									for (let iNewChain = 0; iNewChain < NewChains.length; iNewChain++)
 									{
-										debugger;
+										if (Chains[iChain]["Lineage"][0]["MoveName"] === NewChains[iNewChain]["Lineage"][0]["MoveName"]) {
+											debugger;
+										}
 									}
 								}
+								Chains = Chains.concat(NewChains);
+								if (g_Combo && Chains.length > g_Combo)
+									debugger;
 							}
-							Chains = Chains.concat(NewChains);
-							if (g_Combo && Chains.length > g_Combo)
-								debugger;
+							else
+							{
+								ComboSetSatisfied(BottomChild["MoveName"], false);
+								BadForCombo = true;
+							}
 						}
 						else
 						{
-							ComboSetSatisfied(BottomChild["MoveName"], false);
-							BadForCombo = true;
+							break;
 						}
-					}
-					else if (LearnerCannotBeTopLevel(Father))
-					{
-						//need to let this learner go down to FindFatherForMove
-						//in this chain... (Ingrain) Chikorita <- Tangela <- (Flail) <- Lotad <- Totodile
-						//...Lotad will get incorrectly passed over
-						//bBadLearn = true;
-						break;
-					}
-					else if (g_OriginalFatherExcludes[pMove["LearnMethod"]])
-					{
-						break;
 					}
 				}
 			}
@@ -1723,11 +1705,12 @@ function TestFather(Chains, ClosedList, ParentList, Depth, Father, Learner, Bott
 		else
 		{
 			if (g_MainLoopDebug)
-				console.log(Depth + " " + Father["LearnMonInfo"]["SpeciesName"] + " learning " + Learner["MoveName"] + " to pass to " + BottomChild["LearnMonInfo"]["SpeciesName"] + " was bad because it can't learn " + g_ComboData["ComboMoves"][Satisfy]);
+				console.log(Depth + " " + MacroDepth + " " + Father["LearnMonInfo"]["SpeciesName"] + " learning " + Learner["MoveName"] + " to pass to " + BottomChild["LearnMonInfo"]["SpeciesName"] + " was bad because it can't learn " + g_ComboData["ComboMoves"][Satisfy]);
 			BadLearn = true;
 		}
 		//Caution: if FatherSatisfiesMoves returns false, vLearns is not necessarily complete data
-		if (BadLearn || BadForCombo)
+		//it doesn't seem to make sense to check for BadForCombo here. we want to go to the code below around the other place we're checking this variable.
+		if (BadLearn /*|| BadForCombo*/)
 			return [Chains, CR_REJECTED];//signals to continue in loop
 	}
 
@@ -1739,7 +1722,7 @@ function TestFather(Chains, ClosedList, ParentList, Depth, Father, Learner, Bott
 	if (LearnerCannotBeTopLevel(Father) || (g_OriginalFatherExcludes[Father["LearnMethod"]] && (!g_Combo || BadForCombo)))
 	{
 		//okay, now find a father that this one can learn it from
-		let RetVal = FindFatherForMove(Chains, ClosedList, ParentList, Depth, Father, BottomChild);
+		let RetVal = FindFatherForMove(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, BottomChild);
 		Chains = RetVal[0];
 		let Result = RetVal[1];
 		//return now to ensure SearchRetryLoop returns the correct result
@@ -1757,7 +1740,7 @@ function TestFather(Chains, ClosedList, ParentList, Depth, Father, Learner, Bott
 			if (CurrentLearner["UserRejected"])
 			{
 				if (g_MainLoopDebug)
-					console.log(Depth + " Giving up on " + Learner["LearnMonInfo"]["SpeciesName"] + " learning " + Learner["MoveName"] + " to pass to " + BottomChild["LearnMonInfo"]["SpeciesName"] + " because " + CurrentLearner["LearnMonInfo"]["SpeciesName"] + " ID "
+					console.log(Depth + " " + MacroDepth + " Giving up on " + Learner["LearnMonInfo"]["SpeciesName"] + " learning " + Learner["MoveName"] + " to pass to " + BottomChild["LearnMonInfo"]["SpeciesName"] + " because " + CurrentLearner["LearnMonInfo"]["SpeciesName"] + " ID "
 						+ CurrentLearner["LearnID"] + " was rejected");
 				return [Chains, CR_FAIL];
 			}
@@ -1765,13 +1748,13 @@ function TestFather(Chains, ClosedList, ParentList, Depth, Father, Learner, Bott
 		}
 		//record chain for output
 		let Record = BottomChild;
-		let NewChain = BreedChain([], false);
+		let NewChain = BreedChain([]);
 		while (Record)
 		{
 			NewChain["Lineage"].push(Record);
 			Record = ParentList[Record["LearnID"]];
 		}
-		LogChainAdd(NewChain, Chains, Depth, "B");
+		LogChainAdd(NewChain, Chains, Depth, MacroDepth, "B");
 		for (let iChain = 0; iChain < Chains.length; iChain++)
 			if (Chains[iChain]["Lineage"][0]["MoveName"] === NewChain["Lineage"][0]["MoveName"])
 				debugger;
@@ -1783,26 +1766,32 @@ function TestFather(Chains, ClosedList, ParentList, Depth, Father, Learner, Bott
 	return [Chains, CR_REJECTED];//signals to continue in loop
 }
 
-function LogMatchupResult(Depth, Result, Father, Learner, UsingAltMother)
+function LogMatchupResult(Depth, MacroDepth, Result, Father, Learner, UsingAltMother)
 {
-	console.log(Depth + " " + Father["LearnMonInfo"]["SpeciesName"] + " (" + MethodStr(Father, ", ") + ") CANNOT teach "
+	/*
+	console.log(Depth + " " + MacroDepth + " " + Father["LearnMonInfo"]["SpeciesName"] + " (" + MethodStr(Father, ", ") + ") CANNOT teach "
 		+ Learner["LearnMonInfo"]["SpeciesName"] + " " + Learner["MoveName"] + ": "
 		+ MatchupResultStrings[Result] + (UsingAltMother ? " (alt mother)" : ""));
+	 */
 }
 
-function TryAlternateMothers(Learner, ClosedList, ParentList, Father, BottomChild, Depth)
+function TryAlternateMothers(Learner, ClosedList, ParentList, Father, BottomChild, Depth, MacroDepth)
 {
 	for (let iAlt = 0; iAlt < AltParents.length; iAlt++)
 	{
 		if (Learner["LearnMonInfo"]["SpeciesName"] === AltParents[iAlt])
 		{
-			for (let AltMother = IterateLearnersBySpecies(-1, AltParents[iAlt + 1], Learner["MoveName"]); AltMother; AltMother = IterateLearnersBySpecies(AltMother["LearnID"], AltParents[iAlt + 1], Learner["MoveName"]))
+			for (let iLearn = 0; iLearn < g_MoveLearners.length; iLearn++)
 			{
-				let Result = ValidateMatchup(ClosedList, ParentList, AltMother, Learner, Father, BottomChild, false);
-				if (Result === MATCHUP_SUCCESS)
-					return true;
-				else if (g_MainLoopDebug && !MatchupResultIsBoring(Result))
-					LogMatchupResult(Depth, Result, Father, Learner, true);
+				let AltMother = g_MoveLearners[iLearn];
+				if (AltMother["LearnMonInfo"]["SpeciesName"] === AltParents[iAlt + 1] && AltMother["MoveName"] === Learner["MoveName"])
+				{
+					let Result = ValidateMatchup(ClosedList, ParentList, AltMother, Learner, Father, BottomChild, false);
+					if (Result === MATCHUP_SUCCESS)
+						return true;
+					else if (g_MainLoopDebug && !MatchupResultIsBoring(Result))
+						LogMatchupResult(Depth, MacroDepth, Result, Father, Learner, true);
+				}
 			}
 		}
 	}
@@ -1814,7 +1803,7 @@ function MatchupResultIsBoring(Result)
 	return Result === DIFFERENT_MOVE || Result === NO_EGG_GROUP_MATCH;
 }
 
-function FindFatherForMove(Chains, ClosedList, ParentList, Depth, Learner, BottomChild)
+function FindFatherForMove(Chains, ClosedList, ParentList, Depth, MacroDepth, Learner, BottomChild)
 {
 	for (let iChain = 0; iChain < Chains.length; iChain++)
 	{
@@ -1824,26 +1813,21 @@ function FindFatherForMove(Chains, ClosedList, ParentList, Depth, Learner, Botto
 		}
 	}
 	Depth++;
-	if (Depth === 1)
-	{
-		if (g_MainLoopDebug) console.log(Depth + " Finding father to teach " + BottomChild["LearnMonInfo"]["SpeciesName"] + " " + BottomChild["MoveName"]);
-	}
-	else
-	{
-		if (g_MainLoopDebug) console.log(Depth + " Finding father to teach " + Learner["LearnMonInfo"]["SpeciesName"] + " " + Learner["MoveName"] + " (" + MethodStr(Learner, ", ") + ") to pass to " + BottomChild["LearnMonInfo"]["SpeciesName"]);
-	}
+	if (g_MainLoopDebug) console.log(Depth + " " + MacroDepth + " Finding father to teach " + Learner["LearnMonInfo"]["SpeciesName"] + " " + Learner["MoveName"] + " (" + MethodStr(Learner, ", ") + ") to pass to " + BottomChild["LearnMonInfo"]["SpeciesName"]);
 	if (Depth >= g_MaxDepth)
 	{
 		//didn't actually explore node
 		ClosedList[Learner["LearnID"]] = false;
-		if (g_MainLoopDebug) console.log(Depth + " Giving up on " + Learner["LearnMonInfo"]["SpeciesName"] + " learning " + Learner["MoveName"] + " to pass to " + BottomChild["LearnMonInfo"]["SpeciesName"] + " because chain is too long");
+		if (g_MainLoopDebug) console.log(Depth + " " + MacroDepth + " Giving up on " + Learner["LearnMonInfo"]["SpeciesName"] + " learning " + Learner["MoveName"] + " to pass to " + BottomChild["LearnMonInfo"]["SpeciesName"] + " because chain is too long");
 		return [Chains, CR_FAIL];
 	}
 	for (let i = 0; i < g_MoveLearners.length; i++)
 	{
 		let Father = g_MoveLearners[i];
-		//if (Father["MoveName"] === "Shadow Ball" && BottomChild["MoveName"] === "Shadow Ball" && Father["LearnMonInfo"]["SpeciesName"] === "Gastly" && Father["LearnMethod"] === LEARNBY_LEVELUP)
+		//if (Father["MoveName"] === "Thunderbolt" && BottomChild["MoveName"] === "Thunderbolt" && Father["LearnMonInfo"]["SpeciesName"] === "Castform" && BottomChild["LearnMonInfo"]["SpeciesName"] === "Gastly" && Learner["LearnMonInfo"]["SpeciesName"] === "Gastly")
 			//debugger;
+		if (Depth === 2 && MacroDepth === 2 && Learner["LearnMonInfo"]["SpeciesName"] === "Castform" && Learner["MoveName"] === "Thunderbolt" && BottomChild["LearnMonInfo"]["SpeciesName"] === "Gastly" && Father["LearnMonInfo"]["SpeciesName"] === "Raichu")
+			debugger;
 		//some male-only pokemon have a female-only counterpart that can create an egg containing the male.
 		//this can matter because something might differ between them about how/if they learn a move
 		//those same female pokemon can also come from an egg made by the male breeding with a ditto starting in gen 5
@@ -1851,7 +1835,7 @@ function FindFatherForMove(Chains, ClosedList, ParentList, Depth, Learner, Botto
 		let GoodAltSpecies = false;
 		if (Learner["LearnMonInfo"]["GenderRatio"] === GR_MALE_ONLY)
 		{
-			GoodAltSpecies = TryAlternateMothers(Learner, ClosedList, ParentList, Father, BottomChild, Depth);
+			GoodAltSpecies = TryAlternateMothers(Learner, ClosedList, ParentList, Father, BottomChild, Depth, MacroDepth);
 		}
 
 		if (!GoodAltSpecies)
@@ -1860,25 +1844,32 @@ function FindFatherForMove(Chains, ClosedList, ParentList, Depth, Learner, Botto
 			if (Result !== MATCHUP_SUCCESS)
 			{
 				if (g_MainLoopDebug && !MatchupResultIsBoring(Result))
-					LogMatchupResult(Depth, Result, Father, Learner, false);
+					LogMatchupResult(Depth, MacroDepth, Result, Father, Learner, false);
 				continue;
 			}
 
-			if (g_MainLoopDebug) console.log(Depth + " " + Father["LearnMonInfo"]["SpeciesName"] + " (" + MethodStr(Father, ", ") + ") can teach " + Learner["LearnMonInfo"]["SpeciesName"] + " " + Learner["MoveName"] + " to pass to " + BottomChild["LearnMonInfo"]["SpeciesName"]);
+			if (g_MainLoopDebug) console.log(Depth + " " + MacroDepth + " " + Father["LearnMonInfo"]["SpeciesName"] + " (" + MethodStr(Father, ", ") + ") can teach " + Learner["LearnMonInfo"]["SpeciesName"] + " " + Learner["MoveName"] + " to pass to " + BottomChild["LearnMonInfo"]["SpeciesName"]);
 		}
 
-		let RetVal = TestFather(Chains, ClosedList, ParentList, Depth, Father, Learner, BottomChild);
+		let RetVal = TestFather(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, Learner, BottomChild);
 		Chains = RetVal[0];
 		let Result = RetVal[1];
 		if (Result === CR_REJECTED)
 		{
-			//if we ever find a reason not call clear here, write it here
-			//if we don't clear, we sometimes have random duplicate chains that make no sense
-			LogChainClear(Chains, Depth, "A");
+			for (let iChain = 0; iChain < Chains.length; iChain++)
+			{
+				for (let iMove = 0; iMove < g_Combo; iMove++)
+				{
+					if (g_ComboData["ComboMoves"][iMove] === Chains[iChain]["Lineage"][0]["MoveName"])
+					{
+						console.log("Set " + g_ComboData["ComboMoves"][iMove] + " to not satisfied");
+						g_ComboData["SatisfiedStatus"][iMove] = false;
+						break;
+					}
+				}
+			}
+			LogChainClear(Chains, Depth, MacroDepth, "A");
 			Chains = [];
-			//same deal as above. clear this or else there are weird duplicate chains
-			if (g_MainLoopDebug) console.log("Reset satisfy state");
-			g_ComboData["SatisfiedStatus"] = [false, false, false, false];
 			continue;
 		}
 		//return now to ensure SearchRetryLoop returns the correct result
@@ -1886,7 +1877,7 @@ function FindFatherForMove(Chains, ClosedList, ParentList, Depth, Learner, Botto
 			return [Chains, CR_SUCCESS];
 	}
 	//if there are no fathers left to look at, leave
-	if (g_MainLoopDebug) console.log(Depth + " No father to teach " + Learner["LearnMonInfo"]["SpeciesName"] + " " + Learner["MoveName"] + " (" + MethodStr(Learner, ", ") + ") to pass to " + BottomChild["LearnMonInfo"]["SpeciesName"]);
+	if (g_MainLoopDebug) console.log(Depth + " " + MacroDepth + " No father to teach " + Learner["LearnMonInfo"]["SpeciesName"] + " " + Learner["MoveName"] + " (" + MethodStr(Learner, ", ") + ") to pass to " + BottomChild["LearnMonInfo"]["SpeciesName"]);
 	return [Chains, CR_FAIL];
 }
 
@@ -1894,7 +1885,7 @@ function FindFatherForMove(Chains, ClosedList, ParentList, Depth, Learner, Botto
 //imagine we want a Chikorita with Leech Seed and Hidden Power (and without using the HP TM) you can go Slowking -> Chikorita -> Exeggcute -> Chikorita
 //this would really be a combination of two chains, one that goes Exeggcute -> Chikorita (for Leech Seed) and one that goes Slowking -> Chikorita -> Exeggcute (for Hidden Power)
 //for the 2nd one, we need to understand that Chikorita is not the true target (tBottomChild) but rather Exeggcute is
-function FindChain(Chains, Learner, BottomChild)
+function FindChain(Chains, Learner, BottomChild, MacroDepth)
 {
 	for (let iChain = 0; iChain < Chains.length; iChain++)
 	{
@@ -1907,7 +1898,7 @@ function FindChain(Chains, Learner, BottomChild)
 
 	let ClosedList = [];
 	let ParentList = [];
-	return FindFatherForMove(Chains, ClosedList, ParentList, Depth, Learner, BottomChild);
+	return FindFatherForMove(Chains, ClosedList, ParentList, Depth, MacroDepth, Learner, BottomChild);
 }
 
 function SuggestChainCombo(Chains)
@@ -1922,8 +1913,9 @@ function SuggestChainCombo(Chains)
 	}
 }
 
-function SearchRetryLoop(Chains, Learner, Nested)
+function SearchRetryLoop(Chains, Learner, Nested, MacroDepth)
 {
+	MacroDepth++;
 	for (let iChain = 0; iChain < Chains.length; iChain++)
 	{
 		if (Chains[iChain]["Lineage"][0]["MoveName"] === Learner["MoveName"])
@@ -1936,46 +1928,32 @@ function SearchRetryLoop(Chains, Learner, Nested)
 		debugger;
 	g_MovesBeingExplored.push(Learner["MoveName"]);
 	//console.log("C " + g_MovesBeingExplored);
-	let Result = CR_REJECTED;
-	while (Result === CR_REJECTED)
+	let Result;
+	//check nested because we presume user wants to BREED the given moves onto the target species
+	//putting them directly on another pokemon is fine though
+	if (Nested && !LearnerCannotBeTopLevel(Learner))
 	{
-		if (Learner["LearnMethod"] === LEARNBY_SKETCH)
+		let NewChain = BreedChain([Learner]);
+		Chains.push(NewChain);
+		Result = CR_SUCCESS;
+	}
+	else
+	{
+		let RetVal = FindChain(Chains, Learner, Learner, MacroDepth);
+		Chains = RetVal[0];
+		Result = RetVal[1];
+	}
+	if (Result === CR_SUCCESS)
+	{
+		if (!Nested)
 		{
-			//this learner is necessarily top-level. exit fast.
-			let NewChain = BreedChain([], false);
-			NewChain["Lineage"].push(Learner);
-			LogChainAdd(NewChain, Chains, "N/A", "C");
-			for (let iChain = 0; iChain < Chains.length; iChain++)
-				if (Chains[iChain]["Lineage"][0]["MoveName"] === NewChain["Lineage"][0]["MoveName"])
-					debugger;
-			Chains.push(NewChain);
-			if (g_Combo && Chains.length > g_Combo)
-				debugger;
-			Result = CR_SUCCESS;
-		}
-		else
-		{
-			let RetVal = FindChain(Chains, Learner, Learner);
-			Chains = RetVal[0];
-			Result = RetVal[1];
-		}
-
-		if (Result === CR_SUCCESS)
-		{
-			if (Nested)
+			if (g_Combo)
 			{
-				break;
+				SuggestChainCombo(Chains);
 			}
 			else
 			{
-				if (g_Combo)
-				{
-					SuggestChainCombo(Chains);
-				}
-				else
-				{
-					SuggestChain(Chains[Chains.length - 1]);
-				}
+				SuggestChain(Chains[Chains.length - 1]);
 			}
 		}
 	}
@@ -2010,8 +1988,13 @@ function SearchStart()
 				}
 			}
 			if (AlreadyGotMove)
+			{
+				//console.log("Already got chain for " + Move["MoveName"]);
 				continue;
-			let RetVal = SearchRetryLoop(Chains, Move, false);
+			}
+			//if (Move["MoveName"] === "Shadow Ball")
+				//debugger;
+			let RetVal = SearchRetryLoop(Chains, Move, false, 0);
 			Chains = RetVal[0];
 		}
 	}
