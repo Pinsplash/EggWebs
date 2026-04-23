@@ -585,7 +585,7 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 	//if (Mother["MoveName"] === "Shadow Ball" && Father["LearnMonInfo"]["SpeciesName"] === "Gastly" && Mother["LearnMonInfo"]["SpeciesName"] === "Mismagius" && BottomChild["LearnMonInfo"]["SpeciesName"] === "Mismagius" && Father["LearnMethod"] === LEARNBY_LEVELUP)
 		//debugger;
 
-	//no reason to breed with own species. this doesn't produce Interesting chains
+	//no reason to breed with own species. this doesn't produce interesting chains
 	if (Mother["LearnMonInfo"]["SpeciesName"] === Father["LearnMonInfo"]["SpeciesName"] || Child["LearnMonInfo"]["SpeciesName"] === Father["LearnMonInfo"]["SpeciesName"])
 		return BREEDING_SELF;
 
@@ -667,7 +667,7 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 		return FEMALE_ONLY_MOM_NEEDS_LEVELUP_CHILD;
 
 	//make sure father wasn't already in the family tree (incest is redundant and leads to recursion)
-	//also avoid going to egg groups we already went to. this should leteract fine with combo mode because every call to SearchRetryLoop uses a different parent list
+	//also avoid going to egg groups we already went to. this should interact fine with combo mode because every call to SearchRetryLoop uses a different parent list
 	let CurrentLearner = BottomChild;
 	let OldCommonEggGroup = "";
 	/*
@@ -823,7 +823,7 @@ function ProcessMove(ReadFile)
 		if (TextLine.length === 0)
 			continue;
 
-		if (TextLine.indexOf("|name=") !== -1)
+		if (TextLine.includes("|name="))
 		{
 			MoveName = TextLine.substring(6);
 			JustGotMoveName = true;
@@ -849,7 +849,7 @@ function ProcessMove(ReadFile)
 			Learnset = true;
 		else if (Learnset)
 		{
-			if (TextLine.indexOf("Movefoot") !== -1)
+			if (TextLine.includes("Movefoot"))
 			{
 				LevelupSection = LevelupSectionInside = TMTutorSection = TMTutorSectionInside = BreedSection = BreedSectionInside = SpecialSectionInside = EventSectionInside = MoveTableHeader = false;
 				GamesToColumns = [];
@@ -879,7 +879,7 @@ function ProcessMove(ReadFile)
 				EventSection = true;
 				SpecialSection = false;
 			}
-			else if (SpecialSection && TextLine.indexOf("====[[") !== -1)
+			else if (SpecialSection && TextLine.includes("====[["))
 			{
 				SpecialSectionInside = true;
 				for (let iGame = 0; iGame < g_Games.length; iGame++)
@@ -888,7 +888,7 @@ function ProcessMove(ReadFile)
 				if (GameForSpecialSection === -1)
 					debugger;
 			}
-			else if (EventSection && TextLine.indexOf("====[[") !== -1)
+			else if (EventSection && TextLine.includes("====[["))
 			{
 				EventSectionInside = true;
 				for (let iGame = 0; iGame < g_Games.length; iGame++)
@@ -905,111 +905,111 @@ function ProcessMove(ReadFile)
 				let RealGenerationNumber = g_TargetGame["GenerationNum"] + 1;
 				if (g_TargetGame["GenerationNum"] >= GENERATION_8_BDSP)
 					RealGenerationNumber--;
-				if (TMTutorSection && TextLine.indexOf("g" + RealGenerationNumber + "tm=tutor") !== -1)
+				if (TMTutorSection && TextLine.includes("g" + RealGenerationNumber + "tm=tutor"))
 					SectionIsTutor = true;
-				if (TextLine.indexOf("Movehead/Games") !== -1 || TextLine.indexOf("Movehead/TMGames") !== -1)
+				if (TextLine.includes("Movehead/Games") || TextLine.includes("Movehead/TMGames"))
 				{
 					MoveTableHeader = true;
 				}
-				if (MoveTableHeader && TextLine.indexOf("Moveentry") !== -1)
+				if (MoveTableHeader && TextLine.includes("Moveentry"))
 				{
 					MoveTableHeader = false;
 					//watch out for games/generations hidden from table
 					//we want to keep this vector's size equal to the number of columns. in cases where a column represents multiple games, we say it's the first applicable game of the gen.
 					//this isn't ideal but there's not a better solution
-					if (TableHeaderLine.indexOf("g1=none") === -1)
+					if (!TableHeaderLine.includes("g1=none"))
 					{
-						if (TableHeaderLine.indexOf("g1g={{gameabbrev1|RB}}") !== -1)
+						if (TableHeaderLine.includes("g1g={{gameabbrev1|RB}}"))
 							GamesToColumns.push(GAME_RED_BLUE);
-						else if (TableHeaderLine.indexOf("g1g={{gameabbrev1|Y}}") !== -1)
+						else if (TableHeaderLine.includes("g1g={{gameabbrev1|Y}}"))
 							GamesToColumns.push(GAME_YELLOW);
 						else
 							GamesToColumns.push(GAMECOMBO_ALL_GEN1);
 					}
-					if (g_TargetGame["GenerationNum"] >= GENERATION_2 && TableHeaderLine.indexOf("g2=none") === -1)
+					if (g_TargetGame["GenerationNum"] >= GENERATION_2 && !TableHeaderLine.includes("g2=none"))
 					{
-						if (TableHeaderLine.indexOf("g2g={{gameabbrev2|GS}}") !== -1)
+						if (TableHeaderLine.includes("g2g={{gameabbrev2|GS}}"))
 							GamesToColumns.push(GAME_GOLD_SILVER);
-						else if (TableHeaderLine.indexOf("g2g={{gameabbrev2|C}}") !== -1)
+						else if (TableHeaderLine.includes("g2g={{gameabbrev2|C}}"))
 							GamesToColumns.push(GAME_CRYSTAL);
 						else
 							GamesToColumns.push(GAMECOMBO_ALL_GEN2);
 					}
-					if (g_TargetGame["GenerationNum"] >= GENERATION_3 && TableHeaderLine.indexOf("g3=none") === -1)
+					if (g_TargetGame["GenerationNum"] >= GENERATION_3 && !TableHeaderLine.includes("g3=none"))
 					{
-						if (TableHeaderLine.indexOf("g3g={{gameabbrev3|RS}}") !== -1|| TableHeaderLine.indexOf("g3g={{gameabbrev3|RuSa}}") !== -1)
+						if (TableHeaderLine.includes("g3g={{gameabbrev3|RS}}")|| TableHeaderLine.includes("g3g={{gameabbrev3|RuSa}}"))
 							GamesToColumns.push(GAME_RUBY_SAPPHIRE);
-						else if (TableHeaderLine.indexOf("g3g={{gameabbrev3|FRLG}}") !== -1)
+						else if (TableHeaderLine.includes("g3g={{gameabbrev3|FRLG}}"))
 							GamesToColumns.push(GAME_FIRERED_LEAFGREEN);
-						else if (TableHeaderLine.indexOf("g3g={{gameabbrev3|E}}") !== -1)
+						else if (TableHeaderLine.includes("g3g={{gameabbrev3|E}}"))
 							GamesToColumns.push(GAME_EMERALD);
-						else if (TableHeaderLine.indexOf("g3g={{gameabbrev3|RSE}}") !== -1 || TableHeaderLine.indexOf("g3g={{gameabbrev3|RuSaEm}}") !== -1)
+						else if (TableHeaderLine.includes("g3g={{gameabbrev3|RSE}}") || TableHeaderLine.includes("g3g={{gameabbrev3|RuSaEm}}"))
 							GamesToColumns.push(GAMECOMBO_RSE);
 						else
 							GamesToColumns.push(GAMECOMBO_ALL_GEN3);
 					}
-					if (g_TargetGame["GenerationNum"] >= GENERATION_4 && TableHeaderLine.indexOf("g4=none") === -1)
+					if (g_TargetGame["GenerationNum"] >= GENERATION_4 && !TableHeaderLine.includes("g4=none"))
 					{
-						if (TableHeaderLine.indexOf("g4g={{gameabbrev4|DP}}") !== -1)
+						if (TableHeaderLine.includes("g4g={{gameabbrev4|DP}}"))
 							GamesToColumns.push(GAME_DIAMOND_PEARL);
-						else if (TableHeaderLine.indexOf("g4g={{gameabbrev4|Pt}}") !== -1)
+						else if (TableHeaderLine.includes("g4g={{gameabbrev4|Pt}}"))
 							GamesToColumns.push(GAME_PLATINUM);
-						else if (TableHeaderLine.indexOf("g4g={{gameabbrev4|HGSS}}") !== -1)
+						else if (TableHeaderLine.includes("g4g={{gameabbrev4|HGSS}}"))
 							GamesToColumns.push(GAME_HEARTGOLD_SOULSILVER);
-						else if (TableHeaderLine.indexOf("g4g={{gameabbrev4|DPP}}") !== -1 || TableHeaderLine.indexOf("g4g={{gameabbrev4|DPPt}}") !== -1)
+						else if (TableHeaderLine.includes("g4g={{gameabbrev4|DPP}}") || TableHeaderLine.includes("g4g={{gameabbrev4|DPPt}}"))
 							GamesToColumns.push(GAMECOMBO_DPP);
-						else if (TableHeaderLine.indexOf("g4g={{gameabbrev4|PtHGSS}}") !== -1)
+						else if (TableHeaderLine.includes("g4g={{gameabbrev4|PtHGSS}}"))
 							GamesToColumns.push(GAMECOMBO_PLAT_HGSS);
 						else
 							GamesToColumns.push(GAMECOMBO_ALL_GEN4);
 					}
-					if (g_TargetGame["GenerationNum"] >= GENERATION_5 && TableHeaderLine.indexOf("g5=none") === -1)
+					if (g_TargetGame["GenerationNum"] >= GENERATION_5 && !TableHeaderLine.includes("g5=none"))
 					{
-						if (TableHeaderLine.indexOf("g5g={{gameabbrev5|BW}}") !== -1 || TableHeaderLine.indexOf("g5g={{gameabbrev5|BlWh}}") !== -1)
+						if (TableHeaderLine.includes("g5g={{gameabbrev5|BW}}") || TableHeaderLine.includes("g5g={{gameabbrev5|BlWh}}"))
 							GamesToColumns.push(GAME_BLACK1_WHITE1);
-						else if (TableHeaderLine.indexOf("g5g={{gameabbrev5|B2W2}}") !== -1
-							|| TableHeaderLine.indexOf("g5g={{gameabbrev5|BW2}}") !== -1
-							|| TableHeaderLine.indexOf("g5g={{gameabbrev5|Bl2Wh2}}") !== -1)
+						else if (TableHeaderLine.includes("g5g={{gameabbrev5|B2W2}}")
+							|| TableHeaderLine.includes("g5g={{gameabbrev5|BW2}}")
+							|| TableHeaderLine.includes("g5g={{gameabbrev5|Bl2Wh2}}"))
 							GamesToColumns.push(GAME_BLACK2_WHITE2);
 						else
 							GamesToColumns.push(GAMECOMBO_ALL_GEN5);
 					}
-					if (g_TargetGame["GenerationNum"] >= GENERATION_6 && TableHeaderLine.indexOf("g6=none") === -1)
+					if (g_TargetGame["GenerationNum"] >= GENERATION_6 && !TableHeaderLine.includes("g6=none"))
 					{
-						if (TableHeaderLine.indexOf("g6g={{gameabbrev6|XY}}") !== -1)
+						if (TableHeaderLine.includes("g6g={{gameabbrev6|XY}}"))
 							GamesToColumns.push(GAME_X_Y);
-						else if (TableHeaderLine.indexOf("g6g={{gameabbrev6|ORAS}}") !== -1)
+						else if (TableHeaderLine.includes("g6g={{gameabbrev6|ORAS}}"))
 							GamesToColumns.push(GAME_OMEGA_RUBY_ALPHA_SAPPHIRE);
 						else
 							GamesToColumns.push(GAMECOMBO_ALL_GEN6);
 					}
-					if (g_TargetGame["GenerationNum"] >= GENERATION_7 && TableHeaderLine.indexOf("g7=none") === -1)
+					if (g_TargetGame["GenerationNum"] >= GENERATION_7 && !TableHeaderLine.includes("g7=none"))
 					{
-						if (TableHeaderLine.indexOf("g7g={{gameabbrev7|SM}}") !== -1 || TableHeaderLine.indexOf("g7g={{gameabbrev7|SMUSUM}}") !== -1)
+						if (TableHeaderLine.includes("g7g={{gameabbrev7|SM}}") || TableHeaderLine.includes("g7g={{gameabbrev7|SMUSUM}}"))
 							GamesToColumns.push(GAME_SUN_MOON);
-						else if (TableHeaderLine.indexOf("g7g={{gameabbrev7|USUM}}") !== -1)
+						else if (TableHeaderLine.includes("g7g={{gameabbrev7|USUM}}"))
 							GamesToColumns.push(GAME_ULTRASUN_ULTRAMOON);
-						else if (TableHeaderLine.indexOf("g7g={{gameabbrev7|PE}}") !== -1)
+						else if (TableHeaderLine.includes("g7g={{gameabbrev7|PE}}"))
 							GamesToColumns.push(GAME_INVALID);
 						else
 							GamesToColumns.push(GAMECOMBO_SM_USUM);
 					}
-					if (g_TargetGame["GenerationNum"] >= GENERATION_8 && TableHeaderLine.indexOf("g8=none") === -1)
+					if (g_TargetGame["GenerationNum"] >= GENERATION_8 && !TableHeaderLine.includes("g8=none"))
 					{
-						if (TableHeaderLine.indexOf("g8g={{gameabbrev8|SwSh}}") !== -1 || TableHeaderLine.indexOf("g8g={{gameabbrev8|SwShLA}}") !== -1)
+						if (TableHeaderLine.includes("g8g={{gameabbrev8|SwSh}}") || TableHeaderLine.includes("g8g={{gameabbrev8|SwShLA}}"))
 							GamesToColumns.push(GAME_SWORD_SHIELD);
-						else if (TableHeaderLine.indexOf("g8g={{gameabbrev8|BDSP}}") !== -1 || TableHeaderLine.indexOf("g8g={{gameabbrev8|BDSPLA}}") !== -1)
+						else if (TableHeaderLine.includes("g8g={{gameabbrev8|BDSP}}") || TableHeaderLine.includes("g8g={{gameabbrev8|BDSPLA}}"))
 							GamesToColumns.push(GAME_BRILLIANT_DIAMOND_SHINING_PEARL);
-						else if (TableHeaderLine.indexOf("g8g={{gameabbrev8|LA}}") !== -1)
+						else if (TableHeaderLine.includes("g8g={{gameabbrev8|LA}}"))
 							GamesToColumns.push(GAME_INVALID);
 						else
 							GamesToColumns.push(GAMECOMBO_SWSH_BDSP);
 					}
-					if (g_TargetGame["GenerationNum"] >= GENERATION_9 && TableHeaderLine.indexOf("g9=none") === -1)
+					if (g_TargetGame["GenerationNum"] >= GENERATION_9 && !TableHeaderLine.includes("g9=none"))
 					{
-						if (TableHeaderLine.indexOf("g9g={{gameabbrev9|SV}}") !== -1)
+						if (TableHeaderLine.includes("g9g={{gameabbrev9|SV}}"))
 							GamesToColumns.push(GAME_SCARLET_VIOLET);
-						else if (TableHeaderLine.indexOf("g9g={{gameabbrev9|ZA}}") !== -1)
+						else if (TableHeaderLine.includes("g9g={{gameabbrev9|ZA}}"))
 							GamesToColumns.push(GAME_INVALID);
 						else
 							GamesToColumns.push(GAME_SCARLET_VIOLET);
@@ -1028,10 +1028,9 @@ function ProcessMove(ReadFile)
 					if (BreedSection)
 						BreedSectionInside = true;
 				}
-				if ((LevelupSectionInside || TMTutorSectionInside || BreedSectionInside || SpecialSectionInside || EventSectionInside) && TextLine.indexOf("Moveentry") !== -1)
+				if ((LevelupSectionInside || TMTutorSectionInside || BreedSectionInside || SpecialSectionInside || EventSectionInside) && TextLine.includes("Moveentry"))
 				{
 					MoveTableHeader = false;
-					//let FormParamStart = TextLine.indexOf("formsig=");
 
 					//read over template name
 					let PipeLocation = TextLine.indexOf("|");
@@ -1045,7 +1044,7 @@ function ProcessMove(ReadFile)
 					let PokemonNameEnd = TextLine.indexOf("|", PipeLocation + 1);
 					let PokemonName = TextLine.substring(PipeLocation + 1, PokemonNameEnd);
 					let FormName;
-					if (PokemonName.indexOf("formsig=") !== -1)
+					if (PokemonName.includes("formsig="))
 					{
 						//we actually just read the form name
 						PokemonNameEnd++;
@@ -1073,7 +1072,7 @@ function ProcessMove(ReadFile)
 					PipeLocation = TextLine.indexOf("|", PipeLocation + 1);
 
 					//read over type 2 if it exists
-					if (TextLine.indexOf("type2=") !== -1)
+					if (TextLine.includes("type2="))
 					{
 						PipeLocation = TextLine.indexOf("|", PipeLocation + 1);
 					}
@@ -1088,7 +1087,7 @@ function ProcessMove(ReadFile)
 					//form parameter commonly put between egg group 2 and levels
 					let NextValueEnd = TextLine.indexOf("|", PipeLocation + 1);
 					let NextValue = TextLine.substring(PipeLocation + 1, NextValueEnd);
-					if (NextValue.indexOf("form=") !== -1)
+					if (NextValue.includes("form="))
 					{
 						let EqualLocation = PipeLocation + 6;
 						let FormNameEnd = Math.min(TextLine.indexOf("|", EqualLocation), TextLine.indexOf("{{", EqualLocation));
@@ -1205,11 +1204,14 @@ function GetSettings(FileCount)
 		let Game = g_Games[iGame];
 		Game["GameIsAllowed"] = document.getElementById(Game["Acronym"] + "2").checked;
 		if (document.getElementById(Game["Acronym"] + "1").checked)
+		{
 			g_TargetGame = Game;
+			document.getElementById(Game["Acronym"] + "2").checked = true;
+		}
 	}
 	g_TargetGame["GameIsAllowed"] = true;
 
-	g_NoMoves = document.getElementById("targetspecies").checked;
+	g_NoMoves = document.getElementById("nomoves").checked;
 
 	let Species = document.getElementById("targetspecies").value;
 	Species = Species.charAt(0).toUpperCase() + Species.slice(1);
@@ -2132,13 +2134,13 @@ function ParseGameAnnotations()
 				for (let iGame = 0; iGame < g_Games.length; iGame++)
 				{
 					let Game = g_Games[iGame];
-					let FoundAcronym = Acronym.indexOf(Game["Acronym"]) !== -1;
+					let FoundAcronym = Acronym.includes(Game["Acronym"]);
 					//avoid finding a small acronym inside a bigger one
 					if (FoundAcronym)
 					{
-						if (Game["Acronym"] === "GS" && Acronym.indexOf("HGSS") !== -1)
+						if (Game["Acronym"] === "GS" && Acronym.includes("HGSS"))
 							FoundAcronym = false;
-						if (Game["Acronym"] === "Y" && Acronym.indexOf("XY") !== -1)
+						if (Game["Acronym"] === "Y" && Acronym.includes("XY"))
 							FoundAcronym = false;
 					}
 					if (FoundAcronym)
@@ -2234,23 +2236,17 @@ function SelectAllGames()
 {
 	let TargetGame = GetCheckedTargetGame();
 	let TargetGen = TargetGame["GenerationNum"];
+	//transfer from gen 1 & 2 to later games not possible until gen 7
+	let StartGame = GAME_RED_BLUE;
+	if (TargetGen >= GENERATION_3 && TargetGen <= GENERATION_6)
+		StartGame = GAME_RUBY_SAPPHIRE;
+	//gen 1 & 2 can transfer to each other, but not to gen 3
+	let MaxGen = g_Games[TargetGame["GameNum"]]["GenerationNum"];
 	if (TargetGen === GENERATION_1 || TargetGen === GENERATION_2)
+		MaxGen = GENERATION_2;
+	for (let iGame = StartGame; g_Games[iGame]["GenerationNum"] <= MaxGen; iGame++)
 	{
-		document.getElementById(g_Games[GAME_RED_BLUE]["Acronym"] + "2").checked = true;
-		document.getElementById(g_Games[GAME_YELLOW]["Acronym"] + "2").checked = true;
-		document.getElementById(g_Games[GAME_GOLD_SILVER]["Acronym"] + "2").checked = true;
-		document.getElementById(g_Games[GAME_CRYSTAL]["Acronym"] + "2").checked = true;
-	}
-	else
-	{
-		//transfer from gen 1 & 2 to later games not possible until gen 7
-		let StartGame = GAME_RED_BLUE;
-		if (TargetGen <= GENERATION_6)
-			StartGame = GAME_RUBY_SAPPHIRE;
-		for (let iGame = StartGame; g_Games[iGame]["GenerationNum"] <= g_Games[TargetGame["GameNum"]]["GenerationNum"]; iGame++)
-		{
-			document.getElementById(g_Games[iGame]["Acronym"] + "2").checked = true;
-		}
+		document.getElementById(g_Games[iGame]["Acronym"] + "2").checked = true;
 	}
 }
 
@@ -2265,14 +2261,7 @@ function SelectOnlyTargetGame()
 
 function ToggleMoveSettings()
 {
-	if (document.getElementById("nomoves").checked)
-	{
-		document.getElementById("movesettings").style.display = "none";
-	}
-	else
-	{
-		document.getElementById("movesettings").style.display = "block";
-	}
+	document.getElementById("movesettings").style.display = document.getElementById("nomoves").checked ? "none" : "block";
 }
 
 let span1 = document.getElementById("gamelistspan1");
@@ -2307,8 +2296,6 @@ for (let iGame = 0; iGame < g_Games.length; iGame++)
 	Input.type = "checkbox";
 	Input.id = Game["Acronym"] + "2";
 	Input.name = "targetgame";
-	if (iGame === 0)
-		Input.checked = true;
 	span2.appendChild(Input);
 	let Label = document.createElement("label");
 	Label.htmlFor = Game["Acronym"] + "2";
