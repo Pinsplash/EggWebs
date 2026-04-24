@@ -825,7 +825,8 @@ SpeciesInfo("Naganadel", "No Eggs Discovered", "No Eggs Discovered", GR_UNKNOWN,
 SpeciesInfo("Stakataka", "No Eggs Discovered", "No Eggs Discovered", GR_UNKNOWN, []),
 SpeciesInfo("Blacephalon", "No Eggs Discovered", "No Eggs Discovered", GR_UNKNOWN, []),
 SpeciesInfo("Zeraora", "No Eggs Discovered", "No Eggs Discovered", GR_UNKNOWN, []),
-SpeciesInfo("Meltan", "No Eggs Discovered", "No Eggs Discovered", GR_UNKNOWN, ["Melmetal"]),
-SpeciesInfo("Melmetal", "No Eggs Discovered", "No Eggs Discovered", GR_UNKNOWN, [])
+//officially gen 7, but not in any relevant game until gen 8
+//SpeciesInfo("Meltan", "No Eggs Discovered", "No Eggs Discovered", GR_UNKNOWN, ["Melmetal"]),
+//SpeciesInfo("Melmetal", "No Eggs Discovered", "No Eggs Discovered", GR_UNKNOWN, [])
 ]
 );

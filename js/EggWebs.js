@@ -164,6 +164,17 @@ function StringPairIdent(p1s1, p1s2, p2s1, p2s2)
 	return p1s1 + p1s2 === p2s1 + p2s2 || p1s1 + p1s2 === p2s2 + p2s1;
 }
 
+//Generation A has to be the same gen as Generation B, or earlier than B
+function GenerationsCompatible(GenA, GenB)
+{
+	if (GenA < GenB)
+		return true;
+	if (GenA === GENERATION_8_BDSP && GenB === GENERATION_8)
+		return true;
+	//
+	return false;
+}
+
 function IsUniversalTM(MoveName, Game)
 {
 	for (let iTM = 0; iTM < GetGeneration(Game)["UniversalTMs"].length; iTM++)
@@ -583,28 +594,28 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 		if (Father["LearnMonInfo"]["GenderRatio"] === GR_FEMALE_ONLY || Mother["LearnMonInfo"]["GenderRatio"] === GR_MALE_ONLY)
 			return Father["LearnMonInfo"]["GenderRatio"] === GR_FEMALE_ONLY ? FATHER_FEMALE_ONLY : MOTHER_MALE_ONLY;
 	}
-
+	
 	//must learn the move in question
 	if (Mother["MoveName"] !== BottomChild["MoveName"] || Father["MoveName"] !== BottomChild["MoveName"])
 		return DIFFERENT_MOVE;
-
+	
 	//no reason to breed with own species. this doesn't produce interesting chains
 	if (Mother["LearnMonInfo"]["SpeciesName"] === Father["LearnMonInfo"]["SpeciesName"] || Child["LearnMonInfo"]["SpeciesName"] === Father["LearnMonInfo"]["SpeciesName"])
 		return BREEDING_SELF;
-
+	
 	//don't already be explored (don't read into this)
 	if (ClosedList[Father["Instances"][0]["LearnID"]])
 		return FATHER_ON_CLOSED_LIST;
-
+	
 	//have to have a matching egg group
 	let NewCommonEggGroup = StringPairMatch(Mother["LearnMonInfo"]["EggGroup1"], Mother["LearnMonInfo"]["EggGroup2"], Father["LearnMonInfo"]["EggGroup1"], Father["LearnMonInfo"]["EggGroup2"]);
 	if (!NewCommonEggGroup)
 		return NO_EGG_GROUP_MATCH;
-
+	
 	//Gender-unknown Pokémon can only breed with Ditto. this makes them uninteresting for EggWebs (aside from Shedinja MAYBE because the offspring Nincada is gender known)
 	if (Father["LearnMonInfo"]["GenderRatio"] === GR_UNKNOWN)
 		return NONBINARY_POINTLESS;
-
+	
 	//make sure father wasn't already in the family tree (incest is redundant and leads to recursion)
 	//also avoid going to egg groups we already went to. this should interact fine with combo mode because every call to SearchRetryLoop uses a different parent list
 	let CurrentLearner = BottomChild;
@@ -625,11 +636,14 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 		}
 		CurrentLearner = ParentList[CurrentLearner["Instances"][0]["LearnID"]];
 	}
-
-	let Learns = [null, null, null, null];
-	let Satisfy = FatherSatisfiesMoves(Father, Learns);
-	if (Satisfy !== -1)
-		return FATHER_CANT_LEARN_ALL_MOVES;
+	
+	if (g_Combo)
+	{
+		let Learns = [null, null, null, null];
+		let Satisfy = FatherSatisfiesMoves(Father, Learns);
+		if (Satisfy !== -1)
+			return FATHER_CANT_LEARN_ALL_MOVES;
+	}
 	
 	let Good = false;
 	
@@ -701,6 +715,10 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 				//why did we have a check for !bChildIsTargetSpecies here? this was causing venonat <- caterpie to be valid
 				if (!SkipNewGroupCheck && !NewEggGroup && (!SameEvolutionLine || Child["LearnMonInfo"]["GenderRatio"] === GR_TYPICAL))
 					continue;//return NO_NEW_EGG_GROUP;
+				
+				if (!GenerationsCompatible(FatherInst["LearnsInGame"]["GenerationNum"], ChildInst["LearnsInGame"]["GenerationNum"]))
+					continue;
+				
 				//disabling until i can clarify the meaning better cause... what
 				/*
 				//if the mom can learn the move by level up below the level cap, there's no point in breeding the move onto it
@@ -1474,8 +1492,8 @@ function PreSearch()
 	{
 		if (g_Combo)
 		{
-			alert("Illegal move combination: No generation where hatching " + g_TargetSpecies + " is possible. If you get recommended a chain anyway, it is a bug, so please report that. https://github.com/Pinsplash/EggWebs/issues");
-			//return false;//don't exit fast. exiting here would just be a bandaid to hide the fact game transfer logic is broken.
+			alert("Illegal move combination: No generation where hatching " + g_TargetSpecies + " is possible.");
+			return false;
 		}
 		else
 		{
@@ -2343,9 +2361,9 @@ function SelectAllGames()
 	let MaxGen = g_Games[TargetGame["GameNum"]]["GenerationNum"];
 	if (TargetGen === GENERATION_1 || TargetGen === GENERATION_2)
 		MaxGen = GENERATION_2;
-	for (let iGame = StartGame; g_Games[iGame]["GenerationNum"] <= MaxGen; iGame++)
+	for (let iGame = GAME_RED_BLUE; iGame < g_Games.length; iGame++)
 	{
-		document.getElementById(g_Games[iGame]["Acronym"] + "2").checked = true;
+		document.getElementById(g_Games[iGame]["Acronym"] + "2").checked = iGame >= StartGame && g_Games[iGame]["GenerationNum"] <= MaxGen;
 	}
 }
 
