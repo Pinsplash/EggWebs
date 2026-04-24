@@ -2,8 +2,9 @@ const Struct = (...keys) => ((...v) => keys.reduce((o, k, i) => {o[k] = v[i]; re
 const SpeciesInfo = Struct("SpeciesName", "EggGroup1", "EggGroup2", "GenderRatio", "Evolutions");
 const Generation = Struct("BulbaHeader", "GameCombo", "UniversalTMs", "MonData");
 const GameData = Struct("UIName", "GenerationNum", "Acronym", "GameNum", "GameIsAllowed");
-const MoveLearner = Struct("FormName", "LearnLevel", "MoveName", "LearnMethod", "LearnsInGame", "LearnMonInfo", "OriginalLearn", "TMOfInterest", "EraseMe", "UserRejected", "LearnID");
-const BreedChain = Struct("Lineage");
+const LearnInstance = Struct("LearnLevel", "LearnMethod", "LearnsInGame", "OriginalLearn", "TMOfInterest", "EraseMe", "UserRejected", "LearnID");
+const MoveLearner = Struct("FormName", "MoveName", "LearnMonInfo", "ShowInstance", "Instances");
+const BreedChain = Struct("LearnList");
 const ComboBreedData = Struct("ComboMoves", "SatisfiedStatus");
 
 //gender ratios
@@ -90,6 +91,8 @@ const MOTHER_LEVEL_BELOW_MAX = 16;
 const FEMALE_ONLY_MOM_NEEDS_LEVELUP_CHILD = 17;
 const FATHER_ALREADY_IN_CHAIN = 18;
 const EGG_GROUP_ALREADY_IN_CHAIN = 19;
+const FATHER_CANT_LEARN_ALL_MOVES = 20;
+const FAIL_OTHER = 21;
 
 //group crawl results
 const CR_SUCCESS = 0;
@@ -104,10 +107,10 @@ let g_RequireFather = [];
 let g_MoveLearners = [];
 let g_ComboData = ComboBreedData([], [false, false, false, false]);
 let g_TargetGame = GameData();
-let g_OriginalFatherExcludes = [false, false, false, false, false, false, false, false, false];
-let g_MotherExcludes = [false, false, false, false, false, false, false, false, false];
+let g_MethodExcludes = [false, false, false, false, false, false, false, false, false];
 let g_MaxLevel = 100;
 let g_NoMoves = false;
 let g_Combo = 0;
 let g_MaxDepth = 20;
 let g_NextLearnerID = 0;
+let g_SlowMode = false;
