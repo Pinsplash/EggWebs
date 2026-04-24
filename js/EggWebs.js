@@ -580,20 +580,6 @@ function FatherSatisfiesMoves(Father, Learns)
 //bSkipNewGroupCheck is false in every call to this function. just for debug purposes?
 function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomChild, SkipNewGroupCheck)
 {
-	let SameEvolutionLine = SpeciesShareEvoLine(Mother, Father);
-	
-	if (!SameEvolutionLine)
-	{
-		//have to be straight
-		//unless it's with your own evolution line (which is actually breeding with ditto)
-		if ((Mother["LearnMonInfo"]["GenderRatio"] === GR_FEMALE_ONLY && Father["LearnMonInfo"]["GenderRatio"] === GR_FEMALE_ONLY)
-			|| (Mother["LearnMonInfo"]["GenderRatio"] === GR_MALE_ONLY && Father["LearnMonInfo"]["GenderRatio"] === GR_MALE_ONLY))
-			return MALE_FEMALE_ONLY_INCOMPATIBLE;
-		
-		//fathers must be male, mothers must be female
-		if (Father["LearnMonInfo"]["GenderRatio"] === GR_FEMALE_ONLY || Mother["LearnMonInfo"]["GenderRatio"] === GR_MALE_ONLY)
-			return Father["LearnMonInfo"]["GenderRatio"] === GR_FEMALE_ONLY ? FATHER_FEMALE_ONLY : MOTHER_MALE_ONLY;
-	}
 	
 	//must learn the move in question
 	if (Mother["MoveName"] !== BottomChild["MoveName"] || Father["MoveName"] !== BottomChild["MoveName"])
@@ -607,14 +593,28 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 	if (ClosedList[Father["Instances"][0]["LearnID"]])
 		return FATHER_ON_CLOSED_LIST;
 	
+	//Gender-unknown Pokémon can only breed with Ditto. this makes them uninteresting for EggWebs (aside from Shedinja MAYBE because the offspring Nincada is gender known)
+	if (Father["LearnMonInfo"]["GenderRatio"] === GR_UNKNOWN)
+		return NONBINARY_POINTLESS;
+	
 	//have to have a matching egg group
 	let NewCommonEggGroup = StringPairMatch(Mother["LearnMonInfo"]["EggGroup1"], Mother["LearnMonInfo"]["EggGroup2"], Father["LearnMonInfo"]["EggGroup1"], Father["LearnMonInfo"]["EggGroup2"]);
 	if (!NewCommonEggGroup)
 		return NO_EGG_GROUP_MATCH;
 	
-	//Gender-unknown Pokémon can only breed with Ditto. this makes them uninteresting for EggWebs (aside from Shedinja MAYBE because the offspring Nincada is gender known)
-	if (Father["LearnMonInfo"]["GenderRatio"] === GR_UNKNOWN)
-		return NONBINARY_POINTLESS;
+	let SameEvolutionLine = SpeciesShareEvoLine(Mother, Father);
+	if (!SameEvolutionLine)
+	{
+		//have to be straight
+		//unless it's with your own evolution line (which is actually breeding with ditto)
+		if ((Mother["LearnMonInfo"]["GenderRatio"] === GR_FEMALE_ONLY && Father["LearnMonInfo"]["GenderRatio"] === GR_FEMALE_ONLY)
+			|| (Mother["LearnMonInfo"]["GenderRatio"] === GR_MALE_ONLY && Father["LearnMonInfo"]["GenderRatio"] === GR_MALE_ONLY))
+			return MALE_FEMALE_ONLY_INCOMPATIBLE;
+		
+		//fathers must be male, mothers must be female
+		if (Father["LearnMonInfo"]["GenderRatio"] === GR_FEMALE_ONLY || Mother["LearnMonInfo"]["GenderRatio"] === GR_MALE_ONLY)
+			return Father["LearnMonInfo"]["GenderRatio"] === GR_FEMALE_ONLY ? FATHER_FEMALE_ONLY : MOTHER_MALE_ONLY;
+	}
 	
 	//make sure father wasn't already in the family tree (incest is redundant and leads to recursion)
 	//also avoid going to egg groups we already went to. this should interact fine with combo mode because every call to SearchRetryLoop uses a different parent list
