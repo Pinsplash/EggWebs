@@ -9,6 +9,7 @@ Chain for Leech Seed: Smeargle (Sketch, in RS)
 Chain for Grass Knot: Chikorita (by TM) <- Nuzleaf (by TM) <- Smeargle (Sketch)
 
 Hidden Power, Shadow Ball, and Thunderbolt on Mismagius (gen 4) (multiple possible chains)
+exclude smeargle
 Chain for Hidden Power: Raichu (by universal TM) <- Walrein (by universal TM) <- Slowking (level 1)
 Chain for Thunderbolt: Gastly (by TM, in RS) <- Castform (by TM) <- Raichu (level 1)
 Chain for Shadow Ball: Mismagius (by TM) <- Gastly (level 29)
@@ -31,7 +32,7 @@ Illegal move combination: No generation where hatching Shiftry is possible.
 
 
 tests understanding evolution to help with breeding
-Nasty Plot and Encore on Chatot (gen 4)
+Nasty Plot and Encore on Chatot (gen 4) (multiple possible chains, important part is "learned as Togepi")
 Chain for Nasty Plot: Togetic (egg move, learned as Togepi) <- Honchkrow (level 35)
 Chain for Encore: Chatot (egg move) <- Togetic (level 19)
 

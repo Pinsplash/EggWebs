@@ -3,7 +3,7 @@ const SpeciesInfo = Struct("SpeciesName", "EggGroup1", "EggGroup2", "GenderRatio
 const Generation = Struct("BulbaHeader", "GameCombo", "UniversalTMs", "MonData");
 const GameData = Struct("UIName", "GenerationNum", "Acronym", "GameNum", "GameIsAllowed");
 const LearnInstance = Struct("LearnLevel", "LearnMethod", "LearnsInGame", "OriginalLearn", "TMOfInterest", "EraseMe", "UserRejected", "LearnID");
-const MoveLearner = Struct("FormName", "MoveName", "LearnMonInfo", "ShowInstance", "Instances");
+const MoveLearner = Struct("FormName", "MoveName", "LearnMonInfo", "Instances", "ShowInstance");
 const BreedChain = Struct("LearnList");
 const ComboBreedData = Struct("ComboMoves", "SatisfiedStatus");
 
