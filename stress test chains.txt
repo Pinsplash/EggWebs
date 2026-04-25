@@ -1,40 +1,37 @@
-all of these movesets are designed to test different features (mainly combo mode). all of the answers shown below are correct.
+all of these movesets are designed to test different features (mainly combo mode). all of the answers shown below are correct. most of these movesets have multiple possible chains. just make sure the chain you see makes sense.
 
 basic tests
-Leech Seed and Grass Knot on Chikorita (gen 4) (multiple possible chains)
-Chain for Grass Knot: Ivysaur (by TM) <- Slowpoke (by TM) <- Lotad (by TM) <- Hoppip (by TM) <- Skitty (by TM) <- Pachirisu (special encounter)
-Chain for Leech Seed: Chikorita (egg move) <- Ivysaur (level 1)
-OR
-Chain for Leech Seed: Smeargle (Sketch, in RS)
-Chain for Grass Knot: Chikorita (by TM) <- Nuzleaf (by TM) <- Smeargle (Sketch)
+Leech Seed and Grass Knot on Chikorita (gen 4)
+Chain for Leech Seed: Smeargle (Sketch)
+Chain for Grass Knot: Smeargle (Sketch) → Seedot (By TM) → Chikorita (By TM)
 
-Hidden Power, Shadow Ball, and Thunderbolt on Mismagius (gen 4) (multiple possible chains)
+Hidden Power, Shadow Ball, and Thunderbolt on Mismagius (gen 4)
 exclude smeargle
-Chain for Hidden Power: Raichu (by universal TM) <- Walrein (by universal TM) <- Slowking (level 1)
-Chain for Thunderbolt: Gastly (by TM, in RS) <- Castform (by TM) <- Raichu (level 1)
-Chain for Shadow Ball: Mismagius (by TM) <- Gastly (level 29)
+Chain for Hidden Power: Slowking (Level 1) → Charmander (By universal TM) → Ekans (By universal TM) → Pikachu (By universal TM)
+Chain for Thunderbolt: Pikachu (Level 26) → Castform (By TM) → Gastly (By TM)
+Chain for Shadow Ball: Gastly (Level 29) → Mismagius (By TM)
 
 
 basic illegal tests
 Guard Split and Spikes on Shelmet (gen 5)
-0 chains
+Nothing
 
 Leaf Blade and Curse on Tropius (gen 5)
-0 chains
+Nothing
 
 
 tests correct understanding of legality in consideration to generation transfer
 Bullet Seed and Leech Seed on Paras (gen 5)
-Illegal move combination: No generation where hatching Paras is possible.
+Illegal move combination: No game where hatching Paras is possible.
 
 Sucker Punch and Leaf Blade on Shiftry (gen 6)
-Illegal move combination: No generation where hatching Shiftry is possible.
+Illegal move combination: No game where hatching Shiftry is possible.
 
 
 tests understanding evolution to help with breeding
-Nasty Plot and Encore on Chatot (gen 4) (multiple possible chains, important part is "learned as Togepi")
-Chain for Nasty Plot: Togetic (egg move, learned as Togepi) <- Honchkrow (level 35)
-Chain for Encore: Chatot (egg move) <- Togetic (level 19)
+Nasty Plot and Encore on Chatot (gen 4) (important part is "learned as Togepi")
+Chain for Nasty Plot: Plusle (Level 51) → Togetic (Egg move, Learned as Togepi)
+Chain for Encore: Togetic (Level 19) → Chatot (Egg move)
 
 
 tests learning accurate to game level (as opposed to generation level)
@@ -43,9 +40,9 @@ this should eventually suggest Cyndaquil (level 4, in Pt)
 
 
 tests understanding breeding with ditto
-Hi Jump Kick and Mach Punch Hitmontop (gen 3) (several possible chains)
-Chain for Mach Punch: Hitmonlee (egg move, learned as Tyrogue) <- Hitmonchan (level 20)
-Chain for High Jump Kick: Hitmontop (egg move, learned as Tyrogue) <- Hitmonlee (level 26)
+Hi Jump Kick and Mach Punch Hitmontop (gen 3)
+Chain for Mach Punch: Hitmonchan (Level 20) → Hitmonlee (Egg move Learned as Tyrogue)
+Chain for High Jump Kick: Hitmonlee (Level 26) → Hitmontop (Egg move Learned as Tyrogue)
 
 
 tests multiple moves coming from the same ancestor
@@ -53,4 +50,4 @@ Ice Beam, Ice Shard, Rapid Spin, and Toxic on Delibird (gen 5)
 Chain for Ice Shard: Smeargle (Sketch)
 Chain for Rapid Spin: Smeargle (Sketch)
 Chain for Toxic: Smeargle (Sketch)
-Chain for Ice Beam: Delibird (by TM) <- Smeargle (Sketch)
+Chain for Ice Beam: Smeargle (Sketch) → Delibird (By TM)

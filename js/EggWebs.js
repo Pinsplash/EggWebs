@@ -51,9 +51,9 @@ const MatchupResultStrings =
 		"Redundant: Breeding with own species",//BREEDING_SELF
 		"Already considered father",//FATHER_ON_CLOSED_LIST
 		"User requested mother can't learn move by this method",//MOTHER_EXCLUDED_METHOD
-		"Impossible to breed due to gender ratios (and not same evolution line)",//MALE_FEMALE_ONLY_INCOMPATIBLE
+		"Impossible to breed due to gender ratios",//MALE_FEMALE_ONLY_INCOMPATIBLE
 		"No egg group in common",//NO_EGG_GROUP_MATCH
-		"Redundant: No new egg group or learn method (and not same evolution line)",//NO_NEW_EGG_GROUP
+		"Redundant: No new egg group",//NO_NEW_EGG_GROUP
 		"Father learns move at level above maximum",//FATHER_LEVEL_ABOVE_MAX
 		"Mother learns move at level above maximum",//MOTHER_LEVEL_ABOVE_MAX
 		"Father was rejected by user",//FATHER_REJECTED
@@ -105,7 +105,7 @@ function MethodStr(LearnInstance, Delimiter)
 
 function InfoStr(WantedLearn, LearnInstance)
 {
-	let str = WantedLearn["LearnMonInfo"]["SpeciesName"];
+	let str = "";
 
 	if (g_NoMoves)
 		return str;
@@ -593,14 +593,15 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 	if (ClosedList[Father["Instances"][0]["LearnID"]])
 		return FATHER_ON_CLOSED_LIST;
 	
-	//Gender-unknown Pokémon can only breed with Ditto. this makes them uninteresting for EggWebs (aside from Shedinja MAYBE because the offspring Nincada is gender known)
-	if (Father["LearnMonInfo"]["GenderRatio"] === GR_UNKNOWN)
-		return NONBINARY_POINTLESS;
-	
 	//have to have a matching egg group
 	let NewCommonEggGroup = StringPairMatch(Mother["LearnMonInfo"]["EggGroup1"], Mother["LearnMonInfo"]["EggGroup2"], Father["LearnMonInfo"]["EggGroup1"], Father["LearnMonInfo"]["EggGroup2"]);
 	if (!NewCommonEggGroup)
 		return NO_EGG_GROUP_MATCH;
+	
+	//this has to come after NewCommonEggGroup check so that legendaries don't appear in slow mode
+	//Gender-unknown Pokémon can only breed with Ditto. this makes them uninteresting for EggWebs (aside from Shedinja MAYBE because the offspring Nincada is gender known)
+	if (Father["LearnMonInfo"]["GenderRatio"] === GR_UNKNOWN)
+		return NONBINARY_POINTLESS;
 	
 	let SameEvolutionLine = SpeciesShareEvoLine(Mother, Father);
 	if (!SameEvolutionLine)
@@ -616,10 +617,31 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 			return Father["LearnMonInfo"]["GenderRatio"] === GR_FEMALE_ONLY ? FATHER_FEMALE_ONLY : MOTHER_MALE_ONLY;
 	}
 	
+	//father has to have a new egg group in order to produce good useful chains
+	let FatherForceTopLevel = false;
+	let NewEggGroup = Father["LearnMonInfo"]["EggGroup1"] !== Father["LearnMonInfo"]["EggGroup2"] && !StringPairIdent(Mother["LearnMonInfo"]["EggGroup1"], Mother["LearnMonInfo"]["EggGroup2"], Father["LearnMonInfo"]["EggGroup1"], Father["LearnMonInfo"]["EggGroup2"]);
+	//it's okay for egg groups to be bad if the father learns the move by a different method than the child
+	//uhh, is it? write the use case in here next time it comes up
+	//let NewMethod = FatherInst["LearnMethod"] !== ChildInst["LearnMethod"];
+	//why did we have a check for !bChildIsTargetSpecies here? this was causing venonat <- caterpie to be valid
+	if (!NewEggGroup && (!SameEvolutionLine || Child["LearnMonInfo"]["GenderRatio"] === GR_TYPICAL))
+	{
+		//allow it on the condition that the child is the bottom child
+		//(let mismagius learn shadow ball from gastly (level). castform shouldn't be favored just because it has a second egg group, cause that's not the point at that point. just get the move on the pokemon)
+		//if (Child !== BottomChild)
+		{
+			//but if the father does have a top level learn, it has to stick to it
+			FatherForceTopLevel = true;
+			if (!GetAnyTopLevelInstance(Father))
+				return NO_NEW_EGG_GROUP;
+		}
+	}
+	
 	//make sure father wasn't already in the family tree (incest is redundant and leads to recursion)
 	//also avoid going to egg groups we already went to. this should interact fine with combo mode because every call to SearchRetryLoop uses a different parent list
 	let CurrentLearner = BottomChild;
 	let OldCommonEggGroup = "";
+	
 	while (CurrentLearner)
 	{
 		if (CurrentLearner["LearnMonInfo"]["SpeciesName"] === Father["LearnMonInfo"]["SpeciesName"])
@@ -680,6 +702,10 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 			if (FatherInst["UserRejected"])
 				continue;//return FATHER_REJECTED;
 			
+			if (FatherForceTopLevel)
+				if (!InstanceCanBeTopLevel(FatherInst, Father))
+					continue;
+			
 			for (let iChildInst = 0; !Good && iChildInst < Child["Instances"].length; iChildInst++)
 			{
 				let ChildInst = Child["Instances"][iChildInst];
@@ -706,15 +732,6 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 				//egg moves already take care of this naturally because bulba lists base forms in their tables and we call CreatePriorEvolutionLearns().
 				if ((ChildInst["LearnMethod"] === LEARNBY_TM || ChildInst["LearnMethod"] === LEARNBY_TM_UNIVERSAL) && ChildInst["OriginalLearn"])
 					continue;//return CHILD_BY_TM_NEEDS_BASE_FORM;
-				
-				//father has to have a new egg group in order to produce good useful chains
-				let NewEggGroup = !StringPairIdent(Mother["LearnMonInfo"]["EggGroup1"], Mother["LearnMonInfo"]["EggGroup2"], Father["LearnMonInfo"]["EggGroup1"], Father["LearnMonInfo"]["EggGroup2"]);
-				//it's okay for egg groups to be bad if the father learns the move by a different method than the child
-				//uhh, is it? write the use case in here next time it comes up
-				//let NewMethod = FatherInst["LearnMethod"] !== ChildInst["LearnMethod"];
-				//why did we have a check for !bChildIsTargetSpecies here? this was causing venonat <- caterpie to be valid
-				if (!NewEggGroup && (!SameEvolutionLine || Child["LearnMonInfo"]["GenderRatio"] === GR_TYPICAL))
-					continue;//return NO_NEW_EGG_GROUP;
 				
 				if (!GenerationsCompatible(FatherInst["LearnsInGame"]["GenerationNum"], ChildInst["LearnsInGame"]["GenerationNum"]))
 					continue;
@@ -1452,7 +1469,7 @@ function PreSearch()
 	{
 		for (let iLearner = 0; iLearner < g_MoveLearners.length; iLearner++)
 			for (let iInst = 0; iInst < g_MoveLearners[iLearner]["Instances"].length; iInst++)
-				console.log(g_MoveLearners[iLearner]["MoveName"] + ": (" + iLearner + " " + iInst + ")" + InfoStr(g_MoveLearners[iLearner], g_MoveLearners[iLearner]["Instances"][iInst]));
+				console.log(g_MoveLearners[iLearner]["MoveName"] + ": (" + iLearner + " " + iInst + ")" + g_MoveLearners[iLearner]["LearnMonInfo"]["SpeciesName"] + InfoStr(g_MoveLearners[iLearner], g_MoveLearners[iLearner]["Instances"][iInst]));
 	}
 	else
 	{
@@ -1573,7 +1590,13 @@ function ExcludeEvolutionFamily(Learner)
 	RestartSearchByDataChange();
 }
 
-function ToggleOptionDropdown(PokemonBox, Learner, LearnInst, MatchupResult, Chains, ClosedList, ParentList, Depth, MacroDepth, Father, BottomChild, MaxGen)
+function SlowModePickFather(PokemonBox, Chains, ClosedList, ParentList, Depth, MacroDepth, Father, Child, BottomChild, MaxGen)
+{
+	PokemonBox.style.outline = "1px black dashed";
+	TestFather(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, Child, BottomChild, MaxGen);
+}
+
+function ToggleOptionDropdown(PokemonBox, Child, LearnInst, MatchupResult, Chains, ClosedList, ParentList, Depth, MacroDepth, Father, BottomChild, MaxGen)
 {
 	let OptionList = PokemonBox.getElementsByClassName("optionbox")[0];
 	let Show;
@@ -1589,13 +1612,13 @@ function ToggleOptionDropdown(PokemonBox, Learner, LearnInst, MatchupResult, Cha
 		OptionList.className = "optionbox";
 
 		let p1 = document.createElement("p");
-		if (MatchupResult)
+		if (LearnInst === null)
 		{
 			p1.className = "optionlisting";
 			if (MatchupResult === MATCHUP_SUCCESS)
 			{
 				p1.innerText = "Use this father";
-				p1.onclick = () => TestFather(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, Learner, BottomChild, MaxGen);
+				p1.onclick = () => SlowModePickFather(PokemonBox, Chains, ClosedList, ParentList, Depth, MacroDepth, Father, Child, BottomChild, MaxGen);
 			}
 			else
 				p1.innerText = MatchupResultStrings[MatchupResult];
@@ -1611,13 +1634,13 @@ function ToggleOptionDropdown(PokemonBox, Learner, LearnInst, MatchupResult, Cha
 			let p2 = document.createElement("p");
 			p2.className = "optionlisting";
 			p2.innerText = "Exclude Species";
-			p2.onclick = () => ExcludeSpecies(Learner["LearnMonInfo"]["SpeciesName"]);
+			p2.onclick = () => ExcludeSpecies(Father["LearnMonInfo"]["SpeciesName"]);
 			OptionList.appendChild(p2);
 
 			let p3 = document.createElement("p");
 			p3.className = "optionlisting";
 			p3.innerText = "Exclude Evolution Family";
-			p3.onclick = () => ExcludeEvolutionFamily(Learner);
+			p3.onclick = () => ExcludeEvolutionFamily(Father);
 			OptionList.appendChild(p3);
 		}
 		PokemonBox.appendChild(OptionList);
@@ -1632,7 +1655,7 @@ function ToggleOptionDropdown(PokemonBox, Learner, LearnInst, MatchupResult, Cha
 	}
 }
 
-function CreatePokemonInfoBox(Learner, LearnInst, Chain, iLearner, MatchupResult, Chains, ClosedList, ParentList, Depth, MacroDepth, Father, BottomChild, MaxGen)
+function CreatePokemonInfoBox(Child, Father, LearnInst, Chain, iLearner, MatchupResult, Chains, ClosedList, ParentList, Depth, MacroDepth, BottomChild, MaxGen)
 {
 	let PokemonBox = document.createElement("div");
 	PokemonBox.className = "pokemonbox";
@@ -1642,41 +1665,42 @@ function CreatePokemonInfoBox(Learner, LearnInst, Chain, iLearner, MatchupResult
 
 	let Chevron = document.createElement("img");
 	Chevron.src = "images/ui/chevron.png";
-	Chevron.style.position = "absolute";
+	Chevron.className = "chevronicon pokeboxicon";
 	Chevron.style.left = "0px";
-	if (Chain)
-		Chevron.onclick = () => ToggleOptionDropdown(PokemonBox, Learner, LearnInst, MatchupResult, Chains, ClosedList, ParentList, Depth, MacroDepth, Father, BottomChild, MaxGen);
+	
+	//if (Chain === null)
+	Chevron.onclick = () => ToggleOptionDropdown(PokemonBox, Child, LearnInst, MatchupResult, Chains, ClosedList, ParentList, Depth, MacroDepth, Father, BottomChild, MaxGen);
 	ImageContainer.appendChild(Chevron);
 
 	let EggGroup2Image = document.createElement("img");
-	EggGroup2Image.src = "images/egg groups/set3/" + Learner["LearnMonInfo"]["EggGroup2"] + ".png";
-	EggGroup2Image.className = "egggroupicon";
+	EggGroup2Image.src = "images/egg groups/set3/" + Father["LearnMonInfo"]["EggGroup2"] + ".png";
+	EggGroup2Image.className = "egggroupicon pokeboxicon";
 	EggGroup2Image.style.left = "84px";
-	Chevron.style.position = "absolute";
 	ImageContainer.appendChild(EggGroup2Image);
 
-	if (Learner["LearnMonInfo"]["EggGroup2"] !== Learner["LearnMonInfo"]["EggGroup1"])
+	if (Father["LearnMonInfo"]["EggGroup2"] !== Father["LearnMonInfo"]["EggGroup1"])
 	{
 		let EggGroup1Image = document.createElement("img");
-		EggGroup1Image.src = "images/egg groups/set3/" + Learner["LearnMonInfo"]["EggGroup1"] + ".png";
-		EggGroup1Image.className = "egggroupicon";
+		EggGroup1Image.src = "images/egg groups/set3/" + Father["LearnMonInfo"]["EggGroup1"] + ".png";
+		EggGroup1Image.className = "egggroupicon pokeboxicon";
 		EggGroup1Image.style.left = "42px";
-		Chevron.style.position = "absolute";
 		ImageContainer.appendChild(EggGroup1Image);
 	}
 
 	let PokemonImage = document.createElement("img");
-	PokemonImage.src = "images/pokemon/" + Learner["LearnMonInfo"]["SpeciesName"] + ".png";
+	PokemonImage.src = "images/pokemon/" + Father["LearnMonInfo"]["SpeciesName"] + ".png";
+	if (Chain === null && MatchupResult !== MATCHUP_SUCCESS)
+		PokemonImage.className = "pokemonimagefade";
 	ImageContainer.appendChild(PokemonImage);
 
-	if (Chain && Learner["LearnMonInfo"]["GenderRatio"] !== GR_TYPICAL)
+	if (Chain && Father["LearnMonInfo"]["GenderRatio"] !== GR_TYPICAL)
 	{
 		let NextLearner = Chain["LearnList"][iLearner - 1];
-		if (NextLearner && Learner["LearnMonInfo"]["GenderRatio"] === NextLearner["LearnMonInfo"]["GenderRatio"])
+		if (NextLearner && Father["LearnMonInfo"]["GenderRatio"] === NextLearner["LearnMonInfo"]["GenderRatio"])
 		{
 			let DittoImage = document.createElement("img");
 			DittoImage.src = "images/pokemon/Ditto.png";
-			DittoImage.className = "dittoicon";
+			DittoImage.className = "dittoicon pokeboxicon";
 			DittoImage.style.left = "84px";
 			DittoImage.style.top = "84px";
 			ImageContainer.appendChild(DittoImage);
@@ -1685,12 +1709,14 @@ function CreatePokemonInfoBox(Learner, LearnInst, Chain, iLearner, MatchupResult
 	
 	PokemonBox.appendChild(ImageContainer);
 
+	let InfoText = document.createElement("p");
 	if (Chain)
-	{
-		let InfoText = document.createElement("p");
-		InfoText.innerText = InfoStr(Learner, LearnInst);
-		PokemonBox.appendChild(InfoText);
-	}
+		InfoText.innerText = Father["LearnMonInfo"]["SpeciesName"] + InfoStr(Father, LearnInst);
+	else
+		InfoText.innerText = Father["LearnMonInfo"]["SpeciesName"];
+	if (MatchupResult === MATCHUP_SUCCESS && GetAnyTopLevelInstance(Father))
+		InfoText.style.fontWeight = "bold";
+	PokemonBox.appendChild(InfoText);
 	return PokemonBox;
 }
 
@@ -1703,13 +1729,17 @@ function SuggestChain(Chain)
 		Paragraph.innerText = "Chain for " + Chain["LearnList"][0]["MoveName"] + ": ";
 	else
 		Paragraph.innerText = "Chain: ";
-	Paragraph.style.fontSize = "1.5em";
+	Paragraph.className = "instruction";
 	ChainBox.appendChild(Paragraph);
 	for (let iLearner = Chain["LearnList"].length - 1; iLearner >= 0; iLearner--)
 	{
 		let Learner = Chain["LearnList"][iLearner];
 		let LearnInst = Learner["ShowInstance"];
-		let PokemonBox = CreatePokemonInfoBox(Learner, LearnInst, Chain, iLearner);
+		//make sure original father always shows a reasonable method
+		if (iLearner === Chain["LearnList"].length - 1)
+			LearnInst = GetAnyTopLevelInstance(Learner);
+		if (!LearnInst) debugger;
+		let PokemonBox = CreatePokemonInfoBox(Learner, Learner, LearnInst, Chain, iLearner);
 		ChainBox.appendChild(PokemonBox);
 		if (iLearner !== 0)
 		{
@@ -1722,22 +1752,45 @@ function SuggestChain(Chain)
 	document.getElementById("mainview").appendChild(ChainBox);
 }
 
+function InstanceCanBeTopLevel(LearnInst, Learner)
+{
+	//if you learn it by egg, then you must have a relevant father, thus the chain needs to be longer!
+	if (LearnInst["LearnMethod"] === LEARNBY_EGG)
+		return false;
+	
+	if (g_RequireFather.length && !g_RequireFather.includes(Learner["LearnMonInfo"]["SpeciesName"]))
+		return false;
+	
+	if (LearnInst["LearnMethod"] === LEARNBY_TM || LearnInst["LearnMethod"] === LEARNBY_TM_UNIVERSAL)
+		//this tells us that the target mon is not compatible with this TM. in which case, this mon is effectively learning the move by egg
+		if (!LearnInst["TMOfInterest"])
+			return false;
+	
+	if (g_MethodExcludes[LearnInst["LearnMethod"]])
+		return false;
+	
+	if (LearnInst["LearnMethod"] === LEARNBY_LEVELUP && +LearnInst["LearnLevel"] > +g_MaxLevel)
+		return false;
+	
+	if (LearnInst["UserRejected"])
+		return false;
+	
+	if (!LearnInst["LearnsInGame"]) debugger;
+	if (!LearnInst["LearnsInGame"]["GameIsAllowed"])
+		return false;
+	//
+	return true;
+}
+
 function GetAnyTopLevelInstance(Learner)
 {
 	for (let iInst = 0; iInst < Learner["Instances"].length; iInst++)
 	{
 		let LearnInst = Learner["Instances"][iInst];
-		//if you learn it by egg, then you must have a relevant father, thus the chain needs to be longer!
-		if (LearnInst["LearnMethod"] === LEARNBY_EGG)
+		
+		if (!InstanceCanBeTopLevel(LearnInst, Learner))
 			continue;
 		
-		if (g_RequireFather.length && !g_RequireFather.includes(Learner["LearnMonInfo"]["SpeciesName"]))
-			continue;
-		
-		if (LearnInst["LearnMethod"] === LEARNBY_TM || LearnInst["LearnMethod"] === LEARNBY_TM_UNIVERSAL)
-			//this tells us that the target mon is not compatible with this TM. in which case, this mon is effectively learning the move by egg
-			if (!LearnInst["TMOfInterest"])
-				continue;
 		return LearnInst;
 	}
 }
@@ -1792,7 +1845,8 @@ function FindNextChainSegment(Chains, BottomChild, pMove, Depth, MacroDepth, Max
 	}
 	else
 	{
-		ComboSetSatisfied(BottomChild["MoveName"], false, "B");
+		if (!g_SlowMode)
+			ComboSetSatisfied(BottomChild["MoveName"], false, "B");
 		return [Chains, CR_FAIL];
 	}
 }
@@ -1804,8 +1858,26 @@ function TestFather(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, L
 			debugger;
 	//if in combo mode, father must learn all of the moves yet to be satisfied
 	let BadForCombo = false;
-	if (g_Combo && GetAnyTopLevelInstance(Father))
+	let TopLevel = GetAnyTopLevelInstance(Father);
+	if (g_Combo && TopLevel)
 	{
+		if (g_SlowMode)
+		{
+			ComboSetSatisfied(BottomChild["MoveName"], true, "C");
+			let DoneWithAllMoves = true;
+			for (let iMove = 0; iMove < g_Combo; iMove++)
+				if (!g_ComboData["SatisfiedStatus"][iMove])
+					DoneWithAllMoves = false;
+			if (DoneWithAllMoves)
+			{
+				let Paragraph = document.createElement("p");
+				Paragraph.innerText = "You did it";
+				Paragraph.className = "instruction";
+				document.getElementById("mainview").appendChild(Paragraph);
+				Paragraph.scrollIntoView();
+				return [Chains, CR_SUCCESS];
+			}
+		}
 		let Learns = [null, null, null, null];
 		let Satisfy = FatherSatisfiesMoves(Father, Learns);
 		if (Satisfy === -1)
@@ -1814,7 +1886,7 @@ function TestFather(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, L
 			{
 				let Paragraph = document.createElement("p");
 				Paragraph.innerText = "Pick which move to learn next";
-				Paragraph.style.fontSize = "1.5em";
+				Paragraph.className = "instruction";
 				document.getElementById("mainview").appendChild(Paragraph);
 			}
 			for (let iMove = 0; iMove < g_Combo; iMove++)
@@ -1835,11 +1907,12 @@ function TestFather(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, L
 						MaxGen = Father["ShowInstance"]["LearnsInGame"]["GenerationNum"];
 						if (g_SlowMode)
 						{
-							let Paragraph = document.createElement("p");
-							Paragraph.innerText = WantedMove["MoveName"];
-							Paragraph.style.fontSize = "1.25em";
-							Paragraph.onclick = () => FindNextChainSegment(Chains, BottomChild, WantedMove, Depth, MacroDepth, MaxGen);
-							document.getElementById("mainview").appendChild(Paragraph);
+							let MoveBox = document.createElement("button");
+							MoveBox.innerText = WantedMove["MoveName"];
+							MoveBox.className = "movebox";
+							MoveBox.onclick = () => FindNextChainSegment(Chains, BottomChild, WantedMove, Depth, MacroDepth, MaxGen);
+							document.getElementById("mainview").appendChild(MoveBox);
+							MoveBox.scrollIntoView();
 						}
 						else
 						{
@@ -1862,10 +1935,11 @@ function TestFather(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, L
 
 	ClosedList[Father["Instances"][0]["LearnID"]] = true;
 
-	//console.log(tLearner["Instances"][0]["LearnID"] + " parent set to " + tFather["Instances"][0]["LearnID"] + "\n";
+	//console.log(Learner["Instances"][0]["LearnID"] + " parent set to " + Father["Instances"][0]["LearnID"]);
+	
 	ParentList[Learner["Instances"][0]["LearnID"]] = Father;
 	//if we went to SearchRetryLoop, no point in trying to continue this chain
-	if (!GetAnyTopLevelInstance(Father))
+	if (!TopLevel)
 	{
 		//okay, now find a father that this one can learn it from
 		let RetVal = FindFatherForMove(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, BottomChild, MaxGen);
@@ -1907,10 +1981,11 @@ function LogMatchupResult(Chains, ClosedList, ParentList, Depth, MacroDepth, Res
 		+ (Result === FATHER_ON_CLOSED_LIST ? " (ID: " + Father["Instances"][0]["LearnID"] + ")" : ""));
 	if (g_SlowMode)
 	{
-		let PokemonBox = CreatePokemonInfoBox(Father, null , null , Result, Chains, ClosedList, ParentList, Depth, MacroDepth, Father, BottomChild, MaxGen);
+		let PokemonBox = CreatePokemonInfoBox(Learner, Father, null, null , null , Result, Chains, ClosedList, ParentList, Depth, MacroDepth, BottomChild, MaxGen);
 		let ChainBoxes = document.getElementsByClassName("chainbox");
 		let ChainBox = ChainBoxes[ChainBoxes.length - 1];
 		ChainBox.appendChild(PokemonBox);
+		ChainBox.scrollIntoView();
 	}
 }
 
@@ -1948,6 +2023,7 @@ function FindFatherForMove(Chains, ClosedList, ParentList, Depth, MacroDepth, Le
 		if (Chains[iChain]["LearnList"][0]["MoveName"] === Learner["MoveName"])
 			debugger;
 	Depth++;
+	let LoggedAny = true;
 	if (g_MainLoopDebug) console.log(Depth + " " + MacroDepth + " Finding father to teach " + Learner["LearnMonInfo"]["SpeciesName"] + " " + Learner["MoveName"] + " to pass to " + BottomChild["LearnMonInfo"]["SpeciesName"]);
 	if (Depth >= g_MaxDepth)
 	{
@@ -1965,7 +2041,7 @@ function FindFatherForMove(Chains, ClosedList, ParentList, Depth, MacroDepth, Le
 			Paragraph.innerText = "Potential fathers to teach " + Learner["MoveName"] + " to " + Learner["LearnMonInfo"]["SpeciesName"];
 		else
 			Paragraph.innerText = "Potential fathers";
-		Paragraph.style.fontSize = "1.5em";
+		Paragraph.className = "instruction";
 		ChainBox.appendChild(Paragraph);
 		document.getElementById("mainview").appendChild(ChainBox);
 	}
@@ -1984,7 +2060,10 @@ function FindFatherForMove(Chains, ClosedList, ParentList, Depth, MacroDepth, Le
 		{
 			let Result = ValidateMatchup(ClosedList, ParentList, Learner, Learner, Father, BottomChild, MaxGen);
 			if (!MatchupResultIsBoring(Result))
+			{
+				LoggedAny = true;
 				LogMatchupResult(Chains, ClosedList, ParentList, Depth, MacroDepth, Result, Father, Learner, BottomChild, false, MaxGen);
+			}
 			
 			if (g_MainLoopDebug && Result === MATCHUP_SUCCESS) console.log(Depth + " " + MacroDepth + " " + Father["LearnMonInfo"]["SpeciesName"] + " can teach " + Learner["LearnMonInfo"]["SpeciesName"] + " " + Learner["MoveName"] + " to pass to " + BottomChild["LearnMonInfo"]["SpeciesName"]);
 			
@@ -1994,7 +2073,7 @@ function FindFatherForMove(Chains, ClosedList, ParentList, Depth, MacroDepth, Le
 			if (Result !== MATCHUP_SUCCESS)
 				continue;
 		}
-
+			
 		let RetVal = TestFather(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, Learner, BottomChild, MaxGen);
 		Chains = RetVal[0];
 		let Result = RetVal[1];
@@ -2005,6 +2084,18 @@ function FindFatherForMove(Chains, ClosedList, ParentList, Depth, MacroDepth, Le
 	}
 	//if there are no fathers left to look at, leave
 	if (g_MainLoopDebug) console.log(Depth + " " + MacroDepth + " No father to teach " + Learner["LearnMonInfo"]["SpeciesName"] + " " + Learner["MoveName"] + " to pass to " + BottomChild["LearnMonInfo"]["SpeciesName"]);
+	
+	if (g_SlowMode && !LoggedAny)
+	{
+		let Paragraph = document.createElement("p");
+		if (!g_NoMoves)
+			Paragraph.innerText = "No potential fathers to teach " + Learner["MoveName"] + " to " + Learner["LearnMonInfo"]["SpeciesName"];
+		else
+			Paragraph.innerText = "No potential fathers";
+		Paragraph.className = "instruction";
+		document.getElementById("mainview").appendChild(Paragraph);
+		Paragraph.scrollIntoView();
+	}
 	return [Chains, CR_FAIL];
 }
 
@@ -2046,20 +2137,23 @@ function SearchRetryLoop(Chains, Learner, Nested, MacroDepth, MaxGen)
 	if (g_MovesBeingExplored.includes(Learner["MoveName"]))
 		debugger;
 	g_MovesBeingExplored.push(Learner["MoveName"]);
-	//console.log("C " + g_MovesBeingExplored);
-	let Result;
+	//console.log("g_MovesBeingExplored add " + Learner["MoveName"]);
+	let Result = CR_FAIL;
 	//check nested because we presume user wants to BREED the given moves onto the target species
 	//putting them directly on another pokemon is fine though
-	let Inst = GetAnyTopLevelInstance(Learner);
-	if (Nested && Inst)
+	if (Nested)
 	{
-		if (g_MainLoopDebug) console.log(Learner["LearnMonInfo"]["SpeciesName"] + " can learn " + Learner["MoveName"] + " directly");
-		Learner["ShowInstance"] = Inst;
-		let NewChain = BreedChain([Learner]);
-		Chains.push(NewChain);
-		Result = CR_SUCCESS;
+		let Inst = GetAnyTopLevelInstance(Learner);
+		if (Inst)
+		{
+			if (g_MainLoopDebug) console.log(Learner["LearnMonInfo"]["SpeciesName"] + " can learn " + Learner["MoveName"] + " directly");
+			Learner["ShowInstance"] = Inst;
+			let NewChain = BreedChain([Learner]);
+			Chains.push(NewChain);
+			Result = CR_SUCCESS;
+		}
 	}
-	else
+	if (Result === CR_FAIL)
 	{
 		let RetVal = FindChain(Chains, Learner, Learner, MacroDepth, MaxGen);
 		Chains = RetVal[0];
@@ -2073,13 +2167,16 @@ function SearchRetryLoop(Chains, Learner, Nested, MacroDepth, MaxGen)
 		else
 			SuggestChain(Chains[Chains.length - 1]);
 	}
-	for (let iMove = g_MovesBeingExplored.length - 1; iMove >= 0; iMove--)
+	if (!g_SlowMode)
 	{
-		let Explore = g_MovesBeingExplored[iMove];
-		if (Learner["MoveName"] === Explore)
+		for (let iMove = g_MovesBeingExplored.length - 1; iMove >= 0; iMove--)
 		{
-			//console.log("A " + g_MovesBeingExplored);
-			g_MovesBeingExplored.splice(iMove, 1);
+			let Explore = g_MovesBeingExplored[iMove];
+			if (Learner["MoveName"] === Explore)
+			{
+				//console.log("g_MovesBeingExplored remove " + Learner["MoveName"]);
+				g_MovesBeingExplored.splice(iMove, 1);
+			}
 		}
 	}
 	return [Chains, Result];
@@ -2087,19 +2184,21 @@ function SearchRetryLoop(Chains, Learner, Nested, MacroDepth, MaxGen)
 
 function SearchStart()
 {
+	let Chains = [];
+	let MaxGen = g_Generations.length - 1;
 	if (g_SlowMode)
 	{
 		let Paragraph = document.createElement("p");
 		Paragraph.innerText = "Pick which move to learn first";
-		Paragraph.style.fontSize = "1.5em";
+		Paragraph.className = "instruction";
 		document.getElementById("mainview").appendChild(Paragraph);
 		for (let iMoveToLearn = 0; iMoveToLearn < g_MovesToLearn.length; iMoveToLearn++)
 		{
-			let MovePara = document.createElement("p");
-			MovePara.innerText = g_MovesToLearn[iMoveToLearn];
-			MovePara.style.fontSize = "1.25em";
-			MovePara.onclick = () => FindNextChainSegment(Chains, BottomChild, pMove, Depth, MacroDepth, MaxGen);
-			document.getElementById("mainview").appendChild(MovePara);
+			let MoveBox = document.createElement("button");
+			MoveBox.innerText = g_MovesToLearn[iMoveToLearn];
+			MoveBox.className = "movebox";
+			MoveBox.onclick = () => SearchRetryLoop(Chains, GetLearner(g_TargetSpecies, g_MovesToLearn[iMoveToLearn]), false, 0, MaxGen);
+			document.getElementById("mainview").appendChild(MoveBox);
 		}
 		return;
 	}
@@ -2107,10 +2206,10 @@ function SearchStart()
 	{
 		let Para = document.createElement("p");
 		Para.innerText = "Nothing";
+		Para.className = "instruction";
 		document.getElementById("mainview").appendChild(Para);
 	}
 
-	let Chains = [];
 	console.log("Learner count: " + g_MoveLearners.length);
 	for (let i = 0; i < g_MoveLearners.length; i++)
 	{
@@ -2133,7 +2232,6 @@ function SearchStart()
 				continue;
 			}
 			
-			let MaxGen = g_Generations.length - 1;
 			let RetVal = SearchRetryLoop(Chains, Move, false, 0, MaxGen);
 			Chains = RetVal[0];
 		}

@@ -29,6 +29,7 @@
             width:75%;
             height:100%;
             text-align:center;
+            overflow:overlay;
         }
         .pokemonbox {
             display:inline-block;
@@ -37,9 +38,6 @@
             position:relative;
         }
         .egggroupicon {
-            position:absolute;
-            width:42px;
-            height:42px;
         }
         .chainarrow {
             top:42px;
@@ -48,9 +46,12 @@
             font-size:42px;
         }
         .dittoicon {
+        }
+        .pokeboxicon {
             position:absolute;
             width:42px;
             height:42px;
+            z-index:1;
         }
         .optionbox {
             position:absolute;
@@ -64,7 +65,9 @@
             background-color:lightgray;
         }
         .chainbox {
-            margin:30px;
+            margin-bottom:1em;
+            margin-left:0.5em;
+            margin-right:0.5em;
         }
         .imagecontainer {
             width:128px;
@@ -73,6 +76,19 @@
             left:0;
             right:0;
             position:inherit;
+        }
+        .pokemonimagefade {
+            opacity:0.33;
+        }
+        .movebox {
+            font-size:1.25em;
+            margin-left:1em;
+            margin-right:1em;
+        }
+        .instruction {
+            font-size:1.5em;
+            margin-bottom:1em;
+            margin-top:2em;
         }
     </style>
 </head>
@@ -117,7 +133,7 @@
         </div>
     </div>
     <div class="settingcontainer">
-        <p class="settingstext">Comma-separated list of Pokemon who are allowed to be the top-level ancestor.</p>
+        <p class="settingstext">Comma-separated list of Pokemon who are allowed to be the top-level ancestor. Use with No Moves mode.</p>
         <textarea id="requirefathers" rows="1" cols="30"></textarea><label for="requirefathers"></label>
     </div>
     <div class="settingcontainer">
@@ -127,7 +143,8 @@
         <span id="combomodespan"><input type="checkbox" id="combomode"/><label for="combomode">Combo Mode (fit all moves on the Pokemon at the same time, generally not needed Gen 6+)</label></span>
     </div>
     <div class="settingcontainer">
-        <input type="checkbox" id="slowmode"/><label for="slowmode">Slow Mode (walk through every step at your own pace)</label>
+        <input type="checkbox" id="slowmode"/><label for="slowmode">Slow Mode (walk through every step at your own pace, use for only one move at a time if not using Combo mode)</label>
+        <p>Tip: Bold names show ideal fathers for the move, but they might not work for combo mode.</p>
     </div>
 </div>
 <script src="js/core.js" type="text/javascript" charset="utf-8"></script>
