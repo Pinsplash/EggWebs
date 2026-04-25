@@ -167,7 +167,7 @@ function StringPairIdent(p1s1, p1s2, p2s1, p2s2)
 //Generation A has to be the same gen as Generation B, or earlier than B
 function GenerationsCompatible(GenA, GenB)
 {
-	if (GenA < GenB)
+	if (GenA <= GenB)
 		return true;
 	if (GenA === GENERATION_8_BDSP && GenB === GENERATION_8)
 		return true;
@@ -578,7 +578,7 @@ function FatherSatisfiesMoves(Father, Learns)
 }
 
 //bSkipNewGroupCheck is false in every call to this function. just for debug purposes?
-function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomChild, SkipNewGroupCheck)
+function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomChild, MaxGen)
 {
 	
 	//must learn the move in question
@@ -713,10 +713,13 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 				//uhh, is it? write the use case in here next time it comes up
 				//let NewMethod = FatherInst["LearnMethod"] !== ChildInst["LearnMethod"];
 				//why did we have a check for !bChildIsTargetSpecies here? this was causing venonat <- caterpie to be valid
-				if (!SkipNewGroupCheck && !NewEggGroup && (!SameEvolutionLine || Child["LearnMonInfo"]["GenderRatio"] === GR_TYPICAL))
+				if (!NewEggGroup && (!SameEvolutionLine || Child["LearnMonInfo"]["GenderRatio"] === GR_TYPICAL))
 					continue;//return NO_NEW_EGG_GROUP;
 				
 				if (!GenerationsCompatible(FatherInst["LearnsInGame"]["GenerationNum"], ChildInst["LearnsInGame"]["GenerationNum"]))
+					continue;
+				
+				if (!GenerationsCompatible(ChildInst["LearnsInGame"]["GenerationNum"], MaxGen))
 					continue;
 				
 				//disabling until i can clarify the meaning better cause... what
@@ -1449,7 +1452,7 @@ function PreSearch()
 	{
 		for (let iLearner = 0; iLearner < g_MoveLearners.length; iLearner++)
 			for (let iInst = 0; iInst < g_MoveLearners[iLearner]["Instances"].length; iInst++)
-				console.log(g_MoveLearners[iLearner]["MoveName"] + ": " + InfoStr(g_MoveLearners[iLearner], g_MoveLearners[iLearner]["Instances"][iInst]));
+				console.log(g_MoveLearners[iLearner]["MoveName"] + ": (" + iLearner + " " + iInst + ")" + InfoStr(g_MoveLearners[iLearner], g_MoveLearners[iLearner]["Instances"][iInst]));
 	}
 	else
 	{
@@ -1492,7 +1495,7 @@ function PreSearch()
 	{
 		if (g_Combo)
 		{
-			alert("Illegal move combination: No generation where hatching " + g_TargetSpecies + " is possible.");
+			alert("Illegal move combination: No game where hatching " + g_TargetSpecies + " is possible.");
 			return false;
 		}
 		else
@@ -1570,7 +1573,7 @@ function ExcludeEvolutionFamily(Learner)
 	RestartSearchByDataChange();
 }
 
-function ToggleOptionDropdown(PokemonBox, Learner, LearnInst, MatchupResult, Chains, ClosedList, ParentList, Depth, MacroDepth, Father, BottomChild)
+function ToggleOptionDropdown(PokemonBox, Learner, LearnInst, MatchupResult, Chains, ClosedList, ParentList, Depth, MacroDepth, Father, BottomChild, MaxGen)
 {
 	let OptionList = PokemonBox.getElementsByClassName("optionbox")[0];
 	let Show;
@@ -1592,7 +1595,7 @@ function ToggleOptionDropdown(PokemonBox, Learner, LearnInst, MatchupResult, Cha
 			if (MatchupResult === MATCHUP_SUCCESS)
 			{
 				p1.innerText = "Use this father";
-				p1.onclick = () => TestFather(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, Learner, BottomChild);
+				p1.onclick = () => TestFather(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, Learner, BottomChild, MaxGen);
 			}
 			else
 				p1.innerText = MatchupResultStrings[MatchupResult];
@@ -1629,23 +1632,28 @@ function ToggleOptionDropdown(PokemonBox, Learner, LearnInst, MatchupResult, Cha
 	}
 }
 
-function CreatePokemonInfoBox(Learner, LearnInst, Chain, iLearner, MatchupResult, Chains, ClosedList, ParentList, Depth, MacroDepth, Father, BottomChild)
+function CreatePokemonInfoBox(Learner, LearnInst, Chain, iLearner, MatchupResult, Chains, ClosedList, ParentList, Depth, MacroDepth, Father, BottomChild, MaxGen)
 {
 	let PokemonBox = document.createElement("div");
 	PokemonBox.className = "pokemonbox";
+	
+	let ImageContainer = document.createElement("div");
+	ImageContainer.className = "imagecontainer";
 
 	let Chevron = document.createElement("img");
 	Chevron.src = "images/ui/chevron.png";
 	Chevron.style.position = "absolute";
+	Chevron.style.left = "0px";
 	if (Chain)
-		Chevron.onclick = () => ToggleOptionDropdown(PokemonBox, Learner, LearnInst, MatchupResult, Chains, ClosedList, ParentList, Depth, MacroDepth, Father, BottomChild);
-	PokemonBox.appendChild(Chevron);
+		Chevron.onclick = () => ToggleOptionDropdown(PokemonBox, Learner, LearnInst, MatchupResult, Chains, ClosedList, ParentList, Depth, MacroDepth, Father, BottomChild, MaxGen);
+	ImageContainer.appendChild(Chevron);
 
 	let EggGroup2Image = document.createElement("img");
 	EggGroup2Image.src = "images/egg groups/set3/" + Learner["LearnMonInfo"]["EggGroup2"] + ".png";
 	EggGroup2Image.className = "egggroupicon";
 	EggGroup2Image.style.left = "84px";
-	PokemonBox.appendChild(EggGroup2Image);
+	Chevron.style.position = "absolute";
+	ImageContainer.appendChild(EggGroup2Image);
 
 	if (Learner["LearnMonInfo"]["EggGroup2"] !== Learner["LearnMonInfo"]["EggGroup1"])
 	{
@@ -1653,12 +1661,13 @@ function CreatePokemonInfoBox(Learner, LearnInst, Chain, iLearner, MatchupResult
 		EggGroup1Image.src = "images/egg groups/set3/" + Learner["LearnMonInfo"]["EggGroup1"] + ".png";
 		EggGroup1Image.className = "egggroupicon";
 		EggGroup1Image.style.left = "42px";
-		PokemonBox.appendChild(EggGroup1Image);
+		Chevron.style.position = "absolute";
+		ImageContainer.appendChild(EggGroup1Image);
 	}
 
 	let PokemonImage = document.createElement("img");
 	PokemonImage.src = "images/pokemon/" + Learner["LearnMonInfo"]["SpeciesName"] + ".png";
-	PokemonBox.appendChild(PokemonImage);
+	ImageContainer.appendChild(PokemonImage);
 
 	if (Chain && Learner["LearnMonInfo"]["GenderRatio"] !== GR_TYPICAL)
 	{
@@ -1670,9 +1679,11 @@ function CreatePokemonInfoBox(Learner, LearnInst, Chain, iLearner, MatchupResult
 			DittoImage.className = "dittoicon";
 			DittoImage.style.left = "84px";
 			DittoImage.style.top = "84px";
-			PokemonBox.appendChild(DittoImage);
+			ImageContainer.appendChild(DittoImage);
 		}
 	}
+	
+	PokemonBox.appendChild(ImageContainer);
 
 	if (Chain)
 	{
@@ -1759,11 +1770,11 @@ function LogChainClear(Chains, Depth, MacroDepth, Location)
 */
 let g_MainLoopDebug = true;
 
-function FindNextChainSegment(Chains, BottomChild, pMove, Depth, MacroDepth)
+function FindNextChainSegment(Chains, BottomChild, pMove, Depth, MacroDepth, MaxGen)
 {
 	let NewChains = [];
 	ComboSetSatisfied(BottomChild["MoveName"], true, "A");
-	let RetVal = SearchRetryLoop(NewChains, pMove, true, MacroDepth);
+	let RetVal = SearchRetryLoop(NewChains, pMove, true, MacroDepth, MaxGen);
 	NewChains = RetVal[0];
 	let Result = RetVal[1];
 	if (Result === CR_SUCCESS)
@@ -1786,7 +1797,7 @@ function FindNextChainSegment(Chains, BottomChild, pMove, Depth, MacroDepth)
 	}
 }
 
-function TestFather(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, Learner, BottomChild)
+function TestFather(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, Learner, BottomChild, MaxGen)
 {
 	for (let iChain = 0; iChain < Chains.length; iChain++)
 		if (Chains[iChain]["LearnList"][0]["MoveName"] === Learner["MoveName"])
@@ -1806,32 +1817,33 @@ function TestFather(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, L
 				Paragraph.style.fontSize = "1.5em";
 				document.getElementById("mainview").appendChild(Paragraph);
 			}
-			for (let i = 0; i < g_Combo; i++)
+			for (let iMove = 0; iMove < g_Combo; iMove++)
 			{
-				let pMove = Learns[i];
-				if (pMove)
+				let WantedMove = Learns[iMove];
+				if (WantedMove)
 				{
-					let AlreadyGotMove = g_MovesBeingExplored.includes(pMove["MoveName"]);
+					let AlreadyGotMove = g_MovesBeingExplored.includes(WantedMove["MoveName"]);
 					//check g_MovesBeingExplored AND now Chains too. checking both just seems to make the most sense?
 					//we were having problems with a mismagius wanting to know hidden power/shadow ball/thunderbolt
 					if (!AlreadyGotMove)
 						for (let iChain = 0; iChain < Chains.length; iChain++)
-							if (Chains[iChain]["LearnList"][0]["MoveName"] === pMove["MoveName"])
+							if (Chains[iChain]["LearnList"][0]["MoveName"] === WantedMove["MoveName"])
 								AlreadyGotMove = true;
 					//we can't just check satisfied state because it's not been set yet
 					if (!AlreadyGotMove)
 					{
+						MaxGen = Father["ShowInstance"]["LearnsInGame"]["GenerationNum"];
 						if (g_SlowMode)
 						{
 							let Paragraph = document.createElement("p");
-							Paragraph.innerText = pMove["MoveName"];
+							Paragraph.innerText = WantedMove["MoveName"];
 							Paragraph.style.fontSize = "1.25em";
-							Paragraph.onclick = () => FindNextChainSegment(Chains, BottomChild, pMove, Depth, MacroDepth);
+							Paragraph.onclick = () => FindNextChainSegment(Chains, BottomChild, WantedMove, Depth, MacroDepth, MaxGen);
 							document.getElementById("mainview").appendChild(Paragraph);
 						}
 						else
 						{
-							let RetVal = FindNextChainSegment(Chains, BottomChild, pMove, Depth, MacroDepth);
+							let RetVal = FindNextChainSegment(Chains, BottomChild, WantedMove, Depth, MacroDepth, MaxGen);
 							Chains = RetVal[0];
 							BadForCombo = RetVal[1] === CR_FAIL;
 						}
@@ -1856,7 +1868,7 @@ function TestFather(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, L
 	if (!GetAnyTopLevelInstance(Father))
 	{
 		//okay, now find a father that this one can learn it from
-		let RetVal = FindFatherForMove(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, BottomChild);
+		let RetVal = FindFatherForMove(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, BottomChild, MaxGen);
 		Chains = RetVal[0];
 		let Result = RetVal[1];
 		//return now to ensure SearchRetryLoop returns the correct result
@@ -1887,7 +1899,7 @@ function TestFather(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, L
 	return [Chains, CR_FAIL];
 }
 
-function LogMatchupResult(Chains, ClosedList, ParentList, Depth, MacroDepth, Result, Father, Learner, BottomChild, UsingAltMother)
+function LogMatchupResult(Chains, ClosedList, ParentList, Depth, MacroDepth, Result, Father, Learner, BottomChild, UsingAltMother, MaxGen)
 {
 	if (g_MainLoopDebug && Result !== MATCHUP_SUCCESS) console.log(Depth + " " + MacroDepth + " " + Father["LearnMonInfo"]["SpeciesName"] + " CANNOT teach "
 		+ Learner["LearnMonInfo"]["SpeciesName"] + " " + Learner["MoveName"] + ": "
@@ -1895,14 +1907,14 @@ function LogMatchupResult(Chains, ClosedList, ParentList, Depth, MacroDepth, Res
 		+ (Result === FATHER_ON_CLOSED_LIST ? " (ID: " + Father["Instances"][0]["LearnID"] + ")" : ""));
 	if (g_SlowMode)
 	{
-		let PokemonBox = CreatePokemonInfoBox(Father, null , null , Result, Chains, ClosedList, ParentList, Depth, MacroDepth, Father, BottomChild);
+		let PokemonBox = CreatePokemonInfoBox(Father, null , null , Result, Chains, ClosedList, ParentList, Depth, MacroDepth, Father, BottomChild, MaxGen);
 		let ChainBoxes = document.getElementsByClassName("chainbox");
 		let ChainBox = ChainBoxes[ChainBoxes.length - 1];
 		ChainBox.appendChild(PokemonBox);
 	}
 }
 
-function TryAlternateMothers(Chains, Learner, ClosedList, ParentList, Father, BottomChild, Depth, MacroDepth)
+function TryAlternateMothers(Chains, Learner, ClosedList, ParentList, Father, BottomChild, Depth, MacroDepth, MaxGen)
 {
 	for (let iAlt = 0; iAlt < AltParents.length; iAlt++)
 	{
@@ -1913,11 +1925,11 @@ function TryAlternateMothers(Chains, Learner, ClosedList, ParentList, Father, Bo
 				let AltMother = g_MoveLearners[iLearn];
 				if (AltMother["LearnMonInfo"]["SpeciesName"] === AltParents[iAlt + 1] && AltMother["MoveName"] === Learner["MoveName"])
 				{
-					let Result = ValidateMatchup(ClosedList, ParentList, AltMother, Learner, Father, BottomChild, false);
+					let Result = ValidateMatchup(ClosedList, ParentList, AltMother, Learner, Father, BottomChild, MaxGen);
 					if (Result === MATCHUP_SUCCESS)
 						return true;
 					else if (g_MainLoopDebug && !MatchupResultIsBoring(Result))
-						LogMatchupResult(Chains, ClosedList, ParentList, Depth, MacroDepth, Result, Father, Learner, BottomChild, true);
+						LogMatchupResult(Chains, ClosedList, ParentList, Depth, MacroDepth, Result, Father, Learner, BottomChild, true, MaxGen);
 				}
 			}
 		}
@@ -1930,7 +1942,7 @@ function MatchupResultIsBoring(Result)
 	return Result === DIFFERENT_MOVE || Result === NO_EGG_GROUP_MATCH;
 }
 
-function FindFatherForMove(Chains, ClosedList, ParentList, Depth, MacroDepth, Learner, BottomChild)
+function FindFatherForMove(Chains, ClosedList, ParentList, Depth, MacroDepth, Learner, BottomChild, MaxGen)
 {
 	for (let iChain = 0; iChain < Chains.length; iChain++)
 		if (Chains[iChain]["LearnList"][0]["MoveName"] === Learner["MoveName"])
@@ -1966,13 +1978,13 @@ function FindFatherForMove(Chains, ClosedList, ParentList, Depth, MacroDepth, Le
 		//however we need not worry about that; the fathers will already be considered naturally since they're in the same egg group
 		let GoodAltSpecies = false;
 		if (Learner["LearnMonInfo"]["GenderRatio"] === GR_MALE_ONLY)
-			GoodAltSpecies = TryAlternateMothers(Chains, Learner, ClosedList, ParentList, Father, BottomChild, Depth, MacroDepth);
+			GoodAltSpecies = TryAlternateMothers(Chains, Learner, ClosedList, ParentList, Father, BottomChild, Depth, MacroDepth, MaxGen);
 
 		if (!GoodAltSpecies)
 		{
-			let Result = ValidateMatchup(ClosedList, ParentList, Learner, Learner, Father, BottomChild, false);
+			let Result = ValidateMatchup(ClosedList, ParentList, Learner, Learner, Father, BottomChild, MaxGen);
 			if (!MatchupResultIsBoring(Result))
-				LogMatchupResult(Chains, ClosedList, ParentList, Depth, MacroDepth, Result, Father, Learner, BottomChild, false);
+				LogMatchupResult(Chains, ClosedList, ParentList, Depth, MacroDepth, Result, Father, Learner, BottomChild, false, MaxGen);
 			
 			if (g_MainLoopDebug && Result === MATCHUP_SUCCESS) console.log(Depth + " " + MacroDepth + " " + Father["LearnMonInfo"]["SpeciesName"] + " can teach " + Learner["LearnMonInfo"]["SpeciesName"] + " " + Learner["MoveName"] + " to pass to " + BottomChild["LearnMonInfo"]["SpeciesName"]);
 			
@@ -1983,7 +1995,7 @@ function FindFatherForMove(Chains, ClosedList, ParentList, Depth, MacroDepth, Le
 				continue;
 		}
 
-		let RetVal = TestFather(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, Learner, BottomChild);
+		let RetVal = TestFather(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, Learner, BottomChild, MaxGen);
 		Chains = RetVal[0];
 		let Result = RetVal[1];
 
@@ -1999,8 +2011,8 @@ function FindFatherForMove(Chains, ClosedList, ParentList, Depth, MacroDepth, Le
 //properties like which nodes we've explored and their parent pointer need to be in the scope of a chain, not global
 //imagine we want a Chikorita with Leech Seed and Hidden Power (and without using the HP TM) you can go Slowking -> Chikorita -> Exeggcute -> Chikorita
 //this would really be a combination of two chains, one that goes Exeggcute -> Chikorita (for Leech Seed) and one that goes Slowking -> Chikorita -> Exeggcute (for Hidden Power)
-//for the 2nd one, we need to understand that Chikorita is not the true target (tBottomChild) but rather Exeggcute is
-function FindChain(Chains, Learner, BottomChild, MacroDepth)
+//for the 2nd one, we need to understand that Chikorita is not the true target (BottomChild) but rather Exeggcute is
+function FindChain(Chains, Learner, BottomChild, MacroDepth, MaxGen)
 {
 	for (let iChain = 0; iChain < Chains.length; iChain++)
 		if (Chains[iChain]["LearnList"][0]["MoveName"] === Learner["MoveName"])
@@ -2009,7 +2021,7 @@ function FindChain(Chains, Learner, BottomChild, MacroDepth)
 
 	let ClosedList = [];
 	let ParentList = [];
-	return FindFatherForMove(Chains, ClosedList, ParentList, Depth, MacroDepth, Learner, BottomChild);
+	return FindFatherForMove(Chains, ClosedList, ParentList, Depth, MacroDepth, Learner, BottomChild, MaxGen);
 }
 
 function SuggestChainCombo(Chains)
@@ -2024,7 +2036,7 @@ function SuggestChainCombo(Chains)
 	}
 }
 
-function SearchRetryLoop(Chains, Learner, Nested, MacroDepth)
+function SearchRetryLoop(Chains, Learner, Nested, MacroDepth, MaxGen)
 {
 	MacroDepth++;
 	for (let iChain = 0; iChain < Chains.length; iChain++)
@@ -2049,7 +2061,7 @@ function SearchRetryLoop(Chains, Learner, Nested, MacroDepth)
 	}
 	else
 	{
-		let RetVal = FindChain(Chains, Learner, Learner, MacroDepth);
+		let RetVal = FindChain(Chains, Learner, Learner, MacroDepth, MaxGen);
 		Chains = RetVal[0];
 		Result = RetVal[1];
 	}
@@ -2086,7 +2098,7 @@ function SearchStart()
 			let MovePara = document.createElement("p");
 			MovePara.innerText = g_MovesToLearn[iMoveToLearn];
 			MovePara.style.fontSize = "1.25em";
-			MovePara.onclick = () => FindNextChainSegment(Chains, BottomChild, pMove, Depth, MacroDepth);
+			MovePara.onclick = () => FindNextChainSegment(Chains, BottomChild, pMove, Depth, MacroDepth, MaxGen);
 			document.getElementById("mainview").appendChild(MovePara);
 		}
 		return;
@@ -2121,7 +2133,8 @@ function SearchStart()
 				continue;
 			}
 			
-			let RetVal = SearchRetryLoop(Chains, Move, false, 0);
+			let MaxGen = g_Generations.length - 1;
+			let RetVal = SearchRetryLoop(Chains, Move, false, 0, MaxGen);
 			Chains = RetVal[0];
 		}
 	}
@@ -2240,37 +2253,30 @@ function ParseGameAnnotations()
 				let ValueStart = 0;
 				let GameList = [];
 				ProcessAnnotatedCell(GameList, LearnInst["LearnLevel"], ValueStart, true);
+				let Game = LearnInst["LearnsInGame"];
 				for (let iStr = 0; iStr < GameList.length; iStr += 2)
 				{
 					let Acronym = GameList[iStr];
-					//search through the game list to find a game with an acronym that is contained within our string
-					let FoundGame;
-					for (let iGame = 0; iGame < g_Games.length; iGame++)
+					let FoundAcronym = Acronym.includes(Game["Acronym"]);
+					//avoid finding a small acronym inside a bigger one
+					if (FoundAcronym)
 					{
-						let Game = g_Games[iGame];
-						let FoundAcronym = Acronym.includes(Game["Acronym"]);
-						//avoid finding a small acronym inside a bigger one
-						if (FoundAcronym)
-						{
-							if (Game["Acronym"] === "GS" && Acronym.includes("HGSS"))
-								FoundAcronym = false;
-							if (Game["Acronym"] === "Y" && Acronym.includes("XY"))
-								FoundAcronym = false;
-						}
-						if (FoundAcronym)
-						{
-							let NewInst = CloneLearnInstance(LearnInst);
-							NewInst["LearnLevel"] = GameList[iStr + 1];
-							if (!NewInst["LearnLevel"])
-								debugger;
-							FoundGame = Game;
-							//put this call here instead of after the loop. if a string is "DPPt" we'd rather make nodes for both DP and Pt than awkwardly picking one or the other
-							AddInstanceToLearnerGame(Learner, NewInst, Game);
-							break;
-						}
+						if (Game["Acronym"] === "GS" && Acronym.includes("HGSS"))
+							FoundAcronym = false;
+						if (Game["Acronym"] === "Y" && Acronym.includes("XY"))
+							FoundAcronym = false;
 					}
-					if (!FoundGame)
-						debugger;
+					if (FoundAcronym)
+					{
+						let NewInst = CloneLearnInstance(LearnInst);
+						NewInst["LearnLevel"] = GameList[iStr + 1];
+						if (!NewInst["LearnLevel"])
+							debugger;
+						//put this call here instead of after the loop. if a string is "DPPt" we'd rather make nodes for both DP and Pt than awkwardly picking one or the other
+						AddInstanceToLearnerGame(Learner, NewInst, Game);
+						//do NOT break here for optimization. if a string is "DPPt", that would cause us to only make a learn for DP, not Pt
+						//break;
+					}
 				}
 				LearnInst["EraseMe"] = true;
 			}
@@ -2288,6 +2294,49 @@ function ParseGameAnnotations()
 	}
 }
 
+function PreferNonEvolveLearn(a, b)
+{
+	if (a["OriginalLearn"] && b["OriginalLearn"])
+		return 0;
+	if (b["OriginalLearn"])
+		return -1;
+	if (a["OriginalLearn"])
+		return 1;
+}
+
+function PreferTargetGameLearn(a, b)
+{
+	if (a["LearnsInGame"] === b["LearnsInGame"])
+		return PreferNonEvolveLearn(a, b);
+	if (a["LearnsInGame"] === g_TargetGame)
+		return -1;
+	if (b["LearnsInGame"] === g_TargetGame)
+		return 1;
+	return 0;
+}
+
+function CompareGeneration(a, b)
+{
+	if (a["LearnsInGame"]["GenerationNum"] === b["LearnsInGame"]["GenerationNum"])
+		return PreferTargetGameLearn(a, b);
+	if (GenerationsCompatible(a["LearnsInGame"]["GenerationNum"], b["LearnsInGame"]["GenerationNum"]))
+		return 1;
+	else
+		return -1;
+}
+
+function SortData()
+{
+	//all learn instances NEED to be sorted to have the newest generation first. this is because the ShowInstance property simply shows
+	//the result from ValidateMatchup that worked first. ShowInstance defines the maximum allowed generation in nested chain searches.
+	//if we don't sort like this, valid chains can be missed because ShowInstance's generation is lower than it should be.
+	for (let iLearn = 0; iLearn < g_MoveLearners.length; iLearn++)
+	{
+		let Learner = g_MoveLearners[iLearn];
+		Learner["Instances"].sort(CompareGeneration);
+	}
+}
+
 async function main()
 {
 	ResetVarsForParameterChange();
@@ -2302,10 +2351,12 @@ async function main()
 		await ProcessFiles(Files);
 		SplitMultiLevelLearns();
 		GenerateUniversalTMLearns(g_TargetGame);
-		CreatePriorEvolutionLearns(g_TargetGame);
 		FindTMsOfInterest();
 		ParseGameAnnotations();
+		CreatePriorEvolutionLearns(g_TargetGame);
 	}
+	
+	SortData();
 
 	if (!PreSearch())
 		return;
