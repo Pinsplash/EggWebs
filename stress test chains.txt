@@ -56,3 +56,8 @@ Chain for Ice Shard: Smeargle (Sketch)
 Chain for Rapid Spin: Smeargle (Sketch)
 Chain for Toxic: Smeargle (Sketch)
 Chain for Ice Beam: Smeargle (Sketch) → Delibird (By TM)
+
+
+tests alternate parents
+Charm on Nidoqueen (gen 6)
+Chain for Charm: Eevee (Level 29) → Nidoqueen (Egg move, Learned as Nidoran F)

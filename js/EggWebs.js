@@ -39,7 +39,10 @@ const g_Generations =
 const AltParents =
 	[
 		"Volbeat", "Illumise",
-		"Nidoran M", "Nidoran F"
+		"Nidoran M", "Nidoran F",
+		//nidorina and nidoqueen are NED, so their mother must be nidoran f
+		"Nidorina", "Nidoran F",
+		"Nidoqueen", "Nidoran F"
 	];
 
 const MatchupResultStrings =
@@ -52,8 +55,8 @@ const MatchupResultStrings =
 		"Already considered father",//FATHER_ON_CLOSED_LIST
 		"User requested mother can't learn move by this method",//MOTHER_EXCLUDED_METHOD
 		"Impossible to breed due to gender ratios",//MALE_FEMALE_ONLY_INCOMPATIBLE
-		"No egg group in common",//NO_EGG_GROUP_MATCH
-		"Redundant: No new egg group",//NO_NEW_EGG_GROUP
+		"No Egg Group in common",//NO_EGG_GROUP_MATCH
+		"Redundant: No new Egg Group",//NO_NEW_EGG_GROUP
 		"Father learns move at level above maximum",//FATHER_LEVEL_ABOVE_MAX
 		"Mother learns move at level above maximum",//MOTHER_LEVEL_ABOVE_MAX
 		"Father was rejected by user",//FATHER_REJECTED
@@ -63,8 +66,9 @@ const MatchupResultStrings =
 		"Redundant: Mother learns move at level below maximum",//MOTHER_LEVEL_BELOW_MAX
 		"Female-only mothers can only pass down a move if the child learns it by level up",//FEMALE_ONLY_MOM_NEEDS_LEVELUP_CHILD
 		"Redundant: Father already part of breeding chain",//FATHER_ALREADY_IN_CHAIN
-		"Redundant: Already went to this egg group",//EGG_GROUP_ALREADY_IN_CHAIN
+		"Redundant: Already went to this Egg Group",//EGG_GROUP_ALREADY_IN_CHAIN
 		"Father can't learn all of the necessary moves",//FATHER_CANT_LEARN_ALL_MOVES
+		"Pokemon in the \"No Eggs Discovered\" Egg Group can't breed",//FAIL_NO_EGGS_DISCOVERED
 		"Other",//FAIL_OTHER
 	];
 
@@ -597,6 +601,9 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 	let NewCommonEggGroup = StringPairMatch(Mother["LearnMonInfo"]["EggGroup1"], Mother["LearnMonInfo"]["EggGroup2"], Father["LearnMonInfo"]["EggGroup1"], Father["LearnMonInfo"]["EggGroup2"]);
 	if (!NewCommonEggGroup)
 		return NO_EGG_GROUP_MATCH;
+	
+	if (NewCommonEggGroup === "NED")
+		return FAIL_NO_EGGS_DISCOVERED;
 	
 	//this has to come after NewCommonEggGroup check so that legendaries don't appear in slow mode
 	//Gender-unknown Pokémon can only breed with Ditto. this makes them uninteresting for EggWebs (aside from Shedinja MAYBE because the offspring Nincada is gender known)
@@ -2042,7 +2049,7 @@ function LogMatchupResult(Chains, ClosedList, ParentList, Depth, MacroDepth, Res
 
 function TryAlternateMothers(Chains, Learner, ClosedList, ParentList, Father, BottomChild, Depth, MacroDepth, MaxGen)
 {
-	for (let iAlt = 0; iAlt < AltParents.length; iAlt++)
+	for (let iAlt = 0; iAlt < AltParents.length; iAlt += 2)
 	{
 		if (Learner["LearnMonInfo"]["SpeciesName"] === AltParents[iAlt])
 		{
@@ -2104,7 +2111,7 @@ function FindFatherForMove(Chains, ClosedList, ParentList, Depth, MacroDepth, Le
 		//those same female pokemon can also come from an egg made by the male breeding with a ditto starting in gen 5
 		//however we need not worry about that; the fathers will already be considered naturally since they're in the same egg group
 		let GoodAltSpecies = false;
-		if (Learner["LearnMonInfo"]["GenderRatio"] === GR_MALE_ONLY)
+		if (Learner["LearnMonInfo"]["GenderRatio"] === GR_MALE_ONLY || Learner["LearnMonInfo"]["GenderRatio"] === GR_FEMALE_ONLY)
 			GoodAltSpecies = TryAlternateMothers(Chains, Learner, ClosedList, ParentList, Father, BottomChild, Depth, MacroDepth, MaxGen);
 
 		if (!GoodAltSpecies)
@@ -2202,7 +2209,7 @@ function SearchRetryLoop(Chains, Learner, Nested, MacroDepth, MaxGen)
 	{
 		document.getElementById("mainview").innerHTML = "";
 		console.log(Chains.length + " chains");
-		if (Chains.length !== g_Combo)
+		if (g_Combo && Chains.length !== g_Combo)
 			debugger;
 		for (let iChain = 0; iChain < Chains.length; iChain++)
 		{
