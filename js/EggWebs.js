@@ -1841,13 +1841,40 @@ function InstanceCanBeTopLevel(LearnInst, Learner)
 	return true;
 }
 
+function InstanceMustBeTopLevel(LearnInst)
+{
+	if (LearnInst["LearnMethod"] === LEARNBY_SPECIAL || LearnInst["LearnMethod"] === LEARNBY_EVENT || LearnInst["LearnMethod"] === LEARNBY_TUTOR || LearnInst["LearnMethod"] === LEARNBY_SKETCH)
+		return true;
+	//
+	return false;
+}
+
 function GetAnyTopLevelInstance(Learner)
+{
+	for (let FilterTopLevel = 1; FilterTopLevel >= 0; FilterTopLevel--)
+	{
+		for (let iInst = 0; iInst < Learner["Instances"].length; iInst++)
+		{
+			let LearnInst = Learner["Instances"][iInst];
+			
+			if (!InstanceCanBeTopLevel(LearnInst, Learner))
+				continue;
+			
+			if (FilterTopLevel && InstanceMustBeTopLevel(LearnInst))
+				continue;
+				
+			return LearnInst;
+		}
+	}
+}
+
+function GetAnyHatchableInstance(Learner)
 {
 	for (let iInst = 0; iInst < Learner["Instances"].length; iInst++)
 	{
 		let LearnInst = Learner["Instances"][iInst];
 		
-		if (!InstanceCanBeTopLevel(LearnInst, Learner))
+		if (InstanceMustBeTopLevel(LearnInst))
 			continue;
 		
 		return LearnInst;
