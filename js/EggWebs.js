@@ -620,21 +620,13 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 	//father has to have a new egg group in order to produce good useful chains
 	let FatherForceTopLevel = false;
 	let NewEggGroup = Father["LearnMonInfo"]["EggGroup1"] !== Father["LearnMonInfo"]["EggGroup2"] && !StringPairIdent(Mother["LearnMonInfo"]["EggGroup1"], Mother["LearnMonInfo"]["EggGroup2"], Father["LearnMonInfo"]["EggGroup1"], Father["LearnMonInfo"]["EggGroup2"]);
-	//it's okay for egg groups to be bad if the father learns the move by a different method than the child
-	//uhh, is it? write the use case in here next time it comes up
-	//let NewMethod = FatherInst["LearnMethod"] !== ChildInst["LearnMethod"];
-	//why did we have a check for !bChildIsTargetSpecies here? this was causing venonat <- caterpie to be valid
-	if (!NewEggGroup && (!SameEvolutionLine || Child["LearnMonInfo"]["GenderRatio"] === GR_TYPICAL))
+	if (!NewEggGroup)// && (!SameEvolutionLine || Child["LearnMonInfo"]["GenderRatio"] === GR_TYPICAL))
 	{
-		//allow it on the condition that the child is the bottom child
-		//(let mismagius learn shadow ball from gastly (level). castform shouldn't be favored just because it has a second egg group, cause that's not the point at that point. just get the move on the pokemon)
-		//if (Child !== BottomChild)
-		{
-			//but if the father does have a top level learn, it has to stick to it
+		//forgo this check if the father has a top level learn, but force it to stick to only top level learns below
+		if (GetAnyTopLevelInstance(Father))
 			FatherForceTopLevel = true;
-			if (!GetAnyTopLevelInstance(Father))
-				return NO_NEW_EGG_GROUP;
-		}
+		else
+			return NO_NEW_EGG_GROUP;
 	}
 	
 	//make sure father wasn't already in the family tree (incest is redundant and leads to recursion)
