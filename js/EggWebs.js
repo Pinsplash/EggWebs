@@ -1943,6 +1943,13 @@ function TestFather(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, L
 				Paragraph.innerText = "Pick which move to learn next";
 				Paragraph.className = "instruction";
 				document.getElementById("mainview").appendChild(Paragraph);
+				//just the fact you can be top level doesn't mean you should be
+				let MoveBox = document.createElement("button");
+				MoveBox.innerText = "Continue chain";
+				MoveBox.className = "movebox";
+				MoveBox.onclick = () => FindFatherForMove(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, BottomChild, MaxGen);
+				document.getElementById("mainview").appendChild(MoveBox);
+				MoveBox.scrollIntoView();
 			}
 			for (let iMove = 0; iMove < g_Combo; iMove++)
 			{
@@ -2197,6 +2204,12 @@ function SearchRetryLoop(Chains, Learner, Nested, MacroDepth, MaxGen)
 			let NewChain = BreedChain([Learner]);
 			Chains.push(NewChain);
 			Result = CR_SUCCESS;
+			
+			let Paragraph = document.createElement("p");
+			Paragraph.innerText = Learner["LearnMonInfo"]["SpeciesName"] + " can learn " + Learner["MoveName"] + " directly\n" + InfoStr(Learner, Inst);
+			Paragraph.className = "instruction";
+			document.getElementById("mainview").appendChild(Paragraph);
+			Paragraph.scrollIntoView();
 		}
 	}
 	if (Result === CR_FAIL)
