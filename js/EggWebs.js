@@ -2115,18 +2115,6 @@ function FindChain(Chains, Learner, BottomChild, MacroDepth, MaxGen)
 	return FindFatherForMove(Chains, ClosedList, ParentList, Depth, MacroDepth, Learner, BottomChild, MaxGen);
 }
 
-function SuggestChainCombo(Chains)
-{
-	console.log(Chains.length + " chains");
-	if (Chains.length !== g_Combo)
-		debugger;
-	for (let iChain = 0; iChain < Chains.length; iChain++)
-	{
-		console.log("Printing chain for " + Chains[iChain]["LearnList"][0]["MoveName"]);
-		SuggestChain(Chains[iChain]);
-	}
-}
-
 function SearchRetryLoop(Chains, Learner, Nested, MacroDepth, MaxGen)
 {
 	MacroDepth++;
@@ -2162,10 +2150,14 @@ function SearchRetryLoop(Chains, Learner, Nested, MacroDepth, MaxGen)
 	if (Result === CR_SUCCESS && !Nested)
 	{
 		document.getElementById("mainview").innerHTML = "";
-		if (g_Combo)
-			SuggestChainCombo(Chains);
-		else
-			SuggestChain(Chains[Chains.length - 1]);
+		console.log(Chains.length + " chains");
+		if (Chains.length !== g_Combo)
+			debugger;
+		for (let iChain = 0; iChain < Chains.length; iChain++)
+		{
+			console.log("Printing chain for " + Chains[iChain]["LearnList"][0]["MoveName"]);
+			SuggestChain(Chains[iChain]);
+		}
 	}
 	if (!g_SlowMode)
 	{
