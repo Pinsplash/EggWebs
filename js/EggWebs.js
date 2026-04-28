@@ -1469,10 +1469,10 @@ function PreSearch()
 	}
 
 	//in the illegal paras scenario, paras has to be alive in gen 3-4 to learn bullet seed (tm), but paras learning leech seed (egg only) requires it to hatch in gen 5
-	let HatchableGens = [];
+	let HatchableMovesByGame = [];
+	let HatchableSpeciesByMoveByGame = [];
 	for (let iMoveToLearn = 0; iMoveToLearn < g_MovesToLearn.length; iMoveToLearn++)
 	{
-		console.log("Search for " + g_MovesToLearn[iMoveToLearn]);
 		for (let iLearner = 0; iLearner < g_MoveLearners.length; iLearner++)
 		{
 			let Learner = g_MoveLearners[iLearner];
@@ -1480,19 +1480,33 @@ function PreSearch()
 			{
 				for (let iGame = 0; iGame < g_Games.length; iGame++)
 				{
+					if (!HatchableMovesByGame[iGame])
+						HatchableMovesByGame[iGame] = [];
 					for (let iInst = 0; iInst < Learner["Instances"].length; iInst++)
 					{
 						let LearnInst = Learner["Instances"][iInst];
 						let LearnGameNum = LearnInst["LearnsInGame"]["GameNum"];
 						if (LearnGameNum === iGame)
 						{
-							console.log("Found match for " + g_MovesToLearn[iMoveToLearn] + " in " + LearnInst["LearnsInGame"]["UIName"]);
-							if (HatchableGens[LearnGameNum])
-								HatchableGens[LearnGameNum] += 1;
-							else
-								HatchableGens[LearnGameNum] = 1;
+							if (!HatchableMovesByGame[LearnGameNum].includes(g_MovesToLearn[iMoveToLearn]))
+								HatchableMovesByGame[LearnGameNum].push(g_MovesToLearn[iMoveToLearn]);
 							//only count a game one time
 							break;
+						}
+					}
+					if (!HatchableSpeciesByMoveByGame[iGame])
+						HatchableSpeciesByMoveByGame[iGame] = [];
+					if (!HatchableSpeciesByMoveByGame[iGame][iMoveToLearn])
+						HatchableSpeciesByMoveByGame[iGame][iMoveToLearn] = [];
+					for (let iInst = 0; iInst < Learner["Instances"].length; iInst++)
+					{
+						let LearnInst = Learner["Instances"][iInst];
+						let LearnGameNum = LearnInst["LearnsInGame"]["GameNum"];
+						if (LearnGameNum === iGame)
+						{
+							let HatchSpecies = LearnInst["OriginalLearn"] ? LearnInst["OriginalLearn"]["LearnMonInfo"]["SpeciesName"] : Learner["LearnMonInfo"]["SpeciesName"];
+							if (!HatchableSpeciesByMoveByGame[iGame][iMoveToLearn].includes(HatchSpecies))
+								HatchableSpeciesByMoveByGame[iGame][iMoveToLearn].push(HatchSpecies);
 						}
 					}
 				}
@@ -1500,20 +1514,65 @@ function PreSearch()
 		}
 	}
 
-	if (!HatchableGens.some((x) => x >= g_MovesToLearn.length) && g_MovesToLearn.length <= 4)
+	if (g_MovesToLearn.length <= 4)
 	{
-		if (g_Combo)
+		if (!HatchableMovesByGame.some((x) => x.length >= g_MovesToLearn.length))
 		{
-			alert("Illegal move combination: No game where hatching " + g_TargetSpecies + " is possible.");
-			return false;
+			if (g_Combo)
+			{
+				let ExplainString = "";
+				for (let iGame = 0; iGame < g_Games.length; iGame++)
+					if (HatchableMovesByGame[iGame] && g_Games[iGame]["GameIsAllowed"])
+						ExplainString += "\n" + g_Games[iGame]["UIName"] + " can hatch: " + HatchableMovesByGame[iGame];
+				alert("Illegal move combination: No game where hatching " + g_TargetSpecies + " is possible." + ExplainString);
+				return false;
+			}
+			else
+			{
+				alert("Warning: EggWebs detected that there is no way to put all of the given moves onto " + g_TargetSpecies + " at the same time (no usable game), but it may still suggest breeding chains for moves individually. Press Enter to continue anyway.");
+			}
 		}
-		else
+		
+		let ExplainString = "";
+		let FoundUsableGame = false;
+		for (let iGame = 0; !FoundUsableGame && iGame < g_Games.length; iGame++)
 		{
-			alert("Warning: EggWebs detected that there is no way to put all of the given moves onto " + g_TargetSpecies + " at the same time, but it may still suggest breeding chains for moves individually. Press Enter to continue anyway.");
+			let FirstOfGame = true;
+			let OverallUsableSpecies = [];
+			for (let iMoveToLearn = 0; iMoveToLearn < g_MovesToLearn.length; iMoveToLearn++)
+			{
+				if (g_Games[iGame]["GameIsAllowed"])
+				{
+					if (FirstOfGame)
+					{
+						ExplainString += "\n\nIn " + g_Games[iGame]["UIName"];
+						OverallUsableSpecies = HatchableSpeciesByMoveByGame[iGame][iMoveToLearn];
+						FirstOfGame = false;
+					}
+					for (let iSpecies = 0; iSpecies < OverallUsableSpecies.length; iSpecies++)
+						if (!HatchableSpeciesByMoveByGame[iGame][iMoveToLearn].includes(OverallUsableSpecies[iSpecies]))
+							OverallUsableSpecies.splice(iSpecies, 1);
+					ExplainString += "\n" + g_MovesToLearn[iMoveToLearn] + " implies hatching as: " + HatchableSpeciesByMoveByGame[iGame][iMoveToLearn];
+				}
+			}
+			if (OverallUsableSpecies.length > 0)
+				FoundUsableGame = true;
+		}
+		if (!FoundUsableGame)
+		{
+			if (g_Combo)
+			{
+				alert("Illegal move combination: No game where all desired moves can be hatched onto the same species." + ExplainString);
+				return false;
+			}
+			else
+			{
+				alert("Warning: EggWebs detected that there is no way to put all of the given moves onto " + g_TargetSpecies + " at the same time (incompatible hatching species), but it may still suggest breeding chains for moves individually. Press Enter to continue anyway.");
+			}
 		}
 	}
 
-	console.log("Starting the chain search.\n");
+	console.log("Starting the chain search.");
 	return true;
 }
 

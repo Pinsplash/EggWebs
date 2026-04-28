@@ -28,6 +28,11 @@ Sucker Punch and Leaf Blade on Shiftry (gen 6)
 Illegal move combination: No game where hatching Shiftry is possible.
 
 
+all egg moves have to be hatched on one species
+Charm and Seismic Toss on Blissey (gen 7)
+Illegal move combination: No game where all desired moves can be hatched onto the same species.
+
+
 tests understanding evolution to help with breeding
 Nasty Plot and Encore on Chatot (gen 4) (important part is "learned as Togepi")
 Chain for Nasty Plot: Plusle (Level 51) → Togetic (Egg move, Learned as Togepi)
@@ -36,7 +41,7 @@ Chain for Encore: Togetic (Level 19) → Chatot (Egg move)
 
 tests learning accurate to game level (as opposed to generation level)
 SmokeScreen on Whismur (level cap 5, hgss target game with dpp checked to be usable)
-this should eventually suggest Cyndaquil (level 4, in Pt)
+this should eventually suggest Cyndaquil (level 4, in Pt), and NOT suggest Cyndaquil (level 6)
 
 
 tests understanding breeding with ditto
