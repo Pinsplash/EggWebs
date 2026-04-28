@@ -129,9 +129,10 @@ function ComboAddMove(MoveName, Satisfied)
 		return;//only want the names of moves, and we only want a name one time
 	}
 	g_ComboData["ComboMoves"].push(MoveName);
-	if (!(g_ComboData["ComboMoves"].length <= g_Combo || g_ComboData["ComboMoves"].length <= 4))
-		debugger;
-	g_ComboData["SatisfiedStatus"][g_ComboData["ComboMoves"].length - 1] = Satisfied;
+	if (g_ComboData["ComboMoves"].length > g_Combo)
+		if (g_ComboData["ComboMoves"].length <= 4)
+			debugger;
+	g_ComboData["SatisfiedStatus"].push(Satisfied);
 }
 
 function ComboSetSatisfied(WantedMove, Satisfied, Location)
@@ -401,7 +402,7 @@ function AddLearnerToMainListGame(NewLearner, Inst, Game)
 
 	g_MoveLearners.push(NewLearner);
 	if (g_Combo)
-		ComboAddMove(NewLearner["MoveName"]);
+		ComboAddMove(NewLearner["MoveName"], false);
 	AddInstanceToLearnerGame(NewLearner, Inst, Game);
 	return NewLearner;
 }
@@ -561,7 +562,7 @@ function FatherSatisfiesMoves(Father, Learns)
 {
 	for (let iMove = 0; iMove < g_Combo; iMove++)
 	{
-		if (!g_ComboData["SatisfiedStatus"][iMove])
+		if (g_ComboData["SatisfiedStatus"][iMove] === false)
 		{
 			let Good = false;
 			for (let iLearner = 0; iLearner < g_MoveLearners.length; iLearner++)
@@ -1585,7 +1586,7 @@ function PreSearch()
 
 function RestartSearchByDataChange()
 {
-	g_ComboData["SatisfiedStatus"] = [false, false, false, false];
+	g_ComboData["SatisfiedStatus"] = [];
 	g_MovesBeingExplored = [];
 	document.getElementById("mainview").innerHTML = "";
 	SearchStart();
@@ -1599,7 +1600,7 @@ function ResetVarsForParameterChange()
 	g_MovesBeingExplored = [];
 	g_RequireFather = [];
 	g_MoveLearners = [];
-	g_ComboData = ComboBreedData([], [false, false, false, false]);
+	g_ComboData = ComboBreedData([], []);
 	g_TargetGame = GameData();
 	g_MethodExcludes = [false, false, false, false, false, false, false, false, false];
 	g_MaxLevel = 100;
@@ -1922,11 +1923,7 @@ function TestFather(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, L
 		if (g_SlowMode)
 		{
 			ComboSetSatisfied(BottomChild["MoveName"], true, "C");
-			let DoneWithAllMoves = true;
-			for (let iMove = 0; iMove < g_Combo; iMove++)
-				if (!g_ComboData["SatisfiedStatus"][iMove])
-					DoneWithAllMoves = false;
-			if (DoneWithAllMoves)
+			if (!g_ComboData["SatisfiedStatus"].includes(false))
 			{
 				let Paragraph = document.createElement("p");
 				Paragraph.innerText = "You did it";
@@ -1962,19 +1959,20 @@ function TestFather(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, L
 					//we can't just check satisfied state because it's not been set yet
 					if (!AlreadyGotMove)
 					{
-						MaxGen = Father["ShowInstance"]["LearnsInGame"]["GenerationNum"];
+						//setting MaxGen here is sketchy because we reference the variable later in the function
+						//MaxGen = Father["ShowInstance"]["LearnsInGame"]["GenerationNum"];
 						if (g_SlowMode)
 						{
 							let MoveBox = document.createElement("button");
 							MoveBox.innerText = WantedMove["MoveName"];
 							MoveBox.className = "movebox";
-							MoveBox.onclick = () => FindNextChainSegment(Chains, BottomChild, WantedMove, Depth, MacroDepth, MaxGen);
+							MoveBox.onclick = () => FindNextChainSegment(Chains, BottomChild, WantedMove, Depth, MacroDepth, Father["ShowInstance"]["LearnsInGame"]["GenerationNum"]);
 							document.getElementById("mainview").appendChild(MoveBox);
 							MoveBox.scrollIntoView();
 						}
 						else
 						{
-							let RetVal = FindNextChainSegment(Chains, BottomChild, WantedMove, Depth, MacroDepth, MaxGen);
+							let RetVal = FindNextChainSegment(Chains, BottomChild, WantedMove, Depth, MacroDepth, Father["ShowInstance"]["LearnsInGame"]["GenerationNum"]);
 							Chains = RetVal[0];
 							BadForCombo = RetVal[1] === CR_FAIL;
 						}
@@ -2023,7 +2021,9 @@ function TestFather(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, L
 		for (let iChain = 0; iChain < Chains.length; iChain++)
 			if (Chains[iChain]["LearnList"][0]["MoveName"] === NewChain["LearnList"][0]["MoveName"])
 				debugger;
-		Chains.push(NewChain);
+		//slow mode doesn't need this and it's making us hit breakpoints annoyingly
+		if (!g_SlowMode)
+			Chains.push(NewChain);
 		if (g_Combo && Chains.length > g_Combo)
 			debugger;
 		return [Chains, CR_SUCCESS];
@@ -2442,6 +2442,7 @@ function ParseGameAnnotations()
 	}
 }
 
+//avoid showing "learned as [species]" notes when we can
 function PreferNonEvolveLearn(a, b)
 {
 	if (a["OriginalLearn"] && b["OriginalLearn"])
@@ -2452,6 +2453,7 @@ function PreferNonEvolveLearn(a, b)
 		return 1;
 }
 
+//avoid showing "in [game]" notes when we can
 function PreferTargetGameLearn(a, b)
 {
 	if (a["LearnsInGame"] === b["LearnsInGame"])
