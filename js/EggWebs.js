@@ -1057,7 +1057,7 @@ function ProcessMove(ReadFile)
 					}
 					if (g_TargetGame["GenerationNum"] >= GENERATION_7 && !TableHeaderLine.includes("g7=none"))
 					{
-						if (TableHeaderLine.includes("g7g={{gameabbrev7|SM}}") || TableHeaderLine.includes("g7g={{gameabbrev7|SMUSUM}}"))
+						if (TableHeaderLine.includes("g7g={{gameabbrev7|SM}}"))
 							GamesToColumns.push(GAME_SUN_MOON);
 						else if (TableHeaderLine.includes("g7g={{gameabbrev7|USUM}}"))
 							GamesToColumns.push(GAME_ULTRASUN_ULTRAMOON);
