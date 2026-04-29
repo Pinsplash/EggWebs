@@ -78,7 +78,7 @@ this should eventually suggest Cyndaquil (level 4, in Pt), and NOT suggest Cynda
 
 
 tests no moves mode
-Tynamo to Larvesta
+Tynamo to Larvesta (gen 5)
 Chain: Tynamo → Shellos → Wingull → Togetic → Pikachu → Ekans → Charmander → Bulbasaur → Paras → Larvesta
 
 

@@ -98,6 +98,7 @@ function MethodStr(LearnInstance, Delimiter)
 	else if (LearnInstance["LearnMethod"] === LEARNBY_SPECIAL) str = "Special encounter";
 	else if (LearnInstance["LearnMethod"] === LEARNBY_EVENT) str = "From an event";
 	else if (LearnInstance["LearnMethod"] === LEARNBY_TUTOR) str = "Tutor";
+	else if (LearnInstance["LearnMethod"] === LEARNBY_REMINDER) str = "Move Reminder";
 	else if (LearnInstance["LearnMethod"] === LEARNBY_SKETCH) str = "Sketch";
 	else str = "UNKNOWN REASON";
 
@@ -528,35 +529,16 @@ function ProcessAnnotatedCell(GameList, TextLine, ValueStart, Quiet)
 
 function ProcessLevelCell(TextLine, PipeLocation)
 {
-	let Value1End = TextLine.indexOf("|", PipeLocation + 1);
-	let EndOfRow = false;
-	if (Value1End === -1)
+	let TemplateStart = TextLine.indexOf("{{", PipeLocation + 1);
+	let ValueEnd = TextLine.indexOf("|", PipeLocation + 1);
+	let Shift = 0;
+	if (TemplateStart !== -1 && TemplateStart < ValueEnd)
 	{
-		EndOfRow = true;
-		Value1End = TextLine.indexOf("}}", PipeLocation + 1);
+		ValueEnd = TextLine.indexOf("}}|", PipeLocation + 1);
+		Shift = 2;
 	}
-	let Value1 = TextLine.substring(PipeLocation + 1, Value1End);
-	if (!Value1)
-	{
-		return [Value1, PipeLocation + 1];
-	}
-	let SupStart = Value1.indexOf("{{sup");
-	if (SupStart !== -1)
-	{
-		Value1End = TextLine.indexOf("}}|", PipeLocation + 1);
-		if (Value1End === -1)
-			debugger;
-		let Value2 = TextLine.substring(PipeLocation + 1, Value1End + 2);
-		return [Value2, Value1End + 2];
-	}
-	else
-	{
-		//no fancy stuff, just a number in here then
-		PipeLocation = Value1End;
-		if (EndOfRow)
-			PipeLocation++;
-		return [Value1, PipeLocation];
-	}
+	let Value = TextLine.substring(PipeLocation + 1, ValueEnd + Shift);
+	return [Value, ValueEnd + Shift];
 }
 
 //search in list to see if father has a learn for this move
@@ -755,7 +737,7 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 				//in crystal, tutor moves work like TM moves
 				//Sketch is here because if we can copy a move, then doing so should be the first action of the chain. any breeding before that serves no purpose.
 				//starting in gen 6, children don't inherit moves that they can only learn by tm
-				if (ChildInst["LearnMethod"] === LEARNBY_EVENT || ChildInst["LearnMethod"] === LEARNBY_SPECIAL || ChildInst["LearnMethod"] === LEARNBY_SKETCH ||
+				if (ChildInst["LearnMethod"] === LEARNBY_EVENT || ChildInst["LearnMethod"] === LEARNBY_SPECIAL || ChildInst["LearnMethod"] === LEARNBY_SKETCH || ChildInst["LearnMethod"] === LEARNBY_REMINDER ||
 					(ChildInst["LearnMethod"] === LEARNBY_TUTOR && !(ChildInst["LearnsInGame"]["GenerationNum"] === GENERATION_2 && ChildInst["LearnsInGame"]["GameNum"] === GAME_CRYSTAL)) ||
 					((ChildInst["LearnMethod"] === LEARNBY_TM || ChildInst["LearnMethod"] === LEARNBY_TM_UNIVERSAL) && ChildInst["LearnsInGame"]["GenerationNum"] >= GENERATION_6))
 				{
@@ -1136,6 +1118,18 @@ function ProcessMove(ReadFile)
 								if (TMTutorSection && TextLine.includes("g8tm-2=tutor"))
 									TutorColumns[GamesToColumns.length - 1] = true;
 							}
+							else
+								GamesToColumns.push(GAME_INVALID);
+						}
+						else if (TableHeaderLine.includes("g8=3"))
+						{
+							GamesToColumns.push(GAME_SWORD_SHIELD);
+							if (TMTutorSection && TextLine.includes("g8tm-1=tutor"))
+								TutorColumns[GamesToColumns.length - 1] = true;
+							GamesToColumns.push(GAME_BRILLIANT_DIAMOND_SHINING_PEARL);
+							if (TMTutorSection && TextLine.includes("g8tm-2=tutor"))
+								TutorColumns[GamesToColumns.length - 1] = true;
+							GamesToColumns.push(GAME_INVALID);
 						}
 						else
 							GamesToColumns.push(GAMECOMBO_SWSH_BDSP);//column technically includes LA but we don't care about it
@@ -1380,6 +1374,7 @@ function GetSettings(FileCount)
 		g_MethodExcludes[LEARNBY_SPECIAL] = document.getElementById("special1").checked;
 		g_MethodExcludes[LEARNBY_EVENT] = document.getElementById("event1").checked;
 		g_MethodExcludes[LEARNBY_TUTOR] = document.getElementById("tutor1").checked;
+		g_MethodExcludes[LEARNBY_REMINDER] = document.getElementById("reminder1").checked;
 
 		g_MaxLevel = document.getElementById("maxlevel").value;
 	}
@@ -1935,7 +1930,7 @@ function InstanceCanBeTopLevel(LearnInst, Learner)
 
 function InstanceMustBeTopLevel(LearnInst)
 {
-	if (LearnInst["LearnMethod"] === LEARNBY_SPECIAL || LearnInst["LearnMethod"] === LEARNBY_EVENT || LearnInst["LearnMethod"] === LEARNBY_TUTOR || LearnInst["LearnMethod"] === LEARNBY_SKETCH)
+	if (LearnInst["LearnMethod"] === LEARNBY_SPECIAL || LearnInst["LearnMethod"] === LEARNBY_EVENT || LearnInst["LearnMethod"] === LEARNBY_TUTOR || LearnInst["LearnMethod"] === LEARNBY_REMINDER || LearnInst["LearnMethod"] === LEARNBY_SKETCH)
 		return true;
 	//
 	return false;
@@ -2227,6 +2222,8 @@ function FindFatherForMove(Chains, ClosedList, ParentList, Depth, MacroDepth, Le
 			Paragraph.innerText = "Potential fathers to teach " + Learner["MoveName"] + " to " + Learner["LearnMonInfo"]["SpeciesName"];
 		else
 			Paragraph.innerText = "Potential fathers";
+		if (document.getElementById("nothingtext"))
+			document.getElementById("mainview").innerHTML = "";
 		Paragraph.className = "instruction";
 		ChainBox.appendChild(Paragraph);
 		document.getElementById("mainview").appendChild(ChainBox);
@@ -2361,7 +2358,7 @@ function SearchStart()
 {
 	let Chains = [];
 	let MaxGen = g_Generations.length - 1;
-	if (g_SlowMode)
+	if (g_SlowMode && !g_NoMoves)
 	{
 		let Paragraph = document.createElement("p");
 		Paragraph.innerText = "Pick which move to learn first";
@@ -2387,6 +2384,7 @@ function SearchStart()
 			let Para = document.createElement("p");
 			Para.innerText = "Nothing";
 			Para.className = "instruction";
+			Para.id = "nothingtext";
 			document.getElementById("mainview").appendChild(Para);
 		}
 		let Move = g_MoveLearners[i];
@@ -2454,13 +2452,25 @@ function ExamineChains(Chains)
 					let OtherChain = Chains[iOtherChain];
 					let OtherBottomLearner = OtherChain["LearnList"][0];
 					//length check: if the chain is one pokemon long because it's the same pokemon covering multiple of the moves we need to learn, allow
-					if (OtherChain["LearnList"].length > 1 && TopLearner["LearnMonInfo"]["SpeciesName"] === OtherBottomLearner["LearnMonInfo"]["SpeciesName"])
+					if (TopLearner["LearnMonInfo"]["SpeciesName"] === OtherBottomLearner["LearnMonInfo"]["SpeciesName"])
 					{
-						console.log("No suitable way for " + TopLearner["LearnMonInfo"]["SpeciesName"] + " to learn " + TopLearner["MoveName"] + " while also allowing " + OtherBottomLearner["MoveName"] + " to be hatched onto it.");
-						LearnInst["UserRejected"] = true;
-						g_ComboData["SatisfiedStatus"] = [];
-						g_MovesBeingExplored = [];
-						return false;
+						if (OtherChain["LearnList"].length > 1)
+						{
+							console.log("No suitable way for " + TopLearner["LearnMonInfo"]["SpeciesName"] + " to learn " + TopLearner["MoveName"] + " while also allowing " + OtherBottomLearner["MoveName"] + " to be hatched onto it.");
+							LearnInst["UserRejected"] = true;
+							g_ComboData["SatisfiedStatus"] = [];
+							g_MovesBeingExplored = [];
+							return false;
+						}
+						else
+						{
+							//if the other bottom learner is a levelup move and the top learner is special or event, that pokemon must have some level it's caught at,
+							//so if that level is higher is higher than the level of the bottom learner, change the bottom learner to be reminder.
+							//finding the top learner's implicit level is currently not possible without getting more data into the program
+							//todo: same hack again
+							//let BottomInst = GetAnyTopLevelInstance(TopLearner);
+							//if (BottomInst["LearnMethod"] === LEARNBY_LEVELUP && BottomInst["LearnLevel"])
+						}
 					}
 				}
 			}
@@ -2579,6 +2589,7 @@ function CreatePriorEvolutionLearns(Game)
 
 function ParseGameAnnotations()
 {
+	//sup
 	for (let iLearn = 0; iLearn < g_MoveLearners.length; iLearn++)
 	{
 		let Learner = g_MoveLearners[iLearn];
@@ -2629,6 +2640,24 @@ function ParseGameAnnotations()
 			let LearnInst = Learner["Instances"][iInst];
 			if (LearnInst["EraseMe"] || !LearnInst["LearnsInGame"]["GameIsAllowed"])
 				Learner["Instances"].splice(iInst, 1);
+		}
+	}
+	//tt - must be a separate loop from the sup one because the sup loop needs cleanup first
+	for (let iLearn = 0; iLearn < g_MoveLearners.length; iLearn++)
+	{
+		let Learner = g_MoveLearners[iLearn];
+		for (let iInst = 0; iInst < Learner["Instances"].length; iInst++)
+		{
+			let LearnInst = Learner["Instances"][iInst];
+			let LearnLevel = LearnInst["LearnLevel"];
+			let TTStart = LearnLevel.toString().indexOf("{{tt|");
+			if (TTStart !== -1)
+			{
+				let NextPipe = LearnLevel.toString().indexOf("|", TTStart + 5);
+				LearnInst["LearnLevel"] = LearnLevel.toString().substring(TTStart + 5, NextPipe);
+				if (LearnInst["LearnLevel"] === "Rem.")
+					LearnInst["LearnMethod"] = LEARNBY_REMINDER;
+			}
 		}
 	}
 }

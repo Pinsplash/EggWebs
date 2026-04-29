@@ -67,6 +67,7 @@ const LEARNBY_SKETCH = 5;
 const LEARNBY_TM = 6;
 const LEARNBY_TM_UNIVERSAL = 7;
 const LEARNBY_EGG = 8;
+const LEARNBY_REMINDER = 9;
 
 //matchup results
 const MATCHUP_SUCCESS = -1;
