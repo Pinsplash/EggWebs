@@ -875,10 +875,14 @@ function MakeArbitraryLearn(PokemonName, DexNumber, MoveName, GameNum, GameInCom
 {
 	let LearnersGame = g_Games[GameNum];
 	let iInternalSpeciesIndex = GetSpeciesInfoFromGame(PokemonName, LearnersGame);
-	if (!(iInternalSpeciesIndex === -1 && GameNum === GAME_BRILLIANT_DIAMOND_SHINING_PEARL && DexNumber > 493))
+	if (iInternalSpeciesIndex === -1)
 	{
-		if (iInternalSpeciesIndex === -1)
+		//common starting in gen 8
+		if (GetGeneration(g_Games[GameNum]) > GENERATION_7)
 			debugger;
+	}
+	else
+	{
 		let Inst = LearnInstance("", LearnMethod, LearnersGame);
 		let Info = GetGeneration(LearnersGame)["MonData"][iInternalSpeciesIndex];
 		let Learner = GetLearner(Info["SpeciesName"], MoveName);
@@ -1007,8 +1011,6 @@ function ProcessMove(ReadFile)
 				{
 					MoveTableHeader = false;
 					//watch out for games/generations hidden from table
-					//we want to keep this vector's size equal to the number of columns. in cases where a column represents multiple games, we say it's the first applicable game of the gen.
-					//this isn't ideal but there's not a better solution
 					if (!TableHeaderLine.includes("g1=none"))
 					{
 						if (TableHeaderLine.includes("g1g={{gameabbrev1|RB}}"))
@@ -1095,8 +1097,20 @@ function ProcessMove(ReadFile)
 							GamesToColumns.push(GAME_ULTRASUN_ULTRAMOON);
 						else if (TableHeaderLine.includes("g7g={{gameabbrev7|PE}}"))
 							GamesToColumns.push(GAME_INVALID);
+						else if (TableHeaderLine.includes("g7=2"))
+						{
+							let g1 = GAMECOMBO_SM_USUM;
+							if (TableHeaderLine.includes("g7g-1={{gameabbrev7|SM}}"))
+								g1 = GAME_SUN_MOON;
+							else if (TableHeaderLine.includes("g7g-1={{gameabbrev7|USUM}}"))
+								g1 = GAME_ULTRASUN_ULTRAMOON;
+							GamesToColumns.push(g1);
+							if (TMTutorSection && TextLine.includes("g7tm-1=tutor"))
+								TutorColumns[GamesToColumns.length - 1] = true;
+							GamesToColumns.push(GAME_INVALID);
+						}
 						else
-							GamesToColumns.push(GAMECOMBO_SM_USUM);
+							GamesToColumns.push(GAMECOMBO_SM_USUM);//column technically includes PE but we don't care about it
 						if (TMTutorSection && TextLine.includes("g7tm=tutor"))
 							TutorColumns[GamesToColumns.length - 1] = true;
 					}
@@ -1108,8 +1122,23 @@ function ProcessMove(ReadFile)
 							GamesToColumns.push(GAME_BRILLIANT_DIAMOND_SHINING_PEARL);
 						else if (TableHeaderLine.includes("g8g={{gameabbrev8|LA}}"))
 							GamesToColumns.push(GAME_INVALID);
+						else if (TableHeaderLine.includes("g8=2"))
+						{
+							let g1 = GAME_SWORD_SHIELD;
+							if (TableHeaderLine.includes("g8g-1={{gameabbrev8|BDSP}}"))
+								g1 = GAME_BRILLIANT_DIAMOND_SHINING_PEARL;
+							GamesToColumns.push(g1);
+							if (TMTutorSection && TextLine.includes("g8tm-1=tutor"))
+								TutorColumns[GamesToColumns.length - 1] = true;
+							if (!TableHeaderLine.includes("g8g-2={{gameabbrev8|LA}}"))
+							{
+								GamesToColumns.push(GAME_BRILLIANT_DIAMOND_SHINING_PEARL);
+								if (TMTutorSection && TextLine.includes("g8tm-2=tutor"))
+									TutorColumns[GamesToColumns.length - 1] = true;
+							}
+						}
 						else
-							GamesToColumns.push(GAMECOMBO_SWSH_BDSP);
+							GamesToColumns.push(GAMECOMBO_SWSH_BDSP);//column technically includes LA but we don't care about it
 						if (TMTutorSection && TextLine.includes("g8tm=tutor"))
 							TutorColumns[GamesToColumns.length - 1] = true;
 					}
@@ -1119,8 +1148,13 @@ function ProcessMove(ReadFile)
 							GamesToColumns.push(GAME_SCARLET_VIOLET);
 						else if (TableHeaderLine.includes("g9g={{gameabbrev9|ZA}}"))
 							GamesToColumns.push(GAME_INVALID);
-						else
+						else if (TableHeaderLine.includes("g9=2"))
+						{
 							GamesToColumns.push(GAME_SCARLET_VIOLET);
+							GamesToColumns.push(GAME_INVALID);
+						}
+						else
+							GamesToColumns.push(GAME_SCARLET_VIOLET);//column technically includes ZA but we don't care about it
 						if (TMTutorSection && TextLine.includes("g9tm=tutor"))
 							TutorColumns[GamesToColumns.length - 1] = true;
 					}
@@ -1267,10 +1301,14 @@ function ProcessMove(ReadFile)
 									{
 										let LearnersGame = g_Games[GameNum];
 										let iInternalSpeciesIndex = GetSpeciesInfoFromGame(PokemonName, LearnersGame);
-										if (!(iInternalSpeciesIndex === -1 && GameNum === GAME_BRILLIANT_DIAMOND_SHINING_PEARL && DexNumber > 493))
+										if (iInternalSpeciesIndex === -1)
 										{
-											if (iInternalSpeciesIndex === -1)
+											//common starting in gen 8
+											if (GetGeneration(g_Games[GameNum]) > GENERATION_7)
 												debugger;
+										}
+										else
+										{
 											if (TMTutorSection && !TutorColumns[iCol] && IsUniversalTM(MoveName, LearnersGame))
 											{
 												g_TMLearnBlacklist.push(GetGeneration(LearnersGame)["MonData"][iInternalSpeciesIndex]["SpeciesName"]);
@@ -2679,7 +2717,6 @@ function SelectTargetGame(GameNum)
 		document.getElementById("gamelistspan2").style.display = "inline";
 		document.getElementById("allgamesbutton").style.display = "inline";
 		document.getElementById("selecttargetbutton").style.display = "inline";
-		document.getElementById("combomodespan").style.display = "inline";
 	}
 	else
 	{
@@ -2688,7 +2725,6 @@ function SelectTargetGame(GameNum)
 		document.getElementById("gamelistspan2").style.display = "none";
 		document.getElementById("allgamesbutton").style.display = "none";
 		document.getElementById("selecttargetbutton").style.display = "none";
-		document.getElementById("combomodespan").style.display = "none";
 	}
 	let Checkbox = document.getElementById(Game["Acronym"] + "2");
 	Checkbox.checked = true;
