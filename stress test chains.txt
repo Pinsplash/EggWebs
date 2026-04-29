@@ -58,6 +58,12 @@ Belly Drum and Aqua Jet on Azumarill (gen 5)
 Nothing
 
 
+tests that egg group redundancy check correctly identifies when not to apply
+Pain Split and Will-O-Wisp on Weezing (gen 3)
+Chain for Pain Split: Misdreavus (Level 37) → Duskull (Egg move)
+Chain for Will-O-Wisp: Duskull (Level 38) → Weezing (Egg move, Learned as Koffing)
+
+
 tests alternate parents
 Charm on Nidoqueen (gen 6)
 Chain for Charm: Eevee (Level 29) → Nidoqueen (Egg move, Learned as Nidoran F)
@@ -76,14 +82,5 @@ Tynamo to Larvesta
 Chain: Tynamo → Shellos → Wingull → Togetic → Pikachu → Ekans → Charmander → Bulbasaur → Paras → Larvesta
 
 
-generic legal:
-pain split and will o wisp on weezing (gen 3) - legal (looking for duskull)
-present and heal bell on blissey (gen 2) - legal (looking for snubbull)
-curse and pursuit on snorlax (gen 4) - legal (looking for cranidos)
-bullet punch, cross chop, and fake out on toxicroak (gen 5) - legal
-dragon dance and metal claw on corphish (gen 4) - legal
-
-//the weirdest chainbreed I've ever seen:
-//breed male Curse Snorlax in Gen 3, transfer to XD, teach Self-destruct
-//by tutor, breed with female Gluttony Snorlax
-curse and self-destruct on snorlax (gen 5) - legal (we don't care about hidden ability so this might be a dud)
+Bullet Punch, Cross Chop, and Fake Out on Toxicroak (gen 5)
+The Bullet Punch Machop in chain #2 is technically correct AS LONG AS a move reminder is available.

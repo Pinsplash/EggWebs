@@ -404,7 +404,7 @@ function AddLearnerToMainListGame(NewLearner, Inst, Game)
 	}
 
 	g_MoveLearners.push(NewLearner);
-	if (g_Combo)
+	if (g_Combo && NewLearner["MoveName"] !== "N/A")
 		ComboAddMove(NewLearner["MoveName"], false);
 	AddInstanceToLearnerGame(NewLearner, Inst, Game);
 	return NewLearner;
@@ -2373,13 +2373,13 @@ function SearchStart()
 				document.getElementById("mainview").innerHTML = "";
 				if (g_Combo && Chains.length !== g_Combo)
 					debugger;
-			}
-			if (!ExamineChains(Chains))
-			{
-				console.log("Detected bad chain in post. Debug for more info.");
-				Chains = [];
-				i = -1;
-				//continue;
+				if (!ExamineChains(Chains))
+				{
+					console.log("Detected bad chain in post. Debug for more info.");
+					Chains = [];
+					i = -1;
+					//continue;
+				}
 			}
 		}
 	}
