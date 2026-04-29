@@ -63,13 +63,16 @@ const MatchupResultStrings =
 		"Father is female only species",//FATHER_FEMALE_ONLY
 		"Mother is male only species",//MOTHER_MALE_ONLY
 		"Gender unknown Pokemon cannot pass moves to another evolution line",//NONBINARY_POINTLESS
-		"Redundant: Mother learns move at level below maximum",//MOTHER_LEVEL_BELOW_MAX
-		"Female-only mothers can only pass down a move if the child learns it by level up",//FEMALE_ONLY_MOM_NEEDS_LEVELUP_CHILD
+		"Mother was rejected by user",//MOTHER_REJECTED
+		"User requested father can't learn move by this method",//FATHER_EXCLUDED_METHOD
 		"Redundant: Father already part of breeding chain",//FATHER_ALREADY_IN_CHAIN
 		"Redundant: Already went to this Egg Group",//EGG_GROUP_ALREADY_IN_CHAIN
 		"Father can't learn all of the necessary moves",//FATHER_CANT_LEARN_ALL_MOVES
 		"Pokemon in the \"No Eggs Discovered\" Egg Group can't breed",//FAIL_NO_EGGS_DISCOVERED
-		"Other",//FAIL_OTHER
+		"Child was rejected by user",//CHILD_REJECTED
+		"Father is not in new Egg Group, so forced to be a top-level learner, but the learn instance could not be top-level",//FATHER_FORCED_TOP_LEVEL
+		"The generation the father learns the move in > child's generation",//FATHER_GEN_PAST_MAX
+		"The generation the child learns the move in > latest possible generation",//CHILD_GEN_PAST_MAX
 	];
 
 function GetSpeciesInfo(WantedGen, WantedSpecies)
@@ -587,29 +590,34 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 {
 	
 	//must learn the move in question
-	if (Mother["MoveName"] !== BottomChild["MoveName"] || Father["MoveName"] !== BottomChild["MoveName"])
-		return DIFFERENT_MOVE;
+	if (Mother["MoveName"] !== BottomChild["MoveName"])
+		//let it by if the mother has no move name (alt parent dummy learn)
+		if (Mother["MoveName"] !== "N/A")
+			return [DIFFERENT_MOVE];
+	
+	if (Father["MoveName"] !== BottomChild["MoveName"])
+		return [DIFFERENT_MOVE];
 	
 	//no reason to breed with own species. this doesn't produce interesting chains
 	if (Mother["LearnMonInfo"]["SpeciesName"] === Father["LearnMonInfo"]["SpeciesName"] || Child["LearnMonInfo"]["SpeciesName"] === Father["LearnMonInfo"]["SpeciesName"])
-		return BREEDING_SELF;
+		return [BREEDING_SELF];
 	
 	//don't already be explored (don't read into this)
 	if (ClosedList[Father["Instances"][0]["LearnID"]])
-		return FATHER_ON_CLOSED_LIST;
+		return [FATHER_ON_CLOSED_LIST];
 	
 	//have to have a matching egg group
 	let NewCommonEggGroup = StringPairMatch(Mother["LearnMonInfo"]["EggGroup1"], Mother["LearnMonInfo"]["EggGroup2"], Father["LearnMonInfo"]["EggGroup1"], Father["LearnMonInfo"]["EggGroup2"]);
 	if (!NewCommonEggGroup)
-		return NO_EGG_GROUP_MATCH;
+		return [NO_EGG_GROUP_MATCH];
 	
 	if (NewCommonEggGroup === "NED")
-		return FAIL_NO_EGGS_DISCOVERED;
+		return [FAIL_NO_EGGS_DISCOVERED];
 	
 	//this has to come after NewCommonEggGroup check so that legendaries don't appear in slow mode
 	//Gender-unknown Pokémon can only breed with Ditto. this makes them uninteresting for EggWebs (aside from Shedinja MAYBE because the offspring Nincada is gender known)
 	if (Father["LearnMonInfo"]["GenderRatio"] === GR_UNKNOWN)
-		return NONBINARY_POINTLESS;
+		return [NONBINARY_POINTLESS];
 	
 	let SameEvolutionLine = SpeciesShareEvoLine(Mother, Father);
 	if (!SameEvolutionLine)
@@ -618,23 +626,23 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 		//unless it's with your own evolution line (which is actually breeding with ditto)
 		if ((Mother["LearnMonInfo"]["GenderRatio"] === GR_FEMALE_ONLY && Father["LearnMonInfo"]["GenderRatio"] === GR_FEMALE_ONLY)
 			|| (Mother["LearnMonInfo"]["GenderRatio"] === GR_MALE_ONLY && Father["LearnMonInfo"]["GenderRatio"] === GR_MALE_ONLY))
-			return MALE_FEMALE_ONLY_INCOMPATIBLE;
+			return [MALE_FEMALE_ONLY_INCOMPATIBLE];
 		
 		//fathers must be male, mothers must be female
 		if (Father["LearnMonInfo"]["GenderRatio"] === GR_FEMALE_ONLY || Mother["LearnMonInfo"]["GenderRatio"] === GR_MALE_ONLY)
-			return Father["LearnMonInfo"]["GenderRatio"] === GR_FEMALE_ONLY ? FATHER_FEMALE_ONLY : MOTHER_MALE_ONLY;
+			return Father["LearnMonInfo"]["GenderRatio"] === GR_FEMALE_ONLY ? [FATHER_FEMALE_ONLY] : [MOTHER_MALE_ONLY];
 	}
 	
 	//father has to have a new egg group in order to produce good useful chains
 	let FatherForceTopLevel = false;
 	let NewEggGroup = Father["LearnMonInfo"]["EggGroup1"] !== Father["LearnMonInfo"]["EggGroup2"] && !StringPairIdent(Mother["LearnMonInfo"]["EggGroup1"], Mother["LearnMonInfo"]["EggGroup2"], Father["LearnMonInfo"]["EggGroup1"], Father["LearnMonInfo"]["EggGroup2"]);
-	if (!NewEggGroup)// && (!SameEvolutionLine || Child["LearnMonInfo"]["GenderRatio"] === GR_TYPICAL))
+	if (!NewEggGroup)
 	{
 		//forgo this check if the father has a top level learn, but force it to stick to only top level learns below
 		if (GetAnyTopLevelInstance(Father))
 			FatherForceTopLevel = true;
 		else
-			return NO_NEW_EGG_GROUP;
+			return [NO_NEW_EGG_GROUP];
 	}
 	
 	//make sure father wasn't already in the family tree (incest is redundant and leads to recursion)
@@ -645,9 +653,9 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 	while (CurrentLearner)
 	{
 		if (CurrentLearner["LearnMonInfo"]["SpeciesName"] === Father["LearnMonInfo"]["SpeciesName"])
-			return FATHER_ALREADY_IN_CHAIN;
+			return [FATHER_ALREADY_IN_CHAIN];
 		if (OldCommonEggGroup === NewCommonEggGroup)
-			return EGG_GROUP_ALREADY_IN_CHAIN;
+			return [EGG_GROUP_ALREADY_IN_CHAIN];
 		if (CurrentLearner && ParentList[CurrentLearner["Instances"][0]["LearnID"]])
 		{
 			OldCommonEggGroup = StringPairMatch(
@@ -664,10 +672,11 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 		let Learns = [null, null, null, null];
 		let Satisfy = FatherSatisfiesMoves(Father, Learns);
 		if (Satisfy !== -1)
-			return FATHER_CANT_LEARN_ALL_MOVES;
+			return [FATHER_CANT_LEARN_ALL_MOVES];
 	}
 	
 	let Good = false;
+	let ReasonList = [];
 	
 	for (let iMotherInst = 0; !Good && iMotherInst < Mother["Instances"].length; iMotherInst++)
 	{
@@ -676,15 +685,24 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 		//level cap
 		let MotherLearnsByLevelUp = MotherInst["LearnMethod"] === LEARNBY_LEVELUP;
 		if (MotherLearnsByLevelUp && +MotherInst["LearnLevel"] > +g_MaxLevel)
-			continue;//return MOTHER_LEVEL_ABOVE_MAX;
+		{
+			ReasonList.push(MOTHER_LEVEL_ABOVE_MAX);
+			continue;
+		}
 		
 		//user requested ways that parents must not learn a move
 		if (g_MethodExcludes[MotherInst["LearnMethod"]])
-			continue;//return MOTHER_EXCLUDED_METHOD;
+		{
+			ReasonList.push(MOTHER_EXCLUDED_METHOD);
+			continue;
+		}
 		
 		//blacklist
 		if (MotherInst["UserRejected"])
-			continue;//return MOTHER_REJECTED;
+		{
+			ReasonList.push(MOTHER_REJECTED);
+			continue;
+		}
 		
 		for (let iFatherInst = 0; !Good && iFatherInst < Father["Instances"].length; iFatherInst++)
 		{
@@ -692,31 +710,46 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 			
 			//user requested ways that parents must not learn a move
 			if (g_MethodExcludes[FatherInst["LearnMethod"]])
-				continue;//return FATHER_EXCLUDED_METHOD;
+			{
+				ReasonList.push(FATHER_EXCLUDED_METHOD);
+				continue;
+			}
 			
 			let FatherLearnsByLevelUp = FatherInst["LearnMethod"] === LEARNBY_LEVELUP;
 			if (FatherLearnsByLevelUp && +FatherInst["LearnLevel"] > +g_MaxLevel)
-				continue;//return FATHER_LEVEL_ABOVE_MAX;
+			{
+				ReasonList.push(FATHER_LEVEL_ABOVE_MAX);
+				continue;
+			}
 			
 			//blacklist
 			if (FatherInst["UserRejected"])
-				continue;//return FATHER_REJECTED;
+			{
+				ReasonList.push(FATHER_REJECTED);
+				continue;
+			}
 			
-			if (FatherForceTopLevel)
-				if (!InstanceCanBeTopLevel(FatherInst, Father))
-					continue;
+			if (FatherForceTopLevel && !InstanceCanBeTopLevel(FatherInst, Father))
+			{
+				ReasonList.push(FATHER_FORCED_TOP_LEVEL);
+				continue;
+			}
 			
 			for (let iChildInst = 0; !Good && iChildInst < Child["Instances"].length; iChildInst++)
 			{
 				let ChildInst = Child["Instances"][iChildInst];
 				
-				let ChildLearnsByLevelUp = ChildInst["LearnMethod"] === LEARNBY_LEVELUP;
-				if (ChildLearnsByLevelUp && +ChildInst["LearnLevel"] > +g_MaxLevel)
-					continue;//return CHILD_LEVEL_ABOVE_MAX;
+				//not relevant. getting the move below a certain level would be the only point of passing a level move in the first place
+				//let ChildLearnsByLevelUp = ChildInst["LearnMethod"] === LEARNBY_LEVELUP;
+				//if (ChildLearnsByLevelUp && +ChildInst["LearnLevel"] > +g_MaxLevel)
+					//ReasonList.push(CHILD_LEVEL_ABOVE_MAX);
 				
 				//blacklist
 				if (ChildInst["UserRejected"])
-					continue;//return CHILD_REJECTED;
+				{
+					ReasonList.push(CHILD_REJECTED);
+					continue;
+				}
 				
 				//you can't breed these methods
 				//in crystal, tutor moves work like TM moves
@@ -725,39 +758,31 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 				if (ChildInst["LearnMethod"] === LEARNBY_EVENT || ChildInst["LearnMethod"] === LEARNBY_SPECIAL || ChildInst["LearnMethod"] === LEARNBY_SKETCH ||
 					(ChildInst["LearnMethod"] === LEARNBY_TUTOR && !(ChildInst["LearnsInGame"]["GenerationNum"] === GENERATION_2 && ChildInst["LearnsInGame"]["GameNum"] === GAME_CRYSTAL)) ||
 					((ChildInst["LearnMethod"] === LEARNBY_TM || ChildInst["LearnMethod"] === LEARNBY_TM_UNIVERSAL) && ChildInst["LearnsInGame"]["GenerationNum"] >= GENERATION_6))
-					continue;//return BAD_CHILD_METHOD;
+				{
+					ReasonList.push(BAD_CHILD_METHOD);
+					continue;
+				}
 				
 				//if the child learns the move by TM, they have to be in their base form. if the baby can't learn the move at the time of hatching, it won't suddenly learn it when evolving
 				//(eg ninjask and swords dance, because nincada can't learn it)
 				//egg moves already take care of this naturally because bulba lists base forms in their tables and we call CreatePriorEvolutionLearns().
 				if ((ChildInst["LearnMethod"] === LEARNBY_TM || ChildInst["LearnMethod"] === LEARNBY_TM_UNIVERSAL) && ChildInst["OriginalLearn"])
-					continue;//return CHILD_BY_TM_NEEDS_BASE_FORM;
+				{
+					ReasonList.push(CHILD_BY_TM_NEEDS_BASE_FORM);
+					continue;
+				}
 				
 				if (!GenerationsCompatible(FatherInst["LearnsInGame"]["GenerationNum"], ChildInst["LearnsInGame"]["GenerationNum"]))
+				{
+					ReasonList.push(FATHER_GEN_PAST_MAX);
 					continue;
+				}
 				
 				if (!GenerationsCompatible(ChildInst["LearnsInGame"]["GenerationNum"], MaxGen))
-					continue;
-				
-				//disabling until i can clarify the meaning better cause... what
-				/*
-				//if the mom can learn the move by level up below the level cap, there's no point in breeding the move onto it
-				//just catch the mother species and level it up to this level
-				let ChildIsTargetSpecies = Child["LearnMonInfo"]["SpeciesName"] === BottomChild["LearnMonInfo"]["SpeciesName"];
-				if (MotherLearnsByLevelUp)
 				{
-					
-					let MotherLearnsWithinMaximum = +MotherInst["LearnLevel"] <= +g_MaxLevel;
-					if (!ChildIsTargetSpecies && MotherLearnsWithinMaximum)
-						continue;//return MOTHER_LEVEL_BELOW_MAX;
-					
-					//if the mother is a female-only species, they can only pass the move down if the baby learns it by levelup
-					//female-only mothers are always ok if they produce the target species as the moves don't have to be passed down further than that
-					let ChildLearnsByLevelUp = ChildInst["LearnMethod"] === LEARNBY_LEVELUP;
-					if (Mother["LearnMonInfo"]["GenderRatio"] === GR_FEMALE_ONLY && !ChildLearnsByLevelUp && !ChildIsTargetSpecies)
-						continue;//return FEMALE_ONLY_MOM_NEEDS_LEVELUP_CHILD;
+					ReasonList.push(CHILD_GEN_PAST_MAX);
+					continue;
 				}
-				*/
 				
 				Good = true;
 				Child["ShowInstance"] = ChildInst;
@@ -769,9 +794,9 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 	}
 	
 	if (!Good)
-		return FAIL_OTHER;
+		return ReasonList;
 
-	return MATCHUP_SUCCESS;
+	return [MATCHUP_SUCCESS];
 }
 
 function GetLearner(WantedSpecies, WantedMove, WantedForm)
@@ -795,9 +820,16 @@ function MakeUniversalTMLearn(WantedMoveName, i, Game)
 	return Learner;
 }
 
-function MakeMovelessLearn(WantedMoveName, i, Game)
+function MakeAltParentLearn(WantedMoveName, iInfo, Game)
 {
-	let Learner = MoveLearner("", "", GetGeneration(Game)["MonData"][i], []);
+	let Learner = MoveLearner("", WantedMoveName, GetGeneration(Game)["MonData"][iInfo], []);
+	AddLearnerToMainListGame(Learner, LearnInstance(), Game);
+	return Learner;
+}
+
+function MakeMovelessLearn(WantedMoveName, iInfo, Game)
+{
+	let Learner = MoveLearner("", WantedMoveName, GetGeneration(Game)["MonData"][iInfo], []);
 	AddLearnerToMainListGame(Learner, LearnInstance(), Game);
 	return Learner;
 }
@@ -1522,7 +1554,7 @@ function PreSearch()
 		}
 	}
 
-	if (g_MovesToLearn.length <= 4)
+	if (g_MovesToLearn.length <= 4 && !g_NoMoves)
 	{
 		if (!HatchableMovesByGame.some((x) => x.length >= g_MovesToLearn.length))
 		{
@@ -1674,14 +1706,29 @@ function ToggleOptionDropdown(PokemonBox, Child, LearnInst, MatchupResult, Chain
 		if (LearnInst === null)
 		{
 			p1.className = "optionlisting";
-			if (MatchupResult === MATCHUP_SUCCESS)
+			if (MatchupResult.includes(MATCHUP_SUCCESS))
 			{
 				p1.innerText = "Use this father";
 				p1.onclick = () => SlowModePickFather(PokemonBox, Chains, ClosedList, ParentList, Depth, MacroDepth, Father, Child, BottomChild, MaxGen);
+				OptionList.appendChild(p1);
 			}
 			else
-				p1.innerText = MatchupResultStrings[MatchupResult];
-			OptionList.appendChild(p1);
+			{
+				if (MatchupResult.length > 1)
+				{
+					let ExplainString = "Combination of multiple problems. This happens when a matchup can involve an alternative species to be the mother (eg Volbeat/Illumise) or the reason for failure came down to the individual ways the Pokemon involved learn the move.";
+					for (let iResult = 0; iResult < MatchupResult.length; iResult++)
+					{
+						ExplainString += "\n" + MatchupResult[iResult];
+					}
+					alert(ExplainString);
+				}
+				else
+				{
+					p1.innerText = MatchupResultStrings[MatchupResult[0]];
+					OptionList.appendChild(p1);
+				}
+			}
 		}
 		else
 		{
@@ -1748,7 +1795,7 @@ function CreatePokemonInfoBox(Child, Father, LearnInst, Chain, iLearner, Matchup
 
 	let PokemonImage = document.createElement("img");
 	PokemonImage.src = "images/pokemon/" + Father["LearnMonInfo"]["SpeciesName"] + ".png";
-	if (Chain === null && MatchupResult !== MATCHUP_SUCCESS)
+	if (Chain === null && !MatchupResult.includes(MATCHUP_SUCCESS))
 		PokemonImage.className = "pokemonimagefade";
 	ImageContainer.appendChild(PokemonImage);
 
@@ -1759,6 +1806,9 @@ function CreatePokemonInfoBox(Child, Father, LearnInst, Chain, iLearner, Matchup
 		{
 			let DittoImage = document.createElement("img");
 			DittoImage.src = "images/pokemon/Ditto.png";
+			for (let iParent = 0; iParent < AltParents.length; iParent += 2)
+				if (NextLearner["LearnMonInfo"]["SpeciesName"] === AltParents[iParent])
+					DittoImage.src = "images/pokemon/" + AltParents[iParent + 1] + ".png";
 			DittoImage.className = "dittoicon pokeboxicon";
 			DittoImage.style.left = "84px";
 			DittoImage.style.top = "84px";
@@ -1773,7 +1823,7 @@ function CreatePokemonInfoBox(Child, Father, LearnInst, Chain, iLearner, Matchup
 		InfoText.innerText = Father["LearnMonInfo"]["SpeciesName"] + InfoStr(Father, LearnInst);
 	else
 		InfoText.innerText = Father["LearnMonInfo"]["SpeciesName"];
-	if (MatchupResult === MATCHUP_SUCCESS && GetAnyTopLevelInstance(Father))
+	if (MatchupResult && MatchupResult.includes(MATCHUP_SUCCESS) && GetAnyTopLevelInstance(Father))
 		InfoText.style.fontWeight = "bold";
 	PokemonBox.appendChild(InfoText);
 	return PokemonBox;
@@ -1867,7 +1917,7 @@ function GetAnyTopLevelInstance(Learner)
 		}
 	}
 }
-
+/*
 function GetAnyHatchableInstance(Learner)
 {
 	for (let iInst = 0; iInst < Learner["Instances"].length; iInst++)
@@ -1880,7 +1930,7 @@ function GetAnyHatchableInstance(Learner)
 		return LearnInst;
 	}
 }
-
+*/
 function LogChains(Chains)
 {
 	for (let iChain = 0; iChain < Chains.length; iChain++)
@@ -2069,10 +2119,9 @@ function TestFather(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, L
 
 function LogMatchupResult(Chains, ClosedList, ParentList, Depth, MacroDepth, Result, Father, Learner, BottomChild, UsingAltMother, MaxGen)
 {
-	if (g_MainLoopDebug && Result !== MATCHUP_SUCCESS) console.log(Depth + " " + MacroDepth + " " + Father["LearnMonInfo"]["SpeciesName"] + " CANNOT teach "
+	if (g_MainLoopDebug && !Result.includes(MATCHUP_SUCCESS)) console.log(Depth + " " + MacroDepth + " " + Father["LearnMonInfo"]["SpeciesName"] + " CANNOT teach "
 		+ Learner["LearnMonInfo"]["SpeciesName"] + " " + Learner["MoveName"] + ": "
-		+ MatchupResultStrings[Result] + (UsingAltMother ? " (alt mother)" : "")
-		+ (Result === FATHER_ON_CLOSED_LIST ? " (ID: " + Father["Instances"][0]["LearnID"] + ")" : ""));
+		+ (Result.includes(FATHER_ON_CLOSED_LIST) ? " (ID: " + Father["Instances"][0]["LearnID"] + ")" : ""));
 	if (g_SlowMode)
 	{
 		let PokemonBox = CreatePokemonInfoBox(Learner, Father, null, null , null , Result, Chains, ClosedList, ParentList, Depth, MacroDepth, BottomChild, MaxGen);
@@ -2085,6 +2134,7 @@ function LogMatchupResult(Chains, ClosedList, ParentList, Depth, MacroDepth, Res
 
 function TryAlternateMothers(Chains, Learner, ClosedList, ParentList, Father, BottomChild, Depth, MacroDepth, MaxGen)
 {
+	let Result = [];
 	for (let iAlt = 0; iAlt < AltParents.length; iAlt += 2)
 	{
 		if (Learner["LearnMonInfo"]["SpeciesName"] === AltParents[iAlt])
@@ -2092,23 +2142,23 @@ function TryAlternateMothers(Chains, Learner, ClosedList, ParentList, Father, Bo
 			for (let iLearn = 0; iLearn < g_MoveLearners.length; iLearn++)
 			{
 				let AltMother = g_MoveLearners[iLearn];
-				if (AltMother["LearnMonInfo"]["SpeciesName"] === AltParents[iAlt + 1] && AltMother["MoveName"] === Learner["MoveName"])
+				if (AltMother["LearnMonInfo"]["SpeciesName"] === AltParents[iAlt + 1])
 				{
-					let Result = ValidateMatchup(ClosedList, ParentList, AltMother, Learner, Father, BottomChild, MaxGen);
-					if (Result === MATCHUP_SUCCESS)
-						return true;
-					else if (g_MainLoopDebug && !MatchupResultIsBoring(Result))
+					Result = Result.concat(ValidateMatchup(ClosedList, ParentList, AltMother, Learner, Father, BottomChild, MaxGen));
+					if (Result.includes(MATCHUP_SUCCESS))
+						return Result;
+					else if (!MatchupResultIsBoring(Result))
 						LogMatchupResult(Chains, ClosedList, ParentList, Depth, MacroDepth, Result, Father, Learner, BottomChild, true, MaxGen);
 				}
 			}
 		}
 	}
-	return false;
+	return Result;
 }
 
 function MatchupResultIsBoring(Result)
 {
-	return Result === DIFFERENT_MOVE || Result === NO_EGG_GROUP_MATCH;
+	return Result.every((x) => x === DIFFERENT_MOVE) || Result.every((x) => x === NO_EGG_GROUP_MATCH);
 }
 
 function FindFatherForMove(Chains, ClosedList, ParentList, Depth, MacroDepth, Learner, BottomChild, MaxGen)
@@ -2146,34 +2196,33 @@ function FindFatherForMove(Chains, ClosedList, ParentList, Depth, MacroDepth, Le
 		//this can matter because something might differ between them about how/if they learn a move
 		//those same female pokemon can also come from an egg made by the male breeding with a ditto starting in gen 5
 		//however we need not worry about that; the fathers will already be considered naturally since they're in the same egg group
-		let GoodAltSpecies = false;
+		let MatchupResult = [];
 		if (Learner["LearnMonInfo"]["GenderRatio"] === GR_MALE_ONLY || Learner["LearnMonInfo"]["GenderRatio"] === GR_FEMALE_ONLY)
-			GoodAltSpecies = TryAlternateMothers(Chains, Learner, ClosedList, ParentList, Father, BottomChild, Depth, MacroDepth, MaxGen);
+			MatchupResult = TryAlternateMothers(Chains, Learner, ClosedList, ParentList, Father, BottomChild, Depth, MacroDepth, MaxGen);
 
-		if (!GoodAltSpecies)
+		if (!MatchupResult.includes(MATCHUP_SUCCESS))
+			MatchupResult = MatchupResult.concat(ValidateMatchup(ClosedList, ParentList, Learner, Learner, Father, BottomChild, MaxGen));
+		
+		if (!MatchupResultIsBoring(MatchupResult))
 		{
-			let Result = ValidateMatchup(ClosedList, ParentList, Learner, Learner, Father, BottomChild, MaxGen);
-			if (!MatchupResultIsBoring(Result))
-			{
-				LoggedAny = true;
-				LogMatchupResult(Chains, ClosedList, ParentList, Depth, MacroDepth, Result, Father, Learner, BottomChild, false, MaxGen);
-			}
-			
-			if (g_MainLoopDebug && Result === MATCHUP_SUCCESS) console.log(Depth + " " + MacroDepth + " " + Father["LearnMonInfo"]["SpeciesName"] + " can teach " + Learner["LearnMonInfo"]["SpeciesName"] + " " + Learner["MoveName"] + " to pass to " + BottomChild["LearnMonInfo"]["SpeciesName"]);
-			
-			if (g_SlowMode)
-				continue;
-			
-			if (Result !== MATCHUP_SUCCESS)
-				continue;
+			LoggedAny = true;
+			LogMatchupResult(Chains, ClosedList, ParentList, Depth, MacroDepth, MatchupResult, Father, Learner, BottomChild, false, MaxGen);
 		}
-			
+		
+		if (g_MainLoopDebug && MatchupResult.includes(MATCHUP_SUCCESS)) console.log(Depth + " " + MacroDepth + " " + Father["LearnMonInfo"]["SpeciesName"] + " can teach " + Learner["LearnMonInfo"]["SpeciesName"] + " " + Learner["MoveName"] + " to pass to " + BottomChild["LearnMonInfo"]["SpeciesName"]);
+		
+		if (g_SlowMode)
+			continue;
+		
+		if (!MatchupResult.includes(MATCHUP_SUCCESS))
+			continue;
+		
 		let RetVal = TestFather(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, Learner, BottomChild, MaxGen);
 		Chains = RetVal[0];
-		let Result = RetVal[1];
+		let FatherResult = RetVal[1];
 
 		//return now to ensure SearchRetryLoop returns the correct result
-		if (Result === CR_SUCCESS)
+		if (FatherResult === CR_SUCCESS)
 			return [Chains, CR_SUCCESS];
 	}
 	//if there are no fathers left to look at, leave
@@ -2325,23 +2374,20 @@ function SearchStart()
 				if (g_Combo && Chains.length !== g_Combo)
 					debugger;
 			}
-			console.log(Chains.length + " chains");
-			if (ExamineChains(Chains))
-			{
-				for (let iChain = 0; iChain < Chains.length; iChain++)
-				{
-					console.log("Printing chain for " + Chains[iChain]["LearnList"][0]["MoveName"]);
-					SuggestChain(Chains[iChain]);
-				}
-				break;
-			}
-			else
+			if (!ExamineChains(Chains))
 			{
 				console.log("Detected bad chain in post. Debug for more info.");
+				Chains = [];
 				i = -1;
 				//continue;
 			}
 		}
+	}
+	console.log(Chains.length + " chains");
+	for (let iChain = 0; iChain < Chains.length; iChain++)
+	{
+		console.log("Printing chain for " + Chains[iChain]["LearnList"][0]["MoveName"]);
+		SuggestChain(Chains[iChain]);
 	}
 }
 
@@ -2405,10 +2451,20 @@ function GenerateUniversalTMLearns(Game)
 				MakeUniversalTMLearn(TMNames[i], j, Game);
 }
 
+function GenerateAltParentLearns(Game)
+{
+	for (let iGame = 0; iGame < Game["GameNum"]; iGame++)
+		if (g_Games[iGame]["GameIsAllowed"])
+			for (let iParent = 1; iParent < AltParents.length; iParent += 2)
+				for (let iInfo = 0; iInfo < GetGeneration(Game)["MonData"].length; iInfo++)
+					if (AltParents[iParent] === GetGeneration(Game)["MonData"][iInfo]["SpeciesName"])
+						MakeAltParentLearn("N/A", iInfo, Game);
+}
+
 function GenerateMovelessLearns(Game)
 {
-	for (let j = 0; j < GetGeneration(Game)["MonData"].length; j++)
-		MakeMovelessLearn("N/A", j, Game);
+	for (let iInfo = 0; iInfo < GetGeneration(Game)["MonData"].length; iInfo++)
+		MakeMovelessLearn("N/A", iInfo, Game);
 }
 
 function CopyLearnsToNewSpecies(Game, OldLearner, TargetSpecies)
@@ -2597,6 +2653,7 @@ async function main()
 		FindTMsOfInterest();
 		ParseGameAnnotations();
 		CreatePriorEvolutionLearns(g_TargetGame);
+		GenerateAltParentLearns(g_TargetGame);
 	}
 	
 	SortData();

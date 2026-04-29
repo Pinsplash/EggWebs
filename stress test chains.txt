@@ -39,11 +39,6 @@ Chain for Nasty Plot: Plusle (Level 51) → Togetic (Egg move, Learned as Togepi
 Chain for Encore: Togetic (Level 19) → Chatot (Egg move)
 
 
-tests learning accurate to game level (as opposed to generation level)
-SmokeScreen on Whismur (level cap 5, hgss target game with dpp checked to be usable)
-this should eventually suggest Cyndaquil (level 4, in Pt), and NOT suggest Cyndaquil (level 6)
-
-
 tests understanding breeding with ditto
 Hi Jump Kick and Mach Punch Hitmontop (gen 3)
 Chain for Mach Punch: Hitmonchan (Level 20) → Hitmonlee (Egg move Learned as Tyrogue)
@@ -58,21 +53,28 @@ Chain for Toxic: Smeargle (Sketch)
 Chain for Ice Beam: Smeargle (Sketch) → Delibird (By TM)
 
 
-tests alternate parents
-Charm on Nidoqueen (gen 6)
-Chain for Charm: Eevee (Level 29) → Nidoqueen (Egg move, Learned as Nidoran F)
-
-
 tests understanding that some methods of learning a move (eg event) are sometimes unsuitable for the top ancestor of a chain, since other chains will target that learner
 Belly Drum and Aqua Jet on Azumarill (gen 5)
 Nothing
 
 
-rapid spin and explosion on cloyster (gen 2) - illegal
-curse and drill peck on skarmory (gen 3) - illegal
-whirlwind and drill peck on skarmory (gen 3) - illegal
-knock off and rapid spin on armaldo (gen 3) - illegal
-lunge and dizzy punch on volbeat (gen 7) - illegal
+tests alternate parents
+Charm on Nidoqueen (gen 6)
+Chain for Charm: Eevee (Level 29) → Nidoqueen (Egg move, Learned as Nidoran F)
+
+Lunge on Volbeat (gen 7)
+Chain for Lunge: Mothim (Level 47) → Volbeat (Egg move)
+
+
+tests learning accurate to game level (as opposed to generation level)
+SmokeScreen on Whismur (level cap 5, hgss target game with dpp checked to be usable)
+this should eventually suggest Cyndaquil (level 4, in Pt), and NOT suggest Cyndaquil (level 6)
+
+
+tests no moves mode
+Tynamo to Larvesta
+Chain: Tynamo → Shellos → Wingull → Togetic → Pikachu → Ekans → Charmander → Bulbasaur → Paras → Larvesta
+
 
 generic legal:
 pain split and will o wisp on weezing (gen 3) - legal (looking for duskull)
