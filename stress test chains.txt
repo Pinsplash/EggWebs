@@ -61,3 +61,27 @@ Chain for Ice Beam: Smeargle (Sketch) → Delibird (By TM)
 tests alternate parents
 Charm on Nidoqueen (gen 6)
 Chain for Charm: Eevee (Level 29) → Nidoqueen (Egg move, Learned as Nidoran F)
+
+
+tests understanding that some methods of learning a move (eg event) are sometimes unsuitable for the top ancestor of a chain, since other chains will target that learner
+Belly Drum and Aqua Jet on Azumarill (gen 5)
+Nothing
+
+
+rapid spin and explosion on cloyster (gen 2) - illegal
+curse and drill peck on skarmory (gen 3) - illegal
+whirlwind and drill peck on skarmory (gen 3) - illegal
+knock off and rapid spin on armaldo (gen 3) - illegal
+lunge and dizzy punch on volbeat (gen 7) - illegal
+
+generic legal:
+pain split and will o wisp on weezing (gen 3) - legal (looking for duskull)
+present and heal bell on blissey (gen 2) - legal (looking for snubbull)
+curse and pursuit on snorlax (gen 4) - legal (looking for cranidos)
+bullet punch, cross chop, and fake out on toxicroak (gen 5) - legal
+dragon dance and metal claw on corphish (gen 4) - legal
+
+//the weirdest chainbreed I've ever seen:
+//breed male Curse Snorlax in Gen 3, transfer to XD, teach Self-destruct
+//by tutor, breed with female Gluttony Snorlax
+curse and self-destruct on snorlax (gen 5) - legal (we don't care about hidden ability so this might be a dud)

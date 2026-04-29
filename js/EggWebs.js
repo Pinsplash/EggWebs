@@ -562,7 +562,7 @@ function FatherSatisfiesMoves(Father, Learns)
 {
 	for (let iMove = 0; iMove < g_Combo; iMove++)
 	{
-		if (g_ComboData["SatisfiedStatus"][iMove] === false)
+		if (g_ComboData["SatisfiedStatus"][iMove] === false || g_ComboData["SatisfiedStatus"][iMove] === null || g_ComboData["SatisfiedStatus"][iMove] === undefined)
 		{
 			let Good = false;
 			for (let iLearner = 0; iLearner < g_MoveLearners.length; iLearner++)
@@ -1794,7 +1794,7 @@ function SuggestChain(Chain)
 	{
 		let Learner = Chain["LearnList"][iLearner];
 		let LearnInst = Learner["ShowInstance"];
-		//make sure original father always shows a reasonable method
+		//todo: hack: make sure original father always shows a reasonable method
 		if (iLearner === Chain["LearnList"].length - 1)
 			LearnInst = GetAnyTopLevelInstance(Learner);
 		if (!LearnInst) debugger;
@@ -1943,6 +1943,8 @@ function TestFather(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, L
 		if (Chains[iChain]["LearnList"][0]["MoveName"] === Learner["MoveName"])
 			debugger;
 	//if in combo mode, father must learn all of the moves yet to be satisfied
+	if (Father["LearnMonInfo"]["SpeciesName"] === "Gastly" && Father["MoveName"] === "Shadow Ball")
+		debugger;
 	let BadForCombo = false;
 	let TopLevel = GetAnyTopLevelInstance(Father);
 	if (g_Combo && TopLevel)
@@ -2247,15 +2249,7 @@ function SearchRetryLoop(Chains, Learner, Nested, MacroDepth, MaxGen)
 	}
 	if (Result === CR_SUCCESS && !Nested)
 	{
-		document.getElementById("mainview").innerHTML = "";
-		console.log(Chains.length + " chains");
-		if (g_Combo && Chains.length !== g_Combo)
-			debugger;
-		for (let iChain = 0; iChain < Chains.length; iChain++)
-		{
-			console.log("Printing chain for " + Chains[iChain]["LearnList"][0]["MoveName"]);
-			SuggestChain(Chains[iChain]);
-		}
+		return [Chains, Result];
 	}
 	if (!g_SlowMode)
 	{
@@ -2292,17 +2286,18 @@ function SearchStart()
 		}
 		return;
 	}
-	else
-	{
-		let Para = document.createElement("p");
-		Para.innerText = "Nothing";
-		Para.className = "instruction";
-		document.getElementById("mainview").appendChild(Para);
-	}
 
 	console.log("Learner count: " + g_MoveLearners.length);
 	for (let i = 0; i < g_MoveLearners.length; i++)
 	{
+		//put this here so we can re-add it if we return negative in ExamineChains
+		if (i === 0)
+		{
+			let Para = document.createElement("p");
+			Para.innerText = "Nothing";
+			Para.className = "instruction";
+			document.getElementById("mainview").appendChild(Para);
+		}
 		let Move = g_MoveLearners[i];
 		if (Move["LearnMonInfo"]["SpeciesName"] === g_TargetSpecies)
 		{
@@ -2324,8 +2319,66 @@ function SearchStart()
 			
 			let RetVal = SearchRetryLoop(Chains, Move, false, 0, MaxGen);
 			Chains = RetVal[0];
+			if (Chains.length)
+			{
+				document.getElementById("mainview").innerHTML = "";
+				if (g_Combo && Chains.length !== g_Combo)
+					debugger;
+			}
+			console.log(Chains.length + " chains");
+			if (ExamineChains(Chains))
+			{
+				for (let iChain = 0; iChain < Chains.length; iChain++)
+				{
+					console.log("Printing chain for " + Chains[iChain]["LearnList"][0]["MoveName"]);
+					SuggestChain(Chains[iChain]);
+				}
+				break;
+			}
+			else
+			{
+				console.log("Detected bad chain in post. Debug for more info.");
+				i = -1;
+				//continue;
+			}
 		}
 	}
+}
+
+function ExamineChains(Chains)
+{
+	if (g_Combo)
+	{
+		//if the top learner of a chain learns a move via something that doesn't let it know the move upon hatching,
+		//it needs to not be led into by any other chain (illegal azumarill scenario)
+		for (let iChain = 0; iChain < Chains.length; iChain++)
+		{
+			let Chain = Chains[iChain];
+			let TopLearner = Chain["LearnList"][Chain["LearnList"].length - 1];
+			if (!TopLearner) debugger;
+			//todo: hack: parity with above hack
+			let LearnInst = GetAnyTopLevelInstance(TopLearner);
+			if (!LearnInst) debugger;
+			if (InstanceMustBeTopLevel(LearnInst))
+			{
+				for (let iOtherChain = 0; iOtherChain < Chains.length; iOtherChain++)
+				{
+					let OtherChain = Chains[iOtherChain];
+					let OtherBottomLearner = OtherChain["LearnList"][0];
+					//length check: if the chain is one pokemon long because it's the same pokemon covering multiple of the moves we need to learn, allow
+					if (OtherChain["LearnList"].length > 1 && TopLearner["LearnMonInfo"]["SpeciesName"] === OtherBottomLearner["LearnMonInfo"]["SpeciesName"])
+					{
+						console.log("No suitable way for " + TopLearner["LearnMonInfo"]["SpeciesName"] + " to learn " + TopLearner["MoveName"] + " while also allowing " + OtherBottomLearner["MoveName"] + " to be hatched onto it.");
+						LearnInst["UserRejected"] = true;
+						g_ComboData["SatisfiedStatus"] = [];
+						g_MovesBeingExplored = [];
+						return false;
+					}
+				}
+			}
+		}
+	}
+	return true;
 }
 
 function GenerateUniversalTMLearns(Game)
