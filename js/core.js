@@ -59,7 +59,6 @@ const GAMECOMBO_SM_USUM = 29;
 const GAMECOMBO_SWSH_BDSP = 30;
 
 //learn methods
-const METHOD_NOT_DEFINED = 0;
 const LEARNBY_LEVELUP = 1;
 const LEARNBY_SPECIAL = 2;
 const LEARNBY_EVENT = 3;
@@ -68,7 +67,6 @@ const LEARNBY_SKETCH = 5;
 const LEARNBY_TM = 6;
 const LEARNBY_TM_UNIVERSAL = 7;
 const LEARNBY_EGG = 8;
-const LAST_LEARN_METHOD = 9;
 
 //matchup results
 const MATCHUP_SUCCESS = -1;
@@ -101,7 +99,6 @@ const CHILD_GEN_PAST_MAX = 25;
 //group crawl results
 const CR_SUCCESS = 0;
 const CR_FAIL = 1;
-//const CR_REJECTED = 2;
 
 let g_TargetSpecies = "";
 let g_TMLearnBlacklist = [];

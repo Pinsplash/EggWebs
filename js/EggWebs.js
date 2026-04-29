@@ -1780,6 +1780,7 @@ function CreatePokemonInfoBox(Child, Father, LearnInst, Chain, iLearner, Matchup
 
 	let EggGroup2Image = document.createElement("img");
 	EggGroup2Image.src = "images/egg groups/set3/" + Father["LearnMonInfo"]["EggGroup2"] + ".png";
+	EggGroup2Image.title = Father["LearnMonInfo"]["EggGroup2"];
 	EggGroup2Image.className = "egggroupicon pokeboxicon";
 	EggGroup2Image.style.left = "84px";
 	ImageContainer.appendChild(EggGroup2Image);
@@ -1788,6 +1789,7 @@ function CreatePokemonInfoBox(Child, Father, LearnInst, Chain, iLearner, Matchup
 	{
 		let EggGroup1Image = document.createElement("img");
 		EggGroup1Image.src = "images/egg groups/set3/" + Father["LearnMonInfo"]["EggGroup1"] + ".png";
+		EggGroup1Image.title = Father["LearnMonInfo"]["EggGroup1"];
 		EggGroup1Image.className = "egggroupicon pokeboxicon";
 		EggGroup1Image.style.left = "42px";
 		ImageContainer.appendChild(EggGroup1Image);
@@ -1805,10 +1807,12 @@ function CreatePokemonInfoBox(Child, Father, LearnInst, Chain, iLearner, Matchup
 		if (NextLearner && Father["LearnMonInfo"]["GenderRatio"] === NextLearner["LearnMonInfo"]["GenderRatio"])
 		{
 			let DittoImage = document.createElement("img");
-			DittoImage.src = "images/pokemon/Ditto.png";
+			let Species = "Ditto";
 			for (let iParent = 0; iParent < AltParents.length; iParent += 2)
 				if (NextLearner["LearnMonInfo"]["SpeciesName"] === AltParents[iParent])
-					DittoImage.src = "images/pokemon/" + AltParents[iParent + 1] + ".png";
+					Species = AltParents[iParent + 1];
+			DittoImage.src = "images/pokemon/" + Species + ".png";
+			DittoImage.title = Species;
 			DittoImage.className = "dittoicon pokeboxicon";
 			DittoImage.style.left = "84px";
 			DittoImage.style.top = "84px";
