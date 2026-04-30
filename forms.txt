@@ -1,0 +1,72 @@
+	Battle Bond Greninja: NED. only obtainable from an event. can't be hatched and can't be used to teach anyone else a move. no interest to us.
+
+when we're cloning moves to evolutions, if the lower form does not have a specific form, then it can clone to all evolved forms (eg pikachu can clone to both kantonian and alolan raichu)
+hisuian forms are the same way, but they are not transferable from PLA back to any relevant gen 8 game, so we start noting them in gen 9.
+A Raichu: regional form with different learnset. pre-evo is single-form.
+A Exeggutor: regional form with different learnset. pre-evo is single-form.
+A Marowak: regional form with different learnset. pre-evo is single-form.
+G Weezing: regional form with different learnset. pre-evo is single-form.
+G Stunfisk: regional form with different learnset. pre-evo is single-form.
+H Typhlosion: regional form with different learnset. pre-evo is single-form.
+H Samurott: regional form with different learnset. pre-evo is single-form.
+H Lilligant: regional form with different learnset. pre-evo is single-form.
+H Braviary: regional form with different learnset. pre-evo is single-form.
+H Avalugg: regional form with different learnset. pre-evo is single-form.
+H Decidueye: regional form with different learnset. pre-evo is single-form.
+P Tauros: 3 regional forms with different learnsets. pre-evo is single-form.
+Lycanroc: 3 forms with different learnsets. rockruff technically has 2 forms but they're the same as far as we care.
+Wormadam: 3 forms with different learnsets. burmy's forms have no impact on learnset.
+Toxtricity: lowkey and amped forms with different learnsets. pre-evo is single-form.
+
+for pokemon with a form, they must clone their moves only to their associated evolved form (eg unovan darumaka shouldn't clone moves to galarian darmanitan)
+
+evolution data for these pokemon should be updated to be like this:
+EvoOffset: offset in MonData to get info of evolved species
+EvoForm: evolved species form name
+RequiredForm: form a pokemon must be to evolve into this form of the species
+
+Darumaka and Darmanitan: regional form with different learnset. evolves.
+Rattata and Raticate: regional form with different learnset. evolves. (learnsets are the same in gen 9 only)
+Sandshrew and Sandslash: regional form with different learnset. evolves.
+Vulpix and Ninetales: regional form with different learnset. evolves.
+Diglett and Dugtrio: regional form with different learnset. evolves.
+Meowth, Persian, Perrserker: regional forms with different learnset. evolves.
+Growlithe and Arcanine: regional form with different learnset. evolves.
+Geodude, Graveler, Golem: regional form with different learnset. evolves.
+Ponyta and Rapidash: regional form with different learnset. evolves.
+Slowpoke, Slowbro, Slowking: regional form with different learnset. evolves.
+Farfetch'd and Sirfetch'd: regional form with different learnset. evolves.
+Grimer and Muk: regional form with different learnset. evolves.
+Voltorb and Electrode: regional form with different learnset. evolves.
+Mr. Mime and Mr. Rime: regional form with different learnset. evolves.
+Zorua and Zoroark: regional form with different learnset. evolves.
+Sliggoo and Goodra: regional form with different learnset. evolves.
+Zigzagoon and Linoone: regional form with different learnset. evolves.
+Basculin and Basculegion: only white form evolves into basculegion. NOT a regional form.
+Meowth and Perrserker: only galarian meowth evolves into perrserker.
+Wooper and Clodsire: only paldean wooper evolves into clodsire.
+Qwilfish and Overqwil: only hisuian qwilfish evolves into overqwil.
+Corsola and Cursola: only galarian corsola evolves into cursola.
+Yamask and Runerigus: only galarian yamask evolves into runerigus.
+Sneasel: only johtonian sneasel evolves into weavile, and only hisuian sneasel evolves into sneasler.
+Linoone and Obstagoon: only galarian linoone evolves into obstagoon.
+
+	these forms require a marker of some sort to note their gender (to not cause problems like bloodmoon ursaluna being considered a mother in ValidateMatchup)
+Bloodmoon Ursaluna: form will always be male. notable that it's impossible to normally get a pokemon into this form, but all this means is we don't specify it in teddiursa's evolution data
+Oinkologne: male and female forms with different learnsets.
+Indeedee: male and female forms with different learnsets.
+Meowstic: male and female forms with different learnsets.
+
+	need a form data structure with name, gender ratio.
+
+LearnMonInfo will keep a list of all of the species forms, with the one in index 0 being used as a default whenever bulba pages aren't being specific enough. and an offset in MonData to the species base form
+
+exclude form option
+
+target form option
+
+update form acquisition during parsing
+
+regional form rules:
+1. earlier evo stages of a pokemon with a regional form will evolve into the form associated with the region they were in when the evolution conditions were met.
+2. form is determined by the region the egg is hatched in by default. regional form can be overrode by having a parent from the child's evolutionary line hold an everstone. this will force the child to copy the parent's form.

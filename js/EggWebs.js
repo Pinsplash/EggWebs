@@ -118,8 +118,8 @@ function InfoStr(WantedLearn, LearnInstance)
 	if (g_NoMoves)
 		return str;
 
-	if (WantedLearn["FormName"])
-		str += "\n" + WantedLearn["FormName"];
+	if (WantedLearn["form_reimpl"])
+		str += "\n" + WantedLearn["form_reimpl"];
 
 	str += "\n" + MethodStr(LearnInstance, "\n");
 
@@ -441,9 +441,9 @@ function IterateEvolutions(iEvo, OriginalForm, Game)
 	//entries are grouped by evolution family, and the largest family is 9 - the eeveelutions
 	let MaxEvoLineSize = 9;
 	let MaxSlot = iInfo + MaxEvoLineSize;
-	for (; iEvo < GetGeneration(Game)["MonData"][OriginalSlot]["Evolutions"].length; iEvo++)
+	for (; iEvo < GetGeneration(Game)["MonData"][OriginalSlot]["evo_reimpl"].length; iEvo++)
 	{
-		let Target = GetGeneration(Game)["MonData"][OriginalSlot]["Evolutions"][iEvo];
+		let Target = GetGeneration(Game)["MonData"][OriginalSlot]["evo_reimpl"][iEvo];
 		for (iInfo = OriginalSlot; iInfo < MaxSlot; iInfo++)
 		{
 			if (Target === GetGeneration(Game)["MonData"][iInfo]["SpeciesName"])
@@ -468,7 +468,7 @@ function GetBaseForm(Species, Game)
 	//go down to see if we have a base form - this one loop can handle three-stagers
 	for (let iBaseInfo = iInfo; iBaseInfo > 0 && iBaseInfo > MinSlot; iBaseInfo--)
 	{
-		let Evos = GetGeneration(Game)["MonData"][iBaseInfo]["Evolutions"];
+		let Evos = GetGeneration(Game)["MonData"][iBaseInfo]["evo_reimpl"];
 		if (Evos.includes(OriginalForm))
 		{
 			OriginalSpecies = GetGeneration(Game)["MonData"][iBaseInfo];
@@ -786,7 +786,7 @@ function GetLearner(WantedSpecies, WantedMove, WantedForm)
 	for (let iLearn = 0; iLearn < g_MoveLearners.length; iLearn++)
 		if (g_MoveLearners[iLearn]["LearnMonInfo"]["SpeciesName"] === WantedSpecies &&
 			(!WantedMove || g_MoveLearners[iLearn]["MoveName"] === WantedMove) &&
-			(!WantedForm || g_MoveLearners[iLearn]["FormName"] === WantedForm))
+			(!WantedForm || g_MoveLearners[iLearn]["form_reimpl"] === WantedForm))
 			return g_MoveLearners[iLearn];
 }
 
@@ -1505,8 +1505,8 @@ function FindTMsOfInterest()
 				{
 					LearnInst["TMOfInterest"] = true;///*
 					console.log(Learner["LearnMonInfo"]["SpeciesName"] + " learning " + Learner["MoveName"] + MethodStr(LearnInst, ", "));
-					if (Learner["FormName"])
-						console.log(" (" + Learner["FormName"] + ")");
+					if (Learner["form_reimpl"])
+						console.log(" (" + Learner["form_reimpl"] + ")");
 					console.log(" was a TM of Interest\n");//*/
 				}
 			}
@@ -2573,9 +2573,9 @@ function CreatePriorEvolutionLearns(Game)
 		//entries are grouped by evolution family, and the largest family is 9 - the eeveelutions
 		let MaxEvoLineSize = 9;
 		let MaxSlot = iInfo + MaxEvoLineSize;
-		for (let iEvo = 0; iEvo < GetGeneration(Game)["MonData"][OriginalSlot]["Evolutions"].length; iEvo++)
+		for (let iEvo = 0; iEvo < GetGeneration(Game)["MonData"][OriginalSlot]["evo_reimpl"].length; iEvo++)
 		{
-			let Target = GetGeneration(Game)["MonData"][OriginalSlot]["Evolutions"][iEvo];
+			let Target = GetGeneration(Game)["MonData"][OriginalSlot]["evo_reimpl"][iEvo];
 			for (iInfo = OriginalSlot; iInfo < MaxSlot && iInfo < GetGeneration(Game)["MonData"].length; iInfo++)
 			{
 				if (Target === GetGeneration(Game)["MonData"][iInfo]["SpeciesName"])
