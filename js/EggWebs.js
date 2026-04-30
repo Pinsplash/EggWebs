@@ -1829,7 +1829,10 @@ function CreatePokemonInfoBox(Child, Father, LearnInst, Chain, iLearner, Matchup
 	}
 
 	let PokemonImage = document.createElement("img");
-	PokemonImage.src = "images/pokemon/" + Father["LearnMonInfo"]["SpeciesName"] + ".png";
+	let Species = Father["LearnMonInfo"]["SpeciesName"];
+	if (Species === "Type: Null")
+		Species = "Type Null";
+	PokemonImage.src = "images/pokemon/" + Species + ".png";
 	if (Chain === null && !MatchupResult.includes(MATCHUP_SUCCESS))
 		PokemonImage.className = "pokemonimagefade";
 	ImageContainer.appendChild(PokemonImage);
@@ -1840,12 +1843,12 @@ function CreatePokemonInfoBox(Child, Father, LearnInst, Chain, iLearner, Matchup
 		if (NextLearner && Father["LearnMonInfo"]["GenderRatio"] === NextLearner["LearnMonInfo"]["GenderRatio"])
 		{
 			let DittoImage = document.createElement("img");
-			let Species = "Ditto";
+			let MotherSpecies = "Ditto";
 			for (let iParent = 0; iParent < AltParents.length; iParent += 2)
 				if (NextLearner["LearnMonInfo"]["SpeciesName"] === AltParents[iParent])
-					Species = AltParents[iParent + 1];
-			DittoImage.src = "images/pokemon/" + Species + ".png";
-			DittoImage.title = Species;
+					MotherSpecies = AltParents[iParent + 1];
+			DittoImage.src = "images/pokemon/" + MotherSpecies + ".png";
+			DittoImage.title = MotherSpecies;
 			DittoImage.className = "dittoicon pokeboxicon";
 			DittoImage.style.left = "84px";
 			DittoImage.style.top = "84px";
