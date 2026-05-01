@@ -52,14 +52,15 @@ Sneasel: only johtonian sneasel evolves into weavile, and only hisuian sneasel e
 Linoone and Obstagoon: only galarian linoone evolves into obstagoon.
 
 	these forms require a marker of some sort to note their gender (to not cause problems like bloodmoon ursaluna being considered a mother in ValidateMatchup)
-Bloodmoon Ursaluna: form will always be male. notable that it's impossible to normally get a pokemon into this form, but all this means is we don't specify it in teddiursa's evolution data
+Bloodmoon Ursaluna: form will always be male. notable that it's impossible to normally get a pokemon into this form, but all this means is we don't specify it in teddiursa's evolution data. think of it like a regional form from an unknown region, like alolan raichu in galar (meaning the everstone caveat doesn't apply since the base form doesn't have an associated form).
 Oinkologne: male and female forms with different learnsets.
 Indeedee: male and female forms with different learnsets.
 Meowstic: male and female forms with different learnsets.
 
 	need a form data structure with name, gender ratio.
 
-LearnMonInfo will keep a list of all of the species forms, with the one in index 0 being used as a default whenever bulba pages aren't being specific enough. and an offset in MonData to the species base form
+LearnMonInfo will keep a list of all of the species forms, with the one in index 0 being used as a default whenever bulba pages aren't being specific enough. when a move page does not specify a form, the learn will go to the default form. if the page says something along the lines of "all forms", then the move goes to every form in the list.
+and an offset in MonData to the species base form
 
 exclude form option
 
@@ -69,4 +70,6 @@ update form acquisition during parsing
 
 regional form rules:
 1. earlier evo stages of a pokemon with a regional form will evolve into the form associated with the region they were in when the evolution conditions were met.
-2. form is determined by the region the egg is hatched in by default. regional form can be overrode by having a parent from the child's evolutionary line hold an everstone. this will force the child to copy the parent's form.
+2. regional form is determined by the region the egg is hatched in by default. regional form can be overrode by having a parent from the child's evolutionary line hold an everstone. this will force the child to copy the parent's form.
+
+BDSP do NOT have regional forms

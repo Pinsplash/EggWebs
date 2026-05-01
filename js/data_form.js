@@ -114,8 +114,7 @@ const UnovanZoroark = FormData("Unovan");
 const UnovanZorua = FormData("Unovan");
 
 //not regional
-const BlueStripedBasculin = FormData("Blue-Striped");
-const RedStripedBasculin = FormData("Red-Striped");
+const RedBlueStripedBasculin = FormData("Red- and Blue-Striped");
 const WhiteStripedBasculin = FormData("White-Striped");
 
 const MaleIndeedee = FormData("Male", GR_MALE_ONLY);

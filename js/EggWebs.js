@@ -1,6 +1,6 @@
 ﻿const g_Games =
 	[
-		GameData("Red/Blue",							GENERATION_1,		"RB",	GAME_RED_BLUE),
+		GameData("Red/Blue",						GENERATION_1,		"RB",	GAME_RED_BLUE),
 		GameData("Yellow",							GENERATION_1,		"Y",	GAME_YELLOW),
 		GameData("Gold/Silver",						GENERATION_2,		"GS",	GAME_GOLD_SILVER),
 		GameData("Crystal",							GENERATION_2,		"C",	GAME_CRYSTAL),
@@ -8,15 +8,15 @@
 		GameData("FireRed/LeafGreen",				GENERATION_3,		"FRLG",	GAME_FIRERED_LEAFGREEN),
 		GameData("Emerald",							GENERATION_3,		"E",	GAME_EMERALD),
 		GameData("Diamond/Pearl",					GENERATION_4,		"DP",	GAME_DIAMOND_PEARL),
-		GameData("Platinum",							GENERATION_4,		"Pt",	GAME_PLATINUM),
-		GameData("HeartGold/SoulSilver",				GENERATION_4,		"HGSS",	GAME_HEARTGOLD_SOULSILVER),
+		GameData("Platinum",						GENERATION_4,		"Pt",	GAME_PLATINUM),
+		GameData("HeartGold/SoulSilver",			GENERATION_4,		"HGSS",	GAME_HEARTGOLD_SOULSILVER),
 		GameData("Black/White",						GENERATION_5,		"BW",	GAME_BLACK1_WHITE1),
 		GameData("Black 2/White 2",					GENERATION_5,		"B2W2",	GAME_BLACK2_WHITE2),
 		GameData("X/Y",								GENERATION_6,		"XY",	GAME_X_Y),
 		GameData("Omega Ruby/Alpha Sapphire",		GENERATION_6,		"ORAS",	GAME_OMEGA_RUBY_ALPHA_SAPPHIRE),
-		GameData("Sun/Moon",							GENERATION_7,		"SM",	GAME_SUN_MOON),
-		GameData("Ultra Sun/Ultra Moon",				GENERATION_7,		"USUM",	GAME_ULTRASUN_ULTRAMOON),
-		GameData("Sword/Shield",						GENERATION_8,		"SwSh",	GAME_SWORD_SHIELD),
+		GameData("Sun/Moon",						GENERATION_7,		"SM",	GAME_SUN_MOON),
+		GameData("Ultra Sun/Ultra Moon",			GENERATION_7,		"USUM",	GAME_ULTRASUN_ULTRAMOON),
+		GameData("Sword/Shield",					GENERATION_8,		"SwSh",	GAME_SWORD_SHIELD),
 		GameData("Brilliant Diamond/Shining Pearl",	GENERATION_8_BDSP,	"BDSP",	GAME_BRILLIANT_DIAMOND_SHINING_PEARL),
 		GameData("Scarlet/Violet",					GENERATION_9,		"SV",	GAME_SCARLET_VIOLET)
 	];
@@ -453,7 +453,7 @@ function IterateEvolutions(iEvo, OriginalForm, Game)
 		}
 	}
 }
-
+//todo: previous impl of shedinja learning ninjask moves was bad. in gen 3 and 4, make special learns for Fury Cutter, Screech, Swords Dance, Slash, Agility, Baton Pass.
 function GetBaseForm(Species, Game)
 {
 	let OriginalForm = Species;
