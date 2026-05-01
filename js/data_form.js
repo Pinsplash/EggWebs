@@ -58,6 +58,7 @@ const HoennianZigzagoon = FormData("Hoennian");
 
 const JohtonianCorsola = FormData("Johtonian");
 const JohtonianQwilfish = FormData("Johtonian");
+const JohtonianSlowking = FormData("Kantonian");
 const JohtonianSneasel = FormData("Johtonian");
 const JohtonianTyphlosion = FormData("Johtonian");
 const JohtonianWooper = FormData("Johtonian");
@@ -91,7 +92,6 @@ const KantonianRattata = FormData("Kantonian");
 const KantonianSandshrew = FormData("Kantonian");
 const KantonianSandslash = FormData("Kantonian");
 const KantonianSlowbro = FormData("Kantonian");
-const KantonianSlowking = FormData("Kantonian");
 const KantonianSlowpoke = FormData("Kantonian");
 const KantonianTauros = FormData("Kantonian");
 const KantonianVoltorb = FormData("Kantonian");

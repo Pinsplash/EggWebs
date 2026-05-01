@@ -20,7 +20,7 @@ Toxtricity: lowkey and amped forms with different learnsets. pre-evo is single-f
 
 for pokemon with a form, they must clone their moves only to their associated evolved form (eg unovan darumaka shouldn't clone moves to galarian darmanitan)
 
-evolution data for these pokemon should be updated to be like this:
+	evolution data for these pokemon should be updated to be like this:
 EvoOffset: offset in MonData to get info of evolved species
 EvoForm: evolved species form name
 RequiredForm: form a pokemon must be to evolve into this form of the species
@@ -59,8 +59,10 @@ Meowstic: male and female forms with different learnsets.
 
 	need a form data structure with name, gender ratio.
 
-LearnMonInfo will keep a list of all of the species forms, with the one in index 0 being used as a default whenever bulba pages aren't being specific enough. when a move page does not specify a form, the learn will go to the default form. if the page says something along the lines of "all forms", then the move goes to every form in the list.
-and an offset in MonData to the species base form
+	LearnMonInfo will keep a list of all of the species forms, with the one in index 0 being used as a default whenever bulba pages aren't being specific enough.
+when a move page does not specify a form, the learn will go to the default form.
+if the page says something along the lines of "all forms", then the move goes to every form in the list.
+	and an offset in MonData to the species base form
 
 exclude form option
 
