@@ -1,7 +1,6 @@
 	Battle Bond Greninja: NED. only obtainable from an event. can't be hatched and can't be used to teach anyone else a move. no interest to us.
 
-when we're cloning moves to evolutions, if the lower form does not have a specific form, then it can clone to all evolved forms (eg pikachu can clone to both kantonian and alolan raichu)
-hisuian forms are the same way, but they are not transferable from PLA back to any relevant gen 8 game, so we start noting them in gen 9.
+	when we're cloning moves to evolutions, if the lower form does not have a specific form, then it can clone to all evolved forms (eg pikachu can clone to both kantonian and alolan raichu)
 A Raichu: regional form with different learnset. pre-evo is single-form.
 A Exeggutor: regional form with different learnset. pre-evo is single-form.
 A Marowak: regional form with different learnset. pre-evo is single-form.
@@ -18,7 +17,7 @@ Lycanroc: 3 forms with different learnsets. rockruff technically has 2 forms but
 Wormadam: 3 forms with different learnsets. burmy's forms have no impact on learnset.
 Toxtricity: lowkey and amped forms with different learnsets. pre-evo is single-form.
 
-for pokemon with a form, they must clone their moves only to their associated evolved form (eg unovan darumaka shouldn't clone moves to galarian darmanitan)
+	for pokemon with a form, they must clone their moves only to their associated evolved form (eg unovan darumaka shouldn't clone moves to galarian darmanitan)
 
 	evolution data for these pokemon should be updated to be like this:
 EvoOffset: offset in MonData to get info of evolved species
@@ -60,15 +59,15 @@ Meowstic: male and female forms with different learnsets.
 	need a form data structure with name, gender ratio.
 
 	LearnMonInfo will keep a list of all of the species forms, with the one in index 0 being used as a default whenever bulba pages aren't being specific enough.
-when a move page does not specify a form, the learn will go to the default form.
-if the page says something along the lines of "all forms", then the move goes to every form in the list.
+	when a move page does not specify a form, the learn will go to the default form.
+	if the page says something along the lines of "all forms", then the move goes to every form in the list.
 	and an offset in MonData to the species base form
 
-exclude form option
+	exclude form option
 
-target form option
+	target form option
 
-update form acquisition during parsing
+	update form acquisition during parsing
 
 regional form rules:
 1. earlier evo stages of a pokemon with a regional form will evolve into the form associated with the region they were in when the evolution conditions were met.

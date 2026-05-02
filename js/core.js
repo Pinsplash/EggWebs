@@ -1,9 +1,9 @@
 const Struct = (...keys) => ((...v) => keys.reduce((o, k, i) => {o[k] = v[i]; return o} , {}));
-const SpeciesInfo = Struct("SpeciesName", "EggGroup1", "EggGroup2", "GenderRatio", "Evolutions", "BaseFormOffset");
+const SpeciesInfo = Struct("SpeciesName", "EggGroup1", "EggGroup2", "GenderRatio", "Evolutions", "BaseFormOffset", "Forms");
 const Generation = Struct("BulbaHeader", "GameCombo", "UniversalTMs", "MonData");
 const GameData = Struct("UIName", "GenerationNum", "Acronym", "GameNum", "GameIsAllowed");
 const LearnInstance = Struct("LearnLevel", "LearnMethod", "LearnsInGame", "OriginalLearn", "TMOfInterest", "EraseMe", "UserRejected", "LearnID");
-const MoveLearner = Struct("FormName", "MoveName", "LearnMonInfo", "Instances", "ShowInstance");
+const MoveLearner = Struct("Form", "MoveName", "LearnMonInfo", "Instances", "ShowInstance");
 const BreedChain = Struct("LearnList");
 const ComboBreedData = Struct("ComboMoves", "SatisfiedStatus");
 const FormData = Struct("Name", "GenderRatio");
@@ -103,7 +103,19 @@ const CHILD_GEN_PAST_MAX = 25;
 const CR_SUCCESS = 0;
 const CR_FAIL = 1;
 
+//parts of a Moveentry template
+const ME_TEMPLATE_NAME = -1;
+const ME_DEX_NUM = 1;
+const ME_SPECIES_NAME = 2;
+const ME_NUM_EGG_GROUPS = 3;
+const ME_EGG_GROUP_1 = 4;
+const ME_EGG_GROUP_2 = 5;
+const ME_NORMAL_CELL = 6;
+const ME_END = 7;
+const ME_NAMED_PARAM = 8;
+
 let g_TargetSpecies = "";
+let g_TargetForm = null;
 let g_TMLearnBlacklist = [];
 let g_MovesToLearn = [];
 let g_MovesBeingExplored = [];

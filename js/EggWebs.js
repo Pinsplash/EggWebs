@@ -118,8 +118,8 @@ function InfoStr(WantedLearn, LearnInstance)
 	if (g_NoMoves)
 		return str;
 
-	if (WantedLearn["form_reimpl"])
-		str += "\n" + WantedLearn["form_reimpl"];
+	if (WantedLearn["Form"])
+		str += "\n" + WantedLearn["Form"]["Name"];
 
 	str += "\n" + MethodStr(LearnInstance, "\n");
 
@@ -233,6 +233,7 @@ function IsSketchableMove(MoveName, Game)
 function SpeciesCantUseTM(MoveName, Species, InternalGameName)
 {
 	//each entry is species name followed by move it can't learn by TM
+	//as of gen 9 there are no cases of a particular form being unable to learn a universal TM. it's all or nothing.
 	for (let iEntry = 0; iEntry < g_TMLearnBlacklist.length; iEntry += 3)
 	{
 		if (g_TMLearnBlacklist[iEntry] === Species && g_TMLearnBlacklist[iEntry + 1] === MoveName && g_TMLearnBlacklist[iEntry + 2] === InternalGameName)
@@ -429,53 +430,47 @@ function AddInstanceToLearnerGame(Learner, NewInstance, Game)
 	return Learner;
 }
 
-function IterateEvolutions(iEvo, OriginalForm, Game)
+function ForEachInEvolutionFamily(BaseSpecies, SearchDepth, FuncToCall)
 {
-	let iInfo = GetSpeciesInfoFromGame(OriginalForm["SpeciesName"], Game);
-	if (iInfo === -1)
+	let iEvo = 0;
+	for (let iRetVal1 = IterateEvolutions(iEvo, BaseSpecies, g_TargetGame); iRetVal1 && iRetVal1[0]; iRetVal1 = IterateEvolutions(iEvo, BaseSpecies, g_TargetGame))
 	{
-		//debugger;
-		return;
-	}
-	let OriginalSlot = iInfo;
-	//entries are grouped by evolution family, and the largest family is 9 - the eeveelutions
-	let MaxEvoLineSize = 9;
-	let MaxSlot = iInfo + MaxEvoLineSize;
-	for (; iEvo < GetGeneration(Game)["MonData"][OriginalSlot]["evo_reimpl"].length; iEvo++)
-	{
-		let Target = GetGeneration(Game)["MonData"][OriginalSlot]["evo_reimpl"][iEvo];
-		for (iInfo = OriginalSlot; iInfo < MaxSlot; iInfo++)
+		let EvolvedInfo = iRetVal1[0];
+		iEvo = iRetVal1[1];
+		if (SearchDepth > 1)
 		{
-			if (Target === GetGeneration(Game)["MonData"][iInfo]["SpeciesName"])
+			let i2ndEvo = 0;
+			for (let iRetVal2 = IterateEvolutions(i2ndEvo, EvolvedInfo, g_TargetGame); iRetVal2 && iRetVal2[0]; iRetVal2 = IterateEvolutions(i2ndEvo, EvolvedInfo, g_TargetGame))
 			{
-				return [GetGeneration(Game)["MonData"][iInfo], iEvo + 1];
+				let Evolved2ndInfo = iRetVal2[0];
+				i2ndEvo = iRetVal2[1];
+				FuncToCall(Evolved2ndInfo);
 			}
 		}
+		FuncToCall(EvolvedInfo);
 	}
 }
-//todo: previous impl of shedinja learning ninjask moves was bad. in gen 3 and 4, make special learns for Fury Cutter, Screech, Swords Dance, Slash, Agility, Baton Pass.
-function GetBaseForm(Species, Game)
+
+function IterateEvolutions(iEvo, OriginalSpecies, Game)
 {
-	let OriginalForm = Species;
-	OriginalForm = OriginalForm.charAt(0).toUpperCase() + OriginalForm.slice(1);
-	let iInfo = GetSpeciesInfoFromGame(OriginalForm, Game);
+	//have to get MonData index to find evolution since we store evos as offsets from the previous stage. awkward but necessary.
+	let iInfo = GetSpeciesInfoFromGame(OriginalSpecies["SpeciesName"], Game);
 	if (iInfo === -1)
 		return;
-	let OriginalSpecies = GetGeneration(Game)["MonData"][iInfo];
-	//entries are grouped by evolution family, and the largest family is 9 - the eeveelutions
-	let MaxEvoLineSize = 9;
-	let MinSlot = iInfo - MaxEvoLineSize;
-	//go down to see if we have a base form - this one loop can handle three-stagers
-	for (let iBaseInfo = iInfo; iBaseInfo > 0 && iBaseInfo > MinSlot; iBaseInfo--)
-	{
-		let Evos = GetGeneration(Game)["MonData"][iBaseInfo]["evo_reimpl"];
-		if (Evos.includes(OriginalForm))
-		{
-			OriginalSpecies = GetGeneration(Game)["MonData"][iBaseInfo];
-			OriginalForm = OriginalSpecies["SpeciesName"];
-		}
-	}
-	return OriginalSpecies;
+	let Evolutions = GetGeneration(Game)["MonData"][iInfo]["Evolutions"];
+	let TargetOffset = Evolutions[iEvo]["EvoOffset"];
+	return [GetGeneration(Game)["MonData"][iInfo + TargetOffset], iEvo + 1];
+}
+
+function GetBaseForm(Species, Game)
+{
+	let SpeciesName = Species;
+	SpeciesName = SpeciesName.charAt(0).toUpperCase() + SpeciesName.slice(1);
+	let iInfo = GetSpeciesInfoFromGame(SpeciesName, Game);
+	if (iInfo === -1)
+		return;
+	let TargetOffset = GetGeneration(Game)["MonData"][iInfo]["BaseFormOffset"];
+	return GetGeneration(Game)["MonData"][iInfo + TargetOffset];
 }
 
 function SpeciesShareEvoLine(Mother, Father)
@@ -785,33 +780,34 @@ function GetLearner(WantedSpecies, WantedMove, WantedForm)
 {
 	for (let iLearn = 0; iLearn < g_MoveLearners.length; iLearn++)
 		if (g_MoveLearners[iLearn]["LearnMonInfo"]["SpeciesName"] === WantedSpecies &&
-			(!WantedMove || g_MoveLearners[iLearn]["MoveName"] === WantedMove) &&
-			(!WantedForm || g_MoveLearners[iLearn]["form_reimpl"] === WantedForm))
+			g_MoveLearners[iLearn]["MoveName"] === WantedMove &&
+			g_MoveLearners[iLearn]["Form"] === WantedForm)
 			return g_MoveLearners[iLearn];
 }
 
-function MakeUniversalTMLearn(WantedMoveName, i, Game)
+function MakeUniversalTMLearn(WantedMoveName, WantedForm, i, Game)
 {
 	let Info = GetGeneration(Game)["MonData"][i];
 	let Inst = LearnInstance("", LEARNBY_TM_UNIVERSAL, Game);
-	let Learner = GetLearner(Info["SpeciesName"], WantedMoveName);
+	let Learner = GetLearner(Info["SpeciesName"], WantedMoveName, WantedForm);
 	if (!Learner)
-		Learner = AddLearnerToMainListGame(MoveLearner("", WantedMoveName, Info, []), Inst, Game);
+		Learner = AddLearnerToMainListGame(MoveLearner(WantedForm, WantedMoveName, Info, []), Inst, Game);
 	else
 		AddInstanceToLearnerGame(Learner, Inst, Game);
 	return Learner;
 }
 
-function MakeAltParentLearn(WantedMoveName, iInfo, Game)
+function MakeAltParentLearn(WantedMoveName, iSpecies, Form, Game)
 {
-	let Learner = MoveLearner("", WantedMoveName, GetGeneration(Game)["MonData"][iInfo], []);
+	let Learner = MoveLearner(Form, WantedMoveName, GetGeneration(Game)["MonData"][iSpecies], []);
 	AddLearnerToMainListGame(Learner, LearnInstance(), Game);
 	return Learner;
 }
 
-function MakeMovelessLearn(WantedMoveName, iInfo, Game)
+function MakeMovelessLearn(WantedMoveName, iSpecies, Game)
 {
-	let Learner = MoveLearner("", WantedMoveName, GetGeneration(Game)["MonData"][iInfo], []);
+	//this is OK to pass null for the form because no forms have different egg groups than the rest of their species (except ash greninja which is NED anyway)
+	let Learner = MoveLearner(null, WantedMoveName, GetGeneration(Game)["MonData"][iSpecies], []);
 	AddLearnerToMainListGame(Learner, LearnInstance(), Game);
 	return Learner;
 }
@@ -835,10 +831,10 @@ function MakeSmeargleLearn(WantedMoveName, Game)
 	
 	let Info = GetSpeciesInfo(GetGeneration(RealGame), "Smeargle");
 	let Inst = LearnInstance("", LEARNBY_SKETCH, RealGame);
-	let Learner = GetLearner(Info["SpeciesName"], WantedMoveName);
+	let Learner = GetLearner(Info["SpeciesName"], WantedMoveName, null);
 	
 	if (!Learner)
-		Learner = AddLearnerToMainListGame(MoveLearner("", WantedMoveName, Info, []), Inst, Game);
+		Learner = AddLearnerToMainListGame(MoveLearner(null, WantedMoveName, Info, []), Inst, Game);
 	else
 	{
 		//already made a smeargle learn for this move in this game?
@@ -853,7 +849,7 @@ function MakeSmeargleLearn(WantedMoveName, Game)
 	return Learner;
 }
 
-function MakeArbitraryLearn(PokemonName, DexNumber, MoveName, GameNum, GameInCombo, GameForSpecialSection, LearnMethod, FormName)
+function MakeArbitraryLearn(PokemonName, MoveName, GameNum, GameInCombo, GameForSpecialSection, LearnMethod, FormList)
 {
 	let LearnersGame = g_Games[GameNum];
 	let iInternalSpeciesIndex = GetSpeciesInfoFromGame(PokemonName, LearnersGame);
@@ -867,16 +863,93 @@ function MakeArbitraryLearn(PokemonName, DexNumber, MoveName, GameNum, GameInCom
 	{
 		let Inst = LearnInstance("", LearnMethod, LearnersGame);
 		let Info = GetGeneration(LearnersGame)["MonData"][iInternalSpeciesIndex];
-		let Learner = GetLearner(Info["SpeciesName"], MoveName);
-		if (!Learner)
-			Learner = AddLearnerToMainListGame(MoveLearner(FormName, MoveName, Info, []), Inst, LearnersGame);
-		else
-			AddInstanceToLearnerGame(Learner, Inst, LearnersGame);
-		if (!Learner)
-			return IterateGameCombo(GameInCombo, GameForSpecialSection);
-		MakeSmeargleLearn(MoveName, LearnersGame);
+		for (let iForm = 0; iForm < FormList.length; iForm++)
+		{
+			let Form = FormList[iForm];
+			let Learner = GetLearner(Info["SpeciesName"], MoveName, Form);
+			if (!Learner)
+				Learner = AddLearnerToMainListGame(MoveLearner(Form, MoveName, Info, []), Inst, LearnersGame);
+			else
+				AddInstanceToLearnerGame(Learner, Inst, LearnersGame);
+			if (!Learner)
+				return IterateGameCombo(GameInCombo, GameForSpecialSection);
+			MakeSmeargleLearn(MoveName, LearnersGame);
+		}
 	}
 	return IterateGameCombo(GameInCombo, GameForSpecialSection);
+}
+
+function GetMoveEntryParam(TextLine, PipeLocation, UnnamedParamNum)
+{
+	UnnamedParamNum++;
+	let ValueEnd = TextLine.indexOf("|", PipeLocation + 1);
+	let Value = TextLine.substring(PipeLocation + 1, ValueEnd);
+	let ValueType = ME_END;
+	if (ValueEnd === -1)
+	{
+		ValueEnd = TextLine.indexOf("}}", PipeLocation + 1);
+		Value = TextLine.substring(PipeLocation + 1, ValueEnd);
+	}
+	if (ValueEnd === -1)
+	{
+		ValueEnd = TextLine.indexOf("}", PipeLocation + 1);
+		if (ValueEnd !== -1)
+			return [Value, ValueType, ValueEnd];
+	}
+	if (ValueEnd === -1)
+		debugger;
+	if (Value.includes("Moveentry"))
+		ValueType = ME_TEMPLATE_NAME;
+	else if (Value.includes("="))
+		ValueType = ME_NAMED_PARAM;
+	else
+		ValueType = UnnamedParamNum;
+	return [Value, ValueType, ValueEnd];
+}
+
+function GetFormListFromBulbaTable(TextLine, Game)
+{
+	let iInternalSpeciesIndex = GetSpeciesInfoFromGame(PokemonName, Game);
+	if (iInternalSpeciesIndex === -1)
+	{
+		//common starting in gen 8
+		if (GetGeneration(g_Games[GameNum]) > GENERATION_7)
+			debugger;
+	}
+	else
+	{
+		let Info = GetGeneration(Game)["MonData"][iInternalSpeciesIndex];
+		//if length is 0, it's either a form not relevant to breeding, or the form doesn't exist in the current game
+		if (Info["Forms"].length !== 0)
+		{
+			var FormList = [null];
+			if (TextLine.includes("form="))
+			{
+				let ParamStart = TextLine.indexOf("form=");
+				let NextPipe = TextLine.indexOf("|", ParamStart);
+				let FormName = TextLine.substring(ParamStart + 5, NextPipe);
+				FormName = FormName.replaceAll("<br>", " ");
+				if (FormName.toLowerCase().includes("all") || FormName.toLowerCase().includes("both"))
+					FormList = Info["Forms"];
+				else
+				{
+					let FormNameEnd = FormName.toLowerCase().indexOf(" form");
+					if (FormNameEnd !== -1)
+						FormName = FormName.substring(0, FormNameEnd);
+					for (let iForm = 0; iForm < Info["Forms"].length; iForm++)
+						if (FormName === Info["Forms"][iForm]["Name"])
+							FormList = [Info["Forms"][iForm]];
+				}
+				if (FormList[0] === null)
+					debugger;
+			}
+			else
+			{
+				//we have forms, but table didn't specify a form. use default form. (happens with tauros)
+				FormList = [Info["Forms"][0]];
+			}
+		}
+	}
 }
 
 function ProcessMove(ReadFile)
@@ -1170,35 +1243,43 @@ function ProcessMove(ReadFile)
 				{
 					MoveTableHeader = false;
 
-					//read over template name
-					let PipeLocation = TextLine.indexOf("|");
-
-					//pokedex number, use this to correct nidoran names
-					let NumberEnd = TextLine.indexOf("|", PipeLocation + 1);
-					let DexNumber = TextLine.substring(PipeLocation + 1, NumberEnd);
-					PipeLocation = NumberEnd;
-
-					//pokemon name
-					let PokemonNameEnd = TextLine.indexOf("|", PipeLocation + 1);
-					let PokemonName = TextLine.substring(PipeLocation + 1, PokemonNameEnd);
-					let FormName;
-					if (PokemonName.includes("formsig="))
+					let ValueType;
+					let PipeLocation = -1;
+					do
 					{
-						//we actually just read the form name
-						PokemonNameEnd++;
-						let RealPokemonNameEnd = TextLine.indexOf("|", PokemonNameEnd);
-						PokemonName = TextLine.substring(PokemonNameEnd, RealPokemonNameEnd);
-
-						let EqualLocation = PipeLocation + 9;
-						let FormNameEnd = TextLine.indexOf("|", EqualLocation);
-						FormName = TextLine.substring(EqualLocation, FormNameEnd);
-
-						PipeLocation = RealPokemonNameEnd;
+						let CellResult = GetMoveEntryParam(TextLine, PipeLocation, UnnamedParamNum);
+						let Value = CellResult[0];
+						ValueType = CellResult[1];
+						PipeLocation = CellResult[2];
+						switch (ValueType)
+						{
+							case ME_TEMPLATE_NAME:
+							case ME_NUM_EGG_GROUPS:
+							case ME_EGG_GROUP_1:
+							case ME_EGG_GROUP_2:
+							case ME_END:
+							case ME_NAMED_PARAM:
+								continue;
+							case ME_DEX_NUM:
+								{
+									var DexNumber = Value;
+									continue;
+								}
+							case ME_SPECIES_NAME:
+								{
+									var PokemonName = Value;
+									continue;
+								}
+							case ME_NORMAL_CELL:
+								{
+									//once we reach this point we go to the older code for level cells because reconciling it with this code sounds too hard. we got what we wanted at least.
+									ValueType = ME_END;
+									break;
+								}
+						}
 					}
-					else
-					{
-						PipeLocation = PokemonNameEnd;
-					}
+					while (ValueType !== ME_END)
+
 					if (DexNumber === "0029")
 						PokemonName = "Nidoran F";
 					else if (DexNumber === "0032")
@@ -1206,57 +1287,15 @@ function ProcessMove(ReadFile)
 					else if (DexNumber === "0669")
 						PokemonName = "Flabebe";
 
-					//type 1
-					PipeLocation = TextLine.indexOf("|", PipeLocation + 1);
-
-					//read over type 2 if it exists
-					if (TextLine.includes("type2="))
-					{
-						PipeLocation = TextLine.indexOf("|", PipeLocation + 1);
-					}
-
-					//number of egg groups this pokemon has
-					PipeLocation = TextLine.indexOf("|", PipeLocation + 1);
-
-					//egg groups, but we just ignore these because now we get data from code
-					PipeLocation = TextLine.indexOf("|", PipeLocation + 1);
-					PipeLocation = TextLine.indexOf("|", PipeLocation + 1);
-
-					//form parameter commonly put between egg group 2 and levels
-					let NextValueEnd = TextLine.indexOf("|", PipeLocation + 1);
-					let NextValue = TextLine.substring(PipeLocation + 1, NextValueEnd);
-					if (NextValue.includes("form="))
-					{
-						let EqualLocation = PipeLocation + 6;
-						let FormNameEnd = Math.min(TextLine.indexOf("|", EqualLocation), TextLine.indexOf("{{", EqualLocation));
-						FormName = TextLine.substring(EqualLocation, FormNameEnd);
-						PipeLocation = NextValueEnd;
-					}
-
-					//don't even go to the parsing step if you're special/event
-					//this avoids a crash with Solar Beam
-					if (SpecialSectionInside)
+					if (SpecialSectionInside || EventSectionInside)
 					{
 						let IterData = IterateGameCombo(0, GameForSpecialSection);
 						let GameInCombo = IterData[0];
 						let GameNum = IterData[1];
 						while (GameNum !== -1)
 						{
-							IterData = MakeArbitraryLearn(PokemonName, DexNumber, MoveName, GameNum, GameInCombo, GameForSpecialSection, LEARNBY_SPECIAL, FormName);
-							GameInCombo = IterData[0];
-							GameNum = IterData[1];
-							if (GameInCombo === -1)
-								break;
-						}
-					}
-					else if (EventSectionInside)
-					{
-						let IterData = IterateGameCombo(0, GameForSpecialSection);
-						let GameInCombo = IterData[0];
-						let GameNum = IterData[1];
-						while (GameNum !== -1)
-						{
-							IterData = MakeArbitraryLearn(PokemonName, DexNumber, MoveName, GameNum, GameInCombo, GameForSpecialSection, LEARNBY_EVENT, FormName);
+							let FormList = GetFormListFromBulbaTable(TextLine, g_Games[GameNum]);
+							IterData = MakeArbitraryLearn(PokemonName, MoveName, GameNum, GameInCombo, GameForSpecialSection, SpecialSectionInside ? LEARNBY_SPECIAL : LEARNBY_EVENT, FormList);
 							GameInCombo = IterData[0];
 							GameNum = IterData[1];
 							if (GameInCombo === -1)
@@ -1303,7 +1342,8 @@ function ProcessMove(ReadFile)
 										}
 										else
 										{
-											if (TMTutorSection && !TutorColumns[iCol] && IsUniversalTM(MoveName, LearnersGame))
+											//check for the X. sometimes these tables have checks too to indicate that the pokemon can learn the move in some games and not others
+											if (TMTutorSection && !TutorColumns[iCol] && IsUniversalTM(MoveName, LearnersGame) && LearnLevel.indexOf("✘") !== -1)
 											{
 												g_TMLearnBlacklist.push(GetGeneration(LearnersGame)["MonData"][iInternalSpeciesIndex]["SpeciesName"]);
 												g_TMLearnBlacklist.push(MoveName);
@@ -1315,13 +1355,18 @@ function ProcessMove(ReadFile)
 												let Inst = LearnInstance(LearnLevel, LearnMethod, LearnersGame);
 												if (Inst["LearnMethod"] !== LEARNBY_LEVELUP)
 													Inst["LearnLevel"] = "0";
-												let Learner = GetLearner(Info["SpeciesName"], MoveName);
-												if (!Learner)
-													Learner = AddLearnerToMainListGame(MoveLearner(FormName, MoveName, Info, []), Inst, LearnersGame);
-												else
-													AddInstanceToLearnerGame(Learner, Inst, LearnersGame);
-												if (Learner)
-													MakeSmeargleLearn(MoveName, LearnersGame);
+												let FormList = GetFormListFromBulbaTable(TextLine, g_Games[GameNum]);
+												for (let iForm = 0; iForm < FormList.length; iForm++)
+												{
+													let Form = FormList[iForm];
+													let Learner = GetLearner(Info["SpeciesName"], MoveName, Form);
+													if (!Learner)
+														Learner = AddLearnerToMainListGame(MoveLearner(Form, MoveName, Info, []), Inst, LearnersGame);
+													else
+														AddInstanceToLearnerGame(Learner, Inst, LearnersGame);
+													if (Learner)
+														MakeSmeargleLearn(MoveName, LearnersGame);
+												}
 											}
 										}
 										IterData = IterateGameCombo(GameInCombo, GamesToColumns[iCol]);
@@ -1364,7 +1409,10 @@ function GetSettings(FileCount)
 	let Species = document.getElementById("targetspecies").value;
 	Species = Species.charAt(0).toUpperCase() + Species.slice(1);
 	g_TargetSpecies = Species;
-	//console.log("Target species: '" + g_TargetSpecies + "'");
+
+	let Form = document.getElementById("targetform").value;
+	Form = Form.charAt(0).toUpperCase() + Form.slice(1);
+	g_TargetForm = Form;
 
 	if (!g_NoMoves)
 	{
@@ -1485,7 +1533,7 @@ function FindTMsOfInterest()
 		{
 			let LearnInst = Learner["Instances"][iInst];
 			//a TM learn
-			if ((LearnInst["LearnMethod"] === LEARNBY_TM_UNIVERSAL || LearnInst["LearnMethod"] === LEARNBY_TM) && Learner["LearnMonInfo"]["SpeciesName"] !== g_TargetSpecies)
+			if ((LearnInst["LearnMethod"] === LEARNBY_TM_UNIVERSAL || LearnInst["LearnMethod"] === LEARNBY_TM) && (Learner["LearnMonInfo"]["SpeciesName"] !== g_TargetSpecies || Learner["Form"] !== g_TargetForm))
 			{
 				let FoundTMLearn = false;
 				//find if the target learns this by TM
@@ -1495,7 +1543,7 @@ function FindTMsOfInterest()
 					for (let iTargetInst = 0; iTargetInst < TargetLearner["Instances"].length; iTargetInst++)
 					{
 						let TargetInst = TargetLearner["Instances"][iTargetInst];
-						if (TargetLearner["LearnMonInfo"]["SpeciesName"] === g_TargetSpecies && (TargetInst["LearnMethod"] === LEARNBY_TM_UNIVERSAL || TargetInst["LearnMethod"] === LEARNBY_TM) && Learner["MoveName"] === TargetLearner["MoveName"])
+						if (TargetLearner["LearnMonInfo"]["SpeciesName"] === g_TargetSpecies && TargetLearner["Form"] === g_TargetForm && (TargetInst["LearnMethod"] === LEARNBY_TM_UNIVERSAL || TargetInst["LearnMethod"] === LEARNBY_TM) && Learner["MoveName"] === TargetLearner["MoveName"])
 						{
 							FoundTMLearn = true;
 						}
@@ -1504,10 +1552,7 @@ function FindTMsOfInterest()
 				if (!FoundTMLearn)
 				{
 					LearnInst["TMOfInterest"] = true;///*
-					console.log(Learner["LearnMonInfo"]["SpeciesName"] + " learning " + Learner["MoveName"] + MethodStr(LearnInst, ", "));
-					if (Learner["form_reimpl"])
-						console.log(" (" + Learner["form_reimpl"] + ")");
-					console.log(" was a TM of Interest\n");//*/
+					console.log(Learner["LearnMonInfo"]["SpeciesName"] + " learning " + Learner["MoveName"] + MethodStr(LearnInst, ", ") + " was a TM of Interest\n");
 				}
 			}
 		}
@@ -1524,7 +1569,7 @@ function PreSearch()
 			let LearnInst = Learner["Instances"][iInst];
 			//it may be pointless to find this move, but we trust the user to know what they're doing
 			//(for instance, a move might be levelup, but also a tm, and the level threshold is far away, so it would be of Interest to look at it anyway)
-			if (Learner["LearnMonInfo"]["SpeciesName"] === g_TargetSpecies && LearnInst["LearnMethod"] === LEARNBY_LEVELUP && +LearnInst["LearnLevel"] <= +g_MaxLevel)
+			if (Learner["LearnMonInfo"]["SpeciesName"] === g_TargetSpecies && Learner["Form"] === g_TargetForm && LearnInst["LearnMethod"] === LEARNBY_LEVELUP && +LearnInst["LearnLevel"] <= +g_MaxLevel)
 				console.log("Note: " + Learner["MoveName"] + " is a levelup move below the level cap.");
 		}
 	}
@@ -1549,7 +1594,7 @@ function PreSearch()
 		for (let iLearner = 0; iLearner < g_MoveLearners.length; iLearner++)
 		{
 			let Learner = g_MoveLearners[iLearner];
-			if (Learner["LearnMonInfo"]["SpeciesName"] === g_TargetSpecies && g_MovesToLearn[iMoveToLearn] === Learner["MoveName"])
+			if (Learner["LearnMonInfo"]["SpeciesName"] === g_TargetSpecies && Learner["Form"] === g_TargetForm && g_MovesToLearn[iMoveToLearn] === Learner["MoveName"])
 			{
 				for (let iGame = 0; iGame < g_Games.length; iGame++)
 				{
@@ -1660,6 +1705,7 @@ function RestartSearchByDataChange()
 function ResetVarsForParameterChange()
 {
 	g_TargetSpecies = "";
+	g_TargetForm = null;
 	g_TMLearnBlacklist = [];
 	g_MovesToLearn = [];
 	g_MovesBeingExplored = [];
@@ -1681,8 +1727,9 @@ function ExcludeLearner(LearnInst)
 	RestartSearchByDataChange();
 }
 
-function ExcludeSpecies(SpeciesName)
+function ExcludeSpecies(SpeciesInfo)
 {
+	let SpeciesName = SpeciesInfo["SpeciesName"];
 	for (let iMarkLearner = 0; iMarkLearner < g_MoveLearners.length; iMarkLearner++)
 	{
 		let MarkLearner = g_MoveLearners[iMarkLearner];
@@ -1693,24 +1740,24 @@ function ExcludeSpecies(SpeciesName)
 	RestartSearchByDataChange();
 }
 
+function ExcludeFormOfSpecies(SpeciesInfo, Form)
+{
+	let SpeciesName = SpeciesInfo["SpeciesName"];
+	for (let iMarkLearner = 0; iMarkLearner < g_MoveLearners.length; iMarkLearner++)
+	{
+		let MarkLearner = g_MoveLearners[iMarkLearner];
+		if (MarkLearner["LearnMonInfo"]["SpeciesName"] === SpeciesName && MarkLearner["Form"] === Form)
+			for (let iInst = 0; iInst < MarkLearner["Instances"].length; iInst++)
+				MarkLearner["Instances"][iInst]["UserRejected"] = true;
+	}
+	RestartSearchByDataChange();
+}
+
 function ExcludeEvolutionFamily(Learner)
 {
 	let BaseSpecies = GetBaseForm(Learner["LearnMonInfo"]["SpeciesName"], Learner["Instances"][0]["LearnsInGame"]);
-	let iEvo = 0;
-	for (let iRetVal1 = IterateEvolutions(iEvo, BaseSpecies, g_TargetGame); iRetVal1 && iRetVal1[0]; iRetVal1 = IterateEvolutions(iEvo, BaseSpecies, g_TargetGame))
-	{
-		let EvolvedInfo = iRetVal1[0];
-		iEvo = iRetVal1[1];
-		let i2ndEvo = 0;
-		for (let iRetVal2 = IterateEvolutions(i2ndEvo, EvolvedInfo, g_TargetGame); iRetVal2 && iRetVal2[0]; iRetVal2 = IterateEvolutions(i2ndEvo, EvolvedInfo, g_TargetGame))
-		{
-			let Evolved2ndInfo = iRetVal2[0];
-			i2ndEvo = iRetVal2[1];
-			ExcludeSpecies(Evolved2ndInfo["SpeciesName"]);
-		}
-		ExcludeSpecies(EvolvedInfo["SpeciesName"]);
-	}
-	ExcludeSpecies(BaseSpecies["SpeciesName"]);
+	ForEachInEvolutionFamily(BaseSpecies, 2, ExcludeSpecies);
+	ExcludeSpecies(BaseSpecies);
 	RestartSearchByDataChange();
 }
 
@@ -1773,14 +1820,20 @@ function ToggleOptionDropdown(PokemonBox, Child, LearnInst, MatchupResult, Chain
 			let p2 = document.createElement("p");
 			p2.className = "optionlisting";
 			p2.innerText = "Exclude Species";
-			p2.onclick = () => ExcludeSpecies(Father["LearnMonInfo"]["SpeciesName"]);
+			p2.onclick = () => ExcludeSpecies(Father["LearnMonInfo"]);
 			OptionList.appendChild(p2);
 
 			let p3 = document.createElement("p");
 			p3.className = "optionlisting";
-			p3.innerText = "Exclude Evolution Family";
-			p3.onclick = () => ExcludeEvolutionFamily(Father);
+			p3.innerText = "Exclude Form of Species";
+			p3.onclick = () => ExcludeFormOfSpecies(Father["LearnMonInfo"], Father["Form"]);
 			OptionList.appendChild(p3);
+
+			let p4 = document.createElement("p");
+			p4.className = "optionlisting";
+			p4.innerText = "Exclude Evolution Family";
+			p4.onclick = () => ExcludeEvolutionFamily(Father);
+			OptionList.appendChild(p4);
 		}
 		PokemonBox.appendChild(OptionList);
 	}
@@ -2372,7 +2425,7 @@ function SearchStart()
 			let MoveBox = document.createElement("button");
 			MoveBox.innerText = g_MovesToLearn[iMoveToLearn];
 			MoveBox.className = "movebox";
-			MoveBox.onclick = () => SearchRetryLoop(Chains, GetLearner(g_TargetSpecies, g_MovesToLearn[iMoveToLearn]), false, 0, MaxGen);
+			MoveBox.onclick = () => SearchRetryLoop(Chains, GetLearner(g_TargetSpecies, g_MovesToLearn[iMoveToLearn], g_TargetForm), false, 0, MaxGen);
 			document.getElementById("mainview").appendChild(MoveBox);
 		}
 		return;
@@ -2391,7 +2444,7 @@ function SearchStart()
 			document.getElementById("mainview").appendChild(Para);
 		}
 		let Move = g_MoveLearners[i];
-		if (Move["LearnMonInfo"]["SpeciesName"] === g_TargetSpecies)
+		if (Move["LearnMonInfo"]["SpeciesName"] === g_TargetSpecies && Move["Form"] === g_TargetForm)
 		{
 			let AlreadyGotMove = false;
 			for (let iChain = 0; iChain < Chains.length; iChain++)
@@ -2484,26 +2537,14 @@ function ExamineChains(Chains)
 
 function GenerateUniversalTMLearns(Game)
 {
-	let TMNames = [];
-	for (let iLearn = 0; iLearn < g_MoveLearners.length; iLearn++)
-	{
-		let Learn = g_MoveLearners[iLearn];
-		for (let iInst = 0; iInst < Learn["Instances"].length; iInst++)
-		{
-			let LearnInst = Learn["Instances"][iInst];
-			if (IsUniversalTM(Learn["MoveName"], LearnInst["LearnsInGame"]))
-			{
-				if (TMNames.includes(Learn["MoveName"]))
-					continue;
+	for (let iTM = 0; iTM < GetGeneration(Game)["UniversalTMs"].length; iTM++)
+		for (let iSpecies = 0; iSpecies < GetGeneration(Game)["MonData"].length; iSpecies++)
+			if (!SpeciesCantUseTM(GetGeneration(Game)["UniversalTMs"][iTM], GetGeneration(Game)["MonData"][iSpecies]["SpeciesName"], Game["GameNum"]))
+				if (GetGeneration(Game)["MonData"][iSpecies]["Forms"].length)
+					for (let iForm = 0; iForm < GetGeneration(Game)["MonData"][iSpecies]["Forms"].length; iForm++)
+						MakeUniversalTMLearn(GetGeneration(Game)["UniversalTMs"][iTM], GetGeneration(Game)["MonData"][iSpecies]["Forms"][iForm], iSpecies, Game);
 				else
-					TMNames.push(Learn["MoveName"]);
-			}
-		}
-	}
-	for (let i = 0; i < TMNames.length; i++)
-		for (let j = 0; j < GetGeneration(Game)["MonData"].length; j++)
-			if (!SpeciesCantUseTM(TMNames[i], GetGeneration(Game)["MonData"][j]["SpeciesName"], Game["GameNum"]))
-				MakeUniversalTMLearn(TMNames[i], j, Game);
+					MakeUniversalTMLearn(GetGeneration(Game)["UniversalTMs"][iTM], null, iSpecies, Game);
 }
 
 function GenerateAltParentLearns(Game)
@@ -2511,9 +2552,13 @@ function GenerateAltParentLearns(Game)
 	for (let iGame = 0; iGame < Game["GameNum"]; iGame++)
 		if (g_Games[iGame]["GameIsAllowed"])
 			for (let iParent = 1; iParent < AltParents.length; iParent += 2)
-				for (let iInfo = 0; iInfo < GetGeneration(Game)["MonData"].length; iInfo++)
-					if (AltParents[iParent] === GetGeneration(Game)["MonData"][iInfo]["SpeciesName"])
-						MakeAltParentLearn("N/A", iInfo, Game);
+				for (let iSpecies = 0; iSpecies < GetGeneration(Game)["MonData"].length; iSpecies++)
+					if (AltParents[iParent] === GetGeneration(Game)["MonData"][iSpecies]["SpeciesName"])
+						if (GetGeneration(Game)["MonData"][iSpecies]["Forms"].length)
+							for (let iForm = 0; iForm < GetGeneration(Game)["MonData"][iSpecies]["Forms"].length; iForm++)
+							MakeAltParentLearn("N/A", iSpecies, GetGeneration(Game)["MonData"][iSpecies]["Forms"][iForm], Game);
+						else
+							MakeAltParentLearn("N/A", iSpecies, null, Game);
 }
 
 function GenerateMovelessLearns(Game)
@@ -2522,69 +2567,70 @@ function GenerateMovelessLearns(Game)
 		MakeMovelessLearn("N/A", iInfo, Game);
 }
 
-function CopyLearnsToNewSpecies(Game, OldLearner, TargetSpecies)
+function CopyLearnsToNewSpecies(OldLearner, TargetSpecies, TargetForm)
 {
-	//copy learns that are of methods new to the species
-	//iterate through all of the higher form's moves to see if any are of the same name and method
-	//NO method is allowed through scott free, even egg because of some lines like azurill vs marill
 	for (let iOldInst = 0; iOldInst < OldLearner["Instances"].length; iOldInst++)
 	{
 		let OldInst = OldLearner["Instances"][iOldInst];
 		let NewInst = CloneLearnInstance(OldInst);
-		let iInfoIndex = GetSpeciesInfoFromGame(TargetSpecies, Game);
-		if (iInfoIndex === -1)
-			debugger;
 		NewInst["OriginalLearn"] = !OldInst["OriginalLearn"] ? OldLearner : OldInst["OriginalLearn"];
-		
-		let Info = GetGeneration(Game)["MonData"][iInfoIndex];
-		let Learner = GetLearner(Info["SpeciesName"], OldLearner["MoveName"]);
-		if (Learner)
+
+		let TargetInfoIndex = GetSpeciesInfoFromGame(TargetSpecies, OldLearner["LearnsInGame"]);
+		if (TargetInfoIndex === -1)
+			debugger;
+		let TargetInfo = GetGeneration(OldLearner["LearnsInGame"])["MonData"][TargetInfoIndex];
+		let TargetLearner = GetLearner(TargetInfo["SpeciesName"], OldLearner["MoveName"], TargetForm);
+
+		if (TargetLearner)
 		{
-			for (let iTargetLearn = 0; iTargetLearn < g_MoveLearners.length; iTargetLearn++)
-			{
-				let TargetLearn = g_MoveLearners[iTargetLearn];
-				if (TargetSpecies === TargetLearn["LearnMonInfo"]["SpeciesName"] && OldLearner["MoveName"] === TargetLearn["MoveName"])
-				{
-					AddInstanceToLearnerGame(TargetLearn, NewInst, NewInst["LearnsInGame"]);
-				}
-			}
+			AddInstanceToLearnerGame(TargetLearner, NewInst, NewInst["LearnsInGame"]);
 		}
 		else
 		{
-			Learner = AddLearnerToMainListGame(MoveLearner("", OldLearner["MoveName"], Info, []), NewInst, Game);
-			if (Learner)
-				AddInstanceToLearnerGame(Learner, NewInst, NewInst["LearnsInGame"]);
+			TargetLearner = AddLearnerToMainListGame(MoveLearner(TargetForm, OldLearner["MoveName"], TargetInfo, []), NewInst, NewInst["LearnsInGame"]);
+			if (TargetLearner)
+				AddInstanceToLearnerGame(TargetLearner, NewInst, NewInst["LearnsInGame"]);
 		}
 	}
 }
 
 //we must tell evolved pokemon about moves that only their prior evolutions could learn
 //we cannot depend on EW to suggest something like Oddish -> Gloom -> Bellossom. ValidateMatchup would throw this out.
-function CreatePriorEvolutionLearns(Game)
+function CreatePriorEvolutionLearns()
 {
-	for (let iLearn = 0; iLearn < g_MoveLearners.length; iLearn++)
+	//in MonData we order pokemon by evolution family, then order families by the member with the lowest national dex number.
+	//bulbapedia orders learners by method, then orders within methods by national dex number. we parse them into g_MoveLearners in that same order,
+	//and g_MoveLearners is the main list this task iterates in. this means a pre-evo could come after its evolution in g_MoveLearners,
+	//so we have to go through the list twice: once only targeting 1st stagers (easy to detect), and once targeting everything else.
+	//this works because pokemon can only evolve twice ever. let's hope there's never a four-stage family. Yours tentatively, -Pinsplash 2026
+	for (let WantBaseForms = 1; WantBaseForms >= 0; WantBaseForms--)
 	{
-		let Learn = g_MoveLearners[iLearn];
-		let OriginalForm = Learn["LearnMonInfo"]["SpeciesName"];
-		let iInfo = GetSpeciesInfoFromGame(OriginalForm, Game);
-		if (iInfo === -1)
-			continue;
-		let OriginalSlot = iInfo;
-		//entries are grouped by evolution family, and the largest family is 9 - the eeveelutions
-		let MaxEvoLineSize = 9;
-		let MaxSlot = iInfo + MaxEvoLineSize;
-		for (let iEvo = 0; iEvo < GetGeneration(Game)["MonData"][OriginalSlot]["evo_reimpl"].length; iEvo++)
+		for (let iLearner = 0; iLearner < g_MoveLearners.length; iLearner++)
 		{
-			let Target = GetGeneration(Game)["MonData"][OriginalSlot]["evo_reimpl"][iEvo];
-			for (iInfo = OriginalSlot; iInfo < MaxSlot && iInfo < GetGeneration(Game)["MonData"].length; iInfo++)
+			let Learner = g_MoveLearners[iLearner];
+			if ((Learner["LearnMonInfo"]["BaseFormOffset"] === 0) !== (WantBaseForms === 1))
+				continue;
+			let OriginalForm = Learner["LearnMonInfo"]["SpeciesName"];
+			//if we pass g_TargetGame, the target game is in gen 1, and the gen 2 games are checked, we'd never do any work on the gen 2 mons!
+			let Game = g_TargetGame["GenerationNum"] === GENERATION_1 ? g_Games[GAME_CRYSTAL] : g_TargetGame;
+			let iInfo = GetSpeciesInfoFromGame(OriginalForm, Game);
+			if (iInfo === -1)
+				continue;
+			let OriginalSlot = iInfo;
+			let MonData = GetGeneration(Game)["MonData"];
+			let OriginalEvos = MonData[OriginalSlot]["Evolutions"];
+			for (let iEvo = 0; iEvo < OriginalEvos.length; iEvo++)
 			{
-				if (Target === GetGeneration(Game)["MonData"][iInfo]["SpeciesName"])
-				{
-					//this is one of our evolutions
-					console.log("Adding " + Learn["LearnMonInfo"]["SpeciesName"] + "'s " + Learn["MoveName"] + " learns to " + Target + " iEvo = " + iEvo + " iInfo = " + iInfo + " iLearn = " + iLearn);
-					if (Learn["LearnMonInfo"]["SpeciesName"] === Target) debugger;
-					CopyLearnsToNewSpecies(Game, Learn, Target);
-				}
+				let EvoData = OriginalEvos[iEvo];
+
+				//some evolutions require a certain form
+				if (EvoData["RequiredForm"] && EvoData["RequiredForm"] !== Learner["Form"])
+					continue;
+				
+				let TargetOffset = EvoData["EvoOffset"];
+				let TargetInfo = MonData[iInfo + TargetOffset];
+				if (OriginalForm === TargetInfo["SpeciesName"]) debugger;
+				CopyLearnsToNewSpecies(Learner, TargetInfo["SpeciesName"], EvoData["EvoForm"]);
 			}
 		}
 	}
@@ -2726,7 +2772,7 @@ async function main()
 		GenerateUniversalTMLearns(g_TargetGame);
 		FindTMsOfInterest();
 		ParseGameAnnotations();
-		CreatePriorEvolutionLearns(g_TargetGame);
+		CreatePriorEvolutionLearns();
 		GenerateAltParentLearns(g_TargetGame);
 	}
 	
