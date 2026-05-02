@@ -1,4 +1,4 @@
-all of these movesets are designed to test different features (mainly combo mode). all of the answers shown below are correct. most of these movesets have multiple possible chains. just make sure the chain you see makes sense.
+all of these movesets are designed to test different features (mainly combo mode). all of the answers shown below are correct. most of these movesets have multiple possible chains, however, if a chain doesn't match, this may indicate a problem.
 
 basic tests
 Leech Seed and Grass Knot on Chikorita (gen 4)
@@ -7,9 +7,9 @@ Chain for Grass Knot: Smeargle (Sketch) → Seedot (By TM) → Chikorita (By TM)
 
 Hidden Power, Shadow Ball, and Thunderbolt on Mismagius (gen 4)
 exclude smeargle
-Chain for Hidden Power: Slowking (Level 1) → Charmander (By universal TM) → Ekans (By universal TM) → Pikachu (By universal TM)
+Chain for Hidden Power: Slowking (Level 1) → Charmander (By universal TM) → Ekans (By universal TM) → Pikachu (By universal TM, Learned as Pichu)
 Chain for Thunderbolt: Pikachu (Level 26) → Castform (By TM) → Gastly (By TM)
-Chain for Shadow Ball: Gastly (Level 29) → Mismagius (By TM)
+Chain for Shadow Ball: Gastly (Level 29) → Mismagius (Level 41, Learned as Misdreavus)
 
 
 basic illegal tests
@@ -41,8 +41,8 @@ Chain for Encore: Togetic (Level 19) → Chatot (Egg move)
 
 tests understanding breeding with ditto
 Hi Jump Kick and Mach Punch Hitmontop (gen 3)
-Chain for Mach Punch: Hitmonchan (Level 20) → Hitmonlee (Egg move Learned as Tyrogue)
-Chain for High Jump Kick: Hitmonlee (Level 26) → Hitmontop (Egg move Learned as Tyrogue)
+Chain for Mach Punch: Hitmonchan (Level 20) → Hitmonlee (Egg move, Learned as Tyrogue)
+Chain for High Jump Kick: Hitmonlee (Level 26) → Hitmontop (Egg move, Learned as Tyrogue)
 
 
 tests multiple moves coming from the same ancestor
@@ -79,7 +79,7 @@ this should eventually suggest Cyndaquil (level 4, in Pt), and NOT suggest Cynda
 
 tests no moves mode
 Tynamo to Larvesta (gen 5)
-Chain: Tynamo → Shellos → Wingull → Togetic → Pikachu → Ekans → Charmander → Bulbasaur → Paras → Larvesta
+Chain: Tynamo → Shellos → Psyduck → Ekans → Charmander → Bulbasaur → Paras → Larvesta
 
 
 Bullet Punch, Cross Chop, and Fake Out on Toxicroak (gen 5)

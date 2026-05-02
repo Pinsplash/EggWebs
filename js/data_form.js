@@ -136,6 +136,6 @@ const LowKeyToxtricity = FormData("Low Key");
 const BloodmoonUrsaluna = FormData("Bloodmoon", GR_MALE_ONLY);
 const NormalUrsaluna = FormData("Normal");
 
-const PlantWormadam = FormData("Plant");
-const SandyWormadam = FormData("Sandy");
-const TrashWormadam = FormData("Trash");
+const PlantWormadam = FormData("Plant Cloak");
+const SandyWormadam = FormData("Sandy Cloak");
+const TrashWormadam = FormData("Trash Cloak");

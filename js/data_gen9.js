@@ -503,7 +503,7 @@ SpeciesInfo("Goodra", "Dragon", "Dragon", GR_TYPICAL, [], -2, [KalosianGoodra, H
 SpeciesInfo("Klefki", "Mineral", "Mineral", GR_TYPICAL, [], 0, []),
 SpeciesInfo("Phantump", "Grass", "Amorphous", GR_TYPICAL, [EvolveData(1)], 0, []),
 SpeciesInfo("Trevenant", "Grass", "Amorphous", GR_TYPICAL, [], -1, []),
-SpeciesInfo("Bergmite", "Monster", "Mineral", GR_TYPICAL, [EvolveData(1, KalosianAvalugg, KalosianBergmite), EvolveData(1, HisuianAvalugg, HisuianBergmite)], 0, [KalosianBergmite, HisuianBergmite]),
+SpeciesInfo("Bergmite", "Monster", "Mineral", GR_TYPICAL, [EvolveData(1, KalosianAvalugg), EvolveData(1, HisuianAvalugg)], 0, []),
 SpeciesInfo("Avalugg", "Monster", "Mineral", GR_TYPICAL, [], -1, [KalosianAvalugg, HisuianAvalugg]),
 SpeciesInfo("Noibat", "Flying", "Dragon", GR_TYPICAL, [EvolveData(1)], 0, []),
 SpeciesInfo("Noivern", "Flying", "Dragon", GR_TYPICAL, [], -1, []),
