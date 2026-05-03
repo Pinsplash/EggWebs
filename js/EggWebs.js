@@ -271,6 +271,16 @@ function IterateGameCombo(GameInCombo, ComboNum)
 				return [GameInCombo + 1, GAME_EMERALD];
 			default:
 				return [-1, -1];
+				}
+		case GAMECOMBO_FRLG_E:
+			switch (GameInCombo)
+			{
+				case 0:
+					return [GameInCombo + 1, GAME_FIRERED_LEAFGREEN];
+				case 1:
+					return [GameInCombo + 1, GAME_EMERALD];
+				default:
+					return [-1, -1];
 			}
 		case GAMECOMBO_ALL_GEN3:
 			switch (GameInCombo)
@@ -1074,7 +1084,7 @@ function ProcessMove(ReadFile)
 							GamesToColumns.push(GAME_YELLOW);
 						else
 							GamesToColumns.push(GAMECOMBO_ALL_GEN1);
-						if (TMTutorSection && TextLine.includes("g1tm=tutor"))
+						if (TMTutorSection && TableHeaderLine.includes("g1tm=tutor"))
 							TutorColumns[GamesToColumns.length - 1] = true;
 					}
 					if (g_TargetGame["GenerationNum"] >= GENERATION_2 && !TableHeaderLine.includes("g2=none"))
@@ -1085,13 +1095,15 @@ function ProcessMove(ReadFile)
 							GamesToColumns.push(GAME_CRYSTAL);
 						else
 							GamesToColumns.push(GAMECOMBO_ALL_GEN2);
-						if (TMTutorSection && TextLine.includes("g2tm=tutor"))
+						if (TMTutorSection && TableHeaderLine.includes("g2tm=tutor"))
 							TutorColumns[GamesToColumns.length - 1] = true;
 					}
 					if (g_TargetGame["GenerationNum"] >= GENERATION_3 && !TableHeaderLine.includes("g3=none"))
 					{
 						if (TableHeaderLine.includes("g3g={{gameabbrev3|RS}}")|| TableHeaderLine.includes("g3g={{gameabbrev3|RuSa}}"))
 							GamesToColumns.push(GAME_RUBY_SAPPHIRE);
+						else if (TableHeaderLine.includes("g3g={{gameabbrev3|FRLG}}{{gameabbrev3|E}}"))//seen on body slam page
+							GamesToColumns.push(GAMECOMBO_FRLG_E);
 						else if (TableHeaderLine.includes("g3g={{gameabbrev3|FRLG}}"))
 							GamesToColumns.push(GAME_FIRERED_LEAFGREEN);
 						else if (TableHeaderLine.includes("g3g={{gameabbrev3|E}}"))
@@ -1100,7 +1112,7 @@ function ProcessMove(ReadFile)
 							GamesToColumns.push(GAMECOMBO_RSE);
 						else
 							GamesToColumns.push(GAMECOMBO_ALL_GEN3);
-						if (TMTutorSection && TextLine.includes("g3tm=tutor"))
+						if (TMTutorSection && TableHeaderLine.includes("g3tm=tutor"))
 							TutorColumns[GamesToColumns.length - 1] = true;
 					}
 					if (g_TargetGame["GenerationNum"] >= GENERATION_4 && !TableHeaderLine.includes("g4=none"))
@@ -1117,7 +1129,7 @@ function ProcessMove(ReadFile)
 							GamesToColumns.push(GAMECOMBO_PLAT_HGSS);
 						else
 							GamesToColumns.push(GAMECOMBO_ALL_GEN4);
-						if (TMTutorSection && TextLine.includes("g4tm=tutor"))
+						if (TMTutorSection && TableHeaderLine.includes("g4tm=tutor"))
 							TutorColumns[GamesToColumns.length - 1] = true;
 					}
 					if (g_TargetGame["GenerationNum"] >= GENERATION_5 && !TableHeaderLine.includes("g5=none"))
@@ -1130,7 +1142,7 @@ function ProcessMove(ReadFile)
 							GamesToColumns.push(GAME_BLACK2_WHITE2);
 						else
 							GamesToColumns.push(GAMECOMBO_ALL_GEN5);
-						if (TMTutorSection && TextLine.includes("g5tm=tutor"))
+						if (TMTutorSection && TableHeaderLine.includes("g5tm=tutor"))
 							TutorColumns[GamesToColumns.length - 1] = true;
 					}
 					if (g_TargetGame["GenerationNum"] >= GENERATION_6 && !TableHeaderLine.includes("g6=none"))
@@ -1141,7 +1153,7 @@ function ProcessMove(ReadFile)
 							GamesToColumns.push(GAME_OMEGA_RUBY_ALPHA_SAPPHIRE);
 						else
 							GamesToColumns.push(GAMECOMBO_ALL_GEN6);
-						if (TMTutorSection && TextLine.includes("g6tm=tutor"))
+						if (TMTutorSection && TableHeaderLine.includes("g6tm=tutor"))
 							TutorColumns[GamesToColumns.length - 1] = true;
 					}
 					if (g_TargetGame["GenerationNum"] >= GENERATION_7 && !TableHeaderLine.includes("g7=none"))
@@ -1160,13 +1172,13 @@ function ProcessMove(ReadFile)
 							else if (TableHeaderLine.includes("g7g-1={{gameabbrev7|USUM}}"))
 								g1 = GAME_ULTRASUN_ULTRAMOON;
 							GamesToColumns.push(g1);
-							if (TMTutorSection && TextLine.includes("g7tm-1=tutor"))
+							if (TMTutorSection && TableHeaderLine.includes("g7tm-1=tutor"))
 								TutorColumns[GamesToColumns.length - 1] = true;
 							GamesToColumns.push(GAME_INVALID);
 						}
 						else
 							GamesToColumns.push(GAMECOMBO_SM_USUM);//column technically includes PE but we don't care about it
-						if (TMTutorSection && TextLine.includes("g7tm=tutor"))
+						if (TMTutorSection && TableHeaderLine.includes("g7tm=tutor"))
 							TutorColumns[GamesToColumns.length - 1] = true;
 					}
 					if (g_TargetGame["GenerationNum"] >= GENERATION_8 && !TableHeaderLine.includes("g8=none"))
@@ -1183,12 +1195,12 @@ function ProcessMove(ReadFile)
 							if (TableHeaderLine.includes("g8g-1={{gameabbrev8|BDSP}}"))
 								g1 = GAME_BRILLIANT_DIAMOND_SHINING_PEARL;
 							GamesToColumns.push(g1);
-							if (TMTutorSection && TextLine.includes("g8tm-1=tutor"))
+							if (TMTutorSection && TableHeaderLine.includes("g8tm-1=tutor"))
 								TutorColumns[GamesToColumns.length - 1] = true;
 							if (!TableHeaderLine.includes("g8g-2={{gameabbrev8|LA}}"))
 							{
 								GamesToColumns.push(GAME_BRILLIANT_DIAMOND_SHINING_PEARL);
-								if (TMTutorSection && TextLine.includes("g8tm-2=tutor"))
+								if (TMTutorSection && TableHeaderLine.includes("g8tm-2=tutor"))
 									TutorColumns[GamesToColumns.length - 1] = true;
 							}
 							else
@@ -1197,16 +1209,16 @@ function ProcessMove(ReadFile)
 						else if (TableHeaderLine.includes("g8=3"))
 						{
 							GamesToColumns.push(GAME_SWORD_SHIELD);
-							if (TMTutorSection && TextLine.includes("g8tm-1=tutor"))
+							if (TMTutorSection && TableHeaderLine.includes("g8tm-1=tutor"))
 								TutorColumns[GamesToColumns.length - 1] = true;
 							GamesToColumns.push(GAME_BRILLIANT_DIAMOND_SHINING_PEARL);
-							if (TMTutorSection && TextLine.includes("g8tm-2=tutor"))
+							if (TMTutorSection && TableHeaderLine.includes("g8tm-2=tutor"))
 								TutorColumns[GamesToColumns.length - 1] = true;
 							GamesToColumns.push(GAME_INVALID);
 						}
 						else
 							GamesToColumns.push(GAMECOMBO_SWSH_BDSP);//column technically includes LA but we don't care about it
-						if (TMTutorSection && TextLine.includes("g8tm=tutor"))
+						if (TMTutorSection && TableHeaderLine.includes("g8tm=tutor"))
 							TutorColumns[GamesToColumns.length - 1] = true;
 					}
 					if (g_TargetGame["GenerationNum"] >= GENERATION_9 && !TableHeaderLine.includes("g9=none"))
@@ -1222,7 +1234,7 @@ function ProcessMove(ReadFile)
 						}
 						else
 							GamesToColumns.push(GAME_SCARLET_VIOLET);//column technically includes ZA but we don't care about it
-						if (TMTutorSection && TextLine.includes("g9tm=tutor"))
+						if (TMTutorSection && TableHeaderLine.includes("g9tm=tutor"))
 							TutorColumns[GamesToColumns.length - 1] = true;
 					}
 				}
@@ -1610,6 +1622,8 @@ function PreSearch()
 	else
 	{
 		for (let iLearner = 0; iLearner < g_MoveLearners.length; iLearner++) console.log(g_MoveLearners[iLearner]["LearnMonInfo"]["SpeciesName"]);
+		console.log("Starting the chain search.");
+		return true;
 	}
 
 	//in the illegal paras scenario, paras has to be alive in gen 3-4 to learn bullet seed (tm), but paras learning leech seed (egg only) requires it to hatch in gen 5
@@ -1697,43 +1711,46 @@ function PreSearch()
 				}
 			}
 
-			let FoundUsableGame = false;
-			for (let iGame = 0; !FoundUsableGame && iGame < g_Games.length; iGame++)
+			if (!Exit)
 			{
-				let FirstOfGame = true;
-				let OverallUsableSpecies = [];
-				for (let iMoveToLearn = 0; iMoveToLearn < g_MovesToLearn.length; iMoveToLearn++)
+				let FoundUsableGame = false;
+				for (let iGame = 0; !FoundUsableGame && iGame < g_Games.length; iGame++)
 				{
-					if (g_Games[iGame]["GameIsAllowed"])
+					let FirstOfGame = true;
+					let OverallUsableSpecies = [];
+					for (let iMoveToLearn = 0; iMoveToLearn < g_MovesToLearn.length; iMoveToLearn++)
 					{
-						if (FirstOfGame)
+						if (g_Games[iGame]["GameIsAllowed"])
 						{
-							ExplainString += "\n\nIn " + g_Games[iGame]["UIName"];
-							OverallUsableSpecies = HatchableSpeciesByMoveByGame[iGame][iMoveToLearn];
-							FirstOfGame = false;
+							if (FirstOfGame)
+							{
+								ExplainString += "\n\nIn " + g_Games[iGame]["UIName"];
+								OverallUsableSpecies = HatchableSpeciesByMoveByGame[iGame][iMoveToLearn];
+								FirstOfGame = false;
+							}
+							for (let iSpecies = 0; iSpecies < OverallUsableSpecies.length; iSpecies++)
+								if (!HatchableSpeciesByMoveByGame[iGame][iMoveToLearn].includes(OverallUsableSpecies[iSpecies]))
+									OverallUsableSpecies.splice(iSpecies, 1);
+							ExplainString += "\n" + g_MovesToLearn[iMoveToLearn] + " implies hatching as: " + HatchableSpeciesByMoveByGame[iGame][iMoveToLearn];
 						}
-						for (let iSpecies = 0; iSpecies < OverallUsableSpecies.length; iSpecies++)
-							if (!HatchableSpeciesByMoveByGame[iGame][iMoveToLearn].includes(OverallUsableSpecies[iSpecies]))
-								OverallUsableSpecies.splice(iSpecies, 1);
-						ExplainString += "\n" + g_MovesToLearn[iMoveToLearn] + " implies hatching as: " + HatchableSpeciesByMoveByGame[iGame][iMoveToLearn];
 					}
+					if (OverallUsableSpecies.length > 0)
+						FoundUsableGame = true;
 				}
-				if (OverallUsableSpecies.length > 0)
-					FoundUsableGame = true;
-			}
-			if (!FoundUsableGame)
-			{
-				if (g_Combo)
+				if (!FoundUsableGame)
 				{
-					ExplainString = "Illegal move combination: No game where all desired moves can be hatched onto the same species." + ExplainString;
-					Exit = true;
-					Warning = true;
-				}
-				else
-				{
-					ExplainString = "Warning: EggWebs detected that there is no way to put all of the given moves onto " + g_TargetSpecies
-						+ " at the same time (incompatible hatching species), but it may still suggest breeding chains for moves individually. Press Enter to continue anyway.";
-					Warning = true;
+					if (g_Combo)
+					{
+						ExplainString = "Illegal move combination: No game where all desired moves can be hatched onto the same species." + ExplainString;
+						Exit = true;
+						Warning = true;
+					}
+					else
+					{
+						ExplainString = "Warning: EggWebs detected that there is no way to put all of the given moves onto " + g_TargetSpecies
+							+ " at the same time (incompatible hatching species), but it may still suggest breeding chains for moves individually. Press Enter to continue anyway.";
+						Warning = true;
+					}
 				}
 			}
 		}

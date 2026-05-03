@@ -1,5 +1,18 @@
 all of these movesets are designed to test different features (mainly combo mode). all of the answers shown below are correct. most of these movesets have multiple possible chains, however, if a chain doesn't match, this may indicate a problem.
 
+
+tests understanding breeding with ditto
+Hi Jump Kick and Mach Punch Hitmontop (gen 3)
+Chain for Mach Punch: Hitmonchan (Level 20) → Hitmonlee (Egg move, Learned as Tyrogue)
+Chain for High Jump Kick: Hitmonlee (Level 26) → Hitmontop (Egg move, Learned as Tyrogue)
+
+
+tests that egg group redundancy check correctly identifies when not to apply
+Pain Split and Will-O-Wisp on Weezing (gen 3)
+Chain for Pain Split: Misdreavus (Level 37) → Duskull (Egg move)
+Chain for Will-O-Wisp: Duskull (Level 38) → Weezing (Egg move, Learned as Koffing)
+
+
 basic tests
 Leech Seed and Grass Knot on Chikorita (gen 4)
 Chain for Leech Seed: Smeargle (Sketch)
@@ -10,6 +23,25 @@ exclude smeargle
 Chain for Hidden Power: Slowking (Level 1) → Charmander (By universal TM) → Ekans (By universal TM) → Pikachu (By universal TM, Learned as Pichu)
 Chain for Thunderbolt: Pikachu (Level 26) → Castform (By TM) → Gastly (By TM)
 Chain for Shadow Ball: Gastly (Level 29) → Mismagius (Level 41, Learned as Misdreavus)
+
+
+tests understanding evolution to help with breeding
+Nasty Plot and Encore on Chatot (gen 4) (important part is "learned as Togepi")
+Chain for Nasty Plot: Plusle (Level 51) → Togetic (Egg move, Learned as Togepi)
+Chain for Encore: Togetic (Level 19) → Chatot (Egg move)
+
+
+tests multiple moves coming from the same ancestor
+Ice Beam, Ice Shard, Rapid Spin, and Toxic on Delibird (gen 5)
+Chain for Ice Shard: Smeargle (Sketch)
+Chain for Rapid Spin: Smeargle (Sketch)
+Chain for Toxic: Smeargle (Sketch)
+Chain for Ice Beam: Smeargle (Sketch) → Delibird (By TM)
+
+
+tests understanding that some methods of learning a move (eg event) are sometimes unsuitable for the top ancestor of a chain, since other chains will target that learner
+Belly Drum and Aqua Jet on Azumarill (gen 5)
+Nothing
 
 
 basic illegal tests
@@ -33,39 +65,11 @@ Charm and Seismic Toss on Blissey (gen 7)
 Illegal move combination: No game where all desired moves can be hatched onto the same species.
 
 
-tests understanding evolution to help with breeding
-Nasty Plot and Encore on Chatot (gen 4) (important part is "learned as Togepi")
-Chain for Nasty Plot: Plusle (Level 51) → Togetic (Egg move, Learned as Togepi)
-Chain for Encore: Togetic (Level 19) → Chatot (Egg move)
-
-
-tests understanding breeding with ditto
-Hi Jump Kick and Mach Punch Hitmontop (gen 3)
-Chain for Mach Punch: Hitmonchan (Level 20) → Hitmonlee (Egg move, Learned as Tyrogue)
-Chain for High Jump Kick: Hitmonlee (Level 26) → Hitmontop (Egg move, Learned as Tyrogue)
-
-
-tests multiple moves coming from the same ancestor
-Ice Beam, Ice Shard, Rapid Spin, and Toxic on Delibird (gen 5)
-Chain for Ice Shard: Smeargle (Sketch)
-Chain for Rapid Spin: Smeargle (Sketch)
-Chain for Toxic: Smeargle (Sketch)
-Chain for Ice Beam: Smeargle (Sketch) → Delibird (By TM)
-
-
-tests understanding that some methods of learning a move (eg event) are sometimes unsuitable for the top ancestor of a chain, since other chains will target that learner
-Belly Drum and Aqua Jet on Azumarill (gen 5)
-Nothing
-
-
-tests that egg group redundancy check correctly identifies when not to apply
-Pain Split and Will-O-Wisp on Weezing (gen 3)
-Chain for Pain Split: Misdreavus (Level 37) → Duskull (Egg move)
-Chain for Will-O-Wisp: Duskull (Level 38) → Weezing (Egg move, Learned as Koffing)
+combo mode off for all below
 
 
 tests alternate parents
-Charm on Nidoqueen (gen 6)
+Charm on Nidoqueen (gen 7)
 Chain for Charm: Eevee (Level 29) → Nidoqueen (Egg move, Learned as Nidoran F)
 
 Lunge on Volbeat (gen 7)
@@ -73,8 +77,9 @@ Chain for Lunge: Mothim (Level 47) → Volbeat (Egg move)
 
 
 tests understanding of forms
-Final Gambit on Veluza (gen 9)
-Chain for Final Gambit: Basculin (Red- and Blue-Striped, Level 40) → Veluza (Level 55)
+Body Slam and Icicle Crash on Swinub (gen 7) (both kanto and alolan sandslash should findable, only kanto form should give body slam, and only alola form should give icicle crash)
+Chain for Body Slam: Sandshrew (By TM, in RB) → Swinub (Egg move)
+Chain for Icicle Crash: Sandslash (Alolan, Level 1) → Swinub (Egg move)
 
 
 tests learning accurate to game level (as opposed to generation level)
