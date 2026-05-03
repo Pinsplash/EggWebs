@@ -498,6 +498,8 @@ function ProcessLevelCell(TextLine, PipeLocation)
 {
 	let TemplateStart = TextLine.indexOf("{{", PipeLocation + 1);
 	let ValueEnd = TextLine.indexOf("|", PipeLocation + 1);
+	if (ValueEnd === -1)
+		ValueEnd = TextLine.indexOf("}}", PipeLocation + 1);
 	let Shift = 0;
 	if (TemplateStart !== -1 && TemplateStart < ValueEnd)
 	{
@@ -900,8 +902,8 @@ function GetMoveEntryParam(TextLine, PipeLocation, UnnamedParamNum)
 function GetFormByName(Info, FormName)
 {
 	for (let iForm = 0; iForm < Info["Forms"].length; iForm++)
-		if (FormName === Info["Forms"][iForm]["Name"])
-			return [Info["Forms"][iForm]];
+		if (FormName.toLowerCase().includes(Info["Forms"][iForm]["Name"].toLowerCase()) || Info["Forms"][iForm]["Name"].toLowerCase().includes(FormName.toLowerCase()))
+			return Info["Forms"][iForm];
 	return null;
 }
 
@@ -919,7 +921,7 @@ function GetFormListFromBulbaTable(TextLine, PokemonName, Game)
 	{
 		let Info = GetGeneration(Game)["MonData"][iInternalSpeciesIndex];
 		//if length is 0, it's either a form not relevant to breeding, or the form doesn't exist in the current game
-		if (Info["Forms"].length !== 0)
+		if (Info["Forms"] && Info["Forms"].length !== 0)
 		{
 			if (TextLine.includes("form="))
 			{
@@ -1662,62 +1664,89 @@ function PreSearch()
 		}
 	}
 
-	if (g_MovesToLearn.length <= 4 && !g_NoMoves)
+	let ExplainString = "";
+	let Warning = false;
+	
+	if (HatchableSpeciesByMoveByGame.length === 0)
 	{
-		if (!HatchableMovesByGame.some((x) => x.length >= g_MovesToLearn.length))
+		ExplainString = "Could not find any game where " + g_TargetSpecies + " can learn any of the moves.";
+		Exit = true;
+		Warning = true;
+	}
+	else
+	{
+		let Exit = false;
+		if (g_MovesToLearn.length <= 4 && !g_NoMoves)
 		{
-			if (g_Combo)
+			if (!HatchableMovesByGame.some((x) => x.length >= g_MovesToLearn.length))
 			{
-				let ExplainString = "";
-				for (let iGame = 0; iGame < g_Games.length; iGame++)
-					if (HatchableMovesByGame[iGame] && g_Games[iGame]["GameIsAllowed"])
-						ExplainString += "\n" + g_Games[iGame]["UIName"] + " has: " + HatchableMovesByGame[iGame];
-				alert("Illegal move combination: No game where hatching " + g_TargetSpecies + " is possible." + ExplainString);
-				return false;
-			}
-			else
-			{
-				alert("Warning: EggWebs detected that there is no way to put all of the given moves onto " + g_TargetSpecies + " at the same time (no usable game), but it may still suggest breeding chains for moves individually. Press Enter to continue anyway.");
-			}
-		}
-		
-		let ExplainString = "";
-		let FoundUsableGame = false;
-		for (let iGame = 0; !FoundUsableGame && iGame < g_Games.length; iGame++)
-		{
-			let FirstOfGame = true;
-			let OverallUsableSpecies = [];
-			for (let iMoveToLearn = 0; iMoveToLearn < g_MovesToLearn.length; iMoveToLearn++)
-			{
-				if (g_Games[iGame]["GameIsAllowed"])
+				if (g_Combo)
 				{
-					if (FirstOfGame)
-					{
-						ExplainString += "\n\nIn " + g_Games[iGame]["UIName"];
-						OverallUsableSpecies = HatchableSpeciesByMoveByGame[iGame][iMoveToLearn];
-						FirstOfGame = false;
-					}
-					for (let iSpecies = 0; iSpecies < OverallUsableSpecies.length; iSpecies++)
-						if (!HatchableSpeciesByMoveByGame[iGame][iMoveToLearn].includes(OverallUsableSpecies[iSpecies]))
-							OverallUsableSpecies.splice(iSpecies, 1);
-					ExplainString += "\n" + g_MovesToLearn[iMoveToLearn] + " implies hatching as: " + HatchableSpeciesByMoveByGame[iGame][iMoveToLearn];
+					for (let iGame = 0; iGame < g_Games.length; iGame++)
+						if (HatchableMovesByGame[iGame] && g_Games[iGame]["GameIsAllowed"])
+							ExplainString += "\n" + g_Games[iGame]["UIName"] + " has: " + HatchableMovesByGame[iGame];
+					ExplainString = "Illegal move combination: No game where hatching " + g_TargetSpecies + " is possible." + ExplainString;
+					Exit = true;
+					Warning = true;
+				}
+				else
+				{
+					ExplainString = "Warning: EggWebs detected that there is no way to put all of the given moves onto " + g_TargetSpecies
+						+ " at the same time (no usable game), but it may still suggest breeding chains for moves individually. Press Enter to continue anyway.";
+					Warning = true;
 				}
 			}
-			if (OverallUsableSpecies.length > 0)
-				FoundUsableGame = true;
-		}
-		if (!FoundUsableGame)
-		{
-			if (g_Combo)
+
+			let FoundUsableGame = false;
+			for (let iGame = 0; !FoundUsableGame && iGame < g_Games.length; iGame++)
 			{
-				alert("Illegal move combination: No game where all desired moves can be hatched onto the same species." + ExplainString);
-				return false;
+				let FirstOfGame = true;
+				let OverallUsableSpecies = [];
+				for (let iMoveToLearn = 0; iMoveToLearn < g_MovesToLearn.length; iMoveToLearn++)
+				{
+					if (g_Games[iGame]["GameIsAllowed"])
+					{
+						if (FirstOfGame)
+						{
+							ExplainString += "\n\nIn " + g_Games[iGame]["UIName"];
+							OverallUsableSpecies = HatchableSpeciesByMoveByGame[iGame][iMoveToLearn];
+							FirstOfGame = false;
+						}
+						for (let iSpecies = 0; iSpecies < OverallUsableSpecies.length; iSpecies++)
+							if (!HatchableSpeciesByMoveByGame[iGame][iMoveToLearn].includes(OverallUsableSpecies[iSpecies]))
+								OverallUsableSpecies.splice(iSpecies, 1);
+						ExplainString += "\n" + g_MovesToLearn[iMoveToLearn] + " implies hatching as: " + HatchableSpeciesByMoveByGame[iGame][iMoveToLearn];
+					}
+				}
+				if (OverallUsableSpecies.length > 0)
+					FoundUsableGame = true;
 			}
-			else
+			if (!FoundUsableGame)
 			{
-				alert("Warning: EggWebs detected that there is no way to put all of the given moves onto " + g_TargetSpecies + " at the same time (incompatible hatching species), but it may still suggest breeding chains for moves individually. Press Enter to continue anyway.");
+				if (g_Combo)
+				{
+					ExplainString = "Illegal move combination: No game where all desired moves can be hatched onto the same species." + ExplainString;
+					Exit = true;
+					Warning = true;
+				}
+				else
+				{
+					ExplainString = "Warning: EggWebs detected that there is no way to put all of the given moves onto " + g_TargetSpecies
+						+ " at the same time (incompatible hatching species), but it may still suggest breeding chains for moves individually. Press Enter to continue anyway.";
+					Warning = true;
+				}
 			}
 		}
+	}
+
+	if (Warning)
+	{
+		ExplainString += "\nIf you feel like this is wrong, check the target form";
+		if (g_TargetForm)
+			ExplainString += " (" + g_TargetForm["Name"] + ")";
+		alert(ExplainString);
+		if (Exit)
+			return false;
 	}
 
 	console.log("Starting the chain search.");
@@ -1918,7 +1947,10 @@ function CreatePokemonInfoBox(Child, Father, LearnInst, Chain, iLearner, Matchup
 	let Species = Father["LearnMonInfo"]["SpeciesName"];
 	if (Species === "Type: Null")
 		Species = "Type Null";
-	PokemonImage.src = "images/pokemon/" + Species + ".png";
+	if (Father["Form"])
+		PokemonImage.src = "images/pokemon/" + Species + "_" + Father["Form"]["Name"] + ".png";
+	else
+		PokemonImage.src = "images/pokemon/" + Species + ".png";
 	if (Chain === null && !MatchupResult.includes(MATCHUP_SUCCESS))
 		PokemonImage.className = "pokemonimagefade";
 	ImageContainer.appendChild(PokemonImage);

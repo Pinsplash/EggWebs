@@ -58,7 +58,7 @@ const HoennianZigzagoon = FormData("Hoennian");
 
 const JohtonianCorsola = FormData("Johtonian");
 const JohtonianQwilfish = FormData("Johtonian");
-const JohtonianSlowking = FormData("Kantonian");
+const JohtonianSlowking = FormData("Johtonian");
 const JohtonianSneasel = FormData("Johtonian");
 const JohtonianTyphlosion = FormData("Johtonian");
 const JohtonianWooper = FormData("Johtonian");

@@ -72,6 +72,11 @@ Lunge on Volbeat (gen 7)
 Chain for Lunge: Mothim (Level 47) → Volbeat (Egg move)
 
 
+tests understanding of forms
+Final Gambit on Veluza (gen 9)
+Chain for Final Gambit: Basculin (Red- and Blue-Striped, Level 40) → Veluza (Level 55)
+
+
 tests learning accurate to game level (as opposed to generation level)
 SmokeScreen on Whismur (level cap 5, hgss target game with dpp checked to be usable)
 this should eventually suggest Cyndaquil (level 4, in Pt), and NOT suggest Cyndaquil (level 6)
