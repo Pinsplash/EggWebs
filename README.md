@@ -11,14 +11,12 @@ To properly save the pages, go to them on Bulbapedia and then press `Alt`+`Shift
 In any case, you should now have a textbox on screen. Copy everything in it to a new file on your computer. The files can be named anything, but to avoid confusion, you'll want to name them after the moves they're for.
 
 ### Usage
-Select the moves you want to put on the Pokemon in File Explorer. Then drag and drop them all at once onto the exe. Any number of moves at once will work. The program will be able to do less repeat work if you drop every move you're interested in at once.
+Open EggWebs.html in your web browser.
 
-Type the name of the target Pokemon and respond however you wish to the questions EggWebs gives you. If you select 2-4 moves, you will have the option to only search for chains that allow you to breed all of the moves onto the target Pokemon at once.
+Click the browse button and select the moves you want to put on the Pokemon. Set your settings, then click "Go" at the top. Any number of moves at once will work. The program will be able to do less repeat work if you drop every move you're interested in at once.
 
-When a breeding chain (or combination of chains) is found, it will be presented to you. To accept the chain, just press `Enter`. When a chain is accepted, no other chains for that move will be shown.
-
-Chains can be rejected by entering the name of a species in the chain. Multiple species can be excluded at once by separating their names with commas, including ones not present in the chain. Use this to exclude Pokemon you can't get. The species names you enter will be excluded from all breeding chains EggWebs presents you from thereon, including chains for other moves. All of the same applies to ID numbers of individual move learners, though they cannot be excluded if they are not in the chain currently being suggested. If you add "-evo" at the end of a species name, you can quickly exclude everything that species can evolve into.
-
-When the program is done, a list of all chains you accepted will be written to `output.csv` in the same place you put the Bulbapedia pages.
+When a breeding chain (or combination of chains) is found, it will be presented to you. If the chain is not suitable for you, you can click the arrow next to a Pokemon to make EggWebs find a new breeding chain based on the option you chose.
 
 EggWebs is NOT a team validator. EggWebs assumes that all moves you give it are intended to be acquired through breeding and it will only work toward that end.
+
+<img width="2560" height="1332" alt="image" src="https://github.com/user-attachments/assets/28526a1b-18e0-4b8e-b0df-6180a4d27b11" />
