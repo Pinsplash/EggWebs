@@ -1,4 +1,4 @@
-const Struct = (...keys) => ((...v) => keys.reduce((o, k, i) => {o[k] = v[i]; return o} , {}));
+const Struct = (...keys) => ((...v) => keys.reduce((o, k, i) => { o[k] = v[i]; return o }, {}));
 const SpeciesInfo = Struct("SpeciesName", "EggGroup1", "EggGroup2", "GenderRatio", "Evolutions", "BaseFormOffset", "Forms");
 const Generation = Struct("BulbaHeader", "GameCombo", "UniversalTMs", "MonData");
 const GameData = Struct("UIName", "GenerationNum", "Acronym", "GameNum", "GameIsAllowed");
