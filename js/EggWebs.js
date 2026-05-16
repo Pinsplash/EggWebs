@@ -59,7 +59,8 @@ function GetGeneration(WantedGame)
 
 function MethodStr(LearnInstance, Delimiter)
 {
-	if (!LearnInstance) debugger;
+	if (!LearnInstance)
+		alert("An error happened. Please report it as a bug that you encountered message #001 (calling MethodStr without null LearnInstance)");
 	let str;
 	if (LearnInstance["LearnMethod"] === LEARNBY_LEVELUP) str = "Level " + LearnInstance["LearnLevel"];
 	else if (LearnInstance["LearnMethod"] === LEARNBY_TM) str = "By TM";
@@ -105,7 +106,7 @@ function ComboAddMove(MoveName, Satisfied)
 	g_ComboData["ComboMoves"].push(MoveName);
 	if (g_ComboData["ComboMoves"].length > g_Combo)
 		if (g_ComboData["ComboMoves"].length <= 4)
-			debugger;
+			alert("An error happened. Please report it as a bug that you encountered message #002 (combo data has more moves that it should)");
 	g_ComboData["SatisfiedStatus"].push(Satisfied);
 }
 
@@ -217,7 +218,7 @@ function GetSpeciesInfoFromGame(WantedName, Game)
 	WantedName = WantedName.charAt(0).toUpperCase() + WantedName.slice(1);
 	let Generation = GetGeneration(Game);
 	if (!Generation)
-		debugger;
+		alert("An error happened. Please report it as a bug that you encountered message #003 (called GetSpeciesInfoFromGame but the Game had no Generation)");
 	let MonData = Generation["MonData"];
 	//console.log("WantedName: ", WantedName);
 	for (let iInfo = 0; iInfo < MonData.length; iInfo++)
@@ -367,7 +368,7 @@ function IterateGameCombo(GameInCombo, ComboNum)
 				return [-1, -1];
 			}
 		default:
-			debugger;
+			alert("An error happened. Please report it as a bug that you encountered message #004 (default in IterateGameCombo)");
 			return [-1, -1];
 		}
 	}
@@ -405,7 +406,7 @@ function AddInstanceToLearnerGame(Learner, NewInstance, Game)
 	g_NextLearnerID++;
 	NewInstance["LearnsInGame"] = Game;
 	if (!Learner["Instances"])
-		debugger;
+		alert("An error happened. Please report it as a bug that you encountered message #005 (Learner had no learn instances)");
 	Learner["Instances"].push(NewInstance);
 	return Learner;
 }
@@ -467,14 +468,14 @@ function SpeciesShareEvoLine(Mother, Father)
 
 	OriginalSpecies1 = GetBaseForm(Species1, Mother["Instances"][0]["LearnsInGame"]);
 	if (!OriginalSpecies1)
-		debugger;
+		alert("An error happened. Please report it as a bug that you encountered message #006 (mother species data not found for " + Species1 + ")");
 
 	if (OriginalSpecies1["SpeciesName"] === Species2)
 		return true;
 
 	OriginalSpecies2 = GetBaseForm(Species2, Father["Instances"][0]["LearnsInGame"]);
 	if (!OriginalSpecies2)
-		debugger;
+		alert("An error happened. Please report it as a bug that you encountered message #007 (father species data not found for " + Species2 + ")");
 
 	return OriginalSpecies1 === OriginalSpecies2;
 }
@@ -501,7 +502,7 @@ function ProcessAnnotatedCell(GameList, TextLine, ValueStart, Quiet)
 		}
 	}
 	else
-		debugger;//then why did we end up here?
+		alert("An error happened. Please report it as a bug that you encountered message #008 (annotated cell parsed too far)");//then why did we end up here?
 }
 
 function ProcessLevelCell(TextLine, PipeLocation)
@@ -564,7 +565,8 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 		return [BREEDING_SELF, "Breeding with your own species is redundant"];
 	
 	//don't already be explored (don't read into this)
-	if (!Father["Instances"][0]) debugger;
+	if (!Father["Instances"][0])
+		alert("An error happened. Please report it as a bug that you encountered message #009 (father had no learn instances)");
 	if (ClosedList[Father["Instances"][0]["LearnID"]])
 		return [FATHER_ON_CLOSED_LIST, "Already considered father"];
 	
@@ -857,7 +859,7 @@ function MakeArbitraryLearn(PokemonName, MoveName, GameNum, GameInCombo, GameFor
 	{
 		//common starting in gen 8
 		if (GetGeneration(g_Games[GameNum]) <= GENERATION_7)
-			debugger;
+			alert("An error happened. Please report it as a bug that you encountered message #010 (didn't find species data for " + PokemonName + ")");
 	}
 	else
 	{
@@ -896,7 +898,7 @@ function GetMoveEntryParam(TextLine, PipeLocation, UnnamedParamNum)
 			return [Value, ValueType, ValueEnd];
 	}
 	if (ValueEnd === -1)
-		debugger;
+		alert("An error happened. Please report it as a bug that you encountered message #011 (unknown syntax in " + TextLine + ")");
 	if (Value.includes("Moveentry"))
 		ValueType = ME_TEMPLATE_NAME;
 	else if (Value.includes("="))
@@ -924,7 +926,7 @@ function GetFormListFromBulbaTable(TextLine, PokemonName, Game)
 	{
 		//common starting in gen 8
 		if (GetGeneration(Game) <= GENERATION_7)
-			debugger;
+			alert("An error happened. Please report it as a bug that you encountered message #012 (didn't find species data for " + PokemonName + ")");
 		return [];//0 length to avoid going in the for loop later
 	}
 	else
@@ -950,7 +952,6 @@ function GetFormListFromBulbaTable(TextLine, PokemonName, Game)
 						FormName = FormName.substring(0, FormNameEnd);
 					return [GetFormByName(Info, FormName)];
 				}
-				debugger;
 			}
 			else
 			{
@@ -1054,7 +1055,7 @@ function ProcessMove(ReadFile)
 					if (TextLine === GetGeneration(g_Games[iGame])["BulbaHeader"])
 						GameForSpecialSection = GetGeneration(g_Games[iGame])["GameCombo"];
 				if (GameForSpecialSection === -1)
-					debugger;
+					alert("An error happened. Please report it as a bug that you encountered message #013 (didn't find game for special encounter section)");
 			}
 			else if (EventSection && TextLine.includes("====[["))
 			{
@@ -1063,7 +1064,7 @@ function ProcessMove(ReadFile)
 					if (TextLine === GetGeneration(g_Games[iGame])["BulbaHeader"])
 						GameForSpecialSection = GetGeneration(g_Games[iGame])["GameCombo"];
 				if (GameForSpecialSection === -1)
-					debugger;
+					alert("An error happened. Please report it as a bug that you encountered message #014 (didn't find game for event encounter section)");
 			}
 			else if (LevelupSection || TMTutorSection || BreedSection || SpecialSectionInside || EventSectionInside)
 			{
@@ -1347,7 +1348,7 @@ function ProcessMove(ReadFile)
 										{
 											//common starting in gen 8
 											if (GetGeneration(g_Games[GameNum]) <= GENERATION_7)
-												debugger;
+												alert("An error happened. Please report it as a bug that you encountered message #015 (didn't find species data for " + PokemonName + ")");
 										}
 										else
 										{
@@ -1396,7 +1397,6 @@ function ProcessMove(ReadFile)
 			}
 		}
 	}
-	return 0;
 }
 
 function GetSettings(FileCount)
@@ -1494,18 +1494,15 @@ async function ProcessFiles(Files)
 		const file = Files[iFile];
 		const text = await file.text();
 		let OldLearnCount = g_MoveLearners.length;
-		if (ProcessMove(text) === 1)
-		{
-			debugger;
-		}
+		ProcessMove(text);
 		if (+OldLearnCount === +g_MoveLearners.length || +g_MoveLearners.length === 0)
 		{
-			debugger;//no data obtained from file
+			alert("Did not get any data from a file. This is probably a bug.");//no data obtained from file
 		}
 		else if (!g_MoveLearners[g_MoveLearners.length - 1]["MoveName"])
 		{
 			//didn't find move name
-			debugger;
+			alert("An error happened. Please report it as a bug that you encountered message #017 (didn't find name of move)");
 		}
 		//if (Files.length > 1) console.log("finished " + Files[iFile] + "\n");
 	}
@@ -1539,7 +1536,7 @@ function SplitMultiLevelLearns()
 				let NewInst = CloneLearnInstance(LearnInst);
 				NewInst["LearnLevel"] = Level;
 				if (!NewInst["LearnLevel"])
-					debugger;
+					alert("An error happened. Please report it as a bug that you encountered message #018 (levelup learn instance did not have a level)");
 				AddInstanceToLearnerGame(Learner, NewInst, NewInst["LearnsInGame"]);
 			}
 			LearnInst["EraseMe"] = true;
@@ -2023,7 +2020,8 @@ function SuggestChain(Chain)
 		//todo: hack: make sure original father always shows a reasonable method
 		if (iLearner === Chain["LearnList"].length - 1)
 			LearnInst = GetAnyTopLevelInstance(Learner);
-		if (!LearnInst) debugger;
+		if (!LearnInst)
+			alert("An error happened. Please report it as a bug that you encountered message #019 (no usable learn instance in SuggestChain)");
 		let PokemonBox = CreatePokemonInfoBox(Learner, Learner, LearnInst, Chain, iLearner);
 		ChainBox.appendChild(PokemonBox);
 		if (iLearner !== 0)
@@ -2060,7 +2058,8 @@ function InstanceCanBeTopLevel(LearnInst, Learner)
 	if (LearnInst["UserRejected"])
 		return false;
 	
-	if (!LearnInst["LearnsInGame"]) debugger;
+	if (!LearnInst["LearnsInGame"])
+		alert("An error happened. Please report it as a bug that you encountered message #020 (learn instance not associated with any game)");
 	if (!LearnInst["LearnsInGame"]["GameIsAllowed"])
 		return false;
 	//
@@ -2149,10 +2148,10 @@ function FindNextChainSegment(Chains, BottomChild, pMove, Depth, MacroDepth, Max
 		for (let iChain = 0; iChain < Chains.length; iChain++)
 			for (let iNewChain = 0; iNewChain < NewChains.length; iNewChain++)
 				if (Chains[iChain]["LearnList"][0]["MoveName"] === NewChains[iNewChain]["LearnList"][0]["MoveName"])
-					debugger;
+					alert("An error happened. Please report it as a bug that you encountered message #021 (tried to make erroneous chain)");
 		Chains = Chains.concat(NewChains);
 		if (g_Combo && Chains.length > g_Combo)
-			debugger;
+			alert("An error happened. Please report it as a bug that you encountered message #022 (tried to make erroneous chain)");
 		return [Chains, CR_SUCCESS];
 	}
 	else
@@ -2167,7 +2166,7 @@ function TestFather(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, L
 {
 	for (let iChain = 0; iChain < Chains.length; iChain++)
 		if (Chains[iChain]["LearnList"][0]["MoveName"] === Learner["MoveName"])
-			debugger;
+			alert("An error happened. Please report it as a bug that you encountered message #023 (tried to make erroneous chain)");
 	//if in combo mode, father must learn all of the moves yet to be satisfied
 	let BadForCombo = false;
 	let TopLevel = GetAnyTopLevelInstance(Father);
@@ -2244,7 +2243,8 @@ function TestFather(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, L
 		{
 			if (g_MainLoopDebug)
 				console.log(Depth + " " + MacroDepth + " " + Father["LearnMonInfo"]["SpeciesName"] + " learning " + Learner["MoveName"] + " to pass to " + BottomChild["LearnMonInfo"]["SpeciesName"] + " was bad because it can't learn " + g_ComboData["ComboMoves"][Satisfy]);
-			debugger;//nowadays we call FatherSatisfiesMoves from inside ValidateMatchup first, and if that returns bad then we shouldn't be going into this function at all, so getting here should be impossible
+			alert("An error happened. Please report it as a bug that you encountered message #024 (this is ridiculous)");
+			//nowadays we call FatherSatisfiesMoves from inside ValidateMatchup first, and if that returns bad then we shouldn't be going into this function at all, so getting here should be impossible
 			return [Chains, CR_FAIL];
 		}
 	}
@@ -2280,12 +2280,12 @@ function TestFather(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, L
 		LogChainAdd(NewChain, Chains, Depth, MacroDepth, "B");
 		for (let iChain = 0; iChain < Chains.length; iChain++)
 			if (Chains[iChain]["LearnList"][0]["MoveName"] === NewChain["LearnList"][0]["MoveName"])
-				debugger;
+				alert("An error happened. Please report it as a bug that you encountered message #025 (tried to make erroneous chain)");
 		//slow mode doesn't need this and it's making us hit breakpoints annoyingly
 		if (!g_SlowMode)
 			Chains.push(NewChain);
 		if (g_Combo && Chains.length > g_Combo)
-			debugger;
+			alert("An error happened. Please report it as a bug that you encountered message #026 (tried to make erroneous chain)");
 		return [Chains, CR_SUCCESS];
 	}
 	return [Chains, CR_FAIL];
@@ -2342,7 +2342,7 @@ function FindFatherForMove(Chains, ClosedList, ParentList, Depth, MacroDepth, Le
 {
 	for (let iChain = 0; iChain < Chains.length; iChain++)
 		if (Chains[iChain]["LearnList"][0]["MoveName"] === Learner["MoveName"])
-			debugger;
+			alert("An error happened. Please report it as a bug that you encountered message #027 (tried to make erroneous chain)");
 	Depth++;
 	let LoggedAny = true;
 	if (g_MainLoopDebug) console.log(Depth + " " + MacroDepth + " Finding father to teach " + Learner["LearnMonInfo"]["SpeciesName"] + " " + Learner["MoveName"] + " to pass to " + BottomChild["LearnMonInfo"]["SpeciesName"]);
@@ -2429,7 +2429,7 @@ function FindChain(Chains, Learner, BottomChild, MacroDepth, MaxGen)
 {
 	for (let iChain = 0; iChain < Chains.length; iChain++)
 		if (Chains[iChain]["LearnList"][0]["MoveName"] === Learner["MoveName"])
-			debugger;
+			alert("An error happened. Please report it as a bug that you encountered message #028 (tried to make erroneous chain)");
 	let Depth = 0;
 
 	let ClosedList = [];
@@ -2442,10 +2442,10 @@ function SearchRetryLoop(Chains, Learner, Nested, MacroDepth, MaxGen)
 	MacroDepth++;
 	for (let iChain = 0; iChain < Chains.length; iChain++)
 		if (Chains[iChain]["LearnList"][0]["MoveName"] === Learner["MoveName"])
-			debugger;
+			alert("An error happened. Please report it as a bug that you encountered message #029 (tried to make erroneous chain)");
 	if (g_MainLoopDebug) console.log("Starting search to teach " + Learner["LearnMonInfo"]["SpeciesName"] + " " + Learner["MoveName"]);
 	if (g_MovesBeingExplored.includes(Learner["MoveName"]))
-		debugger;
+		alert("An error happened. Please report it as a bug that you encountered message #030 (already trying to find chain for move)");
 	g_MovesBeingExplored.push(Learner["MoveName"]);
 	//console.log("g_MovesBeingExplored add " + Learner["MoveName"]);
 	let Result = CR_FAIL;
@@ -2552,7 +2552,7 @@ function SearchStart()
 			{
 				document.getElementById("mainview").innerHTML = "";
 				if (g_Combo && Chains.length !== g_Combo)
-					debugger;
+					alert("An error happened. Please report it as a bug that you encountered message #031 (number of chains did not match number of desired moves)");
 				if (!ExamineChains(Chains))
 				{
 					console.log("Detected bad chain in post. Debug for more info.");
@@ -2582,10 +2582,12 @@ function ExamineChains(Chains)
 		{
 			let Chain = Chains[iChain];
 			let TopLearner = Chain["LearnList"][Chain["LearnList"].length - 1];
-			if (!TopLearner) debugger;
+			if (!TopLearner)
+				alert("An error happened. Please report it as a bug that you encountered message #032 (no top level ancestor?)");
 			//todo: hack: parity with above hack
 			let LearnInst = GetAnyTopLevelInstance(TopLearner);
-			if (!LearnInst) debugger;
+			if (!LearnInst)
+				alert("An error happened. Please report it as a bug that you encountered message #033 (top level ancestor had no usable learn instance)");
 			if (InstanceMustBeTopLevel(LearnInst))
 			{
 				for (let iOtherChain = 0; iOtherChain < Chains.length; iOtherChain++)
@@ -2606,7 +2608,7 @@ function ExamineChains(Chains)
 						else
 						{
 							//if the other bottom learner is a levelup move and the top learner is special or event, that pokemon must have some level it's caught at,
-							//so if that level is higher is higher than the level of the bottom learner, change the bottom learner to be reminder.
+							//so if that level is higher than the level of the bottom learner, change the bottom learner to be reminder.
 							//finding the top learner's implicit level is currently not possible without getting more data into the program
 							//todo: same hack again
 							//let BottomInst = GetAnyTopLevelInstance(TopLearner);
@@ -2751,7 +2753,8 @@ function CreatePriorEvolutionLearns()
 				
 				let TargetOffset = EvoData["EvoOffset"];
 				let TargetInfo = MonData[iInfo + TargetOffset];
-				if (OriginalForm === TargetInfo["SpeciesName"]) debugger;
+				if (OriginalForm === TargetInfo["SpeciesName"])
+					alert("An error happened. Please report it as a bug that you encountered message #034 (data error! " + OriginalForm + " evolves into itself)");
 				CopyLearnsToNewSpecies(Learner, TargetInfo["SpeciesName"], EvoData["EvoForm"]);
 			}
 		}
@@ -2792,10 +2795,11 @@ function ParseGameAnnotations()
 						let NewInst = CloneLearnInstance(LearnInst);
 						NewInst["LearnLevel"] = GameList[iStr + 1];
 						if (!NewInst["LearnLevel"])
-							debugger;
-						//put this call here instead of after the loop. if a string is "DPPt" we'd rather make nodes for both DP and Pt than awkwardly picking one or the other
+							alert("An error happened. Please report it as a bug that you encountered message #035 (learn instance had no level)");
+						//if a string is "DPPt" we'd rather make nodes for both DP and Pt than awkwardly picking one or the other,
+						//so put this call here instead of after the loop
 						AddInstanceToLearnerGame(Learner, NewInst, Game);
-						//do NOT break here for optimization. if a string is "DPPt", that would cause us to only make a learn for DP, not Pt
+						//and do NOT break here
 						//break;
 					}
 				}
