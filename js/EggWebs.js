@@ -2933,7 +2933,7 @@ function SelectTargetGame(GameNum)
 {
 	let Game = g_Games[GameNum];
 	//gen8+ do not transfer moves when taking a pokemon to a different game (unless it's the same one in a version pair, which we don't care about)
-	if (Game["GenerationNum"] < GENERATION_8)
+	if (Game["GenerationNum"] < GENERATION_8_BDSP)
 	{
 		document.getElementById("gamelistspan2").style.display = "inline";
 		document.getElementById("allgamesbutton").style.display = "inline";
