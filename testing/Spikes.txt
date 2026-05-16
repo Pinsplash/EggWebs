@@ -1,0 +1,411 @@
+{{MoveInfobox
+|n=191
+|name=Spikes
+|jname=まきびし
+|jtrans=Caltrop
+|jtranslit=Makibishi
+|gameimage=Spikes IX.png
+|gameimage2=Spikes IX 2.png
+|gameimagewidth=300
+|type=Ground
+|damagecategory=Status
+|basepp=20
+|maxpp=32
+|power=—
+|accuracy=—
+|gen=II
+|category=Clever
+|appeal=2
+|jam=0
+|cdesc=Makes all Pokémon after the user nervous.
+|appealsc=2
+|scdesc=Prevents the Voltage from going up in the same turn.
+|category6=Clever
+|appeal6=2
+|jam6=0
+|cdesc6=Makes the remaining Pokémon nervous.
+|touches=no
+|protect=no
+|magiccoat=yes
+|snatch=no
+|mirrormove=no
+|kingsrock=no
+|sound=no
+|target=foes
+|tr8=yes
+|tr#8=23
+|mtla=yes
+|tm9=yes
+|tm#9=090
+|tmza=yes
+|tm#za=088
+|na=no
+}}
+'''Spikes''' (Japanese: '''まきびし''' ''{{wp|makibishi|Caltrop}}'') is a non-damaging {{type|Ground}} [[move]] introduced in [[Generation II]].
+
+It is:
+* [[TR23]] in {{g|Sword and Shield}}.
+* [[TM090]] in {{g|Scarlet and Violet}}.
+* [[TM088]] in [[Pokémon Legends: Z-A]].
+
+==Effect==
+===Generation II===
+Spikes sets an [[List of moves that cause entry hazards|entry hazard]] around the enemy team's field. Pokémon who switch into the spike-ridden field take 12.5% of their maximum HP in damage (rounded down). {{type|Flying}} Pokémon are immune to this damage. The move {{m|Rapid Spin}} removes Spikes around the user.
+
+In [[Pokémon Stadium 2]], if both players are forced to switch-in their last remaining Pokémon, and they have 12.5% or less HP, then they receive Spikes damage, faint and the match is declared a draw.
+
+====Spikes glitch====
+In this generation only, Pokémon fainting from Spikes will not run the regular faint checks until later, meaning that player can potentially end up with a Pokémon with 0HP on the field which hasn't fainted if the game loop doesn't do any further unrelated faint checks later. The easiest way to reproduce this is to have a Pokémon faint to {{m|Perish Song}}, then switch into a Pokémon who immediately faints from Spikes.
+
+===Generations III and IV===
+Spikes can now be set up to three times, each increasing the damage done to the opponent upon switching in. One layer of Spikes will damage the opponent Pokémon by 1/8 (12.5%) of its maximum HP, two layers will deal 1/6 (16.67%), and three layers will deal 1/4 (25%). Any Pokémon with {{a|Levitate}} will also be immune to the damage.
+
+The move {{m|Defog}} will remove Spikes around its target. Any Pokémon under the effect of {{m|Magnet Rise}} (if [[Baton Pass (move)|Baton Passed]]) or the {{a|Magic Guard}} Ability are unaffected by the damage. However, Flying and Levitating Pokémon are affected under {{m|Gravity}}, while holding an [[Iron Ball]], or if Baton Passed an {{m|Ingrain}}.
+
+===Generation V===
+Spikes can now be reflected with {{m|Magic Coat}} and the Ability {{a|Magic Bounce}}. Any Pokémon holding an [[Air Balloon]] will be immune to the damage.
+
+===Generation VI onwards===
+{{m|Defog}} now removes all Spikes from play regardless of which side of the field they were placed on.
+
+Spikes can be used as part of a [[Contest combination|Contest Spectacular combination]], causing {{m|Circle Throw}}, {{m|Dragon Tail}}, {{m|Roar}}, and {{m|Whirlwind}} to give an extra three appeal points if used in the next turn.
+
+If powered up by a [[Groundium Z]] into Z-Spikes, the user's {{stat|Defense}} stat rises by one stage.
+
+===Generation VIII===
+====Pokemon Sword and Shield====
+If a Pokémon is holding [[Heavy-Duty Boots]], they are immune to Spikes when entering battle. 
+====Pokémon Legends: Arceus====
+In [[Pokémon Legends: Arceus]], Spikes is a [[physical move]] that deals direct damage with a base power of 40. It also leaves the target with {{status|splinters}} for 4 turns ([[Move mastery|Strong Style]]), 2 turns ([[Move mastery|Agile Style]]), or 3 turns (otherwise).
+
+{{LegendsMove
+|type=Ground
+|damagecategory=Physical
+|basepp=20
+|power=40
+|power-agile=30
+|power-strong=50
+|accuracy=100
+|accuracy-strong=100
+|actionspeed-user=0
+|actionspeed-user-agile=0
+|actionspeed-user-strong=+5
+|actionspeed-target=0
+|actionspeed-target-agile=+3
+|effect=Leaves the target with {{status|splinters}}
+|param=Turns
+|param-val=3
+|param-val-agile=2
+|param-val-strong=4}}
+
+===Generation IX===
+Using {{m|Ceaseless Edge}} will set up one layer of spikes on the target's side of the field.
+
+====Pokémon Legends: Z-A====
+Like all entry hazard moves reimagined for Z-A, Spikes deploys its projectiles in a fan-shaped area in front of the user. Enemies take damage upon making contact with the caltrops and repeatedly if they stay inside the hazard for an extended period of time. Flying-types, even if they make visible contact, will not take damage from Spikes.{{LegendsZAMove
+|type=Ground
+|damagecategory=Status
+|cooldown=7
+|charge-time=1
+}}
+
+==Description==
+{{movedesc|ground}}
+{{movedescentry|{{gameabbrevss|Stad2}}|An attack that scatters <sc>Spikes</sc> and injures opponent {{ScPkmn}} when they switch.}}
+{{movedescentry|{{gameabbrev2|GSC}}|Hurts foes when they switch out.}}
+{{movedescentry|{{gameabbrev3|RS}}{{gameabbrevss|Colo}}{{gameabbrevss|XD}}|Sets spikes that hurt a foe switching out.}}
+{{movedescentry|{{gameabbrev3|E}}|Sets spikes that hurt a foe switching in.}}
+{{movedescentry|{{gameabbrev3|FRLG}}|A trap of spikes is laid around the foe's party to hurt foes switching in.}}
+{{movedescentry|{{gameabbrev4|DPPtHGSS}}{{gameabbrevss|PBR}}|The user lays a trap of spikes at the foe's feet. The trap hurts foes that switch into battle.}}
+{{movedescentry|{{gameabbrev5|BWB2W2}}<br>{{gameabbrev6|XYORAS}}<br>{{gameabbrev7|SMUSUMPE}}<br>{{gameabbrev8|SwShBDSP}}|The user lays a trap of spikes at the opposing team's feet. The trap hurts Pokémon that switch into battle.}}
+{{movedescentry|{{gameabbrev8|LA}}|The user lays a trap of spikes at the target's feet. The spikes left behind by this attack continue to damage the target for several turns.}}
+{{movedescentry|{{gameabbrev9|SV}}|The user lays a trap of spikes at the feet of the opposing team. The spikes will damage opposing Pokémon that switch into battle.}}
+{{movedescentry|{{gameabbrev9|ZA}}|The user lays a trap of sharp spikes in front of itself. The spikes will damage susceptible opposing Pokémon that make contact with them.}}
+|}
+|}{{left clear}}
+
+==Learnset==
+===By [[Level|leveling up]]===
+{{Movehead/Games|Ground|g1=none|g7=1|g7g={{gameabbrev7|SMUSUM}}|g8=3|g9=2}}
+{{Moveentry/11|0091|Cloyster|type=Water|type2=Ice|1|Water 3|Water 3|33{{sup/2|C}}|33{{sup/3|RSE}}<br>36{{sup/3|FRLG}}|28|28|28|28|1|1||1}}
+{{Moveentry/11|0204|Pineco|type=Bug|1|Bug|Bug|43|43|23{{sup/4|DP}}<br>28{{sup/4|PtHGSS}}|28|28|28||28||28}}
+{{Moveentry/11|0205|Forretress|type=Bug|type2=Steel|1|Bug|Bug|49|49|23{{sup/4|DP}}<br>28{{sup/4|PtHGSS}}|28|28|28||28||28}}
+{{Moveentry/11|0211|Qwilfish|type=Water|type2=Poison|1|Water 2|Water 2|1{{sup/2|C}}|1|1|1|1|1|20|20||20|20}}
+{{Moveentry/11|0211|formsig=H|Qwilfish|type=Dark|type2=Poison|1|Water 2|Water 2|form=Hisuian Form|||||||||5|20|20}}
+{{Moveentry/11|0227|Skarmory|type=Steel|type2=Flying|1|Flying|Flying|−|42|27{{sup/4|DP}}<br>28{{sup/4|PtHGSS}}|28|28|28|44|44||44|46}}
+{{Moveentry/11|0331|Cacnea|type=Grass|2|Grass|Human-Like||33|33|33|33{{sup/6|XY}}<br>30{{sup/6|ORAS}}|30||30||30}}
+{{Moveentry/11|0332|Cacturne|type=Grass|type2=Dark|2|Grass|Human-Like||35|35|35|35{{sup/6|XY}}<br>30{{sup/6|ORAS}}|30||30||30}}
+{{Moveentry/11|0386|formsig=D|Deoxys|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|form=Defense Forme||20|33|33|33{{sup/6|XY}}<br>25{{sup/6|ORAS}}|25||25||25}}
+{{Moveentry/11|0658|Greninja|type=Water|type2=Dark|1|Water 1|Water 1|form=All available forms|||||28|28||||28|−}}
+{{Moveentry/11|0707|Klefki|type=Steel|type2=Fairy|1|Mineral|Mineral|||||15|15|−|||−|−}}
+{{Moveentry/11|0904|Overqwil|type=Dark|type2=Poison|1|Water 2|Water 2|||||||||5|20|20}}
+{{Moveentry/11|1003|Ting-Lu|type=Dark|type2=Ground|1|No Eggs Discovered|No Eggs Discovered||||||||||5}}
+{{Movefoot|Ground|11}}
+
+===By [[TM]]/[[TR]]/[[Move Tutor]]===
+In [[Pokémon Legends: Arceus]], Spikes is a damage-dealing move, so {{p|Gliscor}} receives {{STAB}} when using it.
+
+{{Movehead/TMGames|Ground|g1=none|g2=none|g3=none|g4=none|g5=none|g6=none|g7=none
+|g8=2|g8tm-1=23|tmhm8-1=TR|g8g-1={{gameabbrev8|SwSh}}|g8tm-2=tutor|g8g-2={{gameabbrev8|LA}}
+|g9=2|g9tm-1=090|g9tm-2=088}}
+{{Moveentry/4|0027|Sandshrew|type=Ground|1|Field|Field|−||✔}}
+{{Moveentry/4|0028|Sandslash|type=Ground|1|Field|Field|✔||✔}}
+{{Moveentry/4|0028|formsig=A|Sandslash|type=Ice|type2=Steel|1|Field|Field|form=Alolan Form|✔||✔}}
+{{Moveentry/4|0052|Meowth|type=Normal|1|Field|Field|−||−|✔}}
+{{Moveentry/4|0052|formsig=A|Meowth|type=Dark|1|Field|Field|form=Alolan Form|−||−|✔}}
+{{Moveentry/4|0052|formsig=G|Meowth|type=Steel|1|Field|Field|form=Galarian Form|−||−|✔}}
+{{Moveentry/4|0053|Persian|type=Normal|1|Field|Field|−||−|✔}}
+{{Moveentry/4|0053|formsig=A|Persian|type=Dark|1|Field|Field|form=Alolan Form|−||−|✔}}
+{{Moveentry/4|0090|Shellder|type=Water|1|Water 3|Water 3|−||✔}}
+{{Moveentry/4|0091|Cloyster|type=Water|type2=Ice|1|Water 3|Water 3|✔||✔}}
+{{Moveentry/4|0138|Omanyte|type=Rock|type2=Water|2|Water 1|Water 3|✔||}}
+{{Moveentry/4|0139|Omastar|type=Rock|type2=Water|2|Water 1|Water 3|✔||}}
+{{Moveentry/4|0151|Mew|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔||✔}}
+{{Moveentry/4|0185|Sudowoodo|type=Rock|1|Mineral|Mineral|−|−|✔}}
+{{Moveentry/4|0194|Wooper|type=Water|type2=Ground|2|Water 1|Field|−||✔}}
+{{Moveentry/4|0194|formsig=P|Wooper|type=Poison|type2=Ground|2|Water 1|Field|form=Paldean Form|||✔}}
+{{Moveentry/4|0195|Quagsire|type=Water|type2=Ground|2|Water 1|Field|−||✔}}
+{{Moveentry/4|0204|Pineco|type=Bug|1|Bug|Bug|||✔}}
+{{Moveentry/4|0205|Forretress|type=Bug|type2=Steel|1|Bug|Bug|||✔}}
+{{Moveentry/4|0207|Gligar|type=Ground|type2=Flying|1|Bug|Bug||−|✔}}
+{{Moveentry/4|0211|Qwilfish|type=Water|type2=Poison|1|Water 2|Water 2|✔||✔|✔}}
+{{Moveentry/4|0211|formsig=H|Qwilfish|type=Dark|type2=Poison|1|Water 2|Water 2|form=Hisuian Form||✔|✔|✔}}
+{{Moveentry/4|0214|Heracross|type=Bug|type2=Fighting|1|Bug|Bug|✔|✔|✔|✔}}
+{{Moveentry/4|0225|Delibird|type=Ice|type2=Flying|2|Water 1|Field|✔||✔|✔}}
+{{Moveentry/4|0227|Skarmory|type=Steel|type2=Flying|1|Flying|Flying|✔||✔|✔}}
+{{Moveentry/4|0315|Roselia|type=Grass|type2=Poison|2|Fairy|Grass|✔|✔||✔}}
+{{Moveentry/4|0331|Cacnea|type=Grass|2|Grass|Human-Like|||✔}}
+{{Moveentry/4|0332|Cacturne|type=Grass|type2=Dark|2|Grass|Human-Like|||✔}}
+{{Moveentry/4|0340|Whiscash|type=Water|type2=Ground|1|Water 2|Water 2|−|−|✔}}
+{{Moveentry/4|0361|Snorunt|type=Ice|2|Fairy|Mineral|✔|✔|✔|✔}}
+{{Moveentry/4|0362|Glalie|type=Ice|2|Fairy|Mineral|✔|✔|✔|✔}}
+{{Moveentry/4|0383|Groudon|type=Ground|1|No Eggs Discovered|No Eggs Discovered|−||✔|✔}}
+{{Moveentry/4|0386|formsig=D|Deoxys|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|form=Defense Forme|||✔}}
+{{Moveentry/4|0406|Budew|type=Grass|type2=Poison|1|No Eggs Discovered|No Eggs Discovered|✔|✔||✔}}
+{{Moveentry/4|0407|Roserade|type=Grass|type2=Poison|2|Fairy|Grass|✔|✔||✔}}
+{{Moveentry/4|0416|Vespiquen|type=Bug|type2=Flying|1|Bug|Bug|−|−|✔}}
+{{Moveentry/4|0423|Gastrodon|type=Water|type2=Ground|2|Water 1|Amorphous|form=All forms|−|−|✔}}
+{{Moveentry/4|0438|Bonsly|type=Rock|1|No Eggs Discovered|No Eggs Discovered|−|−|✔}}
+{{Moveentry/4|0444|Gabite|type=Dragon|type2=Ground|2|Monster|Dragon|−|−|−|✔}}
+{{Moveentry/4|0445|Garchomp|type=Dragon|type2=Ground|2|Monster|Dragon|−|−|✔|✔}}
+{{Moveentry/4|0472|Gliscor|type=Ground|type2=Flying|1|Bug|Bug||✔|✔}}
+{{Moveentry/4|0478|Froslass|type=Ice|type2=Ghost|2|Fairy|Mineral|✔|✔|✔|✔}}
+{{Moveentry/4|0543|Venipede|type=Bug|type2=Poison|1|Bug|Bug|✔|||✔}}
+{{Moveentry/4|0544|Whirlipede|type=Bug|type2=Poison|1|Bug|Bug|✔|||✔}}
+{{Moveentry/4|0545|Scolipede|type=Bug|type2=Poison|1|Bug|Bug|✔|||✔}}
+{{Moveentry/4|0556|Maractus|type=Grass|1|Grass|Grass|✔||}}
+{{Moveentry/4|0557|Dwebble|type=Bug|type2=Rock|2|Bug|Mineral|✔||}}
+{{Moveentry/4|0558|Crustle|type=Bug|type2=Rock|2|Bug|Mineral|✔||}}
+{{Moveentry/4|0568|Trubbish|type=Poison|1|Mineral|Mineral|✔|||✔}}
+{{Moveentry/4|0569|Garbodor|type=Poison|1|Mineral|Mineral|✔|||✔}}
+{{Moveentry/4|0597|Ferroseed|type=Grass|type2=Steel|2|Grass|Mineral|✔||}}
+{{Moveentry/4|0598|Ferrothorn|type=Grass|type2=Steel|2|Grass|Mineral|✔||}}
+{{Moveentry/4|0616|Shelmet|type=Bug|1|Bug|Bug|✔||}}
+{{Moveentry/4|0617|Accelgor|type=Bug|1|Bug|Bug|✔||}}
+{{Moveentry/4|0650|Chespin|type=Grass|1|Field|Field|||✔|✔}}
+{{Moveentry/4|0651|Quilladin|type=Grass|1|Field|Field|||✔|✔}}
+{{Moveentry/4|0652|Chesnaught|type=Grass|type2=Fighting|1|Field|Field|||✔|✔}}
+{{Moveentry/4|0656|Froakie|type=Water|1|Water 1|Water 1|||✔|✔}}
+{{Moveentry/4|0657|Frogadier|type=Water|1|Water 1|Water 1|||✔|✔}}
+{{Moveentry/4|0658|Greninja|type=Water|type2=Dark|1|Water 1|Water 1|form=All available forms|||✔|✔}}
+{{Moveentry/4|0659|Bunnelby|type=Normal|1|Field|Field|✔|||✔}}
+{{Moveentry/4|0660|Diggersby|type=Normal|type2=Ground|1|Field|Field|✔|||✔}}
+{{Moveentry/4|0678|Meowstic|type=Psychic|1|Field|Field|form=Male|−||−|✔}}
+{{Moveentry/4|0703|Carbink|type=Rock|type2=Fairy|2|Fairy|Mineral|−||✔|✔}}
+{{Moveentry/4|0707|Klefki|type=Steel|type2=Fairy|1|Mineral|Mineral|✔||✔|✔}}
+{{Moveentry/4|0719|Diancie|type=Rock|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered|−||✔|✔}}
+{{Moveentry/4|0724|formsig=H|Decidueye|type=Grass|type2=Fighting|1|Flying|Flying|form=Hisuian Form||✔|−}}
+{{Moveentry/4|0767|Wimpod|type=Bug|type2=Water|2|Bug|Water 3|✔|||✔}}
+{{Moveentry/4|0768|Golisopod|type=Bug|type2=Water|2|Bug|Water 3|✔|||✔}}
+{{Moveentry/4|0801|Magearna|type=Steel|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered|form=All forms|−||✔|✔}}
+{{Moveentry/4|0804|Naganadel|type=Poison|type2=Dragon|1|No Eggs Discovered|No Eggs Discovered|✔||}}
+{{Moveentry/4|0837|Rolycoly|type=Rock|1|Mineral|Mineral|✔||✔}}
+{{Moveentry/4|0838|Carkol|type=Rock|type2=Fire|1|Mineral|Mineral|✔||✔}}
+{{Moveentry/4|0839|Coalossal|type=Rock|type2=Fire|1|Mineral|Mineral|✔||✔}}
+{{Moveentry/4|0863|Perrserker|type=Steel|1|Field|Field|−||−|✔}}
+{{Moveentry/4|0871|Pincurchin|type=Electric|2|Water 1|Amorphous|✔||✔}}
+{{Moveentry/4|0904|Overqwil|type=Dark|type2=Poison|1|Water 2|Water 2||✔|✔|✔}}
+{{Moveentry/4|0908|Meowscarada|type=Grass|type2=Dark|2|Field|Grass|||✔}}
+{{Moveentry/4|0917|Tarountula|type=Bug|1|Bug|Bug|||✔}}
+{{Moveentry/4|0918|Spidops|type=Bug|1|Bug|Bug|||✔}}
+{{Moveentry/4|0946|Bramblin|type=Grass|type2=Ghost|1|Grass|Grass|||✔}}
+{{Moveentry/4|0947|Brambleghast|type=Grass|type2=Ghost|1|Grass|Grass|||✔}}
+{{Moveentry/4|0948|Toedscool|type=Ground|type2=Grass|1|Grass|Grass|||✔}}
+{{Moveentry/4|0949|Toedscruel|type=Ground|type2=Grass|1|Grass|Grass|||✔}}
+{{Moveentry/4|0968|Orthworm|type=Steel|1|Field|Field|||✔}}
+{{Moveentry/4|0969|Glimmet|type=Rock|type2=Poison|1|Mineral|Mineral|||✔|✔}}
+{{Moveentry/4|0970|Glimmora|type=Rock|type2=Poison|1|Mineral|Mineral|||✔|✔}}
+{{Moveentry/4|0980|Clodsire|type=Poison|type2=Ground|2|Water 1|Field|||✔}}
+{{Moveentry/4|0989|Sandy Shocks|type=Electric|type2=Ground|1|No Eggs Discovered|No Eggs Discovered|||✔}}
+{{Moveentry/4|0995|Iron Thorns|type=Rock|type2=Electric|1|No Eggs Discovered|No Eggs Discovered|||✔}}
+{{Moveentry/4|1003|Ting-Lu|type=Dark|type2=Ground|1|No Eggs Discovered|No Eggs Discovered|||✔}}
+{{Moveentry/4|1017|Ogerpon|type=Grass|1|No Eggs Discovered|No Eggs Discovered|form=All forms|||✔}}
+{{Movefoot|Ground|4}}
+
+===By {{pkmn|breeding}}===
+{{Movehead/Games|Ground|Egg Move|g1=none|g2=none|g7=1|g7g={{gameabbrev7|SMUSUM}}|g8=1|g8g={{gameabbrev8|BDSP}}|g9=1|g9g={{gameabbrev9|SV}}}}
+{{Moveentry/7|0138|Omanyte|type=Rock|type2=Water|2|Water 1|Water 3|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0225|Delibird|type=Ice|type2=Flying|2|Water 1|Field|−|−|−|✔|✔|✔|−}}
+{{Moveentry/7|0315|Roselia|type=Grass|type2=Poison|2|Fairy|Grass|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0361|Snorunt|type=Ice|2|Fairy|Mineral|✔|✔|✔|✔|✔|✔|−|note=Chain breed prior to Generation VI}}
+{{Moveentry/7|0406|Budew|type=Grass|type2=Poison|2|Fairy|Grass||✔|✔|✔|✔|✔}}
+{{Moveentry/7|0543|Venipede|type=Bug|type2=Poison|1|Bug|Bug|||✔|✔|✔}}
+{{Moveentry/7|0556|Maractus|type=Grass|1|Grass|Grass|||✔|✔|✔}}
+{{Moveentry/7|0557|Dwebble|type=Bug|type2=Rock|2|Bug|Mineral|||✔|✔|✔}}
+{{Moveentry/7|0568|Trubbish|type=Poison|1|Mineral|Mineral|||✔|✔|✔|note=Chain breed in Generation V}}
+{{Moveentry/7|0597|Ferroseed|type=Grass|type2=Steel|2|Grass|Mineral|||✔|✔|✔}}
+{{Moveentry/7|0616|Shelmet|type=Bug|1|Bug|Bug|||✔|✔|✔}}
+{{Moveentry/7|0650|Chespin|type=Grass|1|Field|Field||||✔|✔||✔|note=Chain breed}}
+{{Moveentry/7|0656|Froakie|type=Water|1|Water 1|Water 1||||−|−||✔}}
+{{Moveentry/7|0659|Bunnelby|type=Normal|1|Field|Field||||✔|✔|note=Chain breed}}
+{{Moveentry/7|0767|Wimpod|type=Bug|type2=Water|2|Bug|Water 3|||||✔}}
+{{Movefoot|Ground|7}}
+
+===Special move===
+====[[Generation V]]====
+{{Movehead/Special|Ground}}
+{{Moveentry/1|0556|Maractus|type=Grass|1|Grass|Grass|{{pkmn|Dream World}} - {{dwa|Rugged Mountain}}}}
+{{Movefoot|Ground|1}}
+
+====[[Generation VII]]====
+{{Movehead/Special|Ground}}
+{{Moveentry/1|0652|Chesnaught|type=Grass|type2=Fighting|1|Field|Field|{{DL|QR Scanner|Island Scan}} - [[Exeggutor Island]]{{sup/7|USUM}}}}
+{{Movefoot|Ground|1}}
+
+===By {{pkmn2|event}}===
+====[[Generation II]]====
+{{Movehead/Special|Ground}}
+{{Moveentry/1|0225|Delibird|type=Ice|type2=Flying|2|Water 1|Field|[[List of PCNY event Pokémon distributions in Generation II#Spikes Delibird|New York City Pokémon Center]]}}
+{{Movefoot|Ground|1}}
+
+==In other games==
+===[[Pokémon Mystery Dungeon series]]===
+Spikes causes the user to create a [[dungeon tile|Spikes]] trap (Spiked Tile prior to {{pkmn|Super Mystery Dungeon}}) underneath them, as long as it is a land tile that is neither stairs nor [[Kecleon Shop]] carpet. The trap also cannot be laid in hallways and the entrance of a room. Any Pokémon that triggers a Spikes trap will lose 15{{sup/md|RB}} / 20{{sup/md|TDS}} / 30{{sup/md|SMD}} HP. 
+
+{{MDMoveheader|type=ground}}
+{{MDMoveRow|game=RB|pp=22|acc=—%|range=Tile below user|target=Floor}}
+{{MDMoveRow|game=TDS|pp=22|acc=—%|range=Tile below user|target=Floor}}
+{{MDMoveRow|game=BSL|pp=22|acc=—%|range=Tile below user|target=Floor}}
+{{MDMoveRow|game=SMD|pp=17|ppmax=40|acc=—%|range=Tile below user|target=Floor}}
+{{MDMovefoot|type=ground|RB=yes|TDS=yes|BSL=yes|SMD=yes|RTDX=yes}}
+
+==={{g|Rumble Rush}}===
+{{RumbleRushPhysicalAttack|move=Spikes|type=Ground
+|stars=3
+|pow=47.82716
+|charge=0.82
+|range=Circular (ranged)
+|hits=1
+|projectiles=1
+|crit=1.5
+|effect=None}}
+
+===Description===
+{{movedesc|Ground}}
+{{movedescentry|{{gameabbrevmd|RB}}|The user places spikes underfoot. The Spiked Tile inflicts damage on foes that step on it.}}
+{{movedescentry|{{gameabbrevmd|TDS}}|Turns the user's tile into a Spiked Tile trap. A Spiked Tile trap inflicts damage on enemies that step on it.}}
+{{movedescentry|{{gameabbrevmd|BSL}}|{{tt|あしもとに わな『まきびし』を つくる わな『まきびし』を ふんだ てきポケモンは ダメージをうける|Turns the user's tile into a Spiked Tile trap. A Spiked Tile trap inflicts damage on enemies that step on it}}}}
+{{movedescentry|{{gameabbrevmd|GTI}}|[[File:IconKanji2MD.png]]UNUSED}}
+{{movedescentry|{{gameabbrevmd|SMD}}|It turns your tile into a Spikes trap. A Spikes trap damages Pokémon that step on it.}}
+|}
+|}{{left clear}}
+
+==In animation==
+===Pokémon animated series===
+{{moveanime|type=ground|exp=yes|gen=The user lays a trap of spikes at the opposing team's feet. The trap hurts Pokémon that switch into battle.|image1=Brock Forretress Spikes.png|image1p=Forretress|image2=Barry Skarmory Spikes.png|image2p=Skarmory|image3=Brock Pineco Spikes.png|image3p=Pineco|image4=Barry Skarmory Spikes effect.png|image4p=Effect}}
+{{movep|type=ground|ms=204|pkmn=Pineco|method=Pineco spins around and purple spikes come out of its body and hit the opponent.}}
+{{movemid|type=ground|user=Brock's Pineco|startcode=EP176|startname=Ariados, Amigos|notes=Debut}}
+{{movep|type=ground|ms=205|pkmn=Forretress|method=Forretress spins around and glowing white spikes comes out of its body and hit the opponent; or, Forretress fires black spikes at the opponent that surround it. When the opponent gets pricked by them, it hurts them.}}
+{{movemid|type=ground|user=Brock's Forretress|startcode=AG008|startname=A Tail with a Twist}}
+{{movep|type=ground|ms=227|pkmn=Skarmory |method=Skarmory spins its body rapidly and multiple glowing, metallic red spikes come out of its body and fall onto the battlefield. The spikes sink into the ground when they land. When the opponent switches to another Pokémon, small explosions go off under their feet, hurting them.}}
+{{movebtm|type=ground|user=Barry (anime)|user1=Barry's Skarmory|startcode=DP184|startname=Casting a Paul on Barry!}}
+
+==In the manga==
+===Pokémon Adventures===
+{{movemanga|type=ground|exp=yes|gen=The user lays a trap of spikes at the feet of the opposing team.|image1=Janine Forretress Adventures.png|image1p=Janine's Forretress|image2=Carr Forretress Spikes.png|image2p=Carr's Forretress|image3=Pokémon Association Forretress Spikes.png|image3p=Pokémon Association's Forretress}}
+{{movep|type=ground|ms=205|pkmn=Forretress|method=Forretress spins its body rapidly, and multiple pyramid-shaped spikes come out of its body and onto the battlefield. The spikes make the opponent's movements restricted; or, Forretress shoots out spikes from the horns sticking out of its body and onto the battlefield.}}
+{{movemid|type=ground|user=Pokémon Association|user1=The Pokémon Association's Forretress|startcode=PS115|startname=Forretress of Solitude|notes=Debut}}
+{{movemid|type=ground|user=Janine|user1=Janine's Forretress|startcode=PS136|startname=Crossing Crobat}}
+{{movebtmManga|type=ground|user=Carr|user1=Carr's Forretress|startcode=PS288|startname=Breaking the Restraint}}
+
+===Pokémon Try Adventure===
+{{movemanga|type=ground|exp=yes|gen=The user shoots spikes from its body.|image1=Haidoru Forretress Spikes.png|image1p=Forretress}}
+{{movep|type=ground|ms=205|pkmn=Forretress|method=Forretress shoots spikes from its body.}}
+{{movebtmManga|type=ground|user=Haidoru|user1=Haidoru's Forretress|startcode=TA18|notes=Debut}}
+
+==In other generations==
+===Core series games===
+{{Movegen
+|type=Ground
+|genII=Spikes II
+|genIII=Spikes III
+|genIV=Spikes IV
+|genV=Spikes V
+}}
+{{Movegen
+|type=Ground
+|genVI=Spikes VI
+|genVII=Spikes VII
+|genVIII=Spikes VIII
+|LA=Spikes LA
+|LA2=Spikes LA 2
+}}
+{{Movegen
+|type=Ground
+|ZA=Spikes ZA
+}}
+
+===Side series games===
+{{Movegen
+|type=Ground
+|Stad2=Spikes Stad2
+|Colo=Spikes Colo
+|XD=Spikes XD
+|PBR=Spikes PBR
+}}
+===Spin-off series games===
+{{Movegen
+|type=Ground
+|PMDRB=Spikes PMD RB
+|PMDTDS=Spikes PMD TDS
+|PSMD=Spikes PSMD
+}}
+
+==In other languages==
+{{Langtable|color={{ground color}}|bordercolor={{ground color dark}}
+|zh_yue=撒菱 ''{{tt|Saatlìhng|Caltrops}}'' {{tt|*|Games}}
+|zh_cmn=撒菱 ''{{tt|Sālíng|Caltrops}}'' {{tt|*|Games}}<br>滿地星 ''{{tt|Mǎndìxīng|Star-Studded Field}}'' {{tt|*|Later animated series}}{{specify|check tooltip: which episodes/seasons/series?}}<br>捲捲菱 ''{{tt|Juǎnjuǎnlíng|Sweeping Caltrops}}'' {{tt|*|Early animated series}}{{specify|check tooltip: which episodes/seasons/series?}}
+|cs=Ostny
+|nl=Spikes
+|fi=Naulaisku ([[original series|OS]])<br>Piikki-isku ([[Pokémon the Series: Ruby and Sapphire|AG]])
+|fr=Picots
+|de=Stachler
+|el=Καρφιά ''Karfiá''
+|id=Duri<br>Spike
+|it=Punte
+|ko=압정뿌리기 ''{{tt|Apjeong Ppurigi|Set Tacks}}''
+|pl=Kolce<!--{{tt|*|Original series, Diamond and Pearl series onwards}}<br>Atak Ukłucia{{tt|*|Advanced}}-->
+|pt_br=Tachinhas ([[PS136]]–present)<br>Espinhos (early animated series{{specify|which episodes/seasons/series?}}, [[PS115]])
+|pt_eu=Farpas
+|sr=Šiljci
+|es=Púas
+|es_la=<!--Púas (games, [[DP184]]–present)<br>Agujas ([[AG156]])<br>Espinas ([[AG008]])<br>Picos ([[EP176]])-->
+|vi=Rải Đinh
+}}
+{{Spikes}}
+{{Generation VIII TMs}}
+{{Generation IX TMs}}
+{{Project Moves and Abilities notice}}
+
+[[Category:Entry hazard-creating moves]]
+[[Category:Moves usable in Pokémon Sword and Shield]]
+[[Category:Moves in Pokémon Legends: Arceus]]
+[[Category:Moves usable in Pokémon Scarlet and Violet]]
+[[Category:Moves in Pokémon Legends: Z-A]]
+
+[[de:Stachler]]
+[[es:Púas]]
+[[fr:Picots]]
+[[it:Punte]]
+[[ja:まきびし]]
+[[zh:撒菱（招式）]]

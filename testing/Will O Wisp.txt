@@ -1,0 +1,528 @@
+{{MoveInfobox
+|n=261
+|name=Will-O-Wisp
+|jname=おにび
+|jtrans=Will-o'-the-Wisp
+|jtranslit=Onibi
+|gameimage=Will-O-Wisp IX.png
+|gameimage2=Will-O-Wisp IX 2.png
+|gameimagewidth=300
+|type=Fire
+|damagecategory=Status
+|basepp=15
+|maxpp=24
+|power=—
+|accuracy={{tt|85|75 in Generations III-V}}
+|gen=III
+|tm4=yes
+|tm#4=61
+|tm5=yes
+|tm#5=61
+|tm6=yes
+|tm#6=61
+|tm7=yes
+|tm#7=61
+|tmpe=yes
+|tm#pe=11
+|tm8=yes
+|tm#8=38
+|tmbdsp=yes
+|tm#bdsp=61
+|tm9=yes
+|tm#9=107
+|tmza=yes
+|tm#za=057
+|na=no
+|category=Beauty
+|appeal=1
+|jam=4
+|cdesc=Badly startles the Pokémon in front.
+|appealsc=2
+|scdesc=Earn +2 if the Pokémon performs first in the turn.
+|category6=Beautiful
+|appeal6=3
+|jam6=0
+|cdesc6=Makes audience expect little of other contestants.
+|touches=no
+|protect=yes
+|magiccoat=yes
+|snatch=no
+|mirrormove=yes
+|kingsrock=no
+|sound=no
+|target=anyadjacent
+}}
+
+'''Will-O-Wisp''' (Japanese: '''おにび''' ''Will-o'-the-Wisp'') is a non-damaging {{type|Fire}} [[move]] introduced in [[Generation III]].
+
+It is:
+* [[TM61]] from [[Generation IV]] to {{g|Ultra Sun and Ultra Moon}}, and in {{g|Brilliant Diamond and Shining Pearl}}.
+* [[TM11]] in [[Pokémon: Let's Go, Pikachu! and Let's Go, Eevee!]].
+* [[TM38]] in {{g|Sword and Shield}}.
+* [[TM107]] in {{g|Scarlet and Violet}}.
+* [[TM057]] in [[Pokémon Legends: Z-A]].
+
+==Effect==
+===Generation III===
+Will-O-Wisp inflicts a {{status|burn}} on the target. It has no effect on {{type|Fire}} Pokémon and cannot affect targets with {{a|Water Veil}} as their Ability.
+
+Will-O-Wisp can be used as the second move of a [[Contest combination|Pokémon Contest combination]], with the user gaining 1 bonus appeal point if {{m|Sunny Day}} was used in the previous turn.
+
+It has an accuracy of 75%.
+
+===Generations IV and V===
+Will-O-Wisp activates {{a|Flash Fire}}.
+
+===Generation VI onwards===
+Will-O-Wisp's accuracy changed from 75% to 85%.
+
+Will-O-Wisp can also be used as part of a [[Contest combination|Contest Spectacular combination]], causing {{m|Hex}} to give an extra three appeal points if used in the next turn.
+
+If powered up by a [[Firium Z]], the user's {{stat|Attack}} stat rises one stage.
+
+===Generation IX===
+====Pokémon Legends: Z-A====
+{{LegendsZAMove
+|type=Fire
+|damagecategory=Status
+|cooldown=10
+|charge-time=20
+}}
+
+==Description==
+{{movedesc|fire}}
+{{movedescentry|{{gameabbrev3|RSE}}|Inflicts a burn on the foe with intense fire.}}
+{{movedescentry|{{gameabbrev3|FRLG}}|A sinister, bluish white flame is shot at the foe to inflict a burn.}}
+{{movedescentry|{{gameabbrevss|XD}}{{gameabbrevss|Colo}}|Inflicts a burn on the target with intense fire.}}
+{{movedescentry|{{gameabbrev4|DPPtHGSS}}{{gameabbrevss|PBR}}|The user shoots a sinister, bluish white flame at the foe to inflict a burn.}}
+{{movedescentry|{{gameabbrev5|BWB2W2}}<br>{{gameabbrev6|XYORAS}}<br>{{gameabbrev7|SMUSUM}}|The user shoots a sinister, bluish-white flame at the target to inflict a burn.}}
+{{movedescentry|{{gameabbrev7|PE}}<br>{{gameabbrev8|SwShBDSPLA}}<br>{{gameabbrev9|SV}}|The user shoots a sinister flame at the target to inflict a burn.}}
+{{movedescentry|{{gameabbrev9|ZA}}|The user shoots a sinister flame to inflict a burn on targets.}}
+{{movedescentry|{{gameabbrevss|CHP}}|Burns the target.}}
+|}
+|}{{left clear}}
+
+==Learnset==
+===By [[Level|leveling up]]===
+{{Movehead/Games|Fire|g1=none|g2=none|g7=2|g8=2|g9=2}}
+{{Moveentry/10|0037|Vulpix|type=Fire|1|Field|Field|17|14|31{{sup/5|BW}}<br>26{{sup/5|B2W2}}|26{{sup/6|XY}}<br>20{{sup/6|ORAS}}|20|17|24|24|24}}
+{{Moveentry/10|0038|Ninetales|type=Fire|1|Field|Field|−|−|−|−|−|−|1|1|{{tt|Rem.|Can only be learned via Move Reminder}}}}
+{{Moveentry/10|0092|Gastly|type=Ghost|type2=Poison|1|Amorphous|Amorphous|−|−|−|−|−|14|−|−|−|−}}
+{{Moveentry/10|0093|Haunter|type=Ghost|type2=Poison|1|Amorphous|Amorphous|−|−|−|−|−|14|−|−|−|−}}
+{{Moveentry/10|0094|Gengar|type=Ghost|type2=Poison|1|Amorphous|Amorphous|−|−|−|−|−|14|−|−|−|−}}
+{{Moveentry/10|0105|formsig=A|Marowak|type=Fire|type2=Ghost|1|Monster|Monster|form=Alolan Form|||||23|24|36|||−}}
+{{Moveentry/10|0353|Shuppet|type=Ghost|1|Amorphous|Amorphous|32|23|23{{sup/5|BW}}<br>13{{sup/5|B2W2}}|13{{sup/6|XY}}<br>16{{sup/6|ORAS}}|16|||16|16|16}}
+{{Moveentry/10|0354|Banette|type=Ghost|1|Amorphous|Amorphous|32|23|23{{sup/5|BW}}<br>13{{sup/5|B2W2}}|13{{sup/6|XY}}<br>16{{sup/6|ORAS}}|16|||16|16|16}}
+{{Moveentry/10|0355|Duskull|type=Ghost|1|Amorphous|Amorphous|38|33|33|33{{sup/6|XY}}<br>25{{sup/6|ORAS}}|25||24|24|24}}
+{{Moveentry/10|0356|Dusclops|type=Ghost|1|Amorphous|Amorphous|41|33|33|33{{sup/6|XY}}<br>25{{sup/6|ORAS}}|25||24|24|24}}
+{{Moveentry/10|0477|Dusknoir|type=Ghost|1|Amorphous|Amorphous||33|33|33{{sup/6|XY}}<br>25{{sup/6|ORAS}}|25||24|24|24}}
+{{Moveentry/10|0478|Froslass|type=Ice|type2=Ghost|2|Fairy|Mineral||−|−|−|28||47|47|47|45}}
+{{Moveentry/10|0562|Yamask|type=Ghost|2|Mineral|Amorphous|||21|21|21||16|||16}}
+{{Moveentry/10|0563|Cofagrigus|type=Ghost|2|Mineral|Amorphous|||21|21|21||16|||16}}
+{{Moveentry/10|0607|Litwick|type=Ghost|type2=Fire|1|Amorphous|Amorphous|||16|16|16||20||20|20}}
+{{Moveentry/10|0608|Lampent|type=Ghost|type2=Fire|1|Amorphous|Amorphous|||16|16|16||20||20|20}}
+{{Moveentry/10|0609|Chandelure|type=Ghost|type2=Fire|1|Amorphous|Amorphous|||−|−|−||1||1|20}}
+{{Moveentry/10|0653|Fennekin|type=Fire|1|Field|Field||||38|38||||38|38}}
+{{Moveentry/10|0654|Braixen|type=Fire|1|Field|Field||||45|45||||45|38}}
+{{Moveentry/10|0655|Delphox|type=Fire|type2=Psychic|1|Field|Field||||47|51||||51|38}}
+{{Moveentry/10|0708|Phantump|type=Ghost|type2=Grass|2|Grass|Amorphous||||31|31||16||16|16}}
+{{Moveentry/10|0709|Trevenant|type=Ghost|type2=Grass|2|Grass|Amorphous||||31|31||16||16|16}}
+{{Moveentry/10|0806|Blacephalon|type=Fire|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered|||||−||55}}
+{{Moveentry/10|0910|Crocalor|type=Fire|1|Field|Field|||||||||42}}
+{{Moveentry/10|0911|Skeledirge|type=Fire|type2=Ghost|1|Field|Field|||||||||47}}
+{{Moveentry/10|0935|Charcadet|type=Fire|1|Human-Like|Human-Like|||||||||16|16}}
+{{Moveentry/10|0936|Armarouge|type=Fire|type2=Psychic|1|Human-Like|Human-Like|||||||||16|16}}
+{{Moveentry/10|0937|Ceruledge|type=Fire|type2=Ghost|1|Human-Like|Human-Like|||||||||16|16}}
+{{Moveentry/10|1004|Chi-Yu|type=Dark|type2=Fire|1|No Eggs Discovered|No Eggs Discovered|||||||||15}}
+{{Movefoot|Fire|10}}
+
+===By [[TM]]===
+{{Movehead/TMGames|Fire|g1=none|g2=none|g3=none
+|g4tm=61
+|g5tm=61
+|g6tm=61
+|g7=2|g7tm-1=61|g7tm-2=11
+|g8=2|g8tm-1=38|g8g-1={{gameabbrev8|SwSh}}|g8tm-2=61|g8g-2={{gameabbrev8|BDSP}}
+|g9=2|g9tm-1=107|g9tm-2=057}}
+{{Moveentry/9|0004|Charmander|type=Fire|2|Monster|Dragon|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/9|0005|Charmeleon|type=Fire|2|Monster|Dragon|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/9|0006|Charizard|type=Fire|type2=Flying|2|Monster|Dragon|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/9|0037|Vulpix|type=Fire|1|Field|Field|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/9|0038|Ninetales|type=Fire|1|Field|Field|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/9|0058|Growlithe|type=Fire|1|Field|Field|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/9|0058|formsig=H|Growlithe|type=Fire|type2=Rock|1|Field|Field|form=Hisuian Form||||||||✔}}
+{{Moveentry/9|0059|Arcanine|type=Fire|1|Field|Field|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/9|0059|formsig=H|Arcanine|type=Fire|type2=Rock|1|Field|Field|form=Hisuian Form||||||||✔}}
+{{Moveentry/9|0077|Ponyta|type=Fire|1|Field|Field|✔|✔|✔|✔|✔|✔|✔|}}
+{{Moveentry/9|0078|Rapidash|type=Fire|1|Field|Field|✔|✔|✔|✔|✔|✔|✔|}}
+{{Moveentry/9|0092|Gastly|type=Ghost|type2=Poison|1|Amorphous|Amorphous|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/9|0093|Haunter|type=Ghost|type2=Poison|1|Amorphous|Amorphous|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/9|0094|Gengar|type=Ghost|type2=Poison|1|Amorphous|Amorphous|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/9|0105|formsig=A|Marowak|type=Fire|type2=Ghost|1|Monster|Monster|form=Alolan Form||||✔|✔|✔|||✔}}
+{{Moveentry/9|0109|Koffing|type=Poison|1|Amorphous|Amorphous|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/9|0110|Weezing|type=Poison|1|Amorphous|Amorphous|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/9|0110|formsig=G|Weezing|type=Poison|type2=Fairy|1|Amorphous|Amorphous|form=Galarian Form||||||✔||✔}}
+{{Moveentry/9|0126|Magmar|type=Fire|1|Human-Like|Human-Like|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/9|0128|formsig=PB|Tauros|type=Fighting|type2=Fire|1|Field|Field|form=Paldean Form<br>(Blaze Breed)||||||||✔}}
+{{Moveentry/9|0136|Flareon|type=Fire|1|Field|Field|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/9|0146|Moltres|type=Fire|type2=Flying|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/9|0150|Mewtwo|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/9|0151|Mew|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/9|0155|Cyndaquil|type=Fire|1|Field|Field|✔|✔|✔|✔|||✔|✔}}
+{{Moveentry/9|0156|Quilava|type=Fire|1|Field|Field|✔|✔|✔|✔|||✔|✔}}
+{{Moveentry/9|0157|Typhlosion|type=Fire|1|Field|Field|✔|✔|✔|✔|||✔|✔}}
+{{Moveentry/9|0157|formsig=H|Typhlosion|type=Fire|type2=Ghost|1|Field|Field|form=Hisuian Form||||||||✔}}
+{{Moveentry/9|0200|Misdreavus|type=Ghost|1|Amorphous|Amorphous|✔|✔|✔|✔|||✔|✔}}
+{{Moveentry/9|0218|Slugma|type=Fire|1|Amorphous|Amorphous|✔|✔|✔|✔|||✔|✔}}
+{{Moveentry/9|0219|Magcargo|type=Fire|type2=Rock|1|Amorphous|Amorphous|✔|✔|✔|✔|||✔|✔}}
+{{Moveentry/9|0222|formsig=G|Corsola|type=Ghost|2|Water 1|Water 3|form=Galarian Form||||||✔||}}
+{{Moveentry/9|0228|Houndour|type=Dark|type2=Fire|1|Field|Field|✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/9|0229|Houndoom|type=Dark|type2=Fire|1|Field|Field|✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/9|0240|Magby|type=Fire|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔||✔|✔|✔}}
+{{Moveentry/9|0244|Entei|type=Fire|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔||✔|✔|✔}}
+{{Moveentry/9|0250|Ho-Oh|type=Fire|type2=Flying|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔||✔|✔|✔}}
+{{Moveentry/9|0255|Torchic|type=Fire|1|Field|Field|✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/9|0256|Combusken|type=Fire|type2=Fighting|1|Field|Field|✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/9|0257|Blaziken|type=Fire|type2=Fighting|1|Field|Field|✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/9|0275|Shiftry|type=Grass|type2=Dark|2|Field|Grass|−|−|−|−||−|−|✔}}
+{{Moveentry/9|0280|Ralts|type=Psychic|type2=Fairy|2|Human-Like|Amorphous|−|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/9|0281|Kirlia|type=Psychic|type2=Fairy|2|Human-Like|Amorphous|−|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/9|0282|Gardevoir|type=Psychic|type2=Fairy|2|Human-Like|Amorphous|−|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/9|0292|Shedinja|type=Bug|type2=Ghost|1|Mineral|Mineral|✔|✔|✔|✔||✔|✔|}}
+{{Moveentry/9|0302|Sableye|type=Dark|type2=Ghost|1|Human-Like|Human-Like|✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/9|0322|Numel|type=Fire|type2=Ground|1|Field|Field|✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/9|0323|Camerupt|type=Fire|type2=Ground|1|Field|Field|✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/9|0324|Torkoal|type=Fire|1|Field|Field|✔|✔|✔|✔||✔|✔|✔}}
+{{Moveentry/9|0334|Altaria|type=Dragon|type2=Flying|2|Flying|Dragon|−|−|−|−||−|−|✔|✔}}
+{{Moveentry/9|0338|Solrock|type=Rock|type2=Psychic|1|Mineral|Mineral|✔|✔|✔|✔||✔|✔|}}
+{{Moveentry/9|0353|Shuppet|type=Ghost|1|Amorphous|Amorphous|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/9|0354|Banette|type=Ghost|1|Amorphous|Amorphous|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/9|0355|Duskull|type=Ghost|1|Amorphous|Amorphous|✔|✔|✔|✔||✔|✔|✔}}
+{{Moveentry/9|0356|Dusclops|type=Ghost|1|Amorphous|Amorphous|✔|✔|✔|✔||✔|✔|✔}}
+{{Moveentry/9|0359|Absol|type=Dark|1|Field|Field|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/9|0383|Groudon|type=Ground|1|No Eggs Discovered|No Eggs Discovered|−|−|−|−||−|−|✔|✔}}
+{{Moveentry/9|0390|Chimchar|type=Fire|2|Field|Human-Like|✔|✔|✔|✔|||✔|✔}}
+{{Moveentry/9|0391|Monferno|type=Fire|type2=Fighting|2|Field|Human-Like|✔|✔|✔|✔|||✔|✔}}
+{{Moveentry/9|0392|Infernape|type=Fire|type2=Fighting|2|Field|Human-Like|✔|✔|✔|✔|||✔|✔}}
+{{Moveentry/9|0425|Drifloon|type=Ghost|type2=Flying|1|Amorphous|Amorphous|✔|✔|✔|✔||✔|✔|✔}}
+{{Moveentry/9|0426|Drifblim|type=Ghost|type2=Flying|1|Amorphous|Amorphous|✔|✔|✔|✔||✔|✔|✔}}
+{{Moveentry/9|0429|Mismagius|type=Ghost|1|Amorphous|Amorphous|✔|✔|✔|✔|||✔|✔}}
+{{Moveentry/9|0442|Spiritomb|type=Ghost|type2=Dark|1|Amorphous|Amorphous|✔|✔|✔|✔||✔|✔|✔}}
+{{Moveentry/9|0467|Magmortar|type=Fire|1|Human-Like|Human-Like|✔|✔|✔|✔||✔|✔|✔}}
+{{Moveentry/9|0475|Gallade|type=Psychic|type2=Fighting|2|Human-Like|Amorphous|−|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/9|0477|Dusknoir|type=Ghost|1|Amorphous|Amorphous|✔|✔|✔|✔||✔|✔|✔}}
+{{Moveentry/9|0478|Froslass|type=Ice|type2=Ghost|2|Fairy|Mineral|−|−|−|✔||✔|✔|✔|✔}}
+{{Moveentry/9|0479|Rotom|type=Electric|type2=Ghost|1|Amorphous|Amorphous|form=All available forms|✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/9|0485|Heatran|type=Fire|type2=Steel|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/9|0487|Giratina|type=Ghost|type2=Dragon|1|No Eggs Discovered|No Eggs Discovered|form=All available forms|✔|✔|✔|✔||✔|✔|✔}}
+{{Moveentry/9|0491|Darkrai|type=Dark|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/9|0493|Arceus|type=Normal|1|No Eggs Discovered|No Eggs Discovered|form=All available forms|✔|✔|✔|✔|||✔|✔}}
+{{Moveentry/9|0494|Victini|type=Psychic|type2=Fire|1|No Eggs Discovered|No Eggs Discovered||✔|✔|✔||✔||}}
+{{Moveentry/9|0498|Tepig|type=Fire|1|Field|Field||✔|✔|✔||||✔|✔}}
+{{Moveentry/9|0499|Pignite|type=Fire|type2=Fighting|1|Field|Field||✔|✔|✔||||✔|✔}}
+{{Moveentry/9|0500|Emboar|type=Fire|type2=Fighting|1|Field|Field||✔|✔|✔||||✔|✔}}
+{{Moveentry/9|0513|Pansear|type=Fire|1|Field|Field||✔|✔|✔|||||✔}}
+{{Moveentry/9|0514|Simisear|type=Fire|1|Field|Field||✔|✔|✔|||||✔}}
+{{Moveentry/9|0554|Darumaka|type=Fire|1|Field|Field||✔|✔|✔||✔||}}
+{{Moveentry/9|0554|formsig=G|Darumaka|type=Ice|1|Field|Field|form=Galarian Form||||||✔||}}
+{{Moveentry/9|0555|Darmanitan|type=Fire|1|Field|Field||✔|✔|✔||✔||}}
+{{Moveentry/9|0555|formsig=G|Darmanitan|type=Ice|1|Field|Field|form=Galarian Form||||||✔||}}
+{{Moveentry/9|0562|Yamask|type=Ghost|2|Mineral|Amorphous||✔|✔|✔||✔|||✔}}
+{{Moveentry/9|0562|formsig=G|Yamask|type=Ground|type2=Ghost|2|Mineral|Amorphous|form=Galarian Form||||||✔|||✔}}
+{{Moveentry/9|0563|Cofagrigus|type=Ghost|2|Mineral|Amorphous||✔|✔|✔||✔|||✔}}
+{{Moveentry/9|0570|formsig=H|Zorua|type=Normal|type2=Ghost|1|Field|Field|form=Hisuian Form||||||||✔}}
+{{Moveentry/9|0571|formsig=H|Zoroark|type=Normal|type2=Ghost|1|Field|Field|form=Hisuian Form||||||||✔}}
+{{Moveentry/9|0592|Frillish|type=Water|type2=Ghost|1|Amorphous|Amorphous|form=All forms||✔|✔|✔||✔||}}
+{{Moveentry/9|0593|Jellicent|type=Water|type2=Ghost|1|Amorphous|Amorphous|form=All forms||✔|✔|✔||✔||}}
+{{Moveentry/9|0607|Litwick|type=Ghost|type2=Fire|1|Amorphous|Amorphous||✔|✔|✔||✔||✔|✔}}
+{{Moveentry/9|0608|Lampent|type=Ghost|type2=Fire|1|Amorphous|Amorphous||✔|✔|✔||✔||✔|✔}}
+{{Moveentry/9|0609|Chandelure|type=Ghost|type2=Fire|1|Amorphous|Amorphous||✔|✔|✔||✔||✔|✔}}
+{{Moveentry/9|0631|Heatmor|type=Fire|1|Field|Field||✔|✔|✔||✔||}}
+{{Moveentry/9|0636|Larvesta|type=Bug|type2=Fire|1|Bug|Bug||✔|✔|✔||✔||✔}}
+{{Moveentry/9|0637|Volcarona|type=Bug|type2=Fire|1|Bug|Bug||✔|✔|✔||✔||✔}}
+{{Moveentry/9|0643|Reshiram|type=Dragon|type2=Fire|1|No Eggs Discovered|No Eggs Discovered||✔|✔|✔||✔||✔}}
+{{Moveentry/9|0653|Fennekin|type=Fire|1|Field|Field|||✔|✔||||✔|✔}}
+{{Moveentry/9|0654|Braixen|type=Fire|1|Field|Field|||✔|✔||||✔|✔}}
+{{Moveentry/9|0655|Delphox|type=Fire|type2=Psychic|1|Field|Field|||✔|✔||||✔|✔}}
+{{Moveentry/9|0661|Fletchling|type=Normal|type2=Flying|1|Flying|Flying|||−|−||✔||−|✔}}
+{{Moveentry/9|0662|Fletchinder|type=Fire|type2=Flying|1|Flying|Flying|||✔|✔||✔||✔|✔}}
+{{Moveentry/9|0663|Talonflame|type=Fire|type2=Flying|1|Flying|Flying|||✔|✔||✔||✔|✔}}
+{{Moveentry/9|0667|Litleo|type=Fire|type2=Normal|1|Field|Field|||✔|✔||||✔|✔}}
+{{Moveentry/9|0668|Pyroar|type=Fire|type2=Normal|1|Field|Field|form=All forms|||✔|✔||||✔|✔}}
+{{Moveentry/9|0708|Phantump|type=Ghost|type2=Grass|2|Grass|Amorphous|||✔|✔||✔||✔|✔}}
+{{Moveentry/9|0709|Trevenant|type=Ghost|type2=Grass|2|Grass|Amorphous|||✔|✔||✔||✔|✔}}
+{{Moveentry/9|0710|Pumpkaboo|type=Ghost|type2=Grass|1|Amorphous|Amorphous|form=All forms|||✔|✔||✔|||✔}}
+{{Moveentry/9|0711|Gourgeist|type=Ghost|type2=Grass|1|Amorphous|Amorphous|form=All forms|||✔|✔||✔|||✔}}
+{{Moveentry/9|0721|Volcanion|type=Fire|type2=Water|1|No Eggs Discovered|No Eggs Discovered|||✔|✔||✔||✔|✔}}
+{{Moveentry/9|0725|Litten|type=Fire|1|Field|Field||||✔||✔||✔}}
+{{Moveentry/9|0726|Torracat|type=Fire|1|Field|Field||||✔||✔||✔}}
+{{Moveentry/9|0727|Incineroar|type=Fire|type2=Dark|1|Field|Field||||✔||✔||✔}}
+{{Moveentry/9|0757|Salandit|type=Poison|type2=Fire|2|Monster|Dragon||||✔||✔||✔}}
+{{Moveentry/9|0758|Salazzle|type=Poison|type2=Fire|2|Monster|Dragon||||✔||✔||✔}}
+{{Moveentry/9|0776|Turtonator|type=Fire|type2=Dragon|2|Monster|Dragon||||✔||✔||}}
+{{Moveentry/9|0778|Mimikyu|type=Ghost|type2=Fairy|1|Amorphous|Amorphous||||✔||✔||✔|✔}}
+{{Moveentry/9|0792|Lunala|type=Psychic|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered||||✔||✔||✔}}
+{{Moveentry/9|0802|Marshadow|type=Fighting|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered||||✔||✔|||✔}}
+{{Moveentry/9|0806|Blacephalon|type=Fire|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered||||✔{{sup/7|USUM}}||✔||}}
+{{Moveentry/9|0815|Cinderace|type=Fire|2|Field|Human-Like||||||−||✔}}
+{{Moveentry/9|0827|Nickit|type=Dark|1|Field|Field||||||−|||✔}}
+{{Moveentry/9|0828|Thievul|type=Dark|1|Field|Field||||||−|||✔}}
+{{Moveentry/9|0837|Rolycoly|type=Rock|1|Mineral|Mineral||||||✔||✔}}
+{{Moveentry/9|0838|Carkol|type=Rock|type2=Fire|1|Mineral|Mineral||||||✔||✔}}
+{{Moveentry/9|0839|Coalossal|type=Rock|type2=Fire|1|Mineral|Mineral||||||✔||✔}}
+{{Moveentry/9|0851|Centiskorch|type=Fire|type2=Bug|1|Bug|Bug||||||✔||}}
+{{Moveentry/9|0854|Sinistea|type=Ghost|2|Mineral|Amorphous|form=All forms||||||✔||✔}}
+{{Moveentry/9|0855|Polteageist|type=Ghost|2|Mineral|Amorphous|form=All forms||||||✔||✔}}
+{{Moveentry/9|0864|Cursola|type=Ghost|2|Water 1|Water 3||||||✔||}}
+{{Moveentry/9|0867|Runerigus|type=Ground|type2=Ghost|2|Mineral|Amorphous||||||✔|||✔}}
+{{Moveentry/9|0886|Drakloak|type=Dragon|type2=Ghost|2|Amorphous|Dragon||||||✔||✔}}
+{{Moveentry/9|0887|Dragapult|type=Dragon|type2=Ghost|2|Amorphous|Dragon||||||✔||✔}}
+{{Moveentry/9|0897|Spectrier|type=Ghost|1|No Eggs Discovered|No Eggs Discovered||||||✔||✔}}
+{{Moveentry/9|0898|formsig=S|Calyrex|type=Psychic|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered|form=Shadow Rider||||||✔||✔}}
+{{Moveentry/9|0909|Fuecoco|type=Fire|1|Field|Field||||||||✔}}
+{{Moveentry/9|0910|Crocalor|type=Fire|1|Field|Field||||||||✔}}
+{{Moveentry/9|0911|Skeledirge|type=Fire|type2=Ghost|1|Field|Field||||||||✔}}
+{{Moveentry/9|0935|Charcadet|type=Fire|1|Human-Like|Human-Like||||||||✔|✔}}
+{{Moveentry/9|0936|Armarouge|type=Fire|type2=Psychic|1|Human-Like|Human-Like||||||||✔|✔}}
+{{Moveentry/9|0937|Ceruledge|type=Fire|type2=Ghost|1|Human-Like|Human-Like||||||||✔|✔}}
+{{Moveentry/9|0952|Scovillain|type=Grass|type2=Fire|1|Grass|Grass||||||||✔|✔}}
+{{Moveentry/9|0971|Greavard|type=Ghost|1|Field|Field||||||||−|✔}}
+{{Moveentry/9|0972|Houndstone|type=Ghost|1|Field|Field||||||||✔|✔}}
+{{Moveentry/9|0988|Slither Wing|type=Bug|type2=Fighting|1|No Eggs Discovered|No Eggs Discovered||||||||✔}}
+{{Moveentry/9|1004|Chi-Yu|type=Dark|type2=Fire|1|No Eggs Discovered|No Eggs Discovered||||||||✔}}
+{{Movefoot|Fire|9}}
+
+===By {{pkmn|breeding}}===
+{{Movehead/Games|Fire|Egg Move|g1=none|g2=none|g5=none|g6=none|g7=none|g8=none|g9=none}}
+{{Moveentry/2|0092|Gastly|type=Ghost|type2=Poison|1|Amorphous|Amorphous|✔|✔}}
+{{Moveentry/2|0109|Koffing|type=Poison|1|Amorphous|Amorphous|✔|✔}}
+{{Moveentry/2|0228|Houndour|type=Dark|type2=Fire|1|Field|Field|✔|✔}}
+{{Moveentry/2|0280|Ralts|type=Psychic|2|Human-Like|Amorphous|✔|✔}}
+{{Movefoot|Fire|2}}
+
+===Special move===
+====[[Generation III]]====
+{{Movehead/Special|Fire}}
+{{Moveentry/1|0146|Moltres|type=Fire|type2=Flying|1|No Eggs Discovered|No Eggs Discovered|[[Purification|Purified]] [[Shadow Pokémon]]{{sup/ss|XD}}}}
+{{Movefoot|Fire|1}}
+
+===Special move===
+====[[Generation IX]]====
+{{Movehead/Special|Fire}}
+{{Moveentry/1|0778|Mimikyu|type=Ghost|type2=Fairy|1|Amorphous|Amorphous|[[Terastal phenomenon|Wild Tera Pokémon]] - [[North Province (Area Two)]]{{sup/9|SV}}}}
+{{Movefoot|Fire|1}}
+
+==In other games==
+===[[Pokémon Mystery Dungeon series]]===
+Will-O-Wisp leaves the target with a {{DL|Status condition (Mystery Dungeon)|burn}}. This move is affected by {{m|Magic Coat}}.
+
+{{MDMoveheader|type=fire}}
+{{MDMoveRow|game=RB|pp=17|acc=100%|range=Front|target=Enemy|cuts=Yes}}
+{{MDMoveRow|game=TDS|pp=17|acc=100%|range=Front|target=Enemy|cuts=Yes}}
+{{MDMoveRow|game=BSL|pp=17|acc=100%|range=Front|target=Enemy|cuts=Yes}}
+{{MDMoveRow|game=GTI|pp=15|ppmax=50|acc=70%|accmax=98%|range=Front|target=Enemy|cuts=Yes}}
+{{MDMoveRow|game=SMD|pp=15|ppmax=30|acc=70%|accmax=98%|range=Front|target=Enemy|cuts=Yes}}
+{{MDMovefoot|type=fire|RB=yes|TDS=yes|BSL=yes|GTI=yes|SMD=yes|RTDX=yes}}
+
+===[[Super Smash Bros. for Nintendo 3DS and Wii U]]===
+In the Nintendo 3DS version's Smash Run mode, Chandelure appears as an enemy who can use Will-O-Wisp, which consists of three weak purple fireballs that home in on the player.
+
+===[[Pokkén Tournament]]===
+{{p|Chandelure}} also uses Will-O-Wisp in ''Pokkén''. Chandelure sends weak purple flames that either fly forward or remain in place if charged. The flames cannot be nullified by other projectiles, and upon contact, the opponent's Attack is lowered, similar to a {{status|burn}}.
+
+===[[Pokémon Masters EX]]===
+{| class="roundy" style="margin:auto; background:#{{fire color}}; border:3px solid #{{fire color dark}}; text-align:center; width:80%"
+|- style="background: #{{fire color light}}"
+! style="{{roundytl|5px}}" | Name
+! {{color2|000|Damage category|Category}}
+! Move gauge cost
+! MP<br>(uses)
+! Base {{color2|000|power}}
+! Max {{color2|000|power}}
+! {{color2|000|Accuracy}}
+! Target
+! Effect tag
+! Description
+! style="{{roundytr|5px}}" | Playable {{color2|000|Sync pair|sync pair(s)}}
+|- style="background:#fff"
+|style="{{roundybl|5px}}"|Will-O-Wisp
+{{statustable|Status}}
+|2
+|—
+|—
+|—
+|90%
+|An opponent
+|—
+|Leaves the target burned.
+|style="{{roundybr|5px}}"|{{sync|Flannery|Torkoal}}<hr>{{sync|Morty|Banette|Fall 2021}}<hr>{{sync|Lucas|Flareon}}<hr>{{sync|Kiawe|Arcanine}}<hr>{{sync|Leon|Dragapult|Alt.}}<hr>{{sync|Ingo|Chandelure|sygna=y}}<hr>{{sync|Bianca|Chandelure}}<hr>{{sync|Florian|Fuecoco}}<hr>{{sync|Hugh|Pignite|Academy}}<hr>{{sync/player|egg|Magby/Magmar}} <small>(Tech role only)</small>
+|}
+
+==={{g|UNITE}}===
+{{MoveUNITE/Header|move=Will-O-Wisp|type=Fire}}
+{{MoveUNITE|move=Will-O-Wisp|pokemon=Gengar|level=1 or 3|cooldown=5|description=Shoots multiple sinister flames, dealing damage to opposing Pokémon and leaving them burned when it hits.}}
+{{MoveUNITE|move=Will-O-Wisp|pokemon=Delphox|level=1 or 3|cooldown=7|description=Has the user conjure up three sinister flames and launch them toward the designated area. These flames then explode, dealing damage to opposing Pokémon hit by the explosion and decreasing their movement speed for a short time.}}
+{{MoveUNITE|move=Will-O-Wisp|pokemon=Trevenant|level=1 or 3|cooldown=6|description=Shoots sinister flames in the designated direction, dealing damage to any opposing Pokémon hit and leaving them burned for a short time.}}
+{{MoveUNITE|move=Will-O-Wisp|pokemon=Armarouge|level=1 or 3|cooldown=9|description=Has the user shoot a flame in the designated direction, dealing damage and applying a slowing effect to opposing Pokémon if it hits and leaving them burned for a short time. After using this move, the user's next basic attack becomes a boosted attack.}}
+|}</div></div>
+
+===Description===
+{{movedesc|Fire}}
+{{movedescentry|{{gameabbrevmd|RB}}|Inflicts a burn on the target. A burn inflicts damage every few turns.}}
+{{movedescentry|{{gameabbrevmd|TDS}}|Afflicts the targeted enemy with a Burn status condition. A Pokémon with the Burn status takes damage every few turns.}}
+{{movedescentry|{{gameabbrevmd|BSL}}|{{tt|てきポケモンを やけどじょうたいにかえる やけどじょうたいになると いっていターンごとに ダメージをうける|Afflicts the targeted enemy with a Burn status condition. A Pokémon with the Burn status takes damage every few turns}}}}
+{{movedescentry|{{gameabbrevmd|GTI}}|It causes the Burn status condition to an enemy. With the Burn status, it keeps taking damage, and its Attack also goes down slightly.}}
+{{movedescentry|{{gameabbrevmd|SMD}}|It leaves an enemy with a burn.}}
+|}
+|}{{left clear}}
+
+==In animation==
+===Pokémon animated series===
+{{moveanime|type=fire|exp=yes|gen=The user shoots intense, sinister flames at the target.|image1=Roxie Koffing Will-O-Wisp.png|image1p=Koffing|image2=Wylie Delphox Will-O-Wisp.png|image2p=Delphox|image3=Giratina Will-O-Wisp.png|image3p=Origin Forme Giratina|image4=Ash Gengar Will-O-Wisp.png|image4p=Gengar}}
+{{movep|type=fire|ms=356|pkmn=Dusclops|method=A blue fireball appears in between Dusclops's hands and it fires it at the opponent.}}
+{{movemid|type=fire|user=Butler|user1=Butler's Dusclops|startcode=M06|startname=Jirachi: Wish Maker|notes=Debut}}
+{{movemid|type=fire|user=Timmy Grimm|user1=Timmy Grimm's Dusclops|startcode=AG061|startname=Disaster of Disguise}}
+{{movemid|type=fire|user=Dusclops (Pokémon)|user1=A wild Dusclops|startcode=PK15|startname=Pikachu's Ghost Carnival}}
+{{movemid|type=fire|user=Brandon (anime)|user1=Brandon's Dusclops|startcode=AG189|startname=Gathering the Gang of Four!}}
+{{movemid|type=fire|user=Pokémon Coordinator|user1=A Coordinator's Dusclops|startcode=DP061|startname=Team Shocker!}}
+{{movep|type=fire|ms=354|pkmn=Banette|method=Banette raises its arms and balls of blue flames appear around it. Banette then shoots them at the opponent, or Banette opens its mouth and fires blue fireballs from its mouth at the opponent.}}
+{{movemid|type=fire|user=Harley|user1=Harley's Banette|startcode=AG122|startname=Deceit and Assist}}
+{{movemid|type=fire|user=Banette (Pokémon)|user1=A wild Banette|startcode=M19|startname=Volcanion and the Mechanical Marvel}}
+{{movep|type=fire|ms=355|pkmn=Duskull|method=Duskull puts its hands together and a light blue fireball appears in between them. Duskull then fires the fireball at the opponent.}}
+{{movemid|type=fire|user=Duskull (Pokémon)|user1=A wild Duskull|startcode=PK15|startname=Pikachu's Ghost Carnival}}
+{{movep|type=fire|ms=487O|pkmn=Giratina|method=The headplates on Origin Forme Giratina's face opens and it opens its mouth and fires a blue fireball from its mouth at the opponent.}}
+{{movemid|type=fire|user=Giratina (movie)|startcode=M11|startname=Giratina and the Sky Warrior}}
+{{movep|type=fire|ms=487|pkmn=Giratina|method=Giratina opens its mouth and releases a blue fireball  from its mouth at the opponent.}}
+{{movemid|type=fire|user=Giratina (movie)|startcode=M11|startname=Giratina and the Sky Warrior}}
+{{movep|type=fire|ms=477|pkmn=Dusknoir|method=The yellow markings on Dusknoir's body glow yellow and it holds out both of its hands. Two blue fireballs then appear in front of them and Dusknoir fires them at the opponent.}}
+{{movemid|type=fire|user=Dusknoir (Pokémon)|user1=A wild Dusknoir|startcode=DP090|startname=Ghoul Daze!}}
+{{movemid|type=fire|user=Dusknoir (Pokémon)|user1=A wild Dusknoir|startcode=M12|startname=Arceus and the Jewel of Life}}
+{{movep|type=fire|ms=425|pkmn=Drifloon|method=Drifloon's body becomes surrounded by light blue fireballs. Drifloon then launches the fireballs at the opponent.}}
+{{movemid|type=fire|user=Fantina's Drifloon|startcode=DP093|startname=Playing the Leveling Field!}}
+{{movep|type=fire|ms=426|pkmn=Drifblim|method=Drifblim's body becomes surrounded by light blue fireballs, and it launches the fireballs at the opponent.}}
+{{movemid|type=fire|user=Fantina's Drifblim|startcode=DP102|startname=Shield with a Twist!}}
+{{movep|type=fire|ms=562|pkmn=Yamask|method=Yamask forms a pink, light blue and dark blue fireball between its hands and fires it at the opponent. Yamask can also control where the fireball can go.}}
+{{movemid|type=fire|user=Yamask (Pokémon)|user1=A wild Yamask|startcode=BW014|startname=A Night in the Nacrene City Museum!}}
+{{movemid|type=fire|user=James's Yamask|startcode=BW076|startname=A Restoration Confrontation! Part 2}}
+{{movep|type=fire|ms=609|pkmn=Chandelure|method=Chandelure floats up to the opponent and starts spinning its body around. It then shoots multiple light blue fireballs from its body at the opponent; or, Chandelure starts spinning its body around and a light blue fireball forms in front of its body where it was facing before it started to spin. As it spins, the fireball grows bigger, and it launches the light blue fireball at the opponent. As it flies through the air, the fireball becomes surrounded in purple fire.}}
+{{movemid|type=fire|user=Ingo|user1=Ingo's Chandelure|startcode=BW048|startname=Battle For The Underground!}}
+{{movep|type=fire|ms=563|pkmn=Cofagrigus|method=Cofagrigus creates a pink, light blue, and dark blue fireball in its hands and fires it at the opponent.}}
+{{movemid|type=fire|user=Cofagrigus (Pokémon)|user1=A wild Cofagrigus|startcode=BW064|startname=Explorers of the Hero's Ruin!}}
+{{movep|type=fire|ms=109|pkmn=Koffing|method=Koffing creates a ring of pink, light blue, and dark blue fireballs around its body. It then spins rapidly, firing the fireballs at the opponent.}}
+{{movemid|type=fire|user=Roxie|user1=Roxie's Koffing|startcode=BW083|startname=Rocking the Virbank Gym! Part 1}}
+{{movep|type=fire|ms=655|pkmn=Delphox|method=Delphox forms a pink, light blue, and dark blue fireball at the tip of its wand stick. It then swings the wand, firing the fireball at the opponent.}}
+{{movemid|type=fire|user=Wylie|user1=Wylie's Delphox|startcode=XY015|startname=An Appetite for Battle!}}
+{{movep|type=fire|ms=709|pkmn=Trevenant|method=Trevenant forms a pink, light blue, and dark blue fireball in between its hands. It then launches the fireball at the opponent.}}
+{{movemid|type=fire|user=Trevenant (Pokémon)|user1=A wild Trevenant|startcode=XY038|startname=Forging Forest Friendships!}}
+{{movep|type=fire|ms=354M|pkmn=Banette|method=Mega Banette forms three white, light-blue, purple, and dark-purple fireballs, one on each hand and one in front of its mouth. It then launches the fireballs at the opponent. The fireballs will follow the opponent until they hit.}}
+{{movemid|type=fire|user=Banette (Pokémon)|user1=Levi and Cherie's Banette|startcode=M19|startname=Volcanion and the Mechanical Marvel}}
+{{movep|type=fire|ms=094|pkmn=Gengar|method=Gengar's body becomes outlined in orange energy. It then claps its hands together, forming a ring of light purple and pink fireballs with a white core around its body. It then launches the fireballs at the opponent, leaving them burned.}}
+{{movebtm|type=fire|user=Ash's Gengar|startcode=JN114|startname=Friends, Rivals, Lend Me Your Spirit!}}
+
+* In ''[[DP128|A Pyramiding Rage!]]'', [[Paul]] told his {{TP|Paul|Magmar}} to use Will-O-Wisp, but Magmar was unable to execute the move when it was hit with an {{m|Iron Head}} from [[Brandon's legendary giants#Registeel|Brandon's Registeel]] and [[flinch]]ed.
+* In ''[[SM094|A Haunted House for Everyone!]]'', [[Acerola]] mentioned that her {{p|Shuppet}} knows Will-O-Wisp, but it was never seen using it.
+
+==In the manga==
+===Pokémon Adventures===
+{{movemanga|type=fire|exp=yes|gen= The user shoots intense, sinister flames at the target.|image1=Emerald Dusclops Will O Wisp.png|image1p=Dusclops|image2=Flannery Vulpix Will O Wisp Adventures.png|image2p=Vulpix|image3=Essentia Trevenant Will O Wisp Adventures.png|image3p=Trevenant}}
+{{movep|type=fire|ms=037|pkmn=Vulpix|method=Vulpix shoots a blast of fire from its tails at the opponent.}}
+{{movemid|type=fire|user=Flannery|user1=Flannery's Vulpix|startcode=PS245|startname=Bravo, Vibrava|notes=Debut}}
+{{movep|type=fire|ms=356|pkmn=Dusclops|method=Dusclops releases multiple balls of fire from its hands at the opponent. When the fireballs hit it, the opponent becomes burned.}}
+{{movemid|type=fire|user=Emerald's Dusclops|startcode=PS317|startname=Sneaky Like Shedinja}}
+{{movep|type=fire|ms=709|pkmn=Trevenant|method=Trevenant releases fire from its hands onto the opponent, burning them.}}
+{{movebtm|type=fire|user=Emma|user1=Essentia's Trevenant|startcode=PS561|startname=Heracross Transforms}}
+
+==In other generations==
+===Core series games===
+{{movegen
+|type=Fire
+|genIII=Will-O-Wisp III
+|genIV=Will-O-Wisp IV
+|genV=Will-O-Wisp V
+|genVI=Will-O-Wisp VI
+}}
+{{movegen
+|type=Fire
+|SMUSUM=Will-o-Wisp VII
+|SMUSUM2=Will-o-Wisp VII 2
+|LGPE=Will-o-Wisp PE
+|LGPE2=Will-o-Wisp PE 2
+|genVIII=Will-o-Wisp VIII
+|genVIII2=Will-o-Wisp VIII 2
+|ZA=Will-O-Wisp ZA
+}}
+
+===Side series games===
+{{Movegen|
+type=Fire|
+Colo=Will-O-Wisp Colo|
+XD=Will-O-Wisp XD|
+PBR=Will-O-Wisp PBR|
+}}
+
+===Spin-off series games===
+{{Movegen|
+type=Fire|
+PMDRB=Will-O-Wisp PMD RB|
+PMDTDS=Will-O-Wisp PMD TDS|
+PMDGTI=Will-O-Wisp PMD GTI|
+PSMD=Will-O-Wisp PSMD|
+}}
+{{Movegen|
+type=Fire|
+Masters=Will-O-Wisp Masters
+}}
+
+==Trivia==
+* Will-O-Wisp is named after the {{wp|will-o'-the-wisp}}, a ghost light seen over wetlands. Befittingly, several {{type|Ghost}} {{OBP|Pokémon|species}} are able to learn this [[move]].
+* In all handheld games starting from [[Generation IV]] and in [[Pokémon Battle Revolution]], the animation shows the flames being purple, although the description says they are bluish-white.
+* Will-O-Wisp is one of a few moves with its accuracy being different between the core series (up to 85%) and [[Pokémon Masters EX]] (90%).
+* Even though Will-O-Wisp is a [[status move]], its depiction in the {{pkmn|animated series}} prior to ''[[Pokémon Journeys: The Series]]'' was similar to that of a damage-dealing move, even to the point of being recognized in ''[[AG189|Gathering the Gang of Four!]]'' as an equal to a {{AP|Charizard}}'s {{m|Flamethrower}} in terms of power.
+** Furthermore, the first time Will-O-Wisp was seen inflicting a {{status|burn}} on its target was in ''[[JN114|Friends, Rivals, Lend Me Your Spirit!]]'', almost 20 years after its debut in the [[core series]] games.
+* In the [[dub]] versions of ''[[M06|Jirachi: Wish Maker]]'', when [[Butler]] calls for his {{p|Dusclops}} to use this attack, he calls it "Capitata" rather than "Will-O-Wisp". In the Japanese version, Butler says "''Onibi''", which is Will-O-Wisp's Japanese name. It is unknown how the name "Capitata" got into the script or final product.
+* In the {{pmin|Latin America}}n dub of ''[[AG189|Gathering the Gang of Four!]]'' and ''[[AG190|Pace - The Final Frontier!]]'', Will-O-Wisp was referred to as ''Fogonazo'', which was the European Spanish name for {{m|Seed Flare}} before [[Generation IX]].
+
+==In other languages==
+{{Langtable|color={{fire color}}|bordercolor={{fire color light}}
+|zh_yue=鬼火 ''{{tt|Gwáifó|Will-O-Wisp}}''
+|zh_cmn=鬼火 ''{{tt|Guǐhuǒ|Will-O-Wisp}}'' {{tt|*|Games (Traditional; Simplified Pre-BDSP), various media}}<br>磷火 ''{{tt|Línhuǒ|Will-O-Wisp}}'' {{tt|*|Games (Simplified BDSP onwards; Unite)}}
+|nl=Dwaallicht
+|fi=Virvatuli
+|fr=Feu Follet
+|de=Irrlicht
+|el=Φαντασμάφως ''Fantasmafos''
+|id=Api Setan<br>Api Hantu ({{Trading Card Game}})
+|it=Fuocofatuo
+|ko=도깨비불 ''{{tt|Dokkaebi Bul|Hobgoblin Fire}}''
+|pl=Ognik
+|pt_br=Fogo Fátuo ({{pkmn|UNITE}}, [[AG061]]–[[AG062]], [[BW115]]–present, TCG{{tt|*|Formatted as ''Fogo-fátuo'' from HeartGold & SoulSilver to Call of Legends and ''Fogo-Fátuo'' in BW Black Star Promos}}, manga)<br>Labareda ([[AG175]]–[[BW096]])<br>Acender Pavio ([[AG122]]–[[AG123]])
+|pt_eu=Fogo Fátuo
+|ro=Flăcăraie
+|sr=Magični plamen
+|es=Fuego Fatuo
+|es_la=<!--Fuego Fatuo (games, [[AG062]]{{tt|*|During the Appeals Round}}, [[DP102]]–present)<br>Luz Fantasma ([[DP093]], [[DP128]])<br>Fogonazo ([[AG189]]–[[AG190]])<br>Ilusión ([[AG175]])<br>Tiro de Fuego ([[AG123]])<br>Ilusión de Fuego ([[AG122]])<br>Golpe de Fuego{{tt|*|Later used for Flame Burst}} ([[AG061]], [[AG062]]{{tt|*|During the Contest Battle}})-->
+|vi=Ma Trơi
+}}
+
+{{Lovely Kiss|Fire}}
+{{Generation IV TMs}}
+{{Generation V TMs}}
+{{Generation VI TMs}}
+{{Generation VII TMs}}
+{{Generation VIII TMs}}
+{{Generation IX TMs}}
+{{Project Moves and Abilities notice}}
+[[Category:Moves that can inflict a burn]]
+[[Category:Moves that can jam]]
+[[Category:Moves learned by purification]]
+[[Category:Moves in Pokémon: Let's Go, Pikachu! and Let's Go, Eevee!]]
+[[Category:Moves usable in Pokémon Sword and Shield]]
+[[Category:Moves usable in Pokémon Scarlet and Violet]]
+[[Category:Moves in Pokémon Legends: Z-A]]
+
+[[de:Irrlicht]]
+[[es:Fuego Fatuo]]
+[[fr:Feu Follet]]
+[[it:Fuocofatuo]]
+[[ja:おにび]]
+[[zh:磷火（招式）]]

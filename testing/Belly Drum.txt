@@ -1,0 +1,247 @@
+{{MoveInfobox
+|n=187
+|name=Belly Drum
+|jname=はらだいこ
+|jtrans=Belly Drum
+|jtranslit=Haradaiko
+|gameimage=Belly Drum IX.png
+|gameimagewidth=300
+|type=Normal
+|damagecategory=Status
+|basepp=10
+|maxpp=16
+|power=—
+|accuracy=—
+|gen=II
+|category=Cute
+|appeal=1
+|jam=0
+|cdesc=Ups the user's condition. Helps prevent nervousness.
+|appealsc=0
+|scdesc=Earn double the score in the next turn.
+|appeal6=6
+|jam6=0
+|cdesc6=A very appealing move, but after using this move, the user is more easily startled.
+|touches=no
+|protect=no
+|magiccoat=no
+|snatch=yes
+|mirrormove=no
+|kingsrock=no
+|sound=no
+|target=self
+}}
+
+'''Belly Drum''' (Japanese: '''はらだいこ''' ''Belly Drum'') is a non-damaging {{type|Normal}} [[move]] introduced in [[Generation II]].
+
+==Effect==
+Belly Drum deducts half of the user's maximum [[HP]] (rounded down) from its current HP and, in return, it maximizes the user's {{stat|Attack}} stat by raising it to +6 stages, even if the user's temporary Attack bonus stages were below 0 prior to using Belly Drum.
+
+Belly Drum fails if the user's current HP is less than half its maximum, or if the user's Attack is already at +6 (even if the user has {{a|Contrary}}).
+
+If the user has Contrary, its Attack will be lowered to -6 stages (although the message will still say that the user maximized its Attack); even if the user's Attack is already at -6 stages, Belly Drum will deduct HP.
+
+In Generation II handheld games only, if the Pokémon is under 50% HP when using the move, it will still have its Attack raised 2 stages due to a bug.
+
+Belly Drum can be used as the first move of a [[Contest combination|Pokémon Contest combination]], causing {{m|Rest}} to score double the normal appeal if used in the next turn.
+
+If powered up by a [[Normalium Z]] into Z-Belly Drum, the user restores all of its HP before Belly Drum's HP deduction takes effect.
+
+==Description==
+{{movedesc|Normal}}
+{{movedescentry|{{gameabbrevss|Stad2}}|A move that allows the user to consume half of its own HP in order to maximize its <sc>Attack</sc>.}}
+{{movedescentry|{{gameabbrev2|GSC}}|Reduces own HP to maximize <sc>Attack</sc>.}}
+{{movedescentry|{{gameabbrev3|RSE}}{{gameabbrevss|Colo}}{{gameabbrevss|XD}}|Maximizes <sc>Attack</sc> while sacrificing HP.}}
+{{movedescentry|{{gameabbrev3|FRLG}}|The user maximizes its <sc>Attack</sc> stat at the cost of half its full HP.}}
+{{movedescentry|{{gameabbrev4|DPPtHGSS}}{{gameabbrevss|PBR}}<br>{{gameabbrev5|BWB2W2}}<br>{{gameabbrev6|XYORAS}}<br>{{gameabbrev7|SMUSUMPE}}<br>{{gameabbrev8|SwShBDSPLA}}|The user maximizes its Attack stat in exchange for HP equal to half its max HP.}}
+{{movedescentry|{{gameabbrev9|SV}}|The user maximizes its Attack stat but loses HP equal to half its max HP.}}
+{{movedescentry|{{gameabbrevss|Champs}}|The user loses 1/2 of its max HP to boost its Attack stat to its sixth stage. This move fails if the user doesn't have enough remaining HP.}}
+|}
+|}{{left clear}}
+
+==Learnset==
+===By [[Level|leveling up]]===
+{{Movehead/Games|Normal|g1=none|g7=1|g7g={{gameabbrev7|SMUSUM}}|g8=2|g9=1|g9g={{gameabbrev9|SV}}}}
+{{Moveentry/9|0060|Poliwag|type=Water|1|Water 1|Water 1|37|37|31|31|31|31|48|48|48}}
+{{Moveentry/9|0061|Poliwhirl|type=Water|1|Water 1|Water 1|43|43|37|37|37|37|56|56|56}}
+{{Moveentry/9|0062|Poliwrath|type=Water|type2=Fighting|1|Water 1|Water 1|−|−|−|−|−|−|1|1|{{tt|Rem.|Can only be learned via Move Reminder}}}}
+{{Moveentry/9|0108|Lickitung|type=Normal|1|Monster|Monster|−|−|−|−|−|−|60|60}}
+{{Moveentry/9|0143|Snorlax|type=Normal|1|Monster|Monster|22|15{{sup/3|RSE}}<br>13{{sup/3|FRLG}}|17|17|44|44|48|48|48}}
+{{Moveentry/9|0186|Politoed|type=Water|1|Water 1|Water 1|−|−|−|−|−|−|1|1|1}}
+{{Moveentry/9|0263|Zigzagoon|type=Normal|1|Field|Field||41|41|45|45{{sup/6|XY}}<br>37{{sup/6|ORAS}}|37|33|33}}
+{{Moveentry/9|0264|Linoone|type=Normal|1|Field|Field||53|53|59|59{{sup/6|XY}}<br>43{{sup/6|ORAS}}|43|43|43}}
+{{Moveentry/9|0296|Makuhita|type=Fighting|1|Human-Like|Human-Like||37|25|25|25|25||25|25}}
+{{Moveentry/9|0297|Hariyama|type=Fighting|1|Human-Like|Human-Like||40|27|27|27{{sup/6|XY}}<br>26{{sup/6|ORAS}}|26||26|26}}
+{{Moveentry/9|0335|Zangoose|type=Normal|1|Field|Field||−|−|−|−|−||−|{{tt|Rem.|Can only be learned via Move Reminder}}}}
+{{Moveentry/9|0446|Munchlax|type=Normal|1|No Eggs Discovered|No Eggs Discovered|||−|−|44|44|48|48|48}}
+{{Moveentry/9|0463|Lickilicky|type=Normal|1|Monster|Monster|||−|−|−|−|60|60}}
+{{Moveentry/9|0554|Darumaka|type=Fire|1|Field|Field||||30|30|30|36}}
+{{Moveentry/9|0554|formsig=G|Darumaka|type=Ice|1|Field|Field|form=Galarian Form|||||||36}}
+{{Moveentry/9|0555|Darmanitan|type=Fire|1|Field|Field||||30|30|30|38}}
+{{Moveentry/9|0555|formsig=G|Darmanitan|type=Ice|1|Field|Field|form=Galarian Form|||||||38}}
+{{Moveentry/9|0652|Chesnaught|type=Grass|type2=Fighting|1|Field|Field|||||1|1|||−}}
+{{Moveentry/9|0784|Kommo-o|type=Dragon|type2=Fighting|1|Dragon|Dragon||||||1|1||{{tt|Rem.|Can only be learned via Move Reminder}}}}
+{{Moveentry/9|0992|Iron Hands|type=Fighting|type2=Electric|1|No Eggs Discovered|No Eggs Discovered|||||||||84}}
+{{Movefoot|Normal|9}}
+
+===By {{pkmn|breeding}}===
+{{Movehead/Games|Normal|Egg Move|g1=none|g7=1|g7g={{gameabbrev7|SMUSUM}}|g8=2|g9=1|g9g={{gameabbrev9|SV}}}}
+{{Moveentry/9|0004|Charmander|type=Fire|2|Monster|Dragon|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/9|0079|Slowpoke|type=Water|type2=Psychic|2|Monster|Water 1|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/9|0079|formsig=G|Slowpoke|type=Psychic|2|Monster|Water 1|form=Galarian Form|||||||✔||✔}}
+{{Moveentry/9|0104|Cubone|type=Ground|1|Monster|Monster|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/9|0108|Lickitung|type=Normal|1|Monster|Monster|✔|✔|✔|✔|✔|✔|−|✔}}
+{{Moveentry/9|0173|Cleffa|type=Fairy|1|Fairy|Fairy|✔|✔|✔|✔|✔|✔|−|✔|−|note=Chain breed}}
+{{Moveentry/9|0183|Marill|type=Water|type2=Fairy|2|Water 1|Fairy|✔|✔|✔|✔|✔|✔|✔|✔|−}}
+{{Moveentry/9|0216|Teddiursa|type=Normal|1|Field|Field|−|−|✔{{sup/4|HGSS}}|✔|✔|✔||✔|✔}}
+{{Moveentry/9|0240|Magby|type=Fire|1|Human-Like|Human-Like|−|−|✔{{sup/4|HGSS}}|✔|✔|✔|−|✔|✔}}
+{{Moveentry/9|0298|Azurill|type=Normal|type2=Fairy|2|Water 1|Fairy|−|−|−|−|−|−|✔|✔|✔}}
+{{Moveentry/9|0335|Zangoose|type=Normal|1|Field|Field||−|−|−|−|✔{{sup/7|USUM}}||✔|−}}
+{{Moveentry/9|0363|Spheal|type=Ice|type2=Water|2|Water 1|Field||−|−|−|✔|✔|✔|✔}}
+{{Moveentry/9|0650|Chespin|type=Grass|1|Field|Field|||||✔|✔|||✔}}
+{{Moveentry/9|0684|Swirlix|type=Fairy|1|Fairy|Fairy|||||✔|✔|−|note=Chain breed}}
+{{Moveentry/9|0819|Skwovet|type=Normal|1|Field|Field|||||||✔||✔}}
+{{Moveentry/9|0875|Eiscue|type=Ice|2|Water 1|Field|||||||✔||✔}}
+{{Moveentry/9|0974|Cetoddle|type=Ice|1|Field|Field|||||||||✔}}
+{{Movefoot|Normal|9}}
+
+===Special move===
+====[[Generation IV]]====
+{{Movehead/Special|Normal}}
+{{Moveentry/1|0060|Poliwag|type=Water|1|Water 1|Water 1|[[Pokéwalker]] - {{pw|Blue Lake}}}}
+{{Movefoot|Normal|1}}
+
+====[[Generation VII]]====
+{{Movehead/Special|Normal}}
+{{Moveentry/1|0363|Spheal|type=Ice|type2=Water|2|Water 1|Field|{{DL|QR Scanner|Island Scan}} - {{rt|7|Alola}}{{sup/7|USUM}}}}
+{{Movefoot|Normal|1}}
+
+===By {{pkmn2|event}}===
+====[[Generation II]]====
+{{Movehead/Special|Normal}}
+{{Moveentry/1|0194|Wooper|type=Water|type2=Ground|2|Water 1|Field|{{DL|List of Japanese event Pokémon distributions in Generation II|Wooper|Pokémon Center Mystery Egg #1}}<br>[[List of PCNY event Pokémon distributions in Generation II#Belly Drum Wooper|New York City Pokémon Center]]}}
+{{Movefoot|Normal|1}}
+
+====[[Generation III]]====
+{{Movehead/Special|Normal}}
+{{Moveentry/1|0096|Drowzee|type=Psychic|1|Human-Like|Human-Like|[[List of PCNY event Pokémon distributions in Generation III#Drowzee|Wish Egg]]}}
+{{Movefoot|Normal|1}}
+
+==In other games==
+===[[Pokémon Mystery Dungeon series]]===
+Belly Drum maximizes the user's Attack. In the [[Pokémon Mystery Dungeon: Red Rescue Team and Blue Rescue Team|Rescue Team]], [[Pokémon Mystery Dungeon: Explorers of Time and Explorers of Darkness|Explorers]] and [[Pokémon Mystery Dungeon (WiiWare)|Adventure Squad]] series, the move cuts the user's [[Stat (Mystery Dungeon)|Belly]] to 1, and will have no effect with a Belly of 1 or less. From {{pkmn|Super Mystery Dungeon}}, it instead reduces the user's Belly by 50. If it is used when the user's Belly is 50 or less, it fails.
+
+{{MDMoveheader|type=normal}}
+{{MDMoveRow|game=RB|pp=10|acc=100%|range=User|target=User}}
+{{MDMoveRow|game=TDS|pp=10|acc=—%|range=User|target=User}}
+{{MDMoveRow|game=BSL|pp=10|acc=—%|range=User|target=User}}
+{{MDMoveRow|game=SMD|pp=10|ppmax=30|acc=—%|range=User|target=User}}
+{{MDMovefoot|type=normal|RB=yes|TDS=yes|BSL=yes|SMD=yes|RTDX=yes}}
+
+===Description===
+{{movedesc|Normal}}
+{{movedescentry|{{gameabbrevmd|RB}}|Boosts the user's Attack to maximum, but empties its Belly to just one. It has no effect if the Belly is one or less.}}
+{{movedescentry|{{gameabbrevmd|TDS}}|Boosts the user's Attack to its maximum value, but it empties the user's Belly to just 1. It has no effect if the Belly is 1 or less.}}
+{{movedescentry|{{gameabbrevmd|BSL}}|{{tt|じぶんの こうげきの だんかいが さいだいまで あがる しかし じぶんの おなかがへって １になってしまう おなかが １いかのときは こうかがない|Boosts the user's Attack to its maximum value, but it empties the user's Belly to just 1. It has no effect if the Belly is 1 or less}}}}
+{{movedescentry|{{gameabbrevmd|GTI}}|[[File:IconKanji2MD.png]]UNUSED}}
+{{movedescentry|{{gameabbrevmd|SMD}}|It makes your Belly emptier, but it boosts your Attack to the max! The state returns to normal when you go to the next floor or step on a Wonder Tile.}}
+|}
+|}{{left clear}}
+
+==={{g|UNITE}}===
+In Pokémon UNITE, [[Azumarill]]'s Unite Move, [[Azumarill (UNITE)#Unite Move|Belly Bash]], is similar to Belly Drum.
+
+==In animation==
+===Pokémon animated series===
+{{moveanime|type=normal|exp=yes|gen=The user strikes its belly to maximize its attack power but loses stamina equal to half of its maximum stamina.|image1=Poliwag Belly Drum.png|image1p=Poliwag|image2=Hala Hariyama Belly Drum.png|image2p=Hariyama}}
+{{movep|type=normal|ms=060|pkmn=Poliwag|method=Poliwag waves its body back and forth and taps its stomach with its tail three times. Its body then becomes outlined in red, raising its attack power, but cutting its stamina.}}
+{{movemid|type=normal|user=Max|user1=A Poliwag Max borrowed from the Pokémon Trainer's School|startcode=AG015|startname=Gonna Rule the School!|notes=Debut}}
+{{movep|type=normal|ms=297|pkmn=Hariyama|method=Hariyama repeatedly hits its stomach with its hands, creating vibrations with each hit and maximizing its attack power in exchange for half of its stamina.}}
+{{movebtm|type=normal|user=Hala|user1=Hala's Hariyama|startcode=SM010|startname=Trial and Tribulation!}}
+
+==In the manga==
+===How I Became a Pokémon Card===
+{{movemanga|type=normal|exp=yes|gen=The user repeatedly slaps their stomach with their hands.|image1=Poliwhirl Belly Drum HIBAPC.png|image1p=Poliwhirl}}
+{{movep|type=tcg water|ms=061|pkmn=Poliwhirl|method=Poliwhirl hits its stomach with its hands.}}
+{{movebtmManga|type=tcg water|user=Poliwhirl (Pokémon)|user1=A wild Poliwhirl|startcode=PW29|notes=Debut}}
+
+===Pocket Monsters Platinum: Aim to Be Battle King!!===
+{{movemanga|type=normal|exp=yes|gen=The user strikes its belly to maximize its attack power but loses stamina equal to half of its maximum stamina.|image1=Snorlax Belly Drum PBK.png|image1p=Snorlax}}
+{{movep|type=normal|ms=143|pkmn=Snorlax|method=Snorlax hits its stomach with its hands, sacrificing some of its health to maximize its attack power.}}
+{{movebtmManga|type=normal|user=Pokémon Trainer|user1=A Trainer's Snorlax|startcode=PBK8|notes=Debut}}
+
+===Pokémon Adventures===
+{{movemanga|type=normal|exp=yes|gen=The user repeatedly taps its stomach with its fists, turning its stamina into attack power.|image1=Snor Belly Drum.png|image1p=Snorlax}}
+{{movep|type=normal|ms=143|pkmn=Snorlax|method=Snorlax repeatedly taps its stomach with its fists, transforming its stamina into attack power.}}
+{{movebtmManga|type=normal|user=Snor|user1=Red's Snor|startcode=PS115|startname=Forretress of Solitude|notes=Debut}}
+
+==In other generations==
+===Core series games===
+{{movegen
+|type=Normal
+|genII=Belly Drum II
+|genIII=Belly Drum III
+|genIV=Belly Drum IV
+|genV=Belly Drum V
+}}
+{{movegen
+|type=Normal
+|genVI=Belly Drum VI
+|genVII=Belly Drum VII
+|genVIII=Belly Drum VIII
+}}
+===Side series games===
+{{movegen
+|type=Normal
+|Stad2=Belly Drum Stad2
+|Colo=Belly Drum Colo
+|XD=Belly Drum XD
+|PBR=Belly Drum PBR
+}}
+===Spin-off series games===
+{{movegen
+|type=Normal
+|PMDRB=Belly Drum PMD RB
+|PMDTDS=Belly Drum PMD TDS
+|PSMD=Belly Drum PSMD
+}}
+
+==Trivia==
+* Belly Drum is the only move that is capable of raising a single stat by more than three levels without {{a|Simple}}, not counting {{m|Haze}}, {{m|Psych Up}}, {{m|Power Swap}}, {{m|Guard Swap}},  {{m|Heart Swap}}, and {{m|Spectral Thief}}.
+** While {{m|Shell Smash}} causes a net total of eight stat changes, Belly Drum can cause more stat changes if the user has experienced at least a -3 stat change to its Attack stat, reaching twelve stat changes if the user has a -6 Attack stat change.
+* Due to how both this move and {{p|Darmanitan}}'s {{a|Zen Mode}} Ability work, Belly Drum can force a Standard Mode Darmanitan {{form|Darmanitan|to change its form}} (unless it is at full HP and has an odd maximum HP).
+
+==In other languages==
+{{Langtable|color={{normal color}}|bordercolor={{normal color dark}}
+|zh_yue=腹鼓 ''{{tt|Fūk Gú|Belly Drum}}'' {{tt|*|Games}}<br>肚子打鼓 ''{{tt|Tóuhjí Dágú|Belly Drumming}}'' {{tt|*|Animated series}}<br>肚子大鼓 ''{{tt|Tóuhjí Daaihgú|Belly Drum}}'' {{tt|*|Adventures}}
+|zh_cmn=腹鼓 ''{{tt|Fù Gǔ|Belly Drum}}'' {{tt|*|Games}}<br>肚子鼓 ''{{tt|Dùzi Gǔ|Belly Drum}}'' {{tt|*|Animated series}}<br>肚子大鼓 ''{{tt|Dùzi Dàgǔ|Belly Drum}}'' {{tt|*|Adventures}}<br>肚子敲鼓 ''{{tt|Dùzi Qiāogǔ|Belly Drumming}}''
+|cs=Břišní buben
+|nl=Buikslag
+|fi=Vatsajymy
+|fr=Cognobidon
+|de=Bauchtrommel
+|el=Στομαχόκρουση ''Stomachókrousi''
+|it=Panciamburo
+|ko=배북 ''{{tt|Baebuk|Belly Drum}}''
+|pl=Bęben
+|sr=Čeličenje
+|pt_br=Tambor Máximo ([[SM010]]–present, manga)<br>Tambor de Barriga
+|pt_eu=Tambor de Barriga
+|es=Tambor
+|es_la=<!--Tambor (games, [[SM010]]–present)<br>Lado Fuerte ([[AG015]])-->
+|vi=Bụng Trống
+|ru=Живот-барабан ''Zhivot-baraban''
+}}
+{{Project Moves and Abilities notice}}
+
+[[Category:Moves that can raise the user's Attack]]
+[[Category:Moves that cost HP to use]]
+[[Category:Moves usable in Pokémon Sword and Shield]]
+[[Category:Moves usable in Pokémon Scarlet and Violet]]
+
+[[de:Bauchtrommel]]
+[[es:Tambor]]
+[[fr:Cognobidon]]
+[[it:Panciamburo]]
+[[ja:はらだいこ]]
+[[zh:腹鼓（招式）]]

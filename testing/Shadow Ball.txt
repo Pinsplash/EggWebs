@@ -1,0 +1,1146 @@
+{{MoveInfobox
+|n=247
+|name=Shadow Ball
+|jname=シャドーボール
+|jtrans=Shadow Ball
+|jtranslit=Shadō Bōru
+|gameimage=Shadow Ball IX.png
+|gameimage2=Shadow Ball IX 2.png
+|gameimagewidth=300
+|type=Ghost
+|damagecategory=Special
+|basepp=15
+|maxpp=24
+|power=80
+|accuracy=100
+|gen=II
+|target=anyadjacent
+|category=Clever
+|appeal=3
+|jam=0
+|cdesc=Shifts the judge's attention from others.
+|appealsc=2
+|scdesc=Earn +2 if the Pokémon performs first in the turn.
+|category6=Clever
+|appeal6=4
+|jam6=0
+|cdesc6=Quite an appealing move.
+|touches=no
+|protect=yes
+|magiccoat=no
+|snatch=no
+|mirrormove=yes
+|kingsrock=yes
+|sound=no
+|tm2=yes
+|tm#2=30
+|tm3=yes
+|tm#3=30
+|tm4=yes
+|tm#4=30
+|tm5=yes
+|tm#5=30
+|tm6=yes
+|tm#6=30
+|tm7=yes
+|tm#7=30
+|tmpe=yes
+|tm#pe=43
+|tr8=yes
+|tr#8=33
+|tmbdsp=yes
+|tm#bdsp=30
+|mtla=yes
+|tm9=yes
+|tm#9=114
+|tmza=yes
+|tm#za=074
+|na=no
+}}
+'''Shadow Ball''' (Japanese: '''シャドーボール''' ''Shadow Ball'') is a damage-dealing {{type|Ghost}} [[move]] introduced in [[Generation II]].
+
+It is:
+* [[TM30]] from Generation II to [[Pokémon Ultra Sun and Ultra Moon]], and in [[Pokémon Brilliant Diamond and Shining Pearl]].
+* [[TM43]] in [[Pokémon: Let's Go, Pikachu! and Let's Go, Eevee!]].
+* [[TR33]] in [[Pokémon Sword and Shield]].
+* [[TM114]] in {{g|Scarlet and Violet}}.
+* [[TM074]] in [[Pokémon Legends: Z-A]].
+
+==Effect==
+Shadow Ball deals damage and has a 20% chance of lowering the target's {{stat|Special Defense}} by one stage, even in Generations [[Generation II|II]] and [[Generation III|III]] where it was a [[physical move]].
+
+Pokémon with {{a|Bulletproof}} are unaffected by Shadow Ball.
+
+===Generation VIII===
+====Pokémon Legends: Arceus====
+Shadow Ball's PP has been reduced to 10, and it has a 20% chance of lowering the target's defensive stats.
+
+{{LegendsMove
+|type=Ghost
+|damagecategory=Special
+|basepp=10
+|power=80
+|power-agile=60
+|power-strong=100
+|accuracy=100
+|accuracy-strong=100
+|actionspeed-user=0
+|actionspeed-user-agile=0
+|actionspeed-user-strong=+5
+|actionspeed-target=0
+|actionspeed-target-agile=+3
+|effect=May lower the target's defensive stats
+|param=Chance
+|param-val=20%
+|param-val-agile=20%
+|param-val-strong=40%
+|param2=Turns
+|param2-val=3
+|param2-val-agile=2
+|param2-val-strong=4}}
+
+===Generation IX===
+====Pokémon Legends: Z-A====
+{{LegendsZAMove
+|type=Ghost
+|damagecategory=Special
+|power=80
+|cooldown=8
+|charge-time=10
+|effect=May lower the target's Special Defense.
+|param=Chance
+|param-val=20%
+|param2=Duration
+|param2-val=15s
+|param2-val-plus=18s
+}}
+
+==Description==
+{{movedesc|ghost}}
+{{movedescentry|{{gameabbrevss|Stad2}}|A <sc>Ghost</sc>-type attack. Has a one-in-five chance of reducing the target <sc>Spcl.Def</sc>.}}
+{{movedescentry|{{gameabbrev2|GSC}}|An attack that may lower <sc>Spcl. Def.</sc>}}
+{{movedescentry|{{gameabbrev3|RSE}}|Hurls a black blob that may lower <sc>Sp. Def.</sc> <small>(move)</small><br>Hurls a dark lump at the foe. It may lower <sc>Sp. Def</sc>. <small>(TM)</small>}}
+{{movedescentry|{{gameabbrev3|FRLG}}|A shadowy blob is hurled at the foe. May also lower the foe's <sc>Sp. Def</sc>.}}
+{{movedescentry|{{gameabbrevss|Colo}}{{gameabbrevss|XD}}|Hurls a black blob that may lower the target's <sc>Sp. Def</sc>. <small>(move)</small><br>Hurls a dark lump at the target. It may lower <sc>Sp. Def</sc>. <small>(TM)</small>}}
+{{movedescentry|{{gameabbrev4|DPPtHGSS}}{{gameabbrevss|PBR}}|The user hurls a shadowy blob at the foe. It may also lower the foe's Sp. Def stat.}}
+{{movedescentry|{{gameabbrev5|BWB2W2}}|The user hurls a shadowy blob at the target. It may also lower the target's Sp. Def stat.}}
+{{movedescentry|{{gameabbrev6|XYORAS}}<br>{{gameabbrev7|SMUSUMPE}}<br>{{gameabbrev8|SwShBDSP}}|The user hurls a shadowy blob at the target. This may also lower the target's Sp. Def stat.}}
+{{movedescentry|{{gameabbrev8|LA}}|The user hurls a shadowy blob at the target to deal damage. This may also lower the target’s defensive stats.}}
+{{movedescentry|{{gameabbrev9|SV}}|The user attacks by hurling a shadowy blob at the target. This may also lower the target’s Sp. Def stat.}}
+{{movedescentry|{{gameabbrev9|ZA}}|The user attacks by hurling a shadowy blob. This may also lower targets' Sp. Def stats.}}
+|}
+|}{{left clear}}
+
+==Learnset==
+===By [[Level|leveling up]]===
+{{Movehead/Games|Ghost|g1=none|g2=none|g7=2|g8=3|g9=2}}
+{{Moveentry/11|0092|Gastly|type=Ghost|type2=Poison|1|Amorphous|Amorphous|36{{sup/3|FRLG}}|29|29|29|29|26|40|40|43|40|40|STAB='''}}
+{{Moveentry/11|0093|Haunter|type=Ghost|type2=Poison|1|Amorphous|Amorphous|45{{sup/3|FRLG}}|33|33|33|33|30|48|48|43|48|40|STAB='''}}
+{{Moveentry/11|0094|Gengar|type=Ghost|type2=Poison|1|Amorphous|Amorphous|45{{sup/3|FRLG}}|33|33|33|33|30|48|48|43|48|40|STAB='''}}
+{{Moveentry/11|0157|formsig=H|Typhlosion|type=Fire|type2=Ghost|1|Field|Field|form=Hisuian Form|||||||||43|−|STAB='''}}
+{{Moveentry/11|0200|Misdreavus|type=Ghost|1|Amorphous|Amorphous|−|37|41|41|41|||41|43|41|STAB='''}}
+{{Moveentry/11|0292|Shedinja|type=Bug|type2=Ghost|1|Mineral|Mineral|38|59|59|59{{sup/6|XY}}<br>33{{sup/6|ORAS}}|33||50|50|STAB='''}}
+{{Moveentry/11|0302|Sableye|type=Dark|type2=Ghost|1|Human-Like|Human-Like|41|53|57|57{{sup/6|XY}}<br>39{{sup/6|ORAS}}|39||45|45||45|45|STAB='''}}
+{{Moveentry/11|0353|Shuppet|type=Ghost|1|Amorphous|Amorphous|44|31|35{{sup/5|BW}}<br>30{{sup/5|B2W2}}|30|30|||30||30|30|STAB='''}}
+{{Moveentry/11|0354|Banette|type=Ghost|1|Amorphous|Amorphous|48|31|35{{sup/5|BW}}<br>30{{sup/5|B2W2}}|30|30|||30||30|30|STAB='''}}
+{{Moveentry/11|0355|Duskull|type=Ghost|1|Amorphous|Amorphous|−|−|−|41{{sup/6|ORAS}}|41||40|40|34|40|STAB='''}}
+{{Moveentry/11|0356|Dusclops|type=Ghost|1|Amorphous|Amorphous|−|−|−|45{{sup/6|ORAS}}|45||42|42|34|42|STAB='''}}
+{{Moveentry/11|0425|Drifloon|type=Ghost|type2=Flying|1|Amorphous|Amorphous||38|43{{sup/5|BW}}<br>36{{sup/5|B2W2}}|36|36||20|20|37|20|STAB='''}}
+{{Moveentry/11|0426|Drifblim|type=Ghost|type2=Flying|1|Amorphous|Amorphous||44|51{{sup/5|BW}}<br>40{{sup/5|B2W2}}|40|40||20|20|37|20|STAB='''}}
+{{Moveentry/11|0429|Mismagius|type=Ghost|1|Amorphous|Amorphous||−|−|−|−|||−|43|−|STAB='''}}
+{{Moveentry/11|0442|Spiritomb|type=Ghost|type2=Dark|1|Amorphous|Amorphous||−|−|−|−||45|45|43|45|STAB='''}}
+{{Moveentry/11|0477|Dusknoir|type=Ghost|1|Amorphous|Amorphous||||45{{sup/6|ORAS}}|45||42|42|34|42|STAB='''}}
+{{Moveentry/11|0478|Froslass|type=Ice|type2=Ghost|2|Fairy|Mineral||||42{{sup/6|ORAS}}|42||61|61|25|61|40|STAB='''}}
+{{Moveentry/11|0479|Rotom|type=Electric|type2=Ghost|1|Amorphous|Amorphous|form=All forms||−|−|−|−||−|−|25|−|30|STAB='''}}
+{{Moveentry/11|0487|Giratina|type=Ghost|type2=Dragon|1|No Eggs Discovered|No Eggs Discovered|form=All forms||−|−|−|−||−|−|30|−|STAB='''}}
+{{Moveentry/11|0491|Darkrai|type=Dark|1|No Eggs Discovered|No Eggs Discovered||−|−|−|−|||−|36|−|−}}
+{{Moveentry/11|0562|Yamask|type=Ghost|2|Mineral|Amorphous|||37|37|37||40||||40|STAB='''}}
+{{Moveentry/11|0562|formsig=G|Yamask|type=Ground|type2=Ghost|2|Mineral|Amorphous|form=Galarian Form|||||||40||||40|STAB='''}}
+{{Moveentry/11|0563|Cofagrigus|type=Ghost|2|Mineral|Amorphous|||39|39|39||44||||40|STAB='''}}
+{{Moveentry/11|0570|formsig=H|Zorua|type=Normal|type2=Ghost|1|Field|Field|form=Hisuian Form|||||||||−|36|STAB='''}}
+{{Moveentry/11|0571|formsig=H|Zoroark|type=Normal|type2=Ghost|1|Field|Field|form=Hisuian Form|||||||||40|40|STAB='''}}
+{{Moveentry/11|0592|Frillish|type=Water|type2=Ghost|1|Amorphous|Amorphous|form=All forms|||−|−|−||32|STAB='''}}
+{{Moveentry/11|0593|Jellicent|type=Water|type2=Ghost|1|Amorphous|Amorphous|form=All forms|||−|−|−||32|STAB='''}}
+{{Moveentry/11|0607|Litwick|type=Ghost|type2=Fire|1|Amorphous|Amorphous|||49|49|49||36|||36|32|STAB='''}}
+{{Moveentry/11|0608|Lampent|type=Ghost|type2=Fire|1|Amorphous|Amorphous|||53|53|53||36|||36|32|STAB='''}}
+{{Moveentry/11|0609|Chandelure|type=Ghost|type2=Fire|1|Amorphous|Amorphous|||−|−|−||1|||1|32|STAB='''}}
+{{Moveentry/11|0622|Golett|type=Ground|type2=Ghost|1|Mineral|Mineral|||−|−|−||36|||36|36|STAB='''}}
+{{Moveentry/11|0623|Golurk|type=Ground|type2=Ghost|1|Mineral|Mineral|||−|−|−||36|||36|36|STAB='''}}
+{{Moveentry/11|0655|Delphox|type=Fire|type2=Psychic|1|Field|Field||||1|1|||||1|{{tt|Rem.|Can only be learned via Move Reminder}}}}
+{{Moveentry/11|0678|formsig=F|Meowstic|type=Psychic|1|Field|Field|form=Female||||31|31||49|||49|40}}
+{{Moveentry/11|0710|Pumpkaboo|type=Ghost|type2=Grass|1|Amorphous|Amorphous|form=All forms||||36|36||36||||36|STAB='''}}
+{{Moveentry/11|0711|Gourgeist|type=Ghost|type2=Grass|1|Amorphous|Amorphous|form=All forms||||36, 70|36||36||||36|STAB='''}}
+{{Moveentry/11|0720|Hoopa|type=Psychic|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered|form=Confined||||68{{sup/6|XY}}<br>55{{sup/6|ORAS}}|55|||||55|42|STAB='''}}
+{{Moveentry/11|0720|formsig=U|Hoopa|type=Psychic|type2=Dark|1|No Eggs Discovered|No Eggs Discovered|form=Unbound||||−|−|||||−|42|STAB=''}}
+{{Moveentry/11|0769|Sandygast|type=Ghost|type2=Ground|1|Amorphous|Amorphous|||||41||45|||45|41|STAB='''}}
+{{Moveentry/11|0770|Palossand|type=Ghost|type2=Ground|1|Amorphous|Amorphous|||||41||47|||47|41|STAB='''}}
+{{Moveentry/11|0781|Dhelmise|type=Ghost|type2=Grass|1|Mineral|Mineral|||||36||44|STAB='''}}
+{{Moveentry/11|0792|Lunala|type=Psychic|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered|||||23||28|||28|STAB='''}}
+{{Moveentry/11|0806|Blacephalon|type=Fire|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered|||||41{{sup/7|USUM}}||45|STAB='''}}
+{{Moveentry/11|0854|Sinistea|type=Ghost|2|Mineral|Amorphous|form=All forms|||||||48|||48|STAB='''}}
+{{Moveentry/11|0855|Polteageist|type=Ghost|2|Mineral|Amorphous|form=All forms|||||||48|||48|STAB='''}}
+{{Moveentry/11|0867|Runerigus|type=Ground|type2=Ghost|2|Mineral|Amorphous|||||||44||||40|STAB='''}}
+{{Moveentry/11|0897|Spectrier|type=Ghost|1|No Eggs Discovered|No Eggs Discovered|||||||36|||36|STAB='''}}
+{{Moveentry/11|0898|formsig=S|Calyrex|type=Psychic|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered|form=Shadow Rider|||||||1|||1|STAB='''}}
+{{Moveentry/11|0902|Basculegion|type=Water|type2=Ghost|1|Water 2|Water 2|form=All forms|||||||||25|1|STAB='''}}
+{{Moveentry/11|0911|Skeledirge|type=Fire|type2=Ghost|1|Field|Field||||||||||38|STAB='''}}
+{{Moveentry/11|0987|Flutter Mane|type=Ghost|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered||||||||||42|STAB='''}}
+{{Moveentry/11|1000|Gholdengo|type=Steel|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered||||||||||35|33|STAB='''}}
+{{Moveentry/11|1012|Poltchageist|type=Grass|type2=Ghost|2|Mineral|Amorphous|form=All forms||||||||||48|STAB='''}}
+{{Moveentry/11|1013|Sinistcha|type=Grass|type2=Ghost|2|Mineral|Amorphous|form=All forms||||||||||48|STAB='''}}
+{{Moveentry/11|1025|Pecharunt|type=Poison|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered||||||||||40|STAB='''}}
+{{Movefoot|Ghost|11}}
+
+===By [[TM]]/[[TR]]/[[Move Tutor]]===
+{{Movehead/TMGames|Ghost|g1=none
+|g2tm=30
+|g3tm=30
+|g4tm=30
+|g5tm=30
+|g6tm=30
+|g7=2|g7tm-1=30|g7tm-2=43
+|g8=3|g8tm-1=33|tmhm8-1=TR|g8tm-2=30|g8tm-3=tutor
+|g9=2|g9tm-1=114|g9tm-2=074}}
+{{Moveentry/12|0012|Butterfree|type=Bug|type2=Flying|1|Bug|Bug|−|✔|✔|✔|✔|✔|✔|✔|✔||}}
+{{Moveentry/12|0019|Rattata|type=Normal|1|Field|Field|✔|✔|✔|✔|✔|✔|✔||✔||}}
+{{Moveentry/12|0019|formsig=A|Rattata|type=Dark|type2=Normal|1|Field|Field|form=Alolan Form||||||✔|✔||||}}
+{{Moveentry/12|0020|Raticate|type=Normal|1|Field|Field|✔|✔|✔|✔|✔|✔|✔||✔||}}
+{{Moveentry/12|0020|formsig=A|Raticate|type=Dark|type2=Normal|1|Field|Field|form=Alolan Form||||||✔|✔||||}}
+{{Moveentry/12|0031|Nidoqueen|type=Poison|type2=Ground|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔|✔|✔|✔||}}
+{{Moveentry/12|0034|Nidoking|type=Poison|type2=Ground|2|Monster|Field|✔|✔|✔|✔|✔|✔|✔|✔|✔||}}
+{{Moveentry/12|0035|Clefairy|type=Fairy|1|Fairy|Fairy|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/12|0036|Clefable|type=Fairy|1|Fairy|Fairy|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/12|0038|Ninetales|type=Fire|1|Field|Field|−|−|−|−|−|−|−|✔|✔|✔|✔}}
+{{Moveentry/12|0039|Jigglypuff|type=Normal|type2=Fairy|1|Fairy|Fairy|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/12|0040|Wigglytuff|type=Normal|type2=Fairy|1|Fairy|Fairy|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/12|0041|Zubat|type=Poison|type2=Flying|1|Flying|Flying|−|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔}}
+{{Moveentry/12|0042|Golbat|type=Poison|type2=Flying|1|Flying|Flying|−|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔}}
+{{Moveentry/12|0052|Meowth|type=Normal|1|Field|Field|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/12|0052|formsig=A|Meowth|type=Dark|1|Field|Field|form=Alolan Form||||||✔|✔|✔|||✔|✔}}
+{{Moveentry/12|0052|formsig=G|Meowth|type=Steel|1|Field|Field|form=Galarian Form||||||||✔|||✔|✔}}
+{{Moveentry/12|0053|Persian|type=Normal|1|Field|Field|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/12|0053|formsig=A|Persian|type=Dark|1|Field|Field|form=Alolan Form||||||✔|✔|✔|||✔|✔}}
+{{Moveentry/12|0063|Abra|type=Psychic|1|Human-Like|Human-Like|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔}}
+{{Moveentry/12|0064|Kadabra|type=Psychic|1|Human-Like|Human-Like|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔}}
+{{Moveentry/12|0065|Alakazam|type=Psychic|1|Human-Like|Human-Like|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔}}
+{{Moveentry/12|0079|Slowpoke|type=Water|type2=Psychic|2|Monster|Water 1|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/12|0079|formsig=G|Slowpoke|type=Psychic|2|Monster|Water 1|form=Galarian Form||||||||✔|||✔|✔}}
+{{Moveentry/12|0080|Slowbro|type=Water|type2=Psychic|2|Monster|Water 1|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/12|0080|formsig=G|Slowbro|type=Poison|type2=Psychic|2|Monster|Water 1|form=Galarian Form||||||||✔|||✔|✔}}
+{{Moveentry/12|0088|Grimer|type=Poison|1|Amorphous|Amorphous|−|−|✔|✔|✔|✔|✔||✔||✔}}
+{{Moveentry/12|0088|formsig=A|Grimer|type=Poison|type2=Dark|1|Amorphous|Amorphous|form=Alolan Form||||||✔|✔||||✔}}
+{{Moveentry/12|0089|Muk|type=Poison|1|Amorphous|Amorphous|−|−|✔|✔|✔|✔|✔||✔||✔}}
+{{Moveentry/12|0089|formsig=A|Muk|type=Poison|type2=Dark|1|Amorphous|Amorphous|form=Alolan Form||||||✔|✔||||✔}}
+{{Moveentry/12|0092|Gastly|type=Ghost|type2=Poison|1|Amorphous|Amorphous|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/12|0093|Haunter|type=Ghost|type2=Poison|1|Amorphous|Amorphous|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/12|0094|Gengar|type=Ghost|type2=Poison|1|Amorphous|Amorphous|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/12|0096|Drowzee|type=Psychic|1|Human-Like|Human-Like|✔|✔|✔|✔|✔|✔|✔||✔||✔}}
+{{Moveentry/12|0097|Hypno|type=Psychic|1|Human-Like|Human-Like|✔|✔|✔|✔|✔|✔|✔||✔||✔}}
+{{Moveentry/12|0105|formsig=A|Marowak|type=Fire|type2=Ghost|1|Monster|Monster|form=Alolan Form||||||✔|✔|✔||||✔|STAB='''}}
+{{Moveentry/12|0108|Lickitung|type=Normal|1|Monster|Monster|✔|✔|✔|✔|✔|✔|✔|✔|✔|−|}}
+{{Moveentry/12|0109|Koffing|type=Poison|1|Amorphous|Amorphous|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔}}
+{{Moveentry/12|0110|Weezing|type=Poison|1|Amorphous|Amorphous|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔}}
+{{Moveentry/12|0110|formsig=G|Weezing|type=Poison|type2=Fairy|1|Amorphous|Amorphous|form=Galarian Form||||||||✔|||✔}}
+{{Moveentry/12|0113|Chansey|type=Normal|1|Fairy|Fairy|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/12|0115|Kangaskhan|type=Normal|1|Monster|Monster|✔|✔|✔|✔|✔|✔|✔|✔|✔|||✔}}
+{{Moveentry/12|0122|Mr. Mime|type=Psychic|type2=Fairy|1|Human-Like|Human-Like|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔}}
+{{Moveentry/12|0122|formsig=G|Mr. Mime|type=Ice|type2=Psychic|1|Human-Like|Human-Like|form=Galarian Form||||||||✔||||✔}}
+{{Moveentry/12|0124|Jynx|type=Ice|type2=Psychic|1|Human-Like|Human-Like|✔|✔|✔|✔|✔|✔|✔|✔|✔||}}
+{{Moveentry/12|0128|Tauros|type=Normal|1|Field|Field|−|−|−|−|−|−|−|−|−||✔}}
+{{Moveentry/12|0133|Eevee|type=Normal|1|Field|Field|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/12|0134|Vaporeon|type=Water|1|Field|Field|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/12|0135|Jolteon|type=Electric|1|Field|Field|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/12|0136|Flareon|type=Fire|1|Field|Field|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/12|0137|Porygon|type=Normal|1|Mineral|Mineral|−|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/12|0143|Snorlax|type=Normal|1|Monster|Monster|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/12|0144|formsig=G|Articuno|type=Psychic|type2=Flying|1|No Eggs Discovered|No Eggs Discovered|form=Galarian Form||||||||✔|||✔}}
+{{Moveentry/12|0146|formsig=G|Moltres|type=Dark|type2=Flying|1|No Eggs Discovered|No Eggs Discovered|form=Galarian Form||||||||✔|||✔}}
+{{Moveentry/12|0150|Mewtwo|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/12|0151|Mew|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔}}
+{{Moveentry/12|0157|Typhlosion|type=Fire|1|Field|Field|−|−|−|−|−|−|||−||✔}}
+{{Moveentry/12|0157|formsig=H|Typhlosion|type=Fire|type2=Ghost|1|Field|Field|form=Hisuian Form||||||||||✔|✔|STAB='''}}
+{{Moveentry/12|0161|Sentret|type=Normal|1|Field|Field|✔|✔|✔|✔|✔|✔|||✔||✔}}
+{{Moveentry/12|0162|Furret|type=Normal|1|Field|Field|✔|✔|✔|✔|✔|✔|||✔||✔}}
+{{Moveentry/12|0163|Hoothoot|type=Normal|type2=Flying|1|Flying|Flying|−|✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/12|0164|Noctowl|type=Normal|type2=Flying|1|Flying|Flying|−|✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/12|0169|Crobat|type=Poison|type2=Flying|1|Flying|Flying|−|✔|✔|✔|✔|✔||✔|✔|✔||✔}}
+{{Moveentry/12|0173|Cleffa|type=Fairy|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔||✔|✔|✔|✔|✔}}
+{{Moveentry/12|0174|Igglybuff|type=Normal|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔||✔|✔||✔|✔}}
+{{Moveentry/12|0175|Togepi|type=Fairy|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔||✔|✔|✔|}}
+{{Moveentry/12|0176|Togetic|type=Fairy|type2=Flying|2|Flying|Fairy|✔|✔|✔|✔|✔|✔||✔|✔|✔|}}
+{{Moveentry/12|0177|Natu|type=Psychic|type2=Flying|1|Flying|Flying|−|✔|✔|✔|✔|✔||✔|✔||}}
+{{Moveentry/12|0178|Xatu|type=Psychic|type2=Flying|1|Flying|Flying|−|✔|✔|✔|✔|✔||✔|✔||}}
+{{Moveentry/12|0190|Aipom|type=Normal|1|Field|Field|✔|✔|✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/12|0193|Yanma|type=Bug|type2=Flying|1|Bug|Bug|−|✔|✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/12|0196|Espeon|type=Psychic|1|Field|Field|✔|✔|✔|✔|✔|✔||✔|✔|✔|✔|✔}}
+{{Moveentry/12|0197|Umbreon|type=Dark|1|Field|Field|✔|✔|✔|✔|✔|✔||✔|✔|✔|✔|✔}}
+{{Moveentry/12|0198|Murkrow|type=Dark|type2=Flying|1|Flying|Flying|✔|✔|✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/12|0199|Slowking|type=Water|type2=Psychic|2|Monster|Water 1|✔|✔|✔|✔|✔|✔||✔|✔|✔|✔|✔}}
+{{Moveentry/12|0199|formsig=G|Slowking|type=Poison|type2=Psychic|2|Monster|Water 1|form=Galarian Form||||||||✔|||✔|✔}}
+{{Moveentry/12|0200|Misdreavus|type=Ghost|1|Amorphous|Amorphous|✔|✔|✔|✔|✔|✔|||✔|✔|✔|STAB='''}}
+{{Moveentry/12|0203|Girafarig|type=Normal|type2=Psychic|1|Field|Field|✔|✔|✔|✔|✔|✔|||✔||✔}}
+{{Moveentry/12|0206|Dunsparce|type=Normal|1|Field|Field|−|✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/12|0209|Snubbull|type=Fairy|2|Field|Fairy|✔|✔|✔|✔|✔|✔|||✔||✔}}
+{{Moveentry/12|0210|Granbull|type=Fairy|2|Field|Fairy|✔|✔|✔|✔|✔|✔|||✔||✔}}
+{{Moveentry/12|0211|Qwilfish|type=Water|type2=Poison|1|Water 2|Water 2|−|✔|✔|✔|✔|✔||✔|✔||✔|✔}}
+{{Moveentry/12|0211|formsig=H|Qwilfish|type=Dark|type2=Poison|1|Water 2|Water 2|form=Hisuian Form||||||||||✔|✔|✔}}
+{{Moveentry/12|0215|Sneasel|type=Dark|type2=Ice|1|Field|Field|✔|✔|✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/12|0215|formsig=H|Sneasel|type=Fighting|type2=Poison|1|Field|Field|form=Hisuian Form||||||||||✔|✔}}
+{{Moveentry/12|0222|Corsola|type=Water|type2=Rock|2|Water 1|Water 3|−|✔|✔|✔|✔|✔||✔|✔||}}
+{{Moveentry/12|0222|formsig=G|Corsola|type=Ghost|2|Water 1|Water 3||||||||✔||||form=Galarian Form|STAB='''}}
+{{Moveentry/12|0228|Houndour|type=Dark|type2=Fire|1|Field|Field|✔|✔|✔|✔|✔|✔|||✔||✔|✔}}
+{{Moveentry/12|0229|Houndoom|type=Dark|type2=Fire|1|Field|Field|✔|✔|✔|✔|✔|✔|||✔||✔|✔}}
+{{Moveentry/12|0233|Porygon2|type=Normal|1|Mineral|Mineral|−|✔|✔|✔|✔|✔||✔|✔|✔|✔|✔}}
+{{Moveentry/12|0234|Stantler|type=Normal|1|Field|Field|−|✔|✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/12|0238|Smoochum|type=Ice|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔||✔|✔||}}
+{{Moveentry/12|0241|Miltank|type=Normal|1|Field|Field|✔|✔|✔|✔|✔|✔||✔|✔||}}
+{{Moveentry/12|0242|Blissey|type=Normal|1|Fairy|Fairy|✔|✔|✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/12|0243|Raikou|type=Electric|1|No Eggs Discovered|No Eggs Discovered|−|−|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/12|0244|Entei|type=Fire|1|No Eggs Discovered|No Eggs Discovered|−|−|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/12|0245|Suicune|type=Water|1|No Eggs Discovered|No Eggs Discovered|−|−|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/12|0249|Lugia|type=Psychic|type2=Flying|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/12|0250|Ho-Oh|type=Fire|type2=Flying|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/12|0251|Celebi|type=Psychic|type2=Grass|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔||✔|✔||}}
+{{Moveentry/12|0261|Poochyena|type=Dark|1|Field|Field||✔|✔|✔|✔|✔|||✔||✔}}
+{{Moveentry/12|0262|Mightyena|type=Dark|1|Field|Field||✔|✔|✔|✔|✔|||✔||✔}}
+{{Moveentry/12|0263|Zigzagoon|type=Normal|1|Field|Field||✔|✔|✔|✔|✔||✔|✔||}}
+{{Moveentry/12|0263|formsig=G|Zigzagoon|type=Dark|type2=Normal|1|Field|Field|form=Galarian Form||||||||✔|||}}
+{{Moveentry/12|0264|Linoone|type=Normal|1|Field|Field||✔|✔|✔|✔|✔||✔|✔||}}
+{{Moveentry/12|0264|formsig=G|Linoone|type=Dark|type2=Normal|1|Field|Field|form=Galarian Form||||||||✔|||}}
+{{Moveentry/12|0267|Beautifly|type=Bug|type2=Flying|1|Bug|Bug||✔|✔|✔|✔|✔|||✔|✔|}}
+{{Moveentry/12|0269|Dustox|type=Bug|type2=Poison|1|Bug|Bug||✔|✔|✔|✔|✔|||✔|✔|}}
+{{Moveentry/12|0273|Seedot|type=Grass|2|Field|Grass||✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/12|0274|Nuzleaf|type=Grass|type2=Dark|2|Field|Grass||✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/12|0275|Shiftry|type=Grass|type2=Dark|2|Field|Grass||✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/12|0280|Ralts|type=Psychic|type2=Fairy|2|Human-Like|Amorphous||✔|✔|✔|✔|✔||✔|✔|✔|✔|✔}}
+{{Moveentry/12|0281|Kirlia|type=Psychic|type2=Fairy|2|Human-Like|Amorphous||✔|✔|✔|✔|✔||✔|✔|✔|✔|✔}}
+{{Moveentry/12|0282|Gardevoir|type=Psychic|type2=Fairy|2|Human-Like|Amorphous||✔|✔|✔|✔|✔||✔|✔|✔|✔|✔}}
+{{Moveentry/12|0283|Surskit|type=Bug|type2=Water|2|Water 1|Bug||✔|✔|✔|✔|✔|||✔||✔}}
+{{Moveentry/12|0284|Masquerain|type=Bug|type2=Flying|2|Water 1|Bug||✔|✔|✔|✔|✔|||✔||✔}}
+{{Moveentry/12|0287|Slakoth|type=Normal|1|Field|Field||✔|✔|✔|✔|✔|||✔||✔}}
+{{Moveentry/12|0288|Vigoroth|type=Normal|1|Field|Field||✔|✔|✔|✔|✔|||✔||✔}}
+{{Moveentry/12|0289|Slaking|type=Normal|1|Field|Field||✔|✔|✔|✔|✔|||✔||✔}}
+{{Moveentry/12|0290|Nincada|type=Bug|type2=Ground|1|Bug|Bug||✔|✔|✔|✔|✔||✔|✔|||STAB=''}}
+{{Moveentry/12|0291|Ninjask|type=Bug|type2=Flying|1|Bug|Bug||✔|✔|✔|✔|✔||✔|✔||}}
+{{Moveentry/12|0292|Shedinja|type=Bug|type2=Ghost|1|Mineral|Mineral||✔|✔|✔|✔|✔||✔|✔|||STAB='''}}
+{{Moveentry/12|0293|Whismur|type=Normal|2|Monster|Field||✔|✔|✔|✔|✔||✔|✔||}}
+{{Moveentry/12|0294|Loudred|type=Normal|2|Monster|Field||✔|✔|✔|✔|✔||✔|✔||}}
+{{Moveentry/12|0295|Exploud|type=Normal|2|Monster|Field||✔|✔|✔|✔|✔||✔|✔||}}
+{{Moveentry/12|0300|Skitty|type=Normal|2|Field|Fairy||✔|✔|✔|✔|✔|||✔||}}
+{{Moveentry/12|0301|Delcatty|type=Normal|2|Field|Fairy||✔|✔|✔|✔|✔|||✔||}}
+{{Moveentry/12|0302|Sableye|type=Dark|type2=Ghost|1|Human-Like|Human-Like||✔|✔|✔|✔|✔||✔|✔||✔|✔|STAB='''}}
+{{Moveentry/12|0303|Mawile|type=Steel|type2=Fairy|2|Field|Fairy||−|✔|✔|✔|✔||✔|✔|||✔}}
+{{Moveentry/12|0307|Meditite|type=Fighting|type2=Psychic|1|Human-Like|Human-Like||✔|✔|✔|✔|✔|||✔||✔|✔}}
+{{Moveentry/12|0308|Medicham|type=Fighting|type2=Psychic|1|Human-Like|Human-Like||✔|✔|✔|✔|✔|||✔||✔|✔}}
+{{Moveentry/12|0313|Volbeat|type=Bug|2|Bug|Human-Like||✔|✔|✔|✔|✔|||✔||✔}}
+{{Moveentry/12|0314|Illumise|type=Bug|2|Bug|Human-Like||✔|✔|✔|✔|✔|||✔||✔}}
+{{Moveentry/12|0315|Roselia|type=Grass|type2=Poison|2|Fairy|Grass||✔|✔|✔|✔|✔||✔|✔|✔||✔}}
+{{Moveentry/12|0316|Gulpin|type=Poison|1|Amorphous|Amorphous||✔|✔|✔|✔|✔|||✔||✔|✔}}
+{{Moveentry/12|0317|Swalot|type=Poison|1|Amorphous|Amorphous||✔|✔|✔|✔|✔|||✔||✔|✔}}
+{{Moveentry/12|0325|Spoink|type=Psychic|1|Field|Field||✔|✔|✔|✔|✔|||✔||✔|✔}}
+{{Moveentry/12|0326|Grumpig|type=Psychic|1|Field|Field||✔|✔|✔|✔|✔|||✔||✔|✔}}
+{{Moveentry/12|0327|Spinda|type=Normal|2|Field|Human-Like||✔|✔|✔|✔|✔|||✔||}}
+{{Moveentry/12|0332|Cacturne|type=Grass|type2=Dark|2|Grass|Human-Like||−|−|−|−|−|||−||✔}}
+{{Moveentry/12|0335|Zangoose|type=Normal|1|Field|Field||✔|✔|✔|✔|✔|||✔||✔|✔}}
+{{Moveentry/12|0337|Lunatone|type=Rock|type2=Psychic|1|Mineral|Mineral||✔|✔|✔|✔|✔||✔|✔||}}
+{{Moveentry/12|0338|Solrock|type=Rock|type2=Psychic|1|Mineral|Mineral||✔|✔|✔|✔|✔||✔|✔||}}
+{{Moveentry/12|0343|Baltoy|type=Ground|type2=Psychic|1|Mineral|Mineral||✔|✔|✔|✔|✔||✔|✔||}}
+{{Moveentry/12|0344|Claydol|type=Ground|type2=Psychic|1|Mineral|Mineral||✔|✔|✔|✔|✔||✔|✔||}}
+{{Moveentry/12|0351|Castform|type=Normal|2|Fairy|Amorphous||✔|✔|✔|✔|✔|||✔||}}
+{{Moveentry/12|0352|Kecleon|type=Normal|1|Field|Field||✔|✔|✔|✔|✔|||✔|||✔}}
+{{Moveentry/12|0353|Shuppet|type=Ghost|1|Amorphous|Amorphous||✔|✔|✔|✔|✔|||✔||✔|✔|STAB='''}}
+{{Moveentry/12|0354|Banette|type=Ghost|1|Amorphous|Amorphous||✔|✔|✔|✔|✔|||✔||✔|✔|STAB='''}}
+{{Moveentry/12|0355|Duskull|type=Ghost|1|Amorphous|Amorphous||✔|✔|✔|✔|✔||✔|✔|✔|✔|STAB='''}}
+{{Moveentry/12|0356|Dusclops|type=Ghost|1|Amorphous|Amorphous||✔|✔|✔|✔|✔||✔|✔|✔|✔|STAB='''}}
+{{Moveentry/12|0358|Chimecho|type=Psychic|1|Amorphous|Amorphous||✔|✔|✔|✔|✔|||✔|✔|✔|✔}}
+{{Moveentry/12|0359|Absol|type=Dark|1|Field|Field||✔|✔|✔|✔|✔||✔|✔|||✔|STAB=''}}
+{{Moveentry/12|0361|Snorunt|type=Ice|2|Fairy|Mineral||✔|✔|✔|✔|✔||✔|✔|✔|✔|✔|STAB=''}}
+{{Moveentry/12|0362|Glalie|type=Ice|2|Fairy|Mineral||✔|✔|✔|✔|✔||✔|✔|✔|✔|✔}}
+{{Moveentry/12|0368|Gorebyss|type=Water|1|Water 1|Water 1||✔|✔|✔|✔|✔|||✔||}}
+{{Moveentry/12|0375|Metang|type=Steel|type2=Psychic|1|Mineral|Mineral||✔|✔|✔|✔|✔||✔|✔||✔|✔}}
+{{Moveentry/12|0376|Metagross|type=Steel|type2=Psychic|1|Mineral|Mineral||✔|✔|✔|✔|✔||✔|✔||✔|✔}}
+{{Moveentry/12|0380|Latias|type=Dragon|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered||✔|✔|✔|✔|✔||✔|✔||✔|✔}}
+{{Moveentry/12|0381|Latios|type=Dragon|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered||✔|✔|✔|✔|✔||✔|✔||✔|✔}}
+{{Moveentry/12|0385|Jirachi|type=Steel|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered||✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/12|0386|Deoxys|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|form=All forms||✔|✔|✔|✔|✔|||✔||✔}}
+{{Moveentry/12|0399|Bidoof|type=Normal|2|Water 1|Field|||✔|✔|✔|✔|||✔|✔|}}
+{{Moveentry/12|0400|Bibarel|type=Normal|type2=Water|2|Water 1|Field|||✔|✔|✔|✔|||✔|✔|}}
+{{Moveentry/12|0406|Budew|type=Grass|type2=Poison|1|No Eggs Discovered|No Eggs Discovered|||✔|✔|✔|✔||✔|✔|✔||✔}}
+{{Moveentry/12|0407|Roserade|type=Grass|type2=Poison|2|Fairy|Grass|||✔|✔|✔|✔||✔|✔|✔||✔}}
+{{Moveentry/12|0413|Wormadam|type=Bug|type2=Grass|1|Bug|Bug|form=All forms|||✔|✔|✔|✔|||✔|✔|}}
+{{Moveentry/12|0414|Mothim|type=Bug|type2=Flying|1|Bug|Bug|||✔|✔|✔|✔|||✔|✔|}}
+{{Moveentry/12|0424|Ambipom|type=Normal|1|Field|Field|||✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/12|0425|Drifloon|type=Ghost|type2=Flying|1|Amorphous|Amorphous|||✔|✔|✔|✔||✔|✔|✔|✔|STAB='''}}
+{{Moveentry/12|0426|Drifblim|type=Ghost|type2=Flying|1|Amorphous|Amorphous|||✔|✔|✔|✔||✔|✔|✔|✔|STAB='''}}
+{{Moveentry/12|0427|Buneary|type=Normal|2|Field|Human-Like|||✔|✔|✔|✔||✔|✔|✔||✔}}
+{{Moveentry/12|0428|Lopunny|type=Normal|2|Field|Human-Like|||✔|✔|✔|✔||✔|✔|✔||✔}}
+{{Moveentry/12|0429|Mismagius|type=Ghost|1|Amorphous|Amorphous|||✔|✔|✔|✔|||✔|✔|✔|STAB='''}}
+{{Moveentry/12|0430|Honchkrow|type=Dark|type2=Flying|1|Flying|Flying|||✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/12|0431|Glameow|type=Normal|1|Field|Field|||✔|✔|✔|✔|||✔|✔|}}
+{{Moveentry/12|0432|Purugly|type=Normal|1|Field|Field|||✔|✔|✔|✔|||✔|✔|}}
+{{Moveentry/12|0433|Chingling|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|||✔|✔|✔|✔|||✔|✔|✔|✔}}
+{{Moveentry/12|0434|Stunky|type=Poison|type2=Dark|1|Field|Field|||✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/12|0435|Skuntank|type=Poison|type2=Dark|1|Field|Field|||✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/12|0436|Bronzor|type=Steel|type2=Psychic|1|Mineral|Mineral|||✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/12|0437|Bronzong|type=Steel|type2=Psychic|1|Mineral|Mineral|||✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/12|0439|Mime Jr.|type=Psychic|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered|||✔|✔|✔|✔||✔|✔|✔||✔}}
+{{Moveentry/12|0440|Happiny|type=Normal|1|No Eggs Discovered|No Eggs Discovered|||✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/12|0442|Spiritomb|type=Ghost|type2=Dark|1|Amorphous|Amorphous|||✔|✔|✔|✔||✔|✔|✔|✔|STAB='''}}
+{{Moveentry/12|0446|Munchlax|type=Normal|1|No Eggs Discovered|No Eggs Discovered|||✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/12|0448|Lucario|type=Fighting|type2=Steel|2|Field|Human-Like|||✔|✔|✔|✔||✔|✔|✔|✔|✔}}
+{{Moveentry/12|0451|Skorupi|type=Poison|type2=Bug|2|Bug|Water 3|||✔|✔|✔|✔||✔|✔|✔|}}
+{{Moveentry/12|0452|Drapion|type=Poison|type2=Dark|2|Bug|Water 3|||✔|✔|✔|✔||✔|✔|✔|}}
+{{Moveentry/12|0453|Croagunk|type=Poison|type2=Fighting|1|Human-Like|Human-Like|||✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/12|0454|Toxicroak|type=Poison|type2=Fighting|1|Human-Like|Human-Like|||✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/12|0459|Snover|type=Grass|type2=Ice|2|Monster|Grass|||✔|✔|✔|✔||✔|✔|✔|−|−}}
+{{Moveentry/12|0460|Abomasnow|type=Grass|type2=Ice|2|Monster|Grass|||✔|✔|✔|✔||✔|✔|✔|−|−}}
+{{Moveentry/12|0461|Weavile|type=Dark|type2=Ice|1|Field|Field|||✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/12|0463|Lickilicky|type=Normal|1|Monster|Monster|||✔|✔|✔|✔||✔|✔|✔|}}
+{{Moveentry/12|0468|Togekiss|type=Fairy|type2=Flying|2|Flying|Fairy|||✔|✔|✔|✔||✔|✔|✔|}}
+{{Moveentry/12|0469|Yanmega|type=Bug|type2=Flying|1|Bug|Bug|||✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/12|0470|Leafeon|type=Grass|1|Field|Field|||✔|✔|✔|✔||✔|✔|✔|✔|✔}}
+{{Moveentry/12|0471|Glaceon|type=Ice|1|Field|Field|||✔|✔|✔|✔||✔|✔|✔|✔|✔}}
+{{Moveentry/12|0474|Porygon-Z|type=Normal|1|Mineral|Mineral|||✔|✔|✔|✔||✔|✔|✔|✔|✔}}
+{{Moveentry/12|0475|Gallade|type=Psychic|type2=Fighting|2|Human-Like|Amorphous|||✔|✔|✔|✔||✔|✔|✔|✔|✔}}
+{{Moveentry/12|0477|Dusknoir|type=Ghost|1|Amorphous|Amorphous|||✔|✔|✔|✔||✔|✔|✔|✔|STAB='''}}
+{{Moveentry/12|0478|Froslass|type=Ice|type2=Ghost|2|Fairy|Mineral|||✔|✔|✔|✔||✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/12|0479|Rotom|type=Electric|type2=Ghost|1|Amorphous|Amorphous|form=All available forms|||✔|✔|✔|✔||✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/12|0480|Uxie|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|||✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/12|0481|Mesprit|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|||✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/12|0482|Azelf|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|||✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/12|0487|Giratina|type=Ghost|type2=Dragon|1|No Eggs Discovered|No Eggs Discovered|form=All available forms|||✔|✔|✔|✔||✔|✔|✔|✔|STAB='''}}
+{{Moveentry/12|0488|Cresselia|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|||✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/12|0490|Manaphy|type=Water|2|Water 1|Fairy|||✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/12|0491|Darkrai|type=Dark|1|No Eggs Discovered|No Eggs Discovered|||✔|✔|✔|✔|||✔|✔|✔|✔}}
+{{Moveentry/12|0493|Arceus|type=Normal|1|No Eggs Discovered|No Eggs Discovered|form=All available forms|||✔|✔|✔|✔|||✔|✔|✔|STAB=''}}
+{{Moveentry/12|0494|Victini|type=Psychic|type2=Fire|1|No Eggs Discovered|No Eggs Discovered||||✔|✔|✔||✔|||}}
+{{Moveentry/12|0504|Patrat|type=Normal|1|Field|Field||||✔|✔|✔||||||✔}}
+{{Moveentry/12|0505|Watchog|type=Normal|1|Field|Field||||✔|✔|✔||||||✔}}
+{{Moveentry/12|0506|Lillipup|type=Normal|1|Field|Field||||✔|✔|✔||✔|||}}
+{{Moveentry/12|0507|Herdier|type=Normal|1|Field|Field||||✔|✔|✔||✔|||}}
+{{Moveentry/12|0508|Stoutland|type=Normal|1|Field|Field||||✔|✔|✔||✔|||}}
+{{Moveentry/12|0509|Purrloin|type=Dark|1|Field|Field||||✔|✔|✔||✔||||✔}}
+{{Moveentry/12|0510|Liepard|type=Dark|1|Field|Field||||✔|✔|✔||✔||||✔}}
+{{Moveentry/12|0517|Munna|type=Psychic|1|Field|Field||||✔|✔|✔||✔||||✔}}
+{{Moveentry/12|0518|Musharna|type=Psychic|1|Field|Field||||✔|✔|✔||✔||||✔}}
+{{Moveentry/12|0527|Woobat|type=Psychic|type2=Flying|2|Field|Flying||||✔|✔|✔||✔|||}}
+{{Moveentry/12|0528|Swoobat|type=Psychic|type2=Flying|2|Field|Flying||||✔|✔|✔||✔|||}}
+{{Moveentry/12|0531|Audino|type=Normal|1|Fairy|Fairy||||✔|✔|✔||✔||||✔}}
+{{Moveentry/12|0547|Whimsicott|type=Grass|type2=Fairy|2|Grass|Fairy||||✔|✔|✔||✔|||✔}}
+{{Moveentry/12|0561|Sigilyph|type=Psychic|type2=Flying|1|Flying|Flying||||✔|✔|✔||✔|||}}
+{{Moveentry/12|0562|Yamask|type=Ghost|2|Mineral|Amorphous||||✔|✔|✔||✔||||✔|STAB='''}}
+{{Moveentry/12|0562|formsig=G|Yamask|type=Ground|type2=Ghost|2|Mineral|Amorphous|form=Galarian Form||||||||✔||||✔|STAB='''}}
+{{Moveentry/12|0563|Cofagrigus|type=Ghost|2|Mineral|Amorphous||||✔|✔|✔||✔||||✔|STAB='''}}
+{{Moveentry/12|0570|Zorua|type=Dark|1|Field|Field||||✔|✔|✔||✔|||✔}}
+{{Moveentry/12|0570|formsig=H|Zorua|type=Normal|type2=Ghost|1|Field|Field|form=Hisuian Form||||||||||✔|✔|STAB='''}}
+{{Moveentry/12|0571|Zoroark|type=Dark|1|Field|Field||||✔|✔|✔||✔|||✔}}
+{{Moveentry/12|0571|formsig=H|Zoroark|type=Normal|type2=Ghost|1|Field|Field|form=Hisuian Form||||||||||✔|✔|STAB='''}}
+{{Moveentry/12|0574|Gothita|type=Psychic|1|Human-Like|Human-Like||||✔|✔|✔||✔|||✔}}
+{{Moveentry/12|0575|Gothorita|type=Psychic|1|Human-Like|Human-Like||||✔|✔|✔||✔|||✔}}
+{{Moveentry/12|0576|Gothitelle|type=Psychic|1|Human-Like|Human-Like||||✔|✔|✔||✔|||✔}}
+{{Moveentry/12|0577|Solosis|type=Psychic|1|Amorphous|Amorphous||||✔|✔|✔||✔|||✔}}
+{{Moveentry/12|0578|Duosion|type=Psychic|1|Amorphous|Amorphous||||✔|✔|✔||✔|||✔}}
+{{Moveentry/12|0579|Reuniclus|type=Psychic|1|Amorphous|Amorphous||||✔|✔|✔||✔|||✔}}
+{{Moveentry/12|0585|Deerling|type=Normal|type2=Grass|1|Field|Field|form=All forms||||✔|✔|✔|||||✔}}
+{{Moveentry/12|0586|Sawsbuck|type=Normal|type2=Grass|1|Field|Field|form=All forms||||✔|✔|✔|||||✔}}
+{{Moveentry/12|0592|Frillish|type=Water|type2=Ghost|1|Amorphous|Amorphous|form=All forms||||✔|✔|✔||✔||||STAB='''}}
+{{Moveentry/12|0593|Jellicent|type=Water|type2=Ghost|1|Amorphous|Amorphous|form=All forms||||✔|✔|✔||✔||||STAB='''}}
+{{Moveentry/12|0594|Alomomola|type=Water|2|Water 1|Water 2||||✔|✔|✔|||||✔}}
+{{Moveentry/12|0605|Elgyem|type=Psychic|1|Human-Like|Human-Like||||✔|✔|✔||✔|||}}
+{{Moveentry/12|0606|Beheeyem|type=Psychic|1|Human-Like|Human-Like||||✔|✔|✔||✔|||}}
+{{Moveentry/12|0607|Litwick|type=Ghost|type2=Fire|1|Amorphous|Amorphous||||✔|✔|✔||✔|||✔|✔|STAB='''}}
+{{Moveentry/12|0608|Lampent|type=Ghost|type2=Fire|1|Amorphous|Amorphous||||✔|✔|✔||✔|||✔|✔|STAB='''}}
+{{Moveentry/12|0609|Chandelure|type=Ghost|type2=Fire|1|Amorphous|Amorphous||||✔|✔|✔||✔|||✔|✔|STAB='''}}
+{{Moveentry/12|0622|Golett|type=Ground|type2=Ghost|1|Mineral|Mineral||||✔|✔|✔||✔|||✔|✔|STAB='''}}
+{{Moveentry/12|0623|Golurk|type=Ground|type2=Ghost|1|Mineral|Mineral||||✔|✔|✔||✔|||✔|✔|STAB='''}}
+{{Moveentry/12|0628|formsig=H|Braviary|type=Psychic|type2=Flying|1|Flying|Flying|form=Hisuian Form||||||||||−|✔}}
+{{Moveentry/12|0629|Vullaby|type=Dark|type2=Flying|1|Flying|Flying||||✔|✔|✔||✔|||✔}}
+{{Moveentry/12|0630|Mandibuzz|type=Dark|type2=Flying|1|Flying|Flying||||✔|✔|✔||✔|||✔}}
+{{Moveentry/12|0643|Reshiram|type=Dragon|type2=Fire|1|No Eggs Discovered|No Eggs Discovered||||✔|✔|✔||✔|||✔}}
+{{Moveentry/12|0644|Zekrom|type=Dragon|type2=Electric|1|No Eggs Discovered|No Eggs Discovered||||✔|✔|✔||✔|||✔}}
+{{Moveentry/12|0646|Kyurem|type=Dragon|type2=Ice|1|No Eggs Discovered|No Eggs Discovered|form=All available forms||||✔|✔|✔||✔|||✔}}
+{{Moveentry/12|0648|Meloetta|type=Normal|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered||||✔|✔|✔|||||✔|✔}}
+{{Moveentry/12|0649|Genesect|type=Bug|type2=Steel|1|No Eggs Discovered|No Eggs Discovered|form=All forms||||−|−|−||−||||✔}}
+{{Moveentry/12|0655|Delphox|type=Fire|type2=Psychic|1|Field|Field|||||✔|✔|||||✔|✔}}
+{{Moveentry/12|0677|Espurr|type=Psychic|1|Field|Field|||||−|−||−|||✔|✔}}
+{{Moveentry/12|0678|Meowstic|type=Psychic|1|Field|Field|form=All forms|||||✔|✔||✔|||✔|✔}}
+{{Moveentry/12|0681|Aegislash|type=Steel|type2=Ghost|1|Mineral|Mineral|||||✔|✔||✔||||✔|STAB='''}}
+{{Moveentry/12|0690|Skrelp|type=Poison|type2=Water|2|Water 1|Dragon|||||✔|✔||✔|||✔|✔}}
+{{Moveentry/12|0691|Dragalge|type=Poison|type2=Dragon|2|Water 1|Dragon|||||✔|✔||✔|||✔|✔}}
+{{Moveentry/12|0693|Clawitzer|type=Water|2|Water 1|Water 3|||||✔|✔||✔|||✔|✔}}
+{{Moveentry/12|0700|Sylveon|type=Fairy|1|Field|Field|||||✔|✔||✔||✔|✔|✔}}
+{{Moveentry/12|0708|Phantump|type=Ghost|type2=Grass|2|Grass|Amorphous|||||✔|✔||✔|||✔|✔|STAB='''}}
+{{Moveentry/12|0709|Trevenant|type=Ghost|type2=Grass|2|Grass|Amorphous|||||✔|✔||✔|||✔|✔|STAB='''}}
+{{Moveentry/12|0710|Pumpkaboo|type=Ghost|type2=Grass|1|Amorphous|Amorphous|form=All forms|||||✔|✔||✔||||✔|STAB='''}}
+{{Moveentry/12|0711|Gourgeist|type=Ghost|type2=Grass|1|Amorphous|Amorphous|form=All forms|||||✔|✔||✔||||✔|STAB='''}}
+{{Moveentry/12|0714|Noibat|type=Flying|type2=Dragon|2|Flying|Dragon|||||✔|✔||✔|||✔|✔}}
+{{Moveentry/12|0715|Noivern|type=Flying|type2=Dragon|2|Flying|Dragon|||||✔|✔||✔|||✔|✔}}
+{{Moveentry/12|0717|Yveltal|type=Dark|type2=Flying|1|No Eggs Discovered|No Eggs Discovered|||||✔|✔||✔||||✔}}
+{{Moveentry/12|0720|Hoopa|type=Psychic|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered|form=All available forms|||||✔|✔|||||✔|✔|STAB='''}}
+{{Moveentry/12|0724|Decidueye|type=Grass|type2=Ghost|1|Flying|Flying||||||✔||✔|||✔|STAB='''}}
+{{Moveentry/12|0730|Primarina|type=Water|type2=Fairy|2|Water 1|Field||||||✔||✔|||✔}}
+{{Moveentry/12|0765|Oranguru|type=Normal|type2=Psychic|1|Field|Field||||||✔||✔|||✔}}
+{{Moveentry/12|0766|Passimian|type=Fighting|1|Field|Field||||||✔||✔|||✔}}
+{{Moveentry/12|0769|Sandygast|type=Ghost|type2=Ground|1|Amorphous|Amorphous||||||✔||✔|||✔|✔|STAB='''}}
+{{Moveentry/12|0770|Palossand|type=Ghost|type2=Ground|1|Amorphous|Amorphous||||||✔||✔|||✔|✔|STAB='''}}
+{{Moveentry/12|0773|Silvally|type=Normal|1|No Eggs Discovered|No Eggs Discovered|form=All forms||||||✔||✔||||STAB=''}}
+{{Moveentry/12|0778|Mimikyu|type=Ghost|type2=Fairy|1|Amorphous|Amorphous||||||✔||✔|||✔|✔|STAB='''}}
+{{Moveentry/12|0780|Drampa|type=Normal|type2=Dragon|2|Monster|Dragon||||||✔||✔||||✔}}
+{{Moveentry/12|0781|Dhelmise|type=Ghost|type2=Grass|1|Mineral|Mineral||||||✔||✔||||STAB='''}}
+{{Moveentry/12|0786|Tapu Lele|type=Psychic|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered||||||✔||✔|||}}
+{{Moveentry/12|0788|Tapu Fini|type=Water|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered||||||✔||✔|||}}
+{{Moveentry/12|0792|Lunala|type=Psychic|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered||||||✔||✔|||✔|STAB='''}}
+{{Moveentry/12|0801|Magearna|type=Steel|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered|form=All forms||||||✔||✔|||✔|✔}}
+{{Moveentry/12|0802|Marshadow|type=Fighting|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered||||||✔||✔||||✔|STAB='''}}
+{{Moveentry/12|0806|Blacephalon|type=Fire|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered||||||✔{{sup/7|USUM}}||✔||||STAB='''}}
+{{Moveentry/12|0815|Cinderace|type=Fire|2|Field|Human-Like||||||||✔|||✔}}
+{{Moveentry/12|0818|Inteleon|type=Water|2|Water 1|Field||||||||✔|||✔}}
+{{Moveentry/12|0825|Dottler|type=Bug|type2=Psychic|1|Bug|Bug||||||||✔|||}}
+{{Moveentry/12|0826|Orbeetle|type=Bug|type2=Psychic|1|Bug|Bug||||||||✔|||}}
+{{Moveentry/12|0828|Thievul|type=Dark|1|Field|Field||||||||✔||||✔}}
+{{Moveentry/12|0854|Sinistea|type=Ghost|2|Mineral|Amorphous|form=All forms||||||||✔|||✔|STAB='''}}
+{{Moveentry/12|0855|Polteageist|type=Ghost|2|Mineral|Amorphous|form=All forms||||||||✔|||✔|STAB='''}}
+{{Moveentry/12|0858|Hatterene|type=Psychic|type2=Fairy|1|Fairy|Fairy||||||||✔|||✔}}
+{{Moveentry/12|0862|Obstagoon|type=Dark|type2=Normal|1|Field|Field||||||||✔|||}}
+{{Moveentry/12|0863|Perrserker|type=Steel|1|Field|Field||||||||✔|||✔|✔}}
+{{Moveentry/12|0864|Cursola|type=Ghost|2|Water 1|Water 3||||||||✔||||STAB='''}}
+{{Moveentry/12|0866|Mr. Rime|type=Ice|type2=Psychic|1|Human-Like|Human-Like||||||||✔||||✔}}
+{{Moveentry/12|0867|Runerigus|type=Ground|type2=Ghost|2|Mineral|Amorphous||||||||✔||||✔|STAB='''}}
+{{Moveentry/12|0876|Indeedee|type=Psychic|type2=Normal|1|Fairy|Fairy|form=All forms||||||||✔|||✔|✔}}
+{{Moveentry/12|0886|Drakloak|type=Dragon|type2=Ghost|2|Amorphous|Dragon||||||||✔|||✔|STAB='''}}
+{{Moveentry/12|0887|Dragapult|type=Dragon|type2=Ghost|2|Amorphous|Dragon||||||||✔|||✔|STAB='''}}
+{{Moveentry/12|0890|Eternatus|type=Poison|type2=Dragon|1|No Eggs Discovered|No Eggs Discovered||||||||✔|||✔}}
+{{Moveentry/12|0897|Spectrier|type=Ghost|1|No Eggs Discovered|No Eggs Discovered||||||||✔|||✔|STAB='''}}
+{{Moveentry/12|0898|formsig=S|Calyrex|type=Psychic|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered|form=Shadow Rider||||||||✔|||✔|STAB='''}}
+{{Moveentry/12|0899|Wyrdeer|type=Normal|type2=Psychic|1|Field|Field||||||||||✔|✔}}
+{{Moveentry/12|0902|Basculegion|type=Water|type2=Ghost|1|Water 2|Water 2|form=All forms||||||||||✔|✔|STAB='''}}
+{{Moveentry/12|0903|Sneasler|type=Fighting|type2=Poison|1|Field|Field||||||||||✔|✔}}
+{{Moveentry/12|0904|Overqwil|type=Dark|type2=Poison|1|Water 2|Water 2||||||||||✔|✔|✔}}
+{{Moveentry/12|0908|Meowscarada|type=Grass|type2=Dark|2|Field|Grass|||||||||||✔}}
+{{Moveentry/12|0911|Skeledirge|type=Fire|type2=Ghost|1|Field|Field|||||||||||✔|STAB='''}}
+{{Moveentry/12|0936|Armarouge|type=Fire|type2=Psychic|1|Human-Like|Human-Like|||||||||||✔|✔}}
+{{Moveentry/12|0937|Ceruledge|type=Fire|type2=Ghost|1|Human-Like|Human-Like|||||||||||✔|✔|STAB='''}}
+{{Moveentry/12|0946|Bramblin|type=Grass|type2=Ghost|1|Grass|Grass|||||||||||✔|STAB='''}}
+{{Moveentry/12|0947|Brambleghast|type=Grass|type2=Ghost|1|Grass|Grass|||||||||||✔|STAB='''}}
+{{Moveentry/12|0954|Rabsca|type=Bug|type2=Psychic|1|Bug|Bug|||||||||||✔}}
+{{Moveentry/12|0956|Espathra|type=Psychic|1|Flying|Flying|||||||||||✔}}
+{{Moveentry/12|0971|Greavard|type=Ghost|1|Field|Field|||||||||||✔|✔|STAB='''}}
+{{Moveentry/12|0972|Houndstone|type=Ghost|1|Field|Field|||||||||||✔|✔|STAB='''}}
+{{Moveentry/12|0979|Annihilape|type=Fighting|type2=Ghost|1|Field|Field|||||||||||✔|✔|STAB='''}}
+{{Moveentry/12|0981|Farigiraf|type=Normal|type2=Psychic|1|Field|Field|||||||||||✔}}
+{{Moveentry/12|0982|Dudunsparce|type=Normal|1|Field|Field|form=All forms|||||||||||✔}}
+{{Moveentry/12|0987|Flutter Mane|type=Ghost|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered|||||||||||✔|STAB='''}}
+{{Moveentry/12|0999|Gimmighoul|type=Ghost|1|No Eggs Discovered|No Eggs Discovered|form=All forms|||||||||||✔|✔|STAB='''}}
+{{Moveentry/12|1000|Gholdengo|type=Steel|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered|||||||||||✔|✔|STAB='''}}
+{{Moveentry/12|1006|Iron Valiant|type=Fairy|type2=Fighting|1|No Eggs Discovered|No Eggs Discovered|||||||||||✔}}
+{{Moveentry/12|1012|Poltchageist|type=Grass|type2=Ghost|2|Mineral|Amorphous|form=All forms|||||||||||✔|STAB='''}}
+{{Moveentry/12|1013|Sinistcha|type=Grass|type2=Ghost|2|Mineral|Amorphous|form=All forms|||||||||||✔|STAB='''}}
+{{Moveentry/12|1015|Munkidori|type=Poison|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered|||||||||||✔}}
+{{Moveentry/12|1016|Fezandipiti|type=Poison|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered|||||||||||✔}}
+{{Moveentry/12|1025|Pecharunt|type=Poison|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered|||||||||||✔|STAB='''}}
+{{Movefoot|Ghost|12}}
+
+===Special move===
+====[[Generation IV]]====
+{{Movehead/Special|Ghost}}
+{{Moveentry/1|0133|Eevee|type=Normal|1|Field|Field|[[Hayley's trades#Eevee|My Pokémon Ranch]]}}
+{{Moveentry/1|0491|Darkrai|type=Dark|1|No Eggs Discovered|No Eggs Discovered|[[Pokémon Ranger: Shadows of Almia]] - ''[[Ranger Net#Liberate the Tower!|Liberate the Tower!]]''}}
+{{Movefoot|Ghost|1}}
+
+====[[Generation IX]]====
+{{Movehead/Special|Ghost}}
+{{Moveentry/1|0135|Jolteon|type=Electric|1|Field|Field|[[Terastal phenomenon|Wild Tera Pokémon]] - [[West Province (Area One)]]{{sup/9|SV}}}}
+{{Moveentry/1|0196|Espeon|type=Psychic|1|Field|Field|[[Terastal phenomenon|Wild Tera Pokémon]] - [[East Province (Area Three)]]{{sup/9|SV}}}}
+{{Moveentry/1|0229|Houndoom|type=Dark|type2=Fire|1|Field|Field|[[Terastal phenomenon|Wild Tera Pokémon]] - [[Alfornada Cavern]]{{sup/9|SV}}}}
+{{Moveentry/1|0700|Sylveon|type=Fairy|1|Field|Field|[[Terastal phenomenon|Wild Tera Pokémon]] - [[North Province (Area Three)]]{{sup/9|SV}}}}
+{{Movefoot|Ghost|1}}
+
+==In other games==
+===Pokémon Mystery Dungeon series===
+Shadow Ball inflicts damage and may lower the enemy's Special Defense by one stage.
+
+Erroneously, in Japanese version of Explorers of Time and Darkness, this move instead affected the target's Defense.
+
+{{MDMoveheader|type=ghost}}
+{{MDMoveRow|game=RB|pow=16|pp=10|acc=88%|range=10 tiles away|target=All|cuts=Yes}}
+{{MDMoveRow|game=TDS|pow=16|pp=10|acc=83.6%|range=10 tiles away|target=All|cuts=Yes}}
+{{MDMoveRow|game=BSL|pow=16|pp=10|acc=83.6%|range=10 tiles away|target=All|cuts=Yes}}
+{{MDMoveRow|game=GTI|pow=15|powmax=99|pp=15|ppmax=50|acc=85%|accmax=98%|range=10 tiles away|target=All|cuts=Yes}}
+{{MDMoveRow|game=SMD|pow=15|powmax=50|pp=12|ppmax=30|acc=85%|accmax=98%|range=4 tiles away|target=Enemy|cuts=Yes}}
+{{MDMoveRow|game=RTDX|pow=15|powmax=?|pp=12|ppmax=?|acc=85%|accmax=?%|range=4 tiles away|target=Enemy|cuts=Yes}}
+{{MDMovefoot|type=ghost|RB=yes|TDS=yes|BSL=yes|GTI=yes|SMD=yes|RTDX=yes}}
+
+===[[Super Smash Bros.]] series===
+{{sbw|Shadow Ball}} is {{SSB|Mewtwo}}'s standard special move. It is chargeable and moves in a zigzag fashion. Mewtwo holds its hands the same way it does in ''[[M01|Mewtwo Strikes Back]]'' when forming a Shadow Ball, but the ball itself has a unique design. The blue color of the ball resembles how it looks in {{game2|Gold|Silver|Crystal}}. In [[Super Smash Bros. Melee]], while Mewtwo charges, any enemy that touches the charging Shadow Ball gets damaged. This was changed in [[Super Smash Bros. for Nintendo 3DS/Wii U]], where it no longer can damage opponents while charging. Mewtwo also uses Shadow Ball on its opponents when {{sbw|throw}}ing them {{sbw|Forward throw|forwards}}.
+
+{{SSB|Lucario}}, who debuted in [[Super Smash Bros. Brawl]], uses {{sbw|Aura Sphere}}, which functions similarly.
+
+===[[Pokémon Conquest]]===
+{{Conquestmove
+|type=Ghost
+|grid={{Conquestmove/Grid/columns|dist=1}}
+|stars=4
+|pow=43
+|acc=100%
+|eff=Has a 20% chance of lowering the target's Defense.
+|users={{CSP|094|Gengar}} &nbsp;&nbsp;{{CSP|426|Drifblim}} &nbsp;&nbsp;{{CSP|429|Mismagius}} &nbsp;&nbsp;{{CSP|477|Dusknoir}}
+}}
+
+===[[Pokémon GO]]===
+{{GoChargedAttack
+|id=70
+|move=Shadow Ball
+|type=Ghost
+|pow=100
+|energy=50
+|duration=3
+|damage_window=2.4 - 2.8
+|pow_trainer=100
+|energy_trainer=50
+|users={{MSP/GO|0019A|Rattata|Alolan Form}}{{MSP/GO|0042|Golbat}}{{MSP/GO|0063|Abra}}{{MSP/GO|0064|Kadabra}}{{MSP/GO|0065|Alakazam}}{{MSP/GO|0093|Haunter}}{{MSP/GO|0094|Gengar}}{{MSP/GO|0097|Hypno}}{{MSP/GO|0105A|Marowak|Alolan Form}}{{MSP/GO|0110|Weezing}}{{MSP/GO|0122|Mr. Mime}}{{MSP/GO|0157H|Typhlosion|Hisuian Form}}{{MSP/GO|0164|Noctowl}}{{MSP/GO|0169|Crobat}}{{MSP/GO|0174|Igglybuff}}{{MSP/GO|0199G|Slowking|Galarian Form}}{{MSP/GO|0211H|Qwilfish|Hisuian Form}}{{MSP/GO|0243|Raikou}}{{MSP/GO|0282|Gardevoir}}{{MSP/GO|0291|Ninjask}}{{MSP/GO|0325|Spoink}}{{MSP/GO|0326|Grumpig}}{{MSP/GO|0354|Banette}}{{MSP/GO|0358|Chimecho}}{{MSP/GO|0361|Snorunt}}{{MSP/GO|0362|Glalie}}{{MSP/GO|0425|Drifloon}}{{MSP/GO|0426|Drifblim}}{{MSP/GO|0429|Mismagius}}{{MSP/GO|0433|Chingling}}{{MSP/GO|0442|Spiritomb}}{{MSP/GO|0448|Lucario}}{{MSP/GO|0454|Toxicroak}}{{MSP/GO|0463|Lickilicky}}{{MSP/GO|0478|Froslass}}{{MSP/GO|0487O|Giratina|Origin Forme}}{{MSP/GO|0491|Darkrai}}{{MSP/GO|0562|Yamask}}{{MSP/GO|0563|Cofagrigus}}{{MSP/GO|0570H|Zorua}}{{MSP/GO|0571H|Zoroark}}{{MSP/GO|0579|Reuniclus}}{{MSP/GO|0593|Jellicent}}{{MSP/GO|0609|Chandelure}}{{MSP/GO|0630|Mandibuzz}}{{MSP/GO|0678 f|Meowstic|Female}}{{MSP/GO|0681|Aegislash}}{{MSP/GO|0708|Phantump}}{{MSP/GO|0709|Trevenant}}{{MSP/GO|0711|Gourgeist}}{{MSP/GO|0720|Hoopa|Confined}}{{MSP/GO|0720U|Hoopa|Unbound}}{{MSP/GO|0769|Sandygast}}{{MSP/GO|0770|Palossand}}{{MSP/GO|0781|Dhelmise}}{{MSP/GO|0792|Lunala}}{{MSP/GO|0806|Blacephalon}}{{MSP/GO|0818|Inteleon}}{{MSP/GO|0854|Sinistea}}{{MSP/GO|0855|Polteageist}}{{MSP/GO|0864|Cursola}}{{MSP/GO|0867|Runerigus}}{{MSP/GO|0876|Indeedee}}{{MSP/GO|0886|Drakloak}}{{MSP/GO|0887|Dragapult}}{{MSP/GO|904|Overqwil}}{{MSP/GO|0911|Skeledirge}}{{MSP/GO|0937|Ceruledge}}{{MSP/GO|0971|Greavard}}{{MSP/GO|0972|Houndstone}}{{MSP/GO|0979|Annihilape}}{{MSP/GO|0999|Gimmighoul}}{{MSP/GO|1000|Gholdengo}}{{MSP/GO|1012|Poltchageist}}{{MSP/GO|1013|Sinistcha}}
+|elite_users={{MSP/GO|0150|Mewtwo}}{{MSP/GO|0196|Espeon}}{{MSP/GO|0477|Dusknoir}}
+|snapshot_users={{MSP/GO|0235|Smeargle}}
+}}
+
+====Updates====
+;Gyms & Raids
+* '''July 30, 2016'''
+** '''Power''': 40 → 45
+* '''February 16, 2017'''
+** '''Power''': 45 → 100
+** '''Energy cost''': 33 → 50
+** '''Duration''': 3.08 → 3 seconds
+** '''Damage window''': 2.3 - 2.6 → 2.4 - 2.8 seconds
+;Trainer Battles
+* '''December 2, 2025'''
+'''Energy cost''': 55 → 50
+
+==={{g|Rumble Rush}}===
+{{RumbleRushPhysicalAttack|move=Shadow Ball|type=Ghost
+|stars=4
+|pow=47.13385
+|charge=0.68
+|range=Projectile
+|hits=1
+|projectiles=1
+|crit=1.5
+|effect=May lower foe's Defense}}
+
+===[[Pokémon Masters EX]]===
+{| class="roundy" style="margin:auto; background:#{{ghost color}}; border:3px solid #{{ghost color dark}}; text-align:center; width:80%"
+|- style="background: #{{ghost color light}}"
+! style="{{roundytl|5px}}" | Name
+! {{color2|000|Damage category|Category}}
+! Move gauge cost
+! MP<br>(uses)
+! Base {{color2|000|power}}
+! Max {{color2|000|power}}
+! {{color2|000|Accuracy}}
+! Target
+! Effect tag
+! Description
+! style="{{roundytr|5px}}" | Playable {{color2|000|Sync pair|sync pair(s)}}
+|- style="background:#fff"
+| rowspan=2 | Shadow Ball
+| rowspan=2 align="center" style="background:#{{special color}}" | {{color2|{{special textcolor}}|Special move|Special}}
+| 3
+| rowspan=2 | —
+| 99
+| 118
+| rowspan=2 | 100%
+| rowspan=2 | An opponent
+| rowspan=2 | —
+| rowspan=2 | Has a chance (20%) of lowering the target's Sp. Def by one stat rank.
+|{{sync|Agatha|Gengar}}<hr>{{sync|Shauntal|Chandelure}}<hr>{{sync|Giovanni|Mewtwo}}<hr>{{sync|Fantina|Mismagius}}<hr>{{sync|Morty|Drifblim}}<hr>{{sync|Allister|Gengar}}<hr>{{sync|Cynthia|Giratina|Renegade|sygna=y}}<hr>{{sync|Helena|Haunter|Hex Maniac}}<hr>{{sync|Victor|Spectrier}}<hr>{{sync|Wallace|Blacephalon|New Year's 2024}}<hr>{{sync|Rachel|Gimmighoul}} <small>({{form|Gimmighoul|Roaming Form}})</small><hr>{{sync|Sawyer|Gimmighoul}} <small>({{form|Gimmighoul|Chest Form}})</small><hr>{{sync|Volo|Giratina|Alt.}}<hr>{{sync/player|egg|Gastly/Haunter/Gengar}} <small>(Strike/tech roles only)</small><hr>Users of {{m|Metronome}} <small>(small chance)</small>
+|- style="background:#{{white color light}}"
+| 4
+| 148
+| 177
+| {{sync|Iono|Flutter Mane|Fall 2024}}
+|- style="background:#{{ghost color light}}"
+! colspan=12 |{{color2|000|Buddy move|Buddy moves}}
+|- style="background:#fff"
+|Summer Hues Shadow Ball
+{{statustable|Special}}
+|2
+|—
+|180
+|216
+|100%
+|All opponents
+|—
+|'''Activation Condition:''' When the user uses any move once.
+
+'''Deactivation Condition:''' Cannot be deactivated.
+
+Lowers the target's Attack and Sp. Atk by one stat rank. Has a chance (20%) of lowering the target's Sp. Def by one stat rank. Turns the field of play's zone into a Ghost Zone the first time this attack move is successful each battle. (A Ghost Zone powers up Ghost-type attacks.)
+|{{sync|Gardenia|Dhelmise|Summer 2024}}
+|- style="background:#fff"
+|Terrifying Shadow Ball
+{{statustable|Special}}
+|4
+|1
+|150
+|180
+|—%
+|All opponents
+|Sure Hit
+|'''Activation Condition:''' When the user uses any move once.
+
+'''Deactivation Condition:''' When this move is used.
+
+Never misses. Lowers the target's Sp. Def by two stat ranks. Lowers the target's Ghost Type Rebuff by one rank the first time this attack move is successful each battle. The power of this move is not lowered even if there are multiple targets.
+|{{sync|Iono|Flutter Mane|Fall 2024}}
+|- style="background:#fff"
+|Evil Spirit Shadow Ball
+{{statustable|Special}}
+|2
+|108
+|90
+|108
+|—%
+|An opponent
+|Sure Hit
+|'''Activation Condition:''' When the user uses any move once.
+
+'''Deactivation Condition:''' Cannot be deactivated.
+
+Never misses. Reduces all of the MP for this move. The more MP reduced, the greater the power of this attack. Has a chance (20%) of lowering the target's Sp. Def by one stat rank. Leaves the target flinching, confused, and trapped when the remaining MP are reduced by 108 from a single attack.
+|{{sync|Cynthia|Spiritomb}}
+|- style="background:#{{ghost color dark}}"
+! colspan=12 |{{color2|fff|Sync move|Sync moves}}
+|- style="background: #{{ghost color light}}"
+! Name
+! {{color2|000|Damage category|Category}}
+! colspan=2 | State
+! Base {{color2|000|power}}
+! Max {{color2|000|power}}
+! colspan=2 | Target
+! Effect tag
+! Description
+! Playable {{color2|000|sync pair}}
+|- style="background:#fff"
+| Dark Tales of the Shadow Ball
+{{statustable|Special}}
+| colspan=2 | Default<hr>'''6★ EX'''
+| 250
+| 300
+| colspan=2 | An opponent<hr>'''All opponents'''
+| —
+| No additional effect.
+| {{sync|Shauntal|Chandelure}}
+|- style="background:#fff"
+| style="{{roundybl|5px}}" | Soulful Dancer Shadow Ball
+{{statustable|Special}}
+| colspan=2 | Default<hr>'''6★ EX'''
+| 250
+| 300
+| colspan=2 | An opponent<hr>'''All opponents'''
+| —
+| No additional effect.
+| style="{{roundybr|5px}}" | {{sync|Fantina|Mismagius}}
+|}
+Notes:
+* '''Shadow Ball:'''
+** Description prior to Version 2.10.0 (from June 28, 2021): Has a small chance of lowering the target's Sp. Def.
+* '''Soulful Dancer Shadow Ball:'''
+** Unlike some [[sync move]]s, this attack could not be raised to {{6EX}} since its release date (of March 19, 2020) until 1011 days later (on December 25, 2022).
+
+==={{g|UNITE}}===
+In Pokémon UNITE, Shadow Ball is {{p|Gengar}}'s and {{p|Hoopa}}'s first move.
+
+Gengar can obtain the move by reaching level 7 as {{p|Haunter}} and upgrading {{m|Will-O-Wisp}} into it instead of {{m|Sludge Bomb}}. The user hurls a shadowy ball forward in a line – damaging, slowing, and reducing the Special Defense of enemies hit. This ball pierces through wild Pokémon. At level 13, its damage increases.
+
+Hoopa can obtain the move by upgrading {{m|Astonish}} at level 6 into it instead of {{m|Phantom Force}}. The move has the user unleash a shadowy blob in front of itself, dealing damage to opposing Pokémon it hits and decreasing their movement speed and Sp. Def for a short time. If the user then hits the same opposing Pokémon with a move or boosted attack within a set amount of time, it deals additional damage to the opposing Pokémon and leaves them unable to act for a short time. When using this move, if there is a nearby ally Pokémon linked by Trick, this move will also unleash a shadowy blob at the same target from that ally’s location. At level 12, the shadowy blob will now explode before it disappears. Opposing Pokémon hit by the explosion are affected as if they were hit by the shadowy blob itself. In Unbound form, this move is replaced by {{m|Hyperspace Fury}}.
+
+===Description===
+{{movedesc|ghost}}
+{{movedescentry|{{gameabbrevmd|RB}}|Inflicts damage on the target, even at a distance. It may also lower the target's Special Defense by one level.}}
+{{movedescentry|{{gameabbrevmd|TDS}}|Inflicts damage on the target, even at a distance. It may also reduce the target's Special Defense by 1 level.}}
+{{movedescentry|{{gameabbrevmd|BSL}}|{{tt|はなれたポケモンに ダメージをあたえる しかも いっていのかくりつで とくぼうを １だんかいさげる|Inflicts damage on the target, even at a distance. It may also reduce the target's Special Defense by 1 level}}}}
+{{movedescentry|{{gameabbrevss|Conq}}|Attack the enemy with a ball of dark shadows, lowering the enemy's Defense.}}
+{{movedescentry|{{gameabbrevmd|GTI}}|It damages even a faraway Pokémon. It could also lower its Special Defense.}}
+{{movedescentry|{{gameabbrevmd|SMD}}<br/>{{gameabbrevmd|RTDX}}|It damages even a faraway Pokémon. It could also lower the enemy's Sp. Def.}}
+|}
+|}{{left clear}}
+
+==In animation==
+===Pokémon animated series===
+{{moveanime|type=ghost|exp=yes|gen=The user forms a black ball out of energy and fires it at the opponent.|image1=Trip Lampent Shadow Ball.png|image1p=Lampent|image2=Ash Gengar Shadow Ball.png|image2p=Gengar|image3=Ursula Flareon Shadow Ball.png|image3p=Flareon|image4=Hamber Dusknoir Shadow Ball.png|image4p=Dusknoir}}
+{{movep|type=ghost|ms=0150|pkmn=Mewtwo|method=Mewtwo forms a black ball of energy with blue static from between its hands or from only one hand. Mewtwo then shoots it at the opponent; or, two balls of purple and black energy form in each of Mewtwo's hands and it fires them at the opponent. It can also make the ball grow to enormous proportions before throwing it.}}
+{{movemid|type=ghost|user=Mewtwo (M01)|startcode=M01|startname=Mewtwo Strikes Back|notes=Debut}}
+{{movemid|type=ghost|user=Dr. Yung|user1=A mirage Mewtwo|startcode=The Mastermind of Mirage Pokémon}}
+{{movep|type=ghost|ms=0094|pkmn=Gengar|method=Gengar's hands spark with blue electricity. It then puts its hands together, forms a black ball of energy, and shoots it at the opponent; or, Gengar opens its mouth and forms a ball of black and purple energy with black static in front of it. It then fires the ball at the opponent; or, Gengar creates two purple and blacks balls of energy with purple static around them, one in each hand, and combines them into a bigger ball. It then fires the ball at the opponent.}}
+{{movemid|type=ghost|user=Morty's Gengar|startcode=EP181|startname=Ghost of a Chance}}
+{{movemid|type=ghost|user=Agatha's Gengar|startcode=AG132|startname=The Scheme Team}}
+{{movemid|type=ghost|user=Gengar (Pokémon)|user1=Multiple wild Gengar|startcode=BW137|startname=Celebrating the Hero's Comet!}}
+{{movemid|type=ghost|user=Acerola|user1=Acerola's Greedy Rapooh|startcode=SM131|startname=The Battlefield of Truth and Love!}}
+{{movemid|type=ghost|user=Ash's Gengar|startcode=JN011|startname=Best Friend...Worst Nightmare!}}
+{{movep|type=ghost|ms=0215|pkmn=Sneasel|method=Two small black orbs of energy appear at the tips of Sneasel's claws. Then, Sneasel brings them together, forming one black orb, and fires it at the opponent.}}
+{{movemid|type=ghost|user=Harrison's Sneasel|startcode=EP265|startname=Pop Goes the Sneasel}}
+{{movep|type=ghost|ms=0093|pkmn=Haunter|method=Haunter's hands glow with a blue aura, then a black ball forms in between Haunter's hands and it shoots the ball at the opponent.}}
+{{movemid|type=ghost|user=Haunter (Pokémon)|user1=A wild Haunter|startcode=EP274|startname=Hoenn Alone!}}
+{{movemid|type=ghost|user=Haunter (Pokémon)|user1=A wild Haunter|startcode=AG146|startname=Fear Factor Phony}}
+{{movep|type=ghost|ms=0262|pkmn=Mightyena|method=A black ball of energy forms in Mightyena's mouth. It closes its mouth over the black ball, and then releases the ball at the opponent.}}
+{{movemid|type=ghost|user=Tabitha|user1=Tabitha's Mightyena|startcode=AG027|startname=A Three Team Scheme!}}
+{{movemid|type=ghost|user=Team Magma Grunt (Trainer class)|user1=Team Magma Grunts' multiple Mightyena|startcode=AG098|startname=The Scuffle of Legends}}
+{{movep|type=ghost|ms=0302|pkmn=Sableye|method=Sableye forms a black ball or a black and purple energy ball with black static around it in front of its mouth. It then fires the ball at the opponent.}}
+{{movemid|type=ghost|user=Cassidy|user1=Cassidy's Sableye|startcode=HS11|startname=A Date with Delcatty}}
+{{movemid|type=ghost|user=Nanu|user1=Nanu's Sableye|startcode=SM077|startname=Guiding an Awakening!}}
+{{movep|type=ghost|ms=0291|pkmn=Ninjask|method=Ninjask forms a black ball in between its arms. It then fires the ball at the opponent.}}
+{{movemid|type=ghost|user=Colonel Hansen|user1=Colonel Hansen's two Ninjask|startcode=AG044|startname=The Princess and the Togepi}}
+{{movemid|type=ghost|user=Goone|user1=Goone's multiple Ninjask|startcode=M13|startname=Zoroark: Master of Illusions}}
+{{movep|type=ghost|ms=0287|pkmn=Slakoth|method=Slakoth forms a black ball of energy between its hands. It then fires the ball at the opponent.}}
+{{movemid|type=ghost|user=Norman|user1=Norman's Slakoth|startcode=AG070|startname=Balance of Power}}
+{{movep|type=ghost|ms=0261|pkmn=Poochyena|method=Poochyena forms a black ball of energy in front of its mouth, then fires it at the opponent.}}
+{{movemid|type=ghost|user=Old Man Obee|user1=Old Man Obee's three Poochyena|startcode=AG073|startname=Grass Hysteria!}}
+{{movemid|type=ghost|user=Rocket Prize Master|user1=Team Rocket's Poochyena|startcode=JN054|startname=Sobble Spies a Stealthy Strategy!}}
+{{movep|type=ghost|ms=0178|pkmn=Xatu|method=Xatu's puts its wings together and forms a black ball of energy between them. Xatu then shoots it at the opponent.}}
+{{movemid|type=ghost|user=Calista (AG076)|user1=Calista's Xatu|startcode=AG076|startname=Me, Myself and Time}}
+{{movep|type=ghost|ms=0229|pkmn=Houndoom|method=Houndoom opens its mouth and forms a black ball of energy. Houndoom then shoots it at the opponent.}}
+{{movemid|type=ghost|user=Joshua (Coordinator)|user1=Joshua's Houndoom|startcode=AG115|startname=Mean With Envy}}
+{{movemid|type=ghost|user=Houndoom (Pokémon)|user1=A wild Houndoom|startcode=M16|startname=Genesect and the Legend Awakened}}
+{{movep|type=ghost|ms=0263|pkmn=Zigzagoon|method=Zigzagoon opens its mouth and forms a black ball of energy in front of it. It then fires it at the opponent.}}
+{{movemid|type=ghost|user=Pokémon Coordinator|user1=A Coordinator's Zigzagoon|startcode=AG121|startname=Hi Ho Silver Wind!}}
+{{movep|type=ghost|ms=0053|pkmn=Persian|method=Persian opens its mouth and forms a black ball out of energy. Persian then shoots it at the opponent.}}
+{{movemid|type=ghost|user=Vivica|user1=Vivica's Persian|startcode=AG126|startname=Saved by the Beldum}}
+{{movemid|type=ghost|user=Persian (Pokémon)|user1=A wild Persian|startcode=AG126|startname=Saved by the Beldum}}
+{{movep|type=ghost|ms=0317|pkmn=Swalot|method=Swalot forms a black ball of energy in between its hands. It then fires multiple black balls of energy from the larger ball at the opponent.}}
+{{movemid|type=ghost|user=Dominick|user1=Dominick's Swalot|startcode=AG127|startname=From Brags to Riches}}
+{{movep|type=ghost|ms=0275|pkmn=Shiftry|method=Shiftry puts its hands in front of it and a black or black and purple ball of energy forms in front of them. It separates its hands and the ball is launched at the opponent.}}
+{{movemid|type=ghost|user=Tyson (Hoenn)|user1=Tyson's Shiftry|startcode=AG131|startname=At the End of the Fray}}
+{{movemid|type=ghost|user=Spenser|user1=Spenser's Shiftry|startcode=AG164|startname=Ka Boom with a View!}}
+{{movep|type=ghost|ms=0461|pkmn=Weavile|method=Weavile puts its claws together and creates a dark purple ball of energy in between its hands. It then fires it at the opponent.}}
+{{movemid|type=ghost|user=Kidd Summers|user1=Kidd Summers's two Weavile|startcode=M08|startname=Lucario and the Mystery of Mew}}
+{{movemid|type=ghost|user=Weavile (Pokémon)|user1=Two wild Weavile|startcode=AG185|startname=Duels of the Jungle!}}
+{{movep|type=ghost|ms=0092|pkmn=Gastly|method=Gastly creates a black ball of energy in front of its body and fires it at the opponent.}}
+{{movemid|type=ghost|user=Gastly (Pokémon)|user1=Two wild Gastly|startcode=AG146|startname=Fear Factor Phony}}
+{{movep|type=ghost|ms=0355|pkmn=Duskull|method=Duskull creates a black ball of energy in between its hands and fires it at the opponent.}}
+{{movemid|type=ghost|user=Duskull (Pokémon)|user1=Two wild Duskull|startcode=AG146|startname=Fear Factor Phony}}
+{{movep|type=ghost|ms=0353|pkmn=Shuppet|method=Shuppet creates a black ball of energy in front of its mouth and fires it at the opponent.}}
+{{movemid|type=ghost|user=Shuppet (Pokémon)|user1=A wild Shuppet|startcode=AG146|startname=Fear Factor Phony}}
+{{movemid|type=ghost|user=Grings Kodai|user1=Grings Kodai's Shuppet|startcode=M13|startname=Zoroark: Master of Illusions}}
+{{movep|type=ghost|ms=0348|pkmn=Armaldo|method=Armaldo creates a black and purple ball of energy in front of its mouth and fires it at the opponent.}}
+{{movemid|type=ghost|user=Dr. Yung|user1=A mirage Armaldo|startcode=The Mastermind of Mirage Pokémon|notes=Armaldo cannot legally learn Shadow Ball{{tt|*|Mirage Pokémon were stated to be capable of learning moves the Pokémon would not normally be able to learn}}}}
+{{movep|type=ghost|ms=0133|pkmn=Eevee|method=Eevee opens its mouth and creates a black and purple ball of energy in front of its mouth. Eevee then fires it at the opponent.}}
+{{movemid|type=ghost|user=May's Eevee|startcode=AG163|startname=Cutting the Ties That Bind!}}
+{{movep|type=ghost|ms=0168|pkmn=Ariados|method=Ariados's eyes flash purple and it creates a black and purple ball of energy at the top of the horn on its head. It then fires it at the opponent.}}
+{{movemid|type=ghost|user=Harley|user1=Harley's Ariados|startcode=AG174|startname=New Plot, Odd Lot!|notes=Ariados {{color2|000|Animated series move errors|cannot legally learn}} Shadow Ball}}
+{{movep|type=ghost|ms=0338|pkmn=Solrock|method=Solrock creates a black and purple ball in front of its body and fires it at the opponent.}}
+{{movemid|type=ghost|user=Brandon (anime)|user1=Brandon's Solrock|startcode=AG190|startname=Pace - The Final Frontier!}}
+{{movemid|type=ghost|user=Lily (Kalos)|user1=Lily's Solrock|startcode=XY091|startname=A Performance Pop Quiz!}}
+{{movep|type=ghost|ms=0065|pkmn=Alakazam|method=Alakazam crosses its spoons and forms a black and purple ball of energy in front of them. Alakazam then fires the ball at the opponent. Sometimes, the ball is surrounded by black static.}}
+{{movemid|type=ghost|user=Kenny (Sinnoh)|user1=Kenny's Alakazam|startcode=DP027|startname=Settling a Not-So-Old Score!}}
+{{movemid|type=ghost|user=Faba (anime)|user1=Faba's Alakazam|startcode=SM089|startname=The Prism Between Light and Darkness!}}
+{{movep|type=ghost|ms=0197|pkmn=Umbreon|method=Umbreon opens its mouth and forms a black and purple ball of energy in front of it. Umbreon then fires it at the opponent.}}
+{{movemid|type=ghost|user=Gary's Umbreon|startcode=DP045|startname=Ill-Will Hunting!}}
+{{movemid|type=ghost|user=Johanna|user1=Johanna's Umbreon|startcode=DP138|startname=Strategy Begins at Home!}}
+{{movemid|type=ghost|user=Virgil|user1=Virgil's Umbreon|startcode=BW102|startname=Team Eevee and the Pokémon Rescue Squad!}}
+{{movemid|type=ghost|user=Umbreon (Pokémon)|user1=A wild Umbreon|startcode=PK25|startname=Eevee & Friends}}
+{{movemid|type=ghost|user=Gladion's Umbreon|startcode=SM049|startname=Mission: Total Recall!}}
+{{movep|type=ghost|ms=0198|pkmn=Murkrow|method=Murkrow opens its beak and creates a black and purple ball of energy in front of it. It then fires it at the opponent.}}
+{{movemid|type=ghost|user=Paul's Murkrow|startcode=DP051|startname=Glory Blaze!}}
+{{movep|type=ghost|ms=0442|pkmn=Spiritomb|method=A purple-black ball of energy forms in front of Spiritomb's mouth. It then fires the ball at the opponent.}}
+{{movemid|type=ghost|user=Spiritomb (Pokémon)|user1=A wild Spiritomb|startcode=DP056|startname=The Keystone Pops!}}
+{{movemid|type=ghost|user=Spiritomb (Pokémon)|user1=A wild Spiritomb|startcode=JN091|startname=The Spectral Express!}}
+{{movep|type=ghost|ms=0042|pkmn=Golbat|method=Golbat forms a black and purple ball of energy in front of its mouth and fires it at the opponent.}}
+{{movemid|type=ghost|user=Team Galactic Grunt (Trainer class)|user1=Team Galactic Grunts' multiple Golbat|startcode=DP069|startname=Enter Galactic!}}
+{{movemid|type=ghost|user=Team Plasma Grunt (Trainer class)|user1=A Team Plasma Grunt's Golbat|startcode=BW112|startname=Team Plasma's Pokémon Power Plot!}}
+{{movemid|type=ghost|user=Golbat (Pokémon)|user1=A wild Golbat|startcode=M20|startname=I Choose You!}}
+{{movep|type=ghost|ms=0471|pkmn=Glaceon|method=Glaceon opens its mouth and forms a black and purple ball of energy in front of it. It then fires it at the opponent.}}
+{{movemid|type=ghost|user=May's Glaceon|startcode=DP079|startname=Strategy with a Smile!}}
+{{movep|type=ghost|ms=0477|pkmn=Dusknoir|method=Dusknoir opens the mouth on its stomach, puts its hands together in front of it, and the yellow lines on its body, as well as its iris, start to glow gold. Then, a black and purple ball of energy appears in between its hands and in front of its stomach and Dusknoir fires it at the opponent; or, Dusknoir raises its hands in the air and it opens the mouth on its stomach. Black and purple energy starts to form inside Dusknoir's stomach, and it starts sucking things in as the energy gets bigger. Finally, the energy forms into a ball and Dusknoir fires it at the opponent; or, Dusknoir forms a black and purple ball of energy between its hands and throws it at the opponent.}}
+{{movemid|type=ghost|user=Dusknoir (Pokémon)|user1=A wild Dusknoir|startcode=DP090|startname=Ghoul Daze!}}
+{{movemid|type=ghost|user=Dusknoir (Explorers of Time, Darkness, and Sky)|startcode=Pokémon Mystery Dungeon: Explorers of Sky - Beyond Time & Darkness|startname=Pokémon Mystery Dungeon: Explorers of Sky- Beyond Time & Darkness}}
+{{movemid|type=ghost|user=Dusknoir (Pokémon)|user1=Multiple wild Dusknoir|startcode=BW137|startname=Celebrating the Hero's Comet!}}
+{{movemid|type=ghost|user=Rocket Prize Master|user1=Team Rocket's Dusknoir|startcode=JN075|startname=A Midsummer Night's Light!}}
+{{movemid|type=ghost|user=Hamber|user1=Hamber's Dusknoir|startcode=HZ034|startname=Respective Departures|notes=Enhanceable by<br>{{color2|000|Terastal phenomenon|Terastallization}}}}
+{{movep|type=ghost|ms=0432|pkmn=Purugly|method=Purugly opens its mouth and a black and purple ball of energy appears in front of it. It then fires the ball from its mouth at the opponent.}}
+{{movemid|type=ghost|user=Mars's Purugly|startcode=DP097|startname=Double Team Turnover!}}
+{{movep|type=ghost|ms=0478|pkmn=Froslass|method=Froslass puts her hands together and forms a black and purple ball of energy in between them. She then fires the ball at the opponent.}}
+{{movemid|type=ghost|user=Froslass (Pokémon)|user1=A wild Froslass|startcode=DP116|startname=The Drifting Snorunt!}}
+{{movep|type=ghost|ms=0096|pkmn=Drowzee|method=Drowzee puts its hands together and forms a black and purple ball of energy in between them. It then fires the ball at the opponent.}}
+{{movemid|type=ghost|user=Azure|user1=Azure's Drowzee|startcode=DP135|startname=Beating the Bustle and Hustle!}}
+{{movep|type=ghost|ms=0267|pkmn=Beautifly|method=A black and purple ball appears in front of Beautifly's body and it fires it at the opponent.}}
+{{movemid|type=ghost|user=Kiko|user1=Kiko's Beautifly|startcode=M12|startname=Arceus and the Jewel of Life}}
+{{movep|type=ghost|ms=0431|pkmn=Glameow|method=Glameow opens its mouth and forms a black and purple ball of energy in front of it. It then fires it at the opponent.}}
+{{movemid|type=ghost|user=Johanna's Glameow|startcode=DP138|startname=Strategy Begins at Home!}}
+{{movep|type=ghost|ms=0376|pkmn=Metagross|method=Metagross opens its mouth and forms a black and purple ball of energy in front of it. It then fires the ball at the opponent.}}
+{{movemid|type=ghost|user=Metagross (Pokémon)|user1=A wild Metagross|startcode=DP158|startname=Regaining the Home Advantage!}}
+{{movep|type=ghost|ms=0234|pkmn=Stantler|method=Stantler fires a black and purple ball from its mouth at the opponent.}}
+{{movemid|type=ghost|user=Pokémon Coordinator|user1=A Coordinator's Stantler|startcode=DP162|startname=Playing the Performance Encore!}}
+{{movep|type=ghost|ms=0136|pkmn=Flareon|method=Flareon opens its mouth and forms a black and purple ball of energy in front of it. It then fires it at the opponent.}}
+{{movemid|type=ghost|user=Ursula|user1=Ursula's Flareon|startcode=DP175|startname=Opposites Interact!}}
+{{movep|type=ghost|ms=0135|pkmn=Jolteon|method=Jolteon opens its mouth and forms a black and purple ball of energy in front of it. Jolteon then closes its mouth and fires the ball at the opponent.}}
+{{movemid|type=ghost|user=Volkner|user1=Volkner's Jolteon|startcode=DP179|startname=The Eighth Wonder of the Sinnoh World!}}
+{{movep|type=ghost|ms=0343|pkmn=Baltoy|method=Baltoy forms a black and purple ball of energy in front of it and fires it at the opponent.}}
+{{movemid|type=ghost|user=Buck|user1=Buck's Baltoy|startcode=DP181|startname=Bucking the Treasure Trend!}}
+{{movep|type=ghost|ms=0506|pkmn=Lillipup|method=Lillipup opens its mouth and forms a black and purple ball of energy in front of it. The ball then condenses slightly and Lillipup fires it at the opponent. When it hits, it explodes into a burst of deep purple energy.}}
+{{movemid|type=ghost|user=Lenora|user1=Lenora's Lillipup|startcode=BW015|startname=The Battle According to Lenora!}}
+{{movep|type=ghost|ms=0507|pkmn=Herdier|method=Herdier opens its mouth and four small black and purple balls of energy appear in front of it in a diamond formation, one after the other. Herdier then fires the balls into the air. As they speed at the opponent, the balls grow larger and then rain down on the opponent, one after the other. Sometimes, only one large orb is formed instead of four.}}
+{{movemid|type=ghost|user=Lenora|user1=Lenora's Herdier|startcode=BW016|startname=Rematch at the Nacrene Gym!}}
+{{movemid|type=ghost|user=Officer Jenny|user1=Officer Jenny's Herdier|startcode=BW052|startname=Ash Versus the Champion!}}
+{{movep|type=ghost|ms=0608|pkmn=Lampent|method=Lampent raises its arms above its head and forms a black and purple ball of energy. It then lowers it until the ball is in front of it and it separates its arms, firing the ball at the opponent.}}
+{{movemid|type=ghost|user=Trip|user1=Trip's Lampent|startcode=BW022|startname=A Venipede Stampede!}}
+{{movemid|type=ghost|user=Lampent (Pokémon)|user1=A wild Lampent|startcode=BW069|startname=Climbing the Tower of Success!}}
+{{movep|type=ghost|ms=0607|pkmn=Litwick|method=Litwick stretches out the purple flame on its head into the air above it. Then, a purple and black orb of energy appears in front of it and Litwick fires the orb at the opponent.}}
+{{movemid|type=ghost|user=Litwick (Pokémon)|user1=Four wild Litwick|startcode=BW026|startname=Scare at the Litwick Mansion!}}
+{{movep|type=ghost|ms=0562|pkmn=Yamask|method=Yamask puts its hands together in front of it and forms a purple and black orb of energy with black static around it in between them. Yamask then throws the ball at the opponent.}}
+{{movemid|type=ghost|user=James's Yamask|startcode=BW026|startname=Scare at the Litwick Mansion!}}
+{{movep|type=ghost|ms=0531|pkmn=Audino|method=Audino puts its hands together in front of it and forms a black and purple orb of energy with black static around it in between them. Audino then fires the orb at the opponent.}}
+{{movemid|type=ghost|user=Pokémon Trainer|user1=A Trainer's Audino|startcode=BW035|startname=Where Did You Go, Audino?}}
+{{movep|type=ghost|ms=0579|pkmn=Reuniclus|method=Reuniclus holds its hands forward and forms a black and purple ball of energy with purple static around it in front of its body and in between its hands. It then fires the ball at the opponent.}}
+{{movemid|type=ghost|user=Damon|user1=Damon's Reuniclus|startcode=M14|startname=White—Victini and Zekrom}}
+{{movep|type=ghost|ms=0570|pkmn=Zorua|method=Zorua opens its mouth and forms a ball of black and purple energy with black static around it in front of it. It then fires the ball at the opponent.}}
+{{movemid|type=ghost|user=Luke's Zorua|startcode=BW038|startname=Movie Time! Zorua in "The Legend of the Pokémon Knight"!}}
+{{movep|type=ghost|ms=0622|pkmn=Golett|method=Golett puts its hands together in front of it and forms a black and purple orb of energy with black static around it in between them. It then raises its hands above its head and the orb grows as large as its body. Golett then throws the ball at the opponent.}}
+{{movemid|type=ghost|user=Luke|user1=Luke's Golett|startcode=BW038|startname=Movie Time! Zorua in "The Legend of the Pokémon Knight"!}}
+{{movep|type=ghost|ms=0630|pkmn=Mandibuzz|method=Mandibuzz raises one of her wings across her chest and forms a black and purple orb of energy with black static around it at the tip of her wing. She then waves her wing, throwing the orb at the opponent.}}
+{{movemid|type=ghost|user=Mandibuzz (Pokémon)|user1=Two wild Mandibuzz|startcode=BW043|startname=Meowth's Scrafty Tactics!}}
+{{movep|type=ghost|ms=0575|pkmn=Gothorita|method=Gothorita puts its hands together in front of its body and a black and dark purple orb of energy forms in between them. It then fires the orb at the opponent.}}
+{{movemid|type=ghost|user=Lewis|user1=Lewis's Gothorita|startcode=BW060|startname=Stopping the Rage of Legends! Part 2}}
+{{movep|type=ghost|ms=0593|pkmn=Jellicent|method=Jellicent fires a purple and black orb toward the opponent.}}
+{{movemid|type=ghost|user=Marlon|user1=Marlon's Jellicent|startcode=BW094|startname=The Road to Humilau!}}
+{{movep|type=ghost|ms=0134|pkmn=Vaporeon|method=Vaporeon flicks a purple and black orb off the end of its tail at the opponent.}}
+{{movemid|type=ghost|user=Virgil|user1=Virgil's Vaporeon|startcode=BW103|startname=Curtain Up, Unova League!}}
+{{movep|type=ghost|ms=0510|pkmn=Liepard|method=Liepard opens its mouth and forms a ball of black and purple energy with black static around it in front of it. It then fires the ball at the opponent.}}
+{{movemid|type=ghost|user=Stephan|user1=Stephan's Liepard|startcode=BW106|startname=Strong Strategy Steals the Show!}}
+{{movemid|type=ghost|user=Aldith|user1=Aldith's Liepard|startcode=BW117|startname=Team Plasma's Pokémon Manipulation!}}
+{{movemid|type=ghost|user=Barret|user1=Barret's Liepard|startcode=BW121|startname=Team Plasma and the Awakening Ceremony!}}
+{{movemid|type=ghost|user=Team Plasma Grunt (Trainer class)|user1=A Team Plasma Grunt's Liepard|startcode=BW121|startname=Team Plasma and the Awakening Ceremony!}}
+{{movemid|type=ghost|user=Shinobu|user1=Shinobu's Liepard|startcode=XY100|startname=A Festival of Decisions!}}
+{{movep|type=ghost|ms=0592F|pkmn=Frillish|method=Frillish puts two of its tentacles together and forms a ball of black and purple energy with black static around between them. It then fires the ball at the opponent.}}
+{{movemid|type=ghost|user=Jessie's Frillish|startcode=BW110|startname=The Name's N!}}
+{{movep|type=ghost|ms=0623|pkmn=Golurk|method=Golurk forms a ball of black and purple energy with black static around between its hands. It then fires the ball at the opponent.}}
+{{movemid|type=ghost|user=Cedric Juniper's assistants|user1=Cedric Juniper's assistant's two Golurk|startcode=BW121|startname=Team Plasma and the Awakening Ceremony!}}
+{{movep|type=ghost|ms=0429|pkmn=Mismagius|method=Mismagius forms a ball of black and purple energy with black static around it. It then fires the ball at the opponent.}}
+{{movemid|type=ghost|user=Mismagius (Pokémon)|user1=Multiple wild Mismagius|startcode=BW135|startname=Mystery on a Deserted Island!}}
+{{movep|type=ghost|ms=0710|pkmn=Pumpkaboo|method=Pumpkaboo forms a ball of black and purple energy with black static around it. It then fires the ball at the opponent.}}
+{{movemid|type=ghost|user=Jessie's Pumpkaboo|startcode=XY011|startname=The Bamboozling Forest!}}
+{{movep|type=ghost|ms=0282|pkmn=Gardevoir|method=Gardevoir forms a ball of black and purple energy with black static around it. It then fires the ball at the opponent.}}
+{{movemid|type=ghost|user=Diantha's Gardevoir|startcode=XY028|startname=The Bonds of Evolution!}}
+{{movep|type=ghost|ms=0282M|pkmn=Gardevoir|method=Mega Gardevoir forms a barrage of balls of black and purple energy with black static around it. It then fires the ball at the opponent.}}
+{{movemid|type=ghost|user=Diantha's Gardevoir|startcode=XY028|startname=The Bonds of Evolution!}}
+{{movemid|type=Ghost|user=Pokémon Trainer|user1=A Trainer's Gardevoir|startcode=M17|startname=Diancie and the Cocoon of Destruction}}
+{{movep|type=ghost|ms=0717|pkmn=Yveltal|method=Yveltal forms a ball of black and purple energy with black static around it. It then fires the ball at the opponent.}}
+{{movemid|type=ghost|user=Yveltal (M17)|startcode=M17|startname=Diancie and the Cocoon of Destruction}}
+{{movep|type=ghost|ms=0326|pkmn=Grumpig|method=Grumpig forms a ball of black and purple energy with black static around it. It then throws the ball at the opponent.}}
+{{movemid|type=ghost|user=Grumpig (Pokémon)|user1=A wild Grumpig|startcode=XY061|startname=An Oasis of Hope!}}
+{{movep|type=ghost|ms=0325|pkmn=Spoink|method=Spoink forms a ball of black and purple energy with black static around it. It then throws the ball at the opponent.}}
+{{movemid|type=ghost|user=Spoink (Pokémon)|user1=Multiple wild Spoink|startcode=XY061|startname=An Oasis of Hope!}}
+{{movep|type=ghost|ms=0487|pkmn=Giratina|method=Giratina forms a ball of black and purple energy with black static around it. It then fires the ball at the opponent.}}
+{{movemid|type=ghost|user=Hoopa (anime)|user1=A Giratina summoned by Hoopa|startcode=M18|startname=Hoopa and the Clash of Ages}}
+{{movep|type=ghost|ms=0720U|pkmn=Hoopa|method=Hoopa Unbound forms a ball of black and purple energy with black static around it. It then fires the ball at the opponent.}}
+{{movemid|type=ghost|user=Hoopa (anime)|startcode=M18|startname=Hoopa and the Clash of Ages}}
+{{movep|type=ghost|ms=0711|pkmn=Gourgeist|method=Gourgeist forms a ball of black and purple energy with black static around it. It then fires the ball at the opponent; or, Gourgeist forms three balls of black and purple energy with black static around them. It then fires the balls at the opponent.}}
+{{movemid|type=ghost|user=Count Pumpka's steward|user1=Count Pumpka's steward's Gourgeist|startcode=XY082|startname=A Festival Trade! A Festival Farewell?}}
+{{movemid|type=ghost|user=Jessie's Gourgeist|startcode=XY082|startname=A Festival Trade! A Festival Farewell?}}
+{{movep|type=ghost|ms=0354M|pkmn=Banette|method=Mega Banette forms a ball of black and purple energy with black static around it. It then throws the ball at the opponent.}}
+{{movemid|type=ghost|user=Pokémon Trainer|user1=A Trainer's Banette|startcode=XYS04|startname=Mega Evolution Special IV}}
+{{movep|type=ghost|ms=0708|pkmn=Phantump|method=Phantump form a ball of black and purple energy with black static around it in front of its mouth. It then fires the ball at the opponent.}}
+{{movemid|type=ghost|user=Phantump (Pokémon)|user1=Multiple wild Phantump|startcode=XY117|startname=Making Friends and Influencing Villains!}}
+{{movep|type=ghost|ms=0094M|pkmn=Gengar|method=A small purple ball of energy with purple sparks of aura moving around the outside of it, with a white aura in the inside of the ball and white sparks coming out of the core, forms in front of Mega Gengar's mouth. The ball grows until it reaches the size of Mega Gengar's mouth and is then fired at the opponent.}}
+{{movemid|type=ghost|user=Alva|user1=Alva's Gengar|startcode=M19|startname=Volcanion and the Mechanical Marvel}}
+{{movep|type=ghost|ms=0778|pkmn=Mimikyu|method=Mimikyu forms a ball of black and purple energy with black static around it. It then fires the ball at the opponent.}}
+{{movemid|type=ghost|user=Jessie's Mimikyu|startcode=SM003|startname=Loading the Dex!}}
+{{movep|type=ghost|ms=0769|pkmn=Sandygast|method=Sandygast forms a ball of black and purple energy with black static around it. It then fires the ball at the opponent.}}
+{{movemid|type=ghost|user=Sandygast (Pokémon)|user1=A wild Sandygast|startcode=SM022|startname=A Shivering Shovel Search!}}
+{{movep|type=ghost|ms=0770|pkmn=Palossand|method=Palossand forms a ball of black and purple energy with black static around it. It then fires the ball at the opponent.}}
+{{movemid|type=ghost|user=Palossand (Pokémon)|user1=A wild Palossand|startcode=SM022|startname=A Shivering Shovel Search!}}
+{{movep|type=ghost|ms=0802|pkmn=Marshadow|method=Marshadow puts its hands together and forms a black and purple ball of energy with purple static around it. Marshadow then shoots it at the opponent.}}
+{{movemid|type=ghost|user=Marshadow (M20)|startcode=M20|startname=I Choose You!}}
+{{movep|type=ghost|ms=0354|pkmn=Banette|method=Banette forms a ball of black and purple energy with black static around it between its hands. It then throws the ball at the opponent.}}
+{{movemid|type=ghost|user=Pokémon Trainer|user1=A Trainer's Banette|startcode=JN110|startname=Narrowing the Chaser Chase!}}
+{{movep|type=ghost|ms=0151|pkmn=Mew|method=Mew forms a ball of black and purple energy with black static around it between its hands. It then throws the ball at the opponent.}}
+{{movemid|type=ghost|user=Mew (anime)|startcode=JN134|startname=In the Palms of our Hands!}}
+{{movep|type=ghost|ms=0979|pkmn=Annihilape|method=Annihilape forms a black orb around one or both of its fists. It then punches the air, firing the orbs at the opponent.}}
+{{movebtm|type=ghost|user=Annihilape (Pokémon)|user1=Three wild Annihilape|startcode=HZ053|startname=Hatenna and the Otherworldly|notes=Debut}}
+
+===Pokémon Generations===
+{{moveanime|type=ghost|exp=yes|gen=The user forms a black ball out of energy and fires it at the opponent.|image1=Deoxys Shadow Ball PG.png|image1p=Deoxys|image2=Giratina Altered Forme Shadow Ball PG.png|image2p=Altered Forme Giratina}}
+{{movep|type=ghost|ms=0386A|pkmn=Deoxys|method=Deoxys creates a black and purple ball out of energy in between its tentacles and fires it at the opponent.}}
+{{movemid|type=ghost|user=Player character|user1=Trainer's Deoxys|startcode=PG09|startname=The Scoop|notes=Debut}}
+{{movep|type=ghost|ms=0487|pkmn=Giratina|method=Giratina creates two black and purple balls out of energy in front of its body and fires them at the opponent.}}
+{{movebtm|type=ghost|user=Giratina (Pokémon)|user1=A wild Giratina|startcode=PG11|startname=The New World}}
+
+===POKÉTOON===
+{{moveanime|type=ghost|exp=yes|gen=The user forms a black ball out of energy and fires it at the opponent.|image1=Gengar Shadow Ball PT.png|image1p=Gengar}}
+{{movep|type=ghost|ms=0094|pkmn=Gengar|method=Gengar forms a orb of black and purple energy in one of its hands. It then throws the orb at the opponent.}}
+{{movebtm|type=ghost|user=Gengar (Pokémon)|user1=A wild Gengar|startcode=PT16|startname=PT16|notes=Debut}}
+
+==In the manga==
+===Ash & Pikachu===
+{{Movemanga|type=ghost|exp=yes|gen=The user fires a dark-colored ball.|image1=Norman Slakoth Shadow Ball AP.png|image1p=Slakoth}}
+{{movep|type=ghost|ms=287|pkmn=Slakoth|method=Slakoth fires a dark-colored ball.}}
+{{MovebtmManga|type=ghost|user=Norman|user1=Norman's Slakoth|startcode=SP25|startname=I'll Win With My Own Battle Style!!|notes=Debut}}
+
+===Be the Best! Pokémon B+W===
+{{movemanga|type=ghost|exp=yes|gen=The user fires some shadowy blobs.|image1=Monta Litwick Shadow Ball.png|image1p=Litwick}}
+{{movep|type=ghost|ms=607|pkmn=Litwick|method=Litwick fires shadowy blobs at the opponent.}}
+{{movebtmManga|type=ghost|user=Monta|user1=Monta's Litwick|startcode=PBW6|startname=Pokédex Complete!|notes=Debut}}
+
+===Movie adaptations===
+{{movemanga|type=ghost|exp=yes|gen=The user fires a dark-colored ball.|image1=Giratina Shadow Ball M18 manga.png|image1p=Giratina}}
+{{movep|type=ghost|ms=487|pkmn=Giratina|method=Giratina fires a dark-colored ball.}}
+{{movebtmManga|type=ghost|user=Giratina (Pokémon)|user1=A wild Giratina|startcode=Hoopa and the Clash of Ages (manga)|startname=Hoopa and the Clash of Ages|notes=Debut}}
+
+===Phantom Thief Pokémon 7===
+{{Movemanga|type=ghost|exp=yes|gen=The user fires several spheres of energy at the opponent.|image1=Lily Mismagius Shadow Ball P7.png|image1p=Mismagius}}
+{{movep|type=ghost|ms=429|pkmn=Mismagius|method=Mismagius fires several spheres of energy at the opponent.}}
+{{MovebtmManga|type=ghost|user=Lily (Pokémon 7)|user1=Lily's Mismagius|startcode=P7-08|startname=Lily Regains Her Memories!|notes=Debut}}
+
+===Pocket Monsters Platinum: Aim to Be Battle King!!===
+{{Movemanga|type=ghost|exp=yes|gen=The user fires a spherical dark ball at the opponent.|image1=Drifblim Shadow Ball PBK.png|image1p=Drifblim}}
+{{movep|type=ghost|ms=426|pkmn=Drifblim|method=Drifblim fires a spherical dark ball at the opponent.}}
+{{MovebtmManga|type=ghost|user=Drifblim (Pokémon)|user1=An Unknown Trainer's Drifblim|startcode=PBK6|startname=The Road to Becoming Battle King!!|notes=Debut}}
+
+===Pokémon Adventures===
+{{movemanga|type=ghost|exp=yes|gen=The user fires a ball of dark colored energy at the opponent.|image1=Fofo Shadow Ball.png|image1p=Castform|image2=Sird Banette Shadow Ball.png|image2p=Banette|image3=Crystal Shedinja Shadow Ball.png|image3p=Shedinja|image4=Colress Beheeyem Shadow Ball Adventures.png|image4p=Beheeyem}}
+{{movep|type=ghost|ms=092|pkmn=Gastly|method=Gastly releases a dark ball of energy from the front of its mouth at the opponent.}}
+{{movemid|type=ghost|user=Masked Man|user1=The Masked Man's Gastly|startcode=PS104|startname=The Ariados up There|notes=Debut}}
+{{movep|type=ghost|ms=351|pkmn=Castform|method=Castform releases a dark ball of energy from the front of its body at the opponent.}}
+{{movemid|type=ghost|user=Fofo|user1=Ruby's Fofo|startcode=PS223|startname=I More Than Like You, Luvdisc I}}
+{{movep|type=ghost|ms=354|pkmn=Banette|method=Banette jumps into the air and holds its hands above its head. A black ball of energy then appears in between its hands and Banette slams the ball into the opponent.}}
+{{movemid|type=ghost|user=Sird|user1=Sird's Banette|startcode=PS289|startname=Surprised by Sneasel}}
+{{movep|type=ghost|ms=292|pkmn=Shedinja|method=Shedinja fires a black ball of energy from the front of its body at the opponent.}}
+{{movemid|type=ghost|user=Crystal (Adventures)|user1=Crystal's Shedinja|startcode=PS312|startname=Chipping Away at Regirock}}
+{{movep|type=ghost|ms=302|pkmn=Sableye|method=Sableye extends one of its arms and releases a black ball of energy from it at the opponent.}}
+{{movemid|type=ghost|user=Hex Maniac (Trainer class)|user1=Valerie's Sableye|startcode=PS319|startname=Verily Vanquishing Vileplume I}}
+{{movep|type=ghost|ms=356|pkmn=Dusclops|method=Dusclops swings one of its hands to the side, releasing a black orb of energy from the hand at the opponent.}}
+{{movemid|type=ghost|user=Emerald's Dusclops|startcode=PS321|startname=Cunning Kirlia}}
+{{movep|type=ghost|ms=593F|pkmn=Jellicent|method=Jellicent forms a black orb of energy on the tip of its tentacle and fires it at the opponent.}}
+{{movemid|type=ghost|user=Shauntal|user1=Shauntal's Jellicent|startcode=PS490|startname=A Stormy Time in the Battle Subway}}
+{{movep|type=ghost|ms=606|pkmn=Beheeyem|method=Beheeyem points its hand at its shadow, causing it to extend. A dark orb of energy then fires out of the shadow and strikes the opponent.}}
+{{movebtmManga|type=ghost|user=Colress|user1=Colress's Beheeyem|startcode=PS514|startname=The Tournament Continues}}
+
+* In ''[[PS321|Cunning Kirlia]]'', {{adv|Ruby}}'s {{p|Kirlia}}, [[Rara]], was revealed to know Shadow Ball when she used {{m|Imprison}} to prevent {{adv|Emerald}}'s {{TP|Emerald|Dusclops}} from using the move against her.
+* [[Bruno]]'s {{p|Hitmonlee}} was revealed to know Shadow Ball on the official website, but it has never been shown using the move. Moreover, Hitmonlee is [[Manga move errors|unable to learn Shadow Ball]].
+
+===Pokémon Diamond and Pearl Adventure!===
+{{movemanga|type=ghost|exp=yes|gen=The user hurls a shadowy ball of energy at the target.|image1=Hareta Misdreavus Shadow Ball.png|image1p=Misdreavus}}
+{{movep|type=ghost|ms=200|pkmn=Misdreavus|method= Misdreavus hurls a shadowy ball of energy from its mouth at the opponent.}}
+{{movebtmManga|type=ghost|user=Hareta|user1=Hareta's Misdreavus|startcode=DPA12|startname=A Battle of Wills|notes=Debut}}
+
+===Pokémon Mystery Dungeon: Blazing Exploration Team===
+{{movemanga|type=ghost|exp=yes|gen=The user hurls a shadowy ball of energy at the target.|image1=Dusknoir Shadow Ball BET.png|image1p=Dusknoir}}
+{{movep|type=ghost|ms=477|pkmn=Dusknoir|method=Dusknoir forms a shadowy ball of energy in its hands.}}
+{{movebtmManga|type=ghost|user=Dusknoir (Explorers of Time, Darkness, and Sky)|user1=A wild Dusknoir|startcode=BET2|startname=Take Back the Time Gears!|notes=Debut}}
+
+===Pokémon Try Adventure===
+{{Movemanga|type=ghost|exp=yes|gen=The user fires a dark-colored ball.|image1=Cofagrigus Shadow Ball TA.png|image1p=Cofagrigus}}
+{{movep|type=ghost|ms=563|pkmn=Cofagrigus|method=Cofagrigus fires a dark-colored ball.}}
+{{MovebtmManga|type=ghost|user=Cofagrigus (Pokémon)|user1=A wild Cofagrigus|startcode=TA42|notes=Debut}}
+
+==In other generations==
+===Core series games===
+{{Movegen
+|type=Ghost
+|genII=Shadow Ball II
+|genIII=Shadow Ball III
+|genIV=Shadow Ball IV
+|genV=Shadow Ball V
+}}
+{{Movegen
+|type=Ghost
+|genVI=Shadow Ball VI
+|genVI2=Shadow Ball VI 2
+|SMUSUM=Shadow Ball VII
+|SMUSUM2=Shadow Ball VII 2
+|LGPE=Shadow Ball PE
+|LGPE2=Shadow Ball PE 2
+}}
+{{Movegen
+|type=Ghost
+|genVIII=Shadow Ball VIII
+|genVIII2=Shadow Ball VIII 2
+|LA=Shadow Ball LA
+|ZA=Shadow Ball ZA
+}}
+
+===Side series games===
+{{Movegen
+|type=Ghost
+|Stad2=Shadow Ball Stad2
+|Colo=Shadow Ball Colo
+|XD=Shadow Ball XD
+|PBR=Shadow Ball PBR
+}}
+
+===Spin-off series games===
+{{Movegen
+|type=Ghost
+|PMDRB=Shadow Ball PMD RB
+|PMDTDS=Shadow Ball PMD TDS
+|PMDGTI=Shadow Ball PMD GTI
+|PSMD=Shadow Ball PSMD
+}}
+{{Movegen
+|type=Ghost
+|Masters=Shadow Ball Masters
+}}
+
+==Trivia==
+[[File:Cruik Muk Shadow Ball Colo.png|thumb|250px|Muk using Shadow Ball in Colosseum]]
+* Due to Shadow Ball being a [[physical move]] prior to [[Generation IV]], Shadow Ball is the only damaging move to have ever dealt damage in a different [[Damage category|category]] from {{DL|Statistic|Special Defense|the target's defensive stat it lowers}}, excluding [[Max Move]]s.
+* Shadow Ball was [[M01|introduced]] in the {{pkmn|animated series}} prior to the {{pkmn|games}}.
+* In {{g|Colosseum}}, in [[Mt. Battle Area 10]] in Battle Mode Singles as well as in [[Battle Now (Colosseum)|Battle Now]], {{tc|Cooltrainer}} Cruik's {{p|Muk}} knows Shadow Ball, although Muk cannot learn this move until Generation IV.
+* In [[Generation III]] and {{LGPE}}, Shadow Ball was the only Ghost-type move that could be taught via [[TM]].
+** In [[Generation VIII]], Shadow Ball is the only Ghost-type move that can be taught via [[TR]].
+* Shadow Ball is the only Ghost-type move to change damage categories in the transition from [[Generation III]] to [[Generation IV]].
+** While {{m|Night Shade}} also became a special attack, it is a fixed damage attack and is therefore not affected  by the change in damage category.
+
+==In other languages==
+{{Langtable|color={{ghost color}}|bordercolor={{ghost color dark}}
+|zh_yue=暗影球 ''{{tt|Amyíng Kàuh|Shadow Ball}}'' {{tt|*|Games}}<br>影子球 ''{{tt|Yíngjí Kàuh|Shadow Ball}}'' {{tt|*|Animated series, Adventures}}
+|zh_cmn=暗影球 ''{{tt|Ànyǐng Qiú|Shadow Ball}}'' {{tt|*|Games}}<br>影子球 ''{{tt|Yǐngzi Qiú|Shadow Ball}}'' {{tt|*|Animated series, Adventures}}
+|cs=Stínová koule
+|da=Skyggekugle
+|nl=Schaduwbal
+|fi=Varjopallo
+|fr=Ball'Ombre
+|de=Spukball
+|el=Σφαίρα Ερέβους ''Sfaíra Erévous''
+|hi=शैडो बॉल ''Shadow Ball'' {{tt|*|Pokémon GO}}<br>छाया का गोला ''{{tt|Chhaya Ka Gola|Shadow Ball}}''
+|id=Shadow Ball{{tt|*|Pokémon GO}}<br>Bola Bayangan<br>Bola Gelap
+|it=Palla Ombra
+|ko=섀도볼 {{tt|''Syaedobol''|Shadow Ball}}
+|no=Skyggeball
+|pl=Kula Cienia{{tt|*|AG036, DP051, DP085-present}}<br>Cień Kuli{{tt|*|DP027, DP079}}<!--<br>Cień Kulisty{{tt|*|EP181, AG027}}<br>Cienista Piłka{{tt|*|EP182}}-->
+|pt_br=Bola Sombria (games, [[XY019]]–present, TCG, manga)<br>Bola das Sombras ([[AG190]], [[DP027]]–[[XY013]])<br>'''Other names:''' <small>Bola Negra{{tt|*|EP183}}, Esfera das Sombras{{tt|*|AG027–AG036}}, Esfera<br>Obscura{{tt|*|HS11, AG044–AG076}}, Bola de Sombra{{tt|*|AG098–AG132}}, Bola das Trevas{{tt|*|AG163–AG167}}</small>
+|pt_eu=Bola Sombra
+|ro=Bulgărele Umbră
+|ru=Шар Тьмы ''{{tt|Shar T'my|Ball of Darkness}} {{tt|*|Pokémon GO}}''<br>Тёмный Шар ''{{tt|Tëmnyy Shar|Dark Ball}}''
+|sr=Lopta Senke
+|es_la=Bola Sombra (games, [[EP181]]–[[EP182]]<!--, [[AG070]]-->, [[BW105]]–present)<br>Bola de Sombra ([[AG027]]–[[BW103]]<!--, [[BW106]]-->)<!--<br>Bola Negra ([[HS11]], [[AG073]])-->
+|es_eu=Bola Sombra
+|th=ชาโดว์บอล ''Shadow Ball''
+|tr=Gölge Topu
+|vi=Quả Cầu Bóng Đêm{{tt|*|animated series}}<br>Quả Bóng Bóng Đêm{{tt|*|Adventures}}
+|ca=Bola d'Ombra
+}}
+{{crunch|ghost}}
+{{Generation II TMs}}
+{{Generation III TMs}}
+{{Generation IV TMs}}
+{{Generation V TMs}}
+{{Generation VI TMs}}
+{{Generation VII TMs}}
+{{Generation VIII TMs}}
+{{Generation IX TMs}}
+{{Project Moves and Abilities notice}}
+
+[[Category:Ball and bomb moves]]
+[[Category:Moves that can lower the target's Special Defense]]
+[[Category:Moves in Pokémon: Let's Go, Pikachu! and Let's Go, Eevee!]]
+[[Category:Moves usable in Pokémon Sword and Shield]]
+[[Category:Moves in Pokémon Legends: Arceus]]
+[[Category:Moves usable in Pokémon Scarlet and Violet]]
+[[Category:Moves in Pokémon Legends: Z-A]]
+[[Category:Moves that were used in the animated series before their game debut]]
+
+[[de:Spukball]]
+[[es:Bola Sombra]]
+[[fr:Ball'Ombre]]
+[[it:Palla Ombra]]
+[[ja:シャドーボール]]
+[[zh:暗影球（招式）]]

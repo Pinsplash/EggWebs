@@ -1,0 +1,476 @@
+{{MoveInfobox|
+n=389 |
+name=Sucker Punch |
+jname=ふいうち |
+jtrans=Surprise Attack |
+jtranslit=Fuiuchi |
+gameimage=Sucker Punch IX.png |
+gameimagewidth=300 |
+gen=IV |
+type=Dark |
+damagecategory=Physical |
+basepp=5 |
+maxpp=8 |
+power={{tt|70|80 prior to Generation VII}}|
+accuracy=100 |
+priority=+1 |
+category=Clever |
+appealsc=2 |
+scdesc=Enables the user to perform first in the next turn. |
+category6=Clever|
+appeal6=3|
+jam6=0|
+cdesc6=Excites the audience a lot if used first.|
+pokefordex=Sucker%20Punch |
+touches=yes |
+protect=yes |
+magiccoat=no |
+snatch=no |
+mirrormove=yes |
+kingsrock=yes |
+flag7=yes |
+flag8=no |
+sound=no |
+mtpt=yes |
+mths=yes|
+na=no |
+target=anyadjacent|
+footnotes= }}
+'''Sucker Punch''' (Japanese: '''ふいうち''' ''Surprise Attack'') is a damage-dealing {{type|Dark}} [[move]] introduced in [[Generation IV]].
+
+==Effect==
+===Generation IV===
+Sucker Punch has a [[power]] of 80. It has a [[priority]] of +1, so it is used before all moves that do not have increased priority. If Sucker Punch's target has selected a [[physical move|physical]] or [[special move|special]] attack and has not yet had a chance to execute its move, Sucker Punch will damage the target; otherwise, Sucker Punch will fail. Sucker Punch only depends on the move the target has selected, and is not affected by any consideration of whether the attack can actually be executed, such as [[status condition]]s like {{status|sleep}} or {{status|freeze}} or {{Abilities}} like {{a|Truant}}.
+
+===Generation V===
+Sucker Punch will now succeed if the opponent is using {{m|Me First}} (despite the fact that Me First is a [[status move]]).
+
+===Generation VII===
+Sucker Punch's base power is reduced to 70.
+
+===Generation VIII===
+====Pokémon Sword and Shield====
+Due to a [[List of glitches in Generation VIII#Sucker Punch/Quash glitch|glitch]], in a [[Double Battle]] where the player who didn't initiate the challenge is down to their final Pokémon, that Pokémon's Sucker Punch originally failed when used against the opponent on their right, regardless of what move that Pokémon selected for the turn. With the release of the version 1.1 update to [[Sword and Shield]], this glitch was fixed and Sucker Punch can now correctly hit Pokémon in that position.
+
+==Description==
+{{movedesc|Dark}}
+{{movedescentry|{{gameabbrev4|DPPtHGSS}}{{gameabbrevss|PBR}}|This move enables the user to attack first. It fails if the foe is not readying an attack, however.}}
+{{movedescentry|{{gameabbrev5|BWB2W2}}|This move enables the user to attack first. It fails if the target is not readying an attack, however.}}
+{{movedescentry|{{gameabbrev6|XYORAS}}<br>{{gameabbrev7|SMUSUMPE}}<br>{{gameabbrev8|SwShBDSPLA}}<br>{{gameabbrev9|SV}}|This move enables the user to attack first. This move fails if the target is not readying an attack.}}
+|}
+|}{{left clear}}
+
+==Learnset==
+===By [[Level|leveling up]]===
+{{Movehead/Games|Dark|g1=none|g2=none|g3=none|g7=2|g8=2|g9=1|g9g={{gameabbrev9|SV}}}}
+{{Moveentry/8|0019|Rattata|type=Normal|1|Field|Field|19|19|19|25|24||25}}
+{{Moveentry/8|0019|formsig=A|Rattata|type=Dark|type2=Normal|1|Field|Field|form=Alolan Form||||25|24|STAB='''}}
+{{Moveentry/8|0020|Raticate|type=Normal|1|Field|Field|19|19|19|29|34||29}}
+{{Moveentry/8|0020|formsig=A|Raticate|type=Dark|type2=Normal|1|Field|Field|form=Alolan Form||||29|34|STAB='''}}
+{{Moveentry/8|0024|Arbok|type=Poison|2|Field|Dragon|−|−|−|−|1||−|−}}
+{{Moveentry/8|0050|Diglett|type=Ground|1|Field|Field|23|23|23|22|25|20|20|20}}
+{{Moveentry/8|0050|formsig=A|Diglett|type=Ground|type2=Steel|1|Field|Field|form=Alolan Form||||22|25|20||20}}
+{{Moveentry/8|0051|Dugtrio|type=Ground|1|Field|Field|23|23|23|22|25|20|20|20}}
+{{Moveentry/8|0051|formsig=A|Dugtrio|type=Ground|type2=Steel|1|Field|Field|form=Alolan Form||||22|25|20||20}}
+{{Moveentry/8|0071|Victreebel|type=Grass|type2=Poison|1|Grass|Grass|−|−|−|−|1||−|−}}
+{{Moveentry/8|0092|Gastly|type=Ghost|type2=Poison|1|Amorphous|Amorphous|22|22|22|22|19|32|32|32}}
+{{Moveentry/8|0093|Haunter|type=Ghost|type2=Poison|1|Amorphous|Amorphous|22|22|22|22|19|36|36|36}}
+{{Moveentry/8|0094|Gengar|type=Ghost|type2=Poison|1|Amorphous|Amorphous|22|22|22|22|19|36|36|36}}
+{{Moveentry/8|0106|Hitmonlee|type=Fighting|1|Human-Like|Human-Like|−|−|−|−|−|−|−|16}}
+{{Moveentry/8|0115|Kangaskhan|type=Normal|1|Monster|Monster|46|49|49|49|50|28|28}}
+{{Moveentry/8|0122|Mr. Mime|type=Psychic|type2=Fairy|1|Human-Like|Human-Like|−|−|−|−|−|40|40}}
+{{Moveentry/8|0122|formsig=G|Mr. Mime|type=Ice|type2=Psychic|1|Human-Like|Human-Like|form=Galarian Form||||||40}}
+{{Moveentry/8|0146|formsig=G|Moltres|type=Dark|type2=Flying|1|No Eggs Discovered|No Eggs Discovered|form=Galarian Form||||||30||30|STAB='''}}
+{{Moveentry/8|0161|Sentret|type=Normal|1|Field|Field|31|31|31|31|||31|31}}
+{{Moveentry/8|0162|Furret|type=Normal|1|Field|Field|36|36|36|36|||36|36}}
+{{Moveentry/8|0167|Spinarak|type=Bug|type2=Poison|1|Bug|Bug|26|26|26|26|||26|26}}
+{{Moveentry/8|0168|Ariados|type=Bug|type2=Poison|1|Bug|Bug|28|28|28|28|||28|28}}
+{{Moveentry/8|0185|Sudowoodo|type=Rock|1|Mineral|Mineral|41|41{{sup/5|BW}}<br>36{{sup/5|B2W2}}|36|40||28|28|28}}
+{{Moveentry/8|0198|Murkrow|type=Dark|type2=Flying|1|Flying|Flying|45|55|55|55|||55|50|STAB='''}}
+{{Moveentry/8|0237|Hitmontop|type=Fighting|1|Human-Like|Human-Like|−|−|−|−||24|24|24}}
+{{Moveentry/8|0261|Poochyena|type=Dark|1|Field|Field|49|49|49{{sup/6|XY}}<br>40{{sup/6|ORAS}}|43|||43|40|STAB='''}}
+{{Moveentry/8|0262|Mightyena|type=Dark|1|Field|Field|62|62|62{{sup/6|XY}}<br>48{{sup/6|ORAS}}|52|||52|52|STAB='''}}
+{{Moveentry/8|0273|Seedot|type=Grass|2|Field|Grass|−|−|−|−||30|30|30|STAB=''}}
+{{Moveentry/8|0274|Nuzleaf|type=Grass|type2=Dark|2|Field|Grass|−|−|−|−||50|50|50|STAB='''}}
+{{Moveentry/8|0275|Shiftry|type=Grass|type2=Dark|2|Field|Grass|−|−|−|−||1|1|{{tt|Rem.|Can only be learned via Move Reminder}}|STAB='''}}
+{{Moveentry/8|0289|Slaking|type=Normal|1|Field|Field|−|−|−|−|||53|1}}
+{{Moveentry/8|0303|Mawile|type=Steel|type2=Fairy|2|Field|Fairy|46|46|46{{sup/6|XY}}<br>37{{sup/6|ORAS}}|37||20|20}}
+{{Moveentry/8|0327|Spinda|type=Normal|2|Field|Human-Like|32|32|32{{sup/6|XY}}<br>28{{sup/6|ORAS}}|28|||28}}
+{{Moveentry/8|0331|Cacnea|type=Grass|2|Grass|Human-Like|37|37|37{{sup/6|XY}}<br>34{{sup/6|ORAS}}|34|||34|34|STAB=''}}
+{{Moveentry/8|0332|Cacturne|type=Grass|type2=Dark|2|Grass|Human-Like|41|41|41{{sup/6|XY}}<br>35{{sup/6|ORAS}}|35|||35|35|STAB='''}}
+{{Moveentry/8|0352|Kecleon|type=Normal|1|Field|Field|46{{sup/4|DP}}<br>43{{sup/4|PtHGSS}}|43|43{{sup/6|XY}}<br>46{{sup/6|ORAS}}|46|||46}}
+{{Moveentry/8|0353|Shuppet|type=Ghost|1|Amorphous|Amorphous|35|38{{sup/5|BW}}<br>34{{sup/5|B2W2}}|34{{sup/6|XY}}<br>38{{sup/6|ORAS}}|38|||38|38}}
+{{Moveentry/8|0354|Banette|type=Ghost|1|Amorphous|Amorphous|35|42{{sup/5|BW}}<br>34{{sup/5|B2W2}}|34{{sup/6|XY}}<br>40{{sup/6|ORAS}}|40|||40|40}}
+{{Moveentry/8|0359|Absol|type=Dark|1|Field|Field|44|44{{sup/5|BW}}<br>52{{sup/5|B2W2}}|50{{sup/6|XY}}<br>45{{sup/6|ORAS}}|45||40|40|STAB='''}}
+{{Moveentry/8|0367|Huntail|type=Water|1|Water 1|Water 1|−|−|23{{sup/6|ORAS}}|23|||23}}
+{{Moveentry/8|0413|Wormadam|type=Bug|type2=Grass|1|Bug|Bug|form=All forms|−|−|−|1|||1}}
+{{Moveentry/8|0430|Honchkrow|type=Dark|type2=Flying|1|Flying|Flying|−|−|1|1|||1|1|STAB='''}}
+{{Moveentry/8|0431|Glameow|type=Normal|1|Field|Field|41|41|41|41|||41}}
+{{Moveentry/8|0432|Purugly|type=Normal|1|Field|Field|−|−|−|−|||1}}
+{{Moveentry/8|0434|Stunky|type=Poison|type2=Dark|1|Field|Field|−|−|−|39||30|30|30|STAB='''}}
+{{Moveentry/8|0435|Skuntank|type=Poison|type2=Dark|1|Field|Field|−|−|−|39||30|30|30|STAB='''}}
+{{Moveentry/8|0438|Bonsly|type=Rock|1|No Eggs Discovered|No Eggs Discovered|41|41{{sup/5|BW}}<br>36{{sup/5|B2W2}}|36|40||28|28|28}}
+{{Moveentry/8|0439|Mime Jr.|type=Psychic|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered|−|−|−|−||40|40}}
+{{Moveentry/8|0442|Spiritomb|type=Ghost|type2=Dark|1|Amorphous|Amorphous|31|31|31|31||35|35|35|STAB='''}}
+{{Moveentry/8|0453|Croagunk|type=Poison|type2=Fighting|1|Human-Like|Human-Like|31|31|31|31||24|24|24}}
+{{Moveentry/8|0454|Toxicroak|type=Poison|type2=Fighting|1|Human-Like|Human-Like|31|31|31|31||24|24|24}}
+{{Moveentry/8|0491|Darkrai|type=Dark|1|No Eggs Discovered|No Eggs Discovered|−|−|−|−|||29|29|STAB='''}}
+{{Moveentry/8|0503|formsig=H|Samurott|type=Water|type2=Dark|1|Field|Field|form=Hisuian Form||||||||1|STAB='''}}
+{{Moveentry/8|0509|Purrloin|type=Dark|1|Field|Field||46|46|46||28|STAB='''}}
+{{Moveentry/8|0510|Liepard|type=Dark|1|Field|Field||55|55|55||34|STAB='''}}
+{{Moveentry/8|0556|Maractus|type=Grass|1|Grass|Grass||42|42|42||16}}
+{{Moveentry/8|0595|Joltik|type=Bug|type2=Electric|1|Bug|Bug||40|40|40||28||28}}
+{{Moveentry/8|0596|Galvantula|type=Bug|type2=Electric|1|Bug|Bug||46|46|46||28||28}}
+{{Moveentry/8|0618|Stunfisk|type=Ground|type2=Electric|2|Water 1|Amorphous||−|−|−||25}}
+{{Moveentry/8|0618|formsig=G|Stunfisk|type=Ground|type2=Steel|2|Water 1|Amorphous|form=Galarian Form||||||25}}
+{{Moveentry/8|0676|Furfrou|type=Normal|1|Field|Field|form=All forms|||42|42}}
+{{Moveentry/8|0678|Meowstic|type=Psychic|1|Field|Field|form=All forms|||48|48||24||24}}
+{{Moveentry/8|0717|Yveltal|type=Dark|type2=Flying|1|No Eggs Discovered|No Eggs Discovered|||80|80||20|STAB='''}}
+{{Moveentry/8|0722|Rowlet|type=Grass|type2=Flying|1|Flying|Flying||||32||27||27}}
+{{Moveentry/8|0723|Dartrix|type=Grass|type2=Flying|1|Flying|Flying||||37||35||35}}
+{{Moveentry/8|0724|Decidueye|type=Grass|type2=Ghost|1|Flying|Flying||||38||37||37}}
+{{Moveentry/8|0724|formsig=H|Decidueye|type=Grass|type2=Fighting|1|Flying|Flying|form=Hisuian Form||||||||37}}
+{{Moveentry/8|0745|Lycanroc|type=Rock|1|Field|Field|form=Midday Form||||−||1, {{tt|Evo.|Learned upon evolving}}||{{tt|Evo.|Learned upon evolving}}}}
+{{Moveentry/8|0745|formsig=D|Lycanroc|type=Rock|1|Field|Field|form=Dusk Form||||−||1||1}}
+{{Moveentry/8|0768|Golisopod|type=Bug|type2=Water|2|Bug|Water 3||||31||24}}
+{{Moveentry/8|0775|Komala|type=Normal|1|Field|Field||||31||||31}}
+{{Moveentry/8|0802|Marshadow|type=Fighting|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered||||56||45}}
+{{Moveentry/8|0816|Sobble|type=Water|2|Water 1|Field||||||20||20}}
+{{Moveentry/8|0817|Drizzile|type=Water|2|Water 1|Field||||||24||24}}
+{{Moveentry/8|0818|Inteleon|type=Water|2|Water 1|Field||||||24||24}}
+{{Moveentry/8|0827|Nickit|type=Dark|1|Field|Field||||||24|STAB='''}}
+{{Moveentry/8|0828|Thievul|type=Dark|1|Field|Field||||||28|STAB='''}}
+{{Moveentry/8|0854|Sinistea|type=Ghost|2|Mineral|Amorphous|form=All forms||||||24||24}}
+{{Moveentry/8|0855|Polteageist|type=Ghost|2|Mineral|Amorphous|form=All forms||||||24||24}}
+{{Moveentry/8|0859|Impidimp|type=Dark|type2=Fairy|2|Fairy|Human-Like||||||24||24|STAB='''}}
+{{Moveentry/8|0860|Morgrem|type=Dark|type2=Fairy|2|Fairy|Human-Like||||||24||24|STAB='''}}
+{{Moveentry/8|0861|Grimmsnarl|type=Dark|type2=Fairy|2|Fairy|Human-Like||||||24||24|STAB='''}}
+{{Moveentry/8|0866|Mr. Rime|type=Ice|type2=Psychic|1|Human-Like|Human-Like||||||40}}
+{{Moveentry/8|0887|Dragapult|type=Dragon|type2=Ghost|2|Amorphous|Dragon||||||1||−}}
+{{Moveentry/8|0892|Urshifu|type=Fighting|type2=Dark|1|No Eggs Discovered|No Eggs Discovered|form=Single Strike Style||||||1||1|STAB='''}}
+{{Moveentry/8|0919|Nymble|type=Bug|1|Bug|Bug||||||||38|STAB=''}}
+{{Moveentry/8|0920|Lokix|type=Bug|type2=Dark|1|Bug|Bug||||||||40|STAB='''}}
+{{Moveentry/8|0938|Tadbulb|type=Electric|1|Water 1|Water 1||||||||45}}
+{{Moveentry/8|0939|Bellibolt|type=Electric|1|Water 1|Water 1||||||||45}}
+{{Moveentry/8|0960|Wiglett|type=Water|1|Water 3|Water 3||||||||32}}
+{{Moveentry/8|0961|Wugtrio|type=Water|1|Water 3|Water 3||||||||42}}
+{{Moveentry/8|0986|Brute Bonnet|type=Grass|type2=Dark|1|No Eggs Discovered|No Eggs Discovered||||||||56|STAB='''}}
+{{Moveentry/8|1002|Chien-Pao|type=Dark|type2=Ice|1|No Eggs Discovered|No Eggs Discovered||||||||55|STAB='''}}
+{{Movefoot|Dark|8}}
+
+===By {{pkmn|breeding}}===
+{{Movehead/Games|Dark|Egg Move|g1=none|g2=none|g3=none|g7=1|g7g={{gameabbrev7|SMUSUM}}|g8=2|g9=1|g9g={{gameabbrev9|SV}}}}
+{{Moveentry/7|0023|Ekans|type=Poison|2|Field|Dragon|−|✔|✔|✔||✔|✔}}
+{{Moveentry/7|0032|Nidoran♂|type=Poison|2|Monster|Field|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0069|Bellsprout|type=Grass|type2=Poison|1|Grass|Grass|−|−|−|−||−|✔}}
+{{Moveentry/7|0170|Chinchou|type=Water|type2=Electric|1|Water 2|Water 2|−|−|−|−|−|−|✔}}
+{{Moveentry/7|0177|Natu|type=Psychic|type2=Flying|1|Flying|Flying|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0200|Misdreavus|type=Ghost|1|Amorphous|Amorphous|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/7|0228|Houndour|type=Dark|type2=Fire|1|Field|Field|−|✔|✔|✔||✔|✔|STAB='''}}
+{{Moveentry/7|0261|Poochyena|type=Dark|1|Field|Field|✔|✔|✔|✔||✔|−|STAB='''}}
+{{Moveentry/7|0300|Skitty|type=Normal|2|Field|Fairy|✔|✔|✔|✔||✔}}
+{{Moveentry/7|0302|Sableye|type=Dark|type2=Ghost|1|Human-Like|Human-Like|−|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/7|0303|Mawile|type=Steel|type2=Fairy|2|Field|Fairy|✔|✔|✔|✔|−|✔}}
+{{Moveentry/7|0359|Absol|type=Dark|1|Field|Field|✔|✔|✔|✔|−|✔|STAB='''}}
+{{Moveentry/7|0498|Tepig|type=Fire|1|Field|Field||−|✔|✔|||✔}}
+{{Moveentry/7|0570|Zorua|type=Dark|1|Field|Field||✔|✔|✔|✔||✔|STAB='''}}
+{{Moveentry/7|0621|Druddigon|type=Dragon|2|Dragon|Monster||✔|✔|✔|✔|note=Chain breed}}
+{{Moveentry/7|0624|Pawniard|type=Dark|type2=Steel|1|Human-Like|Human-Like||✔|✔|✔|✔||✔|STAB='''}}
+{{Moveentry/7|0631|Heatmor|type=Fire|1|Field|Field||✔|✔|✔|✔}}
+{{Moveentry/7|0708|Phantump|type=Ghost|type2=Grass|2|Grass|Amorphous|||−|−|✔||✔}}
+{{Moveentry/7|0744|Rockruff|type=Rock|1|Field|Field||||✔|−||✔}}
+{{Moveentry/7|0813|Scorbunny|type=Fire|2|Field|Human-Like|||||✔||✔}}
+{{Moveentry/7|0840|Applin|type=Grass|type2=Dragon|2|Grass|Dragon|||||✔||✔}}
+{{Moveentry/7|0852|Clobbopus|type=Fighting|2|Water 1|Human-Like|||||✔}}
+{{Moveentry/7|0871|Pincurchin|type=Electric|2|Water 1|Amorphous|||||✔||✔}}
+{{Moveentry/7|0885|Dreepy|type=Dragon|type2=Ghost|2|Amorphous|Dragon|||||✔||✔}}
+{{Moveentry/7|0906|Sprigatito|type=Grass|2|Field|Grass|||||||✔|STAB=''}}
+{{Moveentry/7|0917|Tarountula|type=Bug|1|Bug|Bug|||||||✔}}
+{{Moveentry/7|0962|Bombirdier|type=Flying|type2=Dark|1|Flying|Flying|||||||✔|STAB='''}}
+{{Movefoot|Dark|7}}
+
+===By [[Move Tutor]]===
+{{Movehead/TMGames|Dark|g1=none|g2=none|g3=none|g5=none|g6=none|g7=none|g8=none|g9=none
+|g4tm=tutor|g4g={{gameabbrev4|PtHGSS}}}}
+{{Moveentry/1|0019|Rattata|type=Normal|1|Field|Field|✔}}
+{{Moveentry/1|0020|Raticate|type=Normal|1|Field|Field|✔}}
+{{Moveentry/1|0032|Nidoran♂|type=Poison|2|Monster|Field|✔}}
+{{Moveentry/1|0033|Nidorino|type=Poison|2|Monster|Field|✔}}
+{{Moveentry/1|0034|Nidoking|type=Poison|type2=Ground|2|Monster|Field|✔}}
+{{Moveentry/1|0050|Diglett|type=Ground|1|Field|Field|✔}}
+{{Moveentry/1|0051|Dugtrio|type=Ground|1|Field|Field|✔}}
+{{Moveentry/1|0069|Bellsprout|type=Grass|type2=Poison|1|Grass|Grass|✔}}
+{{Moveentry/1|0070|Weepinbell|type=Grass|type2=Poison|1|Grass|Grass|✔}}
+{{Moveentry/1|0071|Victreebel|type=Grass|type2=Poison|1|Grass|Grass|✔}}
+{{Moveentry/1|0074|Geodude|type=Rock|type2=Ground|1|Mineral|Mineral|✔}}
+{{Moveentry/1|0075|Graveler|type=Rock|type2=Ground|1|Mineral|Mineral|✔}}
+{{Moveentry/1|0076|Golem|type=Rock|type2=Ground|1|Mineral|Mineral|✔}}
+{{Moveentry/1|0092|Gastly|type=Ghost|type2=Poison|1|Amorphous|Amorphous|✔}}
+{{Moveentry/1|0093|Haunter|type=Ghost|type2=Poison|1|Amorphous|Amorphous|✔}}
+{{Moveentry/1|0094|Gengar|type=Ghost|type2=Poison|1|Amorphous|Amorphous|✔}}
+{{Moveentry/1|0100|Voltorb|type=Electric|1|Mineral|Mineral|✔}}
+{{Moveentry/1|0101|Electrode|type=Electric|1|Mineral|Mineral|✔}}
+{{Moveentry/1|0106|Hitmonlee|type=Fighting|1|Human-Like|Human-Like|✔}}
+{{Moveentry/1|0115|Kangaskhan|type=Normal|1|Monster|Monster|✔}}
+{{Moveentry/1|0151|Mew|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔}}
+{{Moveentry/1|0161|Sentret|type=Normal|1|Field|Field|✔}}
+{{Moveentry/1|0162|Furret|type=Normal|1|Field|Field|✔}}
+{{Moveentry/1|0167|Spinarak|type=Bug|type2=Poison|1|Bug|Bug|✔}}
+{{Moveentry/1|0168|Ariados|type=Bug|type2=Poison|1|Bug|Bug|✔}}
+{{Moveentry/1|0170|Chinchou|type=Water|type2=Electric|1|Water 2|Water 2|✔}}
+{{Moveentry/1|0171|Lanturn|type=Water|type2=Electric|1|Water 2|Water 2|✔}}
+{{Moveentry/1|0177|Natu|type=Psychic|type2=Flying|1|Flying|Flying|✔}}
+{{Moveentry/1|0178|Xatu|type=Psychic|type2=Flying|1|Flying|Flying|✔}}
+{{Moveentry/1|0185|Sudowoodo|type=Rock|1|Mineral|Mineral|✔}}
+{{Moveentry/1|0197|Umbreon|type=Dark|1|Field|Field|✔|STAB='''}}
+{{Moveentry/1|0198|Murkrow|type=Dark|type2=Flying|1|Flying|Flying|✔|STAB='''}}
+{{Moveentry/1|0200|Misdreavus|type=Ghost|1|Amorphous|Amorphous|✔}}
+{{Moveentry/1|0203|Girafarig|type=Normal|type2=Psychic|1|Field|Field|✔}}
+{{Moveentry/1|0222|Corsola|type=Water|type2=Rock|2|Water 1|Water 3|✔}}
+{{Moveentry/1|0228|Houndour|type=Dark|type2=Fire|1|Field|Field|✔|STAB='''}}
+{{Moveentry/1|0229|Houndoom|type=Dark|type2=Fire|1|Field|Field|✔|STAB='''}}
+{{Moveentry/1|0234|Stantler|type=Normal|1|Field|Field|✔}}
+{{Moveentry/1|0237|Hitmontop|type=Fighting|1|Human-Like|Human-Like|✔}}
+{{Moveentry/1|0251|Celebi|type=Psychic|type2=Grass|1|No Eggs Discovered|No Eggs Discovered|✔}}
+{{Moveentry/1|0261|Poochyena|type=Dark|1|Field|Field|✔|STAB='''}}
+{{Moveentry/1|0262|Mightyena|type=Dark|1|Field|Field|✔|STAB='''}}
+{{Moveentry/1|0275|Shiftry|type=Grass|type2=Dark|2|Field|Grass|✔|STAB='''}}
+{{Moveentry/1|0287|Slakoth|type=Normal|1|Field|Field|✔}}
+{{Moveentry/1|0288|Vigoroth|type=Normal|1|Field|Field|✔}}
+{{Moveentry/1|0289|Slaking|type=Normal|1|Field|Field|✔}}
+{{Moveentry/1|0292|Shedinja|type=Bug|type2=Ghost|1|Mineral|Mineral|✔}}
+{{Moveentry/1|0300|Skitty|type=Normal|2|Field|Fairy|✔}}
+{{Moveentry/1|0301|Delcatty|type=Normal|2|Field|Fairy|✔}}
+{{Moveentry/1|0302|Sableye|type=Dark|type2=Ghost|1|Human-Like|Human-Like|✔|STAB='''}}
+{{Moveentry/1|0303|Mawile|type=Steel|2|Field|Fairy|✔}}
+{{Moveentry/1|0327|Spinda|type=Normal|2|Field|Human-Like|✔}}
+{{Moveentry/1|0331|Cacnea|type=Grass|2|Grass|Human-Like|✔|STAB=''}}
+{{Moveentry/1|0332|Cacturne|type=Grass|type2=Dark|2|Grass|Human-Like|✔|STAB='''}}
+{{Moveentry/1|0336|Seviper|type=Poison|2|Field|Dragon|✔}}
+{{Moveentry/1|0352|Kecleon|type=Normal|1|Field|Field|✔}}
+{{Moveentry/1|0353|Shuppet|type=Ghost|1|Amorphous|Amorphous|✔}}
+{{Moveentry/1|0354|Banette|type=Ghost|1|Amorphous|Amorphous|✔}}
+{{Moveentry/1|0355|Duskull|type=Ghost|1|Amorphous|Amorphous|✔}}
+{{Moveentry/1|0356|Dusclops|type=Ghost|1|Amorphous|Amorphous|✔}}
+{{Moveentry/1|0359|Absol|type=Dark|1|Field|Field|✔|STAB='''}}
+{{Moveentry/1|0367|Huntail|type=Water|1|Water 1|Water 1|✔}}
+{{Moveentry/1|0380|Latias|type=Dragon|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔}}
+{{Moveentry/1|0413|Wormadam|type=Bug|type2=Grass|1|Bug|Bug|form=All forms|✔}}
+{{Moveentry/1|0425|Drifloon|type=Ghost|type2=Flying|1|Amorphous|Amorphous|✔}}
+{{Moveentry/1|0426|Drifblim|type=Ghost|type2=Flying|1|Amorphous|Amorphous|✔}}
+{{Moveentry/1|0429|Mismagius|type=Ghost|1|Amorphous|Amorphous|✔}}
+{{Moveentry/1|0430|Honchkrow|type=Dark|type2=Flying|1|Flying|Flying|✔|STAB='''}}
+{{Moveentry/1|0431|Glameow|type=Normal|1|Field|Field|✔}}
+{{Moveentry/1|0432|Purugly|type=Normal|1|Field|Field|✔}}
+{{Moveentry/1|0434|Stunky|type=Poison|type2=Dark|1|Field|Field|✔|STAB='''}}
+{{Moveentry/1|0435|Skuntank|type=Poison|type2=Dark|1|Field|Field|✔|STAB='''}}
+{{Moveentry/1|0438|Bonsly|type=Rock|1|No Eggs Discovered|No Eggs Discovered|✔}}
+{{Moveentry/1|0442|Spiritomb|type=Ghost|type2=Dark|1|Amorphous|Amorphous|✔|STAB='''}}
+{{Moveentry/1|0453|Croagunk|type=Poison|type2=Fighting|1|Human-Like|Human-Like|✔}}
+{{Moveentry/1|0454|Toxicroak|type=Poison|type2=Fighting|1|Human-Like|Human-Like|✔}}
+{{Moveentry/1|0477|Dusknoir|type=Ghost|1|Amorphous|Amorphous|✔}}
+{{Moveentry/1|0478|Froslass|type=Ice|type2=Ghost|2|Fairy|Mineral|✔}}
+{{Moveentry/1|0479|Rotom|type=Electric|type2=Ghost|1|Amorphous|Amorphous|form=All forms|✔}}
+{{Moveentry/1|0491|Darkrai|type=Dark|1|No Eggs Discovered|No Eggs Discovered|✔|STAB='''}}
+{{Movefoot|Dark|1}}
+
+===Special move===
+====[[Generation V]]====
+{{Movehead/Special|Dark}}
+{{Moveentry/1|0029|Nidoran♀|type=Poison|2|Monster|Field|{{pkmn|Dream World}} - {{dwa|Pleasant Forest}}}}
+{{Moveentry/1|0287|Slakoth|type=Normal|1|Field|Field|{{pkmn|Dream World}} - {{dwa|Dream Park}}}}
+{{Moveentry/1|0302|Sableye|type=Dark|type2=Ghost|1|Human-Like|Human-Like|{{pkmn|Dream World}} - {{dwa|Spooky Manor}}|STAB='''}}
+{{Moveentry/1|0434|Stunky|type=Poison|type2=Dark|1|Field|Field|{{pkmn|Dream World}} - {{dwa|Spooky Manor}}|STAB='''}}
+{{Moveentry/1|0621|Druddigon|type=Dragon|2|Dragon|Monster|{{pkmn|Dream World}} - {{dwa|Icy Cave}}}}
+{{Moveentry/1|0624|Pawniard|type=Dark|type2=Steel|1|Human-Like|Human-Like|{{pkmn|Dream World}} - {{dwa|Spooky Manor}}|STAB='''}}
+{{Movefoot|Dark|1}}
+
+====[[Generation IX]]====
+{{Movehead/Special|Dark}}
+{{Moveentry/1|0229|Houndoom|type=Dark|type2=Fire|1|Field|Field|[[Terastal phenomenon|Wild Tera Pokémon]] - [[Alfornada Cavern]]{{sup/9|SV}}|STAB='''}}
+{{Moveentry/1|0289|Slaking|type=Normal|1|Field|Field|[[Terastal phenomenon|Wild Tera Pokémon]] - [[North Province (Area Two)]]{{sup/9|SV}}}}
+{{Moveentry/1|0871|Pincurchin|type=Electric|2|Water 1|Amorphous|[[Terastal phenomenon|Wild Tera Pokémon]] - [[Glaseado Mountain]]{{sup/9|SV}}}}
+{{Movefoot|Dark|1}}
+
+===By {{pkmn2|event}}===
+====[[Generation V]]====
+{{Movehead/Special|Dark}}
+{{Moveentry/1|0237|Hitmontop|type=Fighting|1|Human-Like|Human-Like|{{DL|List of local Korean event Pokémon distributions in Generation V|Do Heun's Hitmontop}}}}
+{{Movefoot|Dark|1}}
+
+====[[Generation VI]]====
+{{Movehead/Special|Dark}}
+{{Moveentry/1|0571|Zoroark|type=Dark|1|Field|Field|[[Sly Zoroark]]|STAB='''}}
+{{Movefoot|Dark|1}}
+
+====[[Generation VII]]====
+{{Movehead/Special|Dark}}
+{{Moveentry/1|0745|formsig=Mn|Lycanroc|type=Rock|1|Field|Field|[[Lycanroc (Pokémon)#In events|Rocky Lycanroc]]|form=Midnight Form}}
+{{Movefoot|Dark|1}}
+
+==In other games==
+===[[Pokémon Mystery Dungeon series]]===
+{{MDMoveheader|type=dark}}
+{{MDMoveRow|game=TDS|pow=15|pp=7|acc=88%|range=2 tiles away|target=Enemy|cuts=Yes}}
+{{MDMoveRow|game=BSL|pow=15|pp=7|acc=88%|range=2 tiles away|target=Enemy|cuts=Yes}}
+{{MDMoveRow|game=GTI|pow=15|powmax=99|pp=13|ppmax=50|acc=75%|accmax=98%|range=2 tiles away|target=Enemy|cuts=No}}
+{{MDMoveRow|game=SMD|pow=15|powmax=50|pp=13|ppmax=30|acc=75%|accmax=98%|range=2 tiles away|target=Enemy|cuts=No}}
+{{MDMovefoot|type=dark|TDS=yes|BSL=yes|GTI=yes|SMD=yes|RTDX=yes}}
+
+===[[Pokémon GO]]===
+{{GoFastAttack
+|id=203
+|move=Sucker Punch
+|type=Dark
+|pow=7
+|energy=8
+|duration=0.7
+|damage_window=0.3 - 0.7
+|pow_trainer=8
+|energy_trainer=7
+|duration_trainer=1
+|users={{MSP/GO|0051|Dugtrio}}{{MSP/GO|0094|Gengar}}{{MSP/GO|0146G|Moltres|Galarian Form}}{{MSP/GO|0162|Furret}}{{MSP/GO|0327|Spinda}}{{MSP/GO|0331|Cacnea}}{{MSP/GO|0332|Cacturne}}{{MSP/GO|0352|Kecleon}}{{MSP/GO|0429|Mismagius}}{{MSP/GO|0442|Spiritomb}}{{MSP/GO|0509|Purrloin}}{{MSP/GO|0595|Joltik}}{{MSP/GO|0676|Furfrou}}{{MSP/GO|0678|Meowstic}}{{MSP/GO|0709|Trevenant}}{{MSP/GO|0717|Yveltal}}{{MSP/GO|0745Md|Lycanroc|Midday Form}}{{MSP/GO|0745D|Lycanroc|Dusk Form}}{{MSP/GO|0802|Marshadow}}{{MSP/GO|0827|Nickit}}{{MSP/GO|0828|Thievul}}{{MSP/GO|0854|Sinistea}}{{MSP/GO|0855|Polteageist}}{{MSP/GO|0859|Impidimp}}{{MSP/GO|0860|Morgrem}}{{MSP/GO|0861|Grimmsnarl}}{{MSP/GO|0892|Urshifu|Single Strike Style}}{{MSP/GO|0920|Lokix}}
+|elite_users={{MSP/GO|0092|Gastly}}
+|snapshot_users={{MSP/GO|0235|Smeargle}}
+|updates=}}
+====Updates====
+;Gyms & Raids
+* '''July 30, 2016'''
+** '''Energy boost''': 4 → 9
+* '''February 16, 2017'''
+** '''Power''': 7 → 8
+** '''Duration''': 0.7 → 1.2 seconds
+* '''February 21, 2017'''
+** '''Power''': 8 → 7
+** '''Energy boost''': 9 → 8
+** '''Duration''': 1.2 → 0.7 seconds
+
+;Trainer Battles
+* '''September 3, 2024'''
+** '''Power''': 5 → 8
+
+==={{g|Rumble Rush}}===
+{{RumbleRushPhysicalAttack|move=Sucker Punch|type=Dark
+|stars=4
+|pow=34.54797
+|charge=0.54
+|range=Arc (melee)
+|hits=1
+|projectiles=1
+|crit=1.5
+|effect=None}}
+
+==={{g|UNITE}}===
+In Pokémon UNITE, Sucker Punch is {{p|Absol}}'s second move. It is obtained by reaching level 7 and upgrading {{m|Slash}} into it instead of {{m|Psycho Cut}}. The user attacks a target Pokémon, slowing both it and the user. If the user is attacked, or the target attacks anything, hit does extra damage. At level 13, user's base attack speed is increased after a counter.
+
+===Description===
+{{movedesc|Dark}}
+{{movedescentry|{{gameabbrevmd|TDS}}|Inflicts damage on a target up to 2 tiles away.}}
+{{movedescentry|{{gameabbrevmd|BSL}}|{{tt|てきポケモンに ダメージをあたえる ２マスまで とどく|Inflicts damage on a target up to 2 tiles away}}}}
+{{movedescentry|{{gameabbrevmd|GTI}}<br>{{gameabbrevmd|SMD}}<br/>{{gameabbrevmd|RTDX}}|It damages an enemy. It reaches up to 2 tiles away.}}
+|}
+|}{{left clear}}
+
+==In animation==
+===Pokémon animated series===
+{{moveanime|type=dark|exp=yes|gen=The user launches a surprise attack on the target. This move fails if the target is not readying an attack.|image1=Gizmo Kecleon Sucker Punch.png|image1p=Kecleon|image2=Cynthia Spiritomb Sucker Punch.png|image2p=Spiritomb|image3=Hodge Mightyena Sucker Punch.png|image3p=Mightyena|image4=Liko Floragato Sucker Punch.png|image4p=Floragato}}
+{{movep|type=dark|ms=262|pkmn=Mightyena|method=Mightyena runs around the opponent at high speed before suddenly headbutting them.}}
+{{movemid|type=dark|user=Hodge|user1=Hodge's Mightyena|startcode=JN007|startname=Serving Up the Flute Cup!|notes=Debut}}
+{{movep|type=dark|ms=352|pkmn=Kecleon|method=When the opponent is about to attack Kecleon, it suddenly hits them with its tail.}}
+{{movemid|type=dark|user=Gizmo Bilt|user1=Gizmo's Kecleon|startcode=JN078|startname=Detective Drizzile!}}
+{{movep|type=dark|ms=510|pkmn=Liepard|method=When the opponent's back is turned, Liepard suddenly attacks it.}}
+{{movemid|type=dark|user=Lyla|user1=Lyla's Liepard|startcode=JN110|startname=Narrowing the Chaser Chase!}}
+{{movep|type=dark|ms=442|pkmn=Spiritomb|method=When the opponent is about to attack, Spiritomb suddenly extends its gaseous body and slams it into the opponent.}}
+{{movemid|type=dark|user=Cynthia (anime)|user1=Cynthia's Spiritomb|startcode=JN123|startname=Bewitch, Battle, and Bewilder!}}
+{{movep|type=dark|ms=860|pkmn=Morgrem|method=When the opponent's back is turned, Morgrem suddenly spins around and hits them with his hair.}}
+{{movemid|type=dark|user=Rocket Prize Master|user1=Team Rocket's Morgrem|startcode=JN127|startname=Just a Scone's Throw From Here!}}
+{{movep|type=dark|ms=907|pkmn=Floragato|method=When the opponent is about to attack, Floragato launches its vine, startling and distracting them. Then, its foot becomes covered in dark purple energy and it suddenly kicks the opponent. If the opponent is not preparing an attack, the move will fail.}}
+{{movemid|type=dark|user=Liko's Floragato|startcode=HZ067|startname=Shine on, Terastallization! Liko vs. Roy!}}
+{{movep|type=dark|ms=962|pkmn=Bombirdier|method=When the opponent is about to attack, Bombirdier suddenly flies over and strikes the opponent with its wing, releasing a burst of dark purple energy upon contact.}}
+{{movemid|type=dark|user=Bombirdier (Pokémon)|user1=A wild Bombirdier|startcode=HZ070|startname=Tinkatink's Hammer Wasn't Made in a Day}}
+{{movep|type=dark|ms=0908|pkmn=Meowscarada|method=When the opponent is about to attack, Meowscarada throws its green flower.}}
+{{movemid|type=dark|user=Liko's Meowscarada|startcode=HZ088|startname=The Earthshaking White Zygarde}}
+{{movep|type=dark|ms=0939|pkmn=Bellibolt|method=When the opponent is about to attack, black and red energy appears in front of Bellibolt's body. Then, it fires the energy as a burst at the opponent.}}
+{{movebtm|type=dark|user=Iono (anime)|user1=Iono's Bellibolt|startcode=HZ128|startname=HZ128}}
+
+==In the manga==
+===Pokémon Adventures===
+{{Movemanga|type=dark|exp=yes|gen=The user launches a surprise attack on the target.|image1=Saturn Croagunk Sucker Punch Adventures.png|image1p=Croagunk|image2=N Purrloin Sucker Punch Adventures.png|image2p=Purrloin|image3=Team Yell Linoone Sucker Punch Adventures.png|image3p=Galarian Linoone}}
+{{Movep|type=dark|ms=453|pkmn=Croagunk|method=Croagunk punches the opponent with a powerful blow to the stomach when it is about to use an attack.}}
+{{movemid|type=dark|user=Saturn's Toxicroak|user1=Saturn's Croagunk|startcode=PS353|startname=Crowded by Croagunk & Advanced on by Abra II|notes=Debut}}
+{{movep|type=dark|ms=509|pkmn=Purrloin|method=Purrloin jumps high into the air and delivers a powerful kick to the opponent with one of its legs.}}
+{{movemid|type=dark|user=N (Adventures)|user1=N's Purrloin|startcode=PS467|startname=Letting Go}}
+{{movep|type=dark|ms=264G|pkmn=Linoone|method=Galarian Linoone jumps high in the air and headbutts the opponent with its head.}}
+{{movebtmManga|type=dark|user=Team Yell Grunt (Trainer class)|user1=A Team Yell Grunt's Linoone|startcode=PASS04|startname=Zap!! A Rising Beam of Light|notes=Galarian Linoone {{color2|000|Manga move errors|cannot legally learn}} Sucker Punch}}
+
+===Pokémon Diamond and Pearl Adventure!===
+{{Movemanga|type=dark|exp=yes|gen=The user strikes before the opponent can attack.|image1=Koya Absol Sucker Punch.png|image1p=Absol}}
+{{Movep|type=dark|ms=359|pkmn=Absol|method=When the opponent is about to use a move, Absol slashes the opponent with the horn on its head.}}
+{{movebtmManga|type=dark|user=Koya|user1=Koya's Absol|startcode=DPA25|startname=Clash! Hareta vs. Koya}}
+
+==In other generations==
+===Core series games===
+{{movegen
+|type=dark
+|genIV=Sucker Punch IV
+|genV=Sucker Punch V
+|genVI=Sucker Punch VI
+|genVII=Sucker Punch VII
+}}
+{{Movegen
+|type=Dark
+|genVIII=Sucker Punch VIII
+}}
+===Side series games===
+{{movegen
+|type=dark
+|PBR=Sucker Punch PBR
+}}
+===Spin-off series games===
+{{movegen
+|type=dark
+|PMDTDS=Sucker Punch PMD TDS
+|PMDGTI=Sucker Punch PMD GTI
+|PSMD=Sucker Punch PSMD
+}}
+
+==Trivia==
+* Despite its name, Sucker Punch is not a [[punching move]]. It is the only move with this distinction.
+** The term "{{wp|sucker punch}}" refers to an unexpected or cheap shot at an opponent, akin to its Japanese name「ふいうち」, which translates to ''surprise attack''. Thus, many Pokémon that do not possess arms can learn this move, and its base power is not increased by {{a|Iron Fist}}.
+
+==In other languages==
+{{Langtable|color={{dark color}}|bordercolor={{dark color light}}
+|zh_yue=突襲 ''{{tt|Dahtjaahp|Assault}}''
+|zh_cmn=突襲 / 突袭 ''{{tt|Tūxí|Assault}}''
+|fr=Coup Bas
+|de=Tiefschlag
+|el=Χτύπημα Εξαπάτησης ''Chtýpima Exapátisis''
+|hi=सर्प्राइज़ पंच ''Surprise Punch''
+|hu=Váratlan Csapás
+|id=Pukulan Mendadak
+|it=Sbigoattacco
+|ko=기습 ''{{tt|Giseup|Surprise Attack}}''
+|pl=Mylny Cios{{tt|*|JN123 onwards}}<br>Ssący Cios{{tt|*|JN007-JN110}}
+|pt_br=Soco Enganador
+|pt_eu=Ataque Surpresa
+|ru=Подлый Удар ''{{tt|Podlyy Udar|Sucker Punch}}'' {{tt|*|Pokémon GO}}<br>Запрещенный Приём ''{{tt|Zapreshchennyy Priyëm|Sucker Punch}}''
+|es=Golpe Bajo
+|th=โจมตีแบบไม่คาดคิด ''{{tt|Chomti Baepmaikhatkhit|Surprise Attack}}''
+|tr=Ani Yumruk{{tt|*|Pokémon GO}}<br>Şaşırtıcı Darbe
+|vi=Đánh Úp
+}}
+{{Sucker Punch|Dark}}[[Category:Increased priority moves]]
+{{Project Moves and Abilities notice}}
+
+[[Category:Increased priority moves]]
+[[Category:Moves that can fail]]
+[[Category:Moves in Pokémon: Let's Go, Pikachu! and Let's Go, Eevee!]]
+[[Category:Moves usable in Pokémon Sword and Shield]]
+[[Category:Moves usable in Pokémon Scarlet and Violet]]
+
+[[de:Tiefschlag]]
+[[es:Golpe Bajo]]
+[[fr:Coup Bas]]
+[[it:Sbigoattacco]]
+[[ja:ふいうち]]
+[[zh:突袭（招式）]]

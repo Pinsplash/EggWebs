@@ -1,0 +1,758 @@
+{{MoveInfobox
+|n=204
+|name=Charm
+|jname=あまえる
+|jtrans=Fawn
+|jtranslit=Amaeru
+|gameimage=Charm IX.png
+|gameimagewidth=300
+|type=Fairy
+|damagecategory=Status
+|basepp=20
+|maxpp=32
+|power=—
+|accuracy=100
+|gen=II
+|category=Cute
+|appeal=2
+|jam=1
+|cdesc=Startles Pokémon that made a same-type appeal.
+|appealsc=2
+|scdesc=Prevents the Voltage from going down in the same turn.
+|appeal6=2
+|jam6=1
+|cdesc6=Badly startles Pokémon that the audience has high expectations of.
+|touches=no
+|protect=yes
+|magiccoat=yes
+|snatch=no
+|mirrormove=yes
+|kingsrock=no
+|sound=no
+|tm8=yes
+|tm#8=29
+|tm9=yes
+|tm#9=002
+|na=no
+|target=anyadjacent
+}}
+'''Charm''' (Japanese: '''あまえる''' ''Fawn'') is a non-damaging {{type|Fairy}} [[move]] introduced in [[Generation II]]. Prior to [[Generation VI]], it was a {{type|Normal}} move. It was [[TM29]] in {{g|Sword and Shield}} and is [[TM002]] in {{g|Scarlet and Violet}}.
+
+==Effect==
+===Generation II===
+Charm is a {{type|Normal}} move. It lowers the {{stat|Attack}} stat of the target by two stages.
+
+In the Generation II [[core series]] games, when an in-game opponent outside of the {{gdis|Battle Tower|II}} uses Charm, the move has a 25% chance to fail.
+
+===Generations III to V===
+Charm can be used as the first move of a [[Contest combination|Pokémon Contest combination]], causing {{m|Flatter}}, {{m|Growl}}, {{m|Rest}}, {{m|Sweet Kiss}}, and {{m|Tail Whip}} to score double the normal appeal if used in the next turn.
+
+===Generation VI onwards===
+Charm is now a {{type|Fairy}} move.
+
+If powered up by a [[Fairium Z]] into Z-Charm, the user's {{stat|Defense}} stat rises by one stage.
+
+===Generation IX===
+====Pokémon Legends: Z-A====
+{{LegendsZAMove
+|type=Fairy
+|damagecategory=Status
+|cooldown=10
+|charge-time=1
+|effect-duration=30
+|effect-duration-plus=33
+}}
+
+==Description==
+{{movedesc|Fairy}}
+{{movedescentry|{{gameabbrevss|Stad2}}|A move that charms the target into complacency, sharply reducing its <sc>Attack</sc> power.}}
+{{movedescentry|{{gameabbrev2|GSC}}|Sharply lowers the foe's <sc>Attack</sc>.}}
+{{movedescentry|{{gameabbrev3|RSE}}|Charms the foe and sharply reduces its <sc>Attack</sc>.}}
+{{movedescentry|{{gameabbrev3|FRLG}}|The foe is charmed by the user's cute appeals, sharply cutting its <sc>Attack</sc>.}}
+{{movedescentry|{{gameabbrevss|Colo}}{{gameabbrevss|XD}}|Charms the target, sharply reducing its <sc>Attack</sc>.}}
+{{movedescentry|{{gameabbrev4|DPPtHGSS}}{{gameabbrevss|PBR}}|The user charmingly stares at the foe, making it less wary. The target's Attack is sharply lowered.}}
+{{movedescentry|{{gameabbrev5|BWB2W2}}|The user gazes at the target rather charmingly, making it less wary. The target's Attack is harshly lowered.}}
+{{movedescentry|{{gameabbrev6|XYORAS}}<br>{{gameabbrev7|SMUSUMPE}}|The user gazes at the target rather charmingly, making it less wary. This harshly lowers its Attack stat.}}
+{{movedescentry|{{gameabbrev8|SwShBDSPLA}}<br>{{gameabbrev9|SV}}|The user gazes at the target rather charmingly, making it less wary. This harshly lowers the target's Attack stat.}}
+{{movedescentry|{{gameabbrev9|ZA}}|The user gazes charmingly at targets to make them less wary, which lowers their Attack stats for a while.}}
+{{movedescentry|{{gameabbrevss|CHP}}|Lower's the target's Attack stat by 2 stages.}}
+|}
+|}{{left clear}}
+
+==Learnset==
+===By [[Level|leveling up]]===
+{{Movehead/Games|Fairy|g1=none|g7=1|g7g={{gameabbrev7|SMUSUM}}|g8=2|g9=2}}
+{{Moveentry/10|0025|Pikachu|type=Electric|2|Field|Fairy|−|−|−|−|−|−|1|1|1|20}}
+{{Moveentry/10|0026|Raichu|type=Electric|2|Field|Fairy|−|−|−|−|−|−|1|1|1|20}}
+{{Moveentry/10|0026|formsig=A|Raichu|type=Electric|type2=Psychic|2|Field|Fairy|form=Alolan Form||||||−|1||1|20}}
+{{Moveentry/10|0035|Clefairy|type=Fairy|1|Fairy|Fairy|−|−|−|−|−|−|1|1|1|13}}
+{{Moveentry/10|0036|Clefable|type=Fairy|1|Fairy|Fairy|−|−|−|−|−|−|1|1|{{tt|Rem.|Can only be learned via Move Reminder}}|13}}
+{{Moveentry/10|0039|Jigglypuff|type=Normal|type2=Fairy|1|Fairy|Fairy|−|−|−|−|−|−|1|1|1|1}}
+{{Moveentry/10|0040|Wigglytuff|type=Normal|type2=Fairy|1|Fairy|Fairy|−|−|−|−|−|−|1|1|1|1}}
+{{Moveentry/10|0052|Meowth|type=Normal|1|Field|Field|−|−|−|−|−|−|−|−|−|37}}
+{{Moveentry/10|0052|formsig=A|Meowth|type=Dark|1|Field|Field|form=Alolan Form||||||−|−||−|37}}
+{{Moveentry/10|0052|formsig=G|Meowth|type=Steel|1|Field|Field|form=Galarian Form|||||||−||−|37}}
+{{Moveentry/10|0053|Persian|type=Normal|1|Field|Field|−|−|−|−|−|−|−|−|−|37}}
+{{Moveentry/10|0053|formsig=A|Persian|type=Dark|1|Field|Field|form=Alolan Form||||||−|−||−|37}}
+{{Moveentry/10|0086|Seel|type=Water|2|Water 1|Field|−|−|−|−|−|−||−|7}}
+{{Moveentry/10|0113|Chansey|type=Normal|1|Fairy|Fairy|−|−|−|−|−|−|1|1|1}}
+{{Moveentry/10|0122|Mr. Mime|type=Psychic|type2=Fairy|1|Human-Like|Human-Like|−|−|−|−|−|−|−|−||8}}
+{{Moveentry/10|0122|formsig=G|Mr. Mime|type=Ice|type2=Psychic|1|Human-Like|Human-Like|form=Galarian Form|||||||−|||8}}
+{{Moveentry/10|0133|Eevee|type=Normal|1|Field|Field|−|−|−|29{{sup/5|B2W2}}|29|29|45|45|45|45}}
+{{Moveentry/10|0134|Vaporeon|type=Water|1|Field|Field|−|−|−|−|−|−|1|1|1|{{tt|Rem.|Can only be learned via Move Reminder}}}}
+{{Moveentry/10|0135|Jolteon|type=Electric|1|Field|Field|−|−|−|−|−|−|1|1|1|{{tt|Rem.|Can only be learned via Move Reminder}}}}
+{{Moveentry/10|0136|Flareon|type=Fire|1|Field|Field|−|−|−|−|−|−|1|1|1|{{tt|Rem.|Can only be learned via Move Reminder}}}}
+{{Moveentry/10|0172|Pichu|type=Electric|1|No Eggs Discovered|No Eggs Discovered|1|1|1|1|1|1|20|20|20|20}}
+{{Moveentry/10|0173|Cleffa|type=Fairy|1|No Eggs Discovered|No Eggs Discovered|1|1|1|1|1|1|20|20|20|13}}
+{{Moveentry/10|0174|Igglybuff|type=Normal|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered|1|1|1|1|1|1|20|20|20|1}}
+{{Moveentry/10|0175|Togepi|type=Fairy|1|No Eggs Discovered|No Eggs Discovered|1|1|1|1|1|1|12|12}}
+{{Moveentry/10|0176|Togetic|type=Fairy|type2=Flying|2|Flying|Fairy|1|1|1|1|1|1|12|12}}
+{{Moveentry/10|0183|Marill|type=Water|type2= Fairy|2|Water 1|Fairy|−|−|−|−|−|−|9|9|9}}
+{{Moveentry/10|0184|Azumarill|type=Water|type2= Fairy|2|Water 1|Fairy|−|−|−|−|−|−|9|9|9}}
+{{Moveentry/10|0196|Espeon|type=Psychic|1|Field|Field|−|−|−|−|−|−|1|1|1|{{tt|Rem.|Can only be learned via Move Reminder}}}}
+{{Moveentry/10|0197|Umbreon|type=Dark|1|Field|Field|−|−|−|−|−|−|1|1|1|{{tt|Rem.|Can only be learned via Move Reminder}}}}
+{{Moveentry/10|0202|Wobbuffet|type=Psychic|1|Amorphous|Amorphous|−|−|−|−|−|−|1|1}}
+{{Moveentry/10|0209|Snubbull|type=Fairy|2|Field|Fairy|8|8|1|1|1|1||1|1}}
+{{Moveentry/10|0210|Granbull|type=Fairy|2|Field|Fairy|8|8|1|1|1|1||1|1}}
+{{Moveentry/10|0216|Teddiursa|type=Normal|1|Field|Field|−|−|36|36|36|36||36|33}}
+{{Moveentry/10|0217|Ursaring|type=Normal|1|Field|Field|−|−|−|−|−|−||1|−}}
+{{Moveentry/10|0231|Phanpy|type=Ground|1|Field|Field|−|−|33|33|33|33||33|33}}
+{{Moveentry/10|0232|Donphan|type=Ground|1|Field|Field|−|−|−|−|−|−||1|−}}
+{{Moveentry/10|0241|Miltank|type=Normal|1|Field|Field|−|−|−|−|−|−|50|50}}
+{{Moveentry/10|0242|Blissey|type=Normal|1|Fairy|Fairy|−|−|−|−|−|−|1|1|1}}
+{{Moveentry/10|0280|Ralts|type=Psychic|type2=Fairy|2|Human-Like|Amorphous||−|39|43|43{{sup/6|XY}}<br>34{{sup/6|ORAS}}|34|24|24|24|28}}
+{{Moveentry/10|0281|Kirlia|type=Psychic|type2=Fairy|2|Human-Like|Amorphous||−|45|50|50{{sup/6|XY}}<br>40{{sup/6|ORAS}}|40|28|28|28|28}}
+{{Moveentry/10|0282|Gardevoir|type=Psychic|type2=Fairy|2|Human-Like|Amorphous||−|−|−|−|−|1|1|1|28}}
+{{Moveentry/10|0298|Azurill|type=Normal|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered||3|2|2{{sup/5|BW}}<br>10{{sup/5|B2W2}}|10|10|9|9|9}}
+{{Moveentry/10|0300|Skitty|type=Normal|2|Field|Fairy||25|22{{sup/4|DP}}<br>25{{sup/4|PtHGSS}}|25|25|25||25}}
+{{Moveentry/10|0301|Delcatty|type=Normal|2|Field|Fairy||−|−|−|−|−||1}}
+{{Moveentry/10|0303|Mawile|type=Steel|type2=Fairy|2|Field|Fairy||−|−|−|−|−|−|−||20}}
+{{Moveentry/10|0311|Plusle|type=Electric|1|Fairy|Fairy||−|−|−|25{{sup/6|ORAS}}|25||25|−}}
+{{Moveentry/10|0312|Minun|type=Electric|1|Fairy|Fairy||28|21|21|21{{sup/6|XY}}|−||−|−}}
+{{Moveentry/10|0314|Illumise|type=Bug|2|Bug|Human-Like||9|9|9|9|9||9|9}}
+{{Moveentry/10|0315|Roselia|type=Grass|type2=Poison|2|Fairy|Grass||−|−|−|−|−|−|−||1}}
+{{Moveentry/10|0360|Wynaut|type=Psychic|1|No Eggs Discovered|No Eggs Discovered||1|1|1|1|1|1|1}}
+{{Moveentry/10|0370|Luvdisc|type=Water|1|Water 2|Water 2||4|4|4|4{{sup/6|XY}}<br>1{{sup/6|ORAS}}|1||1|1}}
+{{Moveentry/10|0380|Latias|type=Dragon|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered||50|55|55|1, 55{{sup/6|XY}}<br>7{{sup/6|ORAS}}|7|1|1|1|1}}
+{{Moveentry/10|0393|Piplup|type=Water|2|Water 1|Field|||−|−|−|−||11|11}}
+{{Moveentry/10|0394|Prinplup|type=Water|2|Water 1|Field|||−|−|−|−||11|−}}
+{{Moveentry/10|0395|Empoleon|type=Water|type2=Steel|2|Water 1|Field|||−|−|−|−||1|−}}
+{{Moveentry/10|0406|Budew|type=Grass|type2=Poison|1|No Eggs Discovered|No Eggs Discovered|||−|−|−|−|−|−||1}}
+{{Moveentry/10|0407|Roserade|type=Grass|type2=Poison|2|Fairy|Grass|||−|−|−|−|−|−||1}}
+{{Moveentry/10|0417|Pachirisu|type=Electric|2|Field|Fairy|||9|9|9|9||9|9}}
+{{Moveentry/10|0427|Buneary|type=Normal|2|Field|Human-Like|||43|46|46|46|24|24||24}}
+{{Moveentry/10|0428|Lopunny|type=Normal|2|Field|Human-Like|||43|46|46|46|24|24||24}}
+{{Moveentry/10|0431|Glameow|type=Normal|1|Field|Field|||25|25|25|25||25}}
+{{Moveentry/10|0432|Purugly|type=Normal|1|Field|Field|||25|25|25|25||25}}
+{{Moveentry/10|0439|Mime Jr.|type=Psychic|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered|||−|−|−|−|−|−||8}}
+{{Moveentry/10|0440|Happiny|type=Normal|1|No Eggs Discovered|No Eggs Discovered|||1|1|1|1|20|20|20}}
+{{Moveentry/10|0468|Togekiss|type=Fairy|type2=Flying|2|Flying|Fairy|||−|−|−|−|1|1}}
+{{Moveentry/10|0470|Leafeon|type=Grass|1|Field|Field|||−|−|−|−|1|1|1|{{tt|Rem.|Can only be learned via Move Reminder}}}}
+{{Moveentry/10|0471|Glaceon|type=Ice|1|Field|Field|||−|−|−|−|1|1|1|{{tt|Rem.|Can only be learned via Move Reminder}}}}
+{{Moveentry/10|0475|Gallade|type=Psychic|type2=Fighting|2|Human-Like|Amorphous|||−|−|−|−|1|1|1|{{tt|Rem.|Can only be learned via Move Reminder}}}}
+{{Moveentry/10|0481|Mesprit|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|||46|46|46|46|42|42|42}}
+{{Moveentry/10|0489|Phione|type=Water|2|Water 1|Fairy|||9|9|9|9||9|9}}
+{{Moveentry/10|0490|Manaphy|type=Water|2|Water 1|Fairy|||9|9|9|9||9|9}}
+{{Moveentry/10|0517|Munna|type=Psychic|1|Field|Field||||−|−|−|−|||21}}
+{{Moveentry/10|0518|Musharna|type=Psychic|1|Field|Field||||−|−|−|−|||21}}
+{{Moveentry/10|0546|Cottonee|type=Grass|type2=Fairy|2|Grass|Fairy||||28|28|28|27||27}}
+{{Moveentry/10|0547|Whimsicott|type=Grass|type2=Fairy|2|Grass|Fairy||||−|−|−|1||1}}
+{{Moveentry/10|0548|Petilil|type=Grass|1|Grass|Grass||||−|−|−|−||12}}
+{{Moveentry/10|0549|Lilligant|type=Grass|1|Grass|Grass||||−|−|−|−||1}}
+{{Moveentry/10|0572|Minccino|type=Normal|1|Field|Field||||27|27|27|16||16}}
+{{Moveentry/10|0573|Cinccino|type=Normal|1|Field|Field||||−|−|−|1||1}}
+{{Moveentry/10|0574|Gothita|type=Psychic|1|Human-Like|Human-Like||||46|46|46|16||16}}
+{{Moveentry/10|0575|Gothorita|type=Psychic|1|Human-Like|Human-Like||||50|50|50|16||16}}
+{{Moveentry/10|0576|Gothitelle|type=Psychic|1|Human-Like|Human-Like||||54|54|54|16||16}}
+{{Moveentry/10|0577|Solosis|type=Psychic|1|Amorphous|Amorphous||||19|19|19|16||16}}
+{{Moveentry/10|0578|Duosion|type=Psychic|1|Amorphous|Amorphous||||19|19|19|16||16}}
+{{Moveentry/10|0579|Reuniclus|type=Psychic|1|Amorphous|Amorphous||||19|19|19|16||16}}
+{{Moveentry/10|0585|Deerling|type=Normal|type2=Grass|1|Field|Field|form=All forms||||36|36|36|||32}}
+{{Moveentry/10|0586|Sawsbuck|type=Normal|type2=Grass|1|Field|Field|form=All forms||||36|36|36|||36}}
+{{Moveentry/10|0587|Emolga|type=Electric|type2=Flying|1|Field|Field||||−|−|−|−|||7}}
+{{Moveentry/10|0613|Cubchoo|type=Ice|1|Field|Field||||29|29|29|27||27}}
+{{Moveentry/10|0614|Beartic|type=Ice|1|Field|Field||||−|−|−|1||1}}
+{{Moveentry/10|0653|Fennekin|type=Fire|1|Field|Field|||||−|−|||−|14}}
+{{Moveentry/10|0654|Braixen|type=Fire|1|Field|Field|||||−|−|||−|14}}
+{{Moveentry/10|0655|Delphox|type=Fire|type2=Psychic|1|Field|Field|||||−|−|||−|14}}
+{{Moveentry/10|0669|Flabébé|type=Fairy|1|Fairy|Fairy|form=All forms|||||−|−|||−|26}}
+{{Moveentry/10|0670|Floette|type=Fairy|1|Fairy|Fairy|form=All main forms|||||−|−|||−|26}}
+{{Moveentry/10|0670|formsig=E|Floette|type=Fairy|1|No Eggs Discovered|No Eggs Discovered|form=Eternal Flower|||||−|−||||26}}
+{{Moveentry/10|0671|Florges|type=Fairy|1|Fairy|Fairy|form=All forms|||||−|−|||−|26}}
+{{Moveentry/10|0676|Furfrou|type=Normal|1|Field|Field|form=All forms|||||38|38||||25}}
+{{Moveentry/10|0678|Meowstic|type=Psychic|1|Field|Field|form=Male|||||28|28|15||15|18}}
+{{Moveentry/10|0682|Spritzee|type=Fairy|1|Fairy|Fairy|||||35|35|30|||30}}
+{{Moveentry/10|0683|Aromatisse|type=Fairy|1|Fairy|Fairy|||||35|35|30|||30}}
+{{Moveentry/10|0684|Swirlix|type=Fairy|1|Fairy|Fairy|||||−|−|−|||1}}
+{{Moveentry/10|0685|Slurpuff|type=Fairy|1|Fairy|Fairy|||||−|−|−|||1}}
+{{Moveentry/10|0696|Tyrunt|type=Rock|type2=Dragon|2|Monster|Dragon|||||20|20|12|||12}}
+{{Moveentry/10|0697|Tyrantrum|type=Rock|type2=Dragon|2|Monster|Dragon|||||20|20|12|||12}}
+{{Moveentry/10|0700|Sylveon|type=Fairy|1|Field|Field|||||−|−|1||1|{{tt|Rem.|Can only be learned via Move Reminder}}}}
+{{Moveentry/10|0702|Dedenne|type=Electric|type2=Fairy|2|Field|Fairy|||||14|14|20||20|10}}
+{{Moveentry/10|0704|Goomy|type=Dragon|1|Dragon|Dragon|||||−|−|−||−|8}}
+{{Moveentry/10|0705|Sliggoo|type=Dragon|1|Dragon|Dragon|||||−|−|−||−|8}}
+{{Moveentry/10|0705|formsig=H|Sliggoo|type=Steel|type2=Dragon|1|Dragon|Dragon|form=Hisuian Form|||||||||−|8}}
+{{Moveentry/10|0706|Goodra|type=Dragon|1|Dragon|Dragon|||||−|−|−||−|8}}
+{{Moveentry/10|0706|formsig=H|Goodra|type=Steel|type2=Dragon|1|Dragon|Dragon|form=Hisuian Form|||||||||−|8}}
+{{Moveentry/10|0764|Comfey|type=Fairy|1|Grass|Grass||||||−|−||12}}
+{{Moveentry/10|0778|Mimikyu|type=Ghost|type2=Fairy|1|Amorphous|Amorphous||||||28|48||48|48}}
+{{Moveentry/10|0803|Poipole|type=Poison|1|No Eggs Discovered|No Eggs Discovered||||||19{{sup/7|USUM}}|21}}
+{{Moveentry/10|0804|Naganadel|type=Poison|type2=Dragon|1|No Eggs Discovered|No Eggs Discovered||||||19{{sup/7|USUM}}|21}}
+{{Moveentry/10|0835|Yamper|type=Electric|1|Field|Field|||||||26}}
+{{Moveentry/10|0836|Boltund|type=Electric|1|Field|Field|||||||28}}
+{{Moveentry/10|0863|Perrserker|type=Steel|1|Field|Field|||||||−||−|37}}
+{{Moveentry/10|0866|Mr. Rime|type=Ice|type2=Psychic|1|Human-Like|Human-Like|||||||−|||8}}
+{{Moveentry/10|0868|Milcery|type=Fairy|2|Fairy|Amorphous|||||||−||20}}
+{{Moveentry/10|0869|Alcremie|type=Fairy|2|Fairy|Amorphous|form=All forms|||||||−||20}}
+{{Moveentry/10|0924|Tandemaus|type=Normal|2|Field|Fairy|||||||||33}}
+{{Moveentry/10|0925|Maushold|type=Normal|2|Field|Fairy|form=All forms|||||||||37}}
+{{Moveentry/10|0926|Fidough|type=Fairy|2|Field|Mineral|||||||||36|36}}
+{{Moveentry/10|0927|Dachsbun|type=Fairy|2|Field|Mineral|||||||||42|36}}
+{{Moveentry/10|0942|Maschiff|type=Dark|1|Field|Field|||||||||−|12}}
+{{Moveentry/10|0943|Mabosstiff|type=Dark|1|Field|Field|||||||||−|12}}
+{{Moveentry/10|0963|Finizen|type=Water|2|Field|Water 2|||||||||25}}
+{{Moveentry/10|0964|Palafin|type=Water|2|Field|Water 2|||||||||25}}
+{{Moveentry/10|0971|Greavard|type=Ghost|1|Field|Field|||||||||46|46}}
+{{Moveentry/10|0972|Houndstone|type=Ghost|1|Field|Field|||||||||51|46}}
+{{Movefoot|Fairy|10}}
+
+===By [[TM]]===
+{{Movehead/TMGames|Fairy|g1=none|g2=none|g3=none|g4=none|g5=none|g6=none|g7=none
+|g8=1|g8tm=29|g8g={{gameabbrev8|SwSh}}
+|g9=1|g9tm=002|g9g={{gameabbrev9|SV}}}}
+{{Moveentry/2|0001|Bulbasaur|type=Grass|type2=Poison|2|Monster|Grass|✔|✔}}
+{{Moveentry/2|0002|Ivysaur|type=Grass|type2=Poison|2|Monster|Grass|✔|✔}}
+{{Moveentry/2|0003|Venusaur|type=Grass|type2=Poison|2|Monster|Grass|✔|✔}}
+{{Moveentry/2|0025|Pikachu|type=Electric|2|Field|Fairy|✔|✔}}
+{{Moveentry/2|0026|Raichu|type=Electric|2|Field|Fairy|✔|✔}}
+{{Moveentry/2|0026|formsig=A|Raichu|type=Electric|type2=Psychic|2|Field|Fairy|form=Alolan Form|✔|✔}}
+{{Moveentry/2|0029|Nidoran♀|type=Poison|2|Monster|Field|✔|}}
+{{Moveentry/2|0030|Nidorina|type=Poison|1|No Eggs Discovered|No Eggs Discovered|✔|}}
+{{Moveentry/2|0031|Nidoqueen|type=Poison|type2=Ground|1|No Eggs Discovered|No Eggs Discovered|✔|}}
+{{Moveentry/2|0035|Clefairy|type=Fairy|1|Fairy|Fairy|✔|✔}}
+{{Moveentry/2|0036|Clefable|type=Fairy|1|Fairy|Fairy|✔|✔}}
+{{Moveentry/2|0037|Vulpix|type=Fire|1|Field|Field|−|✔}}
+{{Moveentry/2|0037|formsig=A|Vulpix|type=Ice|1|Field|Field|form=Alolan Form|✔|✔}}
+{{Moveentry/2|0038|Ninetales|type=Fire|1|Field|Field|−|✔}}
+{{Moveentry/2|0038|formsig=A|Ninetales|type=Ice|type2=Fairy|1|Field|Field|form=Alolan Form|✔|✔}}
+{{Moveentry/2|0039|Jigglypuff|type=Normal|type2=Fairy|1|Fairy|Fairy|✔|✔}}
+{{Moveentry/2|0040|Wigglytuff|type=Normal|type2=Fairy|1|Fairy|Fairy|✔|✔}}
+{{Moveentry/2|0043|Oddish|type=Grass|type2=Poison|1|Grass|Grass|✔|✔}}
+{{Moveentry/2|0044|Gloom|type=Grass|type2=Poison|1|Grass|Grass|✔|✔}}
+{{Moveentry/2|0045|Vileplume|type=Grass|type2=Poison|1|Grass|Grass|✔|✔}}
+{{Moveentry/2|0050|Diglett|type=Ground|1|Field|Field|−|✔}}
+{{Moveentry/2|0050|formsig=A|Diglett|type=Ground|type2=Steel|1|Field|Field|form=Alolan Form|−|✔}}
+{{Moveentry/2|0051|Dugtrio|type=Ground|1|Field|Field|−|✔}}
+{{Moveentry/2|0051|formsig=A|Dugtrio|type=Ground|type2=Steel|1|Field|Field|form=Alolan Form|−|✔}}
+{{Moveentry/2|0052|Meowth|type=Normal|1|Field|Field|✔|✔}}
+{{Moveentry/2|0052|formsig=A|Meowth|type=Dark|1|Field|Field|form=Alolan Form|✔|✔}}
+{{Moveentry/2|0052|formsig=G|Meowth|type=Steel|1|Field|Field|form=Galarian Form|−|✔}}
+{{Moveentry/2|0053|Persian|type=Normal|1|Field|Field|✔|✔}}
+{{Moveentry/2|0053|formsig=A|Persian|type=Dark|1|Field|Field|form=Alolan Form|✔|✔}}
+{{Moveentry/2|0058|Growlithe|type=Fire|1|Field|Field|−|✔}}
+{{Moveentry/2|0059|Arcanine|type=Fire|1|Field|Field|−|✔}}
+{{Moveentry/2|0077|Ponyta|type=Fire|1|Field|Field|✔|}}
+{{Moveentry/2|0077|formsig=G|Ponyta|type=Psychic|1|Field|Field|form=Galarian Form|✔|}}
+{{Moveentry/2|0078|Rapidash|type=Fire|1|Field|Field|✔|}}
+{{Moveentry/2|0078|formsig=G|Rapidash|type=Psychic|type2=Fairy|1|Field|Field|form=Galarian Form|✔|}}
+{{Moveentry/2|0086|Seel|type=Water|2|Water 1|Field||✔}}
+{{Moveentry/2|0087|Dewgong|type=Water|type2=Ice|2|Water 1|Field||✔}}
+{{Moveentry/2|0113|Chansey|type=Normal|1|Fairy|Fairy|✔|✔}}
+{{Moveentry/2|0122|Mr. Mime|type=Psychic|type2=Fairy|1|Human-Like|Human-Like|✔|}}
+{{Moveentry/2|0122|formsig=G|Mr. Mime|type=Ice|type2=Psychic|1|Human-Like|Human-Like|form=Galarian Form|✔|}}
+{{Moveentry/2|0124|Jynx|type=Ice|type2=Psychic|1|Human-Like|Human-Like|✔|}}
+{{Moveentry/2|0131|Lapras|type=Water|type2=Ice|2|Monster|Water 1|✔|✔}}
+{{Moveentry/2|0133|Eevee|type=Normal|1|Field|Field|✔|✔}}
+{{Moveentry/2|0134|Vaporeon|type=Water|1|Field|Field|✔|✔}}
+{{Moveentry/2|0135|Jolteon|type=Electric|1|Field|Field|✔|✔}}
+{{Moveentry/2|0136|Flareon|type=Fire|1|Field|Field|✔|✔}}
+{{Moveentry/2|0143|Snorlax|type=Normal|1|Monster|Monster|✔|✔}}
+{{Moveentry/2|0151|Mew|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|✔}}
+{{Moveentry/2|0152|Chikorita|type=Grass|2|Monster|Grass||✔}}
+{{Moveentry/2|0153|Bayleef|type=Grass|2|Monster|Grass||✔}}
+{{Moveentry/2|0154|Meganium|type=Grass|2|Monster|Grass||✔}}
+{{Moveentry/2|0161|Sentret|type=Normal|1|Field|Field||✔}}
+{{Moveentry/2|0162|Furret|type=Normal|1|Field|Field||✔}}
+{{Moveentry/2|0172|Pichu|type=Electric|1|No Eggs Discovered|No Eggs Discovered|✔|✔}}
+{{Moveentry/2|0173|Cleffa|type=Fairy|1|No Eggs Discovered|No Eggs Discovered|✔|✔}}
+{{Moveentry/2|0174|Igglybuff|type=Normal|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered|✔|✔}}
+{{Moveentry/2|0175|Togepi|type=Fairy|1|No Eggs Discovered|No Eggs Discovered|✔|}}
+{{Moveentry/2|0176|Togetic|type=Fairy|type2=Flying|2|Flying|Fairy|✔|}}
+{{Moveentry/2|0182|Bellossom|type=Grass|1|Grass|Grass|✔|✔}}
+{{Moveentry/2|0183|Marill|type=Water|type2= Fairy|2|Water 1|Fairy|✔|✔}}
+{{Moveentry/2|0184|Azumarill|type=Water|type2= Fairy|2|Water 1|Fairy|✔|✔}}
+{{Moveentry/2|0187|Hoppip|type=Grass|type2=Flying|2|Fairy|Grass||✔}}
+{{Moveentry/2|0188|Skiploom|type=Grass|type2=Flying|2|Fairy|Grass||✔}}
+{{Moveentry/2|0189|Jumpluff|type=Grass|type2=Flying|2|Fairy|Grass||✔}}
+{{Moveentry/2|0196|Espeon|type=Psychic|1|Field|Field|✔|✔}}
+{{Moveentry/2|0197|Umbreon|type=Dark|1|Field|Field|✔|✔}}
+{{Moveentry/2|0200|Misdreavus|type=Ghost|1|Amorphous|Amorphous||✔}}
+{{Moveentry/2|0202|Wobbuffet|type=Psychic|1|Amorphous|Amorphous|✔|}}
+{{Moveentry/2|0209|Snubbull|type=Fairy|2|Field|Fairy||✔}}
+{{Moveentry/2|0210|Granbull|type=Fairy|2|Field|Fairy||✔}}
+{{Moveentry/2|0216|Teddiursa|type=Normal|1|Field|Field||✔}}
+{{Moveentry/2|0217|Ursaring|type=Normal|1|Field|Field||✔}}
+{{Moveentry/2|0231|Phanpy|type=Ground|1|Field|Field||✔}}
+{{Moveentry/2|0232|Donphan|type=Ground|1|Field|Field||✔}}
+{{Moveentry/2|0238|Smoochum|type=Ice|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|}}
+{{Moveentry/2|0241|Miltank|type=Normal|1|Field|Field|✔|}}
+{{Moveentry/2|0242|Blissey|type=Normal|1|Fairy|Fairy|✔|✔}}
+{{Moveentry/2|0263|Zigzagoon|type=Normal|1|Field|Field|✔|}}	
+{{Moveentry/2|0264|Linoone|type=Normal|1|Field|Field|✔|}}
+{{Moveentry/2|0280|Ralts|type=Psychic|type2=Fairy|2|Human-Like|Amorphous|✔|✔}}
+{{Moveentry/2|0281|Kirlia|type=Psychic|type2=Fairy|2|Human-Like|Amorphous|✔|✔}}
+{{Moveentry/2|0282|Gardevoir|type=Psychic|type2=Fairy|2|Human-Like|Amorphous|✔|✔}}
+{{Moveentry/2|0285|Shroomish|type=Grass|2|Fairy|Grass||✔}}
+{{Moveentry/2|0286|Breloom|type=Grass|type2=Fighting|2|Fairy|Grass||✔}}
+{{Moveentry/2|0298|Azurill|type=Normal|type2= Fairy|1|No Eggs Discovered|No Eggs Discovered|✔|✔}}
+{{Moveentry/2|0311|Plusle|type=Electric|1|Fairy|Fairy||✔}}
+{{Moveentry/2|0312|Minun|type=Electric|1|Fairy|Fairy||✔}}
+{{Moveentry/2|0314|Illumise|type=Bug|2|Bug|Human-Like||✔}}
+{{Moveentry/2|0322|Numel|type=Fire|type2=Ground|1|Field|Field||✔}}
+{{Moveentry/2|0323|Camerupt|type=Fire|type2=Ground|1|Field|Field||✔}}
+{{Moveentry/2|0358|Chimecho|type=Psychic|1|Amorphous|Amorphous||✔}}
+{{Moveentry/2|0360|Wynaut|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|}}
+{{Moveentry/2|0370|Luvdisc|type=Water|1|Water 2|Water 2||✔}}
+{{Moveentry/2|0380|Latias|type=Dragon|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|✔}}
+{{Moveentry/2|0385|Jirachi|type=Steel|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|✔}}
+{{Moveentry/2|0393|Piplup|type=Water|2|Water 1|Field||✔}}
+{{Moveentry/2|0394|Prinplup|type=Water|2|Water 1|Field||✔}}
+{{Moveentry/2|0395|Empoleon|type=Water|type2=Steel|2|Water 1|Field||✔}}
+{{Moveentry/2|0417|Pachirisu|type=Electric|2|Field|Fairy||✔}}
+{{Moveentry/2|0427|Buneary|type=Normal|2|Field|Human-Like|✔|}}
+{{Moveentry/2|0428|Lopunny|type=Normal|2|Field|Human-Like|✔|}}
+{{Moveentry/2|0429|Mismagius|type=Ghost|1|Amorphous|Amorphous||✔}}
+{{Moveentry/2|0439|Mime Jr.|type=Psychic|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered|✔|}}
+{{Moveentry/2|0440|Happiny|type=Normal|1|No Eggs Discovered|No Eggs Discovered|✔|✔}}
+{{Moveentry/2|0446|Munchlax|type=Normal|1|No Eggs Discovered|No Eggs Discovered|✔|✔}}
+{{Moveentry/2|0456|Finneon|type=Water|1|Water 2|Water 2||✔}}
+{{Moveentry/2|0457|Lumineon|type=Water|1|Water 2|Water 2||✔}}
+{{Moveentry/2|0468|Togekiss|type=Fairy|type2=Flying|2|Flying|Fairy|✔|}}
+{{Moveentry/2|0470|Leafeon|type=Grass|1|Field|Field|✔|✔}}
+{{Moveentry/2|0471|Glaceon|type=Ice|1|Field|Field|✔|✔}}
+{{Moveentry/2|0475|Gallade|type=Psychic|type2=Fighting|2|Human-Like|Amorphous|✔|✔}}
+{{Moveentry/2|0478|Froslass|type=Ice|type2=Ghost|2|Fairy|Mineral|✔|✔}}
+{{Moveentry/2|0481|Mesprit|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|✔}}
+{{Moveentry/2|0489|Phione|type=Water|2|Water 1|Fairy||✔}}
+{{Moveentry/2|0490|Manaphy|type=Water|2|Water 1|Fairy||✔}}
+{{Moveentry/2|0506|Lillipup|type=Normal|1|Field|Field|✔|}}
+{{Moveentry/2|0507|Herdier|type=Normal|1|Field|Field|✔|}}
+{{Moveentry/2|0508|Stoutland|type=Normal|1|Field|Field|✔|}}
+{{Moveentry/2|0509|Purrloin|type=Dark|1|Field|Field|✔|}}
+{{Moveentry/2|0510|Liepard|type=Dark|1|Field|Field|✔|}}
+{{Moveentry/2|0527|Woobat|type=Psychic|type2=Flying|2|Field|Flying|✔|}}
+{{Moveentry/2|0528|Swoobat|type=Psychic|type2=Flying|2|Field|Flying|✔|}}
+{{Moveentry/2|0540|Sewaddle|type=Bug|type2=Grass|1|Bug|Bug||✔}}
+{{Moveentry/2|0541|Swadloon|type=Bug|type2=Grass|1|Bug|Bug||✔}}
+{{Moveentry/2|0542|Leavanny|type=Bug|type2=Grass|1|Bug|Bug||✔}}
+{{Moveentry/2|0546|Cottonee|type=Grass|type2=Fairy|2|Grass|Fairy|✔|✔}}
+{{Moveentry/2|0547|Whimsicott|type=Grass|type2=Fairy|2|Grass|Fairy|✔|✔}}
+{{Moveentry/2|0548|Petilil|type=Grass|1|Grass|Grass|✔|✔}}
+{{Moveentry/2|0549|Lilligant|type=Grass|1|Grass|Grass|✔|✔}}
+{{Moveentry/2|0549|formsig=H|Lilligant|type=Grass|type2=Fighting|1|Grass|Grass|form=Hisuian Form||✔}}
+{{Moveentry/2|0572|Minccino|type=Normal|1|Field|Field|✔|✔}}
+{{Moveentry/2|0573|Cinccino|type=Normal|1|Field|Field|✔|✔}}
+{{Moveentry/2|0574|Gothita|type=Psychic|1|Human-Like|Human-Like|✔|✔}}
+{{Moveentry/2|0575|Gothorita|type=Psychic|1|Human-Like|Human-Like|✔|✔}}
+{{Moveentry/2|0576|Gothitelle|type=Psychic|1|Human-Like|Human-Like|✔|✔}}
+{{Moveentry/2|0577|Solosis|type=Psychic|1|Amorphous|Amorphous|✔|✔}}
+{{Moveentry/2|0578|Duosion|type=Psychic|1|Amorphous|Amorphous|✔|✔}}
+{{Moveentry/2|0579|Reuniclus|type=Psychic|1|Amorphous|Amorphous|✔|✔}}
+{{Moveentry/2|0585|Deerling|type=Normal|type2=Grass|1|Field|Field|form=All forms||✔}}
+{{Moveentry/2|0586|Sawsbuck|type=Normal|type2=Grass|1|Field|Field|form=All forms||✔}}
+{{Moveentry/2|0587|Emolga|type=Electric|type2=Flying|1|Field|Field|✔|}}
+{{Moveentry/2|0613|Cubchoo|type=Ice|1|Field|Field|✔|✔}}
+{{Moveentry/2|0614|Beartic|type=Ice|1|Field|Field|✔|✔}}
+{{Moveentry/2|0648|Meloetta|type=Normal|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered||✔}}
+{{Moveentry/2|0653|Fennekin|type=Fire|1|Field|Field||✔}}
+{{Moveentry/2|0654|Braixen|type=Fire|1|Field|Field||✔}}
+{{Moveentry/2|0655|Delphox|type=Fire|1|Field|Field||✔}}
+{{Moveentry/2|0669|Flabébé|type=Fairy|1|Fairy|Fairy|form=All forms||✔}}
+{{Moveentry/2|0670|Floette|type=Fairy|1|Fairy|Fairy|form=All main forms||✔}}
+{{Moveentry/2|0671|Florges|type=Fairy|1|Fairy|Fairy|form=All forms||✔}}
+{{Moveentry/2|0677|Espurr|type=Psychic|1|Field|Field|−|✔}}
+{{Moveentry/2|0678|Meowstic|type=Psychic|1|Field|Field|form=All forms|✔|✔}}
+{{Moveentry/2|0682|Spritzee|type=Fairy|1|Fairy|Fairy|✔|}}
+{{Moveentry/2|0683|Aromatisse|type=Fairy|1|Fairy|Fairy|✔|}}
+{{Moveentry/2|0684|Swirlix|type=Fairy|1|Fairy|Fairy|✔|}}
+{{Moveentry/2|0685|Slurpuff|type=Fairy|1|Fairy|Fairy|✔|}}
+{{Moveentry/2|0696|Tyrunt|type=Rock|type2=Dragon|2|Monster|Dragon|✔|}}
+{{Moveentry/2|0697|Tyrantrum|type=Rock|type2=Dragon|2|Monster|Dragon|✔|}}
+{{Moveentry/2|0700|Sylveon|type=Fairy|1|Field|Field|✔|✔}}
+{{Moveentry/2|0702|Dedenne|type=Electric|type2= Fairy|2|Field|Fairy|✔|✔}}
+{{Moveentry/2|0703|Carbink|type=Rock|type2=Fairy|2|Fairy|Mineral|✔|✔}}
+{{Moveentry/2|0704|Goomy|type=Dragon|1|Dragon|Dragon|−|✔}}
+{{Moveentry/2|0705|Sliggoo|type=Dragon|1|Dragon|Dragon|−|✔}}
+{{Moveentry/2|0705|formsig=H|Sliggoo|type=Steel|type2=Dragon|1|Dragon|Dragon|form=Hisuian Form||✔}}
+{{Moveentry/2|0706|Goodra|type=Dragon|1|Dragon|Dragon|−|✔}}
+{{Moveentry/2|0706|formsig=H|Goodra|type=Steel|type2=Dragon|1|Dragon|Dragon|form=Hisuian Form||✔}}
+{{Moveentry/2|0719|Diancie|type=Rock|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered|✔|✔}}
+{{Moveentry/2|0728|Popplio|type=Water|2|Water 1|Field|✔|✔}}
+{{Moveentry/2|0729|Brionne|type=Water|2|Water 1|Field|✔|✔}}
+{{Moveentry/2|0730|Primarina|type=Water|type2=Fairy|2|Water 1|Field|✔|✔}}
+{{Moveentry/2|0741|Oricorio|type=Fire|type2=Flying|1|Flying|Flying|form=All forms||✔}}
+{{Moveentry/2|0742|Cutiefly|type=Bug|type2=Fairy|2|Bug|Fairy|✔|✔}}
+{{Moveentry/2|0743|Ribombee|type=Bug|type2=Fairy|2|Bug|Fairy|✔|✔}}
+{{Moveentry/2|0744|Rockruff|type=Rock|1|Field|Field|−|✔}}
+{{Moveentry/2|0745|Lycanroc|type=Rock|1|Field|Field|form=Midday Form|−|✔}}
+{{Moveentry/2|0745|formsig=Mn|Lycanroc|type=Rock|1|Field|Field|form=Midnight Form|−|✔}}
+{{Moveentry/2|0745|formsig=D|Lycanroc|type=Rock|1|Field|Field|form=Dusk Form|−|✔}}
+{{Moveentry/2|0759|Stufful|type=Normal|type2=Fighting|1|Field|Field|✔|}}
+{{Moveentry/2|0760|Bewear|type=Normal|type2=Fighting|1|Field|Field|✔|}}
+{{Moveentry/2|0761|Bounsweet|type=Grass|1|Grass|Grass|✔|✔}}
+{{Moveentry/2|0762|Steenee|type=Grass|1|Grass|Grass|✔|✔}}
+{{Moveentry/2|0763|Tsareena|type=Grass|1|Grass|Grass|✔|✔}}
+{{Moveentry/2|0764|Comfey|type=Fairy|1|Grass|Grass|✔|✔}}
+{{Moveentry/2|0775|Komala|type=Normal|1|Field|Field||✔}}
+{{Moveentry/2|0778|Mimikyu|type=Ghost|type2=Fairy|1|Amorphous|Amorphous|✔|✔}}
+{{Moveentry/2|0786|Tapu Lele|type=Psychic|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered|✔|}}
+{{Moveentry/2|0803|Poipole|type=Poison|1|No Eggs Discovered|No Eggs Discovered|✔|}}
+{{Moveentry/2|0804|Naganadel|type=Poison|type2=Dragon|1|No Eggs Discovered|No Eggs Discovered|✔|}}
+{{Moveentry/2|0829|Gossifleur|type=Grass|1|Grass|Grass|✔|}}
+{{Moveentry/2|0830|Eldegoss|type=Grass|1|Grass|Grass|✔|}}
+{{Moveentry/2|0835|Yamper|type=Electric|1|Field|Field|✔|}}
+{{Moveentry/2|0836|Boltund|type=Electric|1|Field|Field|✔|}}
+{{Moveentry/2|0848|Toxel|type=Electric|type2=Poison|1|No Eggs Discovered|No Eggs Discovered|−|✔}}
+{{Moveentry/2|0849|Toxtricity|type=Electric|type2=Poison|1|Human-Like|Human-Like|form=All forms|−|✔}}
+{{Moveentry/2|0856|Hatenna|type=Psychic|1|Fairy|Fairy|✔|✔}}
+{{Moveentry/2|0857|Hattrem|type=Psychic|1|Fairy|Fairy|✔|✔}}
+{{Moveentry/2|0858|Hatterene|type=Psychic|type2=Fairy|1|Fairy|Fairy|✔|✔}}
+{{Moveentry/2|0863|Perrserker|type=Steel|1|Field|Field|−|✔}}
+{{Moveentry/2|0866|Mr. Rime|type=Ice|type2=Psychic|1|Human-Like|Human-Like|✔|}}
+{{Moveentry/2|0868|Milcery|type=Fairy|2|Fairy|Amorphous|✔|✔}}
+{{Moveentry/2|0869|Alcremie|type=Fairy|2|Fairy|Amorphous|form=All forms|✔|✔}}
+{{Moveentry/2|0876|formsig=F|Indeedee|type=Psychic|type2=Normal|1|Fairy|Fairy|form=Female|−|✔}}
+{{Moveentry/2|0901|Ursaluna|type=Ground|type2=Normal|1|Field|Field||✔}}
+{{Moveentry/2|0906|Sprigatito|type=Grass|2|Field|Grass||✔}}
+{{Moveentry/2|0907|Floragato|type=Grass|2|Field|Grass||✔}}
+{{Moveentry/2|0908|Meowscarada|type=Grass|type2=Dark|2|Field|Grass||✔}}
+{{Moveentry/2|0921|Pawmi|type=Electric|1|Field|Field||✔}}
+{{Moveentry/2|0922|Pawmo|type=Electric|type2=Fighting|1|Field|Field||✔}}
+{{Moveentry/2|0923|Pawmot|type=Electric|type2=Fighting|1|Field|Field||✔}}
+{{Moveentry/2|0924|Tandemaus|type=Normal|2|Field|Fairy||✔}}
+{{Moveentry/2|0925|Maushold|type=Normal|2|Field|Fairy|form=All forms||✔}}
+{{Moveentry/2|0926|Fidough|type=Fairy|2|Field|Mineral||✔}}
+{{Moveentry/2|0927|Dachsbun|type=Fairy|2|Field|Mineral||✔}}
+{{Moveentry/2|0928|Smoliv|type=Grass|type2=Normal|1|Grass|Grass||✔}}
+{{Moveentry/2|0929|Dolliv|type=Grass|type2=Normal|1|Grass|Grass||✔}}
+{{Moveentry/2|0930|Arboliva|type=Grass|type2=Normal|1|Grass|Grass||✔}}
+{{Moveentry/2|0942|Maschiff|type=Dark|1|Field|Field||✔}}
+{{Moveentry/2|0943|Mabosstiff|type=Dark|1|Field|Field||✔}}
+{{Moveentry/2|0963|Finizen|type=Water|2|Field|Water 2||✔}}
+{{Moveentry/2|0964|Palafin|type=Water|2|Field|Water 2||✔}}
+{{Moveentry/2|0971|Greavard|type=Ghost|1|Field|Field||✔}}
+{{Moveentry/2|0972|Houndstone|type=Ghost|1|Field|Field||✔}}
+{{Moveentry/2|0974|Cetoddle|type=Ice|1|Field|Field||✔}}
+{{Moveentry/2|0975|Cetitan|type=Ice|1|Field|Field||✔}}
+{{Moveentry/2|0987|Flutter Mane|type=Ghost|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered||✔}}
+{{Moveentry/2|1016|Fezandipiti|type=Poison|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered||✔}}
+{{Moveentry/2|1017|Ogerpon|type=Grass|1|No Eggs Discovered|No Eggs Discovered|form=All forms||✔}}
+{{Movefoot|Fairy|2}}
+
+===By {{pkmn|breeding}}===
+{{Movehead/Games|Fairy|Egg Move|g1=none|g7=1|g7g={{gameabbrev7|SMUSUM}}|g8=none|g9=1|g9g={{gameabbrev9|SV}}}}
+{{Moveentry/7|0001|Bulbasaur|type=Grass|type2=Poison|2|Monster|Grass|{{tt|✔|No legitimate father to pass it down}}{{sup/2|GS}}|✔|✔|✔|✔|✔|−|note=Chain breed in Gens III-IV}}
+{{Moveentry/7|0029|Nidoran♀|type=Poison|2|Monster|Field|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0037|formsig=A|Vulpix|type=Ice|1|Field|Field|form=Alolan Form||||||✔|−}}
+{{Moveentry/7|0043|Oddish|type=Grass|type2=Poison|1|Grass|Grass|{{tt|✔|No legitimate father to pass it down}}{{sup/2|GS}}|✔|✔|✔|✔|✔|−|note=Chain breed in Gens III-IV}}
+{{Moveentry/7|0052|Meowth|type=Normal|1|Field|Field|✔|✔|✔|✔|✔|✔|−}}
+{{Moveentry/7|0052|formsig=A|Meowth|type=Dark|1|Field|Field|form=Alolan Form||||||✔|−}}
+{{Moveentry/7|0077|Ponyta|type=Fire|1|Field|Field|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0133|Eevee|type=Normal|1|Field|Field|✔|✔|✔|✔|✔|✔|−}}
+{{Moveentry/7|0143|Snorlax|type=Normal|1|Monster|Monster|{{tt|✔|No legitimate father to pass it down}}{{sup/2|GS}}|✔|✔|✔|✔|✔|−|note=Chain breed in Gens III-V}}
+{{Moveentry/7|0161|Sentret|type=Normal|1|Field|Field|−|−|✔|✔|✔|✔|−}}
+{{Moveentry/7|0263|Zigzagoon|type=Normal|1|Field|Field||✔|✔|✔|✔|✔}}
+{{Moveentry/7|0285|Shroomish|type=Grass|2|Fairy|Grass||✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0311|Plusle|type=Electric|1|Fairy|Fairy||−|−|−|✔{{sup/6|ORAS}}|✔|✔}}
+{{Moveentry/7|0312|Minun|type=Electric|1|Fairy|Fairy||−|−|−|✔{{sup/6|ORAS}}|✔|✔}}
+{{Moveentry/7|0439|Mime Jr.|type=Psychic|type2=Fairy|1|Human-Like|Human-Like|||✔|✔|✔|✔}}
+{{Moveentry/7|0446|Munchlax|type=Normal|1|Monster|Monster|||✔|✔|✔|✔|−|note=Chain breed in Gens IV-V}}
+{{Moveentry/7|0456|Finneon|type=Water|1|Water 2|Water 2|||✔|✔|✔|✔|✔}}
+{{Moveentry/7|0506|Lillipup|type=Normal|1|Field|Field||||✔|✔|✔}}
+{{Moveentry/7|0509|Purrloin|type=Dark|1|Field|Field||||✔|✔|✔}}
+{{Moveentry/7|0527|Woobat|type=Psychic|type2=Flying|2|Field|Flying||||✔|✔|✔}}
+{{Moveentry/7|0548|Petilil|type=Grass|1|Grass|Grass||||✔|✔|✔|−}}
+{{Moveentry/7|0587|Emolga|type=Electric|type2=Flying|1|Field|Field||||✔|✔|✔}}
+{{Moveentry/7|0728|Popplio|type=Water|2|Water 1|Field||||||✔|−}}
+{{Moveentry/7|0761|Bounsweet|type=Grass|1|Grass|Grass||||||✔|−}}
+{{Moveentry/7|0775|Komala|type=Normal|1|Field|Field||||||✔|✔}}
+{{Movefoot|Fairy|8}}
+
+===Special move===
+====[[Generation III]]====
+{{Movehead/Special|Normal}}
+{{Moveentry/1|0037|Vulpix|type=Fire|1|Field|Field|[[Purification|Purified]] [[Shadow Pokémon]]{{sup/ss|XD}}}}
+{{Moveentry/1|0051|Dugtrio|type=Ground|1|Field|Field|[[Purification|Purified]] [[Shadow Pokémon]]{{sup/ss|XD}}}}
+{{Moveentry/1|0055|Golduck|type=Water|2|Water 1|Field|[[Purification|Purified]] [[Shadow Pokémon]]{{sup/ss|XD}}}}
+{{Moveentry/1|0058|Growlithe|type=Fire|1|Field|Field|[[Purification|Purified]] [[Shadow Pokémon]]{{sup/ss|XD}}}}
+{{Moveentry/1|0220|Swinub|type=Ice|type2=Ground|1|Field|Field|[[Purification|Purified]] [[Shadow Pokémon]]{{sup/ss|XD}}}}
+{{Moveentry/1|0228|Houndour|type=Dark|type2=Fire|1|Field|Field|[[Purification|Purified]] [[Shadow Pokémon]]{{sup/ss|XD}}}}
+{{Moveentry/1|0322|Numel|type=Fire|type2=Ground|1|Field|Field|[[Purification|Purified]] [[Shadow Pokémon]]{{sup/ss|XD}}}}
+{{Moveentry/1|0363|Spheal|type=Ice|type2=Water|2|Water 1|Field|[[Purification|Purified]] [[Shadow Pokémon]]{{sup/ss|XD}}}}
+{{Movefoot|Normal|1}}
+
+====[[Generation IV]]====
+{{Movehead/Special|Normal}}
+{{Moveentry/1|0427|Buneary|type=Normal|2|Field|Human-Like|[[Hayley's trades#Buneary|My Pokémon Ranch]]}}
+{{Movefoot|Normal|1}}
+
+====[[Generation V]]====
+{{Movehead/Special|Normal}}
+{{Moveentry/1|0133|Eevee|type=Normal|1|Field|Field|{{pkmn|Dream World}} - {{dwa|Pokémon Café Forest}} and {{dwa|Dream Park}}}}
+{{Moveentry/1|0202|Wobbuffet|type=Psychic|1|Amorphous|Amorphous|{{pkmn|Dream World}} - {{dwa|Spooky Manor}}}}
+{{Moveentry/1|0548|Petilil|type=Grass|1|Grass|Grass|{{pkmn|Dream World}} - {{dwa|Pleasant Forest}}}}
+{{Moveentry/1|0587|Emolga|type=Electric|type2=Flying|1|Field|Field|{{pkmn|Dream World}} - {{dwa|Windswept Sky}}}}
+{{Movefoot|Normal|1}}
+
+====[[Generation IX]]====
+{{Movehead/Special|Fairy}}
+{{Moveentry/1|0217|Ursaring|type=Normal|1|Field|Field|[[Terastal phenomenon|Wild Tera Pokémon]] - [[Dalizapa Passage]]{{sup/9|SV}}}}
+{{Movefoot|Fairy|1}}
+
+===By {{pkmn2|event}}===
+====[[Generation III]]====
+{{Movehead/Special|Normal}}
+{{Moveentry/1|0280|Ralts|type=Psychic|type2=Fairy|2|Human-Like|Amorphous|[[List of Japanese event Pokémon distributions in Generation III#Charm Ralts|Pokémon Center 5th Anniversary]]}}
+{{Movefoot|Normal|1}}
+
+====[[Generation VI]]====
+{{Movehead/Special|Fairy}}
+{{Moveentry/1|0025|Pikachu|type=Electric|2|Field|Fairy|{{DL|List of local event Pokémon distributions in Generation VI|Pokémon Cafe Pikachu}}<br>{{DL|List of Taiwanese region serial code event Pokémon distributions in Generation VI|Satay King Pikachu}}}}
+{{Movefoot|Fairy|1}}
+
+==In other games==
+===[[Pokémon Mystery Dungeon series]]===
+Charm reduces the enemy's Attack. This cuts the Attack stat by ½, stacking up to 1/128, with this reduction being separate from stat stages. This characteristic is only shared with {{m|Aurora Beam}} and {{m|Memento}}.
+
+In {{g|Super Mystery Dungeon}}, Charm is still classified as a {{t|Normal}} move, despite having been changed to a {{type|Fairy}} move in the [[core series]] games.
+
+{{MDMoveheader|type=fairy}}
+{{MDMoveRow|game=RB|pp=22|acc=75%|range=Front|target=Enemy|cuts=No}}
+{{MDMoveRow|game=TDS|pp=22|acc=75%|range=Front|target=Enemy|cuts=No}}
+{{MDMoveRow|game=BSL|pp=22|acc=75%|range=Front|target=Enemy|cuts=No}}
+{{MDMoveRow|game=GTI|pp=17|ppmax=50|acc=95%|accmax=98%|range=Front|target=Enemy|cuts=No}}
+{{MDMoveRow|game=SMD|pp=17|ppmax=40|acc=95%|accmax=98%|range=Front|target=Enemy|cuts=No}}
+{{MDMovefoot|type=fairy|RB=yes|TDS=yes|BSL=yes|GTI=yes|SMD=yes|RTDX=yes}}
+
+===[[Pokémon GO]]===
+Charm is a Fast Attack in {{g|GO}} that has been available since July 9, 2019.
+
+{{GoFastAttack
+|id=320
+|move=Charm
+|type=Fairy
+|pow=20
+|energy=11
+|duration=1.5
+|damage_window=0.9 - 1.2
+|pow_trainer=13
+|energy_trainer=8
+|turns=3
+|users={{MSP/GO|025Li|Pikachu|Pikachu Libre}}{{MSP/GO|025Po|Pikachu|Pikachu Pop Star}}{{MSP/GO|025Ro|Pikachu|Pikachu Rock Star}}{{MSP/GO|026|Raichu}}{{MSP/GO|036|Clefable}}{{MSP/GO|038A|Ninetales|Alolan Form}}{{MSP/GO|040|Wigglytuff}}{{MSP/GO|202|Wobbuffet}}{{MSP/GO|210|Granbull}}{{MSP/GO|232|Donphan}}{{MSP/GO|282|Gardevoir}}{{MSP/GO|301|Delcatty}}{{MSP/GO|380|Latias}}{{MSP/GO|468|Togekiss}}{{MSP/GO|475|Gallade}}{{MSP/GO|510|Liepard}}{{MSP/GO|546|Cottonee}}{{MSP/GO|547|Whimsicott}}{{MSP/GO|548|Petilil}}{{MSP/GO|549|Lilligant}}{{MSP/GO|572|Minccino}}{{MSP/GO|573|Cinccino}}{{MSP/GO|576|Gothitelle}}{{MSP/GO|613|Cubchoo}}{{MSP/GO|614|Beartic}}{{MSP/GO|0678 f|Meowstic|Female}}{{MSP/GO|682|Spritzee}}{{MSP/GO|683|Aromatisse}}{{MSP/GO|685|Slurpuff}}{{MSP/GO|697|Tyrantrum}}{{MSP/GO|700|Sylveon}}{{MSP/GO|729|Brionne}}{{MSP/GO|730|Primarina}}{{MSP/GO|0743|Ribombee}}{{MSP/GO|0761|Bounsweet}}{{MSP/GO|0762|Steenee}}{{MSP/GO|0763|Tsareena}}{{MSP/GO|0856|Hatenna}}{{MSP/GO|0857|Hattrem}}{{MSP/GO|0858|Hatterene}}{{MSP/GO|0906|Sprigatito}}{{MSP/GO|0907|Floragato}}{{MSP/GO|0908|Meowscarada}}{{MSP/GO|0926|Fidough}}{{MSP/GO|0927|Dachsbun}}
+|elite_users={{MSP/GO|0579|Reuniclus}}
+|snapshot_users={{MSP/GO|0235|Smeargle}}
+}}
+
+====Updates====
+;Trainer Battles
+* '''December 1, 2022'''
+** '''Power''': 16 → 15
+* '''September 2, 2025'''
+** '''Power''': 15 → 13
+** '''Energy boost''': 6 → 8
+
+==={{g|Rumble Rush}}===
+In {{g|Rumble Rush}}, all [[status move]]s including Charm could only be used by opposing Pokémon and could not be obtained on any caught Pokémon. Charm could be seen as a move used by opposing {{p|Togepi}} and {{p|Wynaut}}.
+
+{{RumbleRushOtherAttack|move=Charm|type=Fairy
+|charge=0.98
+|range=Arc (wide)
+|target=Enemy
+|effect=Lowers the foe's Attack}}
+
+===[[Pokémon Masters EX]]===
+{| class="roundy" style="margin:auto; background:#{{fairy color}}; border:3px solid #{{fairy color dark}}; text-align:center; width:80%"
+|- style="background: #{{fairy color light}}"
+! style="{{roundytl|5px}}" | Name
+! {{color2|000|Damage category|Category}}
+! Move gauge cost
+! MP<br>(uses)
+! Base {{color2|000|power}}
+! Max {{color2|000|power}}
+! {{color2|000|Accuracy}}
+! Target
+! Effect tag
+! Description
+! style="{{roundytr|5px}}" | Playable {{color2|000|Sync pair|sync pair(s)}}
+|- style="background:#fff"
+|Charm
+{{statustable|Status}}
+|2
+|—
+|—
+|—
+|100%
+|An opponent
+|—
+|Lowers the target's Attack by two stat ranks.
+|{{sync|Mina|Granbull}}<hr>{{sync|Dawn|Alcremie|Palentine's 2021}}<hr>{{sync|Tate|Jirachi|Summer 2023}}<hr>{{sync|Tina|Flareon}}<hr>{{sync|Katherine|Slurpuff|Furisode Girl}}<hr>{{sync|Calem|Sylveon}}<hr>{{sync|Blossom|Kirlia|Furisode Girl}}<hr>{{sync/player|egg|Meowth/Persian}} <small>(Tech role only)</small><hr>{{sync/player|egg|Togepi}} <small>(Tech role only)</small>
+|- style="background:#{{fairy color light}}"
+! colspan=12 | {{color2|000|Buddy move}}
+|- style="background:#fff"
+|style="{{roundybl|5px}}"|Tasty-Sweet Charm
+{{statustable|Status}}
+|2
+|3
+|—
+|—
+|—%
+|—
+|Sure Hit
+|'''Activation Condition:''' When the user uses any move once.
+
+'''Deactivation Condition:''' When this move is used.
+
+Never misses. Lowers the Attack of all opposing sync pairs by two stat ranks. Applies the Critical-Hit Defense effect to the allied field of play. Applies the Physical Damage Reduction effect to the allied field of play. Increases the Physical Moves ↑ Next effect and Special Moves ↑ Next effect of all allied sync pairs by one rank.
+|style="{{roundybr|5px}}"|{{sync|Ortega|Dachsbun}}
+|}
+Notes:
+*'''Charm''':
+** Description prior to Version 2.10.0 (from June 28, 2021): Sharply lowers the target's Attack.
+
+==={{g|UNITE}}===
+{{MoveUNITE/Header|move=Charm|type=Fairy}}
+{{MoveUNITE|move=Charm|pokemon=Alcremie|level=1 or 3|cooldown=5|description=Has the user send its cute voice in the designated direction, applying a slowing effect to opposing Pokémon it hits, decreasing their Attack and Sp. Atk, and increasing the user's sweet gauge.}}
+|}</div></div>
+
+===[[Monopoly: Pokémon Kanto Edition|Monopoly: Pokémon Exclusive Kanto Edition]]===
+In the exclusive edition of Monopoly: Pokémon Kanto Edition, Charm is the [[Monopoly: Pokémon Kanto Edition#Power Cards|Power Card]] belonging to {{p|Eevee}}. Once per game, during their turn, the player using Eevee may forcibly trade their lowest-valued property for an opponent's highest-valued property. If the opponent complains about the trade, the player using Eevee may take {{PDollar}}100 from them in addition to their property. If either property involved in the trade has [[Poké Mart]]s or a [[Pokémon Center]] built on them, the original owner of the property sells them back to the bank, receiving half the price of building them.
+
+===Description===
+{{movedesc|Fairy}}
+{{movedescentry|{{gameabbrevmd|RB}}|Lowers the Attack of the target by two levels.}}
+{{movedescentry|{{gameabbrevmd|TDS}}|Halves the target's Attack.}}
+{{movedescentry|{{gameabbrevmd|BSL}}|{{tt|てきポケモンの こうげきを はんぶんにさげる|Halves the target's Attack}}}}
+{{movedescentry|{{gameabbrevmd|GTI}}<br>{{gameabbrevmd|SMD}}<br/>{{gameabbrevmd|RTDX}}|It sharply lowers the enemy's Attack.}}
+{{movedescentry|[[Monopoly: Pokémon Kanto Edition|Monopoly: Pokémon Exclusive Kanto Edition]]|Charm an opponent to swap their highest valued property with your lowest. (If that player complains, you may receive an additional 100 from him or her. Use his{{sic}} power only on your turn. If either of the properties contain improvements, all Poké Marts or Pokémon Centers are sold back to the bank at half the listed price. Payment from the bank is made to the player who originally owned the property.)}}
+|}
+|}{{left clear}}
+
+==In animation==
+===Pokémon animated series===
+{{moveanime|type=fairy|exp=yes|gen=The user gazes at the target rather charmingly, making it less wary. This causes the target to soften their attack.|image1=Gigglybiff Gigglybuff Charm.png|image1p=Igglybuff|image2=Togepi Charm.png|image2p=Togepi|image3=Ursaring Charm.png|image3p=Ursaring|image4=Katy Teddy Charm.png|image4p=Teddiursa}}
+{{movep|type=normal|ms=175|pkmn=Togepi|method=Togepi, surrounded by pink hearts, spreads its arms out and makes a cute face at the opponent; or, Togepi cries and looks cutely at the opponent.}}
+{{movemid|type=normal|user=Misty's Togepi|startcode=EP151|startname=The Totodile Duel|notes=Debut}}
+{{movemid|type=normal|user=Togepi (Pokémon)|user1=A wild Togepi|startcode=DP142|startname=Where No Togepi Has Gone Before!}}
+{{movep|type=normal|ms=216|pkmn=Teddiursa|method=Teddiursa makes a cute face, puts its paw in its mouth, and it widens its eyes; or, Teddiursa, surrounded by pink hearts, makes a cute face at the opponent, causing them to soften their attack.}}
+{{movemid|type=normal|user=Teddiursa (Pokémon)|user1=A wild Teddiursa|startcode=EP186|startname=UnBEARable|notes=Teddiursa {{color2|000|Animated series move errors|could not legally learn}} Charm {{color2|000|Generation II|at the time}}}}
+{{movemid|type=fairy|user=Katy|user1=Katy's Teddy|startcode=HZ047|startname=Put Your Heart Into It!}}
+{{movep|type=normal|ms=217|pkmn=Ursaring|method=Ursaring puts its paw in its mouth and widens its eyes.}}
+{{movemid|type=normal|user=Ursaring (Pokémon)|user1=A wild Ursaring|startcode=EP186|startname=UnBEARable|notes=Ursaring {{color2|000|Animated series move errors|could not legally learn}} Charm {{color2|000|Generation II|at the time}}}}
+{{movep|type=normal|ms=174|pkmn=Igglybuff|method=Igglybuff hugs the opponent.}}
+{{movemid|type=normal|user=Brittany (EP243)|user1=Brittany's Igglybuff|startcode=EP243|startname=Same Old Song and Dance}}
+{{movebtm|type=normal|user=Brittany (EP243)|user1=Brittany's Igglybuff|startcode=EP243|startname=Same Old Song and Dance}}
+
+==In the manga==
+===Pokémon Adventures===
+{{movemanga|type=normal|exp=yes|gen=The user snuggles up to the opponent and stares apologetically at it.|image1=Green Snubbull Charm.png|image1p=Snubbull}}
+{{movep|type=normal|ms=209|pkmn=Snubbull|method=Snubbull snuggles up to the opponent and stares at it apologetically, making it put its guard down.}}
+{{movebtmManga|type=normal|user=Green (Adventures)|user1=Green's Snubbull|startcode=PS173|startname=The Last Battle VII|notes=Debut}}
+
+* In ''[[PS107|Gligar Glide]]'', {{adv|Gold}}'s {{p|Togepi}}, [[Togebo]], was revealed to know Charm by his [[Pokédex]].
+
+===Pokémon Diamond and Pearl Adventure!===
+{{movemanga|type=normal|exp=yes|gen=The user makes a cute face at the opponent, making the opponent blush.|image1=Hareta Minun Charm.png|image1p=Minun}}
+{{movep|type=normal|ms=312|pkmn=Minun|method=Minun acts cute towards the opponent, making the opponent blush.}}
+{{movebtmManga|type=normal|user=Hareta's Minun|startcode=DPA30|startname=The Anger of Legendary Pokémon Heatran|notes=Debut}}
+
+===Pokémon Gold & Silver: The Golden Boys===
+{{movemanga|type=normal|exp=yes|gen=The user makes a cute face at the opponent.|image1=Gold Pichu Charm Golden Boys.png|image1p=Pichu}}
+{{movep|type=normal|ms=172|pkmn=Pichu|method=Pichu makes a cute face at the foe, rendering it unable to attack.}}
+{{movebtmManga|type=normal|user=Gold (Golden Boys)|user1=Gold's Pichu|startcode=GB16|startname=The New Pokémon Is Hatched!!|notes=Debut}}
+
+==In other generations==
+===Core series games===
+{{movegen
+|type=Normal
+|genII=Charm II
+|genIII=Charm III
+|genIV=Charm IV
+|genV=Charm V
+}}
+{{movegen
+|type=Fairy
+|genVI=Charm VI
+|genVII=Charm VII
+|genVIII=Charm VIII
+|ZA=Charm ZA
+}}
+
+===Side games series===
+{{movegen
+|type=Normal
+|Stad2=Charm Stad2
+|Colo=Charm Colo
+|XD=Charm XD
+|PBR=Charm PBR
+}}
+===Spin-off series games===
+{{movegen
+|type=Normal
+|PMDRB=Charm PMD RB
+|PMDTDS=Charm PMD TDS
+|PMDGTI=Charm PMD GTI
+}}
+{{movegen
+|type=Fairy
+|PSMD=Charm PSMD
+|Masters=Charm Masters
+}}
+
+==Trivia==
+* Charm is one of the four moves from [[Generation II]] to have its {{DL|List of modified moves|Type changes|type changed}} in a later [[generation]], the others being {{m|Curse}}, {{m|Moonlight}}, and {{m|Sweet Kiss}}.
+** Excluding Curse, all of them were {{type|Normal}} moves that became {{type|Fairy}} moves in [[Generation VI]].
+* In {{2v2|Gold|Silver}}, Bulbasaur and Oddish are programmed to learn Charm as an Egg Move, but there was no legitimate father to pass down this move. In Generations {{gen|III}} and {{gen|IV}}, both can inherit the move from the {{p|Shroomish}} evolutionary line by chain breeding; from Generation {{gen|V}} onward, both can get this move directly from {{p|Cottonee}}.  
+** A similar situation occurs for Snorlax in Gold and Silver.  In Generation III and IV, Snorlax was able to inherit the move from the Bulbasaur line by chain breeding; from Generation VI onward, Snorlax was able to inherit the move directly from the Tyrunt line.
+
+==In other languages==
+{{Langtable|color={{fairy color}}|bordercolor={{normal color dark}}
+|zh_yue=撒嬌 ''{{tt|Saatgīu|Petulant}}'' {{tt|*|Games}}
+|zh_cmn=撒嬌 / 撒娇 ''{{tt|Sājiāo|Petulant}}'' {{tt|*|Games, Animated series, Adventures (Jilin Publishing later translation)}}<br>寵愛 / 宠爱 ''{{tt|Chǒng'ài|Dote}}'' {{tt|*|Adventures (Ching Win, Jilin Publishing early translation), DP National Pokédex Guidebook}}
+|fr=Charme
+|de=Charme
+|el=Γοητεία ''Goiteía''
+|hi=चार्म ''Charm''
+|id=Bermanja-manja
+|it=Fascino
+|ko=애교부리기 ''{{tt|Aegyo Burigi|Act Cute}}
+|pl=Urok{{tt|*|Also used for Hex}}<!--<br>Wdzięk{{tt|*|EP186-EP243}}-->
+|pt_br=Encantar ({{pkmn|GO}}, TCG, manga)<br>Charme
+|pt_eu=Charme
+|ru=Шарм ''{{tt|Sharm|Charm}}'' {{tt|*|Pokémon GO}}<br>Очарование ''{{tt|Ocharovanie|Allure}}''
+|sr=Šarmiranje
+|es=Encanto
+<!--|es_la=Encanto ([[EP186]]–present)<br>Cariño ([[EP151]])-->
+|th=ออดอ้อน ''{{tt|Oton|Cajole}}''
+|tr=Çekici
+|vi=Mê Hoặc
+}}
+{{charm}}
+{{Generation VIII TMs}}
+{{Generation IX TMs}}
+{{Project Moves and Abilities notice}}
+
+[[Category:Normal-type moves]]<!--Prior to Gen VI-->
+[[Category:Moves that can jam]]
+[[Category:Moves that can lower the target's Attack]]
+[[Category:Moves learned by purification]]
+[[Category:Moves that have had their type changed]]
+[[Category:Moves usable in Pokémon Sword and Shield]]
+[[Category:Moves usable in Pokémon Scarlet and Violet]]
+[[Category:Moves in Pokémon Legends: Z-A]]
+
+[[de:Charme]]
+[[es:Encanto]]
+[[fr:Charme (capacité)]]
+[[it:Fascino]]
+[[ja:あまえる]]
+[[zh:撒娇（招式）]]

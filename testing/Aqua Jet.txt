@@ -1,0 +1,457 @@
+{{MoveInfobox
+|n=453
+|name=Aqua Jet
+|jname=アクアジェット
+|jtrans=Aqua Jet
+|jtranslit=Akua Jetto
+|gameimage=Aqua Jet IX.png
+|gameimage2=Aqua Jet IX 2.png
+|gameimagewidth=300
+|type=Water
+|damagecategory=Physical
+|basepp=20
+|maxpp=32
+|power=40
+|accuracy=100
+|priority=+1
+|gen=IV
+|target=anyadjacent
+|category=Beauty
+|appeal=2
+|jam=0
+|cdesc=Appeals first in the next turn
+|appealsc=2
+|scdesc=Enables the user to perform first in the next turn.
+|category6=Cool
+|appeal6=3
+|jam6=0
+|cdesc6=Causes the user to move earlier on the next turn.
+|pokefordex=Aqua%20Jet
+|touches=yes
+|protect=yes
+|magiccoat=no
+|snatch=no
+|mirrormove=yes
+|kingsrock=yes
+|flag7=no
+|flag8=no
+|sound=no
+|footnotes=
+}}
+'''Aqua Jet'''  (Japanese: '''アクアジェット''' ''Aqua Jet'') is a damage-dealing {{type|Water}} [[move]] introduced in [[Generation IV]].
+
+==Effect==
+Aqua Jet inflicts damage. It has a [[priority]] of +1, so is used before all moves that do not have increased priority.
+
+===Generation VIII===
+====Pokémon Legends: Arceus====
+Aqua Jet raises the user's action speed.
+{{LegendsMove
+|type=Water
+|damagecategory=Physical
+|basepp=20
+|power=40
+|power-agile=30
+|power-strong=50
+|accuracy=100
+|accuracy-strong=100
+|actionspeed-user=-4
+|actionspeed-user-agile=-4
+|actionspeed-user-strong=+2
+|actionspeed-target=0
+|actionspeed-target-agile=+3
+|effect=Raises the user's action speed}}
+
+===Generation IX===
+====Pokémon Legends: Z-A====
+Like all other moves that previously possessed priority, Aqua Jet causes the user to dash forward to make damaging contact with the target (although terrain may interfere with doing so). During the dash, the user is intangible and will not make contact with projectiles and [[Entry hazard|hazards]] that they pass through. {{LegendsZAMove
+|type=Water
+|damagecategory=Physical
+|power=30
+|cooldown=3
+|charge-time=0
+}}
+
+==Description==
+{{movedesc|Water}}
+{{movedescentry|{{gameabbrev4|DPPtHGSS}}{{gameabbrevss|PBR}}|The user lunges at the foe at a speed that makes it almost invisible. It is sure to strike first.}}
+{{movedescentry|{{gameabbrev5|BWB2W2}}|The user lunges at the target at a speed that makes it almost invisible. It is sure to strike first.}}
+{{movedescentry|{{gameabbrev6|XYORAS}}<br>{{gameabbrev7|SMUSUMPE}}<br>{{gameabbrev8|SwShBDSP}}|The user lunges at the target at a speed that makes it almost invisible. This move always goes first.}}
+{{movedescentry|{{gameabbrev8|LA}}|The user lunges at the target to deal damage, moving at a speed that makes it almost invisible. This also raises the user's action speed.}}
+{{movedescentry|{{gameabbrev9|SV}}|The user lunges at the target to inflict damage, moving at blinding speed. This move always goes first.}}
+{{movedescentry|{{gameabbrev9|ZA}}|The user attacks by lunging toward targets with blinding speed.}}
+|}
+|}{{left clear}}
+
+==Learnset==
+===By [[Level|leveling up]]===
+{{Movehead/Games|Water|g1=none|g2=none|g3=none|g7=2|g8=3|g9=2}}
+{{Moveentry/10|0007|Squirtle|type=Water|2|Monster|Water 1|−|−|−|−|−|−|−||−|35|STAB='''}}
+{{Moveentry/10|0008|Wartortle|type=Water|2|Monster|Water 1|−|−|−|−|−|−|−||−|35|STAB='''}}
+{{Moveentry/10|0009|Blastoise|type=Water|2|Monster|Water 1|−|−|−|−|1|−|−||−|35|STAB='''}}
+{{Moveentry/10|0055|Golduck|type=Water|2|Water 1|Field|1{{sup/4|PtHGSS}}|1|1|1||1|1||1|STAB='''}}
+{{Moveentry/10|0086|Seel|type=Water|2|Water 1|Field|31|31|31|31|12||31||31|STAB='''}}
+{{Moveentry/10|0087|Dewgong|type=Water|type2=Ice|2|Water 1|Field|31|31|31|31|1, 12||31||31|STAB='''}}
+{{Moveentry/10|0120|Staryu|type=Water|1|Water 3|Water 3|−|−|−|−|−|−|−||−|12|STAB='''}}
+{{Moveentry/10|0121|Starmie|type=Water|type2=Psychic|1|Water 3|Water 3|−|−|−|−|−|−|−||−|12|STAB='''}}
+{{Moveentry/10|0128|formsig=PA|Tauros|type=Fighting|type2=Water|1|Field|Field|form=Paldean Form<br>(Aqua Breed)|||||||||15|STAB='''}}
+{{Moveentry/10|0140|Kabuto|type=Rock|type2=Water|2|Water 1|Water 3|31|31|31|31|24|15|15|STAB='''}}
+{{Moveentry/10|0141|Kabutops|type=Rock|type2=Water|2|Water 1|Water 3|31|31|31|31|24|15|15|STAB='''}}
+{{Moveentry/10|0149|Dragonite|type=Dragon|type2=Flying|2|Water 1|Dragon|−|−|−|−|1|−|−||−|−}}
+{{Moveentry/10|0158|Totodile|type=Water|2|Monster|Water 1|−|−|−|−|||−||−|21|STAB='''}}
+{{Moveentry/10|0159|Croconaw|type=Water|2|Monster|Water 1|−|−|−|−|||−||−|21|STAB='''}}
+{{Moveentry/10|0160|Feraligatr|type=Water|2|Monster|Water 1|−|−|−|−|||−||−|21|STAB='''}}
+{{Moveentry/10|0211|Qwilfish|type=Water|type2=Poison|1|Water 2|Water 2|−|−|−|−||−|−||−|17|STAB='''}}
+{{Moveentry/10|0211|formsig=H|Qwilfish|type=Dark|type2=Poison|1|Water 2|Water 2|form=Hisuian Form||||||||−|−|17}}
+{{Moveentry/10|0283|Surskit|type=Bug|type2=Water|2|Water 1|Bug|−|−|30{{sup/6|ORAS}}|30|||30||−|STAB='''}}
+{{Moveentry/10|0284|Masquerain|type=Bug|type2=Flying|2|Water 1|Bug|−|−|−|−|||1||−|}}
+{{Moveentry/10|0318|Carvanha|type=Water|type2=Dark|1|Water 2|Water 2|31|31|31{{sup/6|XY}}<br>11{{sup/6|ORAS}}|11||1|1|||1|STAB='''}}
+{{Moveentry/10|0319|Sharpedo|type=Water|type2=Dark|1|Water 2|Water 2|34|34|34{{sup/6|XY}}<br>11{{sup/6|ORAS}}|11||1|1|||1|STAB='''}}
+{{Moveentry/10|0395|Empoleon|type=Water|type2=Steel|2|Water 1|Field|36|36|36|1, {{tt|Evo.|Learned upon evolving}}|||1, {{tt|Evo.|Learned upon evolving}}||{{tt|Evo.|Learned upon evolving}}|STAB='''}}
+{{Moveentry/10|0400|Bibarel|type=Normal|type2=Water|2|Water 1|Field|−|−|−|1|||1|−|STAB='''}}
+{{Moveentry/10|0418|Buizel|type=Water|2|Water 1|Field|21|21{{sup/5|BW}}<br>24{{sup/5|B2W2}}|24|24|||24|6|24|STAB='''}}
+{{Moveentry/10|0419|Floatzel|type=Water|2|Water 1|Field|21|21{{sup/5|BW}}<br>24{{sup/5|B2W2}}|24|24|||24|6|24|STAB='''}}
+{{Moveentry/10|0501|Oshawott|type=Water|1|Field|Field||29|29|29||||6|29|STAB='''}}
+{{Moveentry/10|0502|Dewott|type=Water|1|Field|Field||33|33|34||||6|34|STAB='''}}
+{{Moveentry/10|0503|Samurott|type=Water|1|Field|Field||33|33|34|||||34|STAB='''}}
+{{Moveentry/10|0503|formsig=H|Samurott|type=Water|type2=Dark|1|Field|Field|form=Hisuian Form||||||||6|34|STAB='''}}
+{{Moveentry/10|0550|Basculin|type=Water|1|Water 2|Water 2|form=Red- and<br>Blue-Striped Forms||13|13|9||12|||12|STAB='''}}
+{{Moveentry/10|0550|formsig=W|Basculin|type=Water|1|Water 2|Water 2|form=White-Striped Form||||||||6|12|STAB='''}}
+{{Moveentry/10|0564|Tirtouga|type=Water|type2=Rock|2|Water 1|Water 3||15|15|15||6|STAB='''}}
+{{Moveentry/10|0565|Carracosta|type=Water|type2=Rock|2|Water 1|Water 3||15|15|15||1|STAB='''}}
+{{Moveentry/10|0594|Alomomola|type=Water|2|Water 1|Water 2||9|9|9|||||9|STAB='''}}
+{{Moveentry/10|0614|Beartic|type=Ice|1|Field|Field||1{{sup/5|B2W2}}|1|1||1|||1}}
+{{Moveentry/10|0647|Keldeo|type=Water|type2=Fighting|1|No Eggs Discovered|No Eggs Discovered|form=All available forms||1|1|1||1|||1|1|STAB='''}}
+{{Moveentry/10|0692|Clauncher|type=Water|2|Water 1|Water 3|||43|43||15|||15|13|STAB='''}}
+{{Moveentry/10|0693|Clawitzer|type=Water|2|Water 1|Water 3|||47|49||15|||15|13|STAB='''}}
+{{Moveentry/10|0728|Popplio|type=Water|2|Water 1|Field||||15{{sup/7|SM}}<br>14{{sup/7|USUM}}||9|||9|STAB='''}}
+{{Moveentry/10|0729|Brionne|type=Water|2|Water 1|Field||||15{{sup/7|SM}}<br>14{{sup/7|USUM}}||9|||9|STAB='''}}
+{{Moveentry/10|0730|Primarina|type=Water|type2=Fairy|2|Water 1|Field||||15{{sup/7|SM}}<br>14{{sup/7|USUM}}||9|||9|STAB='''}}
+{{Moveentry/10|0768|Golisopod|type=Bug|type2=Water|2|Bug|Water 3||||−||−||||16|STAB='''}}
+{{Moveentry/10|0779|Bruxish|type=Water|type2=Psychic|1|Water 2|Water 2||||17|||||17|STAB='''}}
+{{Moveentry/10|0846|Arrokuda|type=Water|1|Water 2|Water 2||||||1|||1|STAB='''}}
+{{Moveentry/10|0847|Barraskewda|type=Water|1|Water 2|Water 2||||||1|||1|STAB='''}}
+{{Moveentry/10|0892|Urshifu|type=Fighting|type2=Water|1|No Eggs Discovered|No Eggs Discovered|form=Rapid Strike Style||||||1|||1|STAB='''}}
+{{Moveentry/10|0902|Basculegion|type=Water|type2=Ghost|1|Water 2|Water 2|form=All forms||||||||6|12|STAB='''}}
+{{Moveentry/10|0904|Overqwil|type=Dark|type2=Poison|1|Water 2|Water 2||||||||−|−|17}}
+{{Moveentry/10|0912|Quaxly|type=Water|2|Flying|Water 1|||||||||13|STAB='''}}
+{{Moveentry/10|0913|Quaxwell|type=Water|2|Flying|Water 1|||||||||13|STAB='''}}
+{{Moveentry/10|0914|Quaquaval|type=Water|type2=Fighting|2|Flying|Water 1|||||||||13|STAB='''}}
+{{Moveentry/10|0960|Wiglett|type=Water|1|Water 3|Water 3|||||||||12|STAB='''}}
+{{Moveentry/10|0961|Wugtrio|type=Water|1|Water 3|Water 3|||||||||12|STAB='''}}
+{{Moveentry/10|0963|Finizen|type=Water|2|Field|Water 2|||||||||13|STAB='''}}
+{{Moveentry/10|0964|Palafin|type=Water|2|Field|Water 2|||||||||13|STAB='''}}
+{{Moveentry/10|0976|Veluza|type=Water|type2=Psychic|1|Water 2|Water 2|||||||||1|STAB='''}}
+{{Moveentry/10|1009|Walking Wake|type=Water|type2=Dragon|1|No Eggs Discovered|No Eggs Discovered|||||||||1|STAB='''}}
+{{Movefoot|Water|10}}
+
+===By {{pkmn|breeding}}===
+{{Movehead/Games|Water|Egg Move|g1=none|g2=none|g3=none|g7=1|g7g={{gameabbrev7|SMUSUM}}|g8=2|g9=1|g9g={{gameabbrev9|SV}}}}
+{{Moveentry/7|0007|Squirtle|type=Water|2|Monster|Water 1|✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/7|0147|Dratini|type=Dragon|2|Water 1|Dragon|−|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0158|Totodile|type=Water|2|Monster|Water 1|✔{{sup/4|HGSS}}|✔|✔|✔||✔|✔|STAB='''}}
+{{Moveentry/7|0183|Marill|type=Water|type2=Fairy|2|Water 1|Fairy|✔|✔|✔|✔|✔|✔|−|STAB='''}}
+{{Moveentry/7|0211|Qwilfish|type=Water|type2=Poison|1|Water 2|Water 2|✔{{sup/4|HGSS}}|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/7|0211|formsig=H|Qwilfish|type=Dark|type2=Poison|1|Water 2|Water 2|form=Hisuian Form|||||||✔}}
+{{Moveentry/7|0283|Surskit|type=Bug|type2=Water|2|Water 1|Bug|−|✔|✔|✔||✔|✔|STAB='''}}
+{{Moveentry/7|0298|Azurill|type=Normal|type2=Fairy|2|Water 1|Fairy|−|−|−|−|✔|✔|✔|STAB=''}}
+{{Moveentry/7|0341|Corphish|type=Water|2|Water 1|Water 3|−|−|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/7|0347|Anorith|type=Rock|type2=Bug|1|Water 3|Water 3|−|−|✔|✔|✔|✔}}
+{{Moveentry/7|0370|Luvdisc|type=Water|1|Water 2|Water 2|✔{{sup/4|HGSS}}|✔|✔|✔||✔|✔<sup>2.0.1+</sup>|STAB='''}}
+{{Moveentry/7|0580|Ducklett|type=Water|type2=Flying|2|Water 1|Flying||−|−|✔{{sup/7|USUM}}|||✔|STAB='''}}
+{{Moveentry/7|0692|Clauncher|type=Water|2|Water 1|Water 3|||✔|✔|−||−|STAB='''}}
+{{Moveentry/7|0767|Wimpod|type=Bug|type2=Water|2|Bug|Water 3||||✔|✔|STAB='''}}
+{{Moveentry/7|0816|Sobble|type=Water|2|Water 1|Field|||||✔||✔|STAB='''}}
+{{Movefoot|Water|7}}
+
+===Special move===
+====[[Generation V]]====
+{{Movehead/Special|Water}}
+{{Moveentry/1|0183|Marill|type=Water|2|Water 1|Fairy|{{pkmn|Dream World}} - {{dwa|Pleasant Forest}}|STAB='''}}
+{{Moveentry/1|0211|Qwilfish|type=Water|type2=Poison|1|Water 2|Water 2|{{pkmn|Dream World}} - {{dwa|Sparkling Sea}}|STAB='''}}
+{{Movefoot|Water|1}}
+
+====[[Generation VII]]====
+{{Movehead/Special|Water}}
+{{Moveentry/1|0007|Squirtle|type=Water|2|Monster|Water 1|{{DL|QR Scanner|Island Scan}} - [[Seaward Cave]]{{sup/7|USUM}}|STAB='''}}
+{{Moveentry/1|0183|Marill|type=Water|type2=Fairy|2|Water 1|Fairy|{{DL|QR Scanner|Island Scan}} - [[Brooklet Hill]]{{sup/7|SM}}|STAB='''}}
+{{Movefoot|Water|1}}
+
+====[[Generation IX]]====
+{{Movehead/Special|Water}}
+{{Moveentry/1|0184|Azumarill|type=Water|type2=Fairy|2|Water 1|Fairy|[[Terastal phenomenon|Wild Tera Pokémon]] - [[Casseroya Lake]]{{sup/9|SV}}|STAB='''}}
+{{Movefoot|Water|1}}
+
+==In other games==
+===[[Pokémon Mystery Dungeon series]]===
+{{MDMoveheader|type=water}}
+{{MDMoveRow|game=TDS|pow=4|pp=18|acc=88%|range=2 tiles away|target=Enemy|cuts=Yes}}
+{{MDMoveRow|game=BSL|pow=4|pp=18|acc=88%|range=2 tiles away|target=Enemy|cuts=Yes}}
+{{MDMoveRow|game=GTI|pow=3|powmax=99|pp=18|ppmax=50|acc=90%|accmax=98%|range=2 tiles away|target=Enemy|cuts=No}}
+{{MDMoveRow|game=SMD|pow=3|powmax=50|pp=18|ppmax=30|acc=90%|accmax=98%|range=2 tiles away|target=Enemy|cuts=No}}
+{{MDMovefoot|type=water|TDS=yes|BSL=yes|GTI=yes|SMD=yes|RTDX=yes}}
+
+===[[Pokémon GO]]===
+{{GoChargedAttack
+|id=57
+|move=Aqua Jet
+|type=Water
+|pow=45
+|energy=33
+|duration=2.5
+|damage_window=1.6 - 2
+|pow_trainer=70
+|energy_trainer=40
+|users={{MSP/GO|0007|Squirtle}}{{MSP/GO|0008|Wartortle}}{{MSP/GO|0128PA|Tauros|Paldean Tauros (Aqua Breed)}}{{MSP/GO|0140|Kabuto}}{{MSP/GO|0158|Totodile}}{{MSP/GO|0283|Surskit}}{{MSP/GO|0318|Carvanha}}{{MSP/GO|0341|Corphish}}{{MSP/GO|347|Anorith}}{{MSP/GO|370|Luvdisc}}{{MSP/GO|418|Buizel}}{{MSP/GO|419|Floatzel}}{{MSP/GO|550|Basculin|Red-Striped Form}}{{MSP/GO|550B|Basculin|Blue-Striped Form}}{{MSP/GO|0550W|Basculin|White-Striped Form}}{{MSP/GO|0647|Keldeo}}{{MSP/GO|0647R|Keldeo|Resolute Form}}{{MSP/GO|0692|Clauncher}}{{MSP/GO|0728|Popplio}}{{MSP/GO|0729|Brionne}}{{MSP/GO|0768|Golisopod}}{{MSP/GO|0892R|Urshifu|Rapid Strike Style}}{{MSP/GO|0912|Quaxly}}{{MSP/GO|0913|Quaxwell}}{{MSP/GO|0914|Quaquaval}}
+|elite_users={{MSP/GO|0086|Seel}}{{MSP/GO|0087|Dewgong}}
+|snapshot_users={{MSP/GO|0235|Smeargle}}
+}}
+
+====Updates====
+;Gyms & Raids
+* '''July 30, 2016'''
+** '''Power''': 15 → 25
+* '''February 16, 2017'''
+** '''Power''': 25 → 45
+** '''Energy cost''': 20 → 33
+** '''Duration''': 2.35 → 2.6 seconds
+* '''October 11, 2024'''
+** '''Duration''': 2.6 → 2.5 seconds
+** '''Damage Window''': 1.7 - 2.1 → 1.6 - 2 seconds
+** 
+;Trainer Battles
+* '''March 4, 2025'''
+** '''Power''': 45 → 70
+** '''Energy cost''': 45 → 40
+
+==={{g|Rumble Rush}}===
+{{RumbleRushPhysicalAttack|move=Aqua Jet|type=Water
+|stars=1
+|pow=18.74951
+|charge=0.82
+|range=Dash
+|hits=2
+|projectiles=1
+|crit=1.5
+|effect=None}}
+
+
+===[[Pokémon Masters EX]]===
+{| class="roundy" style="margin:auto; background:#{{water color}}; border:3px solid #{{water color dark}}; text-align:center; width:80%"
+|- style="background: #{{water color light}}"
+! style="{{roundytl|5px}}" | Name
+! {{color2|000|Damage category|Category}}
+! Move gauge cost
+! MP<br>(uses)
+! Base {{color2|000|power}}
+! Max {{color2|000|power}}
+! {{color2|000|Accuracy}}
+! Target
+! Effect tag
+! Description
+! style="{{roundytr|5px}}" | Playable {{color2|000|Sync pair|sync pair(s)}}
+|- style="background:#fff"
+|Aqua Jet
+{{statustable|Physical}}
+|—
+|3
+|75
+|90
+|100%
+|An opponent
+|Quick Move
+| No additional effect.
+|{{sync|Grimsley|Mega Sharpedo|sygna=y}}<hr>{{sync|Rosa|Dewott}}<hr>{{sync|Barry|Floatzel}}
+|- style="background:#{{water color dark}}"
+! colspan=12 |{{color2|fff|Sync move}}
+|- style="background: #{{water color light}}"
+! Name
+! {{color2|000|Damage category|Category}}
+! colspan=2 | State
+! Base {{color2|000|power}}
+! Max {{color2|000|power}}
+! colspan=2 | Target
+! Effect tag
+! Description
+! Playable {{color2|000|sync pair}}
+|- style="background:#fff"
+| style="{{roundybl|5px}}" | Crashdown Aqua Jet
+{{statustable|Physical}}
+| colspan=2 | Default<hr>'''6★ EX'''
+| 200<hr>'''300'''
+| 240<hr>'''360'''
+| colspan=2 | An opponent
+| —
+| This attack's power increases when the target is [[flinch]]ing.
+| style="{{roundybr|5px}}" | {{sync|Crasher Wake|Floatzel}}
+|}
+
+Note:
+* '''Crashdown Aqua Jet:''' Description prior to Version 2.20.0 (from April 27, 2022): This move's power increases when the target is [[flinch]]ing.
+
+===Description===
+{{movedesc|Water}}
+{{movedescentry|{{gameabbrevmd|TDS}}|Inflicts damage on a target up to 2 tiles away.}}
+{{movedescentry|{{gameabbrevmd|BSL}}|{{tt|てきポケモンに ダメージをあたえる ２マスまで とどく|Inflicts damage on a target up to 2 tiles away}}}}
+{{movedescentry|{{gameabbrevmd|GTI}}<br>{{gameabbrevmd|SMD}}<br/>{{gameabbrevmd|RTDX}}|It damages an enemy. It reaches up to 2 tiles away.}}
+|}
+|}{{left clear}}
+
+==In animation==
+===Pokémon animated series===
+{{moveanime|type=water|exp=yes|gen=The user surrounds its entire body with water, then lunges at the target like a rocket.|image1=Cameron Samurott Aqua Jet.png|image1p=Samurott|image2=Sawyer Clawitzer Aqua Jet.png|image2p=Clawitzer|image3=Kenny Floatzel Aqua Jet.png|image3p=Floatzel|image4=Lana Popplio Aqua Jet.png|image4p=Popplio}}
+{{movep|type=water|ms=418|pkmn=Buizel|method=Buizel's body becomes surrounded by water and it rises into the air and tackles the opponent. To move, it spins its tails like a propeller.}}
+{{movemid|type=water|user=Ash's Buizel|startcode=DP034|startname=Buizel Your Way out of This!|notes=Debut}}
+{{movemid|type=water|user=Soren and Rocko|user1=Soren's Buizel|startcode=BW099|startname=A Surface to Air Tag Battle Team!}}
+{{movep|type=water|ms=319|pkmn=Sharpedo|method=Sharpedo's body becomes surrounded by water and it shoots into the air like a rocket before slamming into the opponent.}}
+{{movemid|type=water|user=J's henchmen|user1=J's henchmen's four Sharpedo|startcode=DP071|startname=Pokémon Ranger and the Kidnapped Riolu! Part 1}}
+{{movemid|type=water|user=Pokémon Coordinator|user1=A Coordinator's Sharpedo|startcode=DP077|startname=Staging a Heroes' Welcome!}}
+{{movemid|type=water|user=Ludlow|user1=Mighty G's Sharpedo|startcode=HZ042|startname=Transform! Hero of the Seas, Palafin}}
+{{movep|type=water|ms=140|pkmn=Kabuto|method=Kabuto's body becomes surrounded by water and it shoots itself like a rocket at the opponent, slamming into it.}}
+{{movemid|type=water|user=Kabuto (Pokémon)|user1=The Canalave Gym's Kabuto|startcode=DP108|startname=Dealing With Defensive Types!}}
+{{movep|type=water|ms=419|pkmn=Floatzel|method=Floatzel's body becomes surrounded by water and it shoots itself like a rocket at the opponent. To move, it spins its tails like a propeller.}}
+{{movemid|type=water|user=Kenny (Sinnoh)|user1=Kenny's Floatzel|startcode=DP174|startname=Last Call - First Round!}}
+{{movep|type=water|ms=501|pkmn=Oshawott|method=Oshawott's body briefly becomes surrounded in blue energy. When the blue glow fades, its body becomes surrounded in water and it shoots itself like a rocket at the opponent, slamming into it; or, Oshawott jumps into the air and a wave of water appears from the bottom of its body, completely covering it. Oshawott then shoots itself at the opponent like a rocket and slams into it. As it shoots at the opponent, its stomach faces up instead of downward; or, Oshawott's body becomes surrounded in spiraling water and it shoots itself like a rocket at the opponent.}}
+{{movemid|type=water|user=Ash's Oshawott|startcode=BW016|startname=Rematch at the Nacrene Gym!|notes=Mastered in ''{{color2|000|BW032|Facing Fear with Eyes Wide Open!}}''}}
+{{movep|type=water|ms=550|pkmn=Basculin|method=Basculin's body becomes surrounded by water and it shoots itself like a rocket at the opponent, slamming into it.}}
+{{movemid|type=water|user=Basculin (Pokémon)|user1=A wild Basculin|startcode=PK22|startname=Pikachu's Summer Bridge Story}}
+{{movep|type=water|ms=503|pkmn=Samurott|method=Samurott's body becomes surrounded by water and it shoots itself like a rocket at the opponent, slamming into it.}}
+{{movemid|type=water|user=Cameron (Unova)|user1=Cameron's Samurott|startcode=BW094|startname=The Road to Humilau!}}
+{{movep|type=water|ms=502|pkmn=Dewott|method=Dewott's body becomes surrounded by water and it shoots itself like a rocket at the opponent, slamming into it.}}
+{{movemid|type=water|user=Cadbury|user1=Cadbury's Caesar|startcode=BW126|startname=Crowning the Scalchop King!}}
+{{movep|type=water|ms=693|pkmn=Clawitzer|method=Clawitzer's body becomes surrounded in a veil of water and it shoots towards the opponent.}}
+{{movemid|type=water|user=Sawyer|user1=Sawyer's Clawitzer|startcode=XY127|startname=Analysis Versus Passion!}}
+{{movemid|type=water|user=Clawitzer (Pokémon)|user1=A wild Clawitzer|startcode=XYS06|startname=XYS06}}
+{{movep|type=water|ms=728|pkmn=Popplio|method=Popplio's body becomes surrounded by water and it shoots itself like a rocket at the opponent, slamming into it.}}
+{{movemid|type=water|user=Lana's Popplio|startcode=SM033|startname=Big Sky, Small Fry!}}
+{{movep|type=water|ms=729|pkmn=Brionne|method=Brionne's body becomes surrounded by water and it shoots itself like a rocket at the opponent, slamming into it.}}
+{{movemid|type=water|user=Ida|user1=Ida's Brionne|startcode=SM040|startname=Balloons, Brionne, and Belligerence!}}
+{{movep|type=water|ms=342|pkmn=Crawdaunt|method=Crawdaunt's body becomes surrounded by water and it shoots itself like a rocket at the opponent, slamming into it.}}
+{{movemid|type=water|user=Crawdaunt (Pokémon)|user1=A wild Crawdaunt|startcode=SM123|startname=A Fiery Training Camp Trick!}}
+{{movep|type=water|ms=730|pkmn=Primarina|method=Primarina's body becomes surrounded by water and it shoots itself like a rocket at the opponent, slamming into it.}}
+{{movemid|type=water|user=Lana's Primarina|startcode=SM130|startname=Battling Besties!}}
+{{movep|type=water|ms=818|pkmn=Inteleon|method=Inteleon's body becomes surrounded by water.}}
+{{movemid|type=water|user=Leon (anime)|user1=Leon's Inteleon|startcode=JN129|startname=A Flood of Torrential Gains!}}
+{{movep|type=water|ms=341|pkmn=Corphish|method=Corphish's body becomes surrounded by water and it shoots itself like a rocket at the opponent, slamming into it.}}
+{{movebtm|type=water|user=Ash's Corphish|startcode=JN138|startname=A Fated Face-Off!}}
+
+==In the manga==
+===Pocket Monsters Platinum: Aim to Be Battle King!!===
+{{movemanga|type=water|exp=yes|gen=The user surrounds itself with water, then lunges at the target like a rocket.|image1=Shin Empoleon Aqua Jet PBK.png|image1p=Empoleon}}
+{{movep|type=water|ms=395|pkmn=Empoleon|method= Empoleon's body becomes surrounded by water and it shoots itself like a rocket at the opponent.}}
+{{movebtmManga|type=water|user=Shin (PBK)|user1=Shin's Empoleon|startcode=PBK1|startname=A Heated Battle Begins!!|notes=Debut}}
+
+===Pokémon Adventures===
+{{Movemanga|type=water|exp=yes|gen=The user launches a watery attack that hits the target with incredible speed.|image1=Platinum Empoleon Aqua Jet.png|image1p=Empoleon|image2=Blake Dewott Aqua Jet.png|image2p=Dewott|image3=Crasher Wake Floatzel Aqua Jet Adventures.png|image3p=Floatzel}}
+{{movep|type=water|ms=419|pkmn=Floatzel|method=Floatzel dashes around above the ground with incredible speed while a stream of water forms underneath it.}}
+{{Movemid|type=water|user=Crasher Wake|user1=Crasher Wake's Floatzel|startcode=PS365|startname=Crafty Carnivine|notes=Debut}}
+{{movep|type=water|ms=395|pkmn=Empoleon|method=Empoleon dashes around above the ground while a stream of water forms underneath it at top speed. Empoleon then slams itself into the opponent; or, Empoleon fires a powerful jet of water from its mouth at the opponent.}}
+{{Movemid|type=water|user=Platinum's Empoleon|startcode=PS374|startname=Brash Bronzong I}}
+{{movep|type=water|ms=502|pkmn=Dewott|method=Dewott shoots water from its hands onto the ground. It then dashes forward, using the stream as propulsion as water covers its body. Dewott then slams itself into the opponent.}}
+{{MovebtmManga|type=water|user=Blake's Dewott|startcode=PS528|startname=Innocent Scientist}}
+
+* In ''[[PS492|Mine Mayhem]]'', {{adv|Black}}'s {{p|Tirtouga}}, [[Costa]], was told to use Aqua Jet, but he ignored the command.
+
+===Pokémon Diamond and Pearl Adventure!===
+{{movemanga|type=water|exp=yes|gen=The user attacks the foe with its body surrounded in water.|image1=Hareta Empoleon Aqua Jet.png|image1p=Empoleon}}
+{{movep|type=water|ms=395|pkmn=Empoleon|method=Empoleon attacks the foe with its body surrounded in water.}}
+{{movebtmManga|type=water|user=Hareta's Empoleon|startcode=DPA21|startname=A Surprise Visit For Hareta's Father!|notes=Debut}}
+
+===Pokémon Pocket Monsters===
+{{Movemanga|type=water|exp=yes|gen=The user dashes in the air with its body covered in water.|image1=Dai Fugō Buizel Aqua Jet.png|image1p=Buizel}}
+{{movep|type=water|ms=418|pkmn=Buizel|method=Buizel jumps up and covers its body with water, slamming itself onto the opponent.}}
+{{MovebtmManga|type=water|user=Dai Fugō|user1=Dai Fugō's Buizel|startcode=PMDP02|notes=Debut}}
+
+==In other generations==
+===Core series games===
+{{Movegen
+|type=water
+|genIV=Aqua Jet IV
+|genV=Aqua Jet V
+|genVI=Aqua Jet VI
+|genVI2=Aqua Jet VI 2
+|genVII=Aqua Jet VII
+|genVII2=Aqua Jet VII 2
+}}
+{{Movegen
+|type=Water
+|genVIII=Aqua Jet VIII
+|genVIII2=Aqua Jet VIII 2
+|LA=Aqua Jet LA
+|ZA=Aqua Jet ZA
+}}
+
+===Side series games===
+{{Movegen
+|type=water
+|PBR=Aqua Jet PBR
+}}
+===Spin-off series games===
+{{Movegen
+|type=water
+|PMDTDS=Aqua Jet PMD TDS
+|PMDGTI=Aqua Jet PMD GTI
+|PSMD=Aqua Jet PSMD
+|Masters=Aqua Jet Masters
+}}
+
+==Trivia==
+* Since its introduction in [[Generation IV]], Aqua Jet has had the same description text as {{m|Quick Attack}}.
+
+==In other languages==
+{{Langtable|color={{water color}}|bordercolor={{water color light}}
+|zh_yue=水流噴射 ''{{tt|Séuilàuh Panseh|Aqua Jet}}'' {{tt|*|Games}}<br>噴射水柱 ''{{tt|Panseh Séuichyúh|Jet Water Pillar}}'' {{tt|*|Animated series & Manga}}
+|zh_cmn=水流噴射 / 水流喷射 ''{{tt|Shuǐliú Pēnshè|Aqua Jet}}'' {{tt|*|Games}}<br>噴射水柱 ''{{tt|Pēnshè Shuǐzhù|Jet Water Pillar}}'' {{tt|*|Animated series & Manga}}
+|cs=Vodní tryska
+|nl=Waterstraal
+|fr=Aqua-Jet
+|de=Wasserdüse
+|el=Πίδακας ''Pídakas''
+|hi=ऐक्वा जेट ''Aqua Jet'' {{tt|*|Pokémon GO}}<br>पानी का जेट ''{{tt|Paani ka Jet|Water Jet}}''
+|id=Aqua Jet
+|it=Acquagetto
+|ko=아쿠아제트 ''{{tt|Akuajeteu|Aqua Jet}}''
+|pl=Strumień Wody
+|pt_br=Aqua Jato (games, ''[[Pokémon the Series: XY]]''–present, TCG, manga)<br>Aqua Míssil (''[[Pokémon the Series: Diamond and Pearl]]''–''[[Pokémon the Series: Black & White]]'')
+|pt_eu=Jacto de Água
+|ro=Șuvoiul de Apă
+|ru=Водная Струя ''{{tt|Vodnaya Struya|Water Jet}}'' {{tt|*|Pokémon GO}}<br>Струя Воды ''{{tt|Struya Vody|Water Jet}}''
+|es_la=Acuajet
+|es_eu=Acua Jet
+|th=อควาเจ็ต ''Aqua Jet''
+|tr=Su Jeti
+|vi=Súng Nước Phản Lực
+}}
+{{-}}
+
+<big>'''Spin-off series games'''</big>
+
+'''[[Pokémon Masters EX]]'''
+
+''Crashdown Aqua Jet''
+{{langtable
+|color={{water color}}|bordercolor={{water color dark}}
+|ja=マックスマキシマム アクアジェット ''{{tt|Makkusu Makishimamu Akua Jetto|Max Maximum Aqua Jet}}''
+|zh_cmn=最高極限之 水流噴射 ''{{tt|Zuìgāo Jíxiàn zhī Shuǐliú Pēnshè|Maximum Limit Aqua Jet}}''
+|fr=La déferlante est prête ! Aqua-Jet !
+|de=Wbutterdüse des Wellenbrechers
+|ko=맥스 맥시멈 아쿠아제트 ''{{tt|Maekseu Maeksimeom Akua Jeteu|Max Maximum Aqua Jet}}''
+|it=Acquagetto del Distruttore
+|es=Acua Jet de Destrucción Máxima
+}}
+{{Aqua Jet|Water}}
+{{Project Moves and Abilities notice}}
+
+[[Category:Moves in Pokémon: Let's Go, Pikachu! and Let's Go, Eevee!]]
+[[Category:Moves usable in Pokémon Sword and Shield]]
+[[Category:Moves in Pokémon Legends: Arceus]]
+[[Category:Moves usable in Pokémon Scarlet and Violet]]
+[[Category:Moves in Pokémon Legends: Z-A]]
+[[Category:Increased priority moves]]
+
+[[de:Wasserdüse]]
+[[es:Acuajet/Acua Jet]]
+[[fr:Aqua-Jet]]
+[[it:Acquagetto]]
+[[ja:アクアジェット]]
+[[zh:水流喷射（招式）]]

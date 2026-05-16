@@ -1,0 +1,383 @@
+{{MoveInfobox
+|n=420
+|name=Ice Shard
+|jname=こおりのつぶて
+|jtrans=Ice Pebble
+|jtranslit=Kōri no Tsubute
+|gameimage=Ice Shard IX.png
+|gameimage2=Ice Shard IX 2.png
+|gameimagewidth=300
+|type=Ice
+|damagecategory=Physical
+|basepp=30
+|maxpp=48
+|power=40
+|accuracy=100
+|priority=+1
+|gen=IV
+|target=anyadjacent
+|category=Beauty
+|appealsc=2
+|scdesc=Enables the user to perform first in the next turn.
+|category6=Beautiful
+|appeal6=3
+|jam6=0
+|cdesc6=Causes the user to move earlier on the next turn.
+|pokefordex=Ice%20Shard
+|touches=no
+|protect=yes
+|magiccoat=no
+|snatch=no
+|mirrormove=yes
+|kingsrock=yes
+|flag7=no
+|flag8=no
+|sound=no
+|footnotes=
+}}
+'''Ice Shard''' (Japanese: '''こおりのつぶて''' ''Ice Pebble'') is a damage-dealing {{type|Ice}} [[move]] introduced in [[Generation IV]].
+
+==Effect==
+Ice Shard inflicts damage. It has a [[priority]] of +1, so is used before all moves that do not have increased priority.
+
+===Generation VIII===
+====Pokémon Legends: Arceus====
+Ice Shard's PP has been reduced to 20. It also increases the user's action speed.
+
+{{LegendsMove
+|type=Ice
+|damagecategory=Physical
+|basepp=20
+|power=40
+|power-agile=30
+|power-strong=50
+|accuracy=100
+|accuracy-strong=100
+|actionspeed-user=-4
+|actionspeed-user-agile=-4
+|actionspeed-user-strong=+2
+|actionspeed-target=0
+|actionspeed-target-agile=+3
+|effect=Increases the user's action speed}}
+
+===Generation IX===
+====Pokémon Legends: Z-A====
+{{LegendsZAMove
+|type=Ice
+|damagecategory=Physical
+|power=40
+|cooldown=3
+|charge-time=0
+}}
+
+==Description==
+{{movedesc|Ice}}
+{{movedescentry|{{gameabbrev4|DPPtHGSS}}{{gameabbrevss|PBR}}|The user flash freezes chunks of ice and hurls them. This move always goes first.}}
+{{movedescentry|{{gameabbrev5|BWB2W2}}|The user flash freezes chunks of ice and hurls them at the target. This move always goes first.}}
+{{movedescentry|{{gameabbrev6|XYORAS}}<br>{{gameabbrev7|SMUSUMPE}}<br>{{gameabbrev8|SwShBDSP}}<br>{{gameabbrev9|SV}}|The user flash-freezes chunks of ice and hurls them at the target. This move always goes first.}}
+{{movedescentry|{{gameabbrev8|LA}}|The user flash-freezes chunks of ice and hurls them at the target. This also raises the user's action speed.}}
+{{movedescentry|{{gameabbrev9|ZA}}|The user attacks by flash-freezing chunks of ice and hurling them at targets.}}
+|}
+|}{{left clear}}
+
+==Learnset==
+===By [[Level|leveling up]]===
+{{Movehead/Games|Ice|g1=none|g2=none|g3=none|g7=2|g8=3|g9=2}}
+{{Moveentry/10|0027|formsig=A|Sandshrew|type=Ice|type2=Steel|1|Field|Field|form=Alolan Form||||−|8|−|||−|STAB='''}}
+{{Moveentry/10|0028|formsig=A|Sandslash|type=Ice|type2=Steel|1|Field|Field|form=Alolan Form||||−|1|−|||−|STAB='''}}
+{{Moveentry/10|0037|formsig=A|Vulpix|type=Ice|1|Field|Field|form=Alolan Form||||10|10|8||−|8|STAB='''}}
+{{Moveentry/10|0038|formsig=A|Ninetales|type=Ice|type2=Fairy|1|Field|Field|form=Alolan Form||||1|1|1||−|{{tt|Rem.|Can only be learned via Move Reminder}}|STAB='''}}
+{{Moveentry/10|0086|Seel|type=Water|2|Water 1|Field|17|17|17|17|16||17||17|STAB=''}}
+{{Moveentry/10|0087|Dewgong|type=Water|type2=Ice|2|Water 1|Field|17|17|17|17|15||17||17|STAB='''}}
+{{Moveentry/10|0090|Shellder|type=Water|1|Water 3|Water 3|28|28|28|28|13|8|8||8|STAB=''}}
+{{Moveentry/10|0091|Cloyster|type=Water|type2=Ice|1|Water 3|Water 3|−|−|−|−|−|1|1||1|STAB='''}}
+{{Moveentry/10|0122|formsig=G|Mr. Mime|type=Ice|type2=Psychic|1|Human-Like|Human-Like|form=Galarian Form||||||1||||1|STAB='''}}
+{{Moveentry/10|0131|Lapras|type=Water|type2=Ice|2|Monster|Water 1|10|10|10|10|19|20|20||20|STAB='''}}
+{{Moveentry/10|0144|Articuno|type=Ice|type2=Flying|1|No Eggs Discovered|No Eggs Discovered|15|15|15|15|1|15|15||15|STAB='''}}
+{{Moveentry/10|0215|Sneasel|type=Dark|type2=Ice|1|Field|Field|49|51{{sup/5|BW}}<br>47{{sup/5|B2W2}}|47|47||−|−|6|−|STAB='''}}
+{{Moveentry/10|0220|Swinub|type=Ice|type2=Ground|1|Field|Field|28|28{{sup/5|BW}}<br>24{{sup/5|B2W2}}|24|24||15|15|6|15|STAB='''}}
+{{Moveentry/10|0221|Piloswine|type=Ice|type2=Ground|1|Field|Field|−|−|−|−||15|15|6|15|STAB='''}}
+{{Moveentry/10|0225|Delibird|type=Ice|type2=Flying|2|Water 1|Field|−|−|−|−||−|−||−|25|STAB='''}}
+{{Moveentry/10|0361|Snorunt|type=Ice|2|Fairy|Mineral|37|37|37{{sup/6|XY}}<br>10{{sup/6|ORAS}}|10||15|15|6|15|10|STAB='''}}
+{{Moveentry/10|0362|Glalie|type=Ice|2|Fairy|Mineral|−|−|1, 10{{sup/6|ORAS}}|1, 10||15|15|6|15|10|STAB='''}}
+{{Moveentry/10|0459|Snover|type=Grass|type2=Ice|2|Monster|Grass|26|26|26|26||15|15|11|15|15|STAB='''}}
+{{Moveentry/10|0460|Abomasnow|type=Grass|type2=Ice|2|Monster|Grass|26|26|26|26||15|15|11|15|15|STAB='''}}
+{{Moveentry/10|0461|Weavile|type=Dark|type2=Ice|1|Field|Field|−|−|−|−||1|1|6|1|STAB='''}}
+{{Moveentry/10|0471|Glaceon|type=Ice|1|Field|Field|36|36{{sup/5|BW}}<br>25{{sup/5|B2W2}}|25|25||20|20|−|20|23|STAB='''}}
+{{Moveentry/10|0473|Mamoswine|type=Ice|type2=Ground|1|Field|Field|−|−|−|−||15|15|6|15|STAB='''}}
+{{Moveentry/10|0478|Froslass|type=Ice|type2=Ghost|2|Fairy|Mineral|37|37|37{{sup/6|XY}}<br>1, 10{{sup/6|ORAS}}|1, 10||15|15|6|15|10|STAB='''}}
+{{Moveentry/10|0615|Cryogonal|type=Ice|1|Mineral|Mineral||5|1, 5|1||1|||1|1|STAB='''}}
+{{Moveentry/10|0712|Bergmite|type=Ice|2|Monster|Mineral|||−|−||−||9|−|−|STAB='''}}
+{{Moveentry/10|0713|formsig=H|Avalugg|type=Ice|type2=Rock|2|Monster|Mineral|form=Hisuian Form||||||||9|−|−|STAB='''}}
+{{Moveentry/10|0866|Mr. Rime|type=Ice|type2=Psychic|1|Human-Like|Human-Like||||||1||||1|STAB='''}}
+{{Moveentry/10|0974|Cetoddle|type=Ice|1|Field|Field|||||||||12|STAB='''}}
+{{Moveentry/10|0975|Cetitan|type=Ice|1|Field|Field|||||||||12|STAB='''}}
+{{Moveentry/10|0998|Baxcalibur|type=Dragon|type2=Ice|2|Dragon|Mineral|||||||||1|{{tt|Rem.|Can only be learned via Move Reminder}}|STAB='''}}
+{{Moveentry/10|1002|Chien-Pao|type=Dark|type2=Ice|1|No Eggs Discovered|No Eggs Discovered|||||||||20|STAB='''}}
+{{Movefoot|Ice|10}}
+
+===By {{pkmn|breeding}}===
+{{Movehead/Games|Ice|Egg Move|g1=none|g2=none|g3=none|g7=1|g7g={{gameabbrev7|SMUSUM}}|g8=2|g9=1|g9g={{gameabbrev9|SV}}}}
+{{Moveentry/7|0027|formsig=A|Sandshrew|type=Ice|type2=Steel|1|Field|Field|form=Alolan Form||||−|−||✔|STAB='''}}
+{{Moveentry/7|0215|Sneasel|type=Dark|type2=Ice|1|Field|Field|✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/7|0225|Delibird|type=Ice|type2=Flying|2|Water 1|Field|✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/7|0231|Phanpy|type=Ground|1|Field|Field|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/7|0582|Vanillite|type=Ice|1|Mineral|Mineral||✔|✔|✔|✔|STAB='''}}
+{{Moveentry/7|0816|Sobble|type=Water|2|Water 1|Field|||||✔||✔}}
+{{Movefoot|Ice|7}}
+
+===Special move===
+====[[Generation V]]====
+{{Movehead/Special|Ice}}
+{{Moveentry/1|0225|Delibird|type=Ice|type2=Flying|2|Water 1|Field|{{pkmn|Dream World}} - {{dwa|Windswept Sky}}|STAB='''}}
+{{Moveentry/1|0583|Vanillish|type=Ice|1|Mineral|Mineral|{{pkmn|Dream World}} - {{dwa|Icy Cave}}|STAB='''}}
+{{Movefoot|Ice|1}}
+
+====[[Generation IX]]====
+{{Movehead/Special|Ice}}
+{{Moveentry/1|0215|Sneasel|type=Dark|type2=Ice|1|Field|Field|[[Terastal phenomenon|Wild Tera Pokémon]] - [[Dalizapa Passage]]{{sup/9|SV}}|STAB='''}}
+{{Movefoot|Ice|1}}
+
+===By {{pkmn2|event}}===
+====[[Generation IV]]====
+{{Movehead/Special|Ice}}
+{{Moveentry/1|0461|Weavile|type=Dark|type2=Ice|1|Field|Field|[[2009 World Championships Weavile]]|STAB='''}}
+{{Movefoot|Ice|1}}
+
+==In other games==
+===[[Pokémon Mystery Dungeon series]]===
+{{MDMoveheader|type=ice}}
+{{MDMoveRow|game=TDS|pow=4|pp=16|acc=88%|range=2 tiles away|target=Enemy|cuts=Yes}}
+{{MDMoveRow|game=BSL|pow=4|pp=16|acc=88%|range=2 tiles away|target=Enemy|cuts=Yes}}
+{{MDMoveRow|game=GTI|pow=3|powmax=99|pp=18|ppmax=50|acc=90%|accmax=98%|range=2 tiles away|target=Enemy|cuts=Yes}}
+{{MDMoveRow|game=SMD|pow=3|powmax=50|pp=18|ppmax=30|acc=90%|accmax=98%|range=2 tiles away|target=Enemy|cuts=Yes}}
+{{MDMovefoot|type=ice|TDS=yes|BSL=yes|GTI=yes|SMD=yes|RTDX=yes}}
+
+===[[Pokémon GO]]===
+{{GoFastAttack
+|id=217
+|move=Ice Shard
+|type=Ice
+|pow=12
+|energy=12
+|duration=1.2
+|damage_window=0.6 - 0.9
+|pow_trainer=9
+|energy_trainer=10
+|turns=3
+|users={{MSP/GO|0086|Seel}}{{MSP/GO|0090|Shellder}}{{MSP/GO|0091|Cloyster}}{{MSP/GO|0144|Articuno}}{{MSP/GO|0215|Sneasel}}{{MSP/GO|0221|Piloswine}}{{MSP/GO|0362|Glalie}}{{MSP/GO|0459|Snover}}{{MSP/GO|0461|Weavile}}{{MSP/GO|0471|Glaceon}}{{MSP/GO|0615|Cryogonal}}{{MSP/GO|0866|Mr. Rime}}{{MSP/GO|0974|Cetoddle}}{{MSP/GO|0975|Cetitan}}
+|elite_users={{MSP/GO|0087|Dewgong}}{{MSP/GO|0131|Lapras}}
+|snapshot_users={{MSP/GO|0235|Smeargle}}
+}}
+
+====Updates====
+;Gyms & Raids
+* '''July 30, 2016'''
+** '''Power''': 10 → 15
+** '''Energy boost''': 7 → 12
+* '''February 16, 2017'''
+** '''Power''': 15 → 12
+** '''Duration''': 1.4 → 1.7 seconds
+** '''Damage window''': 1.2 - 1.4 → 0.6 - 0.9 seconds
+* '''February 21, 2017'''
+** '''Duration''': 1.7 → 1.2 seconds
+;Trainer Battles
+* '''January 31, 2019'''
+** '''Power''': 8 → 9
+
+==={{g|Rumble Rush}}===
+{{RumbleRushPhysicalAttack|move=Ice Shard|type=Ice
+|stars=1
+|pow=28.35291
+|charge=0.62
+|range=Wide Shot
+|hits=1
+|projectiles=1
+|crit=1.5
+|effect=None}}
+
+===[[Pokémon Masters EX]]===
+{| class="roundy" style="margin:auto; background:#{{ice color}}; border:3px solid #{{ice color dark}}; text-align:center; width:80%"
+|- style="background: #{{ice color light}}"
+! style="{{roundytl|5px}}" | Name
+! {{color2|000|Damage category|Category}}
+! Move gauge cost
+! MP<br>(uses)
+! Base {{color2|000|power}}
+! Max {{color2|000|power}}
+! {{color2|000|Accuracy}}
+! Target
+! Effect tag
+! Description
+! style="{{roundytr|5px}}" | Playable {{color2|000|Sync pair|sync pair(s)}}
+|- style="background:#fff"
+|Ice Shard
+{{statustable|Physical}}
+|1
+|—
+|20
+|24
+|100%
+|An opponent
+|—
+|No additional effect.
+|None
+|- style="background:#{{ice color dark}}"
+! colspan=12 |{{color2|fff|Sync move|Sync move}}
+|- style="background: #{{ice color light}}"
+!Name
+!{{color2|000|Damage category|Category}}
+!colspan="2" |State
+!Base {{color2|000|power}}
+!Max {{color2|000|power}}
+!colspan="2" |Target
+!Effect tag
+!Description
+!Playable {{color2|000|sync pair}}
+|- style="background:#fff"
+| style="{{roundybl|5px}}" | Lights, Camera, Ice Shard
+{{statustable|Physical}}
+| colspan=2 | Default<hr>'''6★ EX'''
+| 200<hr>'''300'''
+| 240<hr>'''360'''
+| colspan=2 | An opponent
+| —
+| This attack's power increases when none of the target's stats are raised.
+| style="{{roundybr|5px}}" | {{sync|Brycen|Cryogonal}}
+|}
+
+==={{g|UNITE}}===
+In Pokémon UNITE, Ice Shard is {{p|Mamoswine}}'s first move as {{p|Swinub}}. The user hurls 3 chunks of ice at the designated location, dealing damage to enemies in the area of effect and decreasing their movement speed for a short time. If an enemy is hit by all three chunks, they're left frozen for a short time. After evolving into {{p|Piloswine}} at level 5, this move is replaced by either {{m|Icicle Crash}} or {{m|Ice Fang}}.
+
+===Description===
+{{movedesc|Ice}}
+{{movedescentry|{{gameabbrevmd|TDS}}|Inflicts damage on a target up to 2 tiles away.}}
+{{movedescentry|{{gameabbrevmd|BSL}}|{{tt|てきポケモンに ダメージをあたえる ２マスまで とどく|Inflicts damage on a target up to 2 tiles away}}}}
+{{movedescentry|{{gameabbrevmd|GTI}}<br>{{gameabbrevmd|SMD}}<br/>{{gameabbrevmd|RTDX}}|It damages an enemy. It reaches up to 2 tiles away.}}
+|}
+|}{{left clear}}
+
+==In animation==
+===Pokémon animated series===
+{{moveanime|type=ice|exp=yes|gen=The user forms icy projectiles, then launches them at the opponent.|image1=Dawn Mamoswine Ice Shard.png|image1p=Mamoswine|image2=Wulfric Mega Abomasnow Ice Shard.png|image2p=Mega Abomasnow|image3=Candice Abomasnow Ice Shard.png|image3p=Abomasnow|image4=Glalie Ice Shard.png|image4p=Glalie}}
+{{movep|type=ice|ms=459|pkmn=Snover|method=Snover raises its hands above its head and a ball of light blue, glowing ice forms in between them. It then throws the ball at the opponent. When it hits, the opponent becomes surrounded by a light blue light, and when the glow fades, the opponent becomes frozen.}}
+{{movemid|type=ice|user=Snover (Pokémon)|user1=A wild Snover|startcode=PK18|startname=Pikachu's Exploration Club|notes=Debut}}
+{{movep|type=ice|ms=220|pkmn=Swinub|method=A glowing, light blue block of ice forms in front of Swinub's nose, and it then fires it at the opponent, or Swinub fires a beam of white wind with shards of ice in it at the opponent.}}
+{{movemid|type=ice|user=Leona|user1=Leona's Swinub|startcode=DP063|startname=Hot Springing a Leak!}}
+{{movemid|type=ice|user=Dawn's Swinub|startcode=DP084|startname=Hungry For the Good Life!}}
+{{movep|type=ice|ms=471|pkmn=Glaceon|method=Glaceon opens its mouth and fires multiple shards of ice from its mouth at the opponent. Sometimes, its forehead glows light blue when using the move.}}
+{{movemid|type=ice|user=May's Glaceon|startcode=DP079|startname=Strategy With a Smile!}}
+{{movemid|type=ice|user=Glaceon (Pokémon)|user1=A wild Glaceon|startcode=PK25|startname=Eevee & Friends}}
+{{movep|type=ice|ms=478|pkmn=Froslass|method=Froslass floats into the air and spins her body rapidly, releasing multiple glowing, light blue balls of ice from her body at the opponent, or Froslass raises her arms above her head and forms a light blue, glowing ball of ice in between them. She then tosses the ball at the opponent.}}
+{{movemid|type=ice|user=Froslass (Pokémon)|user1=A wild Froslass|startcode=PK19|startname=Pikachu's Ice Adventure}}
+{{movemid|type=ice|user=Paul|user1=Paul's Froslass|startcode=DP187|startname=A Real Rival Rouser!}}
+{{movep|type=ice|ms=461|pkmn=Weavile|method=Weavile raises its hands and forms a glowing, light blue block of ice in between them. It then throws it at the opponent; or, Weavile's body becomes outlined in a white aura, and multiple light blue chunks of ice appear around it. The shards are then fired at the opponent; or, Weavile fires multiple shards of light blue ice from its mouth at the opponent.}}
+{{movemid|type=ice|user=Paul|user1=Paul's Weavile|startcode=DP100|startname=Aiding the Enemy!}}
+{{movemid|type=ice|user=Mable|user1=Mable's Weavile|startcode=XY134|startname=The Right Hero for the Right Job!}}
+{{movemid|type=ice|user=Rocket Prize Master|user1=Team Rocket's Weavile|startcode=Message from the Aurora|startname=Message from the Aurora}}
+{{movemid|type=ice|user=Quillon|user1=Quillon's Weavile|startcode=JN134|startname=In the Palms of our Hands!}}
+{{movep|type=ice|ms=221|pkmn=Piloswine|method=Piloswine creates a glowing, light blue ball of ice in front of its nose and fires it at the opponent. When it hits the opponent, the opponent glows light blue and becomes frozen.}}
+{{movemid|type=ice|user=Dawn's Piloswine|startcode=DP106|startname=A Breed Stampede!}}
+{{movep|type=ice|ms=473|pkmn=Mamoswine|method=Mamoswine creates a glowing, light blue ball of ice in-between the ends of its tusks and fires it at the opponent. When it hits the opponent, the opponent becomes frozen; or, Mamoswine releases multiple glowing, light blue icicles from its mouth at the opponent.}}
+{{movemid|type=ice|user=Dawn's Mamoswine|startcode=DP106|startname=A Breed Stampede!}}
+{{movep|type=ice|ms=460|pkmn=Abomasnow|method=Abomasnow holds its hands above its head and a glowing, light blue ball of ice forms in between them. It then tosses it at the opponent; or, Abomasnow releases a glowing, light blue ball of ice from its mouth at the opponent; or, Abomasnow lifts its head towards the air above it, opens its mouth, with the inside of it glowing a bright white color, and the rim of the inside glowing light blue, and then multiple ice shards come out from the mouth; or, the inside of Abomasnow glows light blue and then blue shards of multiple variants of blue colored ice shards shoot from its mouth, with a light blue aura surrounding the shards, leaving behind a light blue trail as the shards fly through the air and then the shards are sent towards the opponent.}}
+{{movemid|type=ice|user=Candice|user1=Candice's Abomasnow|startcode=DP126|startname=Classroom Training!}}
+{{movemid|type=ice|user=Wulfric|user1=Wulfric's Abomasnow|startcode=XY120|startname=All Hail the Ice Battlefield!}}
+{{movemid|type=ice|useer=Abomasnow (Pokémon)|user1=A wild Abomasnow|startcode=M19|startname=Volcanion and the Mechanical Marvel}}
+{{movep|type=ice|ms=582|pkmn=Vanillite|method=Vanillite's body becomes outlined in light blue. Then, light blue orbs of energy form around Vanillite's body and spin around it in a circle. The light blue orbs then glow a bright white, and when the glow fades, the orbs have turned into multiple shards of ice. Vanillite then fires the ice shards at the opponent.}}
+{{movemid|type=ice|user=Trip|user1=Trip's Vanillite|startcode=BW031|startname=Ash and Trip's Third Battle!}}
+{{movep|type=ice|ms=460M|pkmn=Abomasnow|method=The inside of Mega Abomasnow's mouth glows light blue and then blue shards of multiple variants of blue colored ice shards shoot from its mouth, with a light blue aura surround the shards, leaving behind a light blue trail as the shards fly through the air and then the shards are sent towards the opponent.}}
+{{movemid|type=ice|user=Wulfric|user1=Wulfric's Abomasnow|startcode=XY122|startname=A Real Icebreaker!}}
+{{movep|type=ice|ms=215|pkmn=Sneasel|method=Sneasel forms a ring of ice shards in front of its body which briefly glow light blue, before it throws them at the opponent}}
+{{movemid|type=ice|user=Pokémon hunters (M21)|user1=Pokémon hunters' Sneasel|startcode=M21|startname=The Power of Us}}
+{{movep|type=ice|ms=362|pkmn=Glalie|method=Glalie fires multiple shards of ice from its mouth at the opponent.}}
+{{movemid|type=ice|user=Glalie (Pokémon)|user1=A wild Glalie|startcode=JN064|startname=Absol Absolved!}}
+{{movep|type=ice|ms=144|pkmn=Articuno|method=Articuno fires multiple shards of ice from its wings at the opponent.}}
+{{movemid|type=ice|user=Articuno (Pokémon)|user1=A wild Articuno|startcode=JN102|startname=Battling in the Freezing Raid!}}
+{{movep|type=ice|ms=0998|pkmn=Baxcalibur|method=Baxcalibur fires multiple shards of ice from its mouth at the opponent.}}
+{{movebtm|type=ice|user=Hassel|user1=Hassel's Baxcalibur|startcode=HZ055|startname=Showdown! The Paldea Elite Four}}
+
+==In the manga==
+===Phantom Thief Pokémon 7===
+{{movemanga|type=ice|exp=yes|gen=The user flash-freezes chunks of ice and hurls them at the target.|image1=Team Galactic Abomasnow Ice Shard P7.png|image1p=Abomasnow}}
+{{movep|type=ice|ms=460|pkmn=Abomasnow|method=Abomasnow releases several shards of ice out of its mouth.}}
+{{movebtmManga|type=ice|user=Team Galactic Grunt (Trainer class)|user1=Team Galactic's Abomasnow|startcode=P7-09|startname=A World Covered In Darkness|notes=Debut}}
+
+===Pokémon Adventures===
+{{movemanga|type=ice|exp=yes|gen=The user flash-freezes chunks of ice and hurls them at the target.|image1=Candice Abomasnow Ice Shard Adventures.png|image1p=Abomasnow|image2=Platinum Froslass Ice Shard.png|image2p=Froslass}}
+{{movep|type=ice|ms=460|pkmn=Abomasnow|method=Abomasnow opens its mouth and releases a beam of small snowballs from its mouth at the opponent. The balls of snow then pile on the opponent when it hits the ground and trap it under snow.}}
+{{movemid|type=ice|user=Candice|user1=Candice's Abomasnow|startcode=PS388|startname=To and Fro with Froslass|notes=Debut}}
+{{movep|type=ice|ms=478|pkmn=Froslass|method=Froslass waves one of her arms to the side and multiple shards of ice come out of her arm and fire at the opponent.}}
+{{movebtmManga|type=ice|user=Platinum's Froslass|startcode=PS429|startname=Dealing with Dragonite}}
+
+==In other generations==
+===Core series games===
+{{Movegen
+|type=Ice
+|genIV=Ice Shard IV
+|genV=Ice Shard V
+|genVI=Ice Shard VI
+|genVI2=Ice Shard VI 2
+|SMUSUM=Ice Shard VII
+}}
+{{Movegen
+|type=Ice
+|LGPE=Ice Shard PE
+|LGPE2=Ice Shard PE 2
+|genVIII=Ice Shard VIII
+|LA=Ice Shard LA
+|ZA=Ice Shard ZA
+}}
+
+===Side series games===
+{{Movegen
+|type=Ice
+|PBR=Ice Shard PBR
+}}
+===Spin-off series games===
+{{Movegen
+|type=Ice
+|PMDTDS=Ice Shard PMD TDS
+|PMDGTI=Ice Shard PMD GTI 2
+|PSMD=Ice Shard PSMD 2
+}}
+
+==In other languages==
+{{Langtable|color={{ice color}}|bordercolor={{ice color light}}
+|zh_yue=冰礫 ''{{tt|Bīnglīk|Ice Shard}}'' {{tt|*|Games}}<br>冰粒 ''{{tt|Bīnglāp|Ice Grain}}'' {{tt|*|Pre-Gen VII Media}}
+|zh_cmn=冰礫 / 冰砾 ''{{tt|Bīnglì|Ice Shard}}'' {{tt|*|Games}}<br>冰粒 ''{{tt|Bīnglì|Ice Grain}}'' {{tt|*|Pre-Gen VII Media}}
+|cs=Ledová tříšť
+|nl=IJsschild
+|fr=Éclats Glace
+|de=Eissplitter
+|el=Θραύσμα Πάγου ''Thráfsma Págou''
+|he=רסיס קרח ''Resis Kerakh''
+|hi=आइस शार्ड ''Ice Shard''
+|id=Beling Es{{tt|*|Pokémon GO}}<br>Kerikil Es
+|it=Geloscheggia
+|ko=얼음뭉치 ''{{tt|Eoreummungchi|Ice Bunch}}''
+|pl=Odłamki Lodu
+|pt_br=Caco de Gelo
+|pt_eu=Estilhaço de Gelo
+|ro=Ciobul de Gheață
+|ru=Осколок Льда ''{{tt|Oskolok L'da|Ice Shard}}''
+|es_la=Esquirla Helada (games, [[HZ055]]–present)<br>Canto Helado (<!--[[DP106]], -->[[DP162]]<!--, [[BW031]]-->–[[JN134]])<br>Fragmento de Hielo ([[DP079]]–[[DP155]])<!--<br>Canto de Hielo ([[DP167]]–[[DP187]])<br>Hielazo ([[DP063]])-->
+|es_eu=Esquirla Helada<sup>{{gen|IX}}+</sup><br>Canto Helado<sup>{{gen|IV}}–{{gen|VIII}}</sup>
+|th=สะเก็ดน้ำแข็ง ''{{tt|Saket Namkhaeng|Ice Shard}}''
+|tr=Buz Parçası
+}}
+{{Quick Attack|Ice}}
+{{Project Moves and Abilities notice}}
+
+[[Category:Moves in Pokémon: Let's Go, Pikachu! and Let's Go, Eevee!]]
+[[Category:Moves usable in Pokémon Sword and Shield]]
+[[Category:Moves in Pokémon Legends: Arceus]]
+[[Category:Moves usable in Pokémon Scarlet and Violet]]
+[[Category:Moves in Pokémon Legends: Z-A]]
+
+[[de:Eissplitter]]
+[[es:Esquirla Helada]]
+[[fr:Éclats Glace]]
+[[it:Geloscheggia]]
+[[ja:こおりのつぶて]]
+[[zh:冰砾（招式）]]

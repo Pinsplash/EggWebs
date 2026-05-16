@@ -1,0 +1,653 @@
+{{MoveInfobox
+|n=331
+|name=Bullet Seed
+|jname=タネマシンガン
+|jtrans=Seed Machine Gun
+|jtranslit=Tane Mashin Gan
+|gameimage=Bullet Seed IX.png
+|gameimagewidth=300
+|type=Grass
+|damagecategory=Physical
+|basepp=30
+|maxpp=48
+|power={{tt|25|10 in Generations III-IV}}
+|accuracy=100
+|bdesc=Attacks 2-5 times in a row.
+|gen=III
+|category=Cool
+|appeal=2
+|jam=1
+|cdesc=Badly startles all Pokémon that made good appeals.
+|appealsc=2
+|scdesc=Allows performance of the same move twice in a row.
+|appeal6=1
+|jam6=0
+|cdesc6=Effectiveness varies depending on when it is used.
+|pokefordex=Bullet%20Seed
+|touches=no
+|protect=yes
+|magiccoat=no
+|snatch=no
+|mirrormove=yes
+|kingsrock=yes
+|flag7=yes
+|flag8=no
+|sound=no
+|tm3=yes
+|tm#3=09
+|tm4=yes
+|tm#4=09
+|tm8=yes
+|tm#8=50
+|tm9=yes
+|tm#9=056
+|tmbdsp=yes
+|tm#bdsp=09
+|tmza=yes
+|tm#za=040
+|na=no
+|target=anyadjacent 
+|footnotes=}}
+'''Bullet Seed''' (Japanese: '''タネマシンガン''' ''Seed Machine Gun'') is a damage-dealing {{type|Grass}} [[multistrike move]] introduced in [[Generation III]].
+
+It is:
+* [[TM09]] from Generation III to [[Generation IV]], and in [[Pokémon Brilliant Diamond and Shining Pearl]].
+* [[TM50]] in [[Pokémon Sword and Shield]].
+* [[TM056]] in {{g|Scarlet and Violet}}.
+* [[TM040]] in {{g|Legends: Z-A}}
+
+==Effect==
+Bullet Seed inflicts damage, hitting the target 2-5 times per use.
+
+Bullet Seed may continue attacking after breaking a {{OBP|substitute|doll}}. {{m|Bide}} will only acknowledge the last strike of this move.
+
+Pokémon with {{a|Skill Link}} will always hit five times when using Bullet Seed unless it misses. Pokémon with {{a|Bulletproof}} are immune to Bullet Seed. {{a|Sturdy}} will activate with each hit if the defending Pokémon has a maximum HP of 1. If the target has {{a|Weak Armor}} or {{a|Stamina}}, each strike will activate it.
+
+If the user is holding a [[King's Rock]] or [[Razor Fang]], each consecutive hit has an equal chance to cause the opponent to [[flinch]].
+
+===Generation III===
+Bullet Seed's base power is 10 per strike. There is a 37.5% chance that it will hit 2 times, a 37.5% chance that it will hit 3 times, a 12.5% chance that it will hit 4 times, and a 12.5% chance that it will hit 5 times. Each strike made has an equal chance to be a [[critical hit]].
+
+Bullet Seed is a [[special move]]. {{m|Mirror Coat}} will only acknowledge the last strike of this move.
+
+Bullet Seed can be used as the second move of a [[Contest combination|Pokémon Contest combination]], with the user gaining 2 bonus appeal points if {{m|Growth}} was used in the previous turn.
+
+===Generation IV===
+Bullet Seed is now a [[physical move]]. {{m|Counter}} will only acknowledge the last strike of this move.
+
+===Generation V onwards===
+Bullet Seed's base power was increased from 10 to 25. There is now a 35% chance that it will hit 2 times, a 35% chance it will hit 3 times, a 15% chance it will hit 4 times, and a 15% chance it will hit 5 times. The average total base power is now 77.5.
+
+If a [[Focus Sash]] activates before the last strike is dealt, the following strike will cause the defending Pokémon to faint. A [[Focus Band]] can still activate repeatedly to prevent fainting, but each chance is independent.
+
+Bullet Seed can also be used as part of a [[Contest combination|Contest Spectacular combination]], with the user gaining an extra three appeal points if the move {{m|Rototiller}} was used in the prior turn.
+
+===Generation IX===
+====Pokémon Legends: Z-A====
+Bullet Seed will always hit 5 times. When used as a [[Plus Move]], it will always hit 6 times.
+{{LegendsZAMove
+|type=Grass
+|damagecategory=Physical
+|power=15
+|cooldown=6
+|charge-time=20
+}}
+
+==Description==
+{{movedesc|Grass}}
+{{movedescentry|{{gameabbrev3|RSE}}|Shoots 2 to 5 seeds in a row to strike the foe.}}
+{{movedescentry|{{gameabbrev3|FRLG}}|The user shoots seeds at the foe. Two to five seeds are shot at once.}}
+{{movedescentry|{{gameabbrevss|Colo}}{{gameabbrevss|XD}}|Shoots 2 to 5 seeds in a row to strike the target.}}
+{{movedescentry|{{gameabbrev4|DPPtHGSS}}|The user forcefully shoots seeds at the foe. Two to five seeds are shot in rapid succession.}}
+{{movedescentry|{{gameabbrevss|PBR}}|The user forcefully shoots seeds at the foe. Two to five sets of seeds are shot in rapid succession.}}
+{{movedescentry|{{gameabbrev5|BWB2W2}}|The user forcefully shoots seeds at the target. Two to five seeds are shot in rapid succession.}}
+{{movedescentry|{{gameabbrev6|XYORAS}}<br>{{gameabbrev7|SMUSUMPE}}<br>{{gameabbrev8|SwShBDSPLA}}|The user forcefully shoots seeds at the target two to five times in a row.}}
+{{movedescentry|{{gameabbrev9|SV}}|The user attacks by forcefully shooting seeds at the target. This move hits two to five times in a row.}}
+{{movedescentry|{{gameabbrev9|ZA}}|The user attacks by forcefully shooting out five seeds, one after the other.}}
+|}
+|}{{left clear}}
+
+==Learnset==
+===By [[Level|leveling up]]===
+{{Movehead/Games|Grass|g1=none|g2=none|g7=1|g7g={{gameabbrev7|SMUSUM}}|g8=2|g9=2}}
+{{Moveentry/9|0100|formsig=H|Voltorb|type=Electric|type2=Grass|1|Mineral|Mineral|form=Hisuian Form||||||||9|STAB='''}}
+{{Moveentry/9|0101|formsig=H|Electrode|type=Electric|type2=Grass|1|Mineral|Mineral|form=Hisuian Form||||||||9|STAB='''}}
+{{Moveentry/9|0102|Exeggcute|type=Grass|type2=Psychic|1|Grass|Grass|−|17|17|17|17|30|30|30|STAB='''}}
+{{Moveentry/9|0103|Exeggutor|type=Grass|type2=Psychic|1|Grass|Grass|−|−|−|−|−|1|1|1|STAB='''}}
+{{Moveentry/9|0103|formsig=A|Exeggutor|type=Grass|type2=Dragon|1|Grass|Grass|form=Alolan Form|||||−|1||1|STAB='''}}
+{{Moveentry/9|0187|Hoppip|type=Grass|type2=Flying|2|Fairy|Grass|−|19|19|19|19||19|12|STAB='''}}
+{{Moveentry/9|0188|Skiploom|type=Grass|type2=Flying|2|Fairy|Grass|−|20|20|20|20||20|15|STAB='''}}
+{{Moveentry/9|0189|Jumpluff|type=Grass|type2=Flying|2|Fairy|Grass|−|20|20|20|20||20|15|STAB='''}}
+{{Moveentry/9|0192|Sunflora|type=Grass|1|Grass|Grass|25|21|21{{sup/5|BW}}<br>25{{sup/5|B2W2}}|25|25||25|25|STAB='''}}
+{{Moveentry/9|0214|Heracross|type=Bug|type2=Fighting|1|Bug|Bug|−|−|−|1|1|−|−|−|−}}
+{{Moveentry/9|0223|Remoraid|type=Water|2|Water 1|Water 2|−|27|27{{sup/5|BW}}<br>38{{sup/5|B2W2}}|38|38|28|28}}
+{{Moveentry/9|0224|Octillery|type=Water|2|Water 1|Water 2|−|29|29{{sup/5|BW}}<br>46{{sup/5|B2W2}}|46|46|30|30}}
+{{Moveentry/9|0226|Mantine|type=Water|type2=Flying|1|Water 1|Water 1|−|1|1|1|1|1|1}}
+{{Moveentry/9|0331|Cacnea|type=Grass|2|Grass|Human-Like|−|−|−|−|−||−|16|STAB='''}}
+{{Moveentry/9|0332|Cacturne|type=Grass|type2=Dark|2|Grass|Human-Like|−|−|−|−|−||−|16|STAB='''}}
+{{Moveentry/9|0511|Pansage|type=Grass|1|Field|Field|||−|−|−||||16|STAB='''}}
+{{Moveentry/9|0512|Simisage|type=Grass|1|Field|Field|||−|−|−||||16|STAB='''}}
+{{Moveentry/9|0573|Cinccino|type=Normal|1|Field|Field|||1|1|1|1||1}}
+{{Moveentry/9|0585|Deerling|type=Normal|type2=Grass|1|Field|Field|form=All forms|||−|−|−||−|16|STAB='''}}
+{{Moveentry/9|0586|Sawsbuck|type=Normal|type2=Grass|1|Field|Field|form=All forms|||−|−|−||−|16|STAB='''}}
+{{Moveentry/9|0710|Pumpkaboo|type=Ghost|type2=Grass|1|Amorphous|Amorphous|form=All forms||||26|26|20|||20|STAB='''}}
+{{Moveentry/9|0711|Gourgeist|type=Ghost|type2=Grass|1|Amorphous|Amorphous|form=All forms||||26|26|20|||20|STAB='''}}
+{{Moveentry/9|0731|Pikipek|type=Normal|type2=Flying|1|Flying|Flying|||||31|||31}}
+{{Moveentry/9|0732|Trumbeak|type=Normal|type2=Flying|1|Flying|Flying|||||37|||37}}
+{{Moveentry/9|0733|Toucannon|type=Normal|type2=Flying|1|Flying|Flying|||||40|||40}}
+{{Moveentry/9|0819|Skwovet|type=Normal|1|Field|Field||||||35||35}}
+{{Moveentry/9|0820|Greedent|type=Normal|1|Field|Field||||||41||41}}
+{{Moveentry/9|0842|Appletun|type=Grass|type2=Dragon|2|Grass|Dragon||||||20||20|STAB='''}}
+{{Moveentry/9|0877|Morpeko|type=Electric|type2=Dark|2|Field|Fairy||||||45||45|48}}
+{{Moveentry/9|0924|Tandemaus|type=Normal|2|Field|Fairy||||||||18}}
+{{Moveentry/9|0925|Maushold|type=Normal|2|Field|Fairy|form=All forms||||||||18}}
+{{Moveentry/9|0946|Bramblin|type=Grass|type2=Ghost|1|Grass|Grass||||||||13|STAB='''}}
+{{Moveentry/9|0947|Brambleghast|type=Grass|type2=Ghost|1|Grass|Grass||||||||13|STAB='''}}
+{{Moveentry/9|0951|Capsakid|type=Grass|1|Grass|Grass||||||||21|21|STAB='''}}
+{{Moveentry/9|0952|Scovillain|type=Grass|type2=Fire|1|Grass|Grass||||||||21|21|STAB='''}}
+{{Moveentry/9|1011|Dipplin|type=Grass|type2=Dragon|2|Grass|Dragon||||||||20|STAB='''}}
+{{Moveentry/9|1019|Hydrapple|type=Grass|type2=Dragon|2|Grass|Dragon||||||||20|STAB='''}}
+{{Movefoot|Grass|9}}
+
+===By [[TM]]===
+{{Movehead/TMGames|Grass|g1=none|g2=none|g5=none|g6=none|g7=none
+|g3tm=09
+|g4tm=09
+|g8=2|g8tm-1=50|g8g-1={{gameabbrev8|SwSh}}|g8tm-2=09|g8g-2={{gameabbrev8|BDSP}}
+|g9=2|g9tm-1=056|g9tm-2=040}}
+{{Moveentry/6|0001|Bulbasaur|type=Grass|type2=Poison|2|Monster|Grass|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/6|0002|Ivysaur|type=Grass|type2=Poison|2|Monster|Grass|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/6|0003|Venusaur|type=Grass|type2=Poison|2|Monster|Grass|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/6|0043|Oddish|type=Grass|type2=Poison|1|Grass|Grass|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/6|0044|Gloom|type=Grass|type2=Poison|1|Grass|Grass|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/6|0045|Vileplume|type=Grass|type2=Poison|1|Grass|Grass|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/6|0046|Paras|type=Bug|type2=Grass|2|Bug|Grass|✔|✔||✔||STAB='''}}
+{{Moveentry/6|0047|Parasect|type=Bug|type2=Grass|2|Bug|Grass|✔|✔||✔||STAB='''}}
+{{Moveentry/6|0069|Bellsprout|type=Grass|type2=Poison|1|Grass|Grass|✔|✔||✔|✔|✔|STAB='''}}
+{{Moveentry/6|0070|Weepinbell|type=Grass|type2=Poison|1|Grass|Grass|✔|✔||✔|✔|✔|STAB='''}}
+{{Moveentry/6|0071|Victreebel|type=Grass|type2=Poison|1|Grass|Grass|✔|✔||✔|✔|✔|STAB='''}}
+{{Moveentry/6|0100|formsig=H|Voltorb|type=Electric|type2=Grass|1|Mineral|Mineral|form=Hisuian Form|||||✔|STAB='''}}
+{{Moveentry/6|0101|formsig=H|Electrode|type=Electric|type2=Grass|1|Mineral|Mineral|form=Hisuian Form|||||✔|STAB='''}}
+{{Moveentry/6|0102|Exeggcute|type=Grass|type2=Psychic|1|Grass|Grass|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/6|0103|Exeggutor|type=Grass|type2=Psychic|1|Grass|Grass|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/6|0103|formsig=A|Exeggutor|type=Grass|type2=Dragon|1|Grass|Grass|form=Alolan Form|||✔||✔|STAB='''}}
+{{Moveentry/6|0114|Tangela|type=Grass|1|Grass|Grass|✔|✔|✔|✔||STAB='''}}
+{{Moveentry/6|0151|Mew|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔}}
+{{Moveentry/6|0152|Chikorita|type=Grass|2|Monster|Grass|✔|✔||✔|✔|✔|STAB='''}}
+{{Moveentry/6|0153|Bayleef|type=Grass|2|Monster|Grass|✔|✔||✔|✔|✔|STAB='''}}
+{{Moveentry/6|0154|Meganium|type=Grass|2|Monster|Grass|✔|✔||✔|✔|✔|STAB='''}}
+{{Moveentry/6|0182|Bellossom|type=Grass|1|Grass|Grass|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/6|0187|Hoppip|type=Grass|type2=Flying|2|Fairy|Grass|✔|✔||✔|✔|STAB='''}}
+{{Moveentry/6|0188|Skiploom|type=Grass|type2=Flying|2|Fairy|Grass|✔|✔||✔|✔|STAB='''}}
+{{Moveentry/6|0189|Jumpluff|type=Grass|type2=Flying|2|Fairy|Grass|✔|✔||✔|✔|STAB='''}}
+{{Moveentry/6|0191|Sunkern|type=Grass|1|Grass|Grass|✔|✔||✔|✔|STAB='''}}
+{{Moveentry/6|0192|Sunflora|type=Grass|1|Grass|Grass|✔|✔||✔|✔|STAB='''}}
+{{Moveentry/6|0214|Heracross|type=Bug|type2=Fighting|1|Bug|Bug|−|−|✔|✔|✔|✔}}
+{{Moveentry/6|0223|Remoraid|type=Water|2|Water 1|Water 2|−|✔|✔|✔|}}
+{{Moveentry/6|0224|Octillery|type=Water|2|Water 1|Water 2|✔|✔|✔|✔|}}
+{{Moveentry/6|0226|Mantine|type=Water|type2=Flying|1|Water 1|Water 1|−|✔|✔|✔|}}
+{{Moveentry/6|0252|Treecko|type=Grass|2|Monster|Dragon|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/6|0253|Grovyle|type=Grass|2|Monster|Dragon|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/6|0254|Sceptile|type=Grass|2|Monster|Dragon|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/6|0270|Lotad|type=Water|type2=Grass|2|Water 1|Grass|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/6|0271|Lombre|type=Water|type2=Grass|2|Water 1|Grass|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/6|0272|Ludicolo|type=Water|type2=Grass|2|Water 1|Grass|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/6|0273|Seedot|type=Grass|2|Field|Grass|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/6|0274|Nuzleaf|type=Grass|type2=Dark|2|Field|Grass|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/6|0275|Shiftry|type=Grass|type2=Dark|2|Field|Grass|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/6|0285|Shroomish|type=Grass|2|Fairy|Grass|✔|✔||✔|✔|STAB='''}}
+{{Moveentry/6|0286|Breloom|type=Grass|type2=Fighting|2|Fairy|Grass|✔|✔||✔|✔|STAB='''}}
+{{Moveentry/6|0315|Roselia|type=Grass|type2=Poison|2|Fairy|Grass|✔|✔|✔|✔||✔|STAB='''}}
+{{Moveentry/6|0316|Gulpin|type=Poison|1|Amorphous|Amorphous|✔|✔||✔|✔|✔}}
+{{Moveentry/6|0317|Swalot|type=Poison|1|Amorphous|Amorphous|✔|✔||✔|✔|✔}}
+{{Moveentry/6|0331|Cacnea|type=Grass|2|Grass|Human-Like|✔|✔||✔|✔|STAB='''}}
+{{Moveentry/6|0332|Cacturne|type=Grass|type2=Dark|2|Grass|Human-Like|✔|✔||✔|✔|STAB='''}}
+{{Moveentry/6|0345|Lileep|type=Rock|type2=Grass|1|Water 3|Water 3|✔|✔|✔|✔||STAB='''}}
+{{Moveentry/6|0346|Cradily|type=Rock|type2=Grass|1|Water 3|Water 3|✔|✔|✔|✔||STAB='''}}
+{{Moveentry/6|0357|Tropius|type=Grass|type2=Flying|2|Monster|Grass|✔|✔||✔|✔|STAB='''}}
+{{Moveentry/6|0387|Turtwig|type=Grass|2|Monster|Grass||✔||✔|✔|STAB='''}}
+{{Moveentry/6|0388|Grotle|type=Grass|2|Monster|Grass||✔||✔|✔|STAB='''}}
+{{Moveentry/6|0389|Torterra|type=Grass|type2=Ground|2|Monster|Grass||✔||✔|✔|STAB='''}}
+{{Moveentry/6|0406|Budew|type=Grass|type2=Poison|1|No Eggs Discovered|No Eggs Discovered||✔|✔|✔||✔|STAB='''}}
+{{Moveentry/6|0407|Roserade|type=Grass|type2=Poison|2|Fairy|Grass||✔|✔|✔||✔|STAB='''}}
+{{Moveentry/6|0413|Wormadam|type=Bug|type2=Grass|1|Bug|Bug|form=Plant Cloak||✔||✔||STAB='''}}
+{{Moveentry/6|0420|Cherubi|type=Grass|2|Fairy|Grass||✔|✔|✔||STAB='''}}
+{{Moveentry/6|0421|Cherrim|type=Grass|2|Fairy|Grass||✔|✔|✔||STAB='''}}
+{{Moveentry/6|0455|Carnivine|type=Grass|1|Grass|Grass||✔||✔||STAB='''}}
+{{Moveentry/6|0459|Snover|type=Grass|type2=Ice|2|Monster|Grass||✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/6|0460|Abomasnow|type=Grass|type2=Ice|2|Monster|Grass||✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/6|0465|Tangrowth|type=Grass|1|Grass|Grass||✔|✔|✔||STAB='''}}
+{{Moveentry/6|0470|Leafeon|type=Grass|1|Field|Field||✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/6|0492|Shaymin|type=Grass|1|No Eggs Discovered|No Eggs Discovered|form=All available forms||✔||✔|✔|STAB='''}}
+{{Moveentry/6|0493|Arceus|type=Normal|1|No Eggs Discovered|No Eggs Discovered|form=All available forms||✔||✔|✔|STAB=''}}
+{{Moveentry/6|0495|Snivy|type=Grass|2|Field|Grass|||||✔|STAB='''}}
+{{Moveentry/6|0496|Servine|type=Grass|2|Field|Grass|||||✔|STAB='''}}
+{{Moveentry/6|0497|Serperior|type=Grass|2|Field|Grass|||||✔|STAB='''}}
+{{Moveentry/6|0504|Patrat|type=Normal|1|Field|Field||||||✔}}
+{{Moveentry/6|0505|Watchog|type=Normal|1|Field|Field||||||✔}}
+{{Moveentry/6|0511|Pansage|type=Grass|1|Field|Field||||||✔|STAB='''}}
+{{Moveentry/6|0512|Simisage|type=Grass|1|Field|Field||||||✔|STAB='''}}
+{{Moveentry/6|0542|Leavanny|type=Bug|type2=Grass|1|Bug|Bug|||||✔|STAB='''}}
+{{Moveentry/6|0548|Petilil|type=Grass|1|Grass|Grass|||−||✔|STAB='''}}
+{{Moveentry/6|0549|Lilligant|type=Grass|1|Grass|Grass|||−||✔|STAB='''}}
+{{Moveentry/6|0549|formsig=H|Lilligant|type=Grass|type2=Fighting|1|Grass|Grass|form=Hisuian Form|||||✔|STAB='''}}
+{{Moveentry/6|0556|Maractus|type=Grass|1|Grass|Grass|||✔|||STAB='''}}
+{{Moveentry/6|0568|Trubbish|type=Poison|1|Mineral|Mineral|||–|||✔}}
+{{Moveentry/6|0569|Garbodor|type=Poison|1|Mineral|Mineral|||–|||✔}}
+{{Moveentry/6|0572|Minccino|type=Normal|1|Field|Field|||−||✔}}
+{{Moveentry/6|0573|Cinccino|type=Normal|1|Field|Field|||✔||✔}}
+{{Moveentry/6|0585|Deerling|type=Normal|type2=Grass|1|Field|Field|form=All forms|||||✔|STAB='''}}
+{{Moveentry/6|0586|Sawsbuck|type=Normal|type2=Grass|1|Field|Field|form=All forms|||||✔|STAB='''}}
+{{Moveentry/6|0590|Foongus|type=Grass|type2=Poison|1|Grass|Grass|||−||✔|✔|STAB='''}}
+{{Moveentry/6|0591|Amoonguss|type=Grass|type2=Poison|1|Grass|Grass|||−||✔|✔|STAB='''}}
+{{Moveentry/6|0597|Ferroseed|type=Grass|type2=Steel|2|Grass|Mineral|||✔|||STAB='''}}
+{{Moveentry/6|0598|Ferrothorn|type=Grass|type2=Steel|2|Grass|Mineral|||✔|||STAB='''}}
+{{Moveentry/6|0640|Virizion|type=Grass|type2=Fighting|1|No Eggs Discovered|No Eggs Discovered|||−||−|✔|STAB='''}}
+{{Moveentry/6|0650|Chespin|type=Grass|1|Field|Field|||||✔|✔|STAB='''}}
+{{Moveentry/6|0651|Quilladin|type=Grass|1|Field|Field|||||✔|✔|STAB='''}}
+{{Moveentry/6|0652|Chesnaught|type=Grass|type2=Fighting|1|Field|Field|||||✔|✔|STAB='''}}
+{{Moveentry/6|0672|Skiddo|type=Grass|1|Field|Field|||||✔|✔|STAB='''}}
+{{Moveentry/6|0673|Gogoat|type=Grass|1|Field|Field|||||✔|✔|STAB='''}}
+{{Moveentry/6|0710|Pumpkaboo|type=Ghost|type2=Grass|1|Amorphous|Amorphous|form=All forms|||✔|||✔|STAB='''}}
+{{Moveentry/6|0711|Gourgeist|type=Ghost|type2=Grass|1|Amorphous|Amorphous|form=All forms|||✔|||✔|STAB='''}}
+{{Moveentry/6|0722|Rowlet|type=Grass|type2=Flying|1|Flying|Flying|||−||✔|STAB='''}}
+{{Moveentry/6|0723|Dartrix|type=Grass|type2=Flying|1|Flying|Flying|||−||✔|STAB='''}}
+{{Moveentry/6|0724|Decidueye|type=Grass|type2=Ghost|1|Flying|Flying|||−||✔|STAB='''}}
+{{Moveentry/6|0724|formsig=H|Decidueye|type=Grass|type2=Fighting|1|Flying|Flying|form=Hisuian Form|||||✔|STAB='''}}
+{{Moveentry/6|0731|Pikipek|type=Normal|type2=Flying|1|Flying|Flying|||||✔}}
+{{Moveentry/6|0732|Trumbeak|type=Normal|type2=Flying|1|Flying|Flying|||||✔}}
+{{Moveentry/6|0733|Toucannon|type=Normal|type2=Flying|1|Flying|Flying|||||✔}}
+{{Moveentry/6|0753|Fomantis|type=Grass|1|Grass|Grass|||✔||✔|STAB='''}}
+{{Moveentry/6|0754|Lurantis|type=Grass|1|Grass|Grass|||✔||✔|STAB='''}}
+{{Moveentry/6|0762|Steenee|type=Grass|1|Grass|Grass|||−||✔|STAB='''}}
+{{Moveentry/6|0763|Tsareena|type=Grass|1|Grass|Grass|||−||✔|STAB='''}}
+{{Moveentry/6|0764|Comfey|type=Fairy|1|Grass|Grass|||✔||✔}}
+{{Moveentry/6|0787|Tapu Bulu|type=Grass|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered|||✔|||STAB='''}}
+{{Moveentry/6|0810|Grookey|type=Grass|2|Field|Grass|||−||✔|STAB='''}}
+{{Moveentry/6|0811|Thwackey|type=Grass|2|Field|Grass|||−||✔|STAB='''}}
+{{Moveentry/6|0812|Rillaboom|type=Grass|2|Field|Grass|||✔||✔|STAB='''}}
+{{Moveentry/6|0819|Skwovet|type=Normal|1|Field|Field|||✔||✔}}
+{{Moveentry/6|0820|Greedent|type=Normal|1|Field|Field|||✔||✔}}
+{{Moveentry/6|0829|Gossifleur|type=Grass|1|Grass|Grass|||✔|||STAB='''}}
+{{Moveentry/6|0830|Eldegoss|type=Grass|1|Grass|Grass|||✔|||STAB='''}}
+{{Moveentry/6|0841|Flapple|type=Grass|type2=Dragon|2|Grass|Dragon|||✔||✔|STAB='''}}
+{{Moveentry/6|0842|Appletun|type=Grass|type2=Dragon|2|Grass|Dragon|||✔||✔|STAB='''}}
+{{Moveentry/6|0877|Morpeko|type=Electric|type2=Dark|2|Field|Fairy|||✔||✔|✔}}
+{{Moveentry/6|0893|Zarude|type=Dark|type2=Grass|1|No Eggs Discovered|No Eggs Discovered|form=All forms|||✔||✔|STAB='''}}
+{{Moveentry/6|0898|Calyrex|type=Psychic|type2=Grass|1|No Eggs Discovered|No Eggs Discovered|form=All forms|||✔||✔|STAB='''}}
+{{Moveentry/6|0906|Sprigatito|type=Grass|2|Field|Grass|||||✔|STAB='''}}
+{{Moveentry/6|0907|Floragato|type=Grass|2|Field|Grass|||||✔|STAB='''}}
+{{Moveentry/6|0908|Meowscarada|type=Grass|type2=Dark|2|Field|Grass|||||✔|STAB='''}}
+{{Moveentry/6|0915|Lechonk|type=Normal|1|Field|Field|||||✔}}
+{{Moveentry/6|0916|Oinkologne|type=Normal|1|Field|Field|form=All forms|||||✔}}
+{{Moveentry/6|0917|Tarountula|type=Bug|1|Bug|Bug|||||✔}}
+{{Moveentry/6|0918|Spidops|type=Bug|1|Bug|Bug|||||✔}}
+{{Moveentry/6|0924|Tandemaus|type=Normal|2|Field|Fairy|||||✔}}
+{{Moveentry/6|0925|Maushold|type=Normal|2|Field|Fairy|form=All forms|||||✔}}
+{{Moveentry/6|0928|Smoliv|type=Grass|type2=Normal|1|Grass|Grass|||||✔|STAB='''}}
+{{Moveentry/6|0929|Dolliv|type=Grass|type2=Normal|1|Grass|Grass|||||✔|STAB='''}}
+{{Moveentry/6|0930|Arboliva|type=Grass|type2=Normal|1|Grass|Grass|||||✔|STAB='''}}
+{{Moveentry/6|0946|Bramblin|type=Grass|type2=Ghost|1|Grass|Grass|||||✔|STAB='''}}
+{{Moveentry/6|0947|Brambleghast|type=Grass|type2=Ghost|1|Grass|Grass|||||✔|STAB='''}}
+{{Moveentry/6|0948|Toedscool|type=Ground|type2=Grass|1|Grass|Grass|||||✔|STAB='''}}
+{{Moveentry/6|0949|Toedscruel|type=Ground|type2=Grass|1|Grass|Grass|||||✔|STAB='''}}
+{{Moveentry/6|0951|Capsakid|type=Grass|1|Grass|Grass|||||✔|✔|STAB='''}}
+{{Moveentry/6|0952|Scovillain|type=Grass|type2=Fire|1|Grass|Grass|||||✔|✔|STAB='''}}
+{{Moveentry/6|0986|Brute Bonnet|type=Grass|type2=Dark|1|No Eggs Discovered|No Eggs Discovered|||||✔|STAB='''}}
+{{Moveentry/6|1001|Wo-Chien|type=Dark|type2=Grass|1|No Eggs Discovered|No Eggs Discovered|||||✔|STAB='''}}
+{{Moveentry/6|1011|Dipplin|type=Grass|type2=Dragon|2|Grass|Dragon|||||✔|STAB='''}}
+{{Moveentry/6|1017|Ogerpon|type=Grass|1|No Eggs Discovered|No Eggs Discovered|form=All forms|||||✔|STAB='''}}
+{{Moveentry/6|1019|Hydrapple|type=Grass|type2=Dragon|2|Grass|Dragon|||||✔|STAB='''}}
+{{Movefoot|Grass|6}}
+
+===By {{pkmn|breeding}}===
+{{Movehead/Games|Grass|Egg Move|g1=none|g2=none|g3=none|g4=none|g7=1|g7g={{gameabbrev7|SMUSUM}}|g8=none|g9=none}}
+{{Moveentry/3|0069|Bellsprout|type=Grass|type2=Poison|1|Grass|Grass|✔|✔|✔|STAB='''}}
+{{Moveentry/3|0252|Treecko|type=Grass|2|Monster|Dragon|✔|✔|✔|STAB='''|note=Chain breed}}
+{{Moveentry/3|0273|Seedot|type=Grass|2|Field|Grass|✔|✔|✔|STAB='''}}
+{{Moveentry/3|0285|Shroomish|type=Grass|2|Fairy|Grass|✔|✔|✔|STAB='''}}
+{{Moveentry/3|0315|Roselia|type=Grass|type2=Poison|2|Fairy|Grass|−|✔|✔|STAB='''}}
+{{Moveentry/3|0357|Tropius|type=Grass|type2=Flying|2|Monster|Grass|✔|✔|✔|STAB='''}}
+{{Moveentry/3|0459|Snover|type=Grass|type2=Ice|2|Monster|Grass|✔|✔|✔|STAB='''}}
+{{Moveentry/3|0504|Patrat|type=Normal|1|Field|Field|−|−|✔{{sup/7|USUM}}}}
+{{Moveentry/3|0511|Pansage|type=Grass|1|Field|Field|✔|✔|✔|STAB='''}}
+{{Moveentry/3|0556|Maractus|type=Grass|1|Grass|Grass|✔|✔|✔|STAB='''}}
+{{Moveentry/3|0597|Ferroseed|type=Grass|type2=Steel|2|Grass|Mineral|✔|✔|✔|STAB='''}}
+{{Movefoot|Grass|3}}
+
+===Special move===
+====[[Generation V]]====
+{{Movehead/Special|Grass}}
+{{Moveentry/1|0187|Hoppip|type=Grass|type2=Flying|2|Fairy|Grass|{{pkmn|Dream World}}  - {{dwa|Pleasant Forest}}|STAB='''}}
+{{Moveentry/1|0273|Seedot|type=Grass|2|Field|Grass|{{pkmn|Dream World}}  - {{dwa|Dream Park}}|STAB='''}}
+{{Moveentry/1|0285|Shroomish|type=Grass|2|Fairy|Grass|{{pkmn|Dream World}}  - {{dwa|Dream Park}}|STAB='''}}
+{{Moveentry/1|0420|Cherubi|type=Grass|2|Fairy|Grass|{{pkmn|Dream World}}  - {{dwa|Dream Park}}|STAB='''}}
+{{Movefoot|Grass|1}}
+
+====[[Generation IX]]====
+{{Movehead/Special|Grass}}
+{{Moveentry/1|0286|Breloom|type=Grass|type2=Fighting|2|Fairy|Grass|[[Terastal phenomenon|Wild Tera Pokémon]] - [[West Province (Area Three)]]{{sup/9|SV}}|STAB='''}}
+{{Movefoot|Grass|1}}
+
+===By {{pkmn2|event}}===
+====[[Generation V]]====
+{{Movehead/Special|Grass}}
+{{Moveentry/1|0511|Pansage|type=Grass|1|Field|Field|[[List of Wi-Fi Japanese event Pokémon distributions in Generation V#Cilan's Pansage|Mystery Egg]]<br>[[List of local English event Pokémon distributions in Generation V#Cilan's Pansage|Secret Egg]]<br>[[List of local Japanese event Pokémon distributions in Generation V#Cilan's Pansage|Pokémon Center Best Wishes]]|STAB='''}}
+{{Movefoot|Grass|1}}
+
+==In other games==
+===[[Pokémon Mystery Dungeon series]]===
+Bullet Seed inflicts damage, hitting the target 2-5 times per use. Each hit has a separate accuracy check, though the move will continue even when a hit fails. The move's critical-hit rate is reduced (2% in the Rescue Team, Explorers and Adventure Squad series).
+
+Prior to {{pkmn|Mystery Dungeon: Gates to Infinity|Gates to Infinity}}, if a targeted Pokémon faints in middle of the attack, the remaining projectiles will be able to hit a new target, and are still executed if a {{DL|Seed|Reviver Seed}} activates.
+
+{{MDMoveheader|type=grass}}
+{{MDMoveRow|game=RB|pow=10|pp=10|acc=78%|range=10 tiles away|target=All|cuts=Yes}}
+{{MDMoveRow|game=TDS|pow=10|pp=10|acc=48%|range=10 tiles away|target=All|cuts=Yes}}
+{{MDMoveRow|game=BSL|pow=10|pp=10|acc=48%|range=10 tiles away|target=All|cuts=Yes}}
+{{MDMoveRow|game=GTI|pow=2|powmax=99|pp=20|ppmax=99|acc=65%|accmax=85%|range=10 tiles away|target=All|cuts=Yes}}
+{{MDMoveRow|game=SMD|pow=2|powmax=50|pp=15|ppmax=30|acc=50%|accmax=85%|range=4 tiles away|target=Enemy|cuts=Yes}}
+{{MDMovefoot|type=grass|RB=yes|TDS=yes|BSL=yes|GTI=yes|SMD=yes|RTDX=yes}}
+
+===Super Smash Bros. series===
+[[File:Bullet Seed SSBB.png|225px|thumb|Bullet Seed in Super Smash Bros. Brawl]]
+{{sbw|Bullet Seed}} is {{SSB|Pokémon Trainer|Ivysaur}}'s Neutral Special move. Using it causes seeds to shoot up from Ivysaur's bulb, dealing repeated damage to those caught in the flare.
+
+===[[Pokémon GO]]===
+In Pokémon GO, Bullet Seed is a Fast Attack that has been available since February 16, 2017.
+
+{{GoFastAttack
+|id=271
+|move=Bullet Seed
+|type=Grass
+|pow=8
+|energy=14
+|duration=1.1
+|damage_window=0.85 - 1.05
+|pow_trainer=5
+|energy_trainer=13
+|turns=3
+|users={{MSP/GO|0070|Weepinbell}}{{MSP/GO|0102|Exeggcute}}{{MSP/GO|0103|Exeggutor}}{{MSP/GO|0103A|Exeggutor|Alolan Form}}{{MSP/GO|0182|Bellossom}}{{MSP/GO|0187|Hoppip}}{{MSP/GO|0188|Skiploom}}{{MSP/GO|0189|Jumpluff}}{{MSP/GO|0192|Sunflora}}{{MSP/GO|0226|Mantine}}{{MSP/GO|0252|Treecko}}{{MSP/GO|0253|Grovyle}}{{MSP/GO|0254|Sceptile}}{{MSP/GO|0273|Seedot}}{{MSP/GO|0285|Shroomish}}{{MSP/GO|0286|Breloom}}{{MSP/GO|0345|Lileep}}{{MSP/GO|0346|Cradily}}{{MSP/GO|0420|Cherubi}}{{MSP/GO|0421|Cherrim}}{{MSP/GO|0421S|Cherrim}}{{MSP/GO|0549H|Lilligant}}{{MSP/GO|0556|Maractus}}{{MSP/GO|0598|Ferrothorn}}{{MSP/GO|0733|Toucannon}}{{MSP/GO|0787|Tapu Bulu}}{{MSP/GO|0819|Skwovet}}{{MSP/GO|0820|Greedent}}{{MSP/GO|0829|Gossifleur}}{{MSP/GO|0830|Eldegoss}}{{MSP/GO|0841|Flapple}}{{MSP/GO|0842|Appletun}}{{MSP/GO|0924|Tandemaus}}{{MSP/GO|0925|Maushold}}{{MSP/GO|0925T|Maushold|Family of Three}}{{MSP/GO|1011|Dipplin}}{{MSP/GO|1019|Hydrapple}}
+|elite_users={{MSP/GO|0275|Shiftry}}{{MSP/GO|0407|Roserade}}{{MSP/GO|0470|Leafeon}}
+|snapshot_users={{MSP/GO|0235|Smeargle}}
+|legacy_users=
+}}
+
+====Updates====
+;Gyms & Raids
+* '''February 21, 2017'''
+** '''Energy boost''': 12 → 14
+** '''Duration''': 1.55 → 1.1 seconds
+;Trainer Battles
+* '''April 2, 2020'''
+** '''Energy boost''': 11 → 13
+
+===[[Pokémon Masters EX]]===
+{| class="roundy" style="margin:auto; background:#{{grass color}}; border:3px solid #{{grass color dark}}; text-align:center; width:80%"
+|- style="background: #{{grass color light}}"
+! style="{{roundytl|5px}}" | Name
+! {{color2|000|Damage category|Category}}
+! Move gauge cost
+! MP<br>(uses)
+! Base {{color2|000|power}}
+! Max {{color2|000|power}}
+! {{color2|000|Accuracy}}
+! Target
+! Effect tag
+! Description
+! style="{{roundytr|5px}}" | Playable {{color2|000|Sync pair|sync pair(s)}}
+|- style="background:#fff"
+|style="{{roundybl|5px}}"|Bullet Seed
+{{statustable|Physical}}
+|2
+|—
+|15
+|18
+|100%
+|An opponent
+|Multistrike
+|Attacks the target two to five times in a row.
+|style="{{roundybr|5px}}"|{{sync|Brendan|Treecko}}/Grovyle/Sceptile<hr>{{sync|Ramos|Weepinbell}}/Victreebel<hr>{{sync|Acerola|Tapu Bulu|sygna=y}}<hr>{{sync|Greta|Breloom}}<hr>{{sync|Morgan|Virizion}}<hr>{{sync|Clavell|Sprigatito|Alt.}}<hr>{{sync|Rosa|Deerling|Academy}}<hr>{{sync|Samson Oak|Exeggutor}}<hr>{{sync|Skyla|Jumpluff|Summer 2025}}
+|}
+
+==={{g|Rumble Rush}}===
+{{RumbleRushPhysicalAttack|move=Bullet Seed|type=Grass
+|stars=4
+|pow=20.66411 (Hits 1-4), 56.4819 (Hit 5)
+|charge=0.5 seconds (Hits 1-4), 0.82
+|range=Projectile
+|hits=1
+|projectiles=1
+|crit=1.5
+|effect=None}}
+
+==={{g|UNITE}}===
+In Pokémon UNITE, Bullet Seed is {{p|Greedent}}'s first move. It is obtained by reaching level 7 and upgrading {{m|Tackle}} into it instead of {{m|Belch}}. The user spits Berry seeds in the designated direction, dealing damage to enemies in the area of effect and decrease their movement speed for a short time. The more Oran Berries the user has stashed, the more damage this move deals. At level 13, this move's damage is increased.
+
+===Description===
+{{movedesc|Grass}}
+{{movedescentry|{{gameabbrevmd|RB}}|Inflicts damage on the target, even at a distance. It hits two to five times in succession.}}
+{{movedescentry|{{gameabbrevmd|TDS}}|Inflicts damage on the target, even at a distance, using 2 to 5 attacks in a single turn.}}
+{{movedescentry|{{gameabbrevmd|BSL}}|{{tt|はなれたポケモンに ２〜５かいれんぞくで ダメージを あたえる|Inflicts damage on the target, even at a distance, using 2 to 5 attacks in a single turn}}}}
+{{movedescentry|{{gameabbrevmd|GTI}}|It damages even a faraway Pokémon 2 to 5 times in a row.}}
+{{movedescentry|{{gameabbrevmd|SMD}}|It damages a Pokémon, even one far away, 2 to 5 times in a row.}}
+{{movedescentry|{{gameabbrevmd|RTDX}}|It fires off a seed at a high speed, damaging a Pokémon, even one far away, 2 to 5 times in a row.}}
+|}
+|}{{-}}
+
+==In animation==
+===Pokémon animated series===
+{{moveanime|type=grass|exp=yes|gen=The user shoots high-velocity seeds at the opponent.|image1=Marlon Mantine Bullet Seed.png|image1p=Mantine|image2=Toucannon Bullet Seed.png|image2p=Toucannon and Trumbeak|image3=Tangrowth Bullet Seed.png|image3p=Tangrowth|image4=Goh Skwovet Bullet Seed.png|image4p=Skwovet}}
+{{movep|type=grass|ms=0275|pkmn=Shiftry|method=Shifty opens its mouth and spits large glowing yellow seeds surrounded in a light green aura at the opponent at a high velocity.}}
+{{movemid|type=grass|user=Brendan (game)|user1=Brendan's Shiftry|startcode=M06|startname=Jirachi: Wish Maker|notes=Debut}}
+{{movemid|type=grass|user=Shiftry (Pokémon)|user1=A wild Shiftry|startcode=AG037|startname=Jump for Joy!}}
+{{movemid|type=grass|user=Shiftry (Pokémon)|user1=A wild Shiftry|startcode=BW135|startname=Mystery on a Deserted Island!}}
+{{movep|type=grass|ms=0273|pkmn=Seedot|method=Seedot spins around quickly and releases multiple glowing yellow seeds at the opponent, or Seedot jumps into the air and releases multiple glowing yellow seeds at the opponent from the top of its head.}}
+{{movemid|type=grass|user=Seedot (Pokémon)|user1=Multiple wild Seedot|startcode=AG037|startname=Jump for Joy!}}
+{{movemid|type=grass|pkmn=Seedot (Pokémon)|user1=A wild Seedot|startcode=DP134|startname=Promoting Healthy Tangrowth!}}
+{{movep|type=grass|ms=0274|pkmn=Nuzleaf|method=Nuzleaf spits glowing yellow or light blue seeds from its mouth at the opponent at a high velocity.}}
+{{movemid|type=grass|user=Nuzleaf (Pokémon)|user1=Multiple wild Nuzleaf|startcode=AG037|startname=Jump for Joy!}}
+{{movemid|type=grass|user=Nuzleaf (Pokémon)|user1=Multiple wild Nuzleaf|startcode=M13|startname=Zoroark: Master of Illusions}}
+{{movep|type=grass|ms=0253|pkmn=Grovyle|method=Grovyle spits many glowing yellow seeds from its mouth at the opponent at a high velocity.}}
+{{movemid|type=grass|user=Natasha|user1=Natasha's Grovyle|startcode=AG041|startname=What You Seed is What You Get}}
+{{movemid|type=grass|user=Ash's Grovyle|startcode=AG066|startname=Exploud and Clear}}
+{{movemid|type=grass|user=Mirage Pokémon|user1=A mirage Grovyle merged with a mirage Mewtwo|startcode=The Mastermind of Mirage Pokémon}}
+{{movemid|type=grass|user=Grovyle (Explorers of Time, Darkness, and Sky)|startcode=Pokémon Mystery Dungeon: Explorers of Sky - Beyond Time & Darkness|startname=Pokémon Mystery Dungeon: Explorers of Sky - Beyond Time & Darkness}}
+{{movemid|type=grass|user=Sawyer's Grovyle|startcode=XY075|startname=Rivals: Today and Tomorrow!}}
+{{movep|type=grass|ms=0252|pkmn=Treecko|method=Treecko spits many glowing yellow seeds in a light green aura from its mouth at the opponent at a high velocity.}}
+{{movemid|type=grass|user=Ash's Treecko|startcode=AG041|startname=What You Seed is What You Get}}
+{{movemid|type=grass|user=Sawyer's Treecko|startcode=XY073|startname=A Fashionable Battle!}}
+{{movep|type=grass|ms=0332|pkmn=Cacturne|method=Cacturne spits many glowing yellow seeds from the middle hole at its mouth at the opponent at a high velocity.}}
+{{movemid|type=grass|user=Harley's Cacturne|startcode=AG103|startname=A Cacturne for the Worse}}
+{{movep|type=grass|ms=0272|pkmn=Ludicolo|method=Ludicolo spits many glowing yellow seeds from its mouth at the opponent at a high velocity.}}
+{{movemid|type=grass|user=Brock's Ludicolo|startcode=AG105|startname=Once in a Mawile}}
+{{movep|type=grass|ms=0317|pkmn=Swalot|method=Swalot shoots many glowing yellow seeds from its mouth at the opponent at a high velocity.}}
+{{movemid|type=grass|user=Anthony (AG122)|user1=Anthony's Swalot|startcode=AG122|startname=Deceit and Assist}}
+{{movep|type=grass|ms=0357|pkmn=Tropius|method=Tropius spits many glowing yellow seeds from its mouth at the opponent at a high velocity.}}
+{{movemid|type=grass|user=Dominick|user1=Dominick's Tropius|startcode=AG127|startname=From Brags to Riches}}
+{{movep|type=grass|ms=0254|pkmn=Sceptile|method=Sceptile shoots many glowing yellow seeds or gold seeds surrounded in a light green aura from its mouth at the opponent at a high velocity.}}
+{{movemid|type=grass|user=Tyson (Hoenn)|user1=Tyson's Sceptile|startcode=AG128|startname=Shocks and Bonds}}
+{{movemid|type=grass|user=Ash's Sceptile|startcode=AG163|startname=Cutting the Ties that Bind!}}
+{{movemid|type=grass|user=Pokémon Coordinator|user1=A Coordinator's Sceptile|startcode=DP174|startname=Last Call - First Round!}}
+{{movemid|type=grass|user=Sawyer's Sceptile|startcode=XY106|startname=A Meeting of Two Journeys!}}
+{{movep|type=grass|ms=0045|pkmn=Vileplume|method=Vileplume shoots many glowing yellow seeds from its mouth at a high velocity at the opponent.}}
+{{movemid|type=grass|user=Nicolette|user1=Nicolette's Vileplume|startcode=AG150|startname=May's Egg-Cellent Adventure}}
+{{movep|type=grass|ms=0306|pkmn=Aggron|method=Aggron spits many glowing yellow seeds from its mouth at the opponent at a high velocity.}}
+{{movemid|type=grass|user=Dr. Yung|user1=A mirage Aggron|startcode=The Mastermind of Mirage Pokémon|notes=Aggron cannot legally learn Bullet Seed{{tt|*|Mirage Pokémon were stated to be capable of learning moves the Pokémon would not normally be able to learn}}}}
+{{movep|type=grass|ms=0406|pkmn=Budew|method=Budew spits multiple glowing yellow seeds at the opponent from its mouth.}}
+{{movemid|type=grass|user=Nando's Budew|startcode=DP004|startname=Dawn of a New Era!}}
+{{movep|type=grass|ms=0455|pkmn=Carnivine|method=Carnivine fires multiple glowing yellow seeds from its mouth at a high velocity at the opponent.}}
+{{movemid|type=grass|user=James's Carnivine|startcode=DP005|startname=Gettin' Twiggy With It!}}
+{{movep|type=grass|ms=0185|pkmn=Sudowoodo|method=The branch on Sudowoodo's head glows gold and it fires multiple glowing yellow seeds at the opponent from its mouth.}}
+{{movemid|type=grass|user=Brock's Sudowoodo|startcode=DP014|startname=Leave it to Brocko!|notes=Used via {{mcolor|Mimic|000}}}}
+{{movep|type=grass|ms=0389|pkmn=Torterra|method=Torterra fires multiple glowing white seeds at the opponent from its mouth.}}
+{{movemid|type=grass|user=Maury|user1=Maury's Torterra|startcode=M10|startname=The Rise of Darkrai}}
+{{movep|type=grass|ms=0459|pkmn=Snover|method=Snover sticks out one of its arms and releases multiple glowing yellow seeds from its hand at the opponent.}}
+{{movemid|type=grass|user=Candice|user1=Candice's Snover|startcode=DP127|startname=Sliding into Seventh!}}
+{{movep|type=grass|ms=0465|pkmn=Tangrowth|method=Tangrowth points its hands at the opponent and fires multiple glowing yellow seeds from its fingers at the opponent.}}
+{{movemid|type=grass|user=Tangrowth (Pokémon)|user1=A wild Tangrowth|startcode=DP134|startname=Promoting Healthy Tangrowth!}}
+{{movep|type=grass|ms=0286|pkmn=Breloom|method=Breloom opens its mouth and fires multiple light blue or green glowing seeds from its mouth at the opponent.}}
+{{movemid|type=grass|user=Breloom (Pokémon)|user1=Multiple wild Breloom|startcode=M13|startname=Zoroark: Master of Illusions}}
+{{movemid|type=grass|user=Breloom (Pokémon)|user1=Two wild Breloom|startcode=M16|startname=Genesect and the Legend Awakened}}
+{{movemid|type=grass|user=Pokémon Coordinator|user1=A Coordinator's Breloom|startcode=JN105|startname=Reuniting for the First Time!}}
+{{movep|type=grass|ms=0192|pkmn=Sunflora|method=Sunflora opens its mouth and fires multiple glowing light blue seeds from its mouth at the opponent.}}
+{{movemid|type=grass|user=Sunflora (Pokémon)|user1=Multiple wild Sunflora|startcode=M13|startname=Zoroark: Master of Illusions}}
+{{movep|type=grass|ms=0402|pkmn=Kricketune|method=Kricketune opens its mouth and releases multiple glowing light blue seeds from its mouth at the opponent.}}
+{{movemid|type=grass|user=Kricketune (Pokémon)|user1=Two wild Kricketune|startcode=M13|startname=Zoroark: Master of Illusions|notes=Kricketune {{color2|000|Animated series move errors|cannot legally learn}} Bullet Seed}}
+{{movep|type=grass|ms=0511|pkmn=Pansage|method=Pansage releases multiple gold seeds surrounded in a light green aura from its mouth at the opponent.}}
+{{movemid|type=grass|user=Cilan's Pansage|startcode=BW005|startname=Triple Leaders, Team Threats!}}
+{{movep|type=grass|ms=0226|pkmn=Mantine|method=Mantine releases multiple gold seeds surrounded in a light green aura from its mouth at the opponent.}}
+{{movemid|type=grass|user=Marlon|user1=Marlon's Mantine|startcode=BW094|startname=The Road to Humilau!}}
+{{movep|type=grass|ms=0407|pkmn=Roserade|method=Roserade fires multiple gold seeds surrounded in a light green aura from its flowers at the opponent; or Roserade fires multiple light green seeds from both of its flowers at the opponent.}}
+{{movemid|type=grass|user=Cher|user1=Cher's Roseradette|startcode=BW098|startname=Beauties Battling for Pride and Prestige!}}
+{{movemid|type=grass|user=Cynthia (anime)|user1=Cynthia's Roserade|startcode=JN123|startname=Bewitch, Battle, and Bewilder!}}
+{{movep|type=grass|ms=0460|pkmn=Abomasnow|method=Abomasnow releases multiple gold seeds surrounded in a light green aura from its mouth at the opponent.}}
+{{movemid|type=grass|user=Morana|user1=Morana's Abomasnow|startcode=BW140|startname=Survival of the Striaton Gym!}}
+{{movep|type=grass|ms=0512|pkmn=Simisage|method=Simisage opens its mouth and fires multiple glowing green seeds from its mouth at the opponent.}}
+{{movemid|type=grass|user=Simisage (Pokémon)|user1=A ninja's Simisage|startcode=XY099|startname=The Legend of the Ninja Hero!}}
+{{movep|type=grass|ms=0127|pkmn=Pinsir|method=Pinsir fires several blasts of green energy at the opponent.}}
+{{movemid|type=grass|user=Pinsir (Pokémon)|user1=Levi and Cherie's Pinsir|startcode=M19|startname=Volcanion and the Mechanical Marvel|notes=Pinsir {{color2|000|Animated series move errors|cannot legally learn}} Bullet Seed}}
+{{movep|type=grass|ms=0214|pkmn=Heracross|method=Heracross fires several blasts of green energy at the opponent.}}
+{{movemid|type=grass|user=Heracross (Pokémon)|user1=Levi and Cherie's Heracross|startcode=M19|startname=Volcanion and the Mechanical Marvel}}
+{{movep|type=grass|ms=0214M|pkmn=Heracross|method=A light green ball of energy forms in front of Mega Heracross's larger horn. It then fires several blasts of light-green energy from the ball at the opponent and a light-green ring of aura bursts from around the light-green balls as they are fired.}}
+{{movemid|type=grass|user=Heracross (Pokémon)|user1=Levi and Cherie's Heracross|startcode=M19|startname=Volcanion and the Mechanical Marvel}}
+{{movep|type=grass|ms=0127M|pkmn=Pinsir|method=Mega Pinsir spits multiple blasts of light green balls of energy from in front of its mouth at the opponent and a light green ring of aura bursts from around the light green balls as they are fired.}}
+{{movemid|type=grass|user=Pinsir (Pokémon)|user1=Levi and Cherie's Pinsir|startcode=M19|startname=Volcanion and the Mechanical Marvel|notes=Pinsir {{color2|000|Animated series move errors|cannot legally learn}} Bullet Seed}}
+{{movep|type=grass|ms=0733|pkmn=Toucannon|method=Toucannon releases multiple gold seeds or pebbles surrounded in a light green aura from its beak at the opponent.}}
+{{movemid|type=grass|user=Toucannon's flock#Toucannon|user1=Toucannon (anime)|startcode=SM004|startname=First Catch in Alola, Ketchum-Style!}}
+{{movep|type=grass|ms=0732|pkmn=Trumbeak|method=Trumbeak releases multiple gold seeds or pebbles surrounded in a light green aura from its beak at the opponent.}}
+{{movemid|type=grass|user=Toucannon's flock#Trumbeak|user1=Trumbeak (anime)|startcode=SM004|startname=First Catch in Alola, Ketchum-Style!}}
+{{movep|type=grass|ms=0187|pkmn=Hoppip|method=Hoppip fires multiple light green seeds from its mouth at the opponent.}}
+{{movemid|type=grass|user=Pokémon Trainer|user1=A Trainer's Hoppip|startcode=JN024|startname=A Little Rocket R & R!}}
+{{movep|type=grass|ms=0819|pkmn=Skwovet|method=Skwovet fires multiple light green seeds from its mouth at the opponent.}}
+{{movemid|type=grass|user=Goh's Skwovet|startcode=JN047|startname=Crowning the Chow Crusher!}}
+{{movep|type=grass|ms=0893|pkmn=Zarude|method=Zarude fires multiple light green seeds from its mouth at the opponent.}}
+{{movemid|type=grass|user=Zarude (Pokémon)|user1=Multiple wild Zarude|startcode=M23|startname=Secrets of the Jungle}}
+{{movep|type=grass|ms=0598|pkmn=Ferrothorn|method=Ferrothorn fires multiple light green seeds at the opponent.}}
+{{movemid|type=grass|user=Goh|user1=Goh's Ferrothorn|startcode=Trial on a Golden Scale!}}
+{{movep|type=grass|ms=0820|pkmn=Greedent|method=Greedent fires multiple light green seeds from its mouth at the opponent.}}
+{{movemid|type=grass|user=Goh's Greedent|startcode=JN101|startname=A One-Stick Wonder!}}
+{{movep|type=grass|ms=0951|pkmn=Capsakid|method=Capsakid fires multiple light green seeds from its mouth at the opponent.}}
+{{movebtm|type=grass|user=Capsakid (Pokémon)|user1=A wild Capsakid|startcode=HZ052|startname=Wattrel's High Wind Warning!}}
+
+* In ''[[SM097|No Stone Unturned!]]'', {{Ash}} tried to teach his {{AP|Rowlet}} Bullet Seed, despite {{p|Rowlet}} being unable to learn the move until [[Generation IX]].
+
+===POKÉTOON===
+{{moveanime|type=grass|exp=yes|gen=The user shoots high-velocity seeds at the opponent.|image1=Akira Capsakid Bullet Seed PT.png|image1p=Capsakid}}
+{{movep|type=grass|ms=0951|pkmn=Capsakid|method=Capsakid fires multiple light green seeds from its mouth at the opponent.}}
+{{movebtm|type=grass|user=Capsakid (Pokémon)|user1=Akira's Capsakid|startcode=PT15|notes=Debut}}
+
+==In the manga==
+===Ash & Pikachu===
+{{Movemanga|type=grass|exp=yes|gen=The user fires a barrage of seeds from its mouth.|image1=Ash Grovyle Bullet Seed AP.png|image1p=Grovyle}}
+{{movep|type=grass|ms=253|pkmn=Grovyle|method=Grovyle opens its mouth and fires a barrage of seeds at the opponent.}}
+{{MovebtmManga|type=grass|user=Ash's Grovyle|startcode=SP25|startname=I'll Win With My Own Battle Style!!|notes=Debut}}
+
+===Movie adaptations===
+{{movemanga|type=grass|exp=yes|gen=The user shoots a barrage of seeds from its mouth.|image1=Maury Torterra Bullet Seed M10 manga.png|image1p=Torterra}}
+{{movep|type=grass|ms=389|pkmn=Torterra|method=Torterra opens its mouth and shoots a barrage of seeds at the opponent.}}
+{{movebtmManga|type=grass|user=Maury|user1=Maury's Torterra|startcode=The Rise of Darkrai (manga)|startname=The Rise of Darkrai|notes=Debut}}
+
+===Phantom Thief Pokémon 7===
+{{Movemanga|type=grass|exp=yes|gen=The user fires seeds at the opponent.|image1=Lily Leafeon Bullet Seed P7.png|image1p=Leafeon}}
+{{movep|type=grass|ms=470|pkmn=Leafeon|method=Leafeon fires several seeds out of its mouth at the opponent.}}
+{{MovebtmManga|type=grass|user=Lily (Pokémon 7)|user1=Lily's Leafeon|startcode=P7-10|startname=Breaking Into An Enemy's Lair!|notes=Debut}}
+
+===Pokémon Adventures===
+{{movemanga|type=grass|exp=yes|gen=The user attacks by forcefully shooting seeds at the target.|image1=Wally Grovyle Bullet Seed.png|image1p=Grovyle|image2=Gurkinn Mega Heracross Bullet Seed Adventures.png|image2p=Mega Heracross}}
+{{movep|type=grass|ms=253|pkmn=Grovyle|method=Grovyle waves its hand around in a circle in front of it and a ring of seeds appear in front of it. Grovyle then waves its arm down and the seeds fire at the opponent at the same time.}}
+{{movemid|type=grass|user=Emerald's Sceptile|user1=Wally's Grovyle|startcode=PS258|startname=Rayquaza Redemption I|notes=Debut}}
+{{movep|type=grass|ms=214M|pkmn=Heracross|method=Mega Heracross fires multiple seeds from its arms at the opponent.}}
+{{movemid|type=grass|user=Gurkinn|user1=Gurkinn's Heracross|startcode=PS569|startname=Glittering Diancie}}
+{{movep|type=grass|ms=0952|pkmn=Scovillain|method=Scovillain fires multiple seeds from its mouths at the opponent.}}
+{{movebtmManga|type=grass|user=Arven (Adventures)|user1=Arven's Scovillain|startcode=PASV25}}
+
+==In other generations==
+===Core series games===
+{{movegen|
+type=Grass|
+genIII=Bullet Seed III|
+genIV=Bullet Seed IV|
+genV=Bullet Seed V|
+genVI=Bullet Seed VI|
+genVI2=Bullet Seed VI 2|
+}}
+{{movegen|
+type=Grass|
+genVII=Bullet Seed VII|
+genVIII=Bullet Seed VIII|
+ZA=Bullet Seed ZA
+}}
+
+===Side series games===
+{{movegen|
+type=Grass|
+Colo=Bullet Seed Colo|
+XD=Bullet Seed XD|
+PBR=Bullet Seed PBR
+}}
+===Spin-off series games===
+{{movegen|
+type=Grass|
+PMDRB=Bullet Seed PMD RB|
+PMDTDS=Bullet Seed PMD TDS|
+PMDGTI=Bullet Seed PMD GTI|
+PSMD=Bullet Seed PSMD|
+}}
+{{movegen|
+type=Grass|
+Masters=Bullet Seed Masters
+}}
+
+==Trivia==
+* Bullet Seed is the only {{type|Grass}} [[multistrike move]].
+
+==In other languages==
+{{Langtable|color={{grass color}}|bordercolor={{grass color light}}
+|zh_yue=種子機關槍 ''{{tt|Júngjí Gēigwāanchēung|Seed Machine Gun}}''
+|zh_cmn=種子機關槍 / 种子机关枪 ''{{tt|Zhǒngzǐ Jīguānqiāng|Seed Machine Gun}}''
+|cs=Semínková střela
+|nl=Kogelzaad
+|fi=Siemenhyökkäys
+|fr=Balle Graine
+|de=Kugelsaat
+|el=Σπόροι Σφαίρες ''Spóroi Sfaíres''
+|hi=बुलेट सीड ''Bullet Seed''
+|id=Peluru Biji{{tt|*|Pokémon GO}}<br>Tembakan Biji<br>Senapan Biji
+|it=Semitraglia
+|ko=씨기관총 ''{{tt|Ssi-Gigwanchong|Seed Machine Gun}}''<sup>{{gen|IX}}+</sup><br>기관총 ''{{tt|Gigwanchong|Machine Gun}}''<sup>{{gen|III}}–{{gen|VIII}}</sup>
+|pl=Nasienny Pocisk<!--{{tt|*|Diamond and Pearl series onwards}}<br>Puls Nasion{{tt|*|Advanced}}-->
+|pt_br=Projétil de Semente (games, [[XY073]]–present, {{TCG|Secret Wonders}}, {{TCG|Dragons Exalted}}–present, {{TCG|BW Black Star Promos|BW Promo}}, manga)<br>Semente de Bala ({{TCG|Emerging Powers}})<br>Rajada de Sementes (''[[Pokémon the Series: Ruby and Sapphire]]''{{tt|*|AG041–AG086, AG095–AG101, AG107–AG110, AG129–AG130, AG163–AG174, AG184–AG188}}–''[[Pokémon the Series: Black & White]]'')<br>Balas de Semente (''Pokémon the Series: Ruby and Sapphire''{{tt|*|AG093, AG103–AG107, AG121–AG128, AG131–AG162, AG178, AG191}})<br>Semente Bala ([[AG037]])
+|pt_eu=Balas de Semente<br>Recorrente<br>Semente Bala (animated series)
+|ro=Sămânța Glonț
+|ru=Выстреливающие Семена ''{{tt|Vystrelivayushchiye Semena|Shooting Seeds}}''
+|sr=Ispaljivanje semenki
+|es_la=Bala Semilla<!--{{tt|*|Also referred to in the plural form ''Balas Semillas'' until Season 14.}}-->
+|es_eu=Semilladora<sup>{{gen|VIII}}+</sup><br>Recurrente<sup>{{gen|III}}–{{gen|VII}}</sup>
+|sv=Kulfröattack
+|th=ปืนกลเมล็ดพืช ''{{tt|Puenkon Maletphuet|Seed Machine Gun}}''
+|tr=Mermi Tohumu
+|vi=Đạn Hạt Mầm <br> Đạn Hạt Liên Thanh
+|ca=Metrallavors
+}}
+
+{{Bullet Seed}}
+{{Generation III TMs}}
+{{Generation IV TMs}}
+{{Generation VIII TMs}}
+{{Generation IX TMs}}
+{{Project Moves and Abilities notice}}
+
+[[Category:Ball and bomb moves]]
+[[Category:Multistrike moves]]
+[[Category:Moves that can jam]]
+[[Category:Moves usable in Pokémon Sword and Shield]]
+[[Category:Moves usable in Pokémon Scarlet and Violet]]
+[[Category:Moves in Pokémon Legends: Z-A]]
+
+[[de:Kugelsaat]]
+[[es:Bala Semilla/Semilladora]]
+[[fr:Balle Graine]]
+[[it:Semitraglia]]
+[[ja:タネマシンガン]]
+[[zh:种子机关枪（招式）]]

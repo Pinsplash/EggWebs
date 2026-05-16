@@ -1,0 +1,387 @@
+{{MoveInfobox
+|n=73
+|name=Leech Seed
+|jname=やどりぎのタネ
+|jtranslit=Yadorigi no Tane
+|jtrans=Mistletoe Seed
+|gameimage=Leech Seed IX.png
+|gameimage2=Leech Seed IX 2.png
+|gameimagewidth=300
+|type=Grass
+|damagecategory=Status
+|basepp=10
+|maxpp=16
+|power=—
+|accuracy=90
+|gen=I
+|category=Clever
+|appeal=2
+|jam=2
+|cdesc=Startles all Pokémon that have done their appeals.
+|appealsc=0
+|scdesc=Earn a higher score the later the Pokémon performs.
+|category6=Clever
+|appeal6=1
+|jam6=0
+|cdesc6=Gets the Pokémon pumped up. Helps prevent nervousness, too.
+|touches=no
+|protect=yes
+|magiccoat=yes
+|snatch=no
+|mirrormove=yes
+|kingsrock=no
+|sound=no
+|target=anyadjacent
+}}
+'''Leech Seed''' (Japanese: '''やどりぎのタネ''' ''{{wp|Mistletoe}} Seed'') is a non-damaging {{type|Grass}} [[move]] introduced in [[Generation I]].
+
+==Effect==
+{{main|Seeding}}
+
+Leech Seed [[seeding|plants a seed]] on the target.
+
+Leech Seed is also part of a [[Contest combination|Contest Spectacular combination]], with the user gaining an extra three appeal points if {{m|Rototiller}} was used in the prior turn.
+
+If powered up by a [[Grassium Z]] into Z-Leech Seed, all of the user's lowered stats are reset.
+
+===Generation IX===
+====Pokémon Legends: Z-A====
+{{LegendsZAMove
+|type=Grass
+|damagecategory=Status
+|cooldown=12
+|charge-time=20
+}}
+
+==Description==
+{{movedesc|Grass}}
+{{movedescentry|{{gameabbrevss|Stad}}|Plants a seed on the target {{ScPkmn}}. The seed slowly drains the target's HP for the attacker.}}
+{{movedescentry|{{gameabbrevss|Stad2}}|Plants a seed on the target {{ScPkmn}}. It slowly drains the target's HP for the attacker.}}
+{{movedescentry|{{gameabbrev2|GSC}}|Steals HP from the foe on every turn.}}
+{{movedescentry|{{gameabbrev3|RSE}}|Plants a seed on the foe to steal HP on every turn.}}
+{{movedescentry|{{gameabbrev3|FRLG}}|A seed is planted on the foe to steal some HP for the user on every turn.}}
+{{movedescentry|{{gameabbrevss|Colo}}{{gameabbrevss|XD}}|Plants a seed on the target to steal HP on every turn.}}
+{{movedescentry|{{gameabbrev4|DPPtHGSS}}{{gameabbrevss|PBR}}|A seed is planted on the foe. It steals some HP from the foe to heal the user on every turn.}}
+{{movedescentry|{{gameabbrev5|BWB2W2}}<br>{{gameabbrev6|XYORAS}}<br>{{gameabbrev7|SMUSUMPE}}<br>{{gameabbrev8|SwShBDSPLA}}<br>{{gameabbrev9|SV}}|A seed is planted on the target. It steals some HP from the target every turn.}}
+{{movedescentry|{{gameabbrev9|ZA}}|The user plants seeds that will slowly but continually absorb HP from targets and restore the user's HP.}}
+|}
+|}{{left clear}}
+
+==Learnset==
+===By [[Level|leveling up]]===
+{{Movehead/Games|Grass|g7=2|g8=2|g9=2}}
+{{Moveentry/12|0001|Bulbasaur|type=Grass|type2=Poison|2|Monster|Grass|7|7|7|7|7|7|7{{sup/7|USUM}}|9|9|9|9|9}}
+{{Moveentry/12|0002|Ivysaur|type=Grass|type2=Poison|2|Monster|Grass|1, 7|1, 7|1, 7|1, 7|1, 7|1, 7|1, 7|1, 9|9|9|9|9}}
+{{Moveentry/12|0003|Venusaur|type=Grass|type2=Poison|2|Monster|Grass|1, 7|1, 7|1, 7|1, 7|1, 7|1, 7|1, 7|1, 9|9|9|9|9}}
+{{Moveentry/12|0047|Parasect|type=Bug|type2=Grass|2|Bug|Grass|−|−|−|−|−|−|−|1||−}}
+{{Moveentry/12|0102|Exeggcute|type=Grass|type2=Psychic|1|Grass|Grass|28|13|13|11|11|11|11|34|10|10|10}}
+{{Moveentry/12|0103|Exeggutor|type=Grass|type2=Psychic|1|Grass|Grass|−|−|−|−|−|−|−||1|1|1}}
+{{Moveentry/12|0103|formsig=A|Exeggutor|type=Grass|type2=Dragon|1|Grass|Grass|form=Alolan Form|||||||−|−|1||1|STAB='''}}
+{{Moveentry/12|0114|Tangela|type=Grass|1|Grass|Grass|−|−|−|−|−|−|−|39|−|−}}
+{{Moveentry/12|0152|Chikorita|type=Grass|2|Monster|Grass||−|−|−|−|−|−|||−|23|14}}
+{{Moveentry/12|0153|Bayleef|type=Grass|2|Monster|Grass||−|−|−|−|−|−|||−|26|14}}
+{{Moveentry/12|0154|Meganium|type=Grass|2|Monster|Grass||−|−|−|−|−|−|||−|26|14}}
+{{Moveentry/12|0187|Hoppip|type=Grass|type2=Flying|2|Fairy|Grass||20|20|22|22|22|22|||22|19}}
+{{Moveentry/12|0188|Skiploom|type=Grass|type2=Flying|2|Fairy|Grass||22|22|24|24|24|24|||24|20}}
+{{Moveentry/12|0189|Jumpluff|type=Grass|type2=Flying|2|Fairy|Grass||22|22|24|24|24|24|||24|20}}
+{{Moveentry/12|0191|Sunkern|type=Grass|1|Grass|Grass||−|−|17|17{{sup/5|BW}}<br>13{{sup/5|B2W2}}|13|13|||13|−}}
+{{Moveentry/12|0192|Sunflora|type=Grass|1|Grass|Grass||−|−|17|17{{sup/5|BW}}<br>13{{sup/5|B2W2}}|13|13|||13|13}}
+{{Moveentry/12|0251|Celebi|type=Psychic|type2=Grass|1|No Eggs Discovered|No Eggs Discovered||1|1|1|1|1|1||50|50}}
+{{Moveentry/12|0252|Treecko|type=Grass|2|Monster|Dragon|||−|−|−|−|−|||−|−|14}}
+{{Moveentry/12|0253|Grovyle|type=Grass|2|Monster|Dragon|||−|−|−|−|−|||−|−|14}}
+{{Moveentry/12|0254|Sceptile|type=Grass|2|Monster|Dragon|||−|−|−|−|−|||−|−|14}}
+{{Moveentry/12|0270|Lotad|type=Water|type2=Grass|2|Water 1|Grass|||−|−|−|−|−||−|−|24}}
+{{Moveentry/12|0271|Lombre|type=Water|type2=Grass|2|Water 1|Grass|||−|−|−|−|−||−|−|30}}
+{{Moveentry/12|0285|Shroomish|type=Grass|2|Fairy|Grass|||10|13|13|13{{sup/6|XY}}<br>8{{sup/6|ORAS}}|8|||8|8}}
+{{Moveentry/12|0286|Breloom|type=Grass|type2=Fighting|2|Fairy|Grass|||1, 10|1, 13|1, 13|1, 13{{sup/6|XY}}<br>1, 8{{sup/6|ORAS}}|1, 8|||1, 8|1}}
+{{Moveentry/12|0315|Roselia|type=Grass|type2=Poison|2|Fairy|Grass|||21|16|16|16|16||10|10||10}}
+{{Moveentry/12|0331|Cacnea|type=Grass|2|Grass|Human-Like|||13|13|13|13{{sup/6|XY}}<br>10{{sup/6|ORAS}}|10|||10|10}}
+{{Moveentry/12|0332|Cacturne|type=Grass|type2=Dark|2|Grass|Human-Like|||13|13|13|13{{sup/6|XY}}<br>10{{sup/6|ORAS}}|10|||10|10}}
+{{Moveentry/12|0346|Cradily|type=Rock|type2=Grass|1|Water 3|Water 3|||−|−|−|−|−||1|1}}
+{{Moveentry/12|0387|Turtwig|type=Grass|2|Monster|Grass||||29|29|29|29|||29|29}}
+{{Moveentry/12|0388|Grotle|type=Grass|2|Monster|Grass||||32|32|32|32|||32|32}}
+{{Moveentry/12|0389|Torterra|type=Grass|type2=Ground|2|Monster|Grass||||33|33|33|33|||33|33}}
+{{Moveentry/12|0407|Roserade|type=Grass|type2=Poison|2|Fairy|Grass||||−|−|−|−||1|1||10}}
+{{Moveentry/12|0420|Cherubi|type=Grass|2|Fairy|Grass||||10|10|10|10||26|26}}
+{{Moveentry/12|0421|Cherrim|type=Grass|2|Fairy|Grass||||10|10|10|1, 10||28|28}}
+{{Moveentry/12|0459|Snover|type=Grass|type2=Ice|2|Monster|Grass||||−|−|−|−||−|−|−|35}}
+{{Moveentry/12|0460|Abomasnow|type=Grass|type2=Ice|2|Monster|Grass||||−|−|−|−||−|−|−|35}}
+{{Moveentry/12|0470|Leafeon|type=Grass|1|Field|Field||||−|−|−|−||20|20|20|20}}
+{{Moveentry/12|0492|Shaymin|type=Grass|1|No Eggs Discovered|No Eggs Discovered|form=All available forms||||19|19|19|19|||19|19}}
+{{Moveentry/12|0495|Snivy|type=Grass|2|Field|Grass|||||19|19|19||||19}}
+{{Moveentry/12|0496|Servine|type=Grass|2|Field|Grass|||||20|20|20||||20}}
+{{Moveentry/12|0497|Serperior|type=Grass|2|Field|Grass|||||20|20|20||||20}}
+{{Moveentry/12|0511|Pansage|type=Grass|1|Field|Field|||||16|16|16|||||1}}
+{{Moveentry/12|0512|Simisage|type=Grass|1|Field|Field|||||−|−|−|||||1}}
+{{Moveentry/12|0546|Cottonee|type=Grass|type2=Fairy|2|Grass|Fairy|||||8|8|8||30||30}}
+{{Moveentry/12|0547|Whimsicott|type=Grass|type2=Fairy|2|Grass|Fairy|||||1|1|1||1||1}}
+{{Moveentry/12|0548|Petilil|type=Grass|1|Grass|Grass|||||8|8|8||24||24}}
+{{Moveentry/12|0549|Lilligant|type=Grass|1|Grass|Grass|||||1|1|1||1||1}}
+{{Moveentry/12|0549|formsig=H|Lilligant|type=Grass|type2=Fighting|1|Grass|Grass|form=Hisuian Form|||||||||||1}}
+{{Moveentry/12|0556|Maractus|type=Grass|1|Grass|Grass|||||−|−|−||12}}
+{{Moveentry/12|0585|Deerling|type=Normal|type2=Grass|1|Field|Field|form=All forms|||||13|13|13||||13}}
+{{Moveentry/12|0586|Sawsbuck|type=Normal|type2=Grass|1|Field|Field|form=All forms|||||13|13|13||||13}}
+{{Moveentry/12|0650|Chespin|type=Grass|1|Field|Field||||||15|15||||15|15}}
+{{Moveentry/12|0651|Quilladin|type=Grass|1|Field|Field||||||15|15||||15|15}}
+{{Moveentry/12|0652|Chesnaught|type=Grass|type2=Fighting|1|Field|Field||||||15|15||||15|15}}
+{{Moveentry/12|0672|Skiddo|type=Grass|1|Field|Field||||||12|12||||12|12}}
+{{Moveentry/12|0673|Gogoat|type=Grass|1|Field|Field||||||12|12||||12|12}}
+{{Moveentry/12|0708|Phantump|type=Ghost|type2=Grass|2|Grass|Amorphous||||||23|23||8||8|8}}
+{{Moveentry/12|0709|Trevenant|type=Ghost|type2=Grass|2|Grass|Amorphous||||||23|23||1||1|8}}
+{{Moveentry/12|0710|Pumpkaboo|type=Ghost|type2=Grass|1|Amorphous|Amorphous|form=All forms||||||20|20||16|||16}}
+{{Moveentry/12|0711|Gourgeist|type=Ghost|type2=Grass|1|Amorphous|Amorphous|form=All forms||||||20|20||16|||16}}
+{{Moveentry/12|0764|Comfey|type=Fairy|1|Grass|Grass|||||||4||21||21}}
+{{Moveentry/12|0787|Tapu Bulu|type=Grass|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered|||||||26||15}}
+{{Moveentry/12|0797|Celesteela|type=Steel|type2=Flying|1|No Eggs Discovered|No Eggs Discovered|||||||19||55}}
+{{Moveentry/12|0841|Flapple|type=Grass|type2=Dragon|2|Grass|Dragon|||||||||12||12}}
+{{Moveentry/12|0842|Appletun|type=Grass|type2=Dragon|2|Grass|Dragon|||||||||12||12}}
+{{Moveentry/12|0898|Calyrex|type=Psychic|type2=Grass|1|No Eggs Discovered|No Eggs Discovered|form=All forms|||||||||64||64}}
+{{Moveentry/12|0928|Smoliv|type=Grass|type2=Normal|1|Grass|Grass|||||||||||34}}
+{{Moveentry/12|0929|Dolliv|type=Grass|type2=Normal|1|Grass|Grass|||||||||||37}}
+{{Moveentry/12|0930|Arboliva|type=Grass|type2=Normal|1|Grass|Grass|||||||||||39}}
+{{Moveentry/12|0951|Capsakid|type=Grass|1|Grass|Grass|||||||||||−|16}}
+{{Moveentry/12|0952|Scovillain|type=Grass|type2=Fire|1|Grass|Grass|||||||||||−|16}}
+{{Moveentry/12|1001|Wo-Chien|type=Dark|type2=Grass|1|No Eggs Discovered|No Eggs Discovered|||||||||||25}}
+{{Moveentry/12|1017|Ogerpon|type=Grass|1|No Eggs Discovered|No Eggs Discovered|form=All forms|||||||||||1}}
+{{Movefoot|Grass|12}}
+
+===By {{pkmn|breeding}}===
+{{Movehead/Games|Grass|Egg Move|g1=none|g7=1|g7g={{gameabbrev7|SMUSUM}}|g8=2|g9=1|g9g={{gameabbrev9|SV}}}}
+{{Moveentry/9|0043|Oddish|type=Grass|type2=Poison|1|Grass|Grass|−|−|−|−|−|−|✔|✔|✔}}
+{{Moveentry/9|0046|Paras|type=Bug|type2=Grass|2|Bug|Grass|−|−|−|✔|✔|✔||✔}}
+{{Moveentry/9|0100|formsig=H|Voltorb|type=Electric|type2=Grass|1|Mineral|Mineral|form=Hisuian Form|||||||||✔}}
+{{Moveentry/9|0114|Tangela|type=Grass|1|Grass|Grass|−|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/9|0152|Chikorita|type=Grass|2|Monster|Grass|✔|✔|✔|✔|✔|✔||✔|−}}
+{{Moveentry/9|0191|Sunkern|type=Grass|1|Grass|Grass|−|✔|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/9|0252|Treecko|type=Grass|2|Monster|Dragon||✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/9|0270|Lotad|type=Water|type2=Grass|2|Water 1|Grass||✔|✔|✔|✔|✔|✔|✔|−}}
+{{Moveentry/9|0273|Seedot|type=Grass|2|Field|Grass||✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/9|0357|Tropius|type=Grass|type2=Flying|2|Monster|Grass||✔|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/9|0455|Carnivine|type=Grass|1|Grass|Grass|||✔|✔|✔|✔||✔}}
+{{Moveentry/9|0459|Snover|type=Grass|type2=Ice|2|Monster|Grass|||✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/9|0556|Maractus|type=Grass|1|Grass|Grass||||✔|✔|✔|−}}
+{{Moveentry/9|0597|Ferroseed|type=Grass|type2=Steel|2|Grass|Mineral||||✔|✔|✔|✔}}
+{{Moveentry/9|0755|Morelull|type=Grass|type2=Fairy|1|Grass|Grass||||||✔|✔}}
+{{Moveentry/9|0810|Grookey|type=Grass|2|Field|Grass|||||||✔||✔}}
+{{Moveentry/9|0829|Gossifleur|type=Grass|1|Grass|Grass|||||||✔}}
+{{Moveentry/9|0906|Sprigatito|type=Grass|2|Field|Grass|||||||||✔}}
+{{Moveentry/9|0946|Bramblin|type=Grass|type2=Ghost|1|Grass|Grass|||||||||✔}}
+{{Moveentry/9|0948|Toedscool|type=Ground|type2=Grass|1|Grass|Grass|||||||||✔}}
+{{Moveentry/9|0951|Capsakid|type=Grass|1|Grass|Grass|||||||||✔}}
+{{Movefoot|Grass|9}}
+
+===Special move===
+====[[Generation III]]====
+{{Movehead/Special|Grass}}
+{{Moveentry/1|0273|Seedot|type=Grass|2|Field|Grass|[[Mass outbreak]] - {{rt|102|Hoenn}}, {{rtn|117|Hoenn}} and {{rtn|120|Hoenn}}}}
+{{Moveentry/1|0274|Nuzleaf|type1=Grass|type2=Dark|2|Field|Grass|[[Mass outbreak]] - {{rt|114|Hoenn}}}}
+{{Movefoot|Grass|1}}
+
+====[[Generation V]]====
+{{Movehead/Special|Grass}}
+{{Moveentry/1|0114|Tangela|type=Grass|1|Grass|Grass|{{pkmn|Dream World}} - {{dwa|Pleasant Forest}}}}
+{{Moveentry/1|0270|Lotad|type=Water|type2=Grass|2|Water 1|Grass|{{pkmn|Dream World}} - {{dwa|Pleasant Forest}}}}
+{{Moveentry/1|0357|Tropius|type=Grass|type2=Flying|2|Monster|Grass|{{pkmn|Dream World}} - {{dwa|Windswept Sky}}}}
+{{Moveentry/1|0556|Maractus|type=Grass|1|Grass|Grass|{{pkmn|Dream World}} - {{dwa|Rugged Mountain}}}}
+{{Movefoot|Grass|1}}
+
+====[[Generation VII]]====
+{{Movehead/Special|Grass}}
+{{Moveentry/1|0152|Chikorita|type=Grass|2|Monster|Grass|{{DL|QR Scanner|Island Scan}} - {{rt|2|Alola}}{{sup/7|SM}}}}
+{{Movefoot|Grass|1}}
+
+===By {{pkmn2|event}}===
+====[[Generation II]]====
+{{Movehead/Special|Grass}}
+{{Moveentry/1|0043|Oddish|type=Grass|type2=Poison|1|Grass|Grass|{{DL|List of PCNY event Pokémon distributions in Generation II|Leech Seed Oddish|New York Pokémon Center}}}}
+{{Movefoot|Grass|1}}
+
+====[[Generation III]]====
+{{Movehead/Special|Grass}}
+{{Moveentry/1|0043|Oddish|type=Grass|type2=Poison|1|Grass|Grass|{{DL|List of Japanese event Pokémon distributions in Generation III|Oddish|Egg Pokémon Present}}}}
+{{Movefoot|Grass|1}}
+
+==In other games==
+==={{g|Mystery Dungeon series}}===
+Leech Seed targets the enemy in front, inflicting them with {{DL|Status condition (Mystery Dungeon)|Leech Seed}} status condition. The afflicted Pokémon loses 10 HP{{sup/md|RB}}{{sup/md|TDS}} / 5 HP{{sup/md|GTI}}{{sup/md|SMD}} at the end of every second turn, and 10 HP{{sup/md|RB}}{{sup/md|TDS}} or 5 HP{{sup/md|GTI}}{{sup/md|SMD}} will be returned to the Pokémon that inflicted the move. The status lasts for 11-12{{sup/md|RB}}{{sup/md|TDS}} / 6{{sup/md|GTI}}{{sup/md|SMD}} turns, or if the Pokémon that used Leech Seed is defeated. {{type|Grass}} Pokémon cannot become affected by Leech Seed. This move is affected by {{m|Magic Coat}}.
+
+{{MDMoveheader|type=grass}}
+{{MDMoveRow|game=RB|pp=17|acc=100%|range=Front|target=Enemy|cuts=Yes}}
+{{MDMoveRow|game=TDS|pp=17|acc=100%|range=Front|target=Enemy|cuts=Yes}}
+{{MDMoveRow|game=BSL|pp=17|acc=100%|range=Front|target=Enemy|cuts=Yes}}
+{{MDMoveRow|game=GTI|pp=13|ppmax=50|acc=95%|accmax=98%|range=Front|target=Enemy|cuts=Yes}}
+{{MDMoveRow|game=SMD|pp=13|ppmax=30|acc=95%|accmax=98%|range=Front|target=Enemy|cuts=Yes}}
+{{MDMovefoot|type=grass|RB=yes|TDS=yes|BSL=yes|GTI=yes|SMD=yes|RTDX=yes}}
+
+===[[Super Smash Bros.]] series===
+In [[Super Smash Bros. Melee]], Leech Seed is one of the random outcomes of {{p|Togepi}}'s {{m|Metronome}}. All characters within the area of effect will receive a flower on their head that causes 5% damage every few seconds.
+
+==={{g|Rumble Rush}}===
+In {{g|Rumble Rush}}, all [[status move]]s including Leech Seed could only be used by opposing Pokémon and could not be obtained on any caught Pokémon. Leech Seed could be seen as a move used by opposing {{p|Sunkern}}.<!--any other opposing Pokémon?-->
+
+{{RumbleRushOtherAttack|move=Leech Seed|type=Grass
+|charge=0.74
+|range=Projectile
+|target=Enemy
+|effect=Drains the foe's HP}}
+
+===Description===
+{{movedesc|Grass}}
+{{movedescentry|{{gameabbrevmd|RB}}|Inflicts the Leech Seed status on the target. The target's HP is leeched every several turns to restore the user's HP.}}
+{{movedescentry|{{gameabbrevmd|TDS}}|Afflicts the targeted enemy with a Leech Seed status condition. A Pokémon with the Leech Seed status loses some HP every few turns, which restores the user's HP by the same amount.}}
+{{movedescentry|{{gameabbrevmd|BSL}}|{{tt|てきポケモンを やどりぎじょうたいにかえる やどりぎじょうたいの てきに いっていターンごとに ダメージをあたえ そのぶんの ＨＰが かいふくする|Afflicts the targeted enemy with a Leech Seed status condition. A Pokémon with the Leech Seed status loses some HP every few turns, which restores the user's HP by the same amount}}}}
+{{movedescentry|{{gameabbrevmd|GTI}}|It causes the Leech Seed status condition to an enemy. It drains HP out of the enemy in the Leech Seed status condition.}}
+{{movedescentry|{{gameabbrevmd|SMD}}<br/>{{gameabbrevmd|RTDX}}|It gives an enemy the Leech Seed status condition.}}
+|}
+|}{{left clear}}
+
+==In animation==
+===Pokémon animated series===
+{{moveanime|type=grass|exp=yes|gen=The user plants a seed on the target. The seed slowly drains the target's stamina.|image1=Mona Lilligant Leech Seed.png|image1p=Lilligant|image2=Jessie Gourgeist Leech Seed.png|image2p=Gourgeist|image3=Nando Sunflora Leech Seed.png|image3p=Sunflora|image4=Jessie Pumpkaboo Leech Seed 3.png|image4p=Being unaffected}}
+{{movep|type=grass|ms=001|pkmn=Bulbasaur|method=A seed sprouts from Bulbasaur's bulb, which shoots out to the opponent. When hit, the opponent becomes wrapped in thin vines and leaves that restrain it. The vines and leaves glow red and suck energy from the opponent. Sometimes, the vines have no leaves at all.}}
+{{movemid|type=grass|user=Ash's Bulbasaur|startcode=EP032|startname=The Ninja Poké-Showdown|notes=Debut}}
+{{movep|type=grass|ms=188|pkmn=Skiploom|method=Skiploom shoots one or two seeds from the middle of the flower on top of its head towards the opponent. When hit, the opponent is wrapped in vines that restrain it. The vines glow red and suck energy from the opponent.}}
+{{movemid|type=grass|user=Ephraim|user1=Ephraim's Skippy|startcode=EP178|startname=The Grass Route}}
+{{movep|type=grass|ms=285|pkmn=Shroomish|method=Shroomish shoots multiple seeds from the hole on its head towards the opponent. When the opponent is hit, the seeds sprout vines which wrap around the opponent. The vines glow red and suck energy from the opponent.}}
+{{movemid|type=grass|user=Alex (AG009)|user1=Alex's multiple Shroomish|startcode=AG009|startname=Taming of the Shroomish}}
+{{movep|type=grass|ms=387|pkmn=Turtwig|method=Turtwig lowers its head and the sprout on its head releases a brown seed at the opponent. The seed digs into the opponent and sprouts vines which wrap around the opponent and drain its energy.}}
+{{movemid|type=grass|user=Gardenia|user1=Gardenia's Turtwig|startcode=DP031|startname=The Grass-type is Always Greener!}}
+{{movep|type=grass|ms=192|pkmn=Sunflora|method=Sunflora releases two brown seeds from the back of its head at the opponent. When the seeds hit the opponent, the seeds sprout vines and wrap up the opponent.}}
+{{movemid|type=grass|user=Nando|user1=Nando's Sunflora|startcode=DP036|startname=The Secret Sphere of Influence!}}
+{{movep|type=grass|ms=549|pkmn=Lilligant|method=Lilligant releases one giant seed from her head at the opponent.}}
+{{movemid|type=grass|user=Mona|user1=Mona's Lilligantette|startcode=BW098|startname=Beauties Battling for Pride and Prestige!}}
+{{movep|type=grass|ms=710|pkmn=Pumpkaboo|method=Pumpkaboo shoots several seeds from its mouth into the ground. The seeds immediately grow into vines that latch onto a target and drain them of their energy. When a Grass-type Pokémon is seeded, the target is still bound by the roots, but they are a dull gray-brown color, and it is unaffected by the energy draining.}}
+{{movemid|type=grass|user=Jessie's Pumpkaboo|startcode=XY011|startname=The Bamboozling Forest!}}
+{{movep|type=grass|ms=673|pkmn=Gogoat|method=Gogoat fires multiple seeds at the opponent. The seeds immediately grow into vines that bind the opponent, or Gogoat fires a seed from its mouth into the ground. The seed immediately grows into vines that latch onto a target and drain them of their energy.}}
+{{movemid|type=grass|user=Ramos|user1=Ramos's Gogoat|startcode=XY057|startname=Thawing an Icy Panic!}}
+{{movep|type=grass|ms=252|pkmn=Treecko|method=Treecko fires multiple seeds from its mouth into the ground. The seed immediately grows into vines that latch onto a target and drain them of their energy.}}
+{{movemid|type=grass|user=Sawyer's Treecko|startcode=XY073|startname=A Fashionable Battle!}}
+{{movep|type=grass|ms=711|pkmn=Gourgeist|method=Gourgeist shoots several seeds from its mouth into the ground. The seeds immediately grow into vines that latch onto a target and drain them of their energy. When a Grass-type Pokémon is seeded, the target is still bound by the roots, but they are a dull gray-brown color, and it is unaffected by the energy draining.}}
+{{movebtm|type=grass|user=Jessie's Gourgeist|startcode=XY082|startname=A Festival Trade! A Festival Farewell?}}
+
+===Pokémon Masters Animated Trailer===
+{{moveanime|type=grass|exp=yes|gen=A seed is planted on the foe. It steals some HP from the foe.|image1=Lass Whimsicott Masters Leech Seed.png|image1p=Whimsicott|image2=Brock Onix Masters Trailer.png|image2p=Effect}}
+{{movep|type=grass|ms=547|pkmn=Whimsicott|method=Whimsicott shoots a light-green seed at the opponent. The seed immediately grow into vines that latch onto a target and drain them of their energy.}}
+{{movebtm|type=grass|user=Lass (Trainer class)|user1=A Lass's Whimsicott|startcode=Pokémon Masters Animated Trailer}}
+
+==In the manga==
+===The Electric Tale of Pikachu===
+{{movemanga|type=grass|exp=yes|gen=A seed is planted on the foe. It steals some HP from the foe to heal the user on every turn.|image1=Ash Bulbasaur Leech Seed EToP.png|image1p=Bulbasaur}}
+{{movep|type=grass|ms=001|pkmn=Bulbasaur|method=Bulbasaur releases a seed at the opponent from the bulb on its back. When the seed hits it, it sprouts vines that tie up the opponent.}}
+{{movebtmManga|type=grass|user=Ash's Bulbasaur|startcode=ET12|startname=Welcome to the Big Leagues|notes=Debut}}
+
+===Pokémon Adventures===
+{{movemanga|type=grass|exp=yes|gen=A seed is planted on the foe. It steals some HP from the foe to heal the user on every turn.|image1=Saur Bulbasaur Leech Seed.png|image1p=Bulbasaur|image2=Emerald Sceptile Leech Seed.png|image2p=Sceptile|image3=Saur Ivysaur Leech Seed.png|image3p=Ivysaur|image4=White Darlene Leech Seed.png|image4p=Deerling}}
+{{movep|type=grass|ms=001|pkmn=Bulbasaur|method=Bulbasaur releases a seed at the opponent from the bulb on its back. When the seed hits it, it sprouts vines that tie up the opponent.}}
+{{movemid|type=grass|user=Saur|user1=Red's Saur|startcode=PS006|startname=Gyarados Splashes In!|notes=Debut}}
+{{movep|type=grass|ms=002|pkmn=Ivysaur|method=Ivysaur releases a seed at the opponent from the flower bulb on its back. When the seed hits it, it sprouts vines that tie up the opponent.}}
+{{movemid|type=grass|user=Saur|user1=Red's Saur|startcode=PS027|startname=Kalling Kadabra}}
+{{movep|type=grass|ms=189|pkmn=Jumpluff|method=Jumpluff holds its arms above its head and releases a stream of cotton from the cotton puffs on its head and arms at the opponent. The cotton sticks to the opponent and sprout vines that ties up the opponent.}}
+{{movemid|type=grass|user=Eusine|user1=Eusine's Jumpluff|startcode=PS129|startname=Great Girafarig}}
+{{movep|type=grass|ms=254|pkmn=Sceptile|method=Sceptile touches the opponent with the tip of its tail, releasing a seed from it and planting it onto the opponent. The seed sprouts into vines that wrap around the opponent's body and absorbs its energy, or a vine with leaves on it sprouts from one of the seeds on Sceptile's back and wraps themselves around the opponent, draining its energy.}}
+{{movemid|type=grass|user=Emerald's Sceptile|startcode=PS307|startname=Gotcha Where I Wantcha, Glalie}}
+{{movep|type=grass|ms=585S|pkmn=Deerling|method=Deerling shoots multiple seeds from the flower on its head at the opponent.}}
+{{movebtmManga|type=grass|user=White (Adventures)|user1=White's Darlene|startcode=PS490|startname=A Stormy Time in the Battle Subway}}
+
+===Pokémon Diamond and Pearl Adventure!===
+{{movemanga|type=grass|exp=yes|gen=The user spits out seeds which drains the foe's health.|image1=Gardenia Cherubi Leech Seed DPA.png|image1p=Cherubi}}
+{{movep|type=grass|ms=420|pkmn=Cherubi|method=Cherubi spits out multiple seeds which attaches onto a Pokémon that was sent out on the opponent's side of the field, touching the ground.}}
+{{movebtmManga|type=grass|user=Gardenia|user1=Gardenia's Cherubi|startcode=DPA04|startname=Win with Teamwork!!|notes=Debut}}
+
+===Pokémon: Yeah! I Got Pokémon!===
+{{movemanga|type=grass|exp=yes|gen=The user shots out vines.|image1=Celebi Leech Seed GDZ.png|image1p=Celebi}}
+{{movep|type=grass|ms=251|pkmn=Celebi|method=Vines sprout out of Celebi's back and wrap around the opponent.}}
+{{movebtmManga|type=grass|user=Celebi (Pokémon)|user1=A wild Celebi|startcode=GDZ75|notes=Debut}}
+
+==In other generations==
+===Core series games===
+{{Movegen
+|type=grass
+|genI=Leech Seed I
+|genII=Leech Seed II
+|genIII=Leech Seed III
+|genIV=Leech Seed IV
+}}
+{{Movegen
+|type=grass
+|genV=Leech Seed V
+|genVI=Leech Seed VI
+|SMUSUM=Leech Seed VII
+|SMUSUM2=Leech Seed VII 2
+|LGPE=Leech Seed PE
+|LGPE2=Leech Seed PE 2
+}}
+{{Movegen
+|type=Grass
+|genVIII=Leech Seed VIII
+|genVIII2=Leech Seed VIII 2
+|ZA=Leech Seed ZA
+}}
+
+===Side series games===
+{{Movegen
+|type=Grass
+|Stad=Leech Seed Stadium
+|Stad2=Leech Seed Stad2
+|Colo=Leech Seed Colo
+|XD=Leech Seed XD
+}}
+{{Movegen
+|type=Grass
+|PBR=Leech Seed PBR
+}}
+===Spin-off series games===
+{{Movegen
+|type=Grass
+|PMDRB=Leech Seed PMD RB
+|PMDTDS=Leech Seed PMD TDS
+|PMDGTI=Leech Seed PMD GTI
+|PSMD=Leech Seed PSMD
+}}
+
+==Trivia==
+* Though Leech Seed cannot affect {{type|Grass}} Pokémon in the games, Grass-type Pokémon have been affected in the {{pkmn|animated series}}.
+* Despite the origin of its Japanese name being a parasite that attaches itself to a host plant and absorbs nutrients, Leech Seed cannot affect Grass-type Pokémon.
+
+==In other languages==
+{{Langtable|color={{grass color}}|bordercolor={{grass color dark}}
+|zh_yue = 寄生種子 ''{{tt|Geisāng Júngjí|Parasitic Seed}}'' {{tt|*|Games, later animated series}}{{specify|check tooltip: which animated episodes/seasons/series?}}<br>寄生樹種子 ''{{tt|Geisāngsyuh Júngjí|Parasitic Tree Seed}}'' {{tt|*|Early animated series}}{{specify|check tooltip: which episodes/seasons/series?}}
+|zh_cmn=寄生種子 / 寄生种子 ''{{tt|Jìshēng Zhǒngzǐ|Parasitic Seed}}''
+|cs=Pijavičí semínko
+|da=Iglefrø<!--source: Danish version of The Official Pokémon Handbook-->
+|nl=Onttrek HP<br>Onttrek IP (only [[Bulbasaur (Base Set 44)]])
+|fi=Iilisiemen ([[S01|season 1]])<br>Imusiemen ({{aniseries|GS|''Gold and Silver'' series}})<br>Loissiemen ({{aniseries|RS|''Ruby and Sapphire'' series}})
+|fr=Vampigraine
+|de=Egelsamen
+|el=Παρασιτικόσπορος ''Parasitikósporos''
+|hi=लीच का बीज  ''Leech Ka Beej''<br>लिपटने वाली बेल ''Lipatne Wali Bayl''
+|it=Parassiseme
+|ko=씨뿌리기 ''{{tt|Ssippurigi|Seed Spraying}}''
+|no=Snyltefrø
+|pl=Pnącze Mocy{{tt|*|Diamond and Pearl series onwards}}<br>Wysysające Nasionko{{tt|*|Diamond and Pearl (TCG)}}<!---<br>Ziarno Pijawkowe{{tt|*|Advanced}}<br>Ognisty Paralizator{{tt|*|EP268}}<br>Niszczące Ziarno/Atak Ziarnem{{tt|*|EP178}}<br>Kiełkujące Ziarno{{tt|*|EP176}}<br>Dziki Pęd{{tt|*|EP077}}<br>Pijawkowe Pnącza{{tt|*|EP051}}<br>Dzikie Pnącza{{tt|*|EP032}}---><br>Ziarno Pnącza{{tt|*|Manga}}
+|pt_br=Semente Sanguessuga ([[XY073]]–present, {{TCG|Unleashed}}–present, manga, The Official Pokémon Handbook)<br>Semente Mortal ([[EP077]])<br>Semente de Morte ({{TCG|Diamond & Pearl}}–{{TCG|Secret Wonders}})<br>Semente da Morte ({{TCG|Base Set}})<br>Sanguessuga (The Official Pokémon Handbook)<br>Chupa-Vidas (The Official Pokémon Handbook)
+|pt_eu=Semente Sanguessuga
+|ro=Sămânța Parazit
+|sr=Semenka pijavica
+|es=Drenadoras
+|es_la=<!--Drenadoras (games, [[EP176]]–[[AG009]], [[BW098]]–present)<br>Enredadera ([[AG190]], [[DP037]])<br>Semisanguijuela ([[DP036]])<br>Bala Sanguijuela ([[DP031]])<br>Semilla Enredadera ([[EP032]]–[[EP077]])-->
+|sv=Blodigelfrö<br>Blodigelsfrö
+|tr=Parazit Tohum
+|vi=Hạt Mầm Kí Sinh
+}}
+
+{{Project Moves and Abilities notice}}
+[[Category:HP-draining moves]]
+[[Category:Moves that can jam]]
+[[Category:Moves that restore HP]]
+[[Category:Moves in Pokémon: Let's Go, Pikachu! and Let's Go, Eevee!]]
+[[Category:Moves usable in Pokémon Sword and Shield]]
+[[Category:Moves usable in Pokémon Scarlet and Violet]]
+[[Category:Moves in Pokémon Legends: Z-A]]
+
+[[de:Egelsamen]]
+[[es:Drenadoras]]
+[[fr:Vampigraine]]
+[[it:Parassiseme]]
+[[ja:やどりぎのタネ]]
+[[zh:寄生种子（招式）]]

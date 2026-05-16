@@ -1,0 +1,310 @@
+{{MoveInfobox
+|n=679
+|name=Lunge
+|jname=とびかかる
+|jtrans=Lunge
+|jtranslit=Tobikakaru
+|gameimage=Lunge IX.png
+|gameimage2=Lunge IX 2.png
+|gameimagewidth=300
+|type=Bug
+|damagecategory=Physical
+|basepp=15
+|maxpp=24
+|power=80
+|accuracy=100
+|gen=VII
+|touches=yes
+|protect=yes
+|magiccoat=no
+|snatch=no
+|mirrormove=yes
+|kingsrock=yes
+|sound=no
+|na=no
+|tm9=yes
+|tm#9=185
+|target=anyadjacent
+|footnotes=
+}}
+
+'''Lunge''' (Japanese: '''とびかかる''' ''Lunge'') is a damage-dealing {{type|Bug}} [[move]] introduced in [[Generation VII]]. It is [[TM185]] in {{g|Scarlet and Violet}}.
+
+==Effect==
+Lunge inflicts damage and lowers the target's {{stat|Attack}} stat by one stage.
+
+===Generation IX===
+====Pokémon Legends: Z-A====
+{{LegendsZAMove
+|type=Bug
+|damagecategory=Physical
+|power=80
+|cooldown=9
+|charge-time=20
+|effect-duration=8
+|effect-duration-plus=11
+}}
+
+==Description==
+{{movedesc|Bug}}
+{{movedescentry|{{gameabbrev7|SMUSUMPE}}<br>{{gameabbrev8|SwShBDSPLA}}<br>{{gameabbrev9|SV}}|The user makes a lunge at the target, attacking with full force. This also lowers the target's Attack stat.}}
+{{movedescentry|{{gameabbrev9|ZA}}|The user attacks by lunging toward targets with full force. This also lowers targets' Attack stats for a short time.}}
+{{movedescentry|{{gameabbrevss|Champs}}|Lowers the target's Attack stat by 1 stage.}}
+|}
+|}{{left clear}}
+
+==Learnset==
+===By [[Level|leveling up]]===
+{{Movehead/Games|Bug|g1=none|g2=none|g3=none|g4=none|g5=none|g6=none|g7=1|g7g={{gameabbrev7|SMUSUM}}|g8=2|g9=2}}
+{{Moveentry/5|0015|Beedrill|type=Bug|type2=Poison|1|Bug|Bug|−||−||33|STAB='''}}
+{{Moveentry/5|0070|Weepinbell|type=Grass|type2=Poison|1|Grass|Grass|−||−|−|{{tt|Rem.|Can only be learned via Move Reminder}}}}
+{{Moveentry/5|0071|Victreebel|type=Grass|type2=Poison|1|Grass|Grass|−||−|−|1}}
+{{Moveentry/5|0084|Doduo|type=Normal|type2=Flying|1|Flying|Flying|−||40|−}}
+{{Moveentry/5|0085|Dodrio|type=Normal|type2=Flying|1|Flying|Flying|−||43|−}}
+{{Moveentry/5|0123|Scyther|type=Bug|type2=Flying|1|Bug|Bug|−|−|−|−|46|STAB='''}}
+{{Moveentry/5|0127|Pinsir|type=Bug|1|Bug|Bug|−|−|−||36|STAB='''}}
+{{Moveentry/5|0167|Spinarak|type=Bug|type2=Poison|1|Bug|Bug|−||−|−|40|STAB='''}}
+{{Moveentry/5|0168|Ariados|type=Bug|type2=Poison|1|Bug|Bug|−||−|−|40|STAB='''}}
+{{Moveentry/5|0212|Scizor|type=Bug|type2=Steel|1|Bug|Bug|−|−|−|−|46|STAB='''}}
+{{Moveentry/5|0214|Heracross|type=Bug|type2=Fighting|1|Bug|Bug|−|−|−|−|32|STAB='''}}
+{{Moveentry/5|0234|Stantler|type=Normal|1|Field|Field|−||43|−}}
+{{Moveentry/5|0414|Mothim|type=Bug|type2=Flying|1|Bug|Bug|47||47|STAB='''}}
+{{Moveentry/5|0485|Heatran|type=Fire|type2=Steel|1|No Eggs Discovered|No Eggs Discovered|−|−|−|−|59}}
+{{Moveentry/5|0649|Genesect|type=Bug|type2=Steel|1|No Eggs Discovered|No Eggs Discovered|form=All forms|−|−|||42|STAB='''}}
+{{Moveentry/5|0701|Hawlucha|type=Fighting|type2=Flying|2|Flying|Human-Like|−|−||−|26}}
+{{Moveentry/5|0751|Dewpider|type=Water|type2=Bug|2|Water 1|Bug|37|36||36|STAB='''}}
+{{Moveentry/5|0752|Araquanid|type=Water|type2=Bug|2|Water 1|Bug|45|44||44|STAB='''}}
+{{Moveentry/5|0794|Buzzwole|type=Bug|type2=Fighting|1|No Eggs Discovered|No Eggs Discovered|53|40|STAB='''}}
+{{Moveentry/5|0795|Pheromosa|type=Bug|type2=Fighting|1|No Eggs Discovered|No Eggs Discovered|47|45|STAB='''}}
+{{Moveentry/5|0850|Sizzlipede|type=Fire|type2=Bug|1|Bug|Bug||50|STAB='''}}
+{{Moveentry/5|0851|Centiskorch|type=Fire|type2=Bug|1|Bug|Bug||60|STAB='''}}
+{{Moveentry/5|0900|Kleavor|type=Bug|type2=Rock|1|Bug|Bug||||−|46|STAB='''}}
+{{Moveentry/5|0920|Lokix|type=Bug|type2=Dark|1|Bug|Bug||||{{tt|Evo.|Learned upon evolving}}|STAB='''}}
+{{Moveentry/5|0931|Squawkabilly|type=Normal|type2=Flying|1|Flying|Flying|form=All forms||||−|40}}
+{{Moveentry/5|0942|Maschiff|type=Dark|1|Field|Field||||−|45}}
+{{Moveentry/5|0943|Mabosstiff|type=Dark|1|Field|Field||||−|45}}
+{{Moveentry/5|0953|Rellor|type=Bug|1|Bug|Bug||||35|STAB='''}}
+{{Moveentry/5|0954|Rabsca|type=Bug|type2=Psychic|1|Bug|Bug||||35|STAB='''}}
+{{Moveentry/5|0973|Flamigo|type=Flying|type2=Fighting|1|Flying|Flying||||−|18}}
+{{Moveentry/5|0988|Slither Wing|type=Bug|type2=Fighting|1|No Eggs Discovered|No Eggs Discovered||||42|STAB='''}}
+{{Moveentry/5|0994|Iron Moth|type=Fire|type2=Poison|1|No Eggs Discovered|No Eggs Discovered||||28}}
+{{Movefoot|Bug|5}}
+
+===By [[TM]]===
+{{Movehead/TMGames|Bug|g1=none|g2=none|g3=none|g4=none|g5=none|g6=none|g7=none|g8=none
+|g9=1|g9tm=185|g9g={{gameabbrev9|SV}}}}
+{{Moveentry/1|0048|Venonat|type=Bug|type2=Poison|1|Bug|Bug|✔|STAB='''}}
+{{Moveentry/1|0049|Venomoth|type=Bug|type2=Poison|1|Bug|Bug|✔|STAB='''}}
+{{Moveentry/1|0069|Bellsprout|type=Grass|type2=Poison|1|Grass|Grass|✔}}
+{{Moveentry/1|0070|Weepinbell|type=Grass|type2=Poison|1|Grass|Grass|✔}}
+{{Moveentry/1|0071|Victreebel|type=Grass|type2=Poison|1|Grass|Grass|✔}}
+{{Moveentry/1|0084|Doduo|type=Normal|type2=Flying|1|Flying|Flying|✔}}
+{{Moveentry/1|0085|Dodrio|type=Normal|type2=Flying|1|Flying|Flying|✔}}
+{{Moveentry/1|0089|Muk|type=Poison|1|Amorphous|Amorphous|✔}}
+{{Moveentry/1|0106|Hitmonlee|type=Fighting|1|Human-Like|Human-Like|✔}}
+{{Moveentry/1|0123|Scyther|type=Bug|type2=Flying|1|Bug|Bug|✔|STAB='''}}
+{{Moveentry/1|0151|Mew|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔}}
+{{Moveentry/1|0167|Spinarak|type=Bug|type2=Poison|1|Bug|Bug|✔|STAB='''}}
+{{Moveentry/1|0168|Ariados|type=Bug|type2=Poison|1|Bug|Bug|✔|STAB='''}}
+{{Moveentry/1|0187|Hoppip|type=Grass|type2=Flying|2|Fairy|Grass|✔}}
+{{Moveentry/1|0188|Skiploom|type=Grass|type2=Flying|2|Fairy|Grass|✔}}
+{{Moveentry/1|0189|Jumpluff|type=Grass|type2=Flying|2|Fairy|Grass|✔}}
+{{Moveentry/1|0193|Yanma|type=Bug|type2=Flying|1|Bug|Bug|✔|STAB='''}}
+{{Moveentry/1|0204|Pineco|type=Bug|1|Bug|Bug|✔|STAB='''}}
+{{Moveentry/1|0205|Forretress|type=Bug|type2=Steel|1|Bug|Bug|✔|STAB='''}}
+{{Moveentry/1|0206|Dunsparce|type=Normal|1|Field|Field|✔}}
+{{Moveentry/1|0207|Gligar|type=Ground|type2=Flying|1|Bug|Bug|✔}}
+{{Moveentry/1|0212|Scizor|type=Bug|type2=Steel|1|Bug|Bug|✔|STAB='''}}
+{{Moveentry/1|0214|Heracross|type=Bug|type2=Fighting|1|Bug|Bug|✔|STAB='''}}
+{{Moveentry/1|0234|Stantler|type=Normal|1|Field|Field|✔}}
+{{Moveentry/1|0283|Surskit|type=Bug|type2=Water|2|Water 1|Bug|✔|STAB='''}}
+{{Moveentry/1|0284|Masquerain|type=Bug|type2=Flying|2|Water 1|Bug|✔|STAB='''}}
+{{Moveentry/1|0313|Volbeat|type=Bug|2|Bug|Human-Like|✔|STAB='''}}
+{{Moveentry/1|0325|Spoink|type=Psychic|1|Field|Field|✔}}
+{{Moveentry/1|0326|Grumpig|type=Psychic|1|Field|Field|✔}}
+{{Moveentry/1|0332|Cacturne|type=Grass|type2=Dark|2|Grass|Human-Like|✔}}
+{{Moveentry/1|0401|Kricketot|type=Bug|1|Bug|Bug|✔|STAB='''}}
+{{Moveentry/1|0402|Kricketune|type=Bug|1|Bug|Bug|✔|STAB='''}}
+{{Moveentry/1|0415|Combee|type=Bug|type2=Flying|1|Bug|Bug|✔|STAB='''}}
+{{Moveentry/1|0416|Vespiquen|type=Bug|type2=Flying|1|Bug|Bug|✔|STAB='''}}
+{{Moveentry/1|0469|Yanmega|type=Bug|type2=Flying|1|Bug|Bug|✔|STAB='''}}
+{{Moveentry/1|0472|Gliscor|type=Ground|type2=Flying|1|Bug|Bug|✔}}
+{{Moveentry/1|0485|Heatran|type=Fire|type2=Steel|1|No Eggs Discovered|No Eggs Discovered|✔}}
+{{Moveentry/1|0540|Sewaddle|type=Bug|type2=Grass|1|Bug|Bug|✔|STAB='''}}
+{{Moveentry/1|0541|Swadloon|type=Bug|type2=Grass|1|Bug|Bug|✔|STAB='''}}
+{{Moveentry/1|0542|Leavanny|type=Bug|type2=Grass|1|Bug|Bug|✔|STAB='''}}
+{{Moveentry/1|0595|Joltik|type=Bug|type2=Electric|1|Bug|Bug|✔|STAB='''}}
+{{Moveentry/1|0596|Galvantula|type=Bug|type2=Electric|1|Bug|Bug|✔|STAB='''}}
+{{Moveentry/1|0603|Eelektrik|type=Electric|1|Amorphous|Amorphous|✔}}
+{{Moveentry/1|0604|Eelektross|type=Electric|1|Amorphous|Amorphous|✔}}
+{{Moveentry/1|0636|Larvesta|type=Bug|type2=Fire|1|Bug|Bug|✔|STAB='''}}
+{{Moveentry/1|0637|Volcarona|type=Bug|type2=Fire|1|Bug|Bug|✔|STAB='''}}
+{{Moveentry/1|0686|Inkay|type=Dark|type2=Psychic|2|Water 1|Water 2|✔}}
+{{Moveentry/1|0687|Malamar|type=Dark|type2=Psychic|2|Water 1|Water 2|✔}}
+{{Moveentry/1|0701|Hawlucha|type=Fighting|type2=Flying|2|Flying|Human-Like|✔}}
+{{Moveentry/1|0736|Grubbin|type=Bug|1|Bug|Bug|✔|STAB='''}}
+{{Moveentry/1|0737|Charjabug|type=Bug|type2=Electric|1|Bug|Bug|✔|STAB='''}}
+{{Moveentry/1|0738|Vikavolt|type=Bug|type2=Electric|1|Bug|Bug|✔|STAB='''}}
+{{Moveentry/1|0743|Ribombee|type=Bug|type2=Fairy|2|Bug|Fairy|✔|STAB='''}}
+{{Moveentry/1|0747|Mareanie|type=Poison|type2=Water|1|Water 1|Water 1|✔}}
+{{Moveentry/1|0748|Toxapex|type=Poison|type2=Water|1|Water 1|Water 1|✔}}
+{{Moveentry/1|0751|Dewpider|type=Water|type2=Bug|2|Water 1|Bug|✔|STAB='''}}
+{{Moveentry/1|0752|Araquanid|type=Water|type2=Bug|2|Water 1|Bug|✔|STAB='''}}
+{{Moveentry/1|0870|Falinks|type=Fighting|2|Fairy|Mineral|✔}}
+{{Moveentry/1|0872|Snom|type=Ice|type2=Bug|1|Bug|Bug|✔|STAB='''}}
+{{Moveentry/1|0873|Frosmoth|type=Ice|type2=Bug|1|Bug|Bug|✔|STAB='''}}
+{{Moveentry/1|0899|Wyrdeer|type=Normal|type2=Psychic|1|Field|Field|✔}}
+{{Moveentry/1|0900|Kleavor|type=Bug|type2=Rock|1|Bug|Bug|✔|STAB='''}}
+{{Moveentry/1|0917|Tarountula|type=Bug|1|Bug|Bug|✔|STAB='''}}
+{{Moveentry/1|0918|Spidops|type=Bug|1|Bug|Bug|✔|STAB='''}}
+{{Moveentry/1|0919|Nymble|type=Bug|1|Bug|Bug|✔|STAB='''}}
+{{Moveentry/1|0920|Lokix|type=Bug|type2=Dark|1|Bug|Bug|✔|STAB='''}}
+{{Moveentry/1|0948|Toedscool|type=Ground|type2=Grass|1|Grass|Grass|✔}}
+{{Moveentry/1|0949|Toedscruel|type=Ground|type2=Grass|1|Grass|Grass|✔}}
+{{Moveentry/1|0953|Rellor|type=Bug|1|Bug|Bug|✔|STAB='''}}
+{{Moveentry/1|0954|Rabsca|type=Bug|type2=Psychic|1|Bug|Bug|✔|STAB='''}}
+{{Moveentry/1|0973|Flamigo|type=Flying|type2=Fighting|1|Flying|Flying|✔}}
+{{Moveentry/1|0978|Tatsugiri|type=Dragon|type2=Water|1|Water 2|Water 2|form=All forms|✔}}
+{{Moveentry/1|0982|Dudunsparce|type=Normal|1|Field|Field|form=All forms|✔}}
+{{Moveentry/1|0988|Slither Wing|type=Bug|type2=Fighting|1|No Eggs Discovered|No Eggs Discovered|✔|STAB='''}}
+{{Moveentry/1|0994|Iron Moth|type=Fire|type2=Poison|1|No Eggs Discovered|No Eggs Discovered|✔}}
+{{Movefoot|Bug|1}}
+
+===By {{pkmn|breeding}}===
+{{Movehead/Games|Bug|Egg Move|g1=none|g2=none|g3=none|g4=none|g5=none|g6=none|g7=1|g7g={{gameabbrev7|SMUSUM}}|g8=2|g9=1|g9g={{gameabbrev9|SV}}}}
+{{Moveentry/4|0167|Spinarak|type=Bug|type2=Poison|1|Bug|Bug|✔{{sup/7|USUM}}||✔|✔|STAB='''}}
+{{Moveentry/4|0283|Surskit|type=Bug|type2=Water|2|Water 1|Bug|✔||✔|✔|STAB='''}}
+{{Moveentry/4|0313|Volbeat|type=Bug|2|Bug|Human-Like|✔{{sup/7|USUM}}||✔|−|STAB='''}}
+{{Moveentry/4|0595|Joltik|type=Bug|type2=Electric|1|Bug|Bug|✔{{sup/7|USUM}}|✔||✔|STAB='''}}
+{{Moveentry/4|0917|Tarountula|type=Bug|1|Bug|Bug||||✔|STAB='''}}
+{{Movefoot|Bug|4}}
+
+===Special move===
+====[[Generation VIII]]====
+{{Movehead/Special|Bug}}
+{{Moveentry/1|0851|Centiskorch|type=Fire|type2=Bug|1|Bug|Bug|{{DL|Watchtower Lair|★Sgr6859}} [[Gigantamax]] Centiskorch|note=Lv.35|STAB='''}}
+{{Movefoot|Bug|1}}
+
+==In other games==
+==={{g|GO}}===
+Lunge is a Charged Attack in {{g|GO}} that has been available since September 14, 2020.
+{{GoChargedAttack
+|id=306
+|move=Lunge
+|type=Bug
+|pow=55
+|energy=33
+|duration=2.9
+|damage_window=2.4 - 2.7
+|pow_trainer=60
+|energy_trainer=45
+|effect=[[File:GO drop arrow.png|16px]] 1 Opponent Attack
+|effect_chance=100
+|users={{MSP/GO|0168|Ariados}}{{MSP/GO|0284|Masquerain}}{{MSP/GO|0596|Galvantula}}{{MSP/GO|0794|Buzzwole}}{{MSP/GO|0795|Pheromosa}}{{MSP/GO|0851|Centiskorch}}
+{{MSP/GO|0918|Spidops}}
+|snapshot_users={{MSP/GO|0235|Smeargle}}
+}}
+
+==={{g|Rumble Rush}}===
+{{RumbleRushPhysicalAttack|move=Lunge|type=Bug
+|stars=4
+|pow=91.49512
+|charge=1.32
+|range=Dash
+|hits=1
+|projectiles=1
+|crit=1.5
+|effect=Lowers the foe's Attack}}
+
+===[[Pokémon Masters EX]]===
+{| class="roundy" style="margin:auto; background:#{{bug color}}; border:3px solid #{{bug color dark}}; text-align:center; width:80%"
+|- style="background: #{{bug color light}}"
+! style="{{roundytl|5px}}" | Name
+! {{color2|000|Damage category|Category}}
+! Move gauge cost
+! MP<br>(uses)
+! Base {{color2|000|power}}
+! Max {{color2|000|power}}
+! {{color2|000|Accuracy}}
+! Target
+! Effect tag
+! Description
+! style="{{roundytr|5px}}" | Playable {{color2|000|Sync pair|sync pair(s)}}
+|- style="background:#fff"
+|style="{{roundybl|5px}}"|Lunge
+{{statustable|Physical}}
+|3
+|—
+|80
+|96
+|100%
+|An opponent
+|—
+|Lowers the target's Attack by one stat rank.
+|style="{{roundybr|5px}}"|{{sync|Lusamine|Pheromosa}}<hr>{{sync/player|Buzzwole}}
+|}
+* Description prior to Version 2.10.0 (from June 28, 2021): Lowers the target's Attack.
+
+==In animation==
+===Pokémon animated series===
+{{moveanime|type=bug|exp=yes|gen=The user makes a lunge at the target, attacking with full force.|image1=Katy Lokix Lunge.png|image1p=Lokix}}
+{{movep|type=bug|ms=920|pkmn=Lokix|method=Lokix's body become covered in green energy. It then lunges at the opponent and kicks them.}}
+{{movebtm|type=bug|user=Katy|user1=Katy's Lokix|startcode=HZ056|startname=Liko vs. Rika! Towards the Battle's End|notes=Debut}}
+
+==In other generations==
+===Core series games===
+{{Movegen|
+type=Bug|
+genVII=Lunge VII|
+genVII2=Lunge VII 2|
+genVIII=Lunge VIII|
+ZA=Lunge ZA
+}}
+
+===Spin-off series games===
+{{Movegen|
+type=Bug|
+Masters=Lunge Masters
+}}
+
+== Trivia ==
+*This move [[Eevee (Vending S1)|originated]] as a TCG [[Attack (TCG)|attack]].
+
+==In other languages==
+{{Langtable|color={{bug color}}|bordercolor={{bug color dark}}
+|zh_yue=猛撲 ''{{tt|Máahngpok|Lunge}}''
+|zh_cmn=猛撲 / 猛扑 ''{{tt|Měngpū|Lunge}}''
+|cs=Výpad
+|fr=Furie-Bond
+|de=Anfallen
+|it=Assalto
+|hi=लंज ''Lunge''
+|id=Terjangan
+|ko=덤벼들기 ''{{tt|Deombyeodeulgi|Lunge}}''
+|pl=Wypad
+|pt_br=Estocada (games, animated series, {{TCG|Dragon Vault}}–present)<br>Investida ({{TCG|EX Ruby & Sapphire}}–{{TCG|Next Destinies}})<ref group=n>Prior to the introduction of Lunge as a move in core series games.</ref>
+|pt_eu=Avanço
+|ru=Выпад ''{{tt|Vypad|Lunge}}''
+|es=Plancha
+|th=กระโจนใส่ ''{{tt|Krachon Sai|Pounce}}''
+|tr=Atılım
+}}
+
+===Notes===
+{{reflist|group=n}}
+
+{{Lunge|Bug}}
+{{Generation IX TMs}}
+{{Project Moves and Abilities notice}}
+
+[[Category:Moves that can lower the target's Attack]]
+[[Category:Moves usable in Pokémon Sword and Shield]]
+[[Category:Moves usable in Pokémon Scarlet and Violet]]
+[[Category:Moves in Pokémon Legends: Z-A]]
+
+[[de:Anfallen]]
+[[es:Plancha]]
+[[fr:Furie-Bond]]
+[[it:Assalto]]
+[[ja:とびかかる]]
+[[zh:猛扑（招式）]]

@@ -1,0 +1,387 @@
+:''Not to be confused with {{m|Jump Kick}}''.
+{{MoveInfobox
+|n=136
+|name=High Jump Kick
+|jname=とびひざげり
+|jtrans=Jumping Knee Kick
+|jtranslit=Tobihizageri
+|gameimage=High Jump Kick IX.png
+|gameimage2=High Jump Kick IX 2.png
+|gameimagewidth=300
+|type=Fighting
+|damagecategory=Physical
+|basepp={{tt|10|20 in Generations I-IV}}
+|maxpp={{tt|16|32 in Generations I-IV}}
+|power={{tt|130|85 in Generations I-III; 100 in Generation IV}}
+|accuracy=90
+|gen=I
+|category=Cool
+|appeal=6
+|jam=0
+|cdesc=After this move, the user is more easily startled.
+|appealsc=3
+|scdesc=A basic performance using a move known by the Pokémon.
+|appeal6=6
+|jam6=0
+|cdesc6=A very appealing move, but after using this move, the user is more easily startled.
+|touches=yes
+|protect=yes
+|magiccoat=no
+|snatch=no
+|mirrormove=yes
+|kingsrock=yes
+|sound=no
+|target=anyadjacent
+}}
+'''High Jump Kick''' (Japanese: '''とびひざげり''' ''Jumping Knee Kick''), spelled '''Hi Jump Kick''' prior to [[Pokémon X and Y]], is a damage-dealing {{type|Fighting}} [[move]] introduced in [[Generation I]]. Prior to [[Generation III]], it was one of the [[signature move]]s of {{p|Hitmonlee}}, but {{p|Tyrogue}} could still inherit it via {{pkmn|breeding}}.
+
+==Effect==
+===Generation I===
+Hi Jump Kick does damage with a power of 85. If it misses, the user will take [[crash damage]] of 1 HP. If used against a {{type|Ghost}}, then the user will not take crash damage.
+
+In Generations I-III, if the user of Hi Jump Kick attacks first and faints itself due to crash damage, the target will not attack.
+
+===Generation II===
+The crash damage is now 1/8 of the damage it would have dealt. The user will take crash damage if Hi Jump Kick is protected against by a move such as {{m|Protect}}, but not due to type immunity (only the type immunity message is displayed).
+
+===Generation III===
+The crash damage is now 1/2 of the damage it would have dealt.
+
+Hi Jump Kick can be used as the second move of a [[Contest combination|Pokémon Contest combination]], with the user gaining 6 bonus appeal points if {{m|Mind Reader}} was used in the previous turn.
+
+===Generation IV===
+Hi Jump Kick's base power is [[List of modified moves|increased]] from 85 to 100. It cannot be used if {{m|Gravity}} is in effect.
+
+The user can now crash due to a target's type immunity, and will take crash damage equal to half of the target's max HP in that case.
+
+The user will not take crash damage if Hi Jump Kick fails due to there being no remaining targets.
+
+===Generation V onwards===
+High Jump Kick's base power is [[List of modified moves|increased]] from 100 to 130, and its PP is reduced from 20 to 10. The crash damage is now (always) equal to half of the user's max HP, rounded down.
+
+==Description==
+{{movedesc|Fighting}}
+{{movedescentry|{{gameabbrevss|Stad}}|Stronger than a <sc>{{m|Jump Kick}}</sc>. If it misses, the attacker sustains 1/8 damage it should have caused.}}
+{{movedescentry|{{gameabbrevss|Stad2}}|Stronger than <sc>{{m|Jump Kick}}</sc>. If it misses, the attacker takes 1/8 damage it would've caused.}}
+{{movedescentry|{{gameabbrev2|GSC}}|May miss and hurt the user.}}
+{{movedescentry|{{gameabbrev3|RSE}}{{gameabbrevss|Colo}}{{gameabbrevss|XD}}|A jumping knee kick. If it misses, the user is hurt.}}
+{{movedescentry|{{gameabbrev3|FRLG}}|A strong jumping knee kick. If it misses, the user is hurt.}}
+{{movedescentry|{{gameabbrev4|DPPtHGSS}}{{gameabbrevss|PBR}}|The foe is attacked with a knee kick from a jump. If it misses, the user is hurt instead.}}
+{{movedescentry|{{gameabbrev5|BWB2W2}}<br>{{gameabbrev6|XYORAS}}<br>{{gameabbrev7|SMUSUMPE}}<br>{{gameabbrev8|SwShBDSPLA}}|The target is attacked with a knee kick from a jump. If it misses, the user is hurt instead.}}
+{{movedescentry|{{gameabbrev9|SV}}|The target is attacked with a knee kick from a jump. If this move misses, the user takes damage instead.}}
+|}
+|}{{left clear}}
+
+==Learnset==
+===By [[Level|leveling up]]===
+{{Movehead/Games|Fighting|g7=2|g8=2|g9=1|g9g={{gameabbrev9|SV}}}}
+{{Moveentry/11|0106|Hitmonlee|type=Fighting|1|Human-Like|Human-Like|48|26|26|29|29|29|29|45|44|44|44|STAB='''}}
+{{Moveentry/11|0257|Blaziken|type=Fire|type2=Fighting|1|Field|Field|||−|−|1|1|1||−|−|−|STAB='''}}
+{{Moveentry/11|0307|Meditite|type=Fighting|type2=Psychic|1|Human-Like|Human-Like|||32{{sup/3|RSE}}<br>33{{sup/3|FRLG}}|32|32|32{{sup/6|XY}}<br>28{{sup/6|ORAS}}|28|||28|28|STAB='''}}
+{{Moveentry/11|0308|Medicham|type=Fighting|type2=Psychic|1|Human-Like|Human-Like|||32{{sup/3|RSE}}<br>33{{sup/3|FRLG}}|32|32|32{{sup/6|XY}}<br>28{{sup/6|ORAS}}|28|||28|28|STAB='''}}
+{{Moveentry/11|0428|Lopunny|type=Normal|2|Field|Human-Like||||−|−|66{{sup/6|ORAS}}|66||56|56||STAB=''}}
+{{Moveentry/11|0559|Scraggy|type=Dark|type2=Fighting|2|Field|Dragon|||||31|31|31||44||44|STAB='''}}
+{{Moveentry/11|0560|Scrafty|type=Dark|type2=Fighting|2|Field|Dragon|||||31|31|31||48||48|STAB='''}}
+{{Moveentry/11|0619|Mienfoo|type=Fighting|2|Field|Human-Like|||||53|50|50||60||60|STAB='''}}
+{{Moveentry/11|0620|Mienshao|type=Fighting|2|Field|Human-Like|||||56|56|56||66||66|STAB='''}}
+{{Moveentry/11|0701|Hawlucha|type=Fighting|type2=Flying|2|Flying|Human-Like||||||44|44||48||48|STAB='''}}
+{{Moveentry/11|0763|Tsareena|type=Grass|1|Grass|Grass|||||||49||58||58}}
+{{Moveentry/11|0795|Pheromosa|type=Bug|type2=Fighting|1|No Eggs Discovered|No Eggs Discovered|||||||67||70|||STAB='''}}
+{{Movefoot|Fighting|11}}
+
+===By {{pkmn|breeding}}===
+{{Movehead/Games|Fighting|Egg Move|g7=1|g7g={{gameabbrev7|SMUSUM}}|g8=2|g1=none|g9=1|g9g={{gameabbrev9|SV}}}}
+{{Moveentry/9|0236|Tyrogue|type=Fighting|1|Human-Like|Human-Like|✔|✔|✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/9|0447|Riolu|type=Fighting|2|Field|Human-Like|||✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/9|0813|Scorbunny|type=Fire|2|Field|Human-Like|||||||✔||✔}}
+{{Movefoot|Fighting|9}}
+
+===By {{pkmn2|event}}===
+====[[Generation VII]]====
+{{Movehead/Special|Fighting}}
+{{Moveentry/1|0448|Lucario|type=Fighting|type2=Steel|2|Field|Human-Like|{{DL|List of Japanese region serial code event Pokémon distributions in Pokémon Sun, Moon, Ultra Sun, and Ultra Moon|Sorrel's Lucario}}|STAB='''}}
+{{Movefoot|Fighting|1}}
+
+====[[Generation IX]]====
+{{Movehead/Special|Fighting}}
+{{Moveentry/1|0815|Cinderace|type=Fire|2|Field|Human-Like|[[Poké Portal News#December 30, 2022 to January 1, 2023 & January 13 to 15, 2023|Cinderace the Unrivaled]]}}
+{{Movefoot|Fighting|1}}
+
+==In other games==
+==={{g|Mystery Dungeon series}}===
+High Jump Kick inflicts damage, and the final damage is multiplied by two in the [[Pokémon Mystery Dungeon: Red Rescue Team and Blue Rescue Team|Rescue Team]] and [[Pokémon Mystery Dungeon: Explorers of Time and Explorers of Darkness|Explorers]] series. 
+
+If the move misses the target, the user receives recoil damage (equal to ½ of the damage that would have otherwise been dealt in the [[Pokémon Mystery Dungeon: Red Rescue Team and Blue Rescue Team|Rescue Team]] and [[Pokémon Mystery Dungeon: Explorers of Time and Explorers of Darkness|Explorers]] series; 50% of the user's max HP in [[Pokémon Mystery Dungeon: Gates to Infinity|Gates to Infinity]], and 30% of the user's max HP in {{pkmn|Super Mystery Dungeon}}).
+
+{{MDMoveheader|type=fighting}}
+{{MDMoveRow|game=RB|pow=16|pp=11|acc=90%|range=Front|target=Enemy|cuts=No}}
+{{MDMoveRow|game=TDS|pow=16|pp=11|acc=90%|range=Front|target=Enemy|cuts=No}}
+{{MDMoveRow|game=BSL|pow=16|pp=11|acc=90%|range=Front|target=Enemy|cuts=No}}
+{{MDMoveRow|game=GTI|pow=46|powmax=99|pp=17|ppmax=50|acc=90%|accmax=98%|range=Front|target=Enemy|cuts=No}}
+{{MDMoveRow|game=SMD|pow=40|powmax=99|pp=17|ppmax=40|acc=90%|accmax=98%|range=Front|target=Enemy|cuts=No}}
+{{MDMovefoot|type=fighting|RB=yes|TDS=yes|BSL=yes|GTI=yes|SMD=yes|RTDX=yes}}
+
+===[[Pokémon Conquest]]===
+{{Conquestmove
+|type=fighting
+|grid={{Conquestmove/Grid/columns|dist=1|shift=1}}
+|stars=5
+|pow=65
+|acc=90%
+|eff=If this move misses, the user takes some damage.
+|users={{CSP|560|Scrafty}}
+}}
+
+===[[Pokémon GO]]===
+In Pokémon GO, High Jump Kick is a Charged Attack that has been available since May 19, 2024.
+
+{{GoChargedAttack
+|id=408
+|move=High Jump Kick
+|type=Fighting
+|pow=90
+|energy=100
+|duration=1.5
+|damage_window=0.45 - 0.8
+|pow_trainer=110
+|energy_trainer=55
+|effect=[[File:GO drop arrow.png|16px]] 4 Defense
+|effect_chance=10
+|elite_users={{MSP/GO|0763|Tsareena}}
+}}
+
+==={{g|Rumble Rush}}===
+{{RumbleRushPhysicalAttack|move=High Jump Kick|type=Fighting
+|stars=5
+|pow=29.24665
+|charge=0.66
+|range=Dash
+|hits=2
+|projectiles=1
+|crit=1.5
+|effect=None}}
+
+===[[Pokémon Masters EX]]===
+{| class="roundy" style="margin:auto; background:#{{fighting color}}; border:3px solid #{{fighting color dark}}; text-align:center; width:80%"
+|- style="background: #{{fighting color light}}"
+! style="{{roundytl|5px}}" | Name
+! {{color2|000|Damage category|Category}}
+! Move gauge cost
+! MP<br>(uses)
+! Base {{color2|000|power}}
+! Max {{color2|000|power}}
+! {{color2|000|Accuracy}}
+! Target
+! Effect tag
+! Description
+! style="{{roundytr|5px}}" | Playable {{color2|000|Sync pair|sync pair(s)}}
+|- style="background:#fff"
+|High Jump Kick
+{{statustable|Physical}}
+|3
+|—
+|135
+|162
+|90%
+|An opponent
+|Recoil
+|When it fails, the user takes damage equal to 50% of its maximum HP.
+|{{sync|May|Lopunny|Spring 2021}}<hr>{{sync|Gloria|Cinderace|Alt. 2}}<hr>{{sync/player|egg|Hitmonlee}}
+|- style="background:#{{fighting color dark}}"
+! colspan=12 |{{color2|fff|Sync move|Sync move}}
+|- style="background: #{{fighting color light}}"
+!Name
+!{{color2|000|Damage category|Category}}
+!colspan="2" |State
+!Base {{color2|000|power}}
+!Max {{color2|000|power}}
+!colspan="2" |Target
+!Effect tag
+!Description
+!Playable {{color2|000|sync pair}}
+|- style="background:#fff"
+| rowspan=2 style="{{roundybl|5px}}" | Barefoot High Jump Kick
+| rowspan=2 align=center style="background:#{{physical color}}"|{{color2|{{physical textcolor}}|Physical move|Physical}}
+| colspan=2 | Default
+| rowspan=2 | 250
+| rowspan=2 | 300
+| rowspan=2 colspan=2 | An opponent
+| rowspan=2 | —
+| No additional effect.
+| style="{{roundybr|5px}}" rowspan=2 | {{sync|Maylene|Medicham}}
+|- style="background:#fff"
+| colspan=2 | '''6★ EX'''
+| '''The sync buff is doubled the first time a sync move is used.'''
+|}
+Notes:
+* '''High Jump Kick:'''
+** When their sync move is {{type|Fire}}, {{sync|Gloria|Cinderace|Alt. 2}}'s passive {{mas|skill}} {{sk|Fuel Economy}} 2 makes this move cost 1 move gauge slot to use.
+** When their sync move is {{type|Fighting}}, {{sync|Gloria|Cinderace|Alt. 2}}'s passive {{mas|skill}} {{sk|Piercing Gaze}} makes their use of this move never miss.
+** Description prior to Version 2.10.0 (from June 28, 2021): If it fails, the user takes damage equal to half of its maximum HP.
+
+===Description===
+{{movedesc|Fighting}}
+{{movedescentry|{{gameabbrevmd|RB}}|Inflicts damage on the target, but hurts the user if it misses.}}
+{{movedescentry|{{gameabbrevmd|TDS}}|Inflicts damage on the target, but it also hurts the user if the move misses.}}
+{{movedescentry|{{gameabbrevmd|BSL}}|{{tt|てきポケモンに ダメージをあたえる しかし はずれたときは じぶんが ダメージをうける|Inflicts damage on the target, but it also hurts the user if the move misses}}}}
+{{movedescentry|{{gameabbrevss|Conq}}|The target is attacked with a knee kick from a jump. If it misses, the user is hurt instead.}}
+{{movedescentry|{{gameabbrevmd|GTI}}|It damages an enemy. But if it misses, you hurt yourself.}}
+{{movedescentry|{{gameabbrevmd|SMD}}<br/>{{gameabbrevmd|RTDX}}|It damages an enemy. But if it misses, you'll hurt yourself!}}
+|}
+|}{{left clear}}
+
+==In animation==
+===Pokémon animated series===
+{{moveanime|type=fighting|exp=yes|gen=The foe is attacked with a knee kick from a jump. If it misses, the user is hurt instead.|image1=Scrafty Hi Jump Kick.png|image1p=Scrafty|image2=Ash Hawlucha High Jump Kick.png|image2p=Hawlucha|image3=Barry Hitmonlee Hi Jump Kick.png|image3p=Hitmonlee|image4=Ikari Mienshao High Jump Kick.png|image4p=Mienshao}}
+{{movep|type=fighting|ms=106|pkmn=Hitmonlee|method=Hitmonlee leaps into the air and strikes the opponent with his knee. He gets hurt if the attack misses; or, Hitmonlee jumps into the air, front flips, and kicks the opponent down; or, Hitmonlee jumps into the air and lands in front of the opponent. He then jumps up and knees the opponent with one of his knees.}}
+{{movemid|type=fighting|user=Giant (EP029)|user1=Giant's Hitmonlee|startcode=EP029|startname=The Punchy Pokémon|notes=Debut<br>Japanese version only}}
+{{movemid|type=fighting|user=Shiro|user1=Shiro's Hitmonlee|startcode=EP166|startname=Two Hits and a Miss|notes=English dub debut}}
+{{movemid|type=fighting|user=Wobbuffet Festival crashers|user1=Wobbuffet Festival crasher's Hitmonlee|startcode=EP173|startname=Wobbu-Palooza!}}
+{{movemid|type=fighting|user=Gilbert (AG126)|user1=Gilbert's Hitmonlee|startcode=AG126|startname=Saved by the Beldum}}
+{{movemid|type=fighting|user=Master Hamm|user1=Master Hamm's Hitmonlee|startcode=AG145|startname=Pasta La Vista!}}
+{{movemid|type=fighting|user=Barry (anime)|user1=Barry's Hitmonlee|startcode=DP184|startname=Casting a Paul on Barry!}}
+{{movep|type=fighting|ms=307|pkmn=Meditite|method=Meditite jumps into the air and strikes the opponent with its knee.}}
+{{movemid|type=fighting|user=Shauna (Hoenn)|user1=Shauna's Meditite|startcode=AG030|startname=A Meditite Fight!}}
+{{movep|type=fighting|ms=308|pkmn=Medicham|method=Medicham leaps into the air and strikes the opponent with its knee. If the attack misses, it hurts itself.}}
+{{movemid|type=fighting|user=Grace (Hoenn)|user1=Grace's Medicham|startcode=AG050|startname=Pros and Con Artists}}
+{{movemid|type=fighting|user=Greta|user1=Greta's Medicham|startcode=AG149|startname=Wheel of Frontier}}
+{{movep|type=fighting|ms=560|pkmn=Scrafty|method=Scrafty jumps into the air and one of its knees starts to glow red-orange. Scrafty then strikes the opponent with its knee. If the attack misses, when Scrafty lands, the knee that was glowing becomes surrounded briefly in yellow static, damaging it.}}
+{{movemid|type=fighting|user=Scrafty (Pokémon)|user1=A wild Scrafty|startcode=BW043|startname=Meowth's Scrafty Tactics!}}
+{{movep|type=fighting|ms=559|pkmn=Scraggy|method=Scraggy leaps at the opponent and swings its knee around once while going towards the opponent. It then thrusts its knee forward and it begins to glow red-orange. It then strikes the opponent with its knee. When Scraggy misses, its knee rams into the ground with great force, causing it to hold its knee in pain.}}
+{{movemid|type=fighting|user=Ash's Scraggy|startcode=BW043|startname=Meowth's Scrafty Tactics!}}
+{{movep|type=fighting|ms=620|pkmn=Mienshao|method=Mienshao jumps into the air and one of its knees starts to glow purple, white, or yellow. Mienshao then strikes the opponent with its knee.}}
+{{movemid|type=fighting|user=Delbert|user1=Delbert's Mienshao|startcode=BW071|startname=Search for the Clubultimate!}}
+{{movemid|type=fighting|user=Mienshao (Pokémon)|user1=A wild Mienshao|startcode=BW112|startname=Team Plasma's Pokémon Power Plot!}}
+{{movemid|type=fighting|user=Ikari|user1=Ikari's Mienshao|startcode=SM066|startname=Smashing with Sketch!}}
+{{movemid|type=fighting|user=Korrina (anime)|user1=Korrina's Mienshao|startcode=JN025|startname=A Festival Reunion!}}
+{{movep|type=fighting|ms=701|pkmn=Hawlucha|method=One of Hawlucha's knees glows white or orange and it strikes the opponent with it. If the attack misses, Hawlucha gets hurt instead.}}
+{{movemid|type=fighting|user=Ash's Hawlucha|startcode=XY035|startname=The Forest Champion!}}
+{{movemid|type=fighting|user=Bea|user1=Bea's Hawlucha|startcode=JN085|startname=Battle Three With Bea!}}
+{{movep|type=fighting|ms=619|pkmn=Mienfoo|method=Mienfoo jumps into the air and one of its knees starts to glow white. It then strikes the opponent with its knee. If the attack misses, it causes crash damage.}}
+{{movemid|type=fighting|user=Korrina (anime)|user1=Korrina's Mienfoo|startcode=XY044|startname=Showdown at the Shalour Gym!}}
+{{movep|type=fighting|ms=235|pkmn=Smeargle|method=One of Smeargle's legs glows white and it kicks the opponent with it.}}
+{{movemid|type=fighting|user=Ilima|user1=Ilima's Smeargle|startcode=SM066|startname=Smashing with Sketch!|notes=Used via {{mcolor|Sketch|000}}}}
+{{movep|type=fighting|ms=815|pkmn=Cinderace|method=The yellow hair around Cinderace's knees glows yellow. It then strikes the opponent with its knee.}}
+{{movebtm|type=fighting|user=Leon (anime)|user1=Leon's Cinderace|startcode=JN131|startname=Paring Pokémon While Parrying!|notes=Activates {{acolor|Libero|000}}}}
+
+===Pokémon Origins===
+{{moveanime|type=fighting|exp=yes|gen=The foe is attacked with a knee kick from a jump. If it misses, the user is hurt instead.|image1=Red Hitmonlee Hi Jump Kick PO.png|image1p=Hitmonlee}}
+{{movep|type=fighting|ms=106|pkmn=Hitmonlee|method=Hitmonlee leaps into the air and strikes the opponent with his knee.}}
+{{movebtm|type=fighting|user=Red (Origins)|user1=Red's Hitmonlee|startcode=PO03|startname=File 3: Giovanni|notes=Debut}}
+
+==In the manga==
+===Ash & Pikachu===
+{{movemanga|type=fighting|exp=yes|gen=The user jumps high and kicks with one of its legs.|image1=Greta Medicham Hi Jump Kick AP.png|image1p=Medicham}}
+{{movep|type=fighting|ms=308|pkmn=Medicham|method=Medicham jumps high and kicks the opponent with one of its legs.}}
+{{movebtmManga|type=fighting|user=Greta|user1=Greta's Medicham|startcode=SP34|startname=An Awesome Showdown!!|notes=Debut}}
+
+===Pokémon Adventures===
+{{movemanga|type=fighting|exp=yes|gen=The user kicks the opponent with one of its bent knees.|image1=Bruno Hitmonlee Hi Jump Kick Adventures.png|image1p=Hitmonlee|image2=Mallow Tsareena High Jump Kick Adventures.png|image2p=Tsareena}}
+{{movep|type=fighting|ms=106|pkmn=Hitmonlee|method=Hitmonlee does a handstand and swings his legs at the opponent, hitting them with one of his bent knees.}}
+{{movemid|type=fighting|user=Bruno|user1=Bruno's Hitmonlee|startcode=PS066|startname=Punching Poliwrath|notes=Debut}}
+{{movep|type=fighting|ms=763|pkmn=Tsareena|method=Tsareena jumps towards the opponent, kicking them with her bent knee.}}
+{{movebtmManga|type=fighting|user=Mallow's Tsareena|startcode=PASM34|startname=Destroy!! Results of the Training!}}
+
+===Pokémon Gold & Silver: The Golden Boys===
+{{movemanga|type=fighting|exp=yes|gen=The user jumps high and kicks with one of its legs.|image1=Gold Hitmonlee Golden Boys.png|image1p=Hitmonlee}}
+{{movep|type=fighting|ms=106|pkmn=Hitmonlee|method=Hitmonlee jumps high and kicks the opponent with one of his long legs.}}
+{{movebtmManga|type=fighting|user=Gold (Golden Boys)|user1=A Hitmonlee Gold briefly used|startcode=GB09|startname=Let's Use Fighting Type Pokémon!!}}
+
+===Pokémon Pocket Monsters===
+{{movemanga|type=fighting|exp=yes|gen=The user jumps high and kicks with one of its legs.|image1=Giovanni Hitmonlee Hi Jump Kick PM.png|image1p=Hitmonlee}}
+{{movep|type=fighting|ms=106|pkmn=Hitmonlee|method=Hitmonlee jumps high and kicks the opponent with one of his legs.}}
+{{movebtmManga|type=fighting|user=Giovanni's Hitmonlee and Hitmonchan|user1=Giovanni's Hitmonlee|startcode=PM009|startname=Pikachu Was Kidnapped!!}}
+
+==In other generations==
+===Core series games===
+{{movegen
+|type=Fighting
+|genI=Hi Jump Kick I
+|genII=Hi Jump Kick II
+|genIII=Hi Jump Kick III
+|genIV=Hi Jump Kick IV
+}}
+{{movegen
+|type=Fighting
+|genV=Hi Jump Kick V
+|genVI=High Jump Kick VI
+|genVI2=High Jump Kick VI 2
+|SMUSUM=High Jump Kick VII
+|SMUSUM2=High Jump Kick VII 2
+|LGPE=High Jump Kick PE
+|LGPE2=High Jump Kick PE 2
+}}
+{{movegen
+|type=Fighting
+|genVIII=High Jump Kick VIII
+|genVIII2=High Jump Kick VIII 2
+}}
+
+===Side series games===
+{{movegen
+|type=Fighting
+|Stad=Hi Jump Kick Stad
+|Stad2=Hi Jump Kick Stad2
+|Colo=Hi Jump Kick Colo
+|XD=Hi Jump Kick XD
+}}
+{{Movegen
+|type=Fighting
+|PBR=Hi Jump Kick PBR
+}}
+
+===Spin-off series games===
+{{Movegen
+|type=Fighting
+|PMDRB=Hi Jump Kick PMD RB
+|PMDTDS=Hi Jump Kick PMD TDS
+|PMDGTI=Hi Jump Kick PMD GTI
+|PSMD=High Jump Kick PSMD
+}}
+{{Movegen
+|type=Fighting
+|Masters=High Jump Kick Masters
+}}
+
+==In other languages==
+{{Langtable
+| color = {{fighting color}}
+| bordercolor = {{fighting color dark}}
+| zh_yue = 飛膝踢 ''{{tt|Fēisāttek|Flying Knee Kick}}'' {{tt|*|Games}}<br>飛膝撞 ''{{tt|Fēisātjohng|Flying Knee Strike}}'' {{tt|*|Early animated series}}{{specify|check tooltip: which episodes/seasons/series?}}<br>高飛腿 ''{{tt|Gōufēitéui|High Flying Kick}}'' {{tt|*|Early animated series}}{{specify|check tooltip: which episodes/seasons/series?}}
+| zh_cmn = 飛膝踢 / 飞膝踢 ''{{tt|Fēixītī|Flying Knee Kick}}'' {{tt|*|Games}}<br>飛膝撞 ''{{tt|Fēixīzhuàng|Flying Knee Strike}}'' {{tt|*|Pre-Gen VII Media}}
+| cs = Vysoký Výskok a Kop
+| da = Højt Hopspark<!--source: Danish version of The Official Pokémon Handbook-->
+| nl = Hoge Sprongschop
+| fi = Ylähyppypotku
+| fr = Pied Voltige
+| de = Turmkick
+| el = Υψομετρικό Λάκτισμα
+| hi = हाई जम्प किक ''High Jump Kick''
+| id = Tendangan Lutut Melompat{{tt|*|Pokémon GO}}<br>Tendangan Salto
+| it = Calcinvolo
+| ko = 무릎차기 ''{{tt|Mureupchagi|Knee Kick}}''
+| pl = Saltocios<!--{{tt|*|Diamond and Pearl series onwards}}<br>Wyskok i Kopnięcie{{tt|*|AG030}}<br>Kopniak z Wyskoku/Atak Kopniakiem{{tt|*|EP173}}<br>Szybki Atak{{tt|*|EP166}}-->
+| pt_br = Chute de Pulo Alto ([[XY035]]–present, {{TCG|Undaunted}}–present, manga)<br>Chute Alto ({{TCG|Fossil}}, The Official Pokémon Handbook)<br>Super Voadora ([[DP184]]–[[BW105]])<br>'''Other names:''' <small>Chute do Canhão{{tt|*|EP166 (first time); translated from ''High Jump Attack''}}, Chute Salto{{tt|*|EP166 (second and third times); also shared with Jump Kick in the episode}}, Chute Cruzado{{tt|*|EP173; also shared with Jump Kick in the episode}}, Pulo com<br>Chute{{tt|*|AG126}}, Salto com Chute{{tt|*|AG030}}, Alta Voadora{{tt|*|AG050–AG051}}, Pular Alto e Chutar{{tt|*|AG145 (first time); conjugated as ''Pule Alto e Chute''}}, Pulo Alto e Chute{{tt|*|AG145 (second time)}},<br>Chute Alto e Soco{{tt|*|AG149}}, Pulo Alto{{tt|*|XY120 (second and third times)}}</small><!--This section is lacking High Jump Kick's name in the EX Emerald TCG expansion, localized in Brazilian Portuguese-->
+| pt_eu = Chuto com Salto Alto<br>Pontapé em Salto (''Best Wishes'' series)<br>Salto Aéreo (Pokémon League Indigo ep.15)
+| ru = Прыжок-Удар ''{{tt|Pryzhok-Udar|Jump Kick}}'' {{tt|*|Pokémon GO}}<br>Удар в Прыжке ''{{tt|Udar v Pryzhke|Jump Hit}}''
+| sr = Šut iz Visokog Skoka
+| es_la = Patada Salto Alto (games)<br>Patada de Salto Alto (<!--[[EP173]], [[AG051]], -->[[BW055]]–[[JN131]])<!--<br>'''Other names:''' <small>Salto Alto{{tt|*|EP166, AG051; as a translation from English 'High Jump'}}, Patada de Salto{{tt|*|EP166; mistake with Jump Kick}}, Salto y Patadón{{tt|*|AG030; first mention}}, Salto Alto y Patadón{{tt|*|AG030; second mention}}, Megapatada{{tt|*|AG050; mistake with Mega Kick}}, Patada de Altura{{tt|*|AG126}}, Patada Voladora{{tt|*|AG145, AG149}}, Patada Salto Alta{{tt|*|DP184}}, Salto con Patada{{tt|*|BW043}}, Patada de Salto Alta{{tt|*|JN131; third command from Leon}}</small>-->
+| es_eu = {{tt|Pat.|Patada}} Salto Alta<sup>{{gen|VI}}+</sup><br>{{tt|Pat.|Patada}} {{tt|S.|Salto}} Alta<sup>{{gen|I}}–{{gen|V}}</sup>
+| th = กระโดดแทงเข่า ''{{tt|Kradot Thaeng Khao|Jumping Knee Thrust}}''
+| tr = Yüksek Sıçrama Tekmesi{{tt|*|Pokémon GO}}<br>Uçan Tekme
+| vi = Nhảy Đá Lên Gối
+| ca = Salt amb Genollada
+}}
+{{Project Moves and Abilities notice}}
+
+[[Category:Moves that can cause crash damage]]
+[[Category:Moves in Pokémon: Let's Go, Pikachu! and Let's Go, Eevee!]]
+[[Category:Moves usable in Pokémon Sword and Shield]]
+[[Category:Moves usable in Pokémon Scarlet and Violet]]
+
+[[de:Turmkick]]
+[[es:Patada Salto Alto/Patada Salto Alta]]
+[[fr:Pied Voltige]]
+[[it:Calcinvolo]]
+[[ja:とびひざげり]]
+[[zh:飞膝踢（招式）]]

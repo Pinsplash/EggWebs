@@ -1,0 +1,1185 @@
+{{MoveInfobox
+|n=85
+|name=Thunderbolt
+|jname=１０まんボルト
+|jtranslit=Jūman Boruto
+|jtrans=100,000 Volts
+|gameimage=Thunderbolt IX.png
+|gameimage2=
+|gameimagewidth=300
+|type=Electric
+|damagecategory=Special
+|basepp=15
+|maxpp=24
+|power={{tt|90|95 in Generations I-V}}
+|accuracy=100
+|gen=I
+|category=Cool
+|appeal=4
+|jam=0
+|cdesc=A highly appealing move.
+|appealsc=2
+|scdesc=Earn +2 if the Pokémon performs first in the turn.
+|appeal6=4
+|jam6=0
+|cdesc6=Quite an appealing move.
+|touches=no
+|protect=yes
+|magiccoat=no
+|snatch=no
+|mirrormove=yes
+|kingsrock=yes
+|sound=no
+|tm1=yes
+|tm#1=24
+|tm3=yes
+|tm#3=24
+|tm4=yes
+|tm#4=24
+|tm5=yes
+|tm#5=24
+|tm6=yes
+|tm#6=24
+|tm7=yes
+|tm#7=24
+|tr8=yes
+|tr#8=08
+|tmbdsp=yes
+|tm#bdsp=24
+|tmpe=yes
+|tm#pe=36
+|tm9=yes
+|tm#9=126
+|tmza=yes
+|tm#za=067
+|mtla=yes
+|mtc=yes
+|na=no
+|target=anyadjacent
+}}
+'''Thunderbolt''' (Japanese: '''１０まんボルト''' ''100,000 Volts'') is a damage-dealing {{type|Electric}} [[move]] introduced in [[Generation I]].
+
+It is:
+* [[TM24]] in Generation I, from [[Generation III]] to {{g|Ultra Sun and Ultra Moon}}, and in {{g|Brilliant Diamond and Shining Pearl}}.
+* [[TM36]] in [[Pokémon: Let's Go, Pikachu! and Let's Go, Eevee!]].
+* [[TR08]] in [[Pokémon Sword and Shield]].
+* [[TM126]] in {{g|Scarlet and Violet}}.
+* [[TM067]] in [[Pokémon Legends: Z-A]].
+
+It can be upgraded to the special [[Z-Move]] {{m|Stoked Sparksurfer}} by {{rf|Alolan}} {{p|Raichu}} holding [[Aloraichium Z]], and to the special Z-Move {{m|10,000,000 Volt Thunderbolt}} by [[Pikachu in a cap]] holding [[Pikashunium Z]].
+
+==Effect==
+===Generation I===
+Thunderbolt does damage and has a 10% chance of {{status|Paralysis|paralyzing}} the target. Thunderbolt cannot paralyze {{type|Electric}} Pokémon.
+
+===Generation II to V===
+Thunderbolt can now paralyze Electric-type Pokémon.
+
+Thunderbolt can be used as the second move of a [[Contest combination|Pokémon Contest combination]], with the user gaining 4 bonus appeal points if {{m|Charge}} was used in the previous turn.
+
+===Generation VI onwards===
+Thunderbolt's power was decreased from 95 to 90. It can no longer paralyze {{type|Electric}} Pokémon once again, due to them now being immune to {{status|paralysis}}.
+
+Thunderbolt can be used as part of a [[Contest combination|Contest Spectacular combination]], with the user gaining an extra three appeal points if {{m|Charge}} was used in the prior turn.
+
+===Generation VIII===
+====Pokémon Legends: Arceus====
+{{LegendsMove
+|type=Electric
+|damagecategory=Special
+|basepp=10
+|power=80
+|power-agile=60
+|power-strong=100
+|accuracy=100
+|accuracy-strong=100
+|actionspeed-user=0
+|actionspeed-user-agile=0
+|actionspeed-user-strong=+5
+|actionspeed-target=0
+|actionspeed-target-agile=+3
+|effect=Inflicts the target with paralysis
+|param=Chance
+|param-val=20%
+|param-val-agile=20%
+|param-val-strong=40%
+|param2=Turns
+|param2-val=3
+|param2-val-agile=2
+|param2-val-strong=4}}
+
+===Generation IX===
+====Pokémon Legends: Z-A====
+{{LegendsZAMove
+|type=Electric
+|damagecategory=Special
+|power=90
+|cooldown=8
+|charge-time=25
+|effect=May paralyze the target.
+|param=Chance
+|param-val=10%
+}}
+
+==Description==
+{{movedesc|electric}}
+{{movedescentry|{{gameabbrevss|Stad}}{{gameabbrevss|Stad2}}|An <sc>Electric</sc>-type attack. Has a one-in-ten chance of paralyzing the target.}}
+{{movedescentry|{{gameabbrev2|GSC}}|An attack that may cause paralysis.}}
+{{movedescentry|{{gameabbrev3|RSE}}{{gameabbrevss|Colo}}{{gameabbrevss|XD}}|A strong electrical attack that may paralyze the foe.{{sup/3|RS}}{{sup/3|E}} <small>(move)</small><br>A strong electrical attack. It may paralyze the target.{{sup/ss|Colo}}{{sup/ss|XD}} <small>(move)</small><br>A powerful electric attack that may cause paralysis. <small>(TM)</small>}}
+{{movedescentry|{{gameabbrev3|FRLG}}|A strong electrical attack that may also leave the foe paralyzed.}}
+{{movedescentry|{{gameabbrev4|DPPtHGSS}}{{gameabbrevss|PBR}}|A strong electric blast is loosed at the foe. It may also leave the foe paralyzed.}}
+{{movedescentry|{{gameabbrev5|BWB2W2}}|A strong electric blast is loosed at the target. It may also leave the target with paralysis.}}
+{{movedescentry|{{gameabbrev6|XYORAS}}<br>{{gameabbrev7|SMUSUMPE}}<br>{{gameabbrev8|SwShBDSP}}|A strong electric blast crashes down on the target. This may also leave the target with paralysis.}}
+{{movedescentry|{{gameabbrev8|LA}}<br>{{gameabbrev9|SV}}|The user attacks the target with a strong electric blast. This may also leave the target with paralysis.}}
+{{movedescentry|{{gameabbrev9|ZA}}|The user attacks with a strong electric blast. This may also leave targets paralyzed.}}
+|}
+|}{{left clear}}
+
+==Learnset==
+===By [[Level|leveling up]]===
+{{Movehead/Games|Electric|g7=2|g8=3|g9=2}}
+{{Moveentry/13|0025|Pikachu|type=Electric|2|Field|Fairy|26{{sup/1|Y}}|26|26|26|29|29{{sup/6|XY}}<br>42{{sup/6|ORAS}}|42|21|36|36|29|36|25|STAB='''}}
+{{Moveentry/13|0026|Raichu|type=Electric|2|Field|Fairy|−|1|1|1|1|1|1|−|1|1|29|5|25|STAB='''}}
+{{Moveentry/13|0026|formsig=A|Raichu|type=Electric|type2=Psychic|2|Field|Fairy|form=Alolan Form|||||||1|−|1|||5|25|STAB='''}}
+{{Moveentry/13|0081|Magnemite|type=Electric|type2=Steel|1|Mineral|Mineral|−|−|−|−|−|−|−|26|−|−|34|−|STAB='''}}
+{{Moveentry/13|0082|Magneton|type=Electric|type2=Steel|1|Mineral|Mineral|−|−|−|−|−|−|−|26|−|−|34|−|STAB='''}}
+{{Moveentry/13|0100|Voltorb|type=Electric|1|Mineral|Mineral|−|−|−|−|−|−|−|31||−||−|STAB='''}}
+{{Moveentry/13|0100|formsig=H|Voltorb|type=Electric|type2=Grass|1|Mineral|Mineral|form=Hisuian Form|||||||||||29|−|STAB='''}}
+{{Moveentry/13|0101|Electrode|type=Electric|1|Mineral|Mineral|−|−|−|−|−|−|−|36||−||−|STAB='''}}
+{{Moveentry/13|0101|formsig=H|Electrode|type=Electric|type2=Grass|1|Mineral|Mineral|form=Hisuian Form|||||||||||29|−|STAB='''}}
+{{Moveentry/13|0125|Electabuzz|type=Electric|1|Human-Like|Human-Like|−|47|47|43|50{{sup/5|BW}}<br>49{{sup/5|B2W2}}|49|49|44|46|46|34|46|STAB='''}}
+{{Moveentry/13|0135|Jolteon|type=Electric|1|Field|Field|−|−|−|−|−|−|−|−|−|−|25|−|40|STAB='''}}
+{{Moveentry/13|0137|Porygon|type=Normal|1|Mineral|Mineral|−|−|−|−|−|−|−|−|−|−|29|−|}}
+{{Moveentry/13|0145|Zapdos|type=Electric|type2=Flying|1|No Eggs Discovered|No Eggs Discovered|−|−|−|−|−|−|−|32|−|−||−|STAB='''}}
+{{Moveentry/13|0172|Pichu|type=Electric|1|No Eggs Discovered|No Eggs Discovered||−|−|−|−|−|−||−|−|−|−|25|STAB='''}}
+{{Moveentry/13|0179|Mareep|type=Electric|2|Monster|Field||−|−|−|−|−|−|||−||−|36|STAB='''}}
+{{Moveentry/13|0180|Flaaffy|type=Electric|2|Monster|Field||−|−|−|−|−|−|||−||−|36|STAB='''}}
+{{Moveentry/13|0181|Ampharos|type=Electric|2|Monster|Field||−|−|−|−|−|−|||−||−|36|STAB='''}}
+{{Moveentry/13|0233|Porygon2|type=Normal|1|Mineral|Mineral||−|−|−|−|−|−||−|−|29|−}}
+{{Moveentry/13|0239|Elekid|type=Electric|1|No Eggs Discovered|No Eggs Discovered||41|41|37|46{{sup/5|BW}}<br>40{{sup/5|B2W2}}|40|40||40|40|34|40|STAB='''}}
+{{Moveentry/13|0309|Electrike|type=Electric|1|Field|Field|||−|−|−|−|−||−|−|||40|STAB='''}}
+{{Moveentry/13|0310|Manectric|type=Electric|1|Field|Field|||−|−|−|−|−||−|−|||40|STAB='''}}
+{{Moveentry/13|0462|Magnezone|type=Electric|type2=Steel|1|Mineral|Mineral||||−|−|−|−||−|−|34|−|STAB='''}}
+{{Moveentry/13|0466|Electivire|type=Electric|1|Human-Like|Human-Like||||43|50{{sup/5|BW}}<br>49{{sup/5|B2W2}}|49|49||46|46|34|46|STAB='''}}
+{{Moveentry/13|0474|Porygon-Z|type=Normal|1|Mineral|Mineral||||−|−|−|−||−|−|29|−}}
+{{Moveentry/13|0479|Rotom|type=Electric|type2=Ghost|1|Amorphous|Amorphous|form=All forms||||−|−|−|−||−|−|34|−|STAB='''}}
+{{Moveentry/13|0603|Eelektrik|type=Electric|1|Amorphous|Amorphous|||||44|44|44|||||44|44|STAB='''}}
+{{Moveentry/13|0604|Eelektross|type=Electric|1|Amorphous|Amorphous|||||−|−|−|||||−|44|STAB='''}}
+{{Moveentry/13|0618|Stunfisk|type=Ground|type2=Electric|2|Water 1|Amorphous|||||45|45|45||−||||−|STAB='''}}
+{{Moveentry/13|0644|Zekrom|type=Dragon|type2=Electric|1|No Eggs Discovered|No Eggs Discovered|||||22|22|22||40|||40|STAB='''}}
+{{Moveentry/13|0694|Helioptile|type=Electric|type2=Normal|2|Monster|Dragon||||||49|49||−||||36|STAB='''}}
+{{Moveentry/13|0695|Heliolisk|type=Electric|type2=Normal|2|Monster|Dragon||||||−|−||1||||36|STAB='''}}
+{{Moveentry/13|0702|Dedenne|type=Electric|type2=Fairy|2|Field|Fairy||||||−|−||−|||−|35|STAB='''}}
+{{Moveentry/13|0738|Vikavolt|type=Bug|type2=Electric|1|Bug|Bug|||||||1,&nbsp;{{tt|Evo.|Learned upon evolving}}||1,&nbsp;{{tt|Evo.|Learned upon evolving}}|||{{tt|Evo.|Learned upon evolving}}|STAB='''}}
+{{Moveentry/13|0796|Xurkitree|type=Electric|1|No Eggs Discovered|No Eggs Discovered|||||||37||55||||STAB='''}}
+{{Moveentry/13|0894|Regieleki|type=Electric|1|No Eggs Discovered|No Eggs Discovered|||||||||42|||42|STAB='''}}
+{{Movefoot|Electric|13}}
+
+===By [[TM]]/[[TR]]/[[Move Tutor]]===
+{{Movehead/TMGames|Electric|g1tm=24
+|g2tm=tutor|g2g={{gameabbrev2|C}}
+|g3tm=24
+|g4tm=24
+|g5tm=24
+|g6tm=24
+|g7=2|g7tm-1=24|g7tm-2=36
+|g8=3|g8tm-1=08|tmhm8-1=TR|g8tm-2=24|g8tm-3=tutor
+|g9=2|g9tm-1=126|g9tm-2=067}}
+{{Moveentry/13|0019|Rattata|type=Normal|1|Field|Field|✔|−|✔|✔|✔|✔|✔|✔||✔||}}
+{{Moveentry/13|0020|Raticate|type=Normal|1|Field|Field|✔|✔|✔|✔|✔|✔|✔|✔||✔||}}
+{{Moveentry/13|0025|Pikachu|type=Electric|2|Field|Fairy|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/13|0026|Raichu|type=Electric|2|Field|Fairy|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/13|0026|formsig=A|Raichu|type=Electric|type2=Psychic|2|Field|Fairy|form=Alolan Form|||||||✔|✔|✔|||✔|✔|STAB='''}}
+{{Moveentry/13|0029|Nidoran♀|type=Poison|2|Monster|Field|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||}}
+{{Moveentry/13|0030|Nidorina|type=Poison|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||}}
+{{Moveentry/13|0031|Nidoqueen|type=Poison|type2=Ground|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||}}
+{{Moveentry/13|0032|Nidoran♂|type=Poison|2|Monster|Field|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||}}
+{{Moveentry/13|0033|Nidorino|type=Poison|2|Monster|Field|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||}}
+{{Moveentry/13|0034|Nidoking|type=Poison|type2=Ground|2|Monster|Field|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||}}
+{{Moveentry/13|0035|Clefairy|type=Fairy|1|Fairy|Fairy|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/13|0036|Clefable|type=Fairy|1|Fairy|Fairy|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/13|0039|Jigglypuff|type=Normal|type2=Fairy|1|Fairy|Fairy|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/13|0040|Wigglytuff|type=Normal|type2=Fairy|1|Fairy|Fairy|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/13|0052|Meowth|type=Normal|1|Field|Field|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/13|0052|formsig=A|Meowth|type=Dark|1|Field|Field|form=Alolan Form|||||||✔|✔|✔|||✔|✔}}
+{{Moveentry/13|0052|formsig=G|Meowth|type=Steel|1|Field|Field|form=Galarian Form|||||||||✔|||✔|✔}}
+{{Moveentry/13|0053|Persian|type=Normal|1|Field|Field|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/13|0053|formsig=A|Persian|type=Dark|1|Field|Field|form=Alolan Form|||||||✔|✔|✔|||✔|✔}}
+{{Moveentry/13|0056|Mankey|type=Fighting|1|Field|Field|✔|✔|✔|✔|✔|✔|✔|✔||✔||✔|✔}}
+{{Moveentry/13|0057|Primeape|type=Fighting|1|Field|Field|✔|✔|✔|✔|✔|✔|✔|✔||✔||✔|✔}}
+{{Moveentry/13|0074|formsig=A|Geodude|type=Rock|type2=Electric|1|Mineral|Mineral|form=Alolan Form|||||||✔|✔||||✔|STAB='''}}
+{{Moveentry/13|0075|formsig=A|Graveler|type=Rock|type2=Electric|1|Mineral|Mineral|form=Alolan Form|||||||✔|✔||||✔|STAB='''}}
+{{Moveentry/13|0076|formsig=A|Golem|type=Rock|type2=Electric|1|Mineral|Mineral|form=Alolan Form|||||||✔|✔||||✔|STAB='''}}
+{{Moveentry/13|0081|Magnemite|type=Electric|type2=Steel|1|Mineral|Mineral|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/13|0082|Magneton|type=Electric|type2=Steel|1|Mineral|Mineral|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/13|0088|Grimer|type=Poison|1|Amorphous|Amorphous|✔|✔|✔|✔|✔|✔|✔|✔||✔||✔}}
+{{Moveentry/13|0088|formsig=A|Grimer|type=Poison|type2=Dark|1|Amorphous|Amorphous|form=Alolan Form|||||||−|−||||✔}}
+{{Moveentry/13|0089|Muk|type=Poison|1|Amorphous|Amorphous|✔|✔|✔|✔|✔|✔|✔|✔||✔||✔}}
+{{Moveentry/13|0089|formsig=A|Muk|type=Poison|type2=Dark|1|Amorphous|Amorphous|form=Alolan Form|||||||−|−||||✔}}
+{{Moveentry/13|0092|Gastly|type=Ghost|type2=Poison|1|Amorphous|Amorphous|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/13|0093|Haunter|type=Ghost|type2=Poison|1|Amorphous|Amorphous|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/13|0094|Gengar|type=Ghost|type2=Poison|1|Amorphous|Amorphous|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/13|0100|Voltorb|type=Electric|1|Mineral|Mineral|✔|✔|✔|✔|✔|✔|✔|✔||✔||✔|STAB='''}}
+{{Moveentry/13|0100|formsig=H|Voltorb|type=Electric|type2=Grass|1|Mineral|Mineral|form=Hisuian Form|||||||||||✔|✔|STAB='''}}
+{{Moveentry/13|0101|Electrode|type=Electric|1|Mineral|Mineral|✔|✔|✔|✔|✔|✔|✔|✔||✔||✔|STAB='''}}
+{{Moveentry/13|0101|formsig=H|Electrode|type=Electric|type2=Grass|1|Mineral|Mineral|form=Hisuian Form|||||||||||✔|✔|STAB='''}}
+{{Moveentry/13|0105|formsig=A|Marowak|type=Fire|type2=Ghost|1|Monster|Monster|form=Alolan Form|||||||✔|✔|✔||||✔}}
+{{Moveentry/13|0108|Lickitung|type=Normal|1|Monster|Monster|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|−|}}
+{{Moveentry/13|0109|Koffing|type=Poison|1|Amorphous|Amorphous|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔}}
+{{Moveentry/13|0110|Weezing|type=Poison|1|Amorphous|Amorphous|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔}}
+{{Moveentry/13|0110|formsig=G|Weezing|type=Poison|type2=Fairy|1|Amorphous|Amorphous|form=Galarian Form|||||||||✔|||✔}}
+{{Moveentry/13|0111|Rhyhorn|type=Ground|type2=Rock|2|Monster|Field|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|−|✔}}
+{{Moveentry/13|0112|Rhydon|type=Ground|type2=Rock|2|Monster|Field|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|−|✔}}
+{{Moveentry/13|0113|Chansey|type=Normal|1|Fairy|Fairy|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/13|0115|Kangaskhan|type=Normal|1|Monster|Monster|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|||✔}}
+{{Moveentry/13|0120|Staryu|type=Water|1|Water 3|Water 3|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|||✔}}
+{{Moveentry/13|0121|Starmie|type=Water|type2=Psychic|1|Water 3|Water 3|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|||✔}}
+{{Moveentry/13|0122|Mr. Mime|type=Psychic|type2=Fairy|1|Human-Like|Human-Like|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔}}
+{{Moveentry/13|0122|formsig=G|Mr. Mime|type=Ice|type2=Psychic|1|Human-Like|Human-Like|form=Galarian Form|||||||||✔||||✔}}
+{{Moveentry/13|0125|Electabuzz|type=Electric|1|Human-Like|Human-Like|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/13|0128|Tauros|type=Normal|1|Field|Field|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔}}
+{{Moveentry/13|0130|Gyarados|type=Water|type2=Flying|2|Water 2|Dragon|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/13|0131|Lapras|type=Water|type2=Ice|2|Monster|Water 1|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔}}
+{{Moveentry/13|0135|Jolteon|type=Electric|1|Field|Field|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/13|0137|Porygon|type=Normal|1|Mineral|Mineral|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/13|0143|Snorlax|type=Normal|1|Monster|Monster|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/13|0145|Zapdos|type=Electric|type2=Flying|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔|STAB='''}}
+{{Moveentry/13|0147|Dratini|type=Dragon|2|Water 1|Dragon|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/13|0148|Dragonair|type=Dragon|2|Water 1|Dragon|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/13|0149|Dragonite|type=Dragon|type2=Flying|2|Water 1|Dragon|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/13|0150|Mewtwo|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/13|0151|Mew|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔}}
+{{Moveentry/13|0161|Sentret|type=Normal|1|Field|Field||−|✔|✔|✔|✔|✔|||✔||✔}}
+{{Moveentry/13|0162|Furret|type=Normal|1|Field|Field||−|✔|✔|✔|✔|✔|||✔||✔}}
+{{Moveentry/13|0170|Chinchou|type=Water|type2=Electric|1|Water 2|Water 2||✔|✔|✔|✔|✔|✔||✔|✔||✔|STAB='''}}
+{{Moveentry/13|0171|Lanturn|type=Water|type2=Electric|1|Water 2|Water 2||✔|✔|✔|✔|✔|✔||✔|✔||✔|STAB='''}}
+{{Moveentry/13|0172|Pichu|type=Electric|1|No Eggs Discovered|No Eggs Discovered||✔|✔|✔|✔|✔|✔||✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/13|0173|Cleffa|type=Fairy|1|No Eggs Discovered|No Eggs Discovered||–|–|–|–|–|–||–|–|–|–|✔}}
+{{Moveentry/13|0179|Mareep|type=Electric|2|Monster|Field||✔|✔|✔|✔|✔|✔|||✔||✔|✔|STAB='''}}
+{{Moveentry/13|0180|Flaaffy|type=Electric|2|Monster|Field||✔|✔|✔|✔|✔|✔|||✔||✔|✔|STAB='''}}
+{{Moveentry/13|0181|Ampharos|type=Electric|2|Monster|Field||✔|✔|✔|✔|✔|✔|||✔||✔|✔|STAB='''}}
+{{Moveentry/13|0190|Aipom|type=Normal|1|Field|Field||✔|✔|✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/13|0200|Misdreavus|type=Ghost|1|Amorphous|Amorphous||✔|✔|✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/13|0203|Girafarig|type=Normal|type2=Psychic|1|Field|Field||✔|✔|✔|✔|✔|✔|||✔||✔}}
+{{Moveentry/13|0206|Dunsparce|type=Normal|1|Field|Field||✔|✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/13|0209|Snubbull|type=Fairy|2|Field|Fairy||✔|✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/13|0210|Granbull|type=Fairy|2|Field|Fairy||✔|✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/13|0233|Porygon2|type=Normal|1|Mineral|Mineral||✔|✔|✔|✔|✔|✔||✔|✔|✔|✔|✔}}
+{{Moveentry/13|0234|Stantler|type=Normal|1|Field|Field||−|✔|✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/13|0239|Elekid|type=Electric|1|No Eggs Discovered|No Eggs Discovered||✔|✔|✔|✔|✔|✔||✔|✔|✔|✔|STAB='''}}
+{{Moveentry/13|0241|Miltank|type=Normal|1|Field|Field||✔|✔|✔|✔|✔|✔||✔|✔||}}
+{{Moveentry/13|0242|Blissey|type=Normal|1|Fairy|Fairy||✔|✔|✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/13|0243|Raikou|type=Electric|1|No Eggs Discovered|No Eggs Discovered||✔|✔|✔|✔|✔|✔||✔|✔||✔|STAB='''}}
+{{Moveentry/13|0248|Tyranitar|type=Rock|type2=Dark|1|Monster|Monster||✔|✔|✔|✔|✔|✔||✔|✔||✔|✔}}
+{{Moveentry/13|0249|Lugia|type=Psychic|type2=Flying|1|No Eggs Discovered|No Eggs Discovered||✔|✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/13|0250|Ho-Oh|type=Fire|type2=Flying|1|No Eggs Discovered|No Eggs Discovered||✔|✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/13|0263|Zigzagoon|type=Normal|1|Field|Field|||✔|✔|✔|✔|✔||✔|✔||}}
+{{Moveentry/13|0263|formsig=G|Zigzagoon|type=Dark|type2=Normal|1|Field|Field|form=Galarian Form|||||||||✔|||}}
+{{Moveentry/13|0264|Linoone|type=Normal|1|Field|Field|||✔|✔|✔|✔|✔||✔|✔||}}
+{{Moveentry/13|0264|formsig=G|Linoone|type=Dark|type2=Normal|1|Field|Field|form=Galarian Form|||||||||✔|||}}
+{{Moveentry/13|0280|Ralts|type=Psychic|type2=Fairy|2|Human-Like|Amorphous|||✔|✔|✔|✔|✔||✔|✔|✔|✔|✔}}
+{{Moveentry/13|0281|Kirlia|type=Psychic|type2=Fairy|2|Human-Like|Amorphous|||✔|✔|✔|✔|✔||✔|✔|✔|✔|✔}}
+{{Moveentry/13|0282|Gardevoir|type=Psychic|type2=Fairy|2|Human-Like|Amorphous|||✔|✔|✔|✔|✔||✔|✔|✔|✔|✔}}
+{{Moveentry/13|0287|Slakoth|type=Normal|1|Field|Field|||✔|✔|✔|✔|✔|||✔||✔}}
+{{Moveentry/13|0288|Vigoroth|type=Normal|1|Field|Field|||✔|✔|✔|✔|✔|||✔||✔}}
+{{Moveentry/13|0289|Slaking|type=Normal|1|Field|Field|||✔|✔|✔|✔|✔|||✔||✔}}
+{{Moveentry/13|0299|Nosepass|type=Rock|1|Mineral|Mineral|||✔|✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/13|0300|Skitty|type=Normal|2|Field|Fairy|||✔|✔|✔|✔|✔|||✔||}}
+{{Moveentry/13|0301|Delcatty|type=Normal|2|Field|Fairy|||✔|✔|✔|✔|✔|||✔||}}
+{{Moveentry/13|0306|Aggron|type=Steel|type2=Rock|1|Monster|Monster|||✔|✔|✔|✔|✔||✔|✔|||✔}}
+{{Moveentry/13|0309|Electrike|type=Electric|1|Field|Field|||✔|✔|✔|✔|✔||✔|✔|||✔|STAB='''}}
+{{Moveentry/13|0310|Manectric|type=Electric|1|Field|Field|||✔|✔|✔|✔|✔||✔|✔|||✔|STAB='''}}
+{{Moveentry/13|0311|Plusle|type=Electric|1|Fairy|Fairy|||✔|✔|✔|✔|✔|||✔||✔|STAB='''}}
+{{Moveentry/13|0312|Minun|type=Electric|1|Fairy|Fairy|||✔|✔|✔|✔|✔|||✔||✔|STAB='''}}
+{{Moveentry/13|0313|Volbeat|type=Bug|2|Bug|Human-Like|||✔|✔|✔|✔|✔|||✔||−}}
+{{Moveentry/13|0314|Illumise|type=Bug|2|Bug|Human-Like|||✔|✔|✔|✔|✔|||✔||✔}}
+{{Moveentry/13|0335|Zangoose|type=Normal|1|Field|Field|||✔|✔|✔|✔|✔|||✔||✔|✔}}
+{{Moveentry/13|0351|Castform|type=Normal|2|Fairy|Amorphous|||✔|✔|✔|✔|✔|||✔||}}
+{{Moveentry/13|0352|Kecleon|type=Normal|1|Field|Field|||✔|✔|✔|✔|✔|||✔|||✔}}
+{{Moveentry/13|0353|Shuppet|type=Ghost|1|Amorphous|Amorphous|||✔|✔|✔|✔|✔|||✔||✔|✔}}
+{{Moveentry/13|0354|Banette|type=Ghost|1|Amorphous|Amorphous|||✔|✔|✔|✔|✔|||✔||✔|✔}}
+{{Moveentry/13|0359|Absol|type=Dark|1|Field|Field|||✔|✔|✔|✔|✔||✔|✔|||✔}}
+{{Moveentry/13|0377|Regirock|type=Rock|1|No Eggs Discovered|No Eggs Discovered|||✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/13|0378|Regice|type=Ice|1|No Eggs Discovered|No Eggs Discovered|||✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/13|0379|Registeel|type=Steel|1|No Eggs Discovered|No Eggs Discovered|||✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/13|0380|Latias|type=Dragon|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered|||✔|✔|✔|✔|✔||✔|✔||✔|✔}}
+{{Moveentry/13|0381|Latios|type=Dragon|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered|||✔|✔|✔|✔|✔||✔|✔||✔|✔}}
+{{Moveentry/13|0382|Kyogre|type=Water|1|No Eggs Discovered|No Eggs Discovered|||✔|✔|✔|✔|✔||✔|✔||✔|✔}}
+{{Moveentry/13|0383|Groudon|type=Ground|1|No Eggs Discovered|No Eggs Discovered|||✔|✔|✔|✔|✔||✔|✔||✔|✔}}
+{{Moveentry/13|0384|Rayquaza|type=Dragon|type2=Flying|1|No Eggs Discovered|No Eggs Discovered|||✔|✔|✔|✔|✔||✔|✔||✔|✔}}
+{{Moveentry/13|0385|Jirachi|type=Steel|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered|||✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/13|0386|Deoxys|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|form=All forms|||✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/13|0399|Bidoof|type=Normal|2|Water 1|Field||||✔|✔|✔|✔|||✔|✔|}}
+{{Moveentry/13|0400|Bibarel|type=Normal|type2=Water|2|Water 1|Field||||✔|✔|✔|✔|||✔|✔|}}
+{{Moveentry/13|0403|Shinx|type=Electric|1|Field|Field||||✔|✔|✔|✔||✔|✔|✔|✔|STAB='''}}
+{{Moveentry/13|0404|Luxio|type=Electric|1|Field|Field||||✔|✔|✔|✔||✔|✔|✔|✔|STAB='''}}
+{{Moveentry/13|0405|Luxray|type=Electric|1|Field|Field||||✔|✔|✔|✔||✔|✔|✔|✔|STAB='''}}
+{{Moveentry/13|0408|Cranidos|type=Rock|1|Monster|Monster||||✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/13|0409|Rampardos|type=Rock|1|Monster|Monster||||✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/13|0410|Shieldon|type=Rock|type2=Steel|1|Monster|Monster||||✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/13|0411|Bastiodon|type=Rock|type2=Steel|1|Monster|Monster||||✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/13|0417|Pachirisu|type=Electric|2|Field|Fairy||||✔|✔|✔|✔|||✔|✔|✔|STAB='''}}
+{{Moveentry/13|0424|Ambipom|type=Normal|1|Field|Field||||✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/13|0425|Drifloon|type=Ghost|type2=Flying|1|Amorphous|Amorphous||||✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/13|0426|Drifblim|type=Ghost|type2=Flying|1|Amorphous|Amorphous||||✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/13|0427|Buneary|type=Normal|2|Field|Human-Like||||✔|✔|✔|✔||✔|✔|✔||✔}}
+{{Moveentry/13|0428|Lopunny|type=Normal|2|Field|Human-Like||||✔|✔|✔|✔||✔|✔|✔||✔}}
+{{Moveentry/13|0429|Mismagius|type=Ghost|1|Amorphous|Amorphous||||✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/13|0431|Glameow|type=Normal|1|Field|Field||||✔|✔|✔|✔|||✔|✔|}}
+{{Moveentry/13|0432|Purugly|type=Normal|1|Field|Field||||✔|✔|✔|✔|||✔|✔|}}
+{{Moveentry/13|0439|Mime Jr.|type=Psychic|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered||||✔|✔|✔|✔||✔|✔|✔||✔}}
+{{Moveentry/13|0446|Munchlax|type=Normal|1|No Eggs Discovered|No Eggs Discovered||||✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/13|0462|Magnezone|type=Electric|type2=Steel|1|Mineral|Mineral||||✔|✔|✔|✔||✔|✔|✔|✔|STAB='''}}
+{{Moveentry/13|0463|Lickilicky|type=Normal|1|Monster|Monster||||✔|✔|✔|✔||✔|✔|✔|}}
+{{Moveentry/13|0464|Rhyperior|type=Ground|type2=Rock|2|Monster|Field||||✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/13|0466|Electivire|type=Electric|1|Human-Like|Human-Like||||✔|✔|✔|✔||✔|✔|✔|✔|STAB='''}}
+{{Moveentry/13|0467|Magmortar|type=Fire|1|Human-Like|Human-Like||||✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/13|0474|Porygon-Z|type=Normal|1|Mineral|Mineral||||✔|✔|✔|✔||✔|✔|✔|✔|✔}}
+{{Moveentry/13|0475|Gallade|type=Psychic|type2=Fighting|2|Human-Like|Amorphous||||✔|✔|✔|✔||✔|✔|✔|✔|✔}}
+{{Moveentry/13|0476|Probopass|type=Rock|type2=Steel|1|Mineral|Mineral||||✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/13|0478|Froslass|type=Ice|type2=Ghost|2|Fairy|Mineral||||✔|✔|✔|✔||✔|✔|✔|✔|✔}}
+{{Moveentry/13|0479|Rotom|type=Electric|type2=Ghost|1|Amorphous|Amorphous|form=All forms||||✔|✔|✔|✔||✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/13|0480|Uxie|type=Psychic|1|No Eggs Discovered|No Eggs Discovered||||✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/13|0481|Mesprit|type=Psychic|1|No Eggs Discovered|No Eggs Discovered||||✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/13|0482|Azelf|type=Psychic|1|No Eggs Discovered|No Eggs Discovered||||✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/13|0483|Dialga|type=Steel|type2=Dragon|1|No Eggs Discovered|No Eggs Discovered|form=All available forms||||✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/13|0484|Palkia|type=Water|type2=Dragon|1|No Eggs Discovered|No Eggs Discovered|form=All available forms||||✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/13|0486|Regigigas|type=Normal|1|No Eggs Discovered|No Eggs Discovered||||✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/13|0487|Giratina|type=Ghost|type2=Dragon|1|No Eggs Discovered|No Eggs Discovered|form=All available forms||||✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/13|0488|Cresselia|type=Psychic|1|No Eggs Discovered|No Eggs Discovered||||−|−|−|−||−|−|−|✔}}
+{{Moveentry/13|0491|Darkrai|type=Dark|1|No Eggs Discovered|No Eggs Discovered||||✔|✔|✔|✔|||✔|✔|−|✔}}
+{{Moveentry/13|0493|Arceus|type=Normal|1|No Eggs Discovered|No Eggs Discovered|form=All available forms||||✔|✔|✔|✔|||✔|✔|✔|STAB=''}}
+{{Moveentry/13|0494|Victini|type=Psychic|type2=Fire|1|No Eggs Discovered|No Eggs Discovered|||||✔|✔|✔||✔|||}}
+{{Moveentry/13|0504|Patrat|type=Normal|1|Field|Field|||||✔|✔|✔||||||✔}}
+{{Moveentry/13|0505|Watchog|type=Normal|1|Field|Field|||||✔|✔|✔||||||✔}}
+{{Moveentry/13|0506|Lillipup|type=Normal|1|Field|Field|||||✔|✔|✔||✔|||}}
+{{Moveentry/13|0507|Herdier|type=Normal|1|Field|Field|||||✔|✔|✔||✔|||}}
+{{Moveentry/13|0508|Stoutland|type=Normal|1|Field|Field|||||✔|✔|✔||✔|||}}
+{{Moveentry/13|0522|Blitzle|type=Electric|1|Field|Field|||||✔|✔|✔|||||✔|STAB='''}}
+{{Moveentry/13|0523|Zebstrika|type=Electric|1|Field|Field|||||✔|✔|✔|||||✔|STAB='''}}
+{{Moveentry/13|0531|Audino|type=Normal|1|Fairy|Fairy|||||✔|✔|✔||✔||||✔}}
+{{Moveentry/13|0569|Garbodor|type=Poison|1|Mineral|Mineral|||||✔|✔|✔||✔||||✔}}
+{{Moveentry/13|0572|Minccino|type=Normal|1|Field|Field|||||✔|✔|✔||✔|||✔}}
+{{Moveentry/13|0573|Cinccino|type=Normal|1|Field|Field|||||✔|✔|✔||✔|||✔}}
+{{Moveentry/13|0574|Gothita|type=Psychic|1|Human-Like|Human-Like|||||✔|✔|✔||✔|||✔}}
+{{Moveentry/13|0575|Gothorita|type=Psychic|1|Human-Like|Human-Like|||||✔|✔|✔||✔|||✔}}
+{{Moveentry/13|0576|Gothitelle|type=Psychic|1|Human-Like|Human-Like|||||✔|✔|✔||✔|||✔}}
+{{Moveentry/13|0587|Emolga|type=Electric|type2=Flying|1|Field|Field|||||✔|✔|✔||✔||||✔|STAB='''}}
+{{Moveentry/13|0595|Joltik|type=Bug|type2=Electric|1|Bug|Bug|||||✔|✔|✔||✔|||✔|STAB='''}}
+{{Moveentry/13|0596|Galvantula|type=Bug|type2=Electric|1|Bug|Bug|||||✔|✔|✔||✔|||✔|STAB='''}}
+{{Moveentry/13|0597|Ferroseed|type=Grass|type2=Steel|2|Grass|Mineral|||||✔|✔|✔||✔|||}}
+{{Moveentry/13|0598|Ferrothorn|type=Grass|type2=Steel|2|Grass|Mineral|||||✔|✔|✔||✔|||}}
+{{Moveentry/13|0599|Klink|type=Steel|1|Mineral|Mineral|||||✔|✔|✔||✔|||}}
+{{Moveentry/13|0600|Klang|type=Steel|1|Mineral|Mineral|||||✔|✔|✔||✔|||}}
+{{Moveentry/13|0601|Klinklang|type=Steel|1|Mineral|Mineral|||||✔|✔|✔||✔|||}}
+{{Moveentry/13|0603|Eelektrik|type=Electric|1|Amorphous|Amorphous|||||✔|✔|✔|||||✔|✔|STAB='''}}
+{{Moveentry/13|0604|Eelektross|type=Electric|1|Amorphous|Amorphous|||||✔|✔|✔|||||✔|✔|STAB='''}}
+{{Moveentry/13|0605|Elgyem|type=Psychic|1|Human-Like|Human-Like|||||✔|✔|✔||✔|||}}
+{{Moveentry/13|0606|Beheeyem|type=Psychic|1|Human-Like|Human-Like|||||✔|✔|✔||✔|||}}
+{{Moveentry/13|0618|Stunfisk|type=Ground|type2=Electric|2|Water 1|Amorphous|||||✔|✔|✔||✔||||✔|STAB='''}}
+{{Moveentry/13|0623|Golurk|type=Ground|type2=Ghost|1|Mineral|Mineral|||||✔|✔|✔||✔|||✔|✔}}
+{{Moveentry/13|0642|Thundurus|type=Electric|type2=Flying|1|No Eggs Discovered|No Eggs Discovered|form=All available forms|||||✔|✔|✔||✔|||✔|STAB='''}}
+{{Moveentry/13|0644|Zekrom|type=Dragon|type2=Electric|1|No Eggs Discovered|No Eggs Discovered|||||✔|✔|✔||✔|||✔|STAB='''}}
+{{Moveentry/13|0648|Meloetta|type=Normal|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered|||||✔|✔|✔|||||✔|✔}}
+{{Moveentry/13|0649|Genesect|type=Bug|type2=Steel|1|No Eggs Discovered|No Eggs Discovered|form=All forms|||||✔|✔|✔||✔||||✔}}
+{{Moveentry/13|0677|Espurr|type=Psychic|1|Field|Field||||||✔|✔||✔|||✔|✔}}
+{{Moveentry/13|0678|Meowstic|type=Psychic|1|Field|Field|form=All forms||||||✔|✔||✔|||✔|✔}}
+{{Moveentry/13|0682|Spritzee|type=Fairy|1|Fairy|Fairy||||||✔|✔||✔||||✔}}
+{{Moveentry/13|0683|Aromatisse|type=Fairy|1|Fairy|Fairy||||||✔|✔||✔||||✔}}
+{{Moveentry/13|0684|Swirlix|type=Fairy|1|Fairy|Fairy||||||✔|✔||✔||||✔}}
+{{Moveentry/13|0685|Slurpuff|type=Fairy|1|Fairy|Fairy||||||✔|✔||✔||||✔}}
+{{Moveentry/13|0686|Inkay|type=Dark|type2=Psychic|2|Water 1|Water 2||||||✔|✔||✔|||✔|✔}}
+{{Moveentry/13|0687|Malamar|type=Dark|type2=Psychic|2|Water 1|Water 2||||||✔|✔||✔|||✔|✔}}
+{{Moveentry/13|0690|Skrelp|type=Poison|type2=Water|2|Water 1|Dragon||||||✔|✔||✔|||✔|✔}}
+{{Moveentry/13|0691|Dragalge|type=Poison|type2=Dragon|2|Water 1|Dragon||||||✔|✔||✔|||✔|✔}}
+{{Moveentry/13|0694|Helioptile|type=Electric|type2=Normal|2|Monster|Dragon||||||✔|✔||✔||||✔|STAB='''}}
+{{Moveentry/13|0695|Heliolisk|type=Electric|type2=Normal|2|Monster|Dragon||||||✔|✔||✔||||✔|STAB='''}}
+{{Moveentry/13|0698|Amaura|type=Rock|type2=Ice|1|Monster|Monster||||||✔|✔||✔||||✔}}
+{{Moveentry/13|0699|Aurorus|type=Rock|type2=Ice|1|Monster|Monster||||||✔|✔||✔||||✔}}
+{{Moveentry/13|0702|Dedenne|type=Electric|type2=Fairy|2|Field|Fairy||||||✔|✔||✔|||✔|✔|STAB='''}}
+{{Moveentry/13|0704|Goomy|type=Dragon|1|Dragon|Dragon||||||✔|✔||✔||✔|✔|✔}}
+{{Moveentry/13|0705|Sliggoo|type=Dragon|1|Dragon|Dragon||||||✔|✔||✔|||✔|✔}}
+{{Moveentry/13|0705|formsig=H|Sliggoo|type=Steel|type2=Dragon|1|Dragon|Dragon|form=Hisuian Form|||||||||||✔|✔|✔}}
+{{Moveentry/13|0706|Goodra|type=Dragon|1|Dragon|Dragon||||||✔|✔||✔|||✔|✔}}
+{{Moveentry/13|0706|formsig=H|Goodra|type=Steel|type2=Dragon|1|Dragon|Dragon|form=Hisuian Form|||||||||||✔|✔|✔}}
+{{Moveentry/13|0716|Xerneas|type=Fairy|1|No Eggs Discovered|No Eggs Discovered||||||✔|✔||✔||||✔}}
+{{Moveentry/13|0720|Hoopa|type=Psychic|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered|form=All available forms||||||✔|✔|||||✔|✔}}
+{{Moveentry/13|0736|Grubbin|type=Bug|1|Bug|Bug|||||||✔||✔|||✔|STAB=''}}
+{{Moveentry/13|0737|Charjabug|type=Bug|type2=Electric|1|Bug|Bug|||||||✔||✔|||✔|STAB='''}}
+{{Moveentry/13|0738|Vikavolt|type=Bug|type2=Electric|1|Bug|Bug|||||||✔||✔|||✔|STAB='''}}
+{{Moveentry/13|0765|Oranguru|type=Normal|type2=Psychic|1|Field|Field|||||||✔||✔|||✔}}
+{{Moveentry/13|0773|Silvally|type=Normal|1|No Eggs Discovered|No Eggs Discovered|form=All forms|||||||✔||✔||||STAB=''}}
+{{Moveentry/13|0777|Togedemaru|type=Electric|type2=Steel|2|Field|Fairy|||||||✔||✔||||STAB='''}}
+{{Moveentry/13|0778|Mimikyu|type=Ghost|type2=Fairy|1|Amorphous|Amorphous|||||||✔||✔|||✔|✔}}
+{{Moveentry/13|0780|Drampa|type=Normal|type2=Dragon|2|Monster|Dragon|||||||✔||✔||||✔}}
+{{Moveentry/13|0785|Tapu Koko|type=Electric|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered|||||||✔||✔||||STAB='''}}
+{{Moveentry/13|0786|Tapu Lele|type=Psychic|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered|||||||✔||✔|||}}
+{{Moveentry/13|0791|Solgaleo|type=Psychic|type2=Steel|1|No Eggs Discovered|No Eggs Discovered|||||||✔||✔|||✔}}
+{{Moveentry/13|0792|Lunala|type=Psychic|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered|||||||✔||✔|||✔}}
+{{Moveentry/13|0793|Nihilego|type=Rock|type2=Poison|1|No Eggs Discovered|No Eggs Discovered|||||||✔||✔|||}}
+{{Moveentry/13|0796|Xurkitree|type=Electric|1|No Eggs Discovered|No Eggs Discovered|||||||✔||✔||||STAB='''}}
+{{Moveentry/13|0801|Magearna|type=Steel|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered|form=All forms|||||||✔||✔|||✔|✔}}
+{{Moveentry/13|0804|Naganadel|type=Poison|type2=Dragon|1|No Eggs Discovered|No Eggs Discovered|||||||✔{{sup/7|USUM}}||✔|||}}
+{{Moveentry/13|0807|Zeraora|type=Electric|1|No Eggs Discovered|No Eggs Discovered|||||||✔{{sup/7|USUM}}||✔||||✔|STAB='''}}
+{{Moveentry/13|0808|Meltan|type=Steel|1|No Eggs Discovered|No Eggs Discovered||||||||✔|✔||||✔}}
+{{Moveentry/13|0809|Melmetal|type=Steel|1|No Eggs Discovered|No Eggs Discovered||||||||✔|✔||||✔}}
+{{Moveentry/13|0835|Yamper|type=Electric|1|Field|Field|||||||||✔||||STAB='''}}
+{{Moveentry/13|0836|Boltund|type=Electric|1|Field|Field|||||||||✔||||STAB='''}}
+{{Moveentry/13|0849|Toxtricity|type=Electric|type2=Poison|1|Human-Like|Human-Like|form=All forms|||||||||✔|||✔|✔|STAB='''}}
+{{Moveentry/13|0862|Obstagoon|type=Dark|type2=Normal|1|Field|Field|||||||||✔|||}}
+{{Moveentry/13|0863|Perrserker|type=Steel|1|Field|Field|||||||||✔|||✔|✔}}
+{{Moveentry/13|0866|Mr. Rime|type=Ice|type2=Psychic|1|Human-Like|Human-Like|||||||||✔||||✔}}
+{{Moveentry/13|0871|Pincurchin|type=Electric|2|Water 1|Amorphous|||||||||✔|||✔|STAB='''}}
+{{Moveentry/13|0877|Morpeko|type=Electric|type2=Dark|2|Field|Fairy|||||||||✔|||✔|✔|STAB='''}}
+{{Moveentry/13|0880|Dracozolt|type=Electric|type2=Dragon|1|No Eggs Discovered|No Eggs Discovered|||||||||✔||||STAB='''}}
+{{Moveentry/13|0881|Arctozolt|type=Electric|type2=Ice|1|No Eggs Discovered|No Eggs Discovered|||||||||✔||||STAB='''}}
+{{Moveentry/13|0884|Duraludon|type=Steel|type2=Dragon|2|Mineral|Dragon|||||||||✔|||✔}}
+{{Moveentry/13|0886|Drakloak|type=Dragon|type2=Ghost|2|Amorphous|Dragon|||||||||✔|||✔}}
+{{Moveentry/13|0887|Dragapult|type=Dragon|type2=Ghost|2|Amorphous|Dragon|||||||||✔|||✔}}
+{{Moveentry/13|0894|Regieleki|type=Electric|1|No Eggs Discovered|No Eggs Discovered|||||||||✔|||✔|STAB='''}}
+{{Moveentry/13|0899|Wyrdeer|type=Normal|type2=Psychic|1|Field|Field|||||||||||✔|✔}}
+{{Moveentry/13|0921|Pawmi|type=Electric|1|Field|Field||||||||||||✔|STAB='''}}
+{{Moveentry/13|0922|Pawmo|type=Electric|type2=Fighting|1|Field|Field||||||||||||✔|STAB='''}}
+{{Moveentry/13|0923|Pawmot|type=Electric|type2=Fighting|1|Field|Field||||||||||||✔|STAB='''}}
+{{Moveentry/13|0938|Tadbulb|type=Electric|1|Water 1|Water 1||||||||||||✔|STAB='''}}
+{{Moveentry/13|0939|Bellibolt|type=Electric|1|Water 1|Water 1||||||||||||✔|STAB='''}}
+{{Moveentry/13|0940|Wattrel|type=Electric|type2=Flying|2|Water 1|Flying||||||||||||✔|STAB='''}}
+{{Moveentry/13|0941|Kilowattrel|type=Electric|type2=Flying|2|Water 1|Flying||||||||||||✔|STAB='''}}
+{{Moveentry/13|0967|Cyclizar|type=Dragon|type2=Normal|1|Field|Field||||||||||||✔|✔}}
+{{Moveentry/13|0979|Annihilape|type=Fighting|type2=Ghost|1|Field|Field||||||||||||✔|✔}}
+{{Moveentry/13|0981|Farigiraf|type=Normal|type2=Psychic|1|Field|Field||||||||||||✔}}
+{{Moveentry/13|0982|Dudunsparce|type=Normal|1|Field|Field|form=All forms||||||||||||✔}}
+{{Moveentry/13|0985|Scream Tail|type=Fairy|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered||||||||||||✔}}
+{{Moveentry/13|0987|Flutter Mane|type=Ghost|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered||||||||||||✔}}
+{{Moveentry/13|0989|Sandy Shocks|type=Electric|type2=Ground|1|No Eggs Discovered|No Eggs Discovered||||||||||||✔|STAB='''}}
+{{Moveentry/13|0992|Iron Hands|type=Fighting|type2=Electric|1|No Eggs Discovered|No Eggs Discovered||||||||||||✔|STAB='''}}
+{{Moveentry/13|0995|Iron Thorns|type=Rock|type2=Electric|1|No Eggs Discovered|No Eggs Discovered||||||||||||✔|STAB='''}}
+{{Moveentry/13|1000|Gholdengo|type=Steel|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered||||||||||||✔|✔}}
+{{Moveentry/13|1006|Iron Valiant|type=Fairy|type2=Fighting|1|No Eggs Discovered|No Eggs Discovered||||||||||||✔}}
+{{Moveentry/13|1008|Miraidon|type=Electric|type2=Dragon|1|No Eggs Discovered|No Eggs Discovered||||||||||||✔|STAB='''}}
+{{Moveentry/13|1018|Archaludon|type=Steel|type2=Dragon|2|Mineral|Dragon||||||||||||✔}}
+{{Moveentry/13|1021|Raging Bolt|type=Electric|type2=Dragon|1|No Eggs Discovered|No Eggs Discovered||||||||||||✔|STAB='''}}
+{{Moveentry/13|1024|Terapagos|type=Normal|1|No Eggs Discovered|No Eggs Discovered||||||||||||✔}}
+{{Movefoot|Electric|13}}
+
+===By {{pkmn|breeding}}===
+{{Movehead/Games|Electric|Egg Move|g1=none|g3=none|g4=none|g5=none|g6=none|g7=none|g8=none|g9=none}}
+{{Moveentry/1|0179|Mareep|type=Electric|2|Monster|Field|✔|STAB='''}}
+{{Movefoot|Electric|1}}
+
+===Special move===
+====[[Generation IX]]====
+{{Movehead/Special|Electric}}
+{{Moveentry/1|0135|Jolteon|type=Electric|1|Field|Field|[[Terastal phenomenon|Wild Tera Pokémon]] - [[West Province (Area One)]]{{sup/9|SV}}|STAB='''}}
+{{Movefoot|Electric|1}}
+
+==In other games==
+==={{g|Mystery Dungeon series}}===
+Thunderbolt inflicts damage and may leave the target {{DL|Status condition (Mystery Dungeon)|paralyzed}}.
+
+{{MDMoveheader|type=electric}}
+{{MDMoveRow|game=RB|pow=18|pp=10|acc=84%|range=1 tile around user|target=Enemy|cuts=Yes}}
+{{MDMoveRow|game=TDS|pow=18|pp=10|acc=73.92%|range=1 tile around user|target=Enemy|cuts=Yes}}
+{{MDMoveRow|game=BSL|pow=18|pp=10|acc=73.92%|range=1 tile around user|target=Enemy|cuts=Yes}}
+{{MDMoveRow|game=GTI|pow=25|powmax=99|pp=15|ppmax=50|acc=80%|accmax=98%|range=1 tile around user|target=Enemy|cuts=Yes}}
+{{MDMoveRow|game=SMD|pow=25|powmax=50|pp=15|ppmax=30|acc=80%|accmax=98%|range=1 tile around user|target=Enemy|cuts=Yes}}
+{{MDMovefoot|type=electric|RB=yes|TDS=yes|BSL=yes|GTI=yes|SMD=yes|RTDX=yes}}
+
+===[[Pokémon Conquest]]===
+{{Conquestmove
+|type=Electric
+|grid={{Conquestmove/Grid/rows|dist=1}}
+|stars=4
+|pow=45
+|acc=100%
+|eff=Has a 10% chance of paralyzing each target.
+|users={{CSP|025|Pikachu}} &nbsp;&nbsp;{{CSP|135|Jolteon}}
+}}
+
+===[[Pokémon GO]]===
+{{GoChargedAttack
+|id=79
+|move=Thunderbolt
+|type=Electric
+|pow=80
+|energy=50
+|duration=2.5
+|damage_window=1.8 - 2.3
+|pow_trainer=90
+|energy_trainer=55
+|users={{MSP/GO|025|Pikachu}}{{MSP/GO|030|Nidorina}}{{MSP/GO|074A|Geodude|Alolan Form}}{{MSP/GO|075A|Graveler|Alolan Form}}{{MSP/GO|081|Magnemite}}{{MSP/GO|100|Voltorb}}{{MSP/GO|100H|Voltorb|Hisuian Form}}{{MSP/GO|101|Electrode}}{{MSP/GO|110|Weezing}}{{MSP/GO|125|Electabuzz}}{{MSP/GO|135|Jolteon}}{{MSP/GO|145|Zapdos}}{{MSP/GO|150|Mewtwo}}{{MSP/GO|151|Mew}}{{MSP/GO|170|Chinchou}}{{MSP/GO|171|Lanturn}}{{MSP/GO|172|Pichu}}{{MSP/GO|179|Mareep}}{{MSP/GO|180|Flaaffy}}{{MSP/GO|203|Girafarig}}{{MSP/GO|241|Miltank}}{{MSP/GO|243|Raikou}}{{MSP/GO|263|Zigzagoon}}{{MSP/GO|263G|Zigzagoon|Galarian Form}}{{MSP/GO|299|Nosepass}}{{MSP/GO|309|Electrike}}{{MSP/GO|311|Plusle}}{{MSP/GO|312|Minun}}{{MSP/GO|313|Volbeat}}{{MSP/GO|386|Deoxys}}{{MSP/GO|386D|Deoxys}}{{MSP/GO|386S|Deoxys}}{{MSP/GO|403|Shinx}}{{MSP/GO|404|Luxio}}{{MSP/GO|417|Pachirisu}}{{MSP/GO|431|Glameow}}{{MSP/GO|476|Probopass}}{{MSP/GO|479|Rotom}}{{MSP/GO|479O|Rotom|Heat Rotom}}{{MSP/GO|479W|Rotom|Wash Rotom}}{{MSP/GO|479R|Rotom|Frost Rotom}}{{MSP/GO|479L|Rotom|Mow Rotom}}{{MSP/GO|479F|Rotom|Fan Rotom}}{{MSP/GO|506|Lillipup}}{{MSP/GO|507|Herdier}}{{MSP/GO|522|Blitzle}}{{MSP/GO|572|Minccino}}{{MSP/GO|573|Cinccino}}{{MSP/GO|587|Emolga}}{{MSP/GO|600|Klang}}{{MSP/GO|603|Eelektrik}}{{MSP/GO|604|Eelektross}}{{MSP/GO|642T|Thundurus|Therian Form}}{{MSP/GO|648|Meloetta|Aria Forme}}{{MSP/GO|678|Meowstic}}{{MSP/GO|682|Spritzee}}{{MSP/GO|683|Aromatisse}}{{MSP/GO|694|Helioptile}}{{MSP/GO|695|Heliolisk}}{{MSP/GO|698|Amaura}}{{MSP/GO|699|Aurorus}}{{MSP/GO|785|Tapu Koko}}{{MSP/GO|808|Meltan}}{{MSP/GO|809|Melmetal}}{{MSP/GO|0921|Pawmi}}{{MSP/GO|0922|Pawmo}}{{MSP/GO|0923|Pawmot}}{{MSP/GO|0940|Wattrel}}{{MSP/GO|0941|Kilowattrel}}
+|elite_users={{MSP/GO|239|Elekid}}{{MSP/GO|467|Magmortar}}
+|snapshot_users={{MSP/GO|235|Smeargle}}
+}}
+
+====Updates====
+;Gyms & Raids
+* '''July 30, 2016'''
+** '''Power''': 50 → 55
+* '''February 16, 2017'''
+** '''Power''': 55 → 80
+** '''Duration''': 2.7 → 2.5 seconds
+** '''Damage window''': 1.9 - 2.7 → 1.8 - 2.3 seconds
+
+===[[Pokémon Masters EX]]===
+{| class="roundy" style="margin:auto; background:#{{electric color}}; border:3px solid #{{electric color dark}}; text-align:center; width:80%"
+|- style="background: #{{electric color light}}"
+! style="{{roundytl|5px}}" | Name
+! {{color2|000|Damage category|Category}}
+! Move gauge cost
+! MP<br>(uses)
+! Base {{color2|000|power}}
+! Max {{color2|000|power}}
+! {{color2|000|Accuracy}}
+! Target
+! Effect tag
+! Description
+! style="{{roundytr|5px}}" | Playable {{color2|000|Sync pair|sync pair(s)}}
+|- style="background:#fff"
+|Thunderbolt
+{{statustable|Special}}
+|2
+|—
+|47
+|56
+|100%
+|An opponent
+|—
+|Has a chance (10%) of leaving the target paralyzed.
+|{{sync|Lt. Surge|Voltorb}}/Electrode<hr>{{sync/player|Pikachu}}<hr>{{sync/player|egg|Pichu/Pikachu/Raichu}}<hr>{{sync/player|egg|Voltorb/Electrode}} <small>(Support role only)</small><hr>{{sync/player|egg|Tauros}} <small>(Support role only)</small><hr>{{sync/player|egg|Jolteon}}<hr>[[Scottie]]/[[Bettie]] & {{p|Tyranitar}} <small>(in {{mas|Victory Road}})</small>
+|- style="background:#{{electric color light}}"
+! colspan=12 |{{color2|000|Buddy move}}
+|- style="background:#fff"
+|Best Buddies Thunderbolt
+{{statustable|Special}}
+|—
+|1
+|400
+|480
+|—%
+|An opponent
+|• Sure Hit<br>• Quick Move
+|'''Activation Condition:''' When the user uses any moves three times.
+
+'''Deactivation Condition:''' Cannot be deactivated.
+
+Never misses. Uses a maximum of six slots of the user's move gauge. The more amount used, the greater the power of this attack. 
+|{{sync|Ash|Pikachu}}
+|- style="background:#{{white color light}}"
+|Everlasting Thunderbolt
+{{statustable|Special}}
+|2
+|—
+|250
+|300
+|—%
+|An opponent
+|Sure Hit
+|'''Activation Condition:''' When the user's Sp. Atk is raised.
+
+'''Deactivation Condition:''' Cannot be deactivated.
+
+Never misses. Lowers the target's Speed by two stat ranks. Has a chance (30%) of making the target flinch. Leaves the target paralyzed.
+|{{sync|Red|Pikachu|1996}}
+|- style="background:#{{electric color dark}}"
+! colspan=12 |{{color2|fff|Sync move|Sync moves}}
+|- style="background: #{{electric color light}}"
+!Name
+!{{color2|000|Damage category|Category}}
+!colspan="2" |State
+!Base {{color2|000|power}}
+!Max {{color2|000|power}}
+!colspan="2" |Target
+!Effect tag
+!Description
+!Playable {{color2|000|sync pair}}
+|- style="background:#fff"
+| High Fashion Thunderbolt
+{{statustable|Special}}
+| colspan=2 | Default<hr>'''6★ EX'''
+| 250
+| 300
+| colspan=2 | An opponent
+| —
+| No additional effect.<hr>'''The sync buff is doubled the first time a sync move is used.'''
+| {{sync|Elesa|Rotom|sygna=y}}
+|- style="background:#{{white color light}}"
+| rowspan=2 style="{{roundybl|5px}}" | Light-Up-The-World Thunderbolt
+| rowspan=2 align="center" style="background:#{{special color}}"|{{color2|{{special textcolor}}|Special move|Special}}
+| colspan=2 | Default
+| 200
+| 240
+| rowspan=2 colspan=2 | An opponent
+| rowspan=2 | —
+| rowspan=2 | The more the target's Speed is lowered, the greater the power of this attack.
+| rowspan=2 style="{{roundybr|5px}}" | {{sync|Clemont|Heliolisk}}
+|- style="background:#{{white color light}}"
+| colspan=2 | '''6★ EX'''
+| '''300'''
+| '''360'''
+|- style="background:#fff"
+| rowspan=3 | Grown Up So Much Thunderbolt
+| rowspan=3 align="center" style="background:#{{special color}}"|{{color2|{{special textcolor}}|Special move|Special}}
+| colspan=2 | Default
+| 200
+| 240
+| colspan=2 rowspan=3 | An opponent
+| rowspan=3 | —
+| rowspan=2 | The more the user's Sp. Atk is raised, the greater the power of this attack.
+| rowspan=3 | {{sync|Red|Pikachu|1996}}
+|- style="background:#fff"
+| colspan=2 | '''6★ EX'''
+| rowspan=2 | '''300'''
+| rowspan=2 | '''360'''
+|- style="background:#fff"
+| colspan=2 | '''6★ EX with EX role'''
+| '''The sync buff is doubled the first time a sync move is used.'''
+|}
+Notes:
+* '''Thunderbolt:'''
+** Description prior to Version 2.10.0 (from June 28, 2021): Has a very small chance of leaving the target paralyzed.
+* '''Best Buddies Thunderbolt:'''
+** This buddy move was known as B Thunderbolt prior to version 2.38.0.
+
+====In-depth description of Best Buddies Thunderbolt====
+For used every slot of the user's move gauge, this attack move's power increases by 25%. This happens before power increases from {{mas|skill}}s apply.<ref name="How Best Buddies Thunderbolt works in Pokémon Masters EX">[https://ng-pomatools.web.app/pairs/26400/2500 Ash & Pikachu on StDk's PomaTools]: Details of Best Buddies Thunderbolt are primarily found by configuring Ash & Pikachu's move level at the top the provided link's page (which is at move level 5 by default) followed by entering the "Damage" menu in the upper-right corner, modifying the number of move-gauge slots used, and then hitting the button "Calculate". Then, at the bottom, you'll see Best Buddies Thunderbolt's resulting power, which will be (nearly) equal to one of the figures at the rightmost column of the table in the subsection "In-depth description of Best Buddies Thunderbolt."</ref>
+
+The following table demonstrates the different powers that Best Buddies Thunderbolt can have at move level 1, before any skills are applied.
+{| class="roundy" style="margin:left; background:#{{fire color}}; border:3px solid #{{electric color dark}}; text-align:center"
+|- style="background: #{{electric color light}}"
+! style="{{roundytl|5px}} width: 100px"| Move gauge slots used
+! style="width: 100px"| Power increase (%)
+! style="{{roundytr|5px}} width: 100px"| Power
+|- style="background:#fff"
+|0
+|0%
+|400
+|- style="background:#fff"
+|1
+|25%
+|500
+|- style="background:#fff"
+|2
+|50%
+|600
+|- style="background:#fff"
+|3
+|75%
+|700
+|- style="background:#fff"
+|4
+|100%
+|800
+|- style="background:#fff"
+|5
+|125%
+|900
+|- style="background:#fff"
+|style="{{roundybl|5px}}"|6
+|150%
+|style="{{roundybr|5px}}"|1000
+|}
+
+==={{g|Rumble Rush}}===
+{{RumbleRushPhysicalAttack|move=Thunderbolt|type=Electric
+|stars=4
+|pow=27.27639
+|charge=1.1
+|range=Circular (ranged)
+|hits=3
+|projectiles=1
+|crit=1.5
+|effect=May paralyze the foe}}
+
+==={{g|UNITE}}===
+{{MoveUNITE/Header|move=Thunderbolt|type=Electric}}
+{{MoveUNITE|move=Thunderbolt|pokemon=Pikachu|level=6|cooldown=7|description=Attacks with a strong electric blast, dealing damage to opposing Pokémon in the area of effect and leaving them unable to act.|upgradelevel=13|upgrade=Increases damage dealt by this move.}}
+{{MoveUNITE|move=Thunderbolt|pokemon=Alolan Raichu|level=7|cooldown=6|description=Has the user release a strong electric blast in the designated direction, dealing damage to opposing Pokémon it hits and leaving them paralyzed. If this moves hits an electric orb created by Electro Ball, the orb releases its electricity and deals damage to nearby opposing Pokémon.|upgradelevel=13|upgrade=Leaves opposing Pokémon unable to move instead of paralyzed.}}
+{{MoveUNITE|move=Thunderbolt|pokemon=Zapdos|level=5|cooldown=6|description=Has the user unleash a strong electric blast to the designated area, dealing damage and paralyzing opposing Pokémon. An electric field is left in the move’s area of effect.|upgradelevel=11|upgrade=Reduces this move’s cooldown based on the number of Pokémon it hits.}}
+|}</div></div>
+
+===[[Monopoly: Pokémon Kanto Edition|Monopoly: Pokémon Exclusive Kanto Edition]]===
+In the exclusive edition of Monopoly: Pokémon Kanto Edition, Thunderbolt is the [[Monopoly: Pokémon Kanto Edition#Power Cards|Power Card]] belonging to {{p|Pikachu}}. Once per game, the player using Pikachu may move every other player's token to {{p|Zapdos}}, then roll the dice, receiving quadruple the number rolled in [[Pokémon Dollar]]s from each player, regardless of whether or not they own Zapdos. If Zapdos is not owned by any player, the player using Pikachu is additionally given the opportunity to purchase it from the bank.
+
+===Description===
+{{movedesc|electric}}
+{{movedescentry|{{gameabbrevmd|RB}}|Damages all foes around the user. It may also cause paralysis and prevent any attacks or moves.}}
+{{movedescentry|{{gameabbrevmd|TDS}}|Inflicts damage on all enemies within a 1-tile range. It may also afflict the enemies within a 1-tile range with a Paralysis status condition. A Pokémon with the Paralysis status has slowed movement and is incapable of action.}}
+{{movedescentry|{{gameabbrevmd|BSL}}|{{tt|まわりの てきポケモンに ダメージをあたえる しかも いっていのかくりつで まひじょうたいにかえる まひじょうたいのポケモンは わざがだせない|Inflicts damage on all enemies within a 1-tile range. It may also afflict the enemies within a 1-tile range with a Paralysis status condition. A Pokémon with the Paralysis status has slowed movement and is incapable of action}}}}
+{{movedescentry|{{gameabbrevss|Conq}}|A strong electric blast is loosed at the target. It may also leave the target with paralysis.}}
+{{movedescentry|{{gameabbrevmd|GTI}}|It damages nearby enemies. It could also cause the Paralysis status condition. With the Paralysis status, their Travel Speed goes down and they can't attack or use moves.}}
+{{movedescentry|{{gameabbrevmd|SMD}}|It damages nearby enemies. It could also cause paralysis.}}
+{{movedescentry|[[Monopoly: Pokémon Kanto Edition|Monopoly: Pokémon Exclusive Kanto Edition]]|Move all opponents to Zapdos, roll the dice, and no matter who owns it, they all pay you 4 times the amount rolled. Also, if Zapdos is unowned, you may buy it from the bank.}}
+|}
+|}{{left clear}}
+
+==In animation==
+===Pokémon animated series===
+{{moveanime|exp=yes|type=electric|gen=The user attacks the target with a strong electric blast. This may also leave the target with paralysis.|image1=Raikou Thunderbolt.png|image1p=Raikou|image2=Rotom Thunderbolt.png|image2p=Rotom|image3=Johnny Thunderbolt.png|image3p=Delcatty|image4=Ash Pikachu Thunderbolt.png|image4p=Pikachu}}
+{{movep|type=electric|ms=025|pkmn=Pikachu|method=Pikachu releases multiple bolts of yellow electricity from its cheek sacs at the opponent; or, Pikachu releases a powerful bolt of yellow electricity from its body at the opponent. Sometimes, yellow sparks appear around Pikachu's tail and cheeks before launching the attack. On occasion, this will paralyze the opponent.}}
+{{movemid|type=electric|user=Ash's Pikachu|startcode=EP005|startname=Showdown in Pewter City|notes=Debut}}
+{{movemid|type=electric|user=Pokémon Trainer|user1=Trainers' multiple Pikachu|startcode=EP015|startname=Battle Aboard the St. Anne}}
+{{movemid|type=electric|user=Pokémon League entrance exam instructor|user1=Pokémon League entrance exam instructor's Pikachu|startcode=EP056|startname=The Ultimate Test}}
+{{movemid|type=electric|user=Sparky|user1=Ritchie's Sparky|startcode=EP078|startname=A Friend In Deed}}
+{{movemid|type=electric|user=Drake (Orange League)|user1=Drake's Ditto in the form of Pikachu|startcode=EP111|startname=Hello, Pummelo!|notes=Used via {{mcolor|Transform|000}}<br>Incorrectly referred to as {{mcolor|Thunder Shock|000}} in the English dub}}
+{{movemid|type=electric|user=Pikachutwo|user1=Mewtwo's Pikachutwo|startcode=Mewtwo Returns}}
+{{movemid|type=electric|user=Volkner|user1=Volkner's Pikachu|startcode=DP165|startname=Flint Sparks the Fire!}}
+{{movemid|type=electric|user=Narissa|user1=Narissa's Ditto One in the form of Pikachu|startcode=DP173|startname=Dealing With a Fierce Double Ditto Drama!|notes=Used via {{mcolor|Transform|000}}}}
+{{movemid|type=electric|user=Narissa|user1=Narissa's Ditto Two in the form of Pikachu|startcode=DP173|startname=Dealing With a Fierce Double Ditto Drama!|notes=Used via {{mcolor|Transform|000}}}}
+{{movemid|type=electric|user=Ayumi|user1=Ayumi's Pikachu|startcode=BWS01}}
+{{movemid|type=electric|user=Mirror Ash|user1=Mirror Ash's Pikachu|startcode=XY037|startname=The Cave of Mirrors!}}
+{{movemid|type=electric|user=Hoopa (anime)|user1=Multiple Pikachu summoned by Hoopa|startcode=M18|startname=Hoopa and the Clash of Ages}}
+{{movemid|type=electric|user=Jimmy (XY115)|user1=Jimmy's Spike|startcode=XY115|startname=Battling at Full Volume!}}
+{{movemid|type=electric|user=Ash's Pikachu (M20)|startcode=M20|startname=I Choose You!}}
+{{movemid|type=electric|user=Pikala|user1=Pikala's Boss|startcode=SM091|startname=A Plethora of Pikachu!}}
+{{movemid|type=electric|user=Goh's Pikachu|startcode=JN035|startname=Gotta Catch a ''What?!'}}
+{{movemid|type=electric|user=Pikachu (Pokémon)|user1=Multiple wild Pikachu|startcode=JN035|startname=Gotta Catch a ''What?!'}}
+{{movemid|type=electric|user=Tiara (JN083)|user1=An illusionary Pikachu created by Unown|startcode=JN083|startname=Star Night, Star Flight!}}
+{{movemid|type=electric|user=Captain Pikachu|user1=Friede's Captain Pikachu|startcode=HZ018|startname=Flying Pikachu, Rising Higher and Higher!}}
+{{movep|type=electric|ms=026|pkmn=Raichu|method=Raichu's cheeks crackle with yellow electricity and it releases many powerful bolts or one bolt of yellow electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Lt. Surge's Raichu|startcode=EP014|startname=Electric Shock Showdown}}
+{{movemid|type=electric|user=Katrina (EP069)|user1=Katrina's Raichu|startcode=EP069|startname=Lights, Camera, Quack-tion}}
+{{movemid|type=electric|user=Ellen|user1=Ellen's Raichu|startcode=EP139|startname=Mild 'n Wooly}}
+{{movemid|type=electric|user=Raichu (Pokémon)|user1=A wild Raichu|startcode=The Legend of Thunder!}}
+{{movemid|type=electric|user=Raichu (Pokémon)|user1=A wild Raichu|startcode=EP242|startname=As Clear as Crystal}}
+{{movemid|type=electric|user=Abigail|user1=Abigail's Sugar|startcode=DP024|startname=Cooking Up a Sweet Story!}}
+{{movemid|type=electric|user=Ash Ketchum|user1=A Raichu Ash used briefly|startcode=DP088|startname=Camping It Up!}}
+{{movemid|type=electric|user=Volkner|user1=Volkner's Raichu|startcode=DP165|startname=Flint Sparks the Fire!}}
+{{movemid|type=electric|user=Tierno (anime)|user1=Tierno's Raichu|startcode=XY065|startname=Good Friends, Great Training!}}
+{{movemid|type=electric|user=Visquez|user1=Visquez's Raichu|startcode=JN018|startname=Destination: Coronation!}}
+{{movemid|type=electric|user=Goh's Raichu|startcode=JN035|startname=Gotta Catch a ''What?!'}}
+{{movemid|type=electric|user=Raichu (Pokémon)|user1=Multiple wild Raichu|startcode=JN035|startname=Gotta Catch a ''What?!'}}
+{{movep|type=electric|ms=125|pkmn=Electabuzz|method=Electabuzz releases powerful bolts of yellow lightning from its horns or its body, or Electabuzz puts its hands out and fires a blast of yellow lightning from its hands at the opponent.}}
+{{movemid|type=electric|user=Kaz|user1=Kaz's Electabuzz|startcode=EP042|startname=Showdown at Dark City}}
+{{movemid|type=electric|user=Pokémon Trainer|user1=A Trainer's Electabuzz|startcode=EP086|startname=Pikachu Re-Volts}}
+{{movemid|type=electric|user=Drake (Orange League)|user1=Drake's Electabuzz|startcode=EP112|startname=Enter the Dragonite}}
+{{movemid|type=electric|user=Electric company|user1=The electric company's Electabuzz|startcode=EP199|startname=Current Events}}
+{{movemid|type=electric|user=Dr. Namba|user1=Dr. Namba's Electabuzz|startcode=EP222|startname=A Promise is a Promise}}
+{{movemid|type=electric|user=Electabuzz (Pokémon)|user1=A wild Electabuzz|startcode=EP242|startname=As Clear as Crystal}}
+{{movemid|type=electric|user=Macy|user1=Macy's Electabuzz|startcode=EP267|startname=Love, Pokémon Style}}
+{{movemid|type=electric|user=Jump (AG126)|user1=Jump's Electabuzz|startcode=AG126|startname=Saved by the Beldum}}
+{{movemid|type=electric|user=Pokémon Coordinator|user1=A Coordinator's Electabuzz|startcode=DP171|startname=Dawn of a Royal Day!}}
+{{movemid|type=electric|user=Electabuzz (Pokémon)|user1=A wild Electabuzz|startcode=M20|startname=I Choose You!}}
+{{movep|type=electric|ms=082|pkmn=Magneton|method=Magneton's magnets glow yellow or white and a powerful bolt of yellow electricity is released from them at the opponent.}}
+{{movemid|type=electric|user=Pokémon Trainer|user1=A Trainer's Magneton|startcode=M01|startname=Mewtwo Strikes Back}}
+{{movemid|type=electric|user=Ethan (EP101)|user1=Ethan's Number 6|startcode=EP101|startname=Get Along, Little Pokémon}}
+{{movemid|type=electric|user=Vincent|user1=Jackson's Magneton|startcode=EP268|startname=Tie One On!}}
+{{movemid|type=electric|user=Magneton (Pokémon)|user1=Multiple wild Magneton|startcode=AG040|startname=Watt's with Wattson}}
+{{movemid|type=electric|user=Magneton (Pokémon)|user1=A wild Magneton|startcode=AG058|startname=All Torkoal, No Play}}
+{{movemid|type=electric|user=Pokémon Coordinator|user1=A Coordinator's Magneton|startcode=AG160|startname=Harley Rides Again}}
+{{movemid|type=electric|user=Zero|user1=Zero's Magneton|startcode=M11|startname=Giratina and the Sky Warrior}}
+{{movemid|type=electric|user=Magneton (Pokémon)|user1=Academy's Magneton|startcode=XY048|startname=A Campus Reunion!}}
+{{movemid|type=electric|user=Magneton (Pokémon)|user1=A wild Magneton|startcode=SM111|startname=Show Me the Metal!}}
+{{movep|type=electric|ms=081|pkmn=Magnemite|method=Magnemite releases a powerful bolt of yellow or white electricity from its magnet tips or its body at the opponent.}}
+{{movemid|type=electric|user=Magnemite (Pokémon)|user1=A wild Magnemite|startcode=EP086|startname=Pikachu Re-Volts}}
+{{movemid|type=electric|user=Ethan (EP101)|user1=Ethan's Magnemite|startcode=EP101|startname=Get Along, Little Pokémon}}
+{{movemid|type=electric|user=Ethan (EP101)|user1=Ethan's Number 6|startcode=EP101|startname=Get Along, Little Pokémon}}
+{{movemid|type=electric|user=Magnemite (Pokémon)|user1=A wild Magnemite|startcode=EP242|startname=As Clear as Crystal}}
+{{movemid|type=electric|user=Anthony (AG010)|user1=Anthony's Magnemite|startcode=AG010|startname=You Said a Mouthful!}}
+{{movemid|type=electric|user=Alyssa|user1=Alyssa's Magnemite|startcode=AG038|startname=A Different Kind of Misty}}
+{{movemid|type=electric|user=Magnemite (Pokémon)|user1=Multiple wild Magnemite|startcode=AG040|startname=Watt's with Wattson}}
+{{movemid|type=electric|user=Magnemite (Pokémon)|user1=Multiple wild Magnemite|startcode=AG058|startname=All Torkoal, No Play}}
+{{movemid|type=electric|user=Zero|user1=Zero's Magnemite|startcode=M11|startname=Giratina and the Sky Warrior}}
+{{movemid|type=electric|user=Professor Kodama|user1=Professor Kodama's Magnemite|startcode=DP149|startname=Sticking With Who You Know!}}
+{{movemid|type=electric|user=Magnemite (Pokémon)|user1=A wild Magnemite|startcode=BW087|startname=Expedition to Onix Island!}}
+{{movemid|type=electric|user=Magnemite (Pokémon)|user1=Multiple wild Magnemite|startcode=BW089|startname=Iris and the Rogue Dragonite!}}
+{{movemid|type=electric|user=Magnemite (Pokémon)|user1=Academy's Magnemite|startcode=XY048|startname=A Campus Reunion!}}
+{{movep|type=electric|ms=135|pkmn=Jolteon|method=Jolteon releases a powerful bolt of yellow electricity from its body at the opponent. Sometimes, yellow sparks appear around its body before it fires the attack.}}
+{{movemid|type=electric|user=Pokémon Trainer|user1=A Trainer's Jolteon|startcode=EP086|startname=Pikachu Re-Volts}}
+{{movemid|type=electric|user=Jolteon (Pokémon)|user1=A wild Jolteon|startcode=EP242|startname=As Clear as Crystal}}
+{{movemid|type=electric|user=Volkner|user1=Volkner's Jolteon|startcode=DP179|startname=The Eighth Wonder of the Sinnoh World!}}
+{{movemid|type=electric|user=Virgil|user1=Virgil's Jolteon|startcode=BW102|startname=Team Eevee and the Pokémon Rescue Squad!}}
+{{movep|type=electric|ms=053|pkmn=Persian|method=Persian's eyes glow yellow. Then, it releases a powerful bolt of yellow electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Pokémon Trainer|user1=A Trainer's Persian|startcode=EP099|startname=The Mandarin Island Miss Match}}
+{{movep|type=electric|ms=121|pkmn=Starmie|method=Starmie releases a powerful bolt of yellow lightning from its body at the opponent.}}
+{{movemid|type=electric|user=Rudy|user1=Rudy's Starmie|startcode=EP103|startname=Misty Meets Her Match}}
+{{movemid|type=electric|user=Starmie (Pokémon)|user1=A wild Starmie|startcode=XY022|startname=Going for the Gold!}}
+{{movep|type=electric|ms=145|pkmn=Zapdos|method=Zapdos's body becomes surrounded by electricity, then it fires tons of little lightning bolts at the opponent that cause massive damage.}}
+{{movemid|type=electric|user=Legendary birds (M02)#Zapdos|user1=A wild Zapdos|startcode=M02|startname=The Power of One}}
+{{movemid|type=electric|user=Zapdos (Pokémon)|user1=A wild Zapdos|startcode=EP242|startname=As Clear as Crystal}}
+{{movemid|type=electric|user=Mirage Pokémon|user1=A mirage Zapdos merged with a mirage Mewtwo|startcode=The Mastermind of Mirage Pokémon}}
+{{movemid|type=electric|user=Zapdos (Pokémon)|user1=A wild Zapdos|startcode=XY110|startname=An Electrifying Rage!}}
+{{movep|type=electric|ms=149|pkmn=Dragonite|method=Dragonite charges electricity in its antennae, then releases a beam of yellow electricity at the opponent from them.}}
+{{movemid|type=electric|user=Drake's Dragonite|startcode=EP112|startname=Enter the Dragonite}}
+{{movep|type=electric|ms=100|pkmn=Voltorb|method=Voltorb releases a powerful bolt of yellow electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Voltorb (Pokémon)|user1=A wild Voltorb|startcode=EP242|startname=As Clear as Crystal}}
+{{movemid|type=electric|user=Voltorb (Pokémon)|user1=Multiple wild Voltorb|startcode=AG040|startname=Watt's with Wattson}}
+{{movemid|type=electric|user=Pokémon Trainer|user1=A Trainer's Voltorb|startcode=AG079|startname=Pearls are a Spoink's Best Friend}}
+{{movemid|type=electric|user=Christopher and Jeannie|user1=Christopher and Jeannie's Voltorb|startcode=AG150|startname=May's Egg-Cellent Adventure}}
+{{movep|type=electric|ms=181|pkmn=Ampharos|method=Ampharos releases a powerful bolt of yellow lightning from its ears or body at the opponent. Sometimes, yellow sparks appear around its ears before it uses the attack.}}
+{{movemid|type=electric|user=Ampharos (Pokémon)|user1=A wild Ampharos|startcode=EP242|startname=As Clear as Crystal}}
+{{movemid|type=electric|user=Ampharos Train Crew|user1=Ampharos Train crew's Ampharos|startcode=DP130|startname=Frozen on Their Tracks!}}
+{{movep|type=electric|ms=239|pkmn=Elekid|method=Elekid spins its arms and releases a powerful bolt of yellow lightning from the horns on its head at the opponent.}}
+{{movemid|type=electric|user=Casey (anime)|user1=Casey's Elekid|startcode=EP261|startname=Here's Lookin' at you, Elekid}}
+{{movemid|type=electric|user=Elekid (Pokémon)|user1=A wild Elekid|startcode=AG154|startname=Reversing the Charges}}
+{{movep|type=electric|ms=263|pkmn=Zigzagoon|method=Zigzagoon's body becomes surrounded in yellow sparks and it releases a powerful bolt of yellow electricity at the opponent.}}
+{{movemid|type=electric|user=Winstrate family|user1=Victor Winstrate's Zigzagoon|startcode=AG046|startname=Candid Camerupt!}}
+{{movep|type=electric|ms=301|pkmn=Delcatty|method=Delcatty crouches down and its body becomes surrounded in yellow sparks. It then releases a powerful bolt of lightning from its body into the air that strikes the opponent.}}
+{{movemid|type=electric|user=Dr. Abby|user1=Dr. Abby's Johnny|startcode=AG060|startname=Delcatty Got Your Tongue}}
+{{movep|type=electric|ms=312|pkmn=Minun|method=Minun releases a powerful bolt of yellow electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Minun (Pokémon)|user1=A wild Minun|startcode=M07|startname=Destiny Deoxys}}
+{{movep|type=electric|ms=311|pkmn=Plusle|method=Plusle releases a powerful bolt of yellow electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Plusle (Pokémon)|user1=A wild Plusle|startcode=M07|startname=Destiny Deoxys}}
+{{movep|type=electric|ms=264|pkmn=Linoone|method=Linoone's body sparks with electricity and it releases a powerful bolt of yellow lightning from its body at the opponent.}}
+{{movemid|type=electric|user=Kimmy Shoney|user1=Kimmy Shoney's Tokin|startcode=AG112|startname=Showdown At Linoone}}
+{{movep|type=electric|ms=101|pkmn=Electrode|method=Electrode releases a powerful bolt of yellow electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Pokémon Coordinator|user1=A Coordinator's Electrode|startcode=AG122|startname=Deceit and Assist}}
+{{movep|type=electric|ms=052|pkmn=Meowth|method=Yellow sparks surround Meowth's body and it fires a bolt of yellow lightning from its body at the opponent.}}
+{{movemid|type=electric|user=Tyson's Meowth|startcode=AG125|startname=Like a Meowth to a Flame}}
+{{movep|type=electric|ms=172|pkmn=Pichu|method=Pichu's cheeks become surrounded by yellow static and it releases multiple bolts of yellow electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Pichu (Pokémon)|user1=Two wild Pichu|startcode=PK17|startname=Pikachu's Island Adventure}}
+{{movemid|type=electric|user=Normajean|user1=A Pichu under Normajean's care|startcode=DP190|startname=The Brockster Is In!}}
+{{movep|type=electric|ms=466|pkmn=Electivire|method=Electivire releases two bolts of lightning from the two horns on its head at the opponent; or, Electivire's horns emit yellow sparks, and it releases a bolt of lightning from one of its arms at the opponent.}}
+{{movemid|type=electric|user=Gary's Electivire|startcode=AG192|startname=Home Is Where the Start Is!}}
+{{movemid|type=electric|user=Exceed#Trainers|user1=An Exceed's Test Center's employee's Electivire|startcode=HZ095|startname=The Strong Sphere}}
+{{movep|type=electric|ms=404|pkmn=Luxio|method=Luxio releases a yellow beam of electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Luxio (Pokémon)|user1=A wild Luxio|startcode=M10|startname=The Rise of Darkrai}}
+{{movep|type=electric|ms=403|pkmn=Shinx|method=Shinx releases a yellow beam of electricity at the opponent from its body.}}
+{{movemid|type=electric|user=Shinx (Pokémon)|user1=A wild Shinx|startcode=M10|startname=The Rise of Darkrai}}
+{{movep|type=electric|ms=309|pkmn=Electrike|method=Electrike releases a beam of blue electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Jaco|user1=Jaco's Electrike|startcode=DP042|startname=The Electrike Company!}}
+{{movep|type=electric|ms=109|pkmn=Koffing|method=Koffing's body becomes surrounded by yellow electricity and it fires multiple beams of yellow electricity at the opponent from its body.}}
+{{movemid|type=electric|user=Giant (DP050)|user1=Giant's Koffing|startcode=DP050|startname=Tag! We're It...!}}
+{{movep|type=electric|ms=171|pkmn=Lanturn|method=The front orb on Lanturn's antennae glows yellow and it fires a beam of electricity from the orb at the opponent.}}
+{{movemid|type=electric|user=Kyle (Sinnoh)|user1=Kyle's Lanturn|startcode=DP078|startname=Pruning a Passel of Pals!}}
+{{movep|type=electric|ms=019|pkmn=Rattata|method=Rattata releases a bolt of yellow electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Pokémon Summer Academy|user1=A student's rental Rattata|startcode=DP088|startname=Camping it Up!}}
+{{movep|type=electric|ms=405|pkmn=Luxray|method=Luxray releases a powerful bolt of yellow electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Pokémon Summer Academy|user1=A student's rental Luxray|startcode=DP091|startname=One Team, Two Team, Red Team, Blue Team!}}
+{{movep|type=electric|ms=034|pkmn=Nidoking|method=Nidoking's horn sparks with yellow electricity and he releases a beam of yellow electricity from his body at the opponent.}}
+{{movemid|type=electric|user=Paul|user1=Paul's Nidoking|startcode=DP128|startname=A Pyramiding Rage!}}
+{{movep|type=electric|ms=431|pkmn=Glameow|method=Glameow's body becomes surrounded in yellow sparks and it fires a powerful bolt of yellow electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Zoey's Glameow|startcode=DP177|startname=A Grand Fight for Winning!}}
+{{movep|type=electric|ms=243|pkmn=Raikou|method=Raikou's body becomes surrounded in yellow static, and then it surrounds its body in yellow electricity. It then fires a beam of electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Legendary beasts (M13)#Raikou|user1=Raikou (M13)|startcode=M13|startname=Zoroark: Master of Illusions}}
+{{movep|type=electric|ms=353|pkmn=Shuppet|method=Shuppet's body becomes surrounded in yellow sparks of electricity. It then fires a beam of electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Grings Kodai|user1=Grings Kodai's Shuppet|startcode=M13|startname=Zoroark: Master of Illusions}}
+{{movep|type=electric|ms=463|pkmn=Lickilicky|method=Lickilicky's body becomes surrounded by yellow electricity and it releases a beam of yellow electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Conway|user1=Conway's Lickilicky|startcode=DP185|startname=Working on a Right Move!}}
+{{movep|type=electric|ms=505|pkmn=Watchog|method=Watchog's cheeks release yellow sparks of electricity, which then move throughout its entire body. Its body then becomes surrounded in yellow electricity and it fires a beam of yellow electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Lenora|user1=Lenora's Watchog|startcode=BW015|startname=The Battle According to Lenora!}}
+{{movep|type=electric|ms=531|pkmn=Audino|method=Audino's body becomes surrounded in yellow electricity and it fires a beam of electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Nurse Joy's Audino|startcode=BW035|startname=Where Did You Go, Audino?}}
+{{movep|type=electric|ms=595|pkmn=Joltik|method=Joltik releases a powerful blast of yellow electricity from its body at the opponent; or, Joltik's body becomes surrounded in yellow electricity and it fires a beam of electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Sylvester (BW039)|user1=Sylvester's Joltik|startcode=BW039|startname=Reunion Battles In Nimbasa!}}
+{{movemid|type=electric|user=Joltik (Pokémon)|user1=Multiple wild Joltik|startcode=BW062|startname=Crisis at Chargestone Cave!}}
+{{movep|type=electric|ms=604|pkmn=Eelektross|method=Eelektross's body becomes surrounded in yellow static. It then becomes surrounded by yellow electricity and fires a beam of yellow electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Emmet|user1=Emmet's Eelektross|startcode=BW051|startname=Lost at the Stamp Rally!}}
+{{movemid|type=electric|user=Kendrick|user1=Kendrick's Eelektross|startcode=BW103|startname=Curtain Up, Unova League!}}
+{{movemid|type=electric|user=Russet|user1=Russet's Eelektross|startcode=BW106|startname=Strong Strategy Steals the Show!}}
+{{movep|type=electric|ms=572|pkmn=Minccino|method=Minccino's body becomes surrounded in yellow electricity and it fires multiple beams of yellow electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Bianca's Minccino|startcode=BW062|startname=Crisis at Chargestone Cave!}}
+{{movep|type=electric|ms=596|pkmn=Galvantula|method=Galvantula's body becomes surrounded in yellow electricity and it fires a beam of electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Galvantula (Pokémon)|user1=Multiple wild Galvantula|startcode=BW062|startname=Crisis at Chargestone Cave!}}
+{{movemid|type=electric|user=Nanette|user1=Two Galvantula Nanette imagined|startcode=BW109|startname=New Places... Familiar Faces!}}
+{{movemid|type=electric|user=Galvantula (Pokémon)|user1=A wild Galvantula|startcode=BW112|startname=Team Plasma's Pokémon Power Plot!}}
+{{movemid|type=electric|user=Galvantula (Pokémon)|user1=A wild Galvantula|startcode=BW119|startname= Meowth, Colress and Team Rivalry!}}
+{{movemid|type=electric|user=Teaque|user1=Teaque's Galvantula|startcode=BW125|startname=Cilan and the Case of the Purrloin Witness!}}
+{{movep|type=electric|ms=561|pkmn=Sigilyph|method=Sigilyph creates a black portal outlined in white in front of itself. It then fires a beam of yellow electricity from it at the opponent.}}
+{{movemid|type=electric|user=Sigilyph (Pokémon)|user1=A wild Sigilyph|startcode=BW064|startname=Explorers of the Hero's Ruin!|notes=Used via {{mcolor|Mirror Move|000}}}}
+{{movep|type=electric|ms=576|pkmn=Gothitelle|method=Gothitelle's body becomes surrounded in yellow electricity and it fires multiple beams of yellow electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Caitlin|user1=Caitlin's Gothitelle|startcode=BW090|startname=Jostling for the Junior Cup!}}
+{{movep|type=electric|ms=598|pkmn=Ferrothorn|method=Ferrothorn's body sparks with electricity and it releases a powerful bolt of yellow lightning from its body at the opponent.}}
+{{movemid|type=electric|user=Cameron (Unova)|user1=Cameron's Ferrothorn|startcode=BW094|startname=The Road to Humilau!}}
+{{movep|type=electric|ms=523|pkmn=Zebstrika|method=Zebstrika's body sparks with electricity and it releases a powerful bolt of yellow lightning from its body at the opponent.}}
+{{movemid|type=electric|user=Stephan|user1=Stephan's Zebstrika|startcode=BW103|startname=Curtain Up, Unova League!}}
+{{movep|type=electric|ms=462|pkmn=Magnezone|method=Magnezone's body sparks with electricity and it releases a powerful bolt of yellow lightning from its body at the opponent.}}
+{{movemid|type=electric|user=Barret|user1=Barret's Magnezone|startcode=BW118|startname=Secrets From Out of the Fog!}}
+{{movep|type=electric|ms=644|pkmn=Zekrom|method=The spike on Zekrom's head glows yellow and sparks with yellow electricity. It then fires a stream of electricity towards the opponent.}}
+{{movemid|type=electric|user=Zekrom (Pokémon)|user1=A Zekrom in Ash's dream|startcode=BW123|startname=Farewell, Unova! Setting Sail for New Adventures!}}
+{{movep|type=electric|ms=479|pkmn=Rotom|method=Rotom's body sparks with electricity and it releases a powerful bolt of yellow lightning from its body at the opponent.}}
+{{movemid|type=electric|user=Professor Oak's Rotom|user1=Professor Oak's Rotom|startcode=BW128|startname=To Catch a Rotom!}}
+{{movemid|type=electric|user=Rotom (Pokémon)|user1=Two wild Rotom|startcode=BW128|startname=To Catch a Rotom!}}
+{{movemid|type=electric|user=Weston|user1=Weston's Rotom|startcode=XY081|startname=Rotom's Wish!}}
+{{movep|type=electric|ms=310|pkmn=Manectric|method=Manectric's body sparks with electricity and it releases a powerful bolt of yellow lightning from its body at the opponent.}}
+{{movemid|type=electric|user=Officer Jenny's Manectric|startcode=XY008|startname=Grooming Furfrou!}}
+{{movemid|type=electric|user=Celosia|user1=Celosia's Manectric|startcode=XY102|startname=Meeting at Terminus Cave!}}
+{{movep|type=electric|ms=695|pkmn=Heliolisk|method=Heliolisk's body sparks with electricity and it releases a powerful bolt of yellow lightning from its body at the opponent.}}
+{{movemid|type=electric|user=Clemont's Heliolisk|startcode=XY009|startname=Clemont's Got a Secret!}}
+{{movep|type=electric|ms=025Ro|pkmn=Pikachu|method=Pikachu Rock Star releases a powerful bolt of yellow electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Frank|user1=Frank's Pikachu|startcode=XY078|startname=Lights! Camera! Pika!}}
+{{movemid|type=electric|user=Cosplay Pikachu|user1=Pikachu Rock Star|startcode=XY101|startname=A Dancing Debut!|notes={{color2|000|Poké TV}} segment}}
+{{movep|type=electric|ms=025Ph|pkmn=Pikachu|method=Pikachu, Ph. D releases a powerful bolt of yellow electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Frank|user1=Frank's Pikachu|startcode=XY078|startname=Lights! Camera! Pika!}}
+{{movep|type=electric|ms=025Li|pkmn=Pikachu|method=Pikachu Libre releases a powerful bolt of yellow electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Frank|user1=Frank's Pikachu|startcode=XY078|startname=Lights! Camera! Pika!}}
+{{movemid|type=electric|user=Cosplay Pikachu|user1=Pikachu Libre|startcode=XY109|startname=Master Class Choices!|notes={{color2|000|Poké TV}} segment}}
+{{movep|type=electric|ms=025Be|pkmn=Pikachu|method=Pikachu Belle releases a powerful bolt of yellow electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Cosplay Pikachu|user1=Pikachu Belle|startcode=XY105|startname=XY105|notes={{color2|000|Poké TV}} segment}}
+{{movep|type=electric|ms=429|pkmn=Mismagius|method=Mismagius releases one or multiple bolts of yellow electricity from the gems on its body at the opponent.}}
+{{movemid|type=electric|user=Lusamine (anime)|user1=Lusamine's Mismagius|startcode=SM053|startname=Rescuing the Unwilling!}}
+{{movep|type=electric|ms=052A|pkmn=Meowth|method=Alolan Meowth's body sparks with electricity and it releases a powerful bolt of yellow lightning from its body at the opponent.}}
+{{movemid|type=electric|user=Matori's Meowth|startcode=SM062|startname=Acting True to Form!}}
+{{movep|type=electric|ms=808|pkmn=Meltan|method=Yellow sparks appear around Meltan's tail. Meltan then releases a powerful bolt of yellow electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Ash's Meltan|startcode=SM111|startname=Show Me the Metal!}}
+{{movep|type=electric|ms=026A|pkmn=Raichu|method=Alolan Raichu's cheeks crackle with yellow electricity and it releases a powerful bolt of yellow electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Hau|user1=Hau's Raichu|startcode=SM130|startname=Battling Besties!}}
+{{movep|type=electric|ms=804|pkmn=Naganadel|method=Naganadel releases a powerful bolt of yellow electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Ash's Naganadel|startcode=SM140|startname=Z-Move Showdown!}}
+{{movep|type=electric|ms=504|pkmn=Patrat|method=Patrat releases a powerful bolt of yellow electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Pokémon Trainer|user1=A Trainer's Patrat|startcode=JN024|startname=A Little Rocket R & R!}}
+{{movep|type=electric|ms=282M|pkmn=Gardevoir|method=Mega Gardevoir releases a powerful bolt of yellow electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Diantha's Gardevoir|startcode=JN122|startname=It's... Champion Time!}}
+{{movep|type=electric|ms=887|pkmn=Dragapult|method=Dragapult releases a powerful bolt of yellow electricity from its body at the opponent. On occasion, this will paralyze the opponent.}}
+{{movemid|type=electric|user=Leon (anime)|user1=Leon's Dragapult|startcode=JN130|startname=Toying With Your Motions!}}
+{{movep|type=electric|ms=151|pkmn=Mew|method=Mew releases multiple powerful bolts of yellow electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Mew (anime)|startcode=JN134|startname=In the Palms of our Hands!}}
+{{movep|type=electric|ms=025W|pkmn=Pikachu|method=Wearing {{color2|000|Ash Ketchum|its Trainer}}'s {{color2|000|Pikachu in a cap|World Cap}}, Pikachu releases a powerful bolt of yellow electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Ash's Pikachu|startcode=JN142|startname=The Same Moon, Now and Forever!}}
+{{movep|type=electric|ms=606|pkmn=Beheeyem|method=Beheeyem's body sparks with electricity, and it releases a powerful bolt of yellow lightning from its body at the opponent.}}
+{{movebtm|type=electric|user=Spinel|user1=Spinel's Beheeyem|startcode=HZ086|startname=The Rising Volt Tacklers vs. The Explorers!}}
+
+* In ''[[EP268|Tie One On!]]'', [[Macy]]'s {{p|Starmie}} was mentioned to have used Thunderbolt on [[Vincent|Jackson]]'s {{p|Poliwhirl}} off-screen.
+* In ''[[JN030|Betrayed, Bothered, and Beleaguered!]]'', [[Steve and Tony|Tony]] commanded his {{p|Electabuzz}} to use Thunderbolt, but it was defeated by [[Ash's Riolu]] before it could execute the command.
+
+===Pokémon Origins===
+{{moveanime|exp=yes|type=electric|gen=A strong electric blast is loosed at the foe.|image1=Red Jolteon Thunderbolt PO.png|image1p=Jolteon|image2=Giovanni Rhyhorn Thunderbolt PO.png|image2p=Rhyhorn}}
+{{movep|type=electric|ms=135|pkmn=Jolteon|method=Jolteon releases multiple bolts of yellow electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Red (Origins)|user1=Red's Jolteon|startcode=PO02|startname=File 2: Cubone|notes=Debut}}
+{{movep|type=electric|ms=111|pkmn=Rhyhorn|method=Rhyhorn's horn crackles with yellow electricity. It then forms a ball of yellow electricity in front of its horn and fires it at the opponent.}}
+{{movebtm|type=electric|user=Giovanni|user1=Giovanni's Rhyhorn|startcode=PO03|startname=File 3: Giovanni}}
+
+===Pokémon Generations===
+{{moveanime|type=electric|exp=yes|gen=The opponent is hit by a bolt of lightning from the user.|image1=Lance Dragonite Thunderbolt PG.png|image1p=Dragonite|image2=Electrode Thunderbolt PG.png|image2p=Electrode|image3=Red Pikachu Thunderbolt PG.png|image3p=Pikachu|image4=Hilbert Zekrom Thunderbolt PG.png|image4p=Zekrom}}
+{{movep|type=electric|ms=025|pkmn=Pikachu|method=Pikachu's cheeks become surrounded in yellow sparks of electricity. It then shoots a bolt of yellow and blue electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Red's Pikachu|startcode=PG01|startname=The Adventure|notes=Debut}}
+{{movep|type=electric|ms=081|pkmn=Magnemite|method=Magnemite shoots a bolt of yellow electricity at the opponent.}}
+{{movemid|type=electric|user=Team Rocket Grunt (Trainer class)|user1=A Team Rocket Grunt's Magnemite|startcode=PG04|startname=The Lake of Rage}}
+{{movep|type=electric|ms=149|pkmn=Dragonite|method=Dragonite charges electricity in its antennae, then releases a beam of yellow electricity from them at the opponent.}}
+{{movemid|type=electric|user=Lance's Dragonite|startcode=PG04|startname=The Lake of Rage}}
+{{movep|type=electric|ms=101|pkmn=Electrode|method=Electrode releases a bolt of yellow electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Electrode (Pokémon)|user1=Multiple wild Electrode|startcode=PG04|startname=The Lake of Rage}}
+{{movep|type=electric|ms=644|pkmn=Zekrom|method=Zekrom fires a stream of yellow electricity at the opponent.}}
+{{movebtm|type=electric|user=Hilbert (game)|user1=Hilbert's Zekrom|startcode=PG15|startname=The King Returns}}
+
+===Pokémon Masters Animated Trailer===
+{{moveanime|type=electric|exp=yes|gen=A strong electric blast is loosed at the foe.|image1=Misty Starmie Masters Thunderbolt.png|image1p=Starmie|image2=Bettie Pikachu Masters Trailer Thunderbolt.png|image2p=Pikachu}}
+{{movep|type=electric|ms=121|pkmn=Starmie|method=Starmie releases multiple bolts of electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Misty's Starmie|startcode=Pokémon Masters Animated Trailer}}
+{{movep|type=electric|ms=025|pkmn=Pikachu|method=Pikachu releases a powerful bolt of yellow electricity from its body at the opponent.}}
+{{movebtm|type=electric|user=Bettie|user1=Bettie's Pikachu|startcode=Pokémon Masters Animated Trailer}}
+
+===Pokémon Evolutions===
+{{moveanime|type=electric|exp=yes|gen=A strong electric blast is loosed at the foe.|image1=Palmer Rhyperior Thunderbolt Evolutions.png|image1p=Rhyperior|image2=Sayo Jolteon Thunderbolt Evolutions.png|image2p=Jolteon}}
+{{movep|type=electric|ms=464|pkmn=Rhyperior|method=Rhyperior's body becomes covered in yellow electricity. It then releases a bolt of electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Palmer|user1=Palmer's Rhyperior|startcode=PE05|startname=The Rival|notes=Debut}}
+{{movep|type=electric|ms=135|pkmn=Jolteon|method=Jolteon releases one or multiple bolts of yellow electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Sakura|user1=Sayo's Jolteon|startcode=PE07|startname=The Show}}
+{{movebtm|type=electric|user=Trace (game)|user1=Trace's Jolteon|startcode=PE08|startname=The Discovery}}
+
+==In the manga==
+===Ash & Pikachu===
+{{movemanga|type=electric|exp=yes|gen=The user attacks the target with a strong electric blast.|image1=Ash Pikachu Thunderbolt SP.png|image1p=Pikachu|image2=Victor Zigzagoon Thunderbolt AP.png|image2p=Zigzagoon}}
+{{movep|type=electric|ms=025|pkmn=Pikachu|method=Pikachu releases a burst of electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Ash's Pikachu|startcode=SP01|startname=Hoppip, the Wind Calls!|notes=Debut}}
+{{movep|type=electric|ms=263|pkmn=Zigzagoon|method=Zigzagoon releases a burst of electricity from its body at the opponent.}}
+{{movebtmManga|type=electric|user=Winstrate family|user1=Victor's Zigzagoon|startcode=SP22|startname=A Pokémon Battle Against An Entire Family?!}}
+
+===The Electric Tale of Pikachu===
+{{movemanga|type=electric|exp=yes|gen=The user releases a burst of electricity from its body at the opponent.|image1=Rudy Starmie Thunderbolt EToP.png|image1p=Starmie}}
+{{movep|type=electric|ms=121|pkmn=Starmie|method=Starmie releases a burst of electricity from its body at the opponent.}}
+{{movebtmManga|type=electric|user=Rudy|user1=Rudy's Starmie|startcode=ET16|startname=You Bet Your Wife|notes=Debut}}
+
+===Movie adaptations===
+{{movemanga|type=electric|exp=yes|gen=The user zaps the foe with electricity.|image1=Ash Pikachu Thunderbolt M10 manga.png|image1p=Pikachu}}
+{{movep|type=electric|ms=025|pkmn=Pikachu|method=Pikachu zaps the opponent with electricity.}}
+{{movemid|type=electric|user=Ash's Pikachu|startcode=Pokémon Ranger and the Temple of the Sea (manga)|startname=Pokémon Ranger and the Temple of the Sea|notes=Debut}}
+{{movebtmManga|type=electric|user=Ash's Pikachu (M20)|startcode=I Choose You! (manga)|startname=I Choose You!}}
+
+===Pokémon Adventures===
+{{Movemanga|type=electric|exp=yes|gen=The user sends a strong electric blast crashing down on the target. This may also leave the target with paralysis.|image1=Lt Surge Electabuzz Thunderbolt Adventures.png|image1p=Electabuzz|image2=Pika Thunderbolt.png|image2p=Pikachu|image3=Kanga Thunderbolt.png|image3p=Kangaskhan|image4=Li'l Kanga Thunderbolt.png|image4p=Mega Kangaskhan}}
+{{movep|type=electric|ms=125|pkmn=Electabuzz|method=Electabuzz releases a powerful electric blast at the opponent from its body.}}
+{{Movemid|type=electric|user=Lt. Surge|user1=Lt. Surge's Electabuzz|startcode=PS011|startname=Buzz Off, Electabuzz!|notes=Debut}}
+{{movep|type=electric|ms=025|pkmn=Pikachu|method=A bolt of lightning comes down from above Pikachu and strikes it. When the lightning hits Pikachu, it causes a large explosion of electricity around itself, or an orb of electricity appears in front of Pikachu's tail and it fires multiple lightning bolts from the orb at the opponent.}}
+{{movemid|type=electric|user=Pika|user1=Red's Pika|startcode=PS028|startname=Peace of Mime}}
+{{movep|type=electric|ms=082|pkmn=Magneton|method=Magneton releases powerful bolts of electricity from its magnet tips at the opponent.}}
+{{movemid|type=electric|user=Lt. Surge|user1=Lt. Surge's Magneton|startcode=PS121|startname=Off Course with Corsola}}
+{{movep|type=electric|ms=092|pkmn=Gastly|method=Gastly releases multiple lightning bolts from its body at the opponent. On occasion, this will paralyze the opponent.}}
+{{movemid|type=electric|user=Morty|user1=Morty's Gastly|startcode=PS125|startname=Misdreavus Misgivings}}
+{{movep|type=electric|ms=121|pkmn=Starmie|method=Starmie points one of its appendages at the opponent and releases a beam of electricity from the tip of it at the opponent.}}
+{{movemid|type=electric|user=Crystal (Adventures)|user1=Crystal's Starmie|startcode=PS309|startname=Moving Past Milotic}}
+{{movep|type=electric|ms=026|pkmn=Raichu|method=Raichu releases a blast of electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Volkner|user1=Volkner's Raichu|startcode=PS405|startname=Shorting Out Electivire}}
+{{movep|type=electric|ms=115|pkmn=Kangaskhan|method=The mother Kangaskhan raises her arms, creating an electric storm that is unleashed on the opponent.}}
+{{movemid|type=electric|user=Kanga and Li'l Kanga|user1=X's Kanga|startcode=PS555|startname=The Aegislash Agenda}}
+{{movep|type=electric|ms=115M|pkmn=Kangaskhan|method=Mega Kangaskhan and her child both raise their arms, creating electric storms that are unleashed on the opponent.}}
+{{movebtmManga|type=electric|user=Kanga and Li'l Kanga|user1=X's Kanga and Li'l Kanga|startcode=PS557|startname=Noibat Stands in the Way|notes=Enhanced by {{acolor|Parental Bond|000}}}}
+
+===Pokémon Battrio: Aim to be Battrio Master!===
+{{movemanga|type=electric|exp=yes|gen=The user attacks the target with a strong electric blast.|image1=Bashō Electivire Thunderbolt.png|image1p=Electivire}}
+{{movep|type=electric|ms=466|pkmn=Electivire|method=Electivire punches the ground, sending a blast of electricity from the ground at the opponent.}}
+{{movebtmManga|type=electric|user=Bashō Shinra|user1=Bashō's Electivire|startcode=ABM10|notes=Debut}}
+
+===Pokémon Colosseum Snatchers===
+{{movemanga|type=electric|exp=yes|gen=The user attacks the target with a strong electric blast.|image1=Wes Plusle Thunderbolt PCS.png|image1p=Plusle}}
+{{movep|type=electric|ms=311|pkmn=Plusle|method=Plusle fires a bolt of electricity from its body at the opponent.}}
+{{movebtmManga|type=electric|user=Wes|user1=Wes's Plusle|startcode=PCS3|notes=Debut}}
+
+===Pocket Monsters Diamond & Pearl===
+{{movemanga|type=electric|exp=yes|gen=The user attacks the target with a strong electric blast.|image1=Ash Pikachu Thunderbolt PDP.png|image1p=Pikachu}}
+{{movep|type=electric|ms=025|pkmn=Pikachu|method=Pikachu releases a powerful blast of electricity from its body at the opponent.}}
+{{movebtmManga|type=electric|user=Ash's Pikachu|startcode=PDP04|startname=Hurry Up! Dawn's Pinch!!|notes=Debut}}
+
+===Pokémon Gold & Silver: The Golden Boys===
+{{movemanga|type=electric|exp=yes|gen=The user attacks the target with a strong electric blast.|image1=Gold Pikachu Thunderbolt Golden Boys.png|image1p=Pikachu}}
+{{movep|type=electric|ms=025|pkmn=Pikachu|method=Pikachu releases a powerful bolt of electricity from its body at the opponent.}}
+{{movebtmManga|type=electric|user=Gold's Pikachu|startcode=GB20|startname=A Serious Crisis!! The Battle With The Lugia|notes=Debut}}
+
+===Pokémon: Yeah! I Got Pokémon!===
+{{movemanga|type=electric|exp=yes|gen=The user attacks the target with a strong electric blast.|image1=Shu Pikachu Thunderbolt.png|image1p=Pikachu}}
+{{movep|type=electric|ms=025|pkmn=Pikachu|method=Pikachu releases a powerful blast of electricity from its body at the opponent.}}
+{{movemid|type=electric|user=Shu's Pikachu|startcode=GDZ01|startname=Shu and Pikachu's Debut!|notes=Debut}}
+{{movep|type=electric|ms=132|pkmn=Ditto|method=Ditto releases a powerful blast of electricity from its body at the opponent.}}
+{{movebtmManga|type=electric|user=Shu|user1=Shu's Ditto|startcode=GDZ15|notes=Used via {{mcolor|Transform|000}}}}
+
+===Pokémon Pocket Monsters===
+{{movemanga|type=electric|exp=yes|gen=The user attacks the target with a strong electric blast.|image1=Red Pikachu Thunderbolt PM.png|image1p=Pikachu}}
+{{movep|type=electric|ms=025|pkmn=Pikachu|method=Pikachu releases a powerful blast of electricity from its body at the opponent.}}
+{{movebtmManga|type=electric|user=Red's Pikachu (Pocket Monsters)|user1=Red's Pikachu|startcode=PM044|startname=The Fake Pikachu!!|notes=Debut}}
+
+===Pokémon Zensho===
+{{movemanga|type=electric|exp=yes|gen=The user attacks the target with a strong electric blast.|image1=Satoshi Pikachu Thunderbolt Zensho.png|image1p=Pikachu}}
+{{movep|type=electric|ms=025|pkmn=Pikachu|method=Pikachu releases a powerful blast of electricity from its body at the opponent.}}
+{{movebtmManga|type=electric|user=Satoshi (Zensho)|user1=Satoshi's Pikachu|startcode=PZ03|startname=Cerulean City|notes=Debut}}
+
+==In other generations==
+===Core series games===
+{| class="expandable" style="margin:auto"
+|'''Warning''': The original animation from Pokémon Red, Green, and Blue contains several short flashes capable of causing epileptic seizures.
+|-
+|
+{{Movegen
+|type=electric
+|genI=Thunderbolt Japanese I
+}}
+|}
+{{Movegen
+|type=electric
+|RBY=Thunderbolt I
+|genII=Thunderbolt II
+|genIII=Thunderbolt III
+|genIV=Thunderbolt IV
+}}
+{{Movegen
+|type=Electric
+|genV=Thunderbolt V
+|genVI=Thunderbolt VI
+|genVI2=Thunderbolt VI 2
+|SMUSUM=Thunderbolt VII
+|SMUSUM2=Thunderbolt VII 2
+|LGPE=Thunderbolt PE
+|LGPE2=Thunderbolt PE 2
+}}
+{{Movegen
+|type=Electric
+|genVIII=Thunderbolt VIII
+|genVIII2=Thunderbolt VIII 2
+|LA=Thunderbolt LA
+|ZA=Thunderbolt ZA
+}}
+
+===Side series games===
+{{Movegen
+|type=electric
+|Stad2=Thunderbolt Stad2
+|Stad=Thunderbolt Stadium
+|Colo=Thunderbolt Colo
+|XD=Thunderbolt XD
+}}
+
+{{Movegen
+|type=electric
+|PBR=Thunderbolt PBR
+}}
+
+===Spin-off series games===
+{{Movegen
+|type=electric
+|PMDRB=Thunderbolt PMD RB
+|PMDTDS=Thunderbolt PMD TDS
+|PMDGTI=Thunderbolt PMD GTI
+|PSMD=Thunderbolt PSMD
+}}
+
+{{Movegen
+|type=electric
+|Masters=Thunderbolt Masters
+|Battrio=Thunderbolt Battrio
+}}
+
+==Trivia==
+* This move's name is the same as the {{pkmn|category}} of {{p|Electivire}} and {{p|Zebstrika}}.
+* Thunderbolt is the only move that can be upgraded into multiple exclusive [[Z-Move]]s: {{rf|Alolan}} {{p|Raichu}}'s {{m|Stoked Sparksurfer}} and [[Pikachu in a cap]]'s {{m|10,000,000 Volt Thunderbolt}}.
+* Thunderbolt's Japanese name, １０まんボルト ''100,000 Volts'', corresponds with the information present in some of Raichu's [[Pokédex entry|Pokédex entries]], which state its electric bursts can reach and, in some cases, even exceed 100,000 volts.
+* Several moves have Japanese names in the same format, referencing a number of volts.
+** In [[Pokémon Adventures]], {{adv|Red}}'s Pikachu [[Pika]] used an improvised move called '''[[Moves not in the Pokémon games#Pokémon Adventures|MegaVolt]]''' (Japanese: '''１００まんボルト''' ''1,000,000 Volts''), whose measurement of 10<sup>6</sup> volts puts it at 10 times the strength of Thunderbolt.
+** {{m|10,000,000 Volt Thunderbolt}} (Japanese: '''１０００まんボルト''' ''10,000,000 volts''), the exclusive Z-Move of [[Pikachu in a cap]], has a measurement of 10<sup>7</sup> volts, being 100 times the voltage of Thunderbolt.
+** Though not named in exactly the same format, {{m|Gigavolt Havoc}}'s (Japanese: '''スパーキングギガボルト''' ''Sparking Gigavolt'') name contains the {{wp|metric prefix}} "giga", which indicates 10<sup>9</sup> (1,000,000,000), making it 10,000 times the voltage of Thunderbolt.
+* While Thunderbolt is depicted crashing down on the opponent in the handheld games, its depiction in the console games is more akin to how it is depicted in the animated series, as the bolt goes straight toward the opponent. Despite this change, its description still stated "a strong electric blast crashes down on the target" until [[Pokémon Legends: Arceus]].
+* In {{game|Red and Green|s}}, the battle effect for Thunderbolt contains several more, shorter flashes compared to the animation in the international {{game|Red and Blue|s}}. The move animation was likely toned down to prevent {{wp|epileptic seizure}}s.
+* In some copies of {{game|Ruby and Sapphire|s}}, using Thunderbolt or {{m|Thunder}} may {{DL|List of glitches in Generation III|Stuck audio bug|cause the game to freeze}} during the moves' animation sequences. This, however, can be prevented by turning off the [[battle effects]] in the options menu.
+** In {{game2|FireRed|LeafGreen|Emerald}}, the sound of Thunderbolt or Thunder may get stuck until the game resets.
+* Because it has been a staple of {{AP|Pikachu}}'s moveset since [[EP005|the fifth ever episode]], Thunderbolt is one of the most, if not ''the'' most, featured move throughout all of {{aniseries|PTS}}. In addition, as revealed in ''[[XY025|Climbing the Walls!]]'', it is {{Ash}}'s favorite move.
+* Thunderbolt is among the three attacks enhanced into "new" moves in the [[Pokémon Adventures]] manga, the others being {{m|Razor Leaf}} and Thunder.
+
+==In other languages==
+{{langtable
+|color={{electric color}}|bordercolor={{electric color light}}
+|zh_yue=十萬伏特 ''{{tt|Sahpmaahn Fuhkdahk|100,000 Volts}}'' {{tt|*|Games, Animated series, Movie (M17) and Adventures}}<br>十萬伏特電擊 ''{{tt|Sahpmaahn Fuhkdahk Dihngīk|100,000 Volts Thundershock}}'' {{tt|*|Animated series (EP005) & Movie (M12)}}<br>１０萬伏特 ''{{tt|Sahpmaahn Fuhkdahk|100,000 Volts}}'' {{tt|*|Movie (M10) & Early guide book}}<br>十萬Watt電力 ''{{tt|Sahpmaahn Watt Dihnlihk|100,000 Watt Power}}'' {{tt|*|Movie (M03)}}
+|zh_cmn=十萬伏特 / 十万伏特 ''{{tt|Shíwàn Fútè|100,000 Volts}}'' {{tt|*|Games, Animated series}}<br>１０萬伏特 ''{{tt|Shíwàn Fútè|100,000 Volts}}'' {{tt|*|Adventures, Early guide book (Taiwan)}}
+|cs=Bleskový útok{{tt|*|Also used for Thunder Shock during seasons 1-4}}
+|da=Tordenkile
+|nl=Bliksemstraal
+|fi=Ukkosisku{{tt|*|Also used for Thunder Shock}}<br>Salamaisku ([[original series]])<br>{{tt|Salamapallo|Literal translation would be ''Lightning ball''; ''bolt'' possibly mistaken for ''ball'' during the translation.}} ([[M05]][[M06|-]][[M07]])
+|fr=Tonnerre
+|de=Donnerblitz
+|el=100,000 Βόλτ ''Vólt''
+|he=מכת ברק ''Makat Barak''
+|hi=थंडरबोल्ट ''Thunderbolt''
+|hu=Mennykőcsapás
+|id=Ledakan Listrik
+|it=Fulmine<br>Superfulmine ({{pkmn|animated series}}, season 1-10){{specify|is this all episodes of the animated series?}}
+|ko=백만볼트 ''{{tt|Baengmanbolteu|1,000,000 Volts}}'' (animated series)<br>10만볼트 ''{{tt|Simmanbolteu|100,000 Volts}}'' ([[Pokémon Origins]], in-game, comics)
+|no=Tordenkile
+|pl=Piorun{{tt|*|Animated series, TCG}}<br><!--{{tt|*|EP042, EP056, EP074-EP076, EP078-EP086, EP091, EP097, EP107-EP108, EP111-EP112, EP118, EP122-EP125, EP130, M03, EP169, EP174, EP179-EP183, EP189-EP190, EP193, EP209-EP210, EP212-EP214, EP218-EP222, EP224, EP230-EP232, EP237-EP247, EP251-EP252, EP262-EP267, AG001-AG005, AG011, AG015-AG033, AG036-AG040, DP onwards, Pikachu (World Collection)}}<br>Piorunujący Atak{{tt|*|EP064, EP078, EP096, EP103-EP106, EP120, EP122, EP199, EP201-EP202, EP204, AG033-AG034, DP105, DP107}}<br>Grom{{tt|*|EP103, EP114, EP154-EP156, EP161-EP163, EP173, EP193, EP196, EP249, EP252-EP254, EP258, EP260, EP268, EP271-EP273, AG005-AG010, AG014}}<br>Elektrowstrząs{{tt|*|EP007, EP047, EP126, EP131, EP141, EP156, EP209, EP212, EP215, EP254, AG012}}<br>Błyskawica{{tt|*|EP015, EP150, EP224, EP268}}<br>Uderzenie Gromu{{tt|*|EP259}}<br>Elektrocios{{tt|*|EP101, EP248, EP255}}<br>Elektroatak{{tt|*|EP099-EP101, EP109, EP116-EP119, EP128-EP149, EP153, EP156-EP166, EP170-EP172, EP174, EP176, EP184-EP187, EP192, EP198, EP200, EP203-EP208, EP218, EP223-EP229, EP233, EP242, EP248-EP249, EP254}}<br>Piorun Kulisty{{tt|*|EP014, EP090, EP210, EP217, EP230, EP232, EP241}}<br>Elektroszok{{tt|*|EP102, EP121, EP236}}<br>Elektrogrom{{tt|*|EP168, EP175}}<br>Elektryczny Grom{{tt|*|EP170}}<br>Piorunowy Atak{{tt|*|EP116}}<br>Moc Piorunów{{tt|*|EP077}}<br>Dziki Piorun{{tt|*|EP058}}<br>Piorunujący Wstrząs{{tt|*|EP050-EP052}}<br>Piorunujący Cios{{tt|*|EP010}}<br>-->Sto Tysięcy Wolt{{tt|*|Manga}}
+|pt_br=Relâmpago (games, TCG, [[PS038]], [[PS085]]–present)<br>Choque do Trovão (animated series, [[PS011]]–[[PS028]], [[PS042]]–[[PS062]], [[PS490]])
+|pt_eu=Relâmpago
+|ro=Trăznet
+|ru=Удар Молнии ''{{tt|Udar Molnii|Lightning Strike}}'' {{tt|*|Pokémon GO}}<br>Удар Молний ''{{tt|Udar Мolniy|Lightnings Strike}}''
+|sr=Munja
+|es_la=Atactrueno (games, [[EP015]]–[[EP203]]<!--, [[AG073]]{{tt|*|Third mention only}}-->, [[DP111]]–present)<br>Impactrueno{{tt|*|Used along with Atactrueno due to the similarity of the moves, currently used for Thunder Shock}} ([[EP074]]–[[DP157]]<!--, [[SM006]], [[JN081]], [[Pokémon: The Arceus Chronicles|Arceus Chronicles]])<br>Rayo ([[DP105]], [[DP158]], [[DP177]]-->)<!--<br>Rayo Trueno ([[EP042]])<br>Trueno{{tt|*|Later used for Thunder}} ([[EP005]]–[[EP007]], [[EP024]])<br>Megadescarga ([[EP014]]{{tt|*|Last command of the move by Lt. Surge}})<br>Descarga Trueno ([[EP010]]–[[EP014]])-->
+|es_eu=Rayo
+|sv=Åskattack{{tt|*|DP003}}<br>Åskstöt{{tt|*|S01}}<br>Åskboll{{tt|*|EP103}}
+|th=หนึ่งแสนโวลต์ ''{{tt|Nungsaen Won|100,000 Volts}}'' {{tt|*|Pokémon GO, M23}}<br>ไฟฟ้าแสนโวลต์ ''{{tt|Faifa Saen Won}}'' {{tt|*|Old name}}
+|tr=Yıldırım{{tt|*|Pokémon GO}} <br>Yıldırım Oku
+|vi=100 Ngàn Vôn <br> Điện 100 Ngàn Vôn
+|ca=Llampec<br>Atac de raig{{tt|*|VHS}}
+}}
+
+==References==
+<references/>
+
+{{Flamethrower|Electric}}
+{{Generation I TMs}}
+{{Generation III TMs}}
+{{Generation IV TMs}}
+{{Generation V TMs}}
+{{Generation VI TMs}}
+{{Generation VII TMs}}
+{{Generation VIII TMs}}
+{{Generation IX TMs}}
+{{Project Moves and Abilities notice}}
+
+[[Category:Moves that can inflict paralysis]]
+[[Category:Moves in Pokémon: Let's Go, Pikachu! and Let's Go, Eevee!]]
+[[Category:Moves usable in Pokémon Sword and Shield]]
+[[Category:Moves in Pokémon Legends: Arceus]]
+[[Category:Moves usable in Pokémon Scarlet and Violet]]
+[[Category:Moves in Pokémon Legends: Z-A]]
+
+[[de:Donnerblitz]]
+[[es:Atactrueno/Rayo]]
+[[fr:Tonnerre]]
+[[it:Fulmine]]
+[[ja:10まんボルト]]
+[[zh:十万伏特（招式）]]

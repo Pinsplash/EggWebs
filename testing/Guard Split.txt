@@ -1,0 +1,157 @@
+{{MoveInfobox
+|n=470
+|name=Guard Split
+|jname=ガードシェア
+|jtrans=Guard Share
+|jtranslit=Gādo Shea
+|gameimage=Guard Split IX.png
+|gameimage2=Guard Split IX 2.png
+|gameimagewidth=300
+|type=Psychic
+|damagecategory=Status
+|basepp=10
+|maxpp=16
+|power=—
+|accuracy=—
+|gen=V
+|category=Clever
+|appeal6=1
+|jam6=0
+|cdesc6=Shows off the Pokémon's appeal about as well as all the moves before it this turn.
+|pokefordex=Guard%20Split
+|touches=no
+|protect=yes
+|magiccoat=no
+|snatch=no
+|mirrormove=no
+|kingsrock=no
+|flag7=no
+|flag8=no
+|sound=no
+|target=anyadjacent
+|footnotes=
+}}
+
+'''Guard Split''' (Japanese: '''ガードシェア''' ''Guard Share'') is a non-damaging {{type|Psychic}} [[move]] introduced in [[Generation V]].
+
+==Effect==
+Guard Split averages the user's {{stat|Defense}} and {{stat|Special Defense}} stats with those of the target Pokémon. Both the user's and the target's stat changes are ignored when calculating the average.
+
+Guard Split bypasses {{stat|accuracy}} checks to always hit, unless the target is in the [[semi-invulnerable turn]] of a move such as {{m|Dig}} or {{m|Fly}}.
+
+Stats changes, as well as [[Assault Vest]], [[Eviolite]] and other Defense/Special Defense increasing effects, all use the Pokémon’s altered stats rather than its original stats in calculation.
+
+Once switched out, the Pokémon’s altered stats return to normal.
+
+When used on or by a Pokémon with altered stats, Guard Split uses the Pokémon’s altered stats rather than the original to calculate the new average.
+
+If powered up by a [[Psychium Z]] into Z-Guard Split, the user's {{stat|Speed}} stat is raised by one stage.
+
+Guard Split will fail if used in a [[Tera Raid Battle]] (on Boss and allies alike).
+
+==Description==
+{{movedesc|psychic}}
+{{movedescentry|{{gameabbrev5|BWB2W2}}|The user employs its psychic power to average its Defense and Sp. Def stats with those of its target's.}}
+{{movedescentry|{{gameabbrev6|XYORAS}}<br>{{gameabbrev7|SMUSUMPE}}<br>{{gameabbrev8|SwShBDSPLA}}<br>{{gameabbrev9|SV}}|The user employs its psychic power to average its Defense and Sp. Def stats with those of the target.}}
+|}
+|}{{left clear}}
+
+==Learnset==
+===By [[Level|leveling up]]===
+{{Movehead/Games|Psychic|g1=none|g2=none|g3=none|g4=none|g7=1|g7g={{gameabbrev7|SMUSUM}}|g8=2|g9=1|g9g={{gameabbrev9|SV}}}}
+{{Moveentry/6|0213|Shuckle|type=Bug|type2=Rock|1|Bug|Bug|55{{sup/5|BW}}<br>45{{sup/5|B2W2}}|45|45|35|35}}
+{{Moveentry/6|0343|Baltoy|type=Ground|type2=Psychic|1|Mineral|Mineral|48{{sup/5|BW}}<br>34{{sup/5|B2W2}}|34|34|36|36}}
+{{Moveentry/6|0344|Claydol|type=Ground|type2=Psychic|1|Mineral|Mineral|54{{sup/5|BW}}<br>34{{sup/5|B2W2}}|34|34|38|38}}
+{{Moveentry/6|0380|Latias|type=Dragon|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered|75|1, 75{{sup/6|XY}}<br>46{{sup/6|ORAS}}|46|65|65|65}}
+{{Moveentry/6|0562|Yamask|type=Ghost|2|Mineral|Amorphous|33|33|33|48}}
+{{Moveentry/6|0562|formsig=G|Yamask|type=Ground|type2=Ghost|2|Mineral|Amorphous|form=Galarian Form||||48}}
+{{Moveentry/6|0563|Cofagrigus|type=Ghost|2|Mineral|Amorphous|33|33|33|56}}
+{{Moveentry/6|0605|Elgyem|type=Psychic|1|Human-Like|Human-Like|50|50|50|24}}
+{{Moveentry/6|0606|Beheeyem|type=Psychic|1|Human-Like|Human-Like|56|56|56|24}}
+{{Moveentry/6|0703|Carbink|type=Rock|type2=Fairy|2|Fairy|Mineral||27|27|5||5}}
+{{Moveentry/6|0719|Diancie|type=Rock|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered||27|21|7||7}}
+{{Moveentry/6|0720|Hoopa|type=Psychic|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered|form=All available forms||35{{sup/6|XY}}<br/>29{{sup/6|ORAS}}|29|||29}}
+{{Moveentry/6|0793|Nihilego|type=Rock|type2=Poison|1|No Eggs Discovered|No Eggs Discovered|||1|25}}
+{{Moveentry/6|0831|Wooloo|type=Normal|1|Field|Field||||12}}
+{{Moveentry/6|0832|Dubwool|type=Normal|1|Field|Field||||12}}
+{{Moveentry/6|0867|Runerigus|type=Ground|type2=Ghost|2|Mineral|Amorphous||||56}}
+{{Moveentry/6|0876|formsig=F|Indeedee|type=Psychic|type2=Normal|1|Fairy|Fairy|form=Female||||45||45}}
+{{Movefoot|Psychic|6}}
+
+===By {{pkmn|breeding}}===
+{{Movehead/Games|Psychic|Egg Move|g1=none|g2=none|g3=none|g4=none|g7=1|g7g={{gameabbrev7|SMUSUM}}|g8=2|g9=1|g9g={{gameabbrev9|SV}}}}
+{{Moveentry/6|0063|Abra|type=Psychic|1|Human-Like|Human-Like|✔|✔|✔|✔|✔}}
+{{Moveentry/6|0111|Rhyhorn|type=Ground|type2=Rock|2|Monster|Field|−|✔|✔|✔|✔|✔|note=Chain breed}}
+{{Moveentry/6|0327|Spinda|type=Normal|2|Field|Human-Like|−|✔|✔||✔}}
+{{Moveentry/6|0410|Shieldon|type=Rock|type2=Steel|1|Monster|Monster|−|✔|✔||✔|✔|note=Chain breed}}
+{{Moveentry/6|0616|Shelmet|type=Bug|1|Bug|Bug|✔|✔|✔|✔}}
+{{Movefoot|Psychic|6}}
+
+===Special move===
+====[[Generation VII]]====
+{{Movehead/Special|Psychic}}
+{{Moveentry/1|0111|Rhyhorn|type=Ground|type2=Rock|2|Monster|Field|{{DL|QR Scanner|Island Scan}} - [[Blush Mountain]]{{sup/7|USUM}}}}
+{{Movefoot|Psychic|1}}
+
+==In other games==
+===[[Pokémon Mystery Dungeon series]]===
+Guard Split averages the user's Defense and Special Defense stats with those of the target Pokémon.
+
+{{MDMoveheader|type=psychic}}
+{{MDMoveRow|game=GTI|pp=13|ppmax=50|acc=100%|range=Front|target=All|cuts=Yes}}
+{{MDMoveRow|game=SMD|pp=13|ppmax=30|acc=100%|range=Front|target=All|cuts=Yes}}
+{{MDMovefoot|type=psychic|GTI=yes|SMD=yes|RTDX=yes}}
+
+===Description===
+{{movedesc|Psychic}}
+{{movedescentry|{{gameabbrevmd|GTI}}|It adds the Defense of you and the target, then shares it equally. It also shares the Special Defense equally. (The stat changes return to normal when you go to the next floor or step on a [[File:IconTileGTI.png]]Wonder Tile.)}}
+{{movedescentry|{{gameabbrevmd|SMD}}|It adds together the Defense of you and the target, and then it splits the total equally. It also splits the total Sp. Def equally. The stats return to normal when you go to the next floor or step on a [[File:IconTileSMD.png]]Wonder Tile.}}
+|}
+|}{{left clear}}
+
+==In the manga==
+===Pokémon Adventures===
+* In ''[[PS546|Giant Chasm]]'', [[Gorm]] told his {{p|Cofagrigus}} to use Guard Split, but the move was executed off-panel.
+
+==In other generations==
+===Core series games===
+{{Movegen|
+type=Psychic|
+genV=Guard Split V|
+genVI=Guard Split VI|
+genVII=Guard Split VII|
+|genVIII=Guard Split VIII
+|genVIII2=Guard Split VIII 2
+}}
+===Spin-off series games===
+{{Movegen|
+type=Psychic|
+PMDGTI=Guard Split PMD GTI|
+PSMD=Guard Split PSMD
+}}
+==In other languages==
+{{Langtable|color={{psychic color}}|bordercolor={{psychic color dark}}
+|zh_yue=防守平分 ''{{tt|Fòhngsáu Pìhngfān|Guard Split}}''
+|zh_cmn=防守平分 ''{{tt|Fángshǒu Píngfēn|Guard Split}}''
+|fr=Partage Garde<sup>{{gen|VI}}+</sup><br>PartageGarde<sup>{{gen|V}}</sup>
+|de=Schutzteiler
+|it=Paridifesa
+|ko=가드셰어 ''{{tt|Gadeusye-eo|Guard Share}}''
+|pt_br=Divisão Protetora
+|es_la=Guardia Dividida
+|es_eu=Isoguardia
+|vi=Hoán Đổi Phòng Ngự
+}}
+{{Power Split}}
+{{Project Moves and Abilities notice}}
+
+[[Category:Moves that cannot miss]]
+[[Category:Moves usable in Pokémon Sword and Shield]]
+[[Category:Moves usable in Pokémon Scarlet and Violet]]
+
+[[de:Schutzteiler]]
+[[es:Guardia Dividida/Isoguardia]]
+[[fr:Partage Garde]]
+[[it:Paridifesa]]
+[[ja:ガードシェア]]
+[[zh:防守平分（招式）]]

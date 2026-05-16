@@ -131,3 +131,5 @@ let g_Combo = 0;
 let g_MaxDepth = 20;
 let g_NextLearnerID = 0;
 let g_SlowMode = false;
+let g_Chains = [];
+let g_DevTest = false;

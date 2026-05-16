@@ -1,0 +1,341 @@
+{{MoveInfobox
+|n=108
+|name=Smokescreen
+|jname=えんまく
+|jtrans=Smokescreen
+|jtranslit=Enmaku
+|gameimage=Smokescreen IX.png
+|gameimagewidth=300
+|type=Normal
+|damagecategory=Status
+|basepp=20
+|maxpp=32
+|power=—
+|accuracy=100
+|gen=I
+|category=Clever
+|appeal=3
+|jam=0
+|cdesc=Shifts the judge's attention from others.
+|appealsc=2
+|scdesc=Lowers the Voltage of all Judges by one each.
+|category6=Clever
+|appeal6=2
+|jam6=3
+|cdesc6=Startles the last Pokémon to act before the user.
+|touches=no
+|protect=yes
+|magiccoat=yes
+|snatch=no
+|mirrormove=yes
+|kingsrock=no
+|sound=no
+|target=anyadjacent
+}}
+'''Smokescreen''' (Japanese: '''えんまく''' ''Smokescreen''), formatted as '''SmokeScreen''' prior to [[Pokémon X and Y]], is a non-damaging {{type|Normal}} [[move]] introduced in [[Generation I]].
+
+==Effect==
+Smokescreen lowers the target's {{stat|accuracy}} stat by one stage.
+
+===Generations I to II===
+In the Generation I and II [[core series]] games, when an in-game opponent outside of the {{gdis|Battle Tower|II}} uses Smokescreen, the move has a 25% chance to fail.
+
+===Generation III onwards===
+Smokescreen can be used as the second move of a [[Contest combination|Pokémon Contest combination]], with the user gaining 3 bonus appeal points if {{m|Smog}} was used in the previous turn.
+
+If powered up by a [[Normalium Z]] into Z-Smokescreen, the user's {{stat|Evasion|evasiveness}} is raised by one stage.
+{{left clear}}
+
+===Generation IX===
+====Pokémon Legends: Z-A====
+{{LegendsZAMove
+|type=Normal
+|damagecategory=Status
+|cooldown=10
+|charge-time=1
+}}
+
+==Description==
+{{movedesc|Normal}}
+{{movedescentry|{{gameabbrevss|Stad}}{{gameabbrevss|Stad2}}|Creates an obscuring cloud of smoke that reduces the enemy's accuracy.}}
+{{movedescentry|{{gameabbrev2|GSC}}|Lowers the foe's accuracy.}}
+{{movedescentry|{{gameabbrev3|RSE}}|Lowers the foe's accuracy using smoke, ink, etc.}}
+{{movedescentry|{{gameabbrev3|FRLG}}|An obscuring cloud of smoke or ink reduces the foe's accuracy.}}
+{{movedescentry|{{gameabbrevss|Colo}}{{gameabbrevss|XD}}|Lowers target's accuracy using smoke, ink, etc.}}
+{{movedescentry|{{gameabbrev4|DPPtHGSS}}{{gameabbrevss|PBR}}|The user releases an obscuring cloud of smoke or ink. It reduces the foe's accuracy.}}
+{{movedescentry|{{gameabbrev5|BWB2W2}}|The user releases an obscuring cloud of smoke or ink. It reduces the target's accuracy.}}
+{{movedescentry|{{gameabbrev6|XYORAS}}<br>{{gameabbrev7|SMUSUMPE}}<br>{{gameabbrev8|SwShBDSPLA}}<br>{{gameabbrev9|SV}}|The user releases an obscuring cloud of smoke or ink. This lowers the target's accuracy.}}
+{{movedescentry|{{gameabbrev9|ZA}}|The user cloaks the area in a cloud of smoke or ink. Those within the cloud will be undetectable to wild Pokémon.}}
+|}
+|}{{left clear}}
+
+==Learnset==
+===By [[Level|leveling up]]===
+{{Movehead/Games|Normal|g7=2|g8=2|g9=2}}
+{{Moveentry/12|0004|Charmander|type=Fire|2|Monster|Dragon|−|13|13{{sup/3|RSE}}<br>19{{sup/3|FRLG}}|10|10|10|10|9|8|8|8|8}}
+{{Moveentry/12|0005|Charmeleon|type=Fire|2|Monster|Dragon|−|13|13{{sup/3|RSE}}<br>20{{sup/3|FRLG}}|10|10|10|10|1, 9|1|1|1|8}}
+{{Moveentry/12|0006|Charizard|type=Fire|type2=Flying|2|Monster|Dragon|−|1, 13|1, 13{{sup/3|RSE}}<br>20{{sup/3|FRLG}}|1, 10|1, 10|1, 10|10|1, 9|1|1|1|8}}
+{{Moveentry/12|0109|Koffing|type=Poison|1|Amorphous|Amorphous|37|25|25|10|10{{sup/5|BW}}<br>7{{sup/5|B2W2}}|7|7|−|8|8|8}}
+{{Moveentry/12|0110|Weezing|type=Poison|1|Amorphous|Amorphous|39|25|25|1, 10|1, 10{{sup/5|BW}}<br>1, 7{{sup/5|B2W2}}|1, 7|1, 7|−|1|1|1}}
+{{Moveentry/12|0110|formsig=G|Weezing|type=Poison|type2=Fairy|1|Amorphous|Amorphous|form=Galarian Form|||||||||1||1}}
+{{Moveentry/12|0116|Horsea|type=Water|2|Water 1|Dragon|19|8|8|4|4|4{{sup/6|XY}}<br>5{{sup/6|ORAS}}|5|6|5|5|5}}
+{{Moveentry/12|0117|Seadra|type=Water|2|Water 1|Dragon|1, 19|1, 8|1, 8|1, 4|1, 4|1, 4{{sup/6|XY}}<br>1, 5{{sup/6|ORAS}}|1, 5|1, 6|1|1|1}}
+{{Moveentry/12|0122|Mr. Mime|type=Psychic|type2=Fairy|1|Human-Like|Human-Like|−|−|−|−|−|−|−|−|−|−||{{tt|Rem.|Can only be learned via Move Reminder}}}}
+{{Moveentry/12|0122|formsig=G|Mr. Mime|type=Ice|type2=Psychic|1|Human-Like|Human-Like|form=Galarian Form|||||||||−|||{{tt|Rem.|Can only be learned via Move Reminder}}}}
+{{Moveentry/12|0126|Magmar|type=Fire|1|Human-Like|Human-Like|48|25|25|10|11{{sup/5|BW}}<br>8{{sup/5|B2W2}}|8|8|11|1|1|1}}
+{{Moveentry/12|0136|Flareon|type=Fire|1|Field|Field|−|−|−|−|−|−|−|−|−|−|−|20}}
+{{Moveentry/12|0155|Cyndaquil|type=Fire|1|Field|Field||6|6|4{{sup/4|DPPt}}<br>6{{sup/4|HGSS}}|6|6|6|||6|6}}
+{{Moveentry/12|0156|Quilava|type=Fire|1|Field|Field||1, 6|1, 6|1, 4{{sup/4|DPPt}}<br>1, 6{{sup/4|HGSS}}|1, 6|1, 6|1, 6|||1, 6|1}}
+{{Moveentry/12|0157|Typhlosion|type=Fire|1|Field|Field||1, 6|1, 6|1, 4{{sup/4|DPPt}}<br>1, 6{{sup/4|HGSS}}|1, 6|1, 6|1, 6|||1, 6|1}}
+{{Moveentry/12|0157|formsig=H|Typhlosion|type=Fire|type2=Ghost|1|Field|Field|form=Hisuian Form|||||||||||1}}
+{{Moveentry/12|0230|Kingdra|type=Water|type2=Dragon|2|Water 1|Dragon||1, 8|1, 8|1, 4|1, 4|1, 4{{sup/6|XY}}<br>1, 5{{sup/6|ORAS}}|1, 5||1|1|1}}
+{{Moveentry/12|0240|Magby|type=Fire|1|No Eggs Discovered|No Eggs Discovered||25|25|10|10{{sup/5|BW}}<br>8{{sup/5|B2W2}}|8|8||8|8|8}}
+{{Moveentry/12|0244|Entei|type=Fire|1|No Eggs Discovered|No Eggs Discovered||−|−|−|−|−|−||1|1|1}}
+{{Moveentry/12|0316|Gulpin|type=Poison|1|Amorphous|Amorphous|||−|−|−|−|−|||−|−|1}}
+{{Moveentry/12|0317|Swalot|type=Poison|1|Amorphous|Amorphous|||−|−|−|−|−|||−|−|1}}
+{{Moveentry/12|0324|Torkoal|type=Fire|1|Field|Field|||14|20|20|20{{sup/6|XY}}<br>15{{sup/6|ORAS}}|15||12|12|12}}
+{{Moveentry/12|0434|Stunky|type=Poison|type2=Dark|1|Field|Field||||15{{sup/4|DP}}<br>14{{sup/4|PtHGSS}}|14|14|13||6|6|6}}
+{{Moveentry/12|0435|Skuntank|type=Poison|type2=Dark|1|Field|Field||||15{{sup/4|DP}}<br>14{{sup/4|PtHGSS}}|14|14|13||1|1|1}}
+{{Moveentry/12|0439|Mime Jr.|type=Psychic|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered||||−|−|−|−||−|−||{{tt|Rem.|Can only be learned via Move Reminder}}}}
+{{Moveentry/12|0467|Magmortar|type=Fire|1|Human-Like|Human-Like||||1, 10|1, 11{{sup/5|BW}}<br>1, 8{{sup/5|B2W2}}|1, 8|1, 8||1|1|1}}
+{{Moveentry/12|0498|Tepig|type=Fire|1|Field|Field|||||−|−|−||||−|13}}
+{{Moveentry/12|0499|Pignite|type=Fire|type2=Fighting|1|Field|Field|||||−|−|−||||−|13}}
+{{Moveentry/12|0500|Emboar|type=Fire|type2=Fighting|1|Field|Field|||||−|−|−||||−|13}}
+{{Moveentry/12|0568|Trubbish|type=Poison|1|Mineral|Mineral|||||−|−|−||−|||1}}
+{{Moveentry/12|0569|Garbodor|type=Poison|1|Mineral|Mineral|||||−|−|−||−|||1}}
+{{Moveentry/12|0607|Litwick|type=Ghost|type2=Fire|1|Amorphous|Amorphous|||||−|−|−||−||−|1}}
+{{Moveentry/12|0608|Lampent|type=Ghost|type2=Fire|1|Amorphous|Amorphous|||||−|−|−||−||−|1}}
+{{Moveentry/12|0609|Chandelure|type=Ghost|type2=Fire|1|Amorphous|Amorphous|||||−|−|−||−||−|1}}
+{{Moveentry/12|0656|Froakie|type=Water|1|Water 1|Water 1||||||18|18||||18|18}}
+{{Moveentry/12|0657|Frogadier|type=Water|1|Water 1|Water 1||||||20|19||||19|18}}
+{{Moveentry/12|0658|Greninja|type=Water|type2=Dark|1|Water 1|Water 1|form=All available forms||||||20|19||||19|18}}
+{{Moveentry/12|0690|Skrelp|type=Poison|type2=Water|2|Water 1|Dragon||||||1|1||1||1|1}}
+{{Moveentry/12|0691|Dragalge|type=Poison|type2=Dragon|2|Water 1|Dragon||||||1|1||1||1|1}}
+{{Moveentry/12|0837|Rolycoly|type=Rock|1|Mineral|Mineral|||||||||1||1}}
+{{Moveentry/12|0838|Carkol|type=Rock|type2=Fire|1|Mineral|Mineral|||||||||1||1}}
+{{Moveentry/12|0839|Coalossal|type=Rock|type2=Fire|1|Mineral|Mineral|||||||||1||1}}
+{{Moveentry/12|0850|Sizzlipede|type=Fire|type2=Bug|1|Bug|Bug|||||||||1}}
+{{Moveentry/12|0851|Centiskorch|type=Fire|type2=Bug|1|Bug|Bug|||||||||1}}
+{{Moveentry/12|0866|Mr. Rime|type=Ice|type2=Psychic|1|Human-Like|Human-Like|||||||||−|||{{tt|Rem.|Can only be learned via Move Reminder}}}}
+{{Moveentry/12|0935|Charcadet|type=Fire|1|Human-Like|Human-Like|||||||||||−|8}}
+{{Moveentry/12|0936|Armarouge|type=Fire|type2=Psychic|1|Human-Like|Human-Like|||||||||||−|8}}
+{{Moveentry/12|0937|Ceruledge|type=Fire|type2=Ghost|1|Human-Like|Human-Like|||||||||||−|8}}
+{{Moveentry/12|0971|Greavard|type=Ghost|1|Field|Field|||||||||||−|1}}
+{{Moveentry/12|0972|Houndstone|type=Ghost|1|Field|Field|||||||||||−|1}}
+{{Movefoot|Normal|12}}
+
+===By {{pkmn|breeding}}===
+{{Movehead/Games|Normal|Egg Move|g1=none|g2=none|g3=none|g7=1|g7g={{gameabbrev7|SMUSUM}}|g8=2|g9=1|g9g={{gameabbrev9|SV}}}}
+{{Moveentry/7|0218|Slugma|type=Fire|1|Amorphous|Amorphous|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/7|0293|Whismur|type=Normal|2|Monster|Field|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0442|Spiritomb|type=Ghost|type2=Dark|1|Amorphous|Amorphous|✔|✔|✔|✔|✔|✔|✔}}
+{{Movefoot|Normal|7}}
+
+===Special move===
+====[[Generation IX]]====
+{{Movehead/Special|Normal}}
+{{Moveentry/1|0218|Slugma|type=Fire|1|Amorphous|Amorphous|[[Terastal phenomenon|Wild Tera Pokémon]] - [[Infernal Pass]]{{sup/9|SV}}{{sup/9|TM}}}}
+{{Movefoot|Normal|1}}
+
+==In other games==
+===[[Pokémon Mystery Dungeon series]]===
+In the [[Pokémon Mystery Dungeon: Red Rescue Team and Blue Rescue Team|Rescue Team]], [[Pokémon Mystery Dungeon: Explorers of Time and Explorers of Darkness|Explorers]] and [[Pokémon Mystery Dungeon (WiiWare)|Adventure Sqaud]] series, Smokescreen inflicts the [[Status condition (Mystery Dungeon)#Accuracy-related status conditions|Whiffer]] status condition on the enemy. Under the Whiffer status, the opposing Pokémon will always miss with any attack; even moves like {{m|Aerial Ace}} will miss, although the regular attack will still hit if the user has the Sure-Hit Attacker [[IQ]] skill. This move is affected by {{m|Magic Coat}}.
+
+From [[Pokémon Super Mystery Dungeon]] onward, Smokescreen instead decreases the target's accuracy by one stage.
+
+{{MDMoveheader|type=normal}}
+{{MDMoveRow|game=RB|pp=10|acc=100%|range=Front|target=Enemy|cuts=Yes}}
+{{MDMoveRow|game=TDS|pp=10|acc=100%|range=Front|target=Enemy|cuts=Yes}}
+{{MDMoveRow|game=BSL|pp=10|acc=100%|range=Front|target=Enemy|cuts=Yes}}
+{{MDMoveRow|game=SMD|pp=20|ppmax=40|acc=70%|accmax=98%|range=Front|target=Enemy|cuts=Yes}}
+{{MDMovefoot|type=normal|RB=yes|TDS=yes|BSL=yes|SMD=yes|RTDX=yes}}
+
+==={{g|Rumble Rush}}===
+In {{g|Rumble Rush}}, all [[status move]]s including Smokescreen could only be used by opposing Pokémon and could not be obtained on any caught Pokémon. Smokescreen could be seen as a move used by Boss {{p|Charmeleon}}.
+
+{{RumbleRushOtherAttack|move=Smokescreen|type=Normal
+|charge=0.98
+|range=Arc (wide)
+|target=Enemy
+|effect=None}}
+
+==={{g|UNITE}}===
+{{MoveUNITE/Header|move=Smokescreen|type=Normal}}
+{{MoveUNITE|move=Smokescreen|pokemon=Greninja|level=5|cooldown=12|description=Creates a smokescreen and has the user roll away from its current location. Immediately afterward, the user enters stealth and has its movement speed increased for a short time. This also makes its next basic attack a boosted attack.|upgradelevel=13|upgrade=Increased Attack for a short time when the user exits stealth.}}
+|}</div></div>
+
+===[[Super Smash Bros. for Nintendo 3DS/Wii U|Super Smash Bros. For Wii U]]===
+[[File:Smokscreen Smash Tour.png|thumb|right|200px|Smokescreen in Smash Tour]]
+In Smash Tour, occasionally a wild Koffing can appear. When it does, it will use Smokescreen to cover the entire board<!--For how many turns?-->, making almost everything impossible to see until it wears off.
+{{-}}
+
+===Description===
+{{movedesc|Normal}}
+{{movedescentry|{{gameabbrevmd|RB}}|Inflicts the Whiffer status on the target, making it miss almost all of its attacks and moves.}}
+{{movedescentry|{{gameabbrevmd|TDS}}|Afflicts the targeted enemy with a Whiffer status condition. A Pokémon with the Whiffer status fails to deliver almost all of its moves.}}
+{{movedescentry|{{gameabbrevmd|BSL}}|{{tt|てきポケモンを からぶりじょうたいにかえる からぶりじょうたいになると こうげきや わざが ほとんど あたらない|Afflicts the targeted enemy with a Whiffer status condition. A Pokémon with the Whiffer status fails to deliver almost all of its moves}}}}
+{{movedescentry|{{gameabbrevmd|GTI}}|[[File:IconKanji2MD.png]]UNUSED}}
+{{movedescentry|{{gameabbrevmd|SMD}}|It lowers the enemy's accuracy.}}
+|}
+|}{{left clear}}
+
+==In animation==
+===Pokémon animated series===
+{{moveanime|type=normal|exp=yes|gen=The user releases an obscuring cloud of smoke or ink to elude its foes.|image1=James Weezing SmokeScreen.png|image1p=Weezing|image2=Dawn Quilava SmokeScreen.png|image2p=Quilava|image3=Misty Horsea SmokeScreen.png|image3p=Horsea|image4=Sanpei Greninja Smokescreen.png|image4p=Greninja}}
+{{movep|type=normal|ms=109|pkmn=Koffing|method=Koffing releases thick dark green smoke from the holes covering its body.}}
+{{movemid|type=normal|user=James's Koffing|startcode=EP002|startname=Pokémon Emergency!|notes=Debut}}
+{{movep|type=normal|ms=110|pkmn=Weezing|method=Weezing releases thick gray or dark green smoke from the holes on its body or its mouths.}}
+{{movemid|type=normal|user=James's Weezing|startcode=EP033|startname=The Flame Pokémon-athon!}}
+{{movemid|type=normal|user=Pokémon League entrance exam instructor|user1=Pokémon League entrance exam instructor's Weezing|startcode=EP056|startname=The Ultimate Test}}	
+{{movep|type=normal|ms=116|pkmn=Horsea|method=Horsea releases purple ink from its mouth.}}
+{{movemid|type=normal|user=Misty's Horsea|startcode=EP061|startname=The Misty Mermaid}}
+{{movep|type=normal|ms=155|pkmn=Cyndaquil|method=Cyndaquil opens its mouth and releases thick black smoke from its mouth.}}
+{{movemid|type=normal|user=Ash's Cyndaquil|startcode=EP152|startname=Hot Matches!}}
+{{movemid|type=normal|user=Dawn's Cyndaquil|startcode=DP144|startname=Gone With the Windworks!}}
+{{movep|type=normal|ms=230|pkmn=Kingdra|method=Kingdra releases dark purple ink from its mouth.}}
+{{movemid|type=normal|user=Molly Hale|user1=Molly's Kingdra|startcode=M03|startname=Spell of the Unown: Entei}}
+{{movemid|type=normal|user=Christopher (EP216)|user1=Christopher's Kingdra|startcode=EP216|startname=Dueling Heroes}}
+{{movep|type=normal|ms=240|pkmn=Magby|method=Magby releases a thick black smoke from its mouth.}}
+{{movemid|type=normal|user=Anthony (AG010)|user1=Anthony's Magby|startcode=AG010|startname=You Said a Mouthful!}}
+{{movep|type=normal|ms=156|pkmn=Quilava|method=Quilava releases a thick black smoke from its mouth.}}
+{{movemid|type=normal|user=Dawn's Quilava|startcode=BW093|startname=Goodbye, Junior Cup - Hello Adventure!}}
+{{movep|type=normal|ms=657|pkmn=Frogadier|method=Frogadier releases a thick black smoke from its mouth.}}
+{{movemid|type=normal|user=Sanpei's Frogadier|startcode=XY017|startname=A Rush of Ninja Wisdom}}
+{{movep|type=normal|ms=658|pkmn=Greninja|method=Greninja releases a thick black smoke from its mouth.}}
+{{movemid|type=normal|user=Sanpei's Greninja|startcode=XY052|startname=A Stealthy Challenge!}}
+{{movep|type=normal|ms=435|pkmn=Skuntank|method=Skuntank releases a thick black smoke from its mouth.}}
+{{movebtm|type=normal|user=Jupiter|user1=Jupiter's Skuntank|startcode=JNS03|startname=The Arceus Chronicles (Part 3)}}
+
+===Pokémon Evolutions===
+{{moveanime|type=normal|exp=yes|gen=The user releases an obscuring cloud of smoke or ink to elude its foes.|image1=Jupiter Skuntank Smokescreen Evolutions.png|image1p=Skuntank|image2=Weezing Koffing Smokescreen Evolutions.png|image2p=Weezing and Koffing}}
+{{movep|type=normal|ms=435|pkmn=Skuntank|method=Skuntank releases a thick black smoke from the tip of its tail, blinding the opponent.}}
+{{movemid|type=normal|user=Jupiter|user1=Jupiter's Skuntank|startcode=PE05|startname=The Rival|notes=Debut}}
+{{movep|type=normal|ms=110|pkmn=Weezing|method=Weezing releases a cloud of gray smoke from the holes on its body.}}
+{{movemid|type=normal|user=Pokémon Trainer|user1=A Trainer's Weezing|startcode=PE07|startname=The Show}}
+{{movep|type=normal|ms=109|pkmn=Koffing|method=Koffing releases a cloud of gray smoke from the holes on its body.}}
+{{movebtm|type=normal|user=Pokémon Trainer|user1=A Trainer's Koffing|startcode=PE07|startname=The Show}}
+
+==In the manga==
+===Phantom Thief Pokémon 7===
+{{Movemanga|type=normal|exp=yes|gen=The user releases a thick cloud of smoke.|image1=Rocco Magmortar SmokeScreen.png|image1p=The smoke}}
+{{movep|type=normal|ms=467|pkmn=Magmortar|method=Magmortar shoots a thick black cloud of smoke from its cannons.}}
+{{MovebtmManga|type=normal|user=Rocco|user1=Rocco's Magmortar|startcode=P7-03|startname=Challenge From A Rival|notes=Debut}}
+
+===Pokémon Adventures===
+{{movemanga|type=normal|exp=yes|gen=The user releases a thick cloud of smoke that covers the battlefield.|image1=Green Horsea SmokeScreen Adventures.png|image1p=Horsea|image2=Exbo Cyndaquil SmokeScreen.png|image2p=Cyndaquil|image3=Croaky Smokescreen.png|image3p=Greninja|image4=Ryu Seadra Smokescreen.png|image4p=Seadra}}
+{{movep|type=normal|ms=116|pkmn=Horsea|method=Horsea releases a thick black smoke from its mouth that covers the battlefield.}}
+{{movemid|type=normal|user=Green (Adventures)|user1=Green's Horsea|startcode=PS030|startname=Zap! Zap! Zapdos!|notes=Debut}}
+{{movep|type=normal|ms=155|pkmn=Cyndaquil|method=Cyndaquil releases a stream of thick white smoke from its back that covers the battlefield.}}
+{{movemid|type=normal|user=Exbo|user1=Gold's Exbo|startcode=PS098|startname=Totodile Rock}}
+{{movep|type=normal|ms=117|pkmn=Seadra|method=Seadra creates white smoke that covers the battlefield.}}
+{{movemid|type=normal|user=Ryu|user1=Ryu's Seadra|startcode=PS123|startname=Debonaire Dragonair}}
+{{movep|type=normal|ms=658|pkmn=Greninja|method=Greninja releases a stream of thick white smoke from its body that covers the battlefield.}}
+{{movebtmManga|type=normal|user=Croaky|user1=Y's Croaky|startcode=PS589|startname=Charizard Transforms}}
+
+===Pokémon Gold & Silver: The Golden Boys===
+{{Movemanga|type=normal|exp=yes|gen=The user releases an obscuring cloud of smoke.|image1=Chris Cyndaquil SmokeScreen Golden Boys.png|image1p=Cyndaquil}}
+{{movep|type=normal|ms=155|pkmn=Cyndaquil|method=Cyndaquil releases smoke from the spots on its back.}}
+{{movebtmManga|type=normal|user=Chris (Golden Boys)|user1=Chris's Cyndaquil|startcode=GB15|startname=Escape From The Mystery Forest!|notes=Debut}}
+
+===Pokémon: Yeah! I Got Pokémon!===
+{{movemanga|type=normal|exp=yes|gen=The area is covered with a thick cloud of smoke.|image1=Ken Koffing SmokeScreen GDZ.png|image1p=Koffing|image2=Nagi Charizard SmokeScreen.png|image2p=Charizard}}
+{{movep|type=normal|ms=109|pkmn=Koffing|method=Koffing covers the area with smoke.}}
+{{movemid|type=normal|user=Ken (GDZ)|user1=Ken's Koffing|startcode=GDZ16|startname=Battle in the Smokescreen|notes=Debut}}
+{{movep|type=normal|ms=006|pkmn=Charizard|method=Charizard opens its mouth and covers the area with smoke.}}
+{{movebtmManga|type=normal|user=Nagi|user1=Nagi's Charizard|startcode=GDZ62|startname=A Grand, Mid-air Battle with a Rival!}}
+
+===Pokémon Mystery Dungeon: Blazing Exploration Team===
+{{movemanga|type=normal|exp=yes|gen=The users covers the whole area with a thick cloud of smoke.|image1=Team Skull Koffing SmokeScreen BET.png|image1p=Koffing}}
+{{movep|type=normal|ms=109|pkmn=Koffing|method=Koffing releases smoke from the holes on its body and covers the whole area with it.}}
+{{movebtmManga|type=normal|user=Team Skull (Mystery Dungeon)|user1=Koffing of Team Skull|startcode=BET1|notes=Debut}}
+
+===Pokémon Pocket Monsters===
+{{movemanga|type=normal|exp=yes|gen=The user covers the battlefield with a thick cloud of smoke.|image1=Gold Cyndaquil SmokeScreen PM.png|image1p=Cyndaquil}}
+{{movep|type=normal|ms=155|pkmn=Cyndaquil|method=Cyndaquil releases smoke from its backside.}}
+{{movebtmManga|type=normal|user=Gold (Pocket Monsters)|user1=Gold's Cyndaquil|startcode=PM066|startname=Hatch the Pokémon Egg!!|notes=Debut}}
+
+==In other generations==
+===Core series games===
+{{Movegen
+|type=normal
+|genI=SmokeScreen I
+|genII=SmokeScreen II
+|genIII=SmokeScreen III
+|genIV=SmokeScreen IV
+}}
+{{Movegen
+|type=normal
+|genV=SmokeScreen V
+|genVI=Smokescreen VI
+|genVI2=Smokescreen VI 2
+|SMUSUM=Smokescreen VII
+|SMUSUM2=Smokescreen VII 2
+|LGPE=Smokescreen PE
+}}
+{{Movegen
+|type=Normal
+|genVIII=Smokescreen VIII
+|ZA=Smokescreen ZA
+}}
+
+===Side series games===
+{{Movegen
+|type=normal
+|Stad=SmokeScreen Stad
+|Stad2=SmokeScreen Stad2
+|Colo=SmokeScreen Colo
+|XD=SmokeScreen XD
+}}
+{{Movegen
+|type=normal
+|PBR=SmokeScreen PBR
+}}
+===Spin-off series games===
+{{Movegen
+|type=normal
+|PMDRB=SmokeScreen PMD RB
+|PMDTDS=SmokeScreen PMD TDS
+|PSMD=Smokescreen PSMD
+}}
+
+==In other languages==
+{{Langtable|color={{normal color}}|bordercolor={{normal color dark}}
+|zh_yue=煙幕 ''{{tt|Yīnmohk|Smokescreen}}''
+|zh_cmn=煙幕 / 烟幕 ''{{tt|Yānmù|Smokescreen}}''
+|cs=Kouřová clona
+|da=Røgslør<!--source: Danish version of The Official Pokémon Handbook-->
+|nl=Rookgordijn
+|fi=Savuverho
+|fr=Brouillard
+|de=Rauchwolke
+|el=Καπνογόνο ''Kapnogóno''
+|id=Asap Hitam<br>Asap Tebal<br>Kabut Hitam
+|it=Muro di Fumo
+|ko=연막 ''{{tt|Yeonmak|Smokescreen}}''
+|no=Røykteppe
+|pl=Ściana Dymu{{tt|*|<!--EP248,-->Galactic Battles onwards}}<br>Zasłona Dymna{{tt|*|<!--EP040, EP090, EP130, EP152, EP172-EP180, EP192-EP205, EP212-EP245, EP261-EP268, AG003, -->Battle Dimesnion}}<!--<br>Smog{{tt|*|EP117, EP153-EP165, EP182-EP188, EP207, EP224, EP257, EP273-EP274, AG006-AG010}}<br>Atak Dymem{{tt|*|EP086, EP097, EP124, EP148}}<br>Dymny Atak{{tt|*|EP086, EP102}}<br>Dymy{{tt|*|EP090}}<br>Gęsty Dym{{tt|*|EP088}}<br>Dymiąca Zasłona{{tt|*|EP061}}<br>Gryzący Dym{{tt|*|EP056}}<br>Gryząca Mgła{{tt|*|EP053}}<br>Ekran Smogu{{tt|*|EP006}}-->
+|pt_br=Cortina de Fumaça (games, animated series, TCG, manga, The Official Pokémon Handbook)<br>Tela de Fumaça (The Official Pokémon Handbook)
+|pt_eu=Cortina de Fumo
+|sr=Dimna zavesa
+|es_la=Pantalla de Humo<!-- (games, [[EP006]]–present)<br>Pantalla Humo ([[Pokémon: The Arceus Chronicles|Arceus Chronicles]])<br>Cortina de Humo{{tt|*|Replaces ''Pantalla de Humo'' in some episodes}} ([[EP040]], [[EP053]], [[EP182]]–[[EP243]])<br>Humo Negro ([[EP033]])-->
+|es_eu=Pantalla de Humo<sup>{{gen|VI}}+</sup><br>Pantallahumo<sup>{{gen|I}}–{{gen|V}}</sup>
+|sv=Rökridå
+|vi=Màn Khói
+}}
+{{Flash}}
+
+{{Project Moves and Abilities notice}}
+
+[[Category:Moves that can lower the target's accuracy]]
+[[Category:Moves that can jam]]
+[[Category:Moves in Pokémon: Let's Go, Pikachu! and Let's Go, Eevee!]]
+[[Category:Moves usable in Pokémon Sword and Shield]]
+[[Category:Moves usable in Pokémon Scarlet and Violet]]
+[[Category:Moves in Pokémon Legends: Z-A]]
+
+[[de:Rauchwolke]]
+[[es:Pantalla de Humo]]
+[[fr:Brouillard (capacité)]]
+[[it:Muro di Fumo]]
+[[ja:えんまく]]
+[[zh:烟幕（招式）]]

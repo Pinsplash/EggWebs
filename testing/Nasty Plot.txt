@@ -1,0 +1,542 @@
+{{MoveInfobox
+|n=417
+|name=Nasty Plot
+|jname=わるだくみ
+|jtrans=Wiles
+|jtranslit=Warudakumi
+|gameimage=Nasty Plot IX.png
+|gameimage2=Nasty Plot IX 2.png
+|gameimagewidth=300
+|type=Dark
+|damagecategory=Status
+|basepp=20
+|maxpp=32
+|power=—
+|accuracy=—
+|gen=IV
+|target=self
+|bdesc=
+|category=Cute
+|appeal=0
+|jam=0
+|cdesc=Points of next appeal doubles
+|appealsc=0
+|scdesc=Earn double the score in the next turn.
+|category6=Clever
+|appeal6=1
+|jam6=0
+|cdesc6=Gets the Pokémon pumped up. Helps prevent nervousness, too.
+|pokefordex=Nasty%20Plot
+|touches=no
+|protect=no
+|magiccoat=no
+|snatch=yes
+|mirrormove=no
+|kingsrock=no
+|flag7=yes
+|flag8=no
+|sound=no
+|na=no
+|tr8=yes
+|tr#8=68
+|tm9=yes
+|tm#9=140
+|tmbdsp=yes
+|tm#bdsp=63
+|tmza=yes
+|tm#za=083
+|footnotes=
+}}
+'''Nasty Plot''' (Japanese: '''わるだくみ''' ''Wiles'') is a non-damaging {{type|Dark}} [[move]] introduced in [[Generation IV]].
+
+It is:
+* [[TR68]] in [[Pokémon Sword and Shield]].
+* [[TM063|TM63]] in [[Pokémon Brilliant Diamond and Shining Pearl]].
+* [[TM140]] in {{g|Scarlet and Violet}}.
+* [[TM083]] in {{g|Legends: Z-A}}.
+
+==Effect==
+Nasty Plot raises the user's {{stat|Special Attack}} stat by two stages.
+
+Nasty Plot is a part of [[Contest combination|Contest Spectacular combination]] and using it will cause {{m|Baton Pass}} and {{m|Stored Power}} to give an extra three appeal points if used in the next turn.
+
+If powered up by a [[Darkinium Z]] into Z-Nasty Plot, all of the user's lowered stats are reset.
+
+===Generation VIII===
+====Pokémon Legends: Arceus====
+Nasty Plot raises the user's offensive stats for five turns. It also increases the user's [[action speed]].
+
+{{LegendsMove
+|type=Dark
+|damagecategory=Status
+|basepp=20
+|actionspeed-user=-3
+|actionspeed-user-agile=-4
+|actionspeed-user-strong=+5
+|effect=Raises the user's offensive stats
+|param=Turns
+|param-val=5
+|param-val-agile=4
+|param-val-strong=7}}
+
+===Generation IX===
+====Pokémon Legends: Z-A====
+{{LegendsZAMove
+|type=Dark
+|damagecategory=Status
+|cooldown=15
+|charge-time=25
+|effect-duration=20
+|effect-duration-plus=23
+}}
+
+==Description==
+{{movedesc|Dark}}
+{{movedescentry|{{gameabbrev4|DPPtHGSS}}{{gameabbrevss|PBR}}<br>{{gameabbrev5|BWB2W2}}|The user stimulates its brain by thinking bad thoughts. It sharply raises the user's Sp. Atk.}}
+{{movedescentry|{{gameabbrev6|XYORAS}}|The user stimulates its brain by thinking bad thoughts. This sharply raises the user's Sp. Atk.}}
+{{movedescentry|{{gameabbrev7|SMUSUMPE}}<br>{{gameabbrev8|SwShBDSP}}|The user stimulates its brain by thinking bad thoughts. This sharply raises the user's Sp. Atk stat.}}
+{{movedescentry|{{gameabbrev8|LA}}|The user stimulates its brain by thinking bad thoughts, raising the user's offensive stats.}}
+{{movedescentry|{{gameabbrev9|SV}}|The user stimulates its brain by thinking bad thoughts. This sharply boosts the user's Sp. Atk stat.}}
+{{movedescentry|{{gameabbrev9|ZA}}|The user boosts its Sp. Atk stat for a while by thinking bad thoughts to stimulate its brain.}}
+|}
+|}{{left clear}}
+
+==Learnset==
+===By [[Level|leveling up]]===
+{{Movehead/Games|Dark|g1=none|g2=none|g3=none|g7=2|g8=3|g9=2}}
+{{Moveentry/10|0025|Pikachu|type=Electric|2|Field|Fairy|−|−|−|−|−|1|1|−|1|−}}
+{{Moveentry/10|0026|Raichu|type=Electric|2|Field|Fairy|−|−|−|−|−|1|1|−|1|−}}
+{{Moveentry/10|0026|formsig=A|Raichu|type=Electric|type2=Psychic|2|Field|Fairy|form=Alolan Form||||−|−|1|||1|−}}
+{{Moveentry/10|0037|Vulpix|type=Fire|1|Field|Field|−|−|−|−|−|−|−|9|−}}
+{{Moveentry/10|0037|formsig=A|Vulpix|type=Ice|1|Field|Field|form=Alolan Form||||−|−|−||9|−}}
+{{Moveentry/10|0038|Ninetales|type=Fire|1|Field|Field|1|1|1|1|1|1|1|9|−}}
+{{Moveentry/10|0038|formsig=A|Ninetales|type=Ice|type2=Fairy|1|Field|Field|form=Alolan Form||||1|1|1||9|−}}
+{{Moveentry/10|0052|Meowth|type=Normal|1|Field|Field|38|38|38|38|31|40|40||40|27}}
+{{Moveentry/10|0052|formsig=A|Meowth|type=Dark|1|Field|Field|form=Alolan Form||||38|31|40|||40|27}}
+{{Moveentry/10|0052|formsig=G|Meowth|type=Steel|1|Field|Field|form=Galarian Form||||||−|||−|27}}
+{{Moveentry/10|0053|Persian|type=Normal|1|Field|Field|44|44|44|44|37|48|48||48|27}}
+{{Moveentry/10|0053|formsig=A|Persian|type=Dark|1|Field|Field|form=Alolan Form||||44|37|48|||48|27}}
+{{Moveentry/10|0096|Drowzee|type=Psychic|1|Human-Like|Human-Like|43|53|53|53|36||53||41}}
+{{Moveentry/10|0097|Hypno|type=Psychic|1|Human-Like|Human-Like|55|53|1, 53|1, 53|46||1, 53||47}}
+{{Moveentry/10|0146|formsig=G|Moltres|type=Dark|type2=Flying|1|No Eggs Discovered|No Eggs Discovered|form=Galarian Form||||||50|||50}}
+{{Moveentry/10|0151|Mew|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|90|90|90|90|88|50|50||50}}
+{{Moveentry/10|0172|Pichu|type=Electric|1|No Eggs Discovered|No Eggs Discovered|18|18|18{{sup/6|XY}}<br>13{{sup/6|ORAS}}|13||16|16|−|16|−}}
+{{Moveentry/10|0190|Aipom|type=Normal|1|Field|Field|39|39|39|39|||39|6|39}}
+{{Moveentry/10|0198|Murkrow|type=Dark|type2=Flying|1|Flying|Flying|−|−|−|−|||−|34|−}}
+{{Moveentry/10|0199|Slowking|type=Water|type2=Psychic|2|Monster|Water 1|39|36|36|36||1|1||1|1}}
+{{Moveentry/10|0199|formsig=G|Slowking|type=Poison|type2=Psychic|2|Monster|Water 1|form=Galarian Form||||||1|||1|1}}
+{{Moveentry/10|0203|Girafarig|type=Normal|type2=Psychic|1|Field|Field|−|−|46{{sup/6|ORAS}}|46|||46||46}}
+{{Moveentry/10|0228|Houndour|type=Dark|type2=Fire|1|Field|Field|53|52|52|52|||52||52|52}}
+{{Moveentry/10|0229|Houndoom|type=Dark|type2=Fire|1|Field|Field|60|60|1, 60|1, 60|||1, 60||1|1}}
+{{Moveentry/10|0275|Shiftry|type=Grass|type2=Dark|2|Field|Grass|1|1|1|1||−|−||−}}
+{{Moveentry/10|0311|Plusle|type=Electric|1|Fairy|Fairy|51|56|1, 56{{sup/6|XY}}<br>46{{sup/6|ORAS}}|46|||46||46}}
+{{Moveentry/10|0312|Minun|type=Electric|1|Fairy|Fairy|51|56|1, 56{{sup/6|XY}}<br>46{{sup/6|ORAS}}|46|||46||46}}
+{{Moveentry/10|0390|Chimchar|type=Fire|2|Field|Human-Like|23|23|23|23|||23|25|23}}
+{{Moveentry/10|0391|Monferno|type=Fire|type2=Fighting|2|Field|Human-Like|−|−|−|−|||1|25|−}}
+{{Moveentry/10|0392|Infernape|type=Fire|type2=Fighting|2|Field|Human-Like|−|−|−|−|||1|25|−}}
+{{Moveentry/10|0424|Ambipom|type=Normal|1|Field|Field|39|39|39|39|||39|6|39}}
+{{Moveentry/10|0430|Honchkrow|type=Dark|type2=Flying|1|Flying|Flying|35|35|35|35|||35|34|35}}
+{{Moveentry/10|0431|Glameow|type=Normal|1|Field|Field|−|−|−|−|||−|10}}
+{{Moveentry/10|0432|Purugly|type=Normal|1|Field|Field|−|−|−|−|||−|10}}
+{{Moveentry/10|0441|Chatot|type=Normal|type2=Flying|1|Flying|Flying|−|−|−|−|||−|34}}
+{{Moveentry/10|0442|Spiritomb|type=Ghost|type2=Dark|1|Amorphous|Amorphous|37|37|37|37||20|20|18|20}}
+{{Moveentry/10|0447|Riolu|type=Fighting|1|No Eggs Discovered|No Eggs Discovered|−|47|47|47||24|24|−|−|−}}
+{{Moveentry/10|0448|Lucario|type=Fighting|type2=Steel|2|Field|Human-Like|−|−|−|−||1|1|−|−|−}}
+{{Moveentry/10|0453|Croagunk|type=Poison|type2=Fighting|1|Human-Like|Human-Like|36|38|38|38||40|40|21|40}}
+{{Moveentry/10|0454|Toxicroak|type=Poison|type2=Fighting|1|Human-Like|Human-Like|36|41|41|41||42|42|21|42}}
+{{Moveentry/10|0461|Weavile|type=Dark|type2=Ice|1|Field|Field|24|24{{sup/5|BW}}<br>20{{sup/5|B2W2}}|20|20||48|48|−|48}}
+{{Moveentry/10|0474|Porygon-Z|type=Normal|1|Mineral|Mineral|1|1|1|1||1|1|−|1|−}}
+{{Moveentry/10|0482|Azelf|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|46|46|46|46||42|42|36|42}}
+{{Moveentry/10|0491|Darkrai|type=Dark|1|No Eggs Discovered|No Eggs Discovered|75{{sup/4|PtHGSS}}|75|75|75|||75|19|75|75}}
+{{Moveentry/10|0504|Patrat|type=Normal|1|Field|Field||−|−|33||||||33}}
+{{Moveentry/10|0505|Watchog|type=Normal|1|Field|Field||−|−|39||||||33}}
+{{Moveentry/10|0509|Purrloin|type=Dark|1|Field|Field||42|42|42||32||||32}}
+{{Moveentry/10|0510|Liepard|type=Dark|1|Field|Field||50|50|50||40||||32}}
+{{Moveentry/10|0570|Zorua|type=Dark|1|Field|Field||49|49|49||44|||44}}
+{{Moveentry/10|0570|formsig=H|Zorua|type=Normal|type2=Ghost|1|Field|Field|form=Hisuian Form||||||||43|44}}
+{{Moveentry/10|0571|Zoroark|type=Dark|1|Field|Field||54|54|54||52|||52}}
+{{Moveentry/10|0571|formsig=H|Zoroark|type=Normal|type2=Ghost|1|Field|Field|form=Hisuian Form||||||||43|52}}
+{{Moveentry/10|0629|Vullaby|type=Dark|type2=Flying|1|Flying|Flying||14|14|14||54|||54}}
+{{Moveentry/10|0630|Mandibuzz|type=Dark|type2=Flying|1|Flying|Flying||14|14|14||57|||57}}
+{{Moveentry/10|0633|Deino|type=Dark|type2=Dragon|1|Dragon|Dragon||−|−|−||56|||56}}
+{{Moveentry/10|0634|Zweilous|type=Dark|type2=Dragon|1|Dragon|Dragon||−|−|−||60|||60}}
+{{Moveentry/10|0635|Hydreigon|type=Dark|type2=Dragon|1|Dragon|Dragon||−|−|−||60|||60}}
+{{Moveentry/10|0641|Tornadus|type=Flying|1|No Eggs Discovered|No Eggs Discovered|form=All forms||−|−|−||−||22|−}}
+{{Moveentry/10|0642|Thundurus|type=Electric|type2=Flying|1|No Eggs Discovered|No Eggs Discovered|form=All available forms||61|1, 61|1, 55||−||22|−}}
+{{Moveentry/10|0720|Hoopa|type=Psychic|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered|form=Confined|||68{{sup/6|ORAS}}|68|||||68|45}}
+{{Moveentry/10|0720|formsig=U|Hoopa|type=Psychic|type2=Dark|1|No Eggs Discovered|No Eggs Discovered|form=Unbound|||–|–|||||–|45}}
+{{Moveentry/10|0722|Rowlet|type=Grass|type2=Flying|1|Flying|Flying||||46||24|||24}}
+{{Moveentry/10|0723|Dartrix|type=Grass|type2=Flying|1|Flying|Flying||||55||30|||30}}
+{{Moveentry/10|0724|Decidueye|type=Grass|type2=Ghost|1|Flying|Flying||||60||30|||30}}
+{{Moveentry/10|0757|Salandit|type=Poison|type2=Fire|2|Monster|Dragon||||32||25|||25}}
+{{Moveentry/10|0758|Salazzle|type=Poison|type2=Fire|2|Monster|Dragon||||32||25|||25}}
+{{Moveentry/10|0765|Oranguru|type=Normal|type2=Psychic|1|Field|Field||||25||30|||30}}
+{{Moveentry/10|0803|Poipole|type=Poison|1|No Eggs Discovered|No Eggs Discovered||||31{{sup/7|USUM}}||42}}
+{{Moveentry/10|0804|Naganadel|type=Poison|type2=Dragon|1|No Eggs Discovered|No Eggs Discovered||||31{{sup/7|USUM}}||42}}
+{{Moveentry/10|0827|Nickit|type=Dark|1|Field|Field||||||20||||22}}
+{{Moveentry/10|0828|Thievul|type=Dark|1|Field|Field||||||22||||22}}
+{{Moveentry/10|0854|Sinistea|type=Ghost|2|Mineral|Amorphous|form=All forms||||||42|||42}}
+{{Moveentry/10|0855|Polteageist|type=Ghost|2|Mineral|Amorphous|form=All forms||||||42|||42}}
+{{Moveentry/10|0859|Impidimp|type=Dark|type2=Fairy|2|Fairy|Human-Like||||||36|||36}}
+{{Moveentry/10|0860|Morgrem|type=Dark|type2=Fairy|2|Fairy|Human-Like||||||40|||40}}
+{{Moveentry/10|0861|Grimmsnarl|type=Dark|type2=Fairy|2|Fairy|Human-Like||||||40|||40}}
+{{Moveentry/10|0863|Perrserker|type=Steel|1|Field|Field||||||–|||–|27}}
+{{Moveentry/10|0897|Spectrier|type=Ghost|1|No Eggs Discovered|No Eggs Discovered||||||72|||72}}
+{{Moveentry/10|0898|formsig=S|Calyrex|type=Psychic|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered|form=Shadow Rider||||||1|||1}}
+{{Moveentry/10|0978|Tatsugiri|type=Dragon|type2=Water|1|Water 2|Water 2|form=All forms|||||||||43|43}}
+{{Moveentry/10|0981|Farigiraf|type=Normal|type2=Psychic|1|Field|Field|||||||||46}}
+{{Moveentry/10|1000|Gholdengo|type=Steel|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered|||||||||63|63}}
+{{Moveentry/10|1004|Chi-Yu|type=Dark|type2=Fire|1|No Eggs Discovered|No Eggs Discovered|||||||||35}}
+{{Moveentry/10|1015|Munkidori|type=Poison|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered|||||||||56}}
+{{Moveentry/10|1025|Pecharunt|type=Poison|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered|||||||||64}}
+{{Movefoot|Dark|10}}
+
+===By [[TM]]/[[TR]]===
+{{Movehead/TMGames|Dark|g1=none|g2=none|g3=none|g4=none|g5=none|g6=none|g7=none
+|g8=2|g8tm-1=68|tmhm8-1=TR|g8g-1={{gameabbrev8|SwSh}}|g8tm-2=63|g8g-2={{gameabbrev8|BDSP}}
+|g9=2|g9tm-1=140|g9tm-2=083}}
+{{Moveentry/4|0025|Pikachu|type=Electric|2|Field|Fairy|✔|✔|✔|✔}}
+{{Moveentry/4|0026|Raichu|type=Electric|2|Field|Fairy|✔|✔|✔|✔}}
+{{Moveentry/4|0026|formsig=A|Raichu|type=Electric|type2=Psychic|2|Field|Fairy|form=Alolan Form|✔||✔|✔}}
+{{Moveentry/4|0037|Vulpix|type=Fire|1|Field|Field|−|−|✔}}
+{{Moveentry/4|0037|formsig=A|Vulpix|type=Ice|1|Field|Field|form=Alolan Form|−||✔}}
+{{Moveentry/4|0038|Ninetales|type=Fire|1|Field|Field|✔|✔|✔}}
+{{Moveentry/4|0038|formsig=A|Ninetales|type=Ice|type2=Fairy|1|Field|Field|form=Alolan Form|✔||✔}}
+{{Moveentry/4|0039|Jigglypuff|type=Normal|type2=Fairy|1|Fairy|Fairy|−|−|✔|✔}}
+{{Moveentry/4|0040|Wigglytuff|type=Normal|type2=Fairy|1|Fairy|Fairy|−|−|✔|✔}}
+{{Moveentry/4|0041|Zubat|type=Poison|type2=Flying|1|Flying|Flying|✔|✔||✔}}
+{{Moveentry/4|0042|Golbat|type=Poison|type2=Flying|1|Flying|Flying|✔|✔||✔}}
+{{Moveentry/4|0052|Meowth|type=Normal|1|Field|Field|✔|✔|✔|✔}}
+{{Moveentry/4|0052|formsig=A|Meowth|type=Dark|1|Field|Field|form=Alolan Form|✔||✔|✔}}
+{{Moveentry/4|0052|formsig=G|Meowth|type=Steel|1|Field|Field|form=Galarian Form|✔||✔|✔}}
+{{Moveentry/4|0053|Persian|type=Normal|1|Field|Field|✔|✔|✔|✔}}
+{{Moveentry/4|0053|formsig=A|Persian|type=Dark|1|Field|Field|form=Alolan Form|✔||✔|✔}}
+{{Moveentry/4|0054|Psyduck|type=Water|2|Water 1|Field|−|−|✔}}
+{{Moveentry/4|0055|Golduck|type=Water|2|Water 1|Field|−|−|✔}}
+{{Moveentry/4|0065|Alakazam|type=Psychic|1|Human-Like|Human-Like|✔|✔||✔}}
+{{Moveentry/4|0080|Slowbro|type=Water|type2=Psychic|2|Monster|Water 1|✔|✔|✔|✔}}
+{{Moveentry/4|0080|formsig=G|Slowbro|type=Poison|type2=Psychic|2|Monster|Water 1|form=Galarian Form|✔||✔|✔}}
+{{Moveentry/4|0092|Gastly|type=Ghost|type2=Poison|1|Amorphous|Amorphous|−|−|✔|✔}}
+{{Moveentry/4|0093|Haunter|type=Ghost|type2=Poison|1|Amorphous|Amorphous|−|−|✔|✔}}
+{{Moveentry/4|0094|Gengar|type=Ghost|type2=Poison|1|Amorphous|Amorphous|✔|✔|✔|✔}}
+{{Moveentry/4|0096|Drowzee|type=Psychic|1|Human-Like|Human-Like||✔|✔}}
+{{Moveentry/4|0097|Hypno|type=Psychic|1|Human-Like|Human-Like||✔|✔}}
+{{Moveentry/4|0122|Mr. Mime|type=Psychic|type2=Fairy|1|Human-Like|Human-Like|✔|✔||✔}}
+{{Moveentry/4|0122|formsig=G|Mr. Mime|type=Ice|type2=Psychic|1|Human-Like|Human-Like|form=Galarian Form|✔|||✔}}
+{{Moveentry/4|0124|Jynx|type=Ice|type2=Psychic|1|Human-Like|Human-Like|✔|✔|}}
+{{Moveentry/4|0146|formsig=G|Moltres|type=Dark|type2=Flying|1|No Eggs Discovered|No Eggs Discovered|✔||✔}}
+{{Moveentry/4|0150|Mewtwo|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔}}
+{{Moveentry/4|0151|Mew|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔}}
+{{Moveentry/4|0163|Hoothoot|type=Normal|type2=Flying|1|Flying|Flying|✔|✔|✔}}
+{{Moveentry/4|0164|Noctowl|type=Normal|type2=Flying|1|Flying|Flying|✔|✔|✔}}
+{{Moveentry/4|0169|Crobat|type=Poison|type2=Flying|1|Flying|Flying|✔|✔||✔}}
+{{Moveentry/4|0172|Pichu|type=Electric|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔}}
+{{Moveentry/4|0174|Igglybuff|type=Normal|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered|−|−|−|✔}}
+{{Moveentry/4|0175|Togepi|type=Fairy|1|No Eggs Discovered|No Eggs Discovered|✔|✔|}}
+{{Moveentry/4|0176|Togetic|type=Fairy|type2=Flying|2|Flying|Fairy|✔|✔|}}
+{{Moveentry/4|0190|Aipom|type=Normal|1|Field|Field||✔|✔}}
+{{Moveentry/4|0198|Murkrow|type=Dark|type2=Flying|1|Flying|Flying||−|✔}}
+{{Moveentry/4|0199|Slowking|type=Water|type2=Psychic|2|Monster|Water 1|✔|✔|✔|✔}}
+{{Moveentry/4|0199|formsig=G|Slowking|type=Poison|type2=Psychic|2|Monster|Water 1|form=Galarian Form|✔||✔|✔}}
+{{Moveentry/4|0200|Misdreavus|type=Ghost|1|Amorphous|Amorphous||✔|✔}}
+{{Moveentry/4|0203|Girafarig|type=Normal|type2=Psychic|1|Field|Field||✔|✔}}
+{{Moveentry/4|0215|Sneasel|type=Dark|type2=Ice|1|Field|Field|−|−|✔}}
+{{Moveentry/4|0215|formsig=H|Sneasel|type=Fighting|type2=Poison|1|Field|Field|form=Hisuian Form|||✔}}
+{{Moveentry/4|0228|Houndour|type=Dark|type2=Fire|1|Field|Field||✔|✔|✔}}
+{{Moveentry/4|0229|Houndoom|type=Dark|type2=Fire|1|Field|Field||✔|✔|✔}}
+{{Moveentry/4|0238|Smoochum|type=Ice|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|✔|}}
+{{Moveentry/4|0251|Celebi|type=Psychic|type2=Grass|1|No Eggs Discovered|No Eggs Discovered|✔|✔|}}
+{{Moveentry/4|0261|Poochyena|type=Dark|1|Field|Field||✔|✔}}
+{{Moveentry/4|0262|Mightyena|type=Dark|1|Field|Field||✔|✔}}
+{{Moveentry/4|0273|Seedot|type=Grass|2|Field|Grass|✔|✔|✔}}
+{{Moveentry/4|0274|Nuzleaf|type=Grass|type2=Dark|2|Field|Grass|✔|✔|✔}}
+{{Moveentry/4|0275|Shiftry|type=Grass|type2=Dark|2|Field|Grass|✔|✔|✔}}
+{{Moveentry/4|0300|Skitty|type=Normal|2|Field|Fairy||✔|}}
+{{Moveentry/4|0301|Delcatty|type=Normal|2|Field|Fairy||✔|}}
+{{Moveentry/4|0302|Sableye|type=Dark|type2=Ghost|1|Human-Like|Human-Like|✔|✔|✔|✔}}
+{{Moveentry/4|0311|Plusle|type=Electric|1|Fairy|Fairy||✔|✔}}
+{{Moveentry/4|0312|Minun|type=Electric|1|Fairy|Fairy||✔|✔}}
+{{Moveentry/4|0326|Grumpig|type=Psychic|1|Field|Field||✔|✔|✔}}
+{{Moveentry/4|0331|Cacnea|type=Grass|2|Grass|Human-Like||✔|✔}}
+{{Moveentry/4|0332|Cacturne|type=Grass|type2=Dark|2|Grass|Human-Like||✔|✔}}
+{{Moveentry/4|0337|Lunatone|type=Rock|type2=Psychic|1|Mineral|Mineral|✔|✔|}}
+{{Moveentry/4|0342|Crawdaunt|type=Water|type2=Dark|2|Water 1|Water 3|✔|✔|✔}}
+{{Moveentry/4|0344|Claydol|type=Ground|type2=Psychic|1|Mineral|Mineral|✔|✔|}}
+{{Moveentry/4|0352|Kecleon|type=Normal|1|Field|Field||✔||✔}}
+{{Moveentry/4|0353|Shuppet|type=Ghost|1|Amorphous|Amorphous||−|✔|✔}}
+{{Moveentry/4|0354|Banette|type=Ghost|1|Amorphous|Amorphous||−|✔|✔}}
+{{Moveentry/4|0386|Deoxys|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|form=Normal Forme||✔|✔}}
+{{Moveentry/4|0386|formsig=A|Deoxys|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|form=Attack Forme||✔|✔}}
+{{Moveentry/4|0386|formsig=D|Deoxys|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|form=Defense Forme||✔|−}}
+{{Moveentry/4|0386|formsig=S|Deoxys|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|form=Speed Forme||✔|✔}}
+{{Moveentry/4|0390|Chimchar|type=Fire|2|Field|Human-Like||✔|✔}}
+{{Moveentry/4|0391|Monferno|type=Fire|type2=Fighting|2|Field|Human-Like||✔|✔}}
+{{Moveentry/4|0392|Infernape|type=Fire|type2=Fighting|2|Field|Human-Like||✔|✔}}
+{{Moveentry/4|0424|Ambipom|type=Normal|1|Field|Field||✔|✔}}
+{{Moveentry/4|0429|Mismagius|type=Ghost|1|Amorphous|Amorphous||✔|✔}}
+{{Moveentry/4|0430|Honchkrow|type=Dark|type2=Flying|1|Flying|Flying||✔|✔}}
+{{Moveentry/4|0434|Stunky|type=Poison|type2=Dark|1|Field|Field|✔|✔|✔}}
+{{Moveentry/4|0435|Skuntank|type=Poison|type2=Dark|1|Field|Field|✔|✔|✔}}
+{{Moveentry/4|0439|Mime Jr.|type=Psychic|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered|✔|✔||✔}}
+{{Moveentry/4|0441|Chatot|type=Normal|type2=Flying|1|Flying|Flying||✔|}}
+{{Moveentry/4|0442|Spiritomb|type=Ghost|type2=Dark|1|Amorphous|Amorphous|✔|✔|✔}}
+{{Moveentry/4|0445|Garchomp|type=Dragon|type2=Ground|2|Monster|Dragon|−|−|−|✔<sup>2.0.0+</sup>}}
+{{Moveentry/4|0447|Riolu|type=Fighting|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔}}
+{{Moveentry/4|0448|Lucario|type=Fighting|type2=Steel|2|Field|Human-Like|✔|✔|✔|✔}}
+{{Moveentry/4|0453|Croagunk|type=Poison|type2=Fighting|1|Human-Like|Human-Like|✔|✔|✔}}
+{{Moveentry/4|0454|Toxicroak|type=Poison|type2=Fighting|1|Human-Like|Human-Like|✔|✔|✔}}
+{{Moveentry/4|0461|Weavile|type=Dark|type2=Ice|1|Field|Field|✔|✔|✔}}
+{{Moveentry/4|0468|Togekiss|type=Fairy|type2=Flying|2|Flying|Fairy|✔|✔|}}
+{{Moveentry/4|0474|Porygon-Z|type=Normal|1|Mineral|Mineral|✔|✔|✔|✔}}
+{{Moveentry/4|0478|Froslass|type=Ice|type2=Ghost|2|Fairy|Mineral|–|–|–|✔}}
+{{Moveentry/4|0479|Rotom|type=Electric|type2=Ghost|1|Amorphous|Amorphous|form=All forms|✔|✔|✔|✔}}
+{{Moveentry/4|0480|Uxie|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔}}
+{{Moveentry/4|0481|Mesprit|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔}}
+{{Moveentry/4|0482|Azelf|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔}}
+{{Moveentry/4|0491|Darkrai|type=Dark|1|No Eggs Discovered|No Eggs Discovered||✔|✔|✔}}
+{{Moveentry/4|0504|Patrat|type=Normal|1|Field|Field||||✔}}
+{{Moveentry/4|0505|Watchog|type=Normal|1|Field|Field||||✔}}
+{{Moveentry/4|0509|Purrloin|type=Dark|1|Field|Field|✔|||✔}}
+{{Moveentry/4|0510|Liepard|type=Dark|1|Field|Field|✔|||✔}}
+{{Moveentry/4|0511|Pansage|type=Grass|1|Field|Field||||✔}}
+{{Moveentry/4|0512|Simisage|type=Grass|1|Field|Field||||✔}}
+{{Moveentry/4|0513|Pansear|type=Fire|1|Field|Field||||✔}}
+{{Moveentry/4|0514|Simisear|type=Fire|1|Field|Field||||✔}}
+{{Moveentry/4|0515|Panpour|type=Water|1|Field|Field||||✔}}
+{{Moveentry/4|0516|Simipour|type=Water|1|Field|Field||||✔}}
+{{Moveentry/4|0527|Woobat|type=Psychic|type2=Flying|2|Field|Flying|✔||}}
+{{Moveentry/4|0528|Swoobat|type=Psychic|type2=Flying|2|Field|Flying|✔||}}
+{{Moveentry/4|0562|Yamask|type=Ghost|2|Mineral|Amorphous|✔|||✔}}
+{{Moveentry/4|0562|formsig=G|Yamask|type=Ground|type2=Ghost|2|Mineral|Amorphous|form=Galarian Form|✔|||✔}}
+{{Moveentry/4|0563|Cofagrigus|type=Ghost|2|Mineral|Amorphous|✔|||✔}}
+{{Moveentry/4|0570|Zorua|type=Dark|1|Field|Field|✔||✔}}
+{{Moveentry/4|0570|formsig=H|Zorua|type=Normal|type2=Ghost|1|Field|Field|form=Hisuian Form|||✔}}
+{{Moveentry/4|0571|Zoroark|type=Dark|1|Field|Field|✔||✔}}
+{{Moveentry/4|0571|formsig=H|Zoroark|type=Normal|type2=Ghost|1|Field|Field|form=Hisuian Form|||✔}}
+{{Moveentry/4|0574|Gothita|type=Psychic|1|Human-Like|Human-Like|✔||✔}}
+{{Moveentry/4|0575|Gothorita|type=Psychic|1|Human-Like|Human-Like|✔||✔}}
+{{Moveentry/4|0576|Gothitelle|type=Psychic|1|Human-Like|Human-Like|✔||✔}}
+{{Moveentry/4|0605|Elgyem|type=Psychic|1|Human-Like|Human-Like|✔||}}
+{{Moveentry/4|0606|Beheeyem|type=Psychic|1|Human-Like|Human-Like|✔||}}
+{{Moveentry/4|0629|Vullaby|type=Dark|type2=Flying|1|Flying|Flying|✔||✔}}
+{{Moveentry/4|0630|Mandibuzz|type=Dark|type2=Flying|1|Flying|Flying|✔||✔}}
+{{Moveentry/4|0633|Deino|type=Dark|type2=Dragon|1|Dragon|Dragon|✔||✔}}
+{{Moveentry/4|0634|Zweilous|type=Dark|type2=Dragon|1|Dragon|Dragon|✔||✔}}
+{{Moveentry/4|0635|Hydreigon|type=Dark|type2=Dragon|1|Dragon|Dragon|✔||✔}}
+{{Moveentry/4|0641|Tornadus|type=Flying|1|No Eggs Discovered|No Eggs Discovered|form=All forms|✔||✔}}
+{{Moveentry/4|0642|Thundurus|type=Electric|type2=Flying|1|No Eggs Discovered|No Eggs Discovered|form=All forms|✔||✔}}
+{{Moveentry/4|0645|Landorus|type=Ground|type2=Flying|1|No Eggs Discovered|No Eggs Discovered|form=All forms|−||✔}}
+{{Moveentry/4|0655|Delphox|type=Fire|type2=Psychic|1|Field|Field|||✔|✔}}
+{{Moveentry/4|0657|Frogadier|type=Water|1|Water 1|Water 1|||–|✔}}
+{{Moveentry/4|0658|Greninja|type=Water|type2=Dark|1|Water 1|Water 1|form=All available forms|||–|✔}}
+{{Moveentry/4|0677|Espurr|type=Psychic|1|Field|Field|✔||✔|✔}}
+{{Moveentry/4|0678|Meowstic|type=Psychic|1|Field|Field|form=All forms|✔||✔|✔}}
+{{Moveentry/4|0682|Spritzee|type=Fairy|1|Fairy|Fairy|✔|||✔}}
+{{Moveentry/4|0683|Aromatisse|type=Fairy|1|Fairy|Fairy|✔|||✔}}
+{{Moveentry/4|0686|Inkay|type=Dark|type2=Psychic|2|Water 1|Water 2|✔||✔|✔}}
+{{Moveentry/4|0687|Malamar|type=Dark|type2=Psychic|2|Water 1|Water 2|✔||✔|✔}}
+{{Moveentry/4|0711|Gourgeist|type=Ghost|type2=Grass|1|Amorphous|Amorphous|form=All forms|✔|||✔}}
+{{Moveentry/4|0720|Hoopa|type=Psychic|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered|form=All forms|||✔|✔}}
+{{Moveentry/4|0722|Rowlet|type=Grass|type2=Flying|1|Flying|Flying|✔||✔}}
+{{Moveentry/4|0723|Dartrix|type=Grass|type2=Flying|1|Flying|Flying|✔||✔}}
+{{Moveentry/4|0724|Decidueye|type=Grass|type2=Ghost|1|Flying|Flying|✔||✔}}
+{{Moveentry/4|0724|formsig=H|Decidueye|type=Grass|type2=Fighting|1|Flying|Flying|form=Hisuian Form|||✔}}
+{{Moveentry/4|0725|Litten|type=Fire|1|Field|Field|✔||✔}}
+{{Moveentry/4|0726|Torracat|type=Fire|1|Field|Field|✔||✔}}
+{{Moveentry/4|0727|Incineroar|type=Fire|type2=Dark|1|Field|Field|✔||✔}}
+{{Moveentry/4|0757|Salandit|type=Poison|type2=Fire|2|Monster|Dragon|✔||✔}}
+{{Moveentry/4|0758|Salazzle|type=Poison|type2=Fire|2|Monster|Dragon|✔||✔}}
+{{Moveentry/4|0765|Oranguru|type=Normal|type2=Psychic|1|Field|Field|✔||✔}}
+{{Moveentry/4|0769|Sandygast|type=Ghost|type2=Ground|1|Amorphous|Amorphous|−||−|✔}}
+{{Moveentry/4|0770|Palossand|type=Ghost|type2=Ground|1|Amorphous|Amorphous|−||−|✔}}
+{{Moveentry/4|0803|Poipole|type=Poison|1|No Eggs Discovered|No Eggs Discovered|✔||}}
+{{Moveentry/4|0804|Naganadel|type=Poison|type2=Dragon|1|No Eggs Discovered|No Eggs Discovered|✔||}}
+{{Moveentry/4|0821|Rookidee|type=Flying|1|Flying|Flying|✔||✔|✔}}
+{{Moveentry/4|0822|Corvisquire|type=Flying|1|Flying|Flying|✔||✔|✔}}
+{{Moveentry/4|0823|Corviknight|type=Flying|type2=Steel|1|Flying|Flying|✔||✔|✔}}
+{{Moveentry/4|0827|Nickit|type=Dark|1|Field|Field|✔|||✔}}
+{{Moveentry/4|0828|Thievul|type=Dark|1|Field|Field|✔|||✔}}
+{{Moveentry/4|0854|Sinistea|type=Ghost|2|Mineral|Amorphous|form=All forms|✔||✔}}
+{{Moveentry/4|0855|Polteageist|type=Ghost|2|Mineral|Amorphous|form=All forms|✔||✔}}
+{{Moveentry/4|0859|Impidimp|type=Dark|type2=Fairy|2|Fairy|Human-Like|✔||✔}}
+{{Moveentry/4|0860|Morgrem|type=Dark|type2=Fairy|2|Fairy|Human-Like|✔||✔}}
+{{Moveentry/4|0861|Grimmsnarl|type=Dark|type2=Fairy|2|Fairy|Human-Like|✔||✔}}
+{{Moveentry/4|0863|Perrserker|type=Steel|1|Field|Field|✔||✔|✔}}
+{{Moveentry/4|0866|Mr. Rime|type=Ice|type2=Psychic|1|Human-Like|Human-Like|✔|||✔}}
+{{Moveentry/4|0867|Runerigus|type=Ground|type2=Ghost|2|Mineral|Amorphous|✔|||✔}}
+{{Moveentry/4|0877|Morpeko|type=Electric|type2=Dark|2|Field|Fairy|✔||✔|✔}}
+{{Moveentry/4|0893|Zarude|type=Dark|type2=Grass|1|No Eggs Discovered|No Eggs Discovered|form=All forms|✔||✔}}
+{{Moveentry/4|0897|Spectrier|type=Ghost|1|No Eggs Discovered|No Eggs Discovered|✔||✔}}
+{{Moveentry/4|0898|formsig=S|Calyrex|type=Psychic|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered|form=Shadow Rider|✔||✔}}
+{{Moveentry/4|0903|Sneasler|type=Fighting|type2=Poison|1|Field|Field|||✔}}
+{{Moveentry/4|0906|Sprigatito|type=Grass|2|Field|Grass|||✔}}
+{{Moveentry/4|0907|Floragato|type=Grass|2|Field|Grass|||✔}}
+{{Moveentry/4|0908|Meowscarada|type=Grass|type2=Dark|2|Field|Grass|||✔}}
+{{Moveentry/4|0944|Shroodle|type=Poison|type2=Normal|1|Field|Field|||✔|✔}}
+{{Moveentry/4|0945|Grafaiai|type=Poison|type2=Normal|1|Field|Field|||✔|✔}}
+{{Moveentry/4|0952|Scovillain|type=Grass|type2=Fire|1|Grass|Grass|||−|✔}}
+{{Moveentry/4|0962|Bombirdier|type=Flying|type2=Dark|1|Flying|Flying|||✔}}
+{{Moveentry/4|0978|Tatsugiri|type=Dragon|type2=Water|1|Water 2|Water 2|form=All forms|||✔|✔}}
+{{Moveentry/4|0981|Farigiraf|type=Normal|type2=Psychic|1|Field|Field|||✔}}
+{{Moveentry/4|0999|Gimmighoul|type=Ghost|1|No Eggs Discovered|No Eggs Discovered|form=All forms|||✔|✔}}
+{{Moveentry/4|1000|Gholdengo|type=Steel|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered|||✔|✔}}
+{{Moveentry/4|1004|Chi-Yu|type=Dark|type2=Fire|1|No Eggs Discovered|No Eggs Discovered|||✔}}
+{{Moveentry/4|1012|Poltchageist|type=Grass|type2=Ghost|2|Mineral|Amorphous|form=All forms|||✔}}
+{{Moveentry/4|1013|Sinistcha|type=Grass|type2=Ghost|2|Mineral|Amorphous|form=All forms|||✔}}
+{{Moveentry/4|1015|Munkidori|type=Poison|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered|||✔}}
+{{Moveentry/4|1016|Fezandipiti|type=Poison|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered|||✔}}
+{{Moveentry/4|1019|Hydrapple|type=Grass|type2=Dragon|2|Grass|Dragon|||✔}}
+{{Moveentry/4|1025|Pecharunt|type=Poison|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered|||✔}}
+{{Movefoot|Dark|4}}
+
+===By {{pkmn|breeding}}===
+{{Movehead/Games|Dark|Egg Move|g1=none|g2=none|g3=none|g7=1|g7g={{gameabbrev7|SMUSUM}}|g8=none|g9=none}}
+{{Moveentry/4|0041|Zubat|type=Poison|type2=Flying|1|Flying|Flying|✔|✔|✔|✔}}
+{{Moveentry/4|0096|Drowzee|type=Psychic|1|Human-Like|Human-Like|✔|✔|✔|✔}}
+{{Moveentry/4|0122|Mr. Mime|type=Psychic|type2=Fairy|1|Human-Like|Human-Like|✔{{sup/4|HGSS}}|✔|✔|✔}}
+{{Moveentry/4|0175|Togepi|type=Fairy|2|Flying|Fairy|✔|✔|✔|✔}}
+{{Moveentry/4|0200|Misdreavus|type=Ghost|1|Amorphous|Amorphous|✔{{sup/4|HGSS}}|✔|✔|✔}}
+{{Moveentry/4|0228|Houndour|type=Dark|type2=Fire|1|Field|Field|✔|✔|✔|✔}}
+{{Moveentry/4|0238|Smoochum|type=Ice|type2=Psychic|1|Human-Like|Human-Like|✔{{sup/4|HGSS}}|✔|✔|✔}}
+{{Moveentry/4|0273|Seedot|type=Grass|2|Field|Grass|✔|✔|✔|✔}}
+{{Moveentry/4|0302|Sableye|type=Dark|type2=Ghost|1|Human-Like|Human-Like|✔|✔|✔|✔}}
+{{Moveentry/4|0331|Cacnea|type=Grass|2|Grass|Human-Like|✔{{sup/4|HGSS}}|✔|✔|✔}}
+{{Moveentry/4|0352|Kecleon|type=Normal|1|Field|Field|✔|✔|✔|✔}}
+{{Moveentry/4|0439|Mime Jr.|type=Psychic|type2=Fairy|1|Human-Like|Human-Like|✔{{sup/4|HGSS}}|✔|✔|✔}}
+{{Moveentry/4|0441|Chatot|type=Normal|type2=Flying|1|Flying|Flying|✔|✔|✔|✔}}
+{{Moveentry/4|0511|Pansage|type=Grass|1|Field|Field||✔|✔|✔}}
+{{Moveentry/4|0513|Pansear|type=Fire|1|Field|Field||✔|✔|✔}}
+{{Moveentry/4|0515|Panpour|type=Water|1|Field|Field||✔|✔|✔}}
+{{Moveentry/4|0562|Yamask|type=Ghost|2|Mineral|Amorphous||✔|✔|✔}}
+{{Moveentry/4|0605|Elgyem|type=Psychic|1|Human-Like|Human-Like||✔|✔|✔}}
+{{Moveentry/4|0682|Spritzee|type=Fairy|1|Fairy|Fairy|||−|✔{{sup/7|USUM}}}}
+{{Moveentry/4|0725|Litten|type=Fire|1|Field|Field||||✔}}
+{{Movefoot|Dark|4}}
+
+===Special move===
+====[[Generation V]]====
+{{Movehead/Special|Dark}}
+{{Moveentry/1|0441|Chatot|type=Normal|type2=Flying|1|Flying|Flying|{{pkmn|Dream World}} - {{dwa|Windswept Sky}}}}
+{{Moveentry/1|0605|Elgyem|type=Psychic|1|Human-Like|Human-Like|{{pkmn|Dream World}} - {{dwa|Spooky Manor}}}}
+{{Movefoot|Dark|1}}
+
+====[[Generation IX]]====
+{{Movehead/Special|Dark}}
+{{Moveentry/1|0757|Salandit|type=Poison|type2=Fire|2|Monster|Dragon|[[Terastal phenomenon|Wild Tera Pokémon]] - [[East Province (Area One)]]{{sup/9|SV}}}}
+{{Movefoot|Dark|1}}
+
+===By {{pkmn2|event}}===
+====[[Generation IV]]====
+{{Movehead/Special|Dark}}
+{{Moveentry/1|0251|Celebi|type=Psychic|type2=Grass|1|No Eggs Discovered|No Eggs Discovered|[[Cinema Celebi]]<br>[[Winter 2011 Celebi]]}}
+{{Movefoot|Dark|1}}
+
+====[[Generation V]]====
+{{Movehead/Special|Dark}}
+{{Moveentry/1|0052|Meowth|type=Normal|1|Field|Field|{{DL|Meowth (Team Rocket)|Pokémon Black 2 and White 2|Team Rocket Meowth}}|note=Lv.&nbsp;15}}
+{{Moveentry/1|0386|Deoxys|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|{{DL|List of local Japanese event Pokémon distributions in Generation V|Masuda Deoxys}}<br>{{DL|List of local Korean event Pokémon distributions in Generation V|Team Plasma Deoxys}}<br>{{DL|List of local English event Pokémon distributions in Generation V|Plasma Deoxys}}}}
+{{Movefoot|Dark|1}}
+
+====[[Generation VI]]====
+{{Movehead/Special|Dark}}
+{{Moveentry/1|0571|Zoroark|type=Dark|1|Field|Field|[[List of Japanese region serial code event Pokémon distributions in Generation VI#Zoroark|Pokémon EXPO Gym Zoroark]]|note=Lv.&nbsp;45}}
+{{Moveentry/1|0720|Hoopa|type=Psychic|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered|{{DL|List of local event Pokémon distributions in Generation VI|Cinema Hoopa}}<br>[[Hoopa (Pokémon)#In events|Manesh Hoopa]]<br>{{DL|List of PAL region serial code event Pokémon distributions in Generation VI|Harry Hoopa}}<br>[[Hoopa (Pokémon)#In events|Mighty Hoopa]]<br>{{DL|List of American region Nintendo Network event Pokémon distributions in Generation VI|Mac Hoopa}}<br>[[List of Korean region serial code event Pokémon distributions in Generation VI#Hoopa|Korean Hoopa]]<br>{{DL|List of American region serial code event Pokémon distributions in Generation VI|Alexander Hoopa}}|note=Lv.&nbsp;50|form=Confined}}
+{{Movefoot|Dark|1}}
+
+==In other games==
+===[[Pokémon Mystery Dungeon series]]===
+Nasty Plot raises the user's Sp. Atk by two stages.
+
+{{MDMoveheader|type=dark}}
+{{MDMoveRow|game=TDS|pp=20|acc=—%|range=User|target=User}}
+{{MDMoveRow|game=BSL|pp=20|acc=—%|range=User|target=User}}
+{{MDMoveRow|game=GTI|pp=13|ppmax=50|acc=—%|range=User|target=User}}
+{{MDMoveRow|game=SMD|pp=13|ppmax=30|acc=—%|range=User|target=User}}
+{{MDMovefoot|type=dark|TDS=yes|BSL=yes|GTI=yes|SMD=yes|RTDX=yes}}
+
+===Description===
+{{movedesc|Dark}}
+{{movedescentry|{{gameabbrevmd|TDS}}|Boosts the user's Special Attack by 2 levels.}}
+{{movedescentry|{{gameabbrevmd|BSL}}|{{tt|じぶんの とくこうを ２だんかいあげる|Boosts the user's Special Attack by 2 levels}}}}
+{{movedescentry|{{gameabbrevmd|GTI}}|It sharply boosts your Special Attack. (The stat change returns to normal when you go to the next floor or step on a [[File:IconTileGTI.png]]Wonder Tile.)}}
+{{movedescentry|{{gameabbrevmd|SMD}}|It sharply boosts your Sp. Atk. The stat returns to normal when you go to the next floor or step on a [[File:IconTileSMD.png]]Wonder Tile.}}
+|}
+|}{{left clear}}
+
+==In the manga==
+===Pokémon Adventures===
+{{movemanga|type=dark|exp=yes|gen=The user stimulates its brain by thinking bad thoughts. This sharply boosts the user's special attack power.|image1=Team Galactic Houndoom Nasty Plot Adventures.png|image1p=Houndoom|image2=Nanu Persian Nasty Plot Adventures.png|image2p=Alolan Persian}}
+{{movep|type=dark|ms=229|pkmn=Houndoom|method=Houndoom howls loudly when the battle begins, powering up its moves.}}
+{{movemid|type=dark|user=Team Galactic Grunt (Trainer class)|user1=A Team Galactic Grunt's Houndoom|startcode=PS385|startname=Showdown with Houndoom|notes=Debut}}
+{{movep|type=dark|ms=053A|pkmn=Persian|method=Alolan Persian glares at the opponent, boosting its special attack power.}}
+{{movebtmManga|type=dark|user=Nanu|user1=Nanu's Persian|startcode=PASM03|startname=Pokémon Move Specialist Professor Kukui}}
+
+==In other generations==
+===Core series games===
+{{Movegen|
+type=Dark|
+genIV=Nasty Plot IV|
+genV=Nasty Plot V|
+genVI=Nasty Plot VI|
+genVI2=Nasty Plot VI 2|
+SMUSUM=Nasty Plot VII|
+SMUSUM2=Nasty Plot VII 2|
+}}
+{{Movegen|
+type=Dark|
+LGPE=Nasty Plot PE|
+LGPE2=Nasty Plot PE 2|
+genVIII=Nasty Plot VIII|
+genVIII2=Nasty Plot VIII 2|
+LA=Nasty Plot LA|
+LA2=Nasty Plot LA 2|
+ZA=Nasty Plot ZA
+}}
+
+===Side series games===
+{{Movegen|
+type=Dark|
+PBR=Nasty Plot PBR|
+}}
+===Spin-off series games===
+{{Movegen|
+type=Dark|
+PMDTDS=Nasty Plot PMD TDS|
+PMDGTI=Nasty Plot PMD GTI|
+PSMD=Nasty Plot PSMD
+}}
+
+==In other languages==
+{{Langtable|color={{dark color}}|bordercolor={{dark color light}}
+|zh_yue=詭計 ''{{tt|Gwáigai|Crafty Scheme}}''
+|zh_cmn=詭計 / 诡计 ''{{tt|Guǐjì|Crafty Scheme}}''
+|fr=Machination
+|de=Ränkeschmied
+|el=Μηχανορραφία ''Michanorrafía''
+|it=Congiura
+|ko=나쁜음모 ''Nappeun Eummo''
+|pl=Podły Spisek{{tt|*|Diamond and Pearl (TCG)}}
+|pt_br=Trama Maldosa
+|pt_eu=Maquinação
+|es=Maquinación
+|vi=Âm Mưu
+}}
+
+{{Amnesia|dark}}
+{{Generation VIII TMs}}
+{{Generation IX TMs}}
+{{Project Moves and Abilities notice}}
+
+[[Category:Moves that can raise the user's Special Attack]]
+[[Category:Moves in Pokémon: Let's Go, Pikachu! and Let's Go, Eevee!]]
+[[Category:Moves usable in Pokémon Sword and Shield]]
+[[Category:Moves in Pokémon Legends: Arceus]]
+[[Category:Moves usable in Pokémon Scarlet and Violet]]
+[[Category:Moves in Pokémon Legends: Z-A]]
+
+[[de:Ränkeschmied]]
+[[es:Maquinación]]
+[[fr:Machination]]
+[[it:Congiura]]
+[[ja:わるだくみ]]
+[[zh:诡计（招式）]]

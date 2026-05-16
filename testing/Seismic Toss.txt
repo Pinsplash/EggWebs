@@ -1,0 +1,458 @@
+{{MoveInfobox
+|n=69
+|name=Seismic Toss
+|jname=ちきゅうなげ
+|jtranslit=Chikyū Nage
+|jtrans=Earth Throw
+|gameimage=Seismic Toss IX.png
+|gameimage2=Seismic Toss IX 2.png
+|gameimagewidth=300
+|type=Fighting
+|damagecategory=Physical
+|basepp=20
+|maxpp=32
+|power=—
+|accuracy=100
+|tm1=yes
+|tm#1=19
+|tmpe=yes
+|tm#pe=15
+|mtfl=yes
+|mte=yes
+|mtxd=yes
+|na=no
+|gen=I
+|category=Tough
+|appeal=2
+|jam=1
+|cdesc=Startles Pokémon that made a same-type appeal.
+|appealsc=3
+|scdesc=A basic performance using a move known by the Pokémon.
+|appeal6=3
+|jam6=0
+|cdesc6=An appealing move that can be used repeatedly without boring the audience.
+|touches=yes
+|protect=yes
+|magiccoat=no
+|snatch=no
+|mirrormove=yes
+|kingsrock=yes
+|sound=no
+|target=anyadjacent
+}}
+'''Seismic Toss''' (Japanese: '''ちきゅうなげ''' ''Earth Throw'') is a damage-dealing {{type|Fighting}} [[move]] introduced in [[Generation I]]. It was [[TM19]] in Generation I and [[TM15]] in [[Pokémon: Let's Go, Pikachu! and Let's Go, Eevee!]].
+
+==Effect==
+Seismic Toss inflicts damage equal to the user's [[level]].
+
+===Generation I===
+Although Seismic Toss is a Fighting-type move, its type does not alter the amount of damage it inflicts. Seismic Toss is not affected by type immunities, so it can hit {{type|Ghost}} Pokémon.
+
+===Generation II onwards===
+Seismic Toss is now affected by type immunities; therefore, it cannot usually affect Ghost-type Pokémon.
+
+Seismic Toss can be used as the second move of a [[Contest combination|Pokémon Contest combination]], with the user gaining 2 bonus appeal points if {{m|Fake Out}} was used in the previous turn. It can also form part of a Contest Spectacular combination, with the user gaining an extra three appeal points if any of the moves {{m|Entrainment}}, {{m|Hold Hands}}, or {{m|Play Nice}} was used in the prior turn.
+
+==Description==
+{{movedesc|Fighting}}
+{{movedescentry|{{gameabbrevss|Stad}}|A <sc>Fighting</sc>-type attack. Throws the target with enough force to flip the world upside down.}}
+{{movedescentry|{{gameabbrevss|Stad2}}|A <sc>Fighting</sc>-type attack. Throws the target with enough force to flip the world.}}
+{{movedescentry|{{gameabbrev2|GSC}}|The user's level equals damage HP.}}
+{{movedescentry|{{gameabbrev3|RSE}}{{gameabbrevss|Colo}}{{gameabbrevss|XD}}|Inflicts damage identical to the user's level.}}
+{{movedescentry|{{gameabbrev3|FRLG}}|A gravity-fed throw that causes damage matching the user's level.}}
+{{movedescentry|{{gameabbrev4|DPPtHGSS}}{{gameabbrevss|PBR}}|The foe is thrown using the power of gravity. It inflicts damage equal to the user's level.}}
+{{movedescentry|{{gameabbrev5|BWB2W2}}<br>{{gameabbrev6|XYORAS}}<br>{{gameabbrev7|SMUSUMPE}}<br>{{gameabbrev8|SwShBDSPLA}}<br>{{gameabbrev9|SV}}|The target is thrown using the power of gravity. It inflicts damage equal to the user's level.}}
+{{movedescentry|{{gameabbrevss|Champs}}|Deals 50 HP of damage.}}
+|}
+|}{{left clear}}
+
+==Learnset==
+===By [[Level|leveling up]]===
+{{Movehead/Games|Fighting|g7=2|g8=2|g9=1|g9g={{gameabbrev9|SV}}}}
+{{Moveentry/11|0056|Mankey|type=Fighting|1|Field|Field|33|33|33{{sup/3|RSE}}<br>26{{sup/3|FRLG}}|17|17|17|15|24||12|12}}
+{{Moveentry/11|0057|Primeape|type=Fighting|1|Field|Field|37|36|36{{sup/3|RSE}}<br>26{{sup/3|FRLG}}|17|17|17|15|24||12|15}}
+{{Moveentry/11|0066|Machop|type=Fighting|1|Human-Like|Human-Like|39|19|19|19|22|22{{sup/6|XY}}<br>15{{sup/6|ORAS}}|15|12|40|40}}
+{{Moveentry/11|0067|Machoke|type=Fighting|1|Human-Like|Human-Like|44|19|19|19|22|22{{sup/6|XY}}<br>15{{sup/6|ORAS}}|15|12|48|48}}
+{{Moveentry/11|0068|Machamp|type=Fighting|1|Human-Like|Human-Like|44|19|19|19|22|22{{sup/6|XY}}<br>15{{sup/6|ORAS}}|15|12|48|48}}
+{{Moveentry/11|0127|Pinsir|type=Bug|1|Bug|Bug|25|19|13|8|8|8|8|8|12|12}}
+{{Moveentry/11|0296|Makuhita|type=Fighting|1|Human-Like|Human-Like|||46|31|31|31|31|||31|31}}
+{{Moveentry/11|0297|Hariyama|type=Fighting|1|Human-Like|Human-Like|||51|37|37|37{{sup/6|XY}}<br>34{{sup/6|ORAS}}|34|||34|34}}
+{{Moveentry/11|0493|Arceus|type=Normal|1|No Eggs Discovered|No Eggs Discovered|form=All available forms||||1|1|1|1|||1|1}}
+{{Moveentry/11|0538|Throh|type=Fighting|1|Human-Like|Human-Like|||||13|13|5||40}}
+{{Moveentry/11|0979|Annihilape|type=Fighting|type2=Ghost|1|Field|Field|||||||||||12}}
+{{Moveentry/11|0992|Iron Hands|type=Fighting|type2=Electric|1|No Eggs Discovered|No Eggs Discovered|||||||||||42}}
+{{Movefoot|Fighting|11}}
+
+===By {{pkmn|breeding}}===
+{{Movehead/Games|Fighting|Egg Move|g1=none|g7=1|g7g={{gameabbrev7|SMUSUM}}|g8=2|g9=1|g9g={{gameabbrev9|SV}}}}
+{{Moveentry/9|0113|Chansey|type=Normal|1|Fairy|Fairy|−|−|−|−|✔|✔|✔|✔|−|note=Chain breeding}}
+{{Moveentry/9|0214|Heracross|type=Bug|type2=Fighting|1|Bug|Bug|−|−|−|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/9|0216|Teddiursa|type=Normal|1|Field|Field|✔|✔|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/9|0241|Miltank|type=Normal|1|Field|Field|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/9|0303|Mawile|type=Steel|type2=Fairy|2|Field|Fairy||−|−|−|✔|✔|✔|✔}}
+{{Moveentry/9|0313|Volbeat|type=Bug|2|Bug|Human-Like||−|−|✔|✔|✔||✔|✔}}
+{{Moveentry/9|0440|Happiny|type=Normal|1|Fairy|Fairy|||−|−|−|−|✔|✔|✔}}
+{{Moveentry/9|0674|Pancham|type=Fighting|2|Field|Human-Like|||||−|−|✔}}
+{{Moveentry/9|0766|Passimian|type=Fighting|1|Field|Field||||||✔|✔||✔}}
+{{Moveentry/9|0852|Clobbopus|type=Fighting|2|Water 1|Human-Like|||||||✔}}
+{{Movefoot|Fighting|9}}
+
+===By [[TM]]/[[Move Tutor]]===
+{{Movehead/TMGames|Fighting|g2=none|g4=none|g5=none|g6=none|g8=none|g9=none
+|g1tm=19
+|g3tm=tutor|g3g={{gameabbrev3|FRLG}}{{gameabbrev3|E}}{{gameabbrevss|XD}}
+|g7=1|g7tm=15|g7g={{gameabbrev7|PE}}}}
+{{Moveentry/3|0004|Charmander|type=Fire|2|Monster|Dragon|✔|✔|✔}}
+{{Moveentry/3|0005|Charmeleon|type=Fire|2|Monster|Dragon|✔|✔|✔}}
+{{Moveentry/3|0006|Charizard|type=Fire|type2=Flying|2|Monster|Dragon|✔|✔|✔}}
+{{Moveentry/3|0007|Squirtle|type=Water|2|Monster|Water 1|✔|✔|✔}}
+{{Moveentry/3|0008|Wartortle|type=Water|2|Monster|Water 1|✔|✔|✔}}
+{{Moveentry/3|0009|Blastoise|type=Water|2|Monster|Water 1|✔|✔|✔}}
+{{Moveentry/3|0025|Pikachu|type=Electric|2|Field|Fairy|✔|✔|✔}}
+{{Moveentry/3|0026|Raichu|type=Electric|2|Field|Fairy|✔|✔|✔}}
+{{Moveentry/3|0026|formsig=A|Raichu|type=Electric|type2=Psychic|2|Field|Fairy|||✔|form=Alolan Form}}
+{{Moveentry/3|0027|Sandshrew|type=Ground|1|Field|Field|✔|✔|✔}}
+{{Moveentry/3|0027|formsig=A|Sandshrew|type=Ice|type2=Steel|1|Field|Field|||✔|form=Alolan Form}}
+{{Moveentry/3|0028|Sandslash|type=Ground|1|Field|Field|✔|✔|✔}}
+{{Moveentry/3|0028|formsig=A|Sandslash|type=Ice|type2=Steel|1|Field|Field|||✔|form=Alolan Form}}
+{{Moveentry/3|0031|Nidoqueen|type=Poison|type2=Ground|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔}}
+{{Moveentry/3|0034|Nidoking|type=Poison|type2=Ground|2|Monster|Field|✔|✔|✔}}
+{{Moveentry/3|0035|Clefairy|type=Fairy|1|Fairy|Fairy|✔|✔|✔}}
+{{Moveentry/3|0036|Clefable|type=Fairy|1|Fairy|Fairy|✔|✔|✔}}
+{{Moveentry/3|0039|Jigglypuff|type=Normal|type2=Fairy|1|Fairy|Fairy|✔|✔|✔}}
+{{Moveentry/3|0040|Wigglytuff|type=Normal|type2=Fairy|1|Fairy|Fairy|✔|✔|✔}}
+{{Moveentry/3|0054|Psyduck|type=Water|2|Water 1|Field|✔|✔|✔}}
+{{Moveentry/3|0055|Golduck|type=Water|2|Water 1|Field|✔|✔|✔}}
+{{Moveentry/3|0056|Mankey|type=Fighting|1|Field|Field|✔|✔|✔}}
+{{Moveentry/3|0057|Primeape|type=Fighting|1|Field|Field|✔|✔|✔}}
+{{Moveentry/3|0061|Poliwhirl|type=Water|1|Water 1|Water 1|✔|✔|✔}}
+{{Moveentry/3|0062|Poliwrath|type=Water|type2=Fighting|1|Water 1|Water 1|✔|✔|✔}}
+{{Moveentry/3|0063|Abra|type=Psychic|1|Human-Like|Human-Like|✔|✔|✔}}
+{{Moveentry/3|0064|Kadabra|type=Psychic|1|Human-Like|Human-Like|✔|✔|✔}}
+{{Moveentry/3|0065|Alakazam|type=Psychic|1|Human-Like|Human-Like|✔|✔|✔}}
+{{Moveentry/3|0066|Machop|type=Fighting|1|Human-Like|Human-Like|✔|✔|✔}}
+{{Moveentry/3|0067|Machoke|type=Fighting|1|Human-Like|Human-Like|✔|✔|✔}}
+{{Moveentry/3|0068|Machamp|type=Fighting|1|Human-Like|Human-Like|✔|✔|✔}}
+{{Moveentry/3|0074|Geodude|type=Rock|type2=Ground|1|Mineral|Mineral|✔|✔|✔}}
+{{Moveentry/3|0074|formsig=A|Geodude|type=Rock|type2=Electric|1|Mineral|Mineral|||✔|form=Alolan Form}}
+{{Moveentry/3|0075|Graveler|type=Rock|type2=Ground|1|Mineral|Mineral|✔|✔|✔}}
+{{Moveentry/3|0075|formsig=A|Graveler|type=Rock|type2=Electric|1|Mineral|Mineral|||✔|form=Alolan Form}}
+{{Moveentry/3|0076|Golem|type=Rock|type2=Ground|1|Mineral|Mineral|✔|✔|✔}}
+{{Moveentry/3|0076|formsig=A|Golem|type=Rock|type2=Electric|1|Mineral|Mineral|||✔|form=Alolan Form}}
+{{Moveentry/3|0080|Slowbro|type=Water|type2=Psychic|2|Monster|Water 1|✔|✔|✔}}
+{{Moveentry/3|0094|Gengar|type=Ghost|type2=Poison|1|Amorphous|Amorphous|✔|✔|✔}}
+{{Moveentry/3|0096|Drowzee|type=Psychic|1|Human-Like|Human-Like|✔|✔|✔}}
+{{Moveentry/3|0097|Hypno|type=Psychic|1|Human-Like|Human-Like|✔|✔|✔}}
+{{Moveentry/3|0104|Cubone|type=Ground|1|Monster|Monster|✔|✔|✔}}
+{{Moveentry/3|0105|Marowak|type=Ground|1|Monster|Monster|✔|✔|✔}}
+{{Moveentry/3|0105|formsig=A|Marowak|type=Fire|type2=Ghost|1|Monster|Monster|||✔|form=Alolan Form}}
+{{Moveentry/3|0106|Hitmonlee|type=Fighting|1|Human-Like|Human-Like|✔|✔|✔}}
+{{Moveentry/3|0107|Hitmonchan|type=Fighting|1|Human-Like|Human-Like|✔|✔|✔}}
+{{Moveentry/3|0108|Lickitung|type=Normal|1|Monster|Monster|✔|✔|✔}}
+{{Moveentry/3|0112|Rhydon|type=Ground|type2=Rock|2|Monster|Field|✔|✔|✔}}
+{{Moveentry/3|0113|Chansey|type=Normal|1|Fairy|Fairy|✔|✔|✔}}
+{{Moveentry/3|0115|Kangaskhan|type=Normal|1|Monster|Monster|✔|✔|✔}}
+{{Moveentry/3|0122|Mr. Mime|type=Psychic|type2=Fairy|1|Human-Like|Human-Like|✔|✔|✔}}
+{{Moveentry/3|0124|Jynx|type=Ice|type2=Psychic|1|Human-Like|Human-Like|✔|✔|✔}}
+{{Moveentry/3|0125|Electabuzz|type=Electric|1|Human-Like|Human-Like|✔|✔|✔}}
+{{Moveentry/3|0126|Magmar|type=Fire|1|Human-Like|Human-Like|✔|✔|✔}}
+{{Moveentry/3|0127|Pinsir|type=Bug|1|Bug|Bug|✔|✔|✔}}
+{{Moveentry/3|0139|Omastar|type=Rock|type2=Water|2|Water 1|Water 3|✔|✔|✔}}
+{{Moveentry/3|0141|Kabutops|type=Rock|type2=Water|2|Water 1|Water 3|✔|✔|✔}}
+{{Moveentry/3|0143|Snorlax|type=Normal|1|Monster|Monster|✔|✔|✔}}
+{{Moveentry/3|0150|Mewtwo|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔}}
+{{Moveentry/3|0151|Mew|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔}}
+{{Moveentry/3|0157|Typhlosion|type=Fire|1|Field|Field||✔|}}
+{{Moveentry/3|0158|Totodile|type=Water|2|Monster|Water 1||✔|}}
+{{Moveentry/3|0159|Croconaw|type=Water|2|Monster|Water 1||✔|}}
+{{Moveentry/3|0160|Feraligatr|type=Water|2|Monster|Water 1||✔|}}
+{{Moveentry/3|0172|Pichu|type=Electric|1|No Eggs Discovered|No Eggs Discovered||✔|}}
+{{Moveentry/3|0173|Cleffa|type=Fairy|1|No Eggs Discovered|No Eggs Discovered||✔|}}
+{{Moveentry/3|0174|Igglybuff|type=Normal|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered||✔|}}
+{{Moveentry/3|0175|Togepi|type=Fairy|1|No Eggs Discovered|No Eggs Discovered||✔|}}
+{{Moveentry/3|0176|Togetic|type=Fairy|type2=Flying|2|Flying|Fairy||✔|}}
+{{Moveentry/3|0180|Flaaffy|type=Electric|2|Monster|Field||✔|}}
+{{Moveentry/3|0181|Ampharos|type=Electric|2|Monster|Field||✔|}}
+{{Moveentry/3|0183|Marill|type=Water|type2=Fairy|2|Water 1|Fairy||✔|}}
+{{Moveentry/3|0184|Azumarill|type=Water|type2=Fairy|2|Water 1|Fairy||✔|}}
+{{Moveentry/3|0185|Sudowoodo|type=Rock|1|Mineral|Mineral||✔|}}
+{{Moveentry/3|0186|Politoed|type=Water|1|Water 1|Water 1||✔|}}
+{{Moveentry/3|0190|Aipom|type=Normal|1|Field|Field||✔|}}
+{{Moveentry/3|0195|Quagsire|type=Water|type2=Ground|2|Water 1|Field||✔|}}
+{{Moveentry/3|0199|Slowking|type=Water|type2=Psychic|2|Monster|Water 1||✔|}}
+{{Moveentry/3|0209|Snubbull|type=Fairy|2|Field|Fairy||✔|}}
+{{Moveentry/3|0210|Granbull|type=Fairy|2|Field|Fairy||✔|}}
+{{Moveentry/3|0214|Heracross|type=Bug|type2=Fighting|1|Bug|Bug||✔|}}
+{{Moveentry/3|0216|Teddiursa|type=Normal|1|Field|Field||✔|}}
+{{Moveentry/3|0217|Ursaring|type=Normal|1|Field|Field||✔|}}
+{{Moveentry/3|0224|Octillery|type=Water|2|Water 1|Water 2||✔|}}
+{{Moveentry/3|0225|Delibird|type=Ice|type2=Flying|2|Water 1|Field||✔|}}
+{{Moveentry/3|0236|Tyrogue|type=Fighting|1|No Eggs Discovered|No Eggs Discovered||✔|}}
+{{Moveentry/3|0237|Hitmontop|type=Fighting|1|Human-Like|Human-Like||✔|}}
+{{Moveentry/3|0238|Smoochum|type=Ice|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered||✔|}}
+{{Moveentry/3|0239|Elekid|type=Electric|1|No Eggs Discovered|No Eggs Discovered||✔|}}
+{{Moveentry/3|0240|Magby|type=Fire|1|No Eggs Discovered|No Eggs Discovered||✔|}}
+{{Moveentry/3|0241|Miltank|type=Normal|1|Field|Field||✔|}}
+{{Moveentry/3|0242|Blissey|type=Normal|1|Fairy|Fairy||✔|}}
+{{Moveentry/3|0248|Tyranitar|type=Rock|type2=Dark|1|Monster|Monster||✔|}}
+{{Moveentry/3|0252|Treecko|type=Grass|2|Monster|Dragon||✔|}}
+{{Moveentry/3|0253|Grovyle|type=Grass|2|Monster|Dragon||✔|}}
+{{Moveentry/3|0254|Sceptile|type=Grass|2|Monster|Dragon||✔|}}
+{{Moveentry/3|0255|Torchic|type=Fire|1|Field|Field||✔|}}
+{{Moveentry/3|0256|Combusken|type=Fire|type2=Fighting|1|Field|Field||✔|}}
+{{Moveentry/3|0257|Blaziken|type=Fire|type2=Fighting|1|Field|Field||✔|}}
+{{Moveentry/3|0259|Marshtomp|type=Water|type2=Ground|2|Monster|Water 1||✔|}}
+{{Moveentry/3|0260|Swampert|type=Water|type2=Ground|2|Monster|Water 1||✔|}}
+{{Moveentry/3|0272|Ludicolo|type=Water|type2=Grass|2|Water 1|Grass||✔|}}
+{{Moveentry/3|0286|Breloom|type=Grass|type2=Fighting|2|Fairy|Grass||✔|}}
+{{Moveentry/3|0287|Slakoth|type=Normal|1|Field|Field||✔|}}
+{{Moveentry/3|0288|Vigoroth|type=Normal|1|Field|Field||✔|}}
+{{Moveentry/3|0289|Slaking|type=Normal|1|Field|Field||✔|}}
+{{Moveentry/3|0293|Whismur|type=Normal|2|Monster|Field||✔|}}
+{{Moveentry/3|0294|Loudred|type=Normal|2|Monster|Field||✔|}}
+{{Moveentry/3|0295|Exploud|type=Normal|2|Monster|Field||✔|}}
+{{Moveentry/3|0296|Makuhita|type=Fighting|1|Human-Like|Human-Like||✔|}}
+{{Moveentry/3|0297|Hariyama|type=Fighting|1|Human-Like|Human-Like||✔|}}
+{{Moveentry/3|0302|Sableye|type=Dark|type2=Ghost|1|Human-Like|Human-Like||✔|}}
+{{Moveentry/3|0303|Mawile|type=Steel|type2=Fairy|2|Field|Fairy||✔|}}
+{{Moveentry/3|0306|Aggron|type=Steel|type2=Rock|1|Monster|Monster||✔|}}
+{{Moveentry/3|0307|Meditite|type=Fighting|type2=Psychic|1|Human-Like|Human-Like||✔|}}
+{{Moveentry/3|0308|Medicham|type=Fighting|type2=Psychic|1|Human-Like|Human-Like||✔|}}
+{{Moveentry/3|0311|Plusle|type=Electric|1|Fairy|Fairy||✔|}}
+{{Moveentry/3|0312|Minun|type=Electric|1|Fairy|Fairy||✔|}}
+{{Moveentry/3|0313|Volbeat|type=Bug|2|Bug|Human-Like||✔|}}
+{{Moveentry/3|0314|Illumise|type=Bug|2|Bug|Human-Like||✔|}}
+{{Moveentry/3|0326|Grumpig|type=Psychic|1|Field|Field||✔|}}
+{{Moveentry/3|0327|Spinda|type=Normal|2|Field|Human-Like||✔|}}
+{{Moveentry/3|0331|Cacnea|type=Grass|2|Grass|Human-Like||✔|}}
+{{Moveentry/3|0332|Cacturne|type=Grass|type2=Dark|2|Grass|Human-Like||✔|}}
+{{Moveentry/3|0335|Zangoose|type=Normal|1|Field|Field||✔|}}
+{{Moveentry/3|0348|Armaldo|type=Rock|type2=Bug|1|Water 3|Water 3||✔|}}
+{{Moveentry/3|0352|Kecleon|type=Normal|1|Field|Field||✔|}}
+{{Moveentry/3|0356|Dusclops|type=Ghost|1|Amorphous|Amorphous||✔|}}
+{{Moveentry/3|0377|Regirock|type=Rock|1|No Eggs Discovered|No Eggs Discovered||✔|}}
+{{Moveentry/3|0378|Regice|type=Ice|1|No Eggs Discovered|No Eggs Discovered||✔|}}
+{{Moveentry/3|0379|Registeel|type=Steel|1|No Eggs Discovered|No Eggs Discovered||✔|}}
+{{Moveentry/3|0383|Groudon|type=Ground|1|No Eggs Discovered|No Eggs Discovered||✔|}}
+{{Moveentry/3|0386|Deoxys|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|form=Normal Forme||✔{{sup/ss|XD}}|}}
+{{Moveentry/3|0386|formsig=A|Deoxys|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|form=Attack Forme||✔{{sup/3|FR}}|}}
+{{Moveentry/3|0386|formsig=D|Deoxys|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|form=Defense Forme||✔{{sup/3|LG}}|}}
+{{Moveentry/3|0386|formsig=S|Deoxys|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|form=Speed Forme||✔{{sup/3|E}}|}}
+{{Movefoot|Fighting|3}}
+
+===By {{pkmn2|event}}===
+====[[Generation II]]====
+{{Movehead/Special|Fighting}}
+{{Moveentry/1|0214|Heracross|type=Bug|type2=Fighting|1|Bug|Bug|{{DL|List of PCNY event Pokémon distributions in Generation II|Seismic Toss Heracross|New York City Pokémon Center}}}}
+{{Movefoot|Fighting|1}}
+
+====[[Generation V]]====
+{{Movehead/Special|Fighting}}
+{{Moveentry/1|0248|Tyranitar|type=Rock|type2=Dark|1|Monster|Monster|[[List of Pokémon Global Link promotions/Pokémon#Tyranitar|English Global Link]]}}
+{{Movefoot|Fighting|1}}
+
+====[[Generation VI]]====
+{{Movehead/Special|Fighting}}
+{{Moveentry/1|0235|Smeargle|type=Normal|1|Field|Field|[[List of Japanese region serial code event Pokémon distributions in Generation VI#Smeargle|Pokémon EXPO Gym Smeargle]]}}
+{{Movefoot|Fighting|1}}
+
+====[[Generation VII]]====
+{{Movehead/Special|Fighting}}
+{{Moveentry/1|0006|Charizard|type=Fire|type2=Flying|2|Monster|Dragon|{{DL|List of Japanese region serial code event Pokémon distributions in Pokémon Sun, Moon, Ultra Sun, and Ultra Moon|Ash's Charizard}}}}
+{{Movefoot|Fighting|1}}
+
+====[[Generation VIII]]====
+{{Movehead/Special|Fighting}}
+{{Moveentry/1|0006|Charizard|type=Fire|type2=Flying|2|Monster|Dragon|{{DL|List of event Pokémon distributions in Pokémon Sword and Shield|Ash's Charizard}}}}
+{{Movefoot|Fighting|1}}
+
+====[[Generation IX]]====
+{{Movehead/Special|Fighting}}
+{{Moveentry/1|0242|Blissey|type=Normal|1|Fairy|Fairy|[[Tera Raid Battle|Blissey Spotlight]] ({{DL|Poké Portal News|March 24 to 26, 2023}})}}
+{{Movefoot|Fighting|1}}
+
+===Special move===
+====[[Generation IX]]====
+{{Movehead/Special|Fighting}}
+{{Moveentry/1|0242|Blissey|type=Normal|1|Fairy|Fairy|[[List of 5★ Tera Raid Battles (Paldea)#Blissey|5★ Tera Raid Battles]]{{sup/9|SV}}}}
+{{Movefoot|Fighting|1}}
+
+==In other games==
+===[[Pokémon Mystery Dungeon series]]===
+In the [[Pokémon Mystery Dungeon: Red Rescue Team and Blue Rescue Team|Rescue Team]] and [[Pokémon Mystery Dungeon: Explorers of Time and Explorers of Darkness|Explorers]] games, Seismic Toss deals damage equal to the user's level.
+
+From [[Pokémon Super Mystery Dungeon]] on, Seismic Toss is a status move and does not deal direct damage. It will instead throw its target at another Pokémon (either of which can be a teammate or enemy) and can also throw an enemy Pokémon at a revealed [[Dungeon tile#Effect tile|trap]]. If another Pokémon is struck, they will both take 10 damage and the thrown Pokémon will prioritize landing behind them. The move has a 20-tile frontal cone range from the user's position; if the target cannot be thrown anywhere, they will land one tile behind their position (or on an adjacent tile or the same tile if obstructed), which can trigger a hidden trap.
+
+{{MDMoveheader|type=fighting}}
+{{MDMoveRow|game=RB|pp=22|acc=100%|range=Front|target=Enemy|cuts=No}}
+{{MDMoveRow|game=TDS|pp=10|acc=100%|range=Front|target=Enemy|cuts=No}}
+{{MDMoveRow|game=BSL|pp=10|acc=100%|range=Front|target=Enemy|cuts=No}}
+{{MDMoveRow|game=SMD|pp=25|ppmax=40|acc=—%|range=Front|target=All|cuts=No}}
+{{MDMovefoot|type=fighting|RB=yes|TDS=yes|BSL=yes|SMD=yes|RTDX=yes}}
+
+==={{g|Rumble Rush}}===
+{{RumbleRushPhysicalAttack|move=Seismic Toss|type=Fighting
+|stars=1
+|pow=23.85802
+|charge=0.62
+|range=Arc (melee)
+|hits=1
+|projectiles=1
+|crit=1.5
+|effect=None}}
+
+===Description===
+{{movedesc|Fighting}}
+{{movedescentry|{{gameabbrevmd|RB}}|Inflicts damage on the target. The amount of damage depends on the user's level.}}
+{{movedescentry|{{gameabbrevmd|TDS}}|Inflicts damage on the target. The amount of damage is equal to the user's level.}}
+{{movedescentry|{{gameabbrevmd|BSL}}|{{tt|てきポケモンに じぶんの レベルと おなじだけの ダメージを あたえる|Inflicts damage on the target. The amount of damage is equal to the user's level}}}}
+{{movedescentry|{{gameabbrevmd|GTI}}|[[File:IconKanji2MD.png]]UNUSED}}
+{{movedescentry|{{gameabbrevmd|SMD}}<br/>{{gameabbrevmd|RTDX}}|You'll throw your teammate or an enemy in front of you at another Pokémon or at a trap.}}
+|}
+|}{{left clear}}
+
+==={{g|UNITE}}===
+In Pokémon UNITE, {{UNITE|Charizard}}'s Unite Move, [[Charizard (UNITE)#Unite Move|Seismic Slam]], is similar to Seismic Toss.
+
+==In animation==
+===Pokémon animated series===
+{{moveanime|type=fighting|exp=yes|gen=The foe is thrown using the power of gravity.|image1=Howie Pinsir Seismic Toss.png|image1p=Pinsir|image2=Roark Geodude Seismic Toss.png|image2p=Geodude|image3=Ash Primeape Seismic Toss.png|image3p=Primeape|image4=Montgomery Throh Seismic Toss.png|image4p=Throh}}
+{{movep|type=fighting|ms=074|pkmn=Geodude|method=Geodude grabs the opponent, rises into the air, and throws them to the ground, or Geodude grabs the opponent, floats into the air and falls, spinning as it falls and throws the opponent to the ground before they both hit it.}}
+{{movemid|type=fighting|user=Brock's Geodude|startcode=EP028|startname=Pokémon Fashion Flash|notes=Debut}}
+{{movemid|type=fighting|user=Roark|user1=Roark's Geodude|startcode=DP018|startname=O'er the Rampardos we Watched!}}
+{{movep|type=fighting|ms=066|pkmn=Machop|method=Machop grabs the opponent and spins around in a circle. After a bit, Machop lets go and the opponent goes flying.}}
+{{movemid|type=fighting|user=Pokémon Trainer|user1=A Trainer's Machop|startcode=EP029|startname=The Punchy Pokémon}}
+{{movep|type=fighting|ms=057|pkmn=Primeape|method=Primeape grabs the opponent's leg and head, jumps up and throws them to the ground.}}
+{{movemid|type=fighting|user=Ash's Primeape|startcode=EP029|startname=The Punchy Pokémon}}
+{{movep|type=fighting|ms=006|pkmn=Charizard|method=Charizard grabs the opponent, flies into the sky, spins around, zooms back down, and tosses the opponent into the ground for more damage, using the momentum of the dive.}}
+{{movemid|type=fighting|user=Ash's Charizard|startcode=EP059|startname=Volcanic Panic}}
+{{movemid|type=fighting|user=Mewtwo (M01)|user1=Mewtwo's Charizardtwo|startcode=M01|startname=Mewtwo Strikes Back|notes=Japanese version only}}
+{{movep|type=fighting|ms=076|pkmn=Golem|method=Golem grabs the opponent, jumps into the air, points the opponent to the ground, and falls, having the opponent hit the ground first.}}
+{{movemid|type=fighting|user=Melissa|user1=Melissa's Golem|startcode=EP077|startname=The Fourth Round Rumble}}
+{{movep|type=fighting|ms=067|pkmn=Machoke|method=Machoke grabs the opponent, jumps into the air and spins around in a circle. After a bit, Machoke throws the opponent to the ground.}}
+{{movemid|type=fighting|user=Wobbuffet Festival crashers|user1=Tetsuya's Machoke|startcode=EP173|startname=Wobbu-Palooza!}}
+{{movep|type=fighting|ms=296|pkmn=Makuhita|method=Makuhita grabs the opponent, jumps into the air and does many front flips. When it comes down, it slams the opponent into the ground.}}
+{{movemid|type=fighting|user=Brawly's Makuhita|startcode=AG020|startname=Brave the Wave}}
+{{movep|type=fighting|ms=297|pkmn=Hariyama|method=Hariyama grabs the opponent, jumps into the air, and does many front flips. It then goes down and slams the opponent into the ground; or, Hariyama grabs the opponent, spins around and throws the opponent into the ground.}}
+{{movemid|type=fighting|user=Brawly's Hariyama|startcode=AG031|startname=Just One of the Geysers}}
+{{movemid|type=fighting|user=Tyson (Hoenn)|user1=Tyson's Hariyama|startcode=AG131|startname=At the End of the Fray}}
+{{movep|type=fighting|ms=127|pkmn=Pinsir|method=Pinsir grabs the opponent in its horns, jumps into the air and flings its head back, throwing the opponent into the floor behind it.}}
+{{movemid|type=fighting|user=Howie|user1=Howie's Pinsir|startcode=AG176|startname=The Ole' Berate and Switch!}}
+{{movep|type=fighting|ms=538|pkmn=Throh|method=On an airborne foe, Throh leaps into the air grabbing his opponent and the two fall to the ground head first but Throh lets go at the last second, leaving the opponent to crash.}}
+{{movemid|type=fighting|user=Montgomery|user1=Montgomery's Throh|startcode=BW071|startname=Search for the Clubultimate!}}
+{{movep|type=fighting|ms=005|pkmn=Charmeleon|method=Charmeleon grabs the opponent by the legs, jumps into the air and swings its body before throwing the opponent into the ground.}}
+{{movebtm|type=fighting|user=Ash's Charmeleon|startcode=M20|startname=I Choose You!}}
+
+* In ''[[DP068|A Triple Fighting Chance!]]'', [[Maylene]] commanded her {{p|Machoke}} to use Seismic Toss, but [[Ash's Staravia]] defeated it before the move could be executed.
+
+===Pokémon Origins===
+{{moveanime|type=fighting|exp=yes|gen=The foe is thrown using the power of gravity.|image1=Red Charizard Seismic Toss PO.png|image1p=Charizard}}
+{{movep|type=fighting|ms=006|pkmn=Charizard|method=Charizard grabs the opponent, rises into the air, and throws them into the ground.}}
+{{movebtm|type=fighting|user=Red's Charizard|startcode=PO03|startname=File 3: Giovanni|notes=Debut}}
+
+==In the manga==
+===The Electric Tale of Pikachu===
+* In ''[[ET18|Pikachu's Plan]]'', [[Ash Ketchum (EToP)|Ash]] told his {{AP|Charizard}} to use Seismic Toss, but the move was used off-panel.
+
+===Pokémon Adventures===
+{{movemanga|type=fighting|exp=yes|gen=The foe is thrown using the power of gravity.|image1=Poli Seismic Toss.png|image1p=Poliwrath|image2=Blue Machamp Seismic Toss.png|image2p=Machamp|image3=Crystal Blissey Seismic Toss Adventures.png|image3p=Blissey}}
+{{movep|type=fighting|ms=062|pkmn=Poliwrath|method=Poliwrath picks up the opponent and tosses them.}}
+{{movemid|type=fighting|user=Poli|user1=Red's Poli|startcode=PS011|startname=Buzz off, Electabuzz!|notes=Debut}}
+{{movep|type=fighting|ms=068|pkmn=Machamp|method=Machamp jumps into the air and falls onto the opponent, grabbing its legs with its lower two arms and its legs with its top two before it flips around and tosses the opponent away.}}
+{{movemid|type=fighting|user=Blue's Machamp|startcode=PS274|startname=Double Dealing with Deoxys}}
+{{movep|type=fighting|ms=242|pkmn=Blissey|method=Blissey grabs the opponent with one of her hands and tosses it against another object.}}
+{{movebtmManga|type=fighting|user=Crystal (Adventures)|user1=Crystal's Blissey|startcode=PS309|startname=Moving Past Milotic}}
+
+==In other generations==
+===Core series games===
+{{Movegen
+|type=fighting
+|genI=Seismic Toss I
+|genII=Seismic Toss II
+|genIII=Seismic Toss III
+|genIV=Seismic Toss IV
+}}
+{{Movegen
+|type=fighting
+|genV=Seismic Toss V
+|genVI=Seismic Toss VI
+|genVI2=Seismic Toss VI 2
+|genVII=Seismic Toss VII
+|genVII2=Seismic Toss VII 2
+|genVIII=Seismic Toss VIII
+|genVIII2=Seismic Toss VIII 2
+}}
+
+===Side series games===
+{{Movegen
+|type=fighting
+|Stad=Seismic Toss Stadium
+|Stad2=Seismic Toss Stad2
+|Colo=Seismic Toss Colo
+|XD=Seismic Toss XD
+}}
+
+{{Movegen
+|type=Fighting
+|PBR=Seismic Toss PBR
+|Champs=Seismic Toss Champs
+|Champs2=Seismic Toss Champs 2
+}}
+
+===Spin-off series games===
+{{Movegen
+|type=Fighting
+|PMDRB=Seismic Toss PMD RB
+|PMDTDS=Seismic Toss PMD TDS
+|PSMD=Seismic Toss PSMD
+}}
+
+==Trivia==
+[[File:Seismic Toss PBR globe.png|256px|thumb|right|The globe in Battle Revolution's animation.]]
+* In the {{pkmn|animated series}}, while using Seismic Toss, Pokémon using the move are commonly depicted circling the globe, and, in the [[Generation II]], Pokémon Battle Revolution, [[Generation VI]],  {{gen|VII}}, {{gen|VIII}}, and {{gen|IX}} games, a globe is shown as part of the animation. This is due to the Japanese name of the move being ''Earth Throw''.
+* In the first few seasons of the {{pmin|the Netherlands|Dutch}} dub, Seismic Toss was called '''aardbeving''', which is actually Dutch for {{m|Earthquake}}.
+** Similarly, in the [[S15|Pokémon BW: Rival Destinies]] season of Latin America dub, Seismic Toss was called '''Tiro Vital''', which is actually the Spanish name for {{m|Vital Throw}}.
+
+==In other languages==
+{{Langtable|color={{fighting color}}|bordercolor={{fighting color dark}}
+|ca=Sísmic<sup>{{tt|*|Pokémon the Movie: I Choose You!}}
+|zh_yue=地球上投 ''{{tt|Deihkàuh Seuhngtàuh|Earth Toss}}'' {{tt|*|Games}}<br>投擲地球 ''{{tt|Tàuhjaahk Deihkàuh|Throw Earth}}'' {{tt|*|Pre-Gen VII Media}}
+|zh_cmn=地球上投 ''{{tt|Dìqiú Shàngtóu|Earth Toss}}'' {{tt|*|Games, Animated series}}<br>地球拋投 ''{{tt|Dìqiú Pāotóu|Earth Throw}}'' {{tt|*|Guidebook (Jilin Publishing)}}<br>太空摔 ''{{tt|Tàikōng Shuāi|Space Flip}}'' {{tt|*|Manga (21st Century Publishing)}}
+|cs=Seismický vrh
+|da=Seismisk Kast
+|nl=Seismische smak (see [[#Trivia|Trivia]])
+|fi=Seismoisku ([[S01|Indigo League]]; [[S06|Advanced]])<br>Seismoheitto (Johto series)<br>Ilmaheitto ([[AG131]])
+|fr=Frappe Atlas
+|de=Geowurf
+|el=Σεισμική Εκτίναξη ''Seismikí Ektínazi''
+|hi=भूकंप उछाल ''Bhukamp Uchaal''
+|id=Lemparan Bumi
+|it={{tt|Movim.|Movimento}} Sismico<sup>{{gen|VI}}+</sup><br>{{tt|Mov.|Movimento}} Sismico<sup>{{gen|I}}–{{gen|V}}</sup>
+|ko=지구던지기 ''{{tt|Jigudeonjigi|Earth Throwing}}''
+|pl=Wstrząs Sejsmiczny{{tt|*|Animated series, TCG}}<!---{{tt|*|EP029-EP077, EP173-EP272, AG031, Diamond and Pearl series onwards, Diamond and Pearl (TCG)}}<br>Sejsmiczny Rzut{{tt|*|EP112-EP131, EP254, AG020}}<br>Atak Sejsmiczny{{tt|*|EP105, EP272}}---><br>Rzut Niebo-Ziemia{{tt|*|Manga}}
+|pt_br=Arremesso Sísmico (animated series, TCG, manga)<br>Abalo Sísmico (The Official Pokémon Handbook)
+|pt_eu=Tiro Sísmico
+|sr=Seizmičko Bacanje
+|es_la=Sísmico (games)<br>Movimiento Sísmico ([[EP059]]–[[AG031]], [[BW116]], [[M22]])<br>Tiro Sísmico ([[AG136]]<!--, [[AG189]]-->–[[DP018]])<!--<br>Tiro Vital{{tt|*|Also used for Vital Throw}} ([[BW071]]–[[BW073]], [[M20]])<br>Golpe Sísmico ([[DP068]])<br>Aventada ([[AG176]])<br>Sacudida Sísmica ([[AG131]])<br>Lanzamiento Letal ([[EP029]])<br>Ataque Sísmico ([[EP028]])-->
+|es_eu=Sísmico<sup>{{gen|VIII}}+</sup><br>{{tt|Mov.|Movimiento}} Sísmico<sup>{{gen|I}}–{{gen|VII}}</sup>
+|sv=Seismiskt kast
+|tr=Sismik Çarpma
+|vi=Ném Xuống Mặt Đất
+}}
+{{Seismic Toss}}
+{{Generation I TMs}}
+{{Generation VII TMs}}
+{{Project Moves and Abilities notice}}
+
+[[Category:Moves that can jam]]
+[[Category:Moves that deal direct damage]]
+[[Category:Moves in Pokémon: Let's Go, Pikachu! and Let's Go, Eevee!]]
+[[Category:Moves usable in Pokémon Sword and Shield]]
+[[Category:Moves usable in Pokémon Scarlet and Violet]]
+
+[[de:Geowurf]]
+[[es:Sísmico]]
+[[fr:Frappe Atlas]]
+[[it:Movimento Sismico]]
+[[ja:ちきゅうなげ]]
+[[zh:地球上投（招式）]]

@@ -1491,7 +1491,7 @@ async function ProcessFiles(Files)
 	for (let iFile = 0; iFile < Files.length; iFile++)
 	{
 		//if (Files.length > 1) console.log(iFile + "/" + Files.length + " " + Files[iFile]);
-		const file = Files.item(iFile);
+		const file = Files[iFile];
 		const text = await file.text();
 		let OldLearnCount = g_MoveLearners.length;
 		if (ProcessMove(text) === 1)
@@ -1680,6 +1680,7 @@ function PreSearch()
 
 	let ExplainString = "";
 	let Warning = false;
+	let Exit = false;
 	
 	if (HatchableSpeciesByMoveByGame.length === 0)
 	{
@@ -1689,7 +1690,6 @@ function PreSearch()
 	}
 	else
 	{
-		let Exit = false;
 		if (g_MovesToLearn.length <= 4 && !g_NoMoves)
 		{
 			if (!HatchableMovesByGame.some((x) => x.length >= g_MovesToLearn.length))
@@ -1761,7 +1761,8 @@ function PreSearch()
 		ExplainString += "\nIf you feel like this is wrong, check the target form";
 		if (g_TargetForm)
 			ExplainString += " (" + g_TargetForm["Name"] + ")";
-		alert(ExplainString);
+		if (!g_DevTest)
+			alert(ExplainString);
 		if (Exit)
 			return false;
 	}
@@ -2563,6 +2564,7 @@ function SearchStart()
 		}
 	}
 	console.log(Chains.length + " chains");
+	g_Chains = Chains;
 	for (let iChain = 0; iChain < Chains.length; iChain++)
 	{
 		console.log("Printing chain for " + Chains[iChain]["LearnList"][0]["MoveName"]);
@@ -2831,6 +2833,17 @@ function ParseGameAnnotations()
 	}
 }
 
+function ExcludeFromGivenList(ExcludeList)
+{
+	for (let iLearn = 0; iLearn < g_MoveLearners.length; iLearn++)
+	{
+		let Learner = g_MoveLearners[iLearn];
+		if (ExcludeList.includes(Learner["LearnMonInfo"]["SpeciesName"]))
+			for (let iInst = 0; iInst < Learner["Instances"].length; iInst++)
+				Learner["Instances"][iInst]["UserRejected"] = true;
+	}
+}
+
 //avoid showing "learned as [species]" notes when we can
 function PreferNonEvolveLearn(a, b)
 {
@@ -2876,10 +2889,14 @@ function SortData()
 	}
 }
 
-async function main()
+function NormalStart()
+{
+	main(document.getElementById("input").files, []);
+}
+
+async function main(Files, ExcludeList)
 {
 	ResetVarsForParameterChange();
-	let Files = document.getElementById("input").files
 	GetSettings(Files.length);
 	if (g_NoMoves)
 	{
@@ -2895,6 +2912,8 @@ async function main()
 		CreatePriorEvolutionLearns();
 		GenerateAltParentLearns(g_TargetGame);
 	}
+
+	ExcludeFromGivenList(ExcludeList);
 	
 	SortData();
 

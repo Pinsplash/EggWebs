@@ -1,0 +1,357 @@
+{{MoveInfobox
+|n=229
+|name=Rapid Spin
+|jname=こうそくスピン
+|jtrans=Rapid Spin
+|jtranslit=Kōsoku Supin
+|gameimage=Rapid Spin IX.png
+|gameimagewidth=300
+|type=Normal
+|damagecategory=Physical
+|basepp=40
+|maxpp=64
+|power={{tt|50|20 prior to Generation VIII}}
+|accuracy=100
+|gen=II
+|category=Cool
+|appeal=2
+|jam=0
+|cdesc=Can avoid being startled by others once.
+|appealsc=2
+|scdesc=Earn +2 if the Pokémon performs first in the turn.
+|appeal6=1
+|jam6=0
+|cdesc6=Works better the more the crowd is excited.
+|touches=yes
+|protect=yes
+|magiccoat=no
+|snatch=no
+|mirrormove=yes
+|kingsrock=yes
+|sound=no
+|target=anyadjacent
+}}
+'''Rapid Spin''' (Japanese: '''こうそくスピン''' ''Rapid Spin'') is a damage-dealing {{type|Normal}} [[move]] introduced in [[Generation II]].
+
+==Effect==
+===Generations II-VII===
+Rapid Spin inflicts damage and then removes the effects of any [[bound|binding effects]] and {{m|Leech Seed}} from the user, as well as [[entry hazard]]s from the user's side of the field (unless the user has fainted as a result of the move, such as from {{a|Rough Skin}}).
+
+Rapid Spin has a power of 20.
+
+===Generation VIII onwards===
+Rapid Spin now has a power of 50. When inflicting damage, Rapid Spin now also raises the user's {{stat|Speed}} by one stage.
+
+===Affected moves===
+The following moves are affected by Rapid Spin:
+
+{| style="float:left; background: #{{normal color light}}; {{roundy|10px}} border: 5px solid #{{normal color}}"
+|-
+|
+{| border=1 width="100%" class="sortable" style="margin:auto; background: #FFF; border:1px solid #{{normal color light}}; border-collapse:collapse"
+|- style="background: #{{normal color light}}"
+! {{color2|000|Move}}
+! {{color2|000|Type}}
+! {{color2|000|Damage category|Cat.}}
+{{movelist|Bind|Normal|cat=Physical}}
+{{movelist|Clamp|Water|cat=Physical}}
+{{movelist|Fire Spin|Fire|cat=Special}}
+{{movelist|G-Max Centiferno|Fire|cat=???}}
+{{movelist|G-Max Sandblast|Ground|cat=???}}
+{{movelist|G-Max Steelsurge|Steel|cat=???}}
+{{movelist|Infestation|Bug|cat=Special}}
+{{movelist|Leech Seed|Grass|cat=Status}}
+{{movelist|Magma Storm|Fire|cat=Special}}
+{{movelist|Sand Tomb|Ground|cat=Physical}}
+{{movelist|Snap Trap|Grass|cat=Physical}}
+{{movelist|Spikes|Ground|cat=Status}}
+{{movelist|Stealth Rock|Rock|cat=Status}}
+{{movelist|Sticky Web|Bug|cat=Status}}
+{{movelist|Thunder Cage|Electric|cat=Special}}
+{{movelist|Toxic Spikes|Poison|cat=Status}}
+{{movelist|Whirlpool|Water|cat=Special}}
+{{movelist|Wrap|Normal|cat=Physical}}
+|}
+|}
+{{left clear}}
+
+==Description==
+{{movedesc|Normal}}
+{{movedescentry|{{gameabbrevss|Stad2}}|A <sc>Normal</sc>-type attack. By spinning quickly, the user can escape from restraining moves.}}
+{{movedescentry|{{gameabbrev2|GSC}}|A high-speed spinning attack.}}
+{{movedescentry|{{gameabbrev3|RSE}}|Spins the body at high speed to strike the foe.}}
+{{movedescentry|{{gameabbrev3|FRLG}}|An attack that frees the user from <sc>Bind</sc>, <sc>Wrap</sc>, <sc>Leech Seed</sc>, and <sc>Spikes</sc>.}}
+{{movedescentry|{{gameabbrevss|Colo}}{{gameabbrevss|XD}}|Spins the body at high speed to strike target.}}
+{{movedescentry|{{gameabbrev4|DPPtHGSS}}{{gameabbrevss|PBR}}<br>{{gameabbrev5|BWB2W2}}<br>{{gameabbrev6|XYORAS}}<br>{{gameabbrev7|SMUSUMPE}}|A spin attack that can also eliminate such moves as Bind, Wrap, Leech Seed, and Spikes.}}
+{{movedescentry|{{gameabbrev8|SwShBDSPLA}}|A spin attack that can also eliminate such moves as Bind, Wrap, and Leech Seed. This also raises the user's Speed stat.}}
+{{movedescentry|{{gameabbrev9|SV}}|The user performs a spin attack that can also eliminate the effects of such moves as Bind, Wrap, and Leech Seed. This also boosts the user's Speed stat.}}
+|}
+|}{{left clear}}
+
+==Learnset==
+===By [[Level|leveling up]]===
+{{Movehead/Games|Normal|g1=none|g7=1|g7g={{gameabbrev7|SMUSUM}}|g8=2|g9=1|g9g={{gameabbrev9|SV}}}}
+{{Moveentry/9|0007|Squirtle|type=Water|2|Monster|Water 1|23|23|19|19|19|19|9|9|9}}
+{{Moveentry/9|0008|Wartortle|type=Water|2|Monster|Water 1|25|25|20|20|20|21|9|9|9}}
+{{Moveentry/9|0009|Blastoise|type=Water|2|Monster|Water 1|25|25|20|20|20|21|9|9|9}}
+{{Moveentry/9|0027|Sandshrew|type=Ground|1|Field|Field|−|−|13|13{{sup/5|BW}}<br>9{{sup/5|B2W2}}|9|9|15|15|15}}
+{{Moveentry/9|0027|formsig=A|Sandshrew|type=Ice|type2=Steel|1|Field|Field|form=Alolan Form||||||9|15||15}}
+{{Moveentry/9|0028|Sandslash|type=Ground|1|Field|Field|−|−|13|13{{sup/5|BW}}<br>9{{sup/5|B2W2}}|9|9|15|15|15}}
+{{Moveentry/9|0028|formsig=A|Sandslash|type=Ice|type2=Steel|1|Field|Field|form=Alolan Form||||||−|1||{{tt|Rem.|Can only be learned via Move Reminder}}}}
+{{Moveentry/9|0120|Staryu|type=Water|1|Water 3|Water 3|13|10|10|10|10{{sup/6|XY}}<br>7{{sup/6|ORAS}}|7|12|12}}
+{{Moveentry/9|0121|Starmie|type=Water|type2=Psychic|1|Water 3|Water 3|1|1|1|1|1|1|1|1}}
+{{Moveentry/9|0122|formsig=G|Mr. Mime|type=Ice|type2=Psychic|1|Human-Like|Human-Like|form=Galarian Form|||||||1}}
+{{Moveentry/9|0204|Pineco|type=Bug|1|Bug|Bug|22|22|12{{sup/4|DP}}<br>17{{sup/4|PtHGSS}}|17|17|17||17|17}}
+{{Moveentry/9|0205|Forretress|type=Bug|type2=Steel|1|Bug|Bug|22|22|12{{sup/4|DP}}<br>17{{sup/4|PtHGSS}}|17|17|17||17|17}}
+{{Moveentry/9|0232|Donphan|type=Ground|1|Field|Field|41|41|6|6|6|6||6|6}}
+{{Moveentry/9|0237|Hitmontop|type=Fighting|1|Human-Like|Human-Like|25|25|24|24|24|19|1|1|16}}
+{{Moveentry/9|0324|Torkoal|type=Fire|1|Field|Field||−|23|23|25{{sup/6|XY}}<br>10{{sup/6|ORAS}}|10|8|8|8}}
+{{Moveentry/9|0343|Baltoy|type=Ground|type2=Psychic|1|Mineral|Mineral||5|5|7{{sup/5|BW}}<br>4{{sup/5|B2W2}}|4|4|3|3}}
+{{Moveentry/9|0344|Claydol|type=Ground|type2=Psychic|1|Mineral|Mineral||1, 5|1, 5|1, 7{{sup/5|BW}}<br>1, 4{{sup/5|B2W2}}|1, 4|1, 4|1|1}}
+{{Moveentry/9|0529|Drilbur|type=Ground|1|Field|Field||||5|5|5|1||1}}
+{{Moveentry/9|0530|Excadrill|type=Ground|type2=Steel|1|Field|Field||||1, 5|1, 5|1, 5|1||1}}
+{{Moveentry/9|0615|Cryogonal|type=Ice|1|Mineral|Mineral||||13|13|1|8||8}}
+{{Moveentry/9|0712|Bergmite|type=Ice|2|Monster|Mineral|||||35|35|1||1}}
+{{Moveentry/9|0713|Avalugg|type=Ice|2|Monster|Mineral|||||35|35|1||1}}
+{{Moveentry/9|0713|formsig=H|Avalugg|type=Ice|type2=Rock|2|Monster|Mineral|form=Hisuian Form|||||||||1}}
+{{Moveentry/9|0761|Bounsweet|type=Grass|1|Grass|Grass||||||9|8||8}}
+{{Moveentry/9|0762|Steenee|type=Grass|1|Grass|Grass||||||1, 9|1||1}}
+{{Moveentry/9|0763|Tsareena|type=Grass|1|Grass|Grass||||||1, 9|1||1}}
+{{Moveentry/9|0775|Komala|type=Normal|1|Field|Field||||||11|||11|STAB='''}}
+{{Moveentry/9|0781|Dhelmise|type=Ghost|type2=Grass|1|Mineral|Mineral||||||1|1}}
+{{Moveentry/9|0795|Pheromosa|type=Bug|type2=Fighting|1|No Eggs Discovered|No Eggs Discovered||||||1|1}}
+{{Moveentry/9|0829|Gossifleur|type=Grass|1|Grass|Grass|||||||4}}
+{{Moveentry/9|0830|Eldegoss|type=Grass|1|Grass|Grass|||||||1}}
+{{Moveentry/9|0837|Rolycoly|type=Rock|1|Mineral|Mineral|||||||5||5}}
+{{Moveentry/9|0838|Carkol|type=Rock|type2=Fire|1|Mineral|Mineral|||||||1||1}}
+{{Moveentry/9|0839|Coalossal|type=Rock|type2=Fire|1|Mineral|Mineral|||||||1||1}}
+{{Moveentry/9|0866|Mr. Rime|type=Ice|type2=Psychic|1|Human-Like|Human-Like|||||||1}}
+{{Moveentry/9|0894|Regieleki|type=Electric|1|No Eggs Discovered|No Eggs Discovered|||||||1||1}}
+{{Moveentry/9|0946|Bramblin|type=Grass|type2=Ghost|1|Grass|Grass|||||||||9}}
+{{Moveentry/9|0947|Brambleghast|type=Grass|type2=Ghost|1|Grass|Grass|||||||||9}}
+{{Moveentry/9|0967|Cyclizar|type=Dragon|type2=Normal|1|Field|Field|||||||||7|STAB='''}}
+{{Moveentry/9|0984|Great Tusk|type=Ground|type2=Fighting|1|No Eggs Discovered|No Eggs Discovered|||||||||21}}
+{{Moveentry/9|0990|Iron Treads|type=Ground|type2=Steel|1|No Eggs Discovered|No Eggs Discovered|||||||||21}}
+{{Moveentry/9|1024|Terapagos|type=Normal|1|No Eggs Discovered|No Eggs Discovered|||||||||1|STAB='''}}
+{{Movefoot|Normal|9}}
+
+===By {{pkmn|breeding}}===
+{{Movehead/Games|Normal|Egg Move|g1=none|g7=1|g7g={{gameabbrev7|SMUSUM}}|g8=2|g9=1|g9g={{gameabbrev9|SV}}}}
+{{Moveentry/9|0027|Sandshrew|type=Ground|1|Field|Field|✔|✔|✔|✔|✔|✔|−|✔|−}}
+{{Moveentry/9|0072|Tentacool|type=Water|type2=Poison|1|Water 3|Water 3|✔|✔|✔|✔|✔|✔|✔|✔|✔|note=Chain breed}}
+{{Moveentry/9|0090|Shellder|type=Water|1|Water 3|Water 3|✔|✔|✔|✔|✔|✔|−|✔|−|note=Chain breed}}
+{{Moveentry/9|0140|Kabuto|type=Rock|type2=Water|2|Water 1|Water 3|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/9|0225|Delibird|type=Ice|type2=Flying|2|Water 1|Field|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/9|0236|Tyrogue|type=Fighting|1|Human-Like|Human-Like|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/9|0327|Spinda|type=Normal|2|Field|Human-Like||−|−|✔|✔|✔||✔|STAB='''}}
+{{Moveentry/9|0347|Anorith|type=Rock|type2=Bug|1|Water 3|Water 3||✔|✔|✔|✔|✔|✔|✔|note=Chain breeding}}
+{{Moveentry/9|0529|Drilbur|type=Ground|1|Field|Field||||✔|✔|✔|−||−}}
+{{Moveentry/9|0776|Turtonator|type=Fire|type2=Dragon|2|Monster|Dragon||||||−|✔}}
+{{Moveentry/9|0877|Morpeko|type=Electric|type2=Dark|2|Field|Fairy|||||||✔||✔}}
+{{Moveentry/9|0912|Quaxly|type=Water|2|Flying|Water 1|||||||||✔}}
+{{Moveentry/9|0948|Toedscool|type=Ground|type2=Grass|1|Grass|Grass|||||||||✔}}
+{{Moveentry/9|0978|Tatsugiri|type=Dragon|type2=Water|1|Water 2|Water 2|form=All forms|||||||||✔}}
+{{Movefoot|Normal|9}}
+
+===By {{pkmn2|event}}===
+====[[Generation II]]====
+{{Movehead/Special|Normal}}
+{{Moveentry/1|0074|Geodude|type=Rock|type2=Ground|1|Mineral|Mineral|{{DL|List of PCNY event Pokémon distributions in Generation II|Rapid Spin Geodude|New York Pokémon Center}}}}
+{{Movefoot|Normal|1}}
+
+==In other games==
+===[[Pokémon Mystery Dungeon series]]===
+Rapid Spin deals damage and removes the {{DL|Status condition (Mystery Dungeon)|Leech Seed}} status from the user, as well as any status conditions that prevent the Pokémon from moving (e.g. {{DL|Status condition (Mystery Dungeon)|bound}}, {{DL|Status condition (Mystery Dungeon)|Ingrain}}, {{DL|Status condition (Mystery Dungeon)||Fire Spin}}). Starting with {{pkmn|Mystery Dungeon: Gates to Infinity|Gates to Infinity}}, it will also remove any traps from the tile in front.
+
+
+{{MDMoveheader|type=normal}}
+{{MDMoveRow|game=RB|pow=4|pp=17|acc=90%|range=Front|target=Enemy|cuts=No}}
+{{MDMoveRow|game=TDS|pow=4|pp=17|acc=90%|range=Front|target=Enemy|cuts=No}}
+{{MDMoveRow|game=BSL|pow=4|pp=17|acc=90%|range=Front|target=Enemy|cuts=No}}
+{{MDMoveRow|game=GTI|pow=2|powmax=99|pp=30|ppmax=99|acc=95%|accmax=98%|range=Front|target=Enemy|cuts=No}}
+{{MDMoveRow|game=SMD|pow=2|powmax=99|pp=30|ppmax=99|acc=95%|accmax=98%|range=Front|target=Enemy|cuts=No}}
+{{MDMovefoot|type=normal|RB=yes|TDS=yes|BSL=yes|GTI=yes|SMD=yes|RTDX=yes}}
+
+==={{g|Rumble Rush}}===
+{{RumbleRushPhysicalAttack|move=Rapid Spin|type=Normal
+|stars=1
+|pow=34.03969
+|charge=0.78
+|range=Circular (self)
+|hits=1
+|projectiles=1
+|crit=1.5
+|effect=None}}
+
+==={{g|UNITE}}===
+In Pokémon UNITE, Rapid Spin is {{p|Blastoise}}'s and {{p|Tsareena}}'s second move.
+
+Blastoise can obtain the move by reaching level 7 as {{p|Wartortle}} and upgrading {{m|Skull Bash}} into it instead of {{m|Surf}}. The user withdraws into its shell and begins rapidly spinning, resetting the cooldown of its other move. The user is unstoppable for the duration of Rapid Spin and can freely move about the battlefield. While spinning, the user will damage and slow nearby enemies. The user's next basic attack after Rapid Spin ends becomes boosted. For the duration of Rapid Spin, the mechanics of the user's Basic attacks as well as Hydro Pump and Water Spout are changed. At level 13 or higher, the user gains a massive amount of Defense and Sp. Defense for the duration of Rapid Spin.
+
+Tsareena starts with the move as {{p|Bounsweet}}. The user spins in the designated direction, dealing damage to any enemy hit. When this move hits, the user's movement speed is increased for a short time. Upon evolving from {{p|Steenee}} at level 6, it is replaced by either {{m|Trop Kick}} or {{m|Grassy Glide}}.
+
+===Description===
+{{movedesc|Normal}}
+{{movedescentry|{{gameabbrevmd|RB}}|Inflicts damage on the target. It also frees the user from Leech Seed, Leg Hold, Ingrain, or Constriction.}}
+{{movedescentry|{{gameabbrevmd|TDS}}|Inflicts damage on the target. It also frees the user from Leech Seed status, Shadow Hold status, Ingrain status, and Constriction status.}}
+{{movedescentry|{{gameabbrevmd|BSL}}|{{tt|てきポケモンに ダメージをあたえる しかも やどりぎじょうたい かげふみじょうたい ねをはりじょうたい しめつけじょうたいから ぬけだすことができる|Inflicts damage on the target. It also frees the user from Leech Seed status, Shadow Hold status, Ingrain status, and Constriction status}}}}
+{{movedescentry|{{gameabbrevmd|GTI}}|It damages an enemy and breaks a trap underneath the enemy. It also frees you from the Leech Seed, Bound, Fire Spin, and Sand Tomb status.}}
+{{movedescentry|{{gameabbrevmd|SMD}}|It damages an enemy. It also frees you from being bound and from the immobile and Leech Seed statuses. It destroys any trap in front of you.}}
+{{movedescentry|{{gameabbrevmd|RTDX}}|It damages an enemy. It also frees you from being bound and from the Leech Seed status. It destroys any trap in front of you, too.}}
+|}
+|}{{left clear}}
+
+==In animation==
+===Pokémon animated series===
+{{moveanime|type=normal|exp=yes|gen=The user performs a spin attack at high speed, which allows it to break free from binding moves and deflect the opponent's attacks.|image1=Wulfric Bergmite Rapid Spin.png|image1p=Bergmite|image2=Samson Komala Rapid Spin.png|image2p=Komala|image3=Buck Claydol Rapid Spin.png|image3p=Claydol|image4=Pagogo Rapid Spin.png|image4p=Terastal Form Terapagos}}
+{{movep|type=normal|ms=009|pkmn=Blastoise|method=Blastoise pulls its head, arms, legs, and cannons into its shell and spins like a disc. It either deflects the opponent's attack or spins into the opponent. The attack also allows Blastoise to escape binding attacks, such as {{mcolor|Fire Spin|000}}.}}
+{{movemid|type=normal|user=Mewtwo (M01)|user1=Mewtwo's Blastoisetwo|startcode=M01|startname=Mewtwo Strikes Back!|notes=Debut}}
+{{movemid|type=normal|user=Gary's Blastoise|startcode=EP270|startname=Can't Beat the Heat!}}
+{{movemid|type=normal|user=Sid|user1=Sid's Blastoise|startcode=M07|startname=Destiny Deoxys}}
+{{movemid|type=normal|user=Tierno's Blastoise|startcode=XY090|startname=Tag Team Battle Inspiration!}}
+{{movep|type=normal|ms=120|pkmn=Staryu|method=Staryu spins like a saw blade, using the tips of its appendages as a cutting edge, or if stuck in a whirlpool, it spins around in the opposite direction as the whirlpool.}}
+{{movemid|type=normal|user=Misty's Staryu|startcode=M03|startname=Spell of the Unown: Entei}}
+{{movep|type=normal|ms=237|pkmn=Hitmontop|method=Hitmontop does a headstand, spins, and tackles the opponent.}}
+{{movemid|type=normal|user=Chigusa|user1=Chigusa's Hitmontop|startcode=EP166|startname=Two Hits and a Miss}}
+{{movemid|type=normal|user=Butch|user1=Butch's Hitmontop|startcode=EP222|startname=A Promise is a Promise}}
+{{movemid|type=normal|user=Terri|user1=Terri's Hitmontop|startcode=AG145|startname=Pasta La Vista!}}
+{{movemid|type=normal|user=Pokémon Trainer|user1=A Trainer's Hitmontop|startcode=AG176|startname=The Ole' Berate and Switch!}}
+{{movemid|type=normal|user=Pokémon Coordinator|user1=A Coordinator's Hitmontop|startcode=DP161|startname=Yes in Dee Dee, It's Dawn!}}
+{{movep|type=normal|ms=205|pkmn=Forretress|method=Forretress spins and tackles the opponent. Sometimes, it pulls its horns into its body and closes up its shell to attack.}}
+{{movemid|type=normal|user=Brock's Forretress|startcode=EP260|startname=A Crowning Achievement}}
+{{movep|type=normal|ms=343|pkmn=Baltoy|method=Baltoy spins rapidly, deflecting attacks.}}
+{{movemid|type=normal|user=Calista (AG076)|user1=Calista's Baltoy|startcode=AG076|startname=Me, Myself and Time}}
+{{movep|type=normal|ms=344|pkmn=Claydol|method=Claydol spins around quickly, repelling any attack back at the opponent; or, Claydol lifts its arms, spins around quickly, and floats towards the opponent.}}
+{{movemid|type=normal|user=Giant Pokémon|user1=A giant Claydol|startcode=AG104|startname=Claydol Big and Tall}}
+{{movemid|type=normal|user=Spenser|user1=Spenser's Claydol|startcode=AG164|startname=Ka Boom with a View!}}
+{{movemid|type=normal|user=Buck|user1=Buck's Claydol|startcode=DP181|startname=Bucking the Treasure Trend!}}
+{{movep|type=normal|ms=007|pkmn=Squirtle|method=Squirtle pulls its limbs into its shell and spins around, hitting the opponent.}}
+{{movemid|type=normal|user=May's Squirtle|startcode=AG152|startname=On Olden Pond}}
+{{movemid|type=normal|user=Ash's Squirtle|startcode=AG189|startname=Gathering the Gang of Four!}}
+{{movemid|type=normal|user=Tierno's Squirtle|startcode=XY039|startname=Summer of Discovery!}}
+{{movep|type=normal|ms=008|pkmn=Wartortle|method=Wartortle pulls all of its limbs into its shell, and it spins like a disk.}}
+{{movemid|type=normal|user=May's Wartortle|startcode=DP077|startname=Staging a Heroes' Welcome!}}
+{{movemid|type=normal|user=Tierno's Wartortle|startcode=XY065|startname=Good Friends, Great Training!}}
+{{movemid|type=normal|user=Pokémon Trainer|user1=A Trainer's Wartortle|startcode=HZ090|startname=Eyes to the Skies Once Again (Part One)}}
+{{movep|type=normal|ms=477|pkmn=Dusknoir|method=Dusknoir spins its body rapidly, knocking the opponent away from it.}}
+{{movemid|type=normal|user=Dusknoir (Explorers of Time, Darkness, and Sky)|startcode=Pokémon Mystery Dungeon: Explorers of Sky - Beyond Time & Darkness|startname=Pokémon Mystery Dungeon: Explorers of Sky - Beyond Time & Darkness|notes=Dusknoir {{color2|000|Animated series move errors|cannot legally learn}} Rapid Spin}}
+{{movep|type=normal|ms=530|pkmn=Excadrill|method=Excadrill opens both of its claws and holds them both forward. Both claws begin to glow silver and spin rapidly. As the claws spin, they let off yellow static electricity. Excadrill can then block attacks, or strike the opponent with one of its claws by thrusting its arm forward; or, Excadrill holds out both of its arms and both of its claws start to glow silver. It then spins its body rapidly while turning its head upwards. As it spins, its body releases yellow static electricity.}}
+{{movemid|type=normal|user=Clay's Excadrill|startcode=BW061|startname=Battling the King of the Mines!}}
+{{movep|type=normal|ms=615|pkmn=Cryogonal|method=Cryogonal spins rapidly and tackles the opponent.}}
+{{movemid|type=normal|user=Brycen|user1=Brycen's Cryogonal|startcode=BW079|startname=Caution: Icy Battle Conditions!}}
+{{movemid|type=normal|user=Cryogonal (Pokémon)|user1=Multiple wild Cryogonal|startcode=BW102|startname=Team Eevee and the Pokémon Rescue Squad!}}
+{{movep|type=normal|ms=712|pkmn=Bergmite|method=Bergmite's body spins in a counterclockwise direction and charges towards the opponent.}}
+{{movemid|type=normal|user=Wulfric|user1=Wulfric's Bergmite|startcode=XY122|startname=A Real Icebreaker!}}
+{{movep|type=normal|ms=775|pkmn=Komala|method=Komala jumps up, spins around, and kicks its opponent with its feet.}}
+{{movemid|type=normal|user=Samson Oak|user1=Samson Oak's Komala|startcode=SM056|startname=Let Sleeping Pokémon Lie!}}
+{{movep|type=normal|ms=027A|pkmn=Sandshrew|method=Alolan Sandshrew spins around with the front part of its body facing the ground and then slams its body into the opponent once or multiple times.}}
+{{movemid|type=normal|user=Sandshrew (Pokémon)|user1=A wild Sandshrew|startcode=SM080|startname=Not Caving Under Pressure!}}
+{{movep|type=normal|ms=204|pkmn=Pineco|method=Pineco spins rapidly and tackles the opponent.}}
+{{movemid|type=normal|user=Pineco (Pokémon)|user1=A wild Pineco|startcode=JN032|startname=Time After Time!}}
+{{movep|type=normal|ms=837|pkmn=Rolycoly|method=Rolycoly spins rapidly and tackles the opponent.}}
+{{movemid|type=normal|user=Wakaba (HZ020)|user1=Wakaba's Rolycoly|startcode=HZ020|startname=Kabu's Battle Training!}}
+{{movep|type=normal|ms=946|pkmn=Bramblin|method=Bramblin's stalks spin rapidly and it slams its body into the opponent multiple times.}}
+{{movemid|type=normal|user=Shine|user1=Shine's Bramblin|startcode=HZ035|startname=The Wild Pair, Friede and Cap!}}
+{{movep|type=normal|ms=1024T|pkmn=Terapagos|method=Terastal Form Terapagos spins rapidly and tackles the opponent.}}
+{{movemid|type=normal|user=Pagogo|user1=Liko's Pagogo|startcode=HZ098|startname=Reunion in Cortondo}}
+{{movep|type=normal|ms=028|pkmn=Sandslash|method=Sandslash spins rapidly, allowing it to break free from a bind.}}
+{{movebtm|type=normal|user=Ann|user1=Ann's Sandslash|startcode=HZ115|startname=HZ115}}
+
+==In the manga==
+===Ash & Pikachu===
+{{movemanga|type=normal|exp=yes|gen=The user attacks by spinning around.|image1=Calista Baltoy Rapid Spin AP.png|image1p=Baltoy}}
+{{movep|type=normal|ms=343|pkmn=Baltoy|method=Baltoy spins around to attack.}}
+{{movebtmManga|type=normal|user=Calista (AG076)|user1=Calista's Baltoy|startcode=SP26|startname=Hunt For The Treasure Of The Universe!|notes=Debut}}
+
+===Pokémon Adventures===
+{{movemanga|type=normal|exp=yes|gen=The user performs a spin attack at high speed to strike the target.|image1=Misty Starmie Rapid Spin Adventures.png|image1p=Starmie|image2=Hau Komala Rapid Spin Adventures.png|image2p=Komala|image3=Chuck Hitmontop Rapid Spin Adventures.png|image3p=Hitmontop}}
+{{movep|type=normal|ms=121|pkmn=Starmie|method=Starmie jumps into the air and spins its body rapidly, then charges at the opponent, spinning like a frisbee.}}
+{{movemid|type=normal|user=Misty's Starmie|startcode=PS156|startname=Notorious Noctowl|notes=Debut}}
+{{movep|type=normal|ms=237|pkmn=Hitmontop|method=Hitmontop jumps into the air and spins its body rapidly, then charges at the opponent.}}
+{{movemid|type=normal|user=Chuck|user1=Chuck's Hitmontop|startcode=PS162|startname=Heckled by Hitmontop}}
+{{movep|type=normal|ms=775|pkmn=Komala|method=Komala turns on its side and rolls rapidly around the opponent.}}
+{{movebtmManga|type=normal|user=Hau|user1=Hau's Komala|startcode=PASM05|startname=The Announcement and the Prize}}
+
+===Pokémon: Yeah! I Got Pokémon!===
+{{movemanga|type=normal|exp=yes|gen=The user can repel attacks by spinning around.|image1=Hideki Pineco Rapid Spin.png|image1p=Pineco}}
+{{movep|type=normal|ms=204|pkmn=Pineco|method=Pineco spins around, repelling attacks.}}
+{{movebtmManga|type=normal|user=Hideki|user1=Hideki's Pineco|startcode=GDZ75|notes=Debut}}
+
+==In other generations==
+===Core series games===
+{{Movegen
+|type=Normal
+|genII=Rapid Spin II
+|genIII=Rapid Spin III
+|genIV=Rapid Spin IV
+|genV=Rapid Spin V
+}}
+{{Movegen
+|type=Normal
+|genVI=Rapid Spin VI
+|genVI2=Rapid Spin VI 2
+|genVII=Rapid Spin VII
+|genVII2=Rapid Spin VII 2
+|genVIII=Rapid Spin VIII
+}}
+
+===Side series games===
+{{Movegen
+|type=Normal
+|Stad2=Rapid Spin Stad2
+|Colo=Rapid Spin Colo
+|XD=Rapid Spin XD
+|PBR=Rapid Spin PBR
+}}
+===Spin-off series games===
+{{Movegen
+|type=Normal
+|PMDRB=Rapid Spin PMD RB
+|PMDTDS=Rapid Spin PMD TDS
+|PMDGTI=Rapid Spin PMD GTI
+|PSMD=Rapid Spin PSMD
+}}
+
+==Trivia==
+* Rapid Spin was one of the first [[Generation II]] moves introduced and named. It was seen being used by {{OBP|Mewtwo|M01}}'s {{p|Blastoise|Blastoisetwo}} in ''[[M01|Mewtwo Strikes Back]]'', prior to the release of {{2v2|Gold|Silver}}.
+* The animation for Rapid Spin when used by {{p|Blastoise}} in {{g|UNITE}} and [[Pokkén Tournament DX]] is akin to how [[Ash's Squirtle]] uses {{m|Hydro Pump}} in {{aniseries|PTS}}, which appears to be a [[List of references to popular culture in Pokémon|reference]] to {{wp|Gamera}}'s spinning flight.
+
+==In other languages==
+{{Langtable|color={{normal color}}|bordercolor={{normal color light}}
+|zh_yue=高速旋轉 ''{{tt|Gōuchūk Syùhnjyún|Rapid Spin}}'' {{tt|*|Games}}<br>高速迴轉 ''{{tt|Gōuchūk Wùihjyún|Rapid Rotation}}'' {{tt|*|XY065}}<br>高速游開 ''{{tt|Gōuchūk Yàuhhōi|Rapid Swim}}'' {{tt|*|M03}}
+|zh_cmn=高速旋轉 / 高速旋转 ''{{tt|Gāosù Xuánzhuǎn|Rapid Spin}}'' {{tt|*|Games}}<br>高速迴轉 / 高速回转 ''{{tt|Gāosù Huízhuǎn|Rapid Rotation}}'' {{tt|*|Pre-Gen VII Media}}
+|cs=Prudké otáčky <br> Rychlý vír (Black & White series)
+|nl=Snelle draai
+|fi=Huimakieppi{{tt|*|Original series}}<br>Pikapyörre/Pikahyrrä{{tt|*|Advanced Generation series}}
+|fr=Tour Rapide
+|de=Turbodreher
+|el=Περιστροφή
+|hi=तेज़ घूमो ''Tez Ghoomo''
+|id=Putaran Kecepatan Tinggi
+|it=Rapigiro
+|ko=고속스핀 ''Gosokseupin''
+|pl=Szybki Zwrot<!--{{tt|*|EP213-EP222, Diamond and Pearl series onwards}}<br>Wirująca Kula{{tt|*|AG040}}<br>Wirowanie{{tt|*|EP166, EP273, AG009-AG012, AG026}}<br>Bąk{{tt|*|AG025}}<br>Szybkie Wiertło{{tt|*|AG023}}<br>Szybki Obrót{{tt|*|EP213, EP273}}<br>Szybki Unik/Szybkie Wirowanie{{tt|*|EP270}}<br>Wirujący Pocisk/Szybki Atak{{tt|*|EP261}}<br>Raptowne Ścięcie{{tt|*|EP260}}<br>Piruet{{tt|*|M03}}-->
+|pt_br=Giro Rápido
+|pt_eu=Rodopio Rápido
+|sr=Brzo Okretanje
+|es=Giro Rápido
+|sv=Snabbspinn
+|vi=Vòng Xoay Siêu Tốc
+}}
+{{Project Moves and Abilities notice}}
+
+==References==
+<references/>
+
+[[Category:Moves that can raise the user's Speed]]
+[[Category:Entry hazard-removing moves]]
+[[Category:Moves usable in Pokémon Sword and Shield]]
+[[Category:Moves usable in Pokémon Scarlet and Violet]]
+[[Category:Moves that were used in the animated series before their game debut]]
+
+[[de:Turbodreher]]
+[[es:Giro Rápido]]
+[[fr:Tour Rapide]]
+[[it:Rapigiro]]
+[[ja:こうそくスピン]]
+[[zh:高速旋转（招式）]]

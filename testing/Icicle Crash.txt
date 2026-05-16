@@ -1,0 +1,338 @@
+{{MoveInfobox|
+n=556|
+name=Icicle Crash|
+jname=つららおとし|
+jtrans=Icicle Drop|
+jtranslit=Tsurara Otoshi|
+gameimage=Icicle Crash IX.png{{!}}300px|
+gameimage2=Icicle Crash IX 2.png{{!}}300px|
+type=Ice|
+damagecategory=Physical |
+basepp=10 |
+maxpp=16 |
+power=85 |
+accuracy=90 |
+gen=V|
+bdesc= 30% chance of flinching the opponent.|
+category6=Beautiful |
+appeal6=3 |
+cdesc6=Excites the audience a lot if used last. |
+pokefordex=Icicle%20Crash|
+touches=no |
+protect=yes |
+magiccoat=no |
+snatch=no |
+mirrormove=yes |
+kingsrock=no |
+flag7=no |
+flag8=no |
+sound=no |
+target=anyadjacent |
+footnotes= 
+}}
+'''Icicle Crash''' (Japanese: '''つららおとし''' ''Icicle Drop'') is a damage-dealing {{type|Ice}} [[move]] introduced in [[Generation V]].
+
+==Effect==
+Icicle Crash inflicts damage and has a 30% chance of causing the target to [[flinch]].
+
+Icicle Crash can also be used as part of a [[Contest combination|Contest Spectacular combination]], with the user gaining extra three appeal points if the move {{m|Hail}} was used in the prior turn.
+
+===Generation VIII===
+====Pokémon Legends: Arceus====
+Icicle Crash's base power has been lowered to 80. Instead of causing flinching, it lowers the target's action speed.
+
+{{LegendsMove
+|type=Ice
+|damagecategory=Physical
+|basepp=10
+|power=80
+|power-agile=60
+|power-strong=100
+|accuracy=90
+|accuracy-strong=100
+|actionspeed-user=0
+|actionspeed-user-agile=0
+|actionspeed-user-strong=+5
+|actionspeed-target=+3
+|actionspeed-target-agile=+5
+|effect=Lowers the target's action speed}}
+
+===Generation IX===
+====Pokémon Legends: Z-A====
+{{LegendsZAMove
+|type=Ice
+|damagecategory=Physical
+|power=85
+|cooldown=8
+|charge-time=20
+}}
+
+==Description==
+{{movedesc|ice}}
+{{movedescentry|{{gameabbrev5|BWB2W2}}|The user attacks by harshly dropping an icicle onto the target. It may also make the target flinch.}}
+{{movedescentry|{{gameabbrev6|XYORAS}}<br>{{gameabbrev7|SMUSUMPE}}<br>{{gameabbrev8|SwShBDSP}}|The user attacks by harshly dropping large icicles onto the target. This may also make the target flinch.}}
+{{movedescentry|{{gameabbrev8|LA}}|The user attacks by harshly dropping large icicles onto the target.}}
+{{movedescentry|{{gameabbrev9|SV}}|The user attacks by crashing large icicles onto the target. This may also make the target flinch.}}
+{{movedescentry|{{gameabbrev9|ZA}}|The user attacks by crashing large icicles down upon targets. This may also make targets flinch.}}
+{{movedescentry|{{gameabbrevss|CHP}}|Has a 30% chance of making the target flinch.}}
+|}
+|}{{left clear}}
+
+==Learnset==
+===By [[Level|leveling up]]===
+{{Movehead/Games|Ice|g1=none|g2=none|g3=none|g4=none|g7=1|g7g={{gameabbrev7|SMUSUM}}|g8=3|g9=2}}
+{{Moveentry/8|0028|formsig=A|Sandslash|type=Ice|type2=Steel|1|Field|Field|form=Alolan Form|||1|1|||1|STAB='''}}
+{{Moveentry/8|0091|Cloyster|type=Water|type2=Ice|1|Water 3|Water 3|52|50|50|1|1||1|STAB='''}}
+{{Moveentry/8|0220|Swinub|type=Ice|type2=Ground|1|Field|Field|−|−|−|−|−|18|−|STAB='''}}
+{{Moveentry/8|0221|Piloswine|type=Ice|type2=Ground|1|Field|Field|−|−|−|−|−|18|−|STAB='''}}
+{{Moveentry/8|0361|Snorunt|type=Ice|2|Fairy|Mineral|−|−|−|−|−|34|−|40|STAB='''}}
+{{Moveentry/8|0362|Glalie|type=Ice|2|Fairy|Mineral|−|−|−|−|−|34|−|40|STAB='''}}
+{{Moveentry/8|0459|Snover|type=Grass|type2=Ice|2|Monster|Grass|−|−|−|−|−|18|−|−|STAB='''}}
+{{Moveentry/8|0460|Abomasnow|type=Grass|type2=Ice|2|Monster|Grass|−|−|−|−|−|18|−|−|STAB='''}}
+{{Moveentry/8|0473|Mamoswine|type=Ice|type2=Ground|1|Field|Field|−|−|−|−|−|18|−|STAB='''}}
+{{Moveentry/8|0478|Froslass|type=Ice|type2=Ghost|2|Fairy|Mineral|−|−|−|−|−|34|−|{{tt|Rem.|Can only be learned via Move Reminder}}|STAB='''}}
+{{Moveentry/8|0555|formsig=G|Darmanitan|type=Ice|1|Field|Field|form=Galarian Form||||1, {{tt|Evo.|Learned upon evolving}}|STAB='''}}
+{{Moveentry/8|0582|Vanillite|type=Ice|1|Mineral|Mineral|−|−|−|−||||24|STAB='''}}
+{{Moveentry/8|0583|Vanillish|type=Ice|1|Mineral|Mineral|−|−|−|−||||24|STAB='''}}
+{{Moveentry/8|0584|Vanilluxe|type=Ice|1|Mineral|Mineral|−|−|−|1||||24|STAB='''}}
+{{Moveentry/8|0614|Beartic|type=Ice|1|Field|Field|37|37|1, {{tt|Evo.|Learned upon evolving}}|1, {{tt|Evo.|Learned upon evolving}}|||{{tt|Evo.|Learned upon evolving}}|STAB='''}}
+{{Moveentry/8|0713|Avalugg|type=Ice|2|Monster|Mineral||−|−|−|||51|39|STAB='''}}
+{{Moveentry/8|0881|Arctozolt|type=Electric|type2=Ice|1|No Eggs Discovered|No Eggs Discovered||||70|STAB='''}}
+{{Moveentry/8|0883|Arctovish|type=Water|type2=Ice|1|No Eggs Discovered|No Eggs Discovered||||70|STAB='''}}
+{{Moveentry/8|0896|Glastrier|type=Ice|1|No Eggs Discovered|No Eggs Discovered||||36|||36|STAB='''}}
+{{Moveentry/8|0898|formsig=I|Calyrex|type=Psychic|type2=Ice|1|No Eggs Discovered|No Eggs Discovered|form=Ice Rider||||1|||1|STAB='''}}
+{{Moveentry/8|0996|Frigibax|type=Dragon|type2=Ice|2|Dragon|Mineral|||||||48|54|STAB='''}}
+{{Moveentry/8|0997|Arctibax|type=Dragon|type2=Ice|2|Dragon|Mineral|||||||55|54|STAB='''}}
+{{Moveentry/8|0998|Baxcalibur|type=Dragon|type2=Ice|2|Dragon|Mineral|||||||62|54|STAB='''}}
+{{Moveentry/8|1002|Chien-Pao|type=Dark|type2=Ice|1|No Eggs Discovered|No Eggs Discovered|||||||45|STAB='''}}
+{{Movefoot|Ice|8}}
+
+===By {{pkmn|breeding}}===
+{{Movehead/Games|Ice|Egg Move|g1=none|g2=none|g3=none|g4=none|g7=1|g7g={{gameabbrev7|SMUSUM}}|g8=2|g9=1|g9g={{gameabbrev9|SV}}}}
+{{Moveentry/6|0027|formsig=A|Sandshrew|type=Ice|type2=Steel|1|Field|Field|form=Alolan Form|||✔|−||−|STAB='''}}
+{{Moveentry/6|0215|Sneasel|type=Dark|type2=Ice|1|Field|Field|−|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/6|0220|Swinub|type=Ice|type2=Ground|1|Field|Field|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/6|0361|Snorunt|type=Ice|2|Fairy|Mineral|−|−|−|✔|✔|✔|STAB='''}}
+{{Moveentry/6|0582|Vanillite|type=Ice|1|Mineral|Mineral|−|−|−|✔|STAB='''}}
+{{Moveentry/6|0875|Eiscue|type=Ice|2|Water 1|Field||||✔||✔|STAB='''}}
+{{Moveentry/6|0974|Cetoddle|type=Ice|1|Field|Field||||||✔|STAB='''}}
+{{Movefoot|Ice|6}}
+
+===Form change===
+====[[Generation VI]]====
+{{Movehead/Special|Ice}}
+{{Moveentry/1|025|formsig=Be|Pikachu|type=Electric|1|No Eggs Discovered|No Eggs Discovered|Upon changing into the [[Cosplay Pikachu|Belle]] costume{{sup/6|ORAS}}|form=[[Cosplay Pikachu|Belle]]}}
+{{Movefoot|Ice|1}}
+
+===Special move===
+====[[Generation VIII]]====
+{{Movehead/Special|Ice}}
+{{Moveentry/1|0875|Eiscue|type=Ice|2|Water 1|Field|{{DL|Watchtower Lair|★And603}} Eiscue|STAB='''}}
+{{Movefoot|Ice|1}}
+
+===By {{pkmn2|event}}===
+====[[Generation VI]]====
+{{Movehead/Special|Ice}}
+{{Moveentry/1|0473|Mamoswine|type=Ice|type2=Ground|1|Field|Field|{{DL|List of local event Pokémon distributions in Generation VI|Arash Ommati's Mamoswine}}|STAB='''}}
+{{Movefoot|Ice|1}}
+
+==In other games==
+==={{g|Mystery Dungeon series}}===
+Icicle Crash deals damage and may make the enemy {{DL|Status condition (Mystery Dungeon)|flinch}}. 
+
+{{MDMoveheader|type=ice}}
+{{MDMoveRow|game=GTI|pow=17|powmax=99|pp=13|ppmax=50|acc=85%|accmax=98%|range=Front|target=Enemy|cuts=No}}
+{{MDMoveRow|game=SMD|pow=17|powmax=99|pp=13|ppmax=30|acc=85%|accmax=98%|range=Front|target=Enemy|cuts=No}}
+{{MDMovefoot|type=ice|GTI=yes|SMD=yes|RTDX=yes}}
+
+===[[Pokémon Conquest]]===
+{{Conquestmove
+|type=Ice
+|grid={{Conquestmove/Grid/columns|dist=1}}
+|stars=4
+|pow=45
+|acc=90%
+|eff=Has a 30% chance of causing the target to flinch.
+|users={{CSP|614|Beartic}}
+}}
+
+==={{g|Rumble Rush}}===
+{{RumbleRushPhysicalAttack|move=Icicle Crash|type=Ice
+|stars=4
+|pow=53.19283
+|charge=0.74
+|range=Circular (ranged)
+|hits=1
+|projectiles=1
+|crit=1.5
+|effect=May flinch the foe}}
+
+===[[Pokémon Masters EX]]===
+{| class="roundy" style="margin:auto; background:#{{ice color}}; border:3px solid #{{ice color dark}}; text-align:center; width:80%"
+|- style="background: #{{ice color light}}"
+! style="{{roundytl|5px}}" | Name
+! {{color2|000|Damage category|Category}}
+! Move gauge cost
+! MP<br>(uses)
+! Base {{color2|000|power}}
+! Max {{color2|000|power}}
+! {{color2|000|Accuracy}}
+! Target
+! Effect tag
+! Description
+! style="{{roundytr|5px}}" | Playable {{color2|000|Sync pair|sync pair(s)}}
+|- style="background:#fff"
+| rowspan=2 |Icicle Crash
+| rowspan=2 align="center" style="background:#{{Physical color}}"|{{color2|{{physical textcolor}}|Physical move|Physical}}
+|3
+| rowspan=2 |—
+|105
+|126
+| rowspan=2 |90%
+| rowspan=2 |An opponent
+| rowspan=2 |—
+| rowspan=2 |Has a chance (30%) of making the target flinch. 
+|{{sync|Steven|Sandslash|Summer 2020}}<hr>{{sync|Nessa|Eiscue|Holiday 2021}}
+|- style="background:#{{white color light}}"
+|4
+|157
+|189
+|{{sync|Candice|Darmanitan|Palentine's 2024}}
+|- style="background:#{{ice color light}}"
+! colspan=12 |{{color2|000|Buddy move}}
+|- style="background:#fff"
+|Fighting Spirit Icicle Crash
+{{statustable|Physical}}
+|1
+|2
+|180
+|216
+|100%
+|An opponent
+|Quick Move
+|'''Activation Condition:''' When the user's Pokémon uses a move once.
+
+'''Deactivation Condition:''' When this move is used.
+
+The more times Icicle Crash is used before this move is used (up to a maximum of four times), the greater the power of this attack. (This attack powers up by 50% every time the user's Icicle Crash is used. The maximum power-up is 200%.) After using this attack, its power returns to normal. Makes the target flinch.
+|{{sync|Candice|Darmanitan|Palentine's 2024}}
+|- style="background:#{{ice color dark}}"
+! colspan=12 |{{color2|fff|Sync move|Sync move}}
+|- style="background: #{{ice color light}}"
+!Name
+!{{color2|000|Damage category|Category}}
+!colspan="2" |State
+!Base {{color2|000|power}}
+!Max {{color2|000|power}}
+!colspan="2" |Target
+!Effect tag
+!Description
+!Playable {{color2|000|sync pair}}
+|- style="background:#fff"
+| style="{{roundybl|5px}}" rowspan=3 | Too Cool Icicle Crash
+{{statustable|Physical}}
+| colspan=2 | Default<hr>'''6★ EX'''
+| 250
+| 300
+| colspan=2 | An opponent<hr>'''All opponents'''
+| —
+| No additional effect.
+| style="{{roundybr|5px}}" rowspan=3 | {{sync|Steven|Sandslash|Summer 2020}}
+|}
+Notes:
+* '''Icicle Crash:'''
+** Description prior to Version 2.10.0 (from June 28, 2021): Has a moderate chance of making the target flinch.
+
+==={{g|UNITE}}===
+In Pokémon UNITE, Icicle Crash is {{p|Mamoswine}}'s first move. It is obtained by evolving into {{p|Piloswine}} at level 5 and upgrading {{m|Ice Shard}} into it instead of {{m|Ice Fang}}. The user drops icicles on the designated location, dealing damage to enemies in the area of effect and decreasing their movement speed for a short time. The final icicle shatters after a set amount of time or when hit by the user's other moves or boosted attacks, dealing damage to enemies in the area of effect and leaving them frozen. If the icicle is shattered by Tackle or High Horsepower, the ground is covered in ice, which increases the movement speed of allies that run over it. At level 11, the final icicle leaves enemies hit unable to act for a short time. 
+===Description===
+{{movedesc|ice}}
+{{movedescentry|{{gameabbrevss|Conq}}|The user attacks by harshly dropping an icicle onto the target. It may also make the target flinch.}}
+{{movedescentry|{{gameabbrevmd|GTI}}|It damages an enemy. It could also cause the Cringe status condition, which makes the enemy unable to attack or use moves.}}
+{{movedescentry|{{gameabbrevmd|SMD}}|It damages an enemy. It could also make the enemy flinch.}}
+|}
+|}{{left clear}}
+
+==In animation==
+===Pokémon animated series===
+{{moveanime|type=ice|exp=yes|gen=The user attacks by crashing large icicles onto the target.|image3=Georgia Beartic Icicle Crash 1.png|image3p=Beartic|image1=Georgia Beartic Icicle Crash 2.png|image1p=Striking the opponent|image2=Indi Darmanitan Icicle Crash 1.png|image2p=Galarian Darmanitan|image4=Indi Darmanitan Icicle Crash 2.png|image4p=Firing}}
+{{movep|ms=614|type=ice|pkmn=Beartic|method=Beartic takes in a deep breath and releases a wind with light blue sparkles from its mouth into the air. Then, small clumps of ice form in the wind and grow longer and larger, forming into sharp icicles. The icicles then rain down onto the opponent.}}
+{{movemid|type=ice|user=Georgia's Beartic|startcode=BW033|startname=Iris and Excadrill Against the Dragon Buster!|notes=Debut}}
+{{movemid|type=ice|user=Brycen|user1=Brycen's Beartic|startcode=BW079|startname=Caution: Icy Battle Conditions!}}
+{{movemid|type=ice|user=Rocket Prize Master|user1=Team Rocket's Beartic|startcode=JN008|startname=The Sinnoh Iceberg Race!}}
+{{movep|ms=025Be|type=ice|pkmn=Pikachu|method=Pikachu Belle releases a wind with light blue sparkles from its mouth into the air. Then, small clumps of ice form in the wind and grow longer and larger, forming into sharp icicles. The icicles then rain down onto the opponent.}}
+{{movemid|type=ice|user=Cosplay Pikachu|user1=Pikachu Belle|startcode=XY105|notes={{color2|000|Poké TV}} segment}}
+{{movep|type=ice|ms=555G|pkmn=Darmanitan|method=Galarian Darmanitan creates a pink ball of cold air in front of its mouth, causing multiple sharp blue or pink icicles to appear over the opponent and rain down on them.}}
+{{movemid|type=ice|user=Sterling|user1=Sterling's Darmanitan|startcode=JN113|startname=Chasing to the Finish!}}
+{{movemid|type=ice|user=Indi|user1=Indi's Darmanitan|startcode=HZ106|startname=The Dusk Ball That Wouldn't Open|notes=Affected by {{color2|000|Laquium}}}}
+{{movep|type=ice|ms=555GZ|pkmn=Darmanitan|method=Zen Mode Galarian Darmanitan causes multiple sharp pink icicles to appear over the opponent and rain down on them.}}
+{{movebtm|type=ice|user=Indi|user1=Indi's Darmanitan|startcode=HZ107|startname=Friends as Two, Me and You|notes=Affected by {{color2|000|Laquium}}}}
+
+===Animated Pokédex===
+{{moveanime|type=ice|exp=yes|gen=The user attacks by crashing large icicles onto the target.}}
+{{movep|ms=614|type=ice|pkmn=Beartic|method=Beartic takes in a deep breath and releases a wind with light blue sparkles from its mouth into the air. Then, small clumps of ice form in the wind and grow longer and larger, forming into sharp icicles. The icicles then rain down on the opponent.}}
+{{movebtm|type=ice|user=Wild Pokémon|user1=A wild Beartic|startcode=Animated Pokédex|startname=Eiscue|notes=Debut}}
+
+==In the manga==
+===Pokémon Adventures===
+{{movemanga|type=ice|exp=yes|gen=The user creates icicles in the air that smash onto the opponent.|image1=Team Plasma Beartic Icicle Crash Adventures 1.png|image1p=Beartic|image2=Team Plasma Beartic Icicle Crash Adventures 2.png|image2p=Being hit}}
+{{movep|type=ice|ms=614|pkmn=Beartic|method=Beartic shoots out a blast of cold air from its mouth that quickly freezes into a road of ice. Then, icicles shoot out from the ice onto the opponent.}}
+{{movebtmManga|type=ice|user=Team Plasma Grunt (Trainer class)|user1=Team Plasma Grunts' two Beartic|startcode=PS491|startname=Fight in a Cold Climate|notes=Debut}}
+
+==In other generations==
+===Core series games===
+{{Movegen|
+type=Ice|
+genV=Icicle Crash V|
+genVI=Icicle Crash VI|
+genVI2=Icicle Crash VI 2|
+genVII=Icicle Crash VII|
+genVII2=Icicle Crash VII 2
+}}
+{{Movegen|
+type=Ice|
+|genVIII=Icicle Crash VIII
+|genVIII2=Icicle Crash VIII 2
+|LA=Icicle Crash LA
+|ZA=Icicle Crash ZA
+|ZA2=Icicle Crash ZA 2
+}}
+
+===Spin-off series games===
+{{Movegen|
+type=Ice|
+PMDGTI=Icicle Crash PMD GTI|
+PSMD=Icicle Crash PSMD
+}}
+==In other languages==
+{{Langtable|color={{ice color}}|bordercolor={{ice color light}}
+|zh_yue=冰柱墜擊 ''{{tt|Bīngchyúh Jeuihgīk|Icicle Crash}}'' {{tt|*|Games}}<br>掉落冰柱 ''{{tt|Diuhlohk Bīngchyúh|Icicle Drop}}'' {{tt|*|Pre-Gen VII Media}}
+|zh_cmn=冰柱墜擊 / 冰柱坠击 ''{{tt|Bīngzhù Zhuìjí / Bīngzhù Zhuìjī|Icicle Crash}}'' {{tt|*|Games}}<br>掉落冰柱 ''{{tt|Diàoluò Bīngzhù|Icicle Drop}}'' {{tt|*|Pre-Gen VII Media}}
+|nl=IJspegelkogel
+|fr=Chute Glace
+|de=Eiszapfhagel
+|it=Scagliagelo
+|ko=고드름떨구기 ''{{tt|Godeureumtteolgugi|Icicle Dropping}}''
+|pl=Atak Sopli
+|pt_br=Choque de Gelo (games, [[JN008]]–present, manga)<br>Choque de Icelo (TCG)<br>Estaca de Gelo ([[BW033]]–[[BW079]])
+|pt_eu=Chuva de Gelo
+|es_la=Carámbano
+|es_eu=Chuzos
+|vi=Giáng Trụ Đá
+|ca=Caramells
+}}
+
+{{Project Moves and Abilities notice}}
+
+[[Category:Moves that can cause flinching]]
+[[Category:Moves usable in Pokémon Sword and Shield]]
+[[Category:Moves in Pokémon Legends: Arceus]]
+[[Category:Moves usable in Pokémon Scarlet and Violet]]
+[[Category:Moves in Pokémon Legends: Z-A]]
+
+[[de:Eiszapfhagel]]
+[[es:Carámbano/Chuzos]]
+[[fr:Chute Glace]]
+[[it:Scagliagelo]]
+[[ja:つららおとし]]
+[[zh:冰柱坠击（招式）]]

@@ -1,0 +1,687 @@
+{{MoveInfobox
+|n=447
+|name=Grass Knot
+|jname=くさむすび 
+|jtrans=Grass Knot
+|jtranslit=Kusa Musubi
+|gameimage=Grass Knot IX.png
+|gameimagewidth=300
+|type=Grass
+|damagecategory=Special
+|basepp=20
+|maxpp=32
+|power=Varies
+|accuracy=100
+|bdesc=???
+|category=Clever
+|appeal=0
+|jam=0
+|cdesc=
+|appealsc=2
+|scdesc=Earn +2 if the Judge's Voltage goes up.
+|category6= Cute
+|appeal6=1
+|cdesc6=Works better the later it is used in a turn.
+|pokefordex=Grass%20Knot
+|touches=yes
+|protect=yes
+|magiccoat=no
+|snatch=no
+|mirrormove=yes
+|kingsrock=yes
+|flag7=yes
+|flag8=no
+|sound=no
+|tm4=yes
+|tm#4=86
+|tm5=yes
+|tm#5=86
+|tm6=yes
+|tm#6=86
+|tm7=yes
+|tm#7=86
+|tr8=yes
+|tr#8=77
+|tm9=yes
+|tm#9=081
+|tmbdsp=yes
+|tm#bdsp=86
+|na=no
+|gen=IV
+|target=anyadjacent
+|footnotes=
+}}
+'''Grass Knot''' (Japanese: '''くさむすび''' ''Grass Knot'') is a damage-dealing {{type|Grass}} [[move]] introduced in [[Generation IV]] that deals varying damage.
+
+It is:
+* [[TM86]] from Generation IV to {{g|Ultra Sun and Ultra Moon}}, and in {{g|Brilliant Diamond and Shining Pearl}}.
+* [[TR77]] in [[Pokémon Sword and Shield]].
+* [[TM081]] in {{g|Scarlet and Violet}}.
+
+It may be a counterpart to the move {{m|Low Kick}}.
+
+==Effect==
+Grass Knot doesn't have a standard base power; rather, its damage is calculated based on the [[weight]] of the target. Grass Knot's power is calculated as follows (note that the game uses weight in kilograms instead of pounds for all the cutoffs).
+
+{| class="roundtable" style="background: #{{Grass color light}}; border: 3px solid #{{Grass color}}"
+! colspan=2 | Target's weight
+! rowspan=2 | Power
+|-
+! metric
+! US customary
+|-
+| 0.1 - 9.9&nbsp;kg
+| 0.1 - 21.8&nbsp;lbs.
+| class="c" | 20
+|-
+| 10.0 - 24.9&nbsp;kg
+| 21.9 - 54.9&nbsp;lbs.
+| class="c" | 40
+|-
+| 25.0 - 49.9&nbsp;kg
+| 55.1 - 110.0&nbsp;lbs.
+| class="c" | 60
+|-
+| 50.0 - 99.9&nbsp;kg
+| 110.2 - 220.2&nbsp;lbs.
+| class="c" | 80
+|-
+| 100.0 - 199.9&nbsp;kg
+| 220.4 - 440.7&nbsp;lbs.
+| class="c" | 100
+|-
+| 200.0&nbsp;kg or more
+| 440.9&nbsp;lbs. or more
+| class="c" | 120
+|}
+
+In games where height and weight are variable between members of the same species, Grass Knot ignores those variations and considers only the base weight given to the target's species in the Pokédex. Grass Knot will fail if it is used on a [[Dynamax]]ed target.
+
+==Description==
+{{movedesc|Grass}}
+{{movedescentry|{{gameabbrev4|DPPtHGSS}}{{gameabbrevss|PBR}}|The user snares the foe with grass and trips it. The heavier the foe, the greater the damage.}}
+{{movedescentry|{{gameabbrev5|BWB2W2}}|The user snares the target with grass and trips it. The heavier the target, the greater the damage.}}
+{{movedescentry|{{gameabbrev6|XYORAS}}<br>{{gameabbrev7|SMUSUMPE}}<br>{{gameabbrev8|SwShBDSPLA}}<br>{{gameabbrev9|SV}}|The user snares the target with grass and trips it. The heavier the target, the greater the move's power.}}
+|}
+|}{{left clear}}
+
+==Learnset==
+===By [[Level|leveling up]]===
+{{Movehead/Games|Grass|g1=none|g2=none|g3=none|g4=none|g7=1|g7g={{gameabbrev7|SMUSUM}}|g8=2|g9=1|g9g={{gameabbrev9|SV}}}}
+{{Moveentry/6|0455|Carnivine|type=Grass|1|Grass|Grass|−|−|−||27|STAB='''}}
+{{Moveentry/6|0511|Pansage|type=Grass|1|Field|Field|34|34|34||STAB='''}}
+{{Moveentry/6|0671|Florges|type=Fairy|1|Fairy|Fairy|form=All forms||1|1|||1}}
+{{Moveentry/6|0764|Comfey|type=Fairy|1|Grass|Grass|||34|24||24}}
+{{Moveentry/6|0893|Zarude|type=Dark|type2=Grass|1|No Eggs Discovered|No Eggs Discovered|form=All forms||||36||36|STAB='''}}
+{{Movefoot|Grass|6}}
+
+===By [[TM]]/[[TR]]===
+{{Movehead/TMGames|Grass|g1=none|g2=none|g3=none
+|g4tm=86
+|g5tm=86
+|g6tm=86
+|g7=1|g7tm=86|g7g={{gameabbrev7|SMUSUM}}
+|g8=2|g8tm-1=77|tmhm8-1=TR|g8g-1={{gameabbrev8|SwSh}}|g8tm-2=86|g8g-2={{gameabbrev8|BDSP}}
+|g9=1|g9tm=081|g9g={{gameabbrev9|SV}}}}
+{{Moveentry/7|0001|Bulbasaur|type=Grass|type2=Poison|2|Monster|Grass|✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/7|0002|Ivysaur|type=Grass|type2=Poison|2|Monster|Grass|✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/7|0003|Venusaur|type=Grass|type2=Poison|2|Monster|Grass|✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/7|0019|Rattata|type=Normal|1|Field|Field|✔|✔|✔|✔||✔|}}
+{{Moveentry/7|0019|formsig=A|Rattata|type=Dark|type2=Normal|1|Field|Field|form=Alolan Form||||✔|||}}
+{{Moveentry/7|0020|Raticate|type=Normal|1|Field|Field|✔|✔|✔|✔||✔|}}
+{{Moveentry/7|0020|formsig=A|Raticate|type=Dark|type2=Normal|1|Field|Field|form=Alolan Form||||✔|||}}
+{{Moveentry/7|0025|Pikachu|type=Electric|2|Field|Fairy|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0026|Raichu|type=Electric|2|Field|Fairy|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0026|formsig=A|Raichu|type=Electric|type2=Psychic|2|Field|Fairy|form=Alolan Form||||✔|✔||✔}}
+{{Moveentry/7|0035|Clefairy|type=Fairy|1|Fairy|Fairy|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0036|Clefable|type=Fairy|1|Fairy|Fairy|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0039|Jigglypuff|type=Normal|type2=Fairy|1|Fairy|Fairy|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0040|Wigglytuff|type=Normal|type2=Fairy|1|Fairy|Fairy|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0043|Oddish|type=Grass|type2=Poison|1|Grass|Grass|✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/7|0044|Gloom|type=Grass|type2=Poison|1|Grass|Grass|✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/7|0045|Vileplume|type=Grass|type2=Poison|1|Grass|Grass|✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/7|0046|Paras|type=Bug|type2=Grass|2|Bug|Grass|✔|✔|✔|✔||✔||STAB='''}}
+{{Moveentry/7|0047|Parasect|type=Bug|type2=Grass|2|Bug|Grass|✔|✔|✔|✔||✔||STAB='''}}
+{{Moveentry/7|0055|Golduck|type=Water|2|Water 1|Field|−|−|−|−|−|−|✔}}
+{{Moveentry/7|0063|Abra|type=Psychic|1|Human-Like|Human-Like|✔|✔|✔|✔|✔|✔|}}
+{{Moveentry/7|0064|Kadabra|type=Psychic|1|Human-Like|Human-Like|✔|✔|✔|✔|✔|✔|}}
+{{Moveentry/7|0065|Alakazam|type=Psychic|1|Human-Like|Human-Like|✔|✔|✔|✔|✔|✔|}}
+{{Moveentry/7|0069|Bellsprout|type=Grass|type2=Poison|1|Grass|Grass|✔|✔|✔|✔||✔|✔|STAB='''}}
+{{Moveentry/7|0070|Weepinbell|type=Grass|type2=Poison|1|Grass|Grass|✔|✔|✔|✔||✔|✔|STAB='''}}
+{{Moveentry/7|0071|Victreebel|type=Grass|type2=Poison|1|Grass|Grass|✔|✔|✔|✔||✔|✔|STAB='''}}
+{{Moveentry/7|0079|Slowpoke|type=Water|type2=Psychic|2|Monster|Water 1|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0079|formsig=G|Slowpoke|type=Psychic|2|Monster|Water 1|form=Galarian Form|||||✔||✔}}
+{{Moveentry/7|0080|Slowbro|type=Water|type2=Psychic|2|Monster|Water 1|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0080|formsig=G|Slowbro|type=Poison|type2=Psychic|2|Monster|Water 1|form=Galarian Form|||||✔||✔}}
+{{Moveentry/7|0096|Drowzee|type=Psychic|1|Human-Like|Human-Like|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/7|0097|Hypno|type=Psychic|1|Human-Like|Human-Like|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/7|0100|formsig=H|Voltorb|type=Electric|type2=Grass|1|Mineral|Mineral|form=Hisuian Form|||||||✔|STAB='''}}
+{{Moveentry/7|0101|formsig=H|Electrode|type=Electric|type2=Grass|1|Mineral|Mineral|form=Hisuian Form|||||||✔|STAB='''}}
+{{Moveentry/7|0102|Exeggcute|type=Grass|type2=Psychic|1|Grass|Grass|✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/7|0103|Exeggutor|type=Grass|type2=Psychic|1|Grass|Grass|✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/7|0103|formsig=A|Exeggutor|type=Grass|type2=Dragon|1|Grass|Grass|form=Alolan Form||||✔|✔||✔|STAB='''}}
+{{Moveentry/7|0113|Chansey|type=Normal|1|Fairy|Fairy|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0114|Tangela|type=Grass|1|Grass|Grass|✔|✔|✔|✔|✔|✔||STAB='''}}
+{{Moveentry/7|0121|Starmie|type=Water|type2=Psychic|1|Water 3|Water 3|✔|✔|✔|✔|✔|✔|}}
+{{Moveentry/7|0122|Mr. Mime|type=Psychic|type2=Fairy|1|Human-Like|Human-Like|✔|✔|✔|✔|✔|✔|}}
+{{Moveentry/7|0122|formsig=G|Mr. Mime|type=Ice|type2=Psychic|1|Human-Like|Human-Like|form=Galarian Form|||||✔||}}
+{{Moveentry/7|0124|Jynx|type=Ice|type2=Psychic|1|Human-Like|Human-Like|✔|✔|✔|✔|✔|✔|}}
+{{Moveentry/7|0150|Mewtwo|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0151|Mew|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0152|Chikorita|type=Grass|2|Monster|Grass|✔|✔|✔|✔||✔|✔|STAB='''}}
+{{Moveentry/7|0153|Bayleef|type=Grass|2|Monster|Grass|✔|✔|✔|✔||✔|✔|STAB='''}}
+{{Moveentry/7|0154|Meganium|type=Grass|2|Monster|Grass|✔|✔|✔|✔||✔|✔|STAB='''}}
+{{Moveentry/7|0161|Sentret|type=Normal|1|Field|Field|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/7|0162|Furret|type=Normal|1|Field|Field|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/7|0172|Pichu|type=Electric|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0173|Cleffa|type=Fairy|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0174|Igglybuff|type=Normal|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0175|Togepi|type=Fairy|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔|}}
+{{Moveentry/7|0176|Togetic|type=Fairy|type2=Flying|2|Flying|Fairy|✔|✔|✔|✔|✔|✔|}}
+{{Moveentry/7|0177|Natu|type=Psychic|type2=Flying|1|Flying|Flying|✔|✔|✔|✔|✔|✔|}}
+{{Moveentry/7|0178|Xatu|type=Psychic|type2=Flying|1|Flying|Flying|✔|✔|✔|✔|✔|✔|}}
+{{Moveentry/7|0182|Bellossom|type=Grass|1|Grass|Grass|✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/7|0183|Marill|type=Water|type2=Fairy|2|Water 1|Fairy|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0184|Azumarill|type=Water|type2=Fairy|2|Water 1|Fairy|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0185|Sudowoodo|type=Rock|1|Mineral|Mineral|−|−|−|−|−|−|✔}}
+{{Moveentry/7|0187|Hoppip|type=Grass|type2=Flying|2|Fairy|Grass|✔|✔|✔|✔||✔|✔|STAB='''}}
+{{Moveentry/7|0188|Skiploom|type=Grass|type2=Flying|2|Fairy|Grass|✔|✔|✔|✔||✔|✔|STAB='''}}
+{{Moveentry/7|0189|Jumpluff|type=Grass|type2=Flying|2|Fairy|Grass|✔|✔|✔|✔||✔|✔|STAB='''}}
+{{Moveentry/7|0190|Aipom|type=Normal|1|Field|Field|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/7|0191|Sunkern|type=Grass|1|Grass|Grass|✔|✔|✔|✔||✔|✔|STAB='''}}
+{{Moveentry/7|0192|Sunflora|type=Grass|1|Grass|Grass|✔|✔|✔|✔||✔|✔|STAB='''}}
+{{Moveentry/7|0196|Espeon|type=Psychic|1|Field|Field|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0199|Slowking|type=Water|type2=Psychic|2|Monster|Water 1|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0199|formsig=G|Slowking|type=Poison|type2=Psychic|2|Monster|Water 1|form=Galarian Form|||||✔||✔}}
+{{Moveentry/7|0200|Misdreavus|type=Ghost|1|Amorphous|Amorphous|−|−|−|−||−|✔}}
+{{Moveentry/7|0203|Girafarig|type=Normal|type2=Psychic|1|Field|Field|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/7|0215|formsig=H|Sneasel|type=Fighting|type2=Poison|1|Field|Field|form=Hisuian Form|||||||✔}}
+{{Moveentry/7|0238|Smoochum|type=Ice|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔|}}
+{{Moveentry/7|0242|Blissey|type=Normal|1|Fairy|Fairy|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0251|Celebi|type=Psychic|type2=Grass|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔||STAB='''}}
+{{Moveentry/7|0252|Treecko|type=Grass|2|Monster|Dragon|✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/7|0253|Grovyle|type=Grass|2|Monster|Dragon|✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/7|0254|Sceptile|type=Grass|2|Monster|Dragon|✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/7|0263|Zigzagoon|type=Normal|1|Field|Field|✔|✔|✔|✔|✔|✔|}}
+{{Moveentry/7|0263|formsig=G|Zigzagoon|type=Dark|type2=Normal|1|Field|Field|form=Galarian Form|||||✔||}}
+{{Moveentry/7|0264|Linoone|type=Normal|1|Field|Field|✔|✔|✔|✔|✔|✔|}}
+{{Moveentry/7|0264|formsig=G|Linoone|type=Dark|type2=Normal|1|Field|Field|form=Galarian Form|||||✔||}}
+{{Moveentry/7|0270|Lotad|type=Water|type2=Grass|2|Water 1|Grass|✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/7|0271|Lombre|type=Water|type2=Grass|2|Water 1|Grass|✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/7|0272|Ludicolo|type=Water|type2=Grass|2|Water 1|Grass|✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/7|0273|Seedot|type=Grass|2|Field|Grass|✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/7|0274|Nuzleaf|type=Grass|type2=Dark|2|Field|Grass|✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/7|0275|Shiftry|type=Grass|type2=Dark|2|Field|Grass|✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/7|0280|Ralts|type=Psychic|type2=Fairy|2|Human-Like|Amorphous|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0281|Kirlia|type=Psychic|type2=Fairy|2|Human-Like|Amorphous|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0282|Gardevoir|type=Psychic|type2=Fairy|2|Human-Like|Amorphous|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0285|Shroomish|type=Grass|2|Fairy|Grass|✔|✔|✔|✔||✔|✔|STAB='''}}
+{{Moveentry/7|0286|Breloom|type=Grass|type2=Fighting|2|Fairy|Grass|✔|✔|✔|✔||✔|✔|STAB='''}}
+{{Moveentry/7|0300|Skitty|type=Normal|2|Field|Fairy|✔|✔|✔|✔||✔|}}
+{{Moveentry/7|0301|Delcatty|type=Normal|2|Field|Fairy|✔|✔|✔|✔||✔|}}
+{{Moveentry/7|0303|Mawile|type=Steel|type2=Fairy|2|Field|Fairy|✔|✔|✔|✔|✔|✔|}}
+{{Moveentry/7|0307|Meditite|type=Fighting|type2=Psychic|1|Human-Like|Human-Like|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/7|0308|Medicham|type=Fighting|type2=Psychic|1|Human-Like|Human-Like|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/7|0311|Plusle|type=Electric|1|Fairy|Fairy|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/7|0312|Minun|type=Electric|1|Fairy|Fairy|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/7|0315|Roselia|type=Grass|type2=Poison|2|Fairy|Grass|✔|✔|✔|✔|✔|✔||STAB='''}}
+{{Moveentry/7|0325|Spoink|type=Psychic|1|Field|Field|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/7|0326|Grumpig|type=Psychic|1|Field|Field|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/7|0331|Cacnea|type=Grass|2|Grass|Human-Like|✔|✔|✔|✔||✔|✔|STAB='''}}
+{{Moveentry/7|0332|Cacturne|type=Grass|type2=Dark|2|Grass|Human-Like|✔|✔|✔|✔||✔|✔|STAB='''}}
+{{Moveentry/7|0335|Zangoose|type=Normal|1|Field|Field|−|−|−|−||−|✔}}
+{{Moveentry/7|0337|Lunatone|type=Rock|type2=Psychic|1|Mineral|Mineral|✔|✔|✔|✔|✔|✔|}}
+{{Moveentry/7|0338|Solrock|type=Rock|type2=Psychic|1|Mineral|Mineral|✔|✔|✔|✔|✔|✔|}}
+{{Moveentry/7|0343|Baltoy|type=Ground|type2=Psychic|1|Mineral|Mineral|✔|✔|✔|✔|✔|✔|}}
+{{Moveentry/7|0344|Claydol|type=Ground|type2=Psychic|1|Mineral|Mineral|✔|✔|✔|✔|✔|✔|}}
+{{Moveentry/7|0345|Lileep|type=Rock|type2=Grass|1|Water 3|Water 3|✔|✔|✔|✔|✔|✔||STAB='''}}
+{{Moveentry/7|0346|Cradily|type=Rock|type2=Grass|1|Water 3|Water 3|✔|✔|✔|✔|✔|✔||STAB='''}}
+{{Moveentry/7|0352|Kecleon|type=Normal|1|Field|Field|✔|✔|✔|✔||✔|}}
+{{Moveentry/7|0357|Tropius|type=Grass|type2=Flying|2|Monster|Grass|✔|✔|✔|✔||✔|✔|STAB='''}}
+{{Moveentry/7|0358|Chimecho|type=Psychic|1|Amorphous|Amorphous|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/7|0375|Metang|type=Steel|type2=Psychic|1|Mineral|Mineral|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0376|Metagross|type=Steel|type2=Psychic|1|Mineral|Mineral|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0380|Latias|type=Dragon|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0381|Latios|type=Dragon|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0385|Jirachi|type=Steel|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0386|Deoxys|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|form=All forms|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/7|0387|Turtwig|type=Grass|2|Monster|Grass|✔|✔|✔|✔||✔|✔|STAB='''}}
+{{Moveentry/7|0388|Grotle|type=Grass|2|Monster|Grass|✔|✔|✔|✔||✔|✔|STAB='''}}
+{{Moveentry/7|0389|Torterra|type=Grass|type2=Ground|2|Monster|Grass|✔|✔|✔|✔||✔|✔|STAB='''}}
+{{Moveentry/7|0390|Chimchar|type=Fire|2|Field|Human-Like|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/7|0391|Monferno|type=Fire|type2=Fighting|2|Field|Human-Like|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/7|0392|Infernape|type=Fire|type2=Fighting|2|Field|Human-Like|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/7|0393|Piplup|type=Water|2|Water 1|Field|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/7|0394|Prinplup|type=Water|2|Water 1|Field|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/7|0395|Empoleon|type=Water|type2=Steel|2|Water 1|Field|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/7|0399|Bidoof|type=Normal|2|Water 1|Field|✔|✔|✔|✔||✔|}}
+{{Moveentry/7|0400|Bibarel|type=Normal|type2=Water|2|Water 1|Field|✔|✔|✔|✔||✔|}}
+{{Moveentry/7|0406|Budew|type=Grass|type2=Poison|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔||STAB='''}}
+{{Moveentry/7|0407|Roserade|type=Grass|type2=Poison|2|Fairy|Grass|✔|✔|✔|✔|✔|✔||STAB='''}}
+{{Moveentry/7|0413|Wormadam|type=Bug|type2=Grass|1|Bug|Bug|✔|✔|✔|✔||✔||STAB='''|form=Plant Cloak}}
+{{Moveentry/7|0417|Pachirisu|type=Electric|2|Field|Fairy|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/7|0420|Cherubi|type=Grass|2|Fairy|Grass|✔|✔|✔|✔|✔|✔||STAB='''}}
+{{Moveentry/7|0421|Cherrim|type=Grass|2|Fairy|Grass|✔|✔|✔|✔|✔|✔||STAB='''}}
+{{Moveentry/7|0424|Ambipom|type=Normal|1|Field|Field|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/7|0427|Buneary|type=Normal|2|Field|Human-Like|✔|✔|✔|✔|✔|✔|}}
+{{Moveentry/7|0428|Lopunny|type=Normal|2|Field|Human-Like|✔|✔|✔|✔|✔|✔|}}
+{{Moveentry/7|0429|Mismagius|type=Ghost|1|Amorphous|Amorphous|−|−|−|−||−|✔}}
+{{Moveentry/7|0433|Chingling|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/7|0436|Bronzor|type=Steel|type2=Psychic|1|Mineral|Mineral|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0437|Bronzong|type=Steel|type2=Psychic|1|Mineral|Mineral|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0438|Bonsly|type=Rock|1|No Eggs Discovered|No Eggs Discovered|−|−|−|−|−|−|✔}}
+{{Moveentry/7|0439|Mime Jr.|type=Psychic|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔|}}
+{{Moveentry/7|0440|Happiny|type=Normal|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0455|Carnivine|type=Grass|1|Grass|Grass|✔|✔|✔|✔||✔||STAB='''}}
+{{Moveentry/7|0459|Snover|type=Grass|type2=Ice|2|Monster|Grass|✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/7|0460|Abomasnow|type=Grass|type2=Ice|2|Monster|Grass|✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/7|0465|Tangrowth|type=Grass|1|Grass|Grass|✔|✔|✔|✔|✔|✔||STAB='''}}
+{{Moveentry/7|0468|Togekiss|type=Fairy|type2=Flying|2|Flying|Fairy|✔|✔|✔|✔|✔|✔|}}
+{{Moveentry/7|0470|Leafeon|type=Grass|1|Field|Field|✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/7|0475|Gallade|type=Psychic|type2=Fighting|2|Human-Like|Amorphous|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0480|Uxie|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0481|Mesprit|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0482|Azelf|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0488|Cresselia|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/7|0489|Phione|type=Water|2|Water 1|Fairy|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/7|0490|Manaphy|type=Water|2|Water 1|Fairy|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/7|0492|Shaymin|type=Grass|1|No Eggs Discovered|No Eggs Discovered|form=All available forms|✔|✔|✔|✔||✔|✔|STAB='''}}
+{{Moveentry/7|0493|Arceus|type=Normal|1|No Eggs Discovered|No Eggs Discovered|form=All available forms|✔|✔|✔|✔||✔|✔|STAB=''}}
+{{Moveentry/7|0494|Victini|type=Psychic|type2=Fire|1|No Eggs Discovered|No Eggs Discovered||✔|✔|✔|✔||}}
+{{Moveentry/7|0495|Snivy|type=Grass|2|Field|Grass||✔|✔|✔|||✔|STAB='''}}
+{{Moveentry/7|0496|Servine|type=Grass|2|Field|Grass||✔|✔|✔|||✔|STAB='''}}
+{{Moveentry/7|0497|Serperior|type=Grass|2|Field|Grass||✔|✔|✔|||✔|STAB='''}}
+{{Moveentry/7|0498|Tepig|type=Fire|1|Field|Field||✔|✔|✔|||✔}}
+{{Moveentry/7|0499|Pignite|type=Fire|type2=Fighting|1|Field|Field||✔|✔|✔|||✔}}
+{{Moveentry/7|0500|Emboar|type=Fire|type2=Fighting|1|Field|Field||✔|✔|✔|||✔}}
+{{Moveentry/7|0501|Oshawott|type=Water|1|Field|Field||✔|✔|✔|||✔}}
+{{Moveentry/7|0502|Dewott|type=Water|1|Field|Field||✔|✔|✔|||✔}}
+{{Moveentry/7|0503|Samurott|type=Water|1|Field|Field||✔|✔|✔|||✔}}
+{{Moveentry/7|0503|formsig=H|Samurott|type=Water|type2=Dark|1|Field|Field|form=Hisuian Form|||||||✔}}
+{{Moveentry/7|0504|Patrat|type=Normal|1|Field|Field||✔|✔|✔|||}}
+{{Moveentry/7|0505|Watchog|type=Normal|1|Field|Field||✔|✔|✔|||}}
+{{Moveentry/7|0509|Purrloin|type=Dark|1|Field|Field||✔|✔|✔|✔||}}
+{{Moveentry/7|0510|Liepard|type=Dark|1|Field|Field||✔|✔|✔|✔||}}
+{{Moveentry/7|0511|Pansage|type=Grass|1|Field|Field||✔|✔|✔||||STAB='''}}
+{{Moveentry/7|0512|Simisage|type=Grass|1|Field|Field||✔|✔|✔||||STAB='''}}
+{{Moveentry/7|0513|Pansear|type=Fire|1|Field|Field||✔|✔|✔|||}}
+{{Moveentry/7|0514|Simisear|type=Fire|1|Field|Field||✔|✔|✔|||}}
+{{Moveentry/7|0515|Panpour|type=Water|1|Field|Field||✔|✔|✔|||}}
+{{Moveentry/7|0516|Simipour|type=Water|1|Field|Field||✔|✔|✔|||}}
+{{Moveentry/7|0531|Audino|type=Normal|1|Fairy|Fairy||✔|✔|✔|✔||}}
+{{Moveentry/7|0532|Timburr|type=Fighting|1|Human-Like|Human-Like||✔|✔|✔|✔||✔}}
+{{Moveentry/7|0533|Gurdurr|type=Fighting|1|Human-Like|Human-Like||✔|✔|✔|✔||✔}}
+{{Moveentry/7|0534|Conkeldurr|type=Fighting|1|Human-Like|Human-Like||✔|✔|✔|✔||✔}}
+{{Moveentry/7|0537|Seismitoad|type=Water|type2=Ground|1|Water 1|Water 1||✔|✔|✔|✔||}}
+{{Moveentry/7|0538|Throh|type=Fighting|1|Human-Like|Human-Like||✔|✔|✔|✔||}}
+{{Moveentry/7|0539|Sawk|type=Fighting|1|Human-Like|Human-Like||✔|✔|✔|✔||}}
+{{Moveentry/7|0540|Sewaddle|type=Bug|type2=Grass|1|Bug|Bug||✔|✔|✔|||✔|STAB='''}}
+{{Moveentry/7|0541|Swadloon|type=Bug|type2=Grass|1|Bug|Bug||✔|✔|✔|||✔|STAB='''}}
+{{Moveentry/7|0542|Leavanny|type=Bug|type2=Grass|1|Bug|Bug||✔|✔|✔|||✔|STAB='''}}
+{{Moveentry/7|0546|Cottonee|type=Grass|type2=Fairy|2|Grass|Fairy||✔|✔|✔|✔||✔|STAB='''}}
+{{Moveentry/7|0547|Whimsicott|type=Grass|type2=Fairy|2|Grass|Fairy||✔|✔|✔|✔||✔|STAB='''}}
+{{Moveentry/7|0548|Petilil|type=Grass|1|Grass|Grass||✔|✔|✔|✔||✔|STAB='''}}
+{{Moveentry/7|0549|Lilligant|type=Grass|1|Grass|Grass||✔|✔|✔|✔||✔|STAB='''}}
+{{Moveentry/7|0549|formsig=H|Lilligant|type=Grass|type2=Fighting|1|Grass|Grass|form=Hisuian Form|||||||✔|STAB='''}}
+{{Moveentry/7|0551|Sandile|type=Ground|type2=Dark|1|Field|Field||−|−|−|−||✔}}
+{{Moveentry/7|0552|Krokorok|type=Ground|type2=Dark|1|Field|Field||✔|✔|✔|✔||✔}}
+{{Moveentry/7|0553|Krookodile|type=Ground|type2=Dark|1|Field|Field||✔|✔|✔|✔||✔}}
+{{Moveentry/7|0554|Darumaka|type=Fire|1|Field|Field||✔|✔|✔|✔||}}
+{{Moveentry/7|0554|formsig=G|Darumaka|type=Ice|1|Field|Field|form=Galarian Form|||||✔||}}
+{{Moveentry/7|0555|Darmanitan|type=Fire|1|Field|Field||✔|✔|✔|✔||}}
+{{Moveentry/7|0555|formsig=G|Darmanitan|type=Ice|1|Field|Field|form=Galarian Form|||||✔||}}
+{{Moveentry/7|0556|Maractus|type=Grass|1|Grass|Grass||✔|✔|✔|✔|||STAB='''}}
+{{Moveentry/7|0559|Scraggy|type=Dark|type2=Fighting|2|Field|Dragon||✔|✔|✔|✔||✔}}
+{{Moveentry/7|0560|Scrafty|type=Dark|type2=Fighting|2|Field|Dragon||✔|✔|✔|✔||✔}}
+{{Moveentry/7|0563|Cofagrigus|type=Ghost|2|Mineral|Amorphous||✔|✔|✔|✔||}}
+{{Moveentry/7|0570|Zorua|type=Dark|1|Field|Field||✔|✔|✔|✔||✔}}
+{{Moveentry/7|0571|Zoroark|type=Dark|1|Field|Field||✔|✔|✔|✔||✔}}
+{{Moveentry/7|0571|formsig=H|Zoroark|type=Normal|type2=Ghost|1|Field|Field|form=Hisuian Form|||||||✔}}
+{{Moveentry/7|0572|Minccino|type=Normal|1|Field|Field||✔|✔|✔|✔||✔}}
+{{Moveentry/7|0573|Cinccino|type=Normal|1|Field|Field||✔|✔|✔|✔||✔}}
+{{Moveentry/7|0574|Gothita|type=Psychic|1|Human-Like|Human-Like||✔|✔|✔|✔||✔}}
+{{Moveentry/7|0575|Gothorita|type=Psychic|1|Human-Like|Human-Like||✔|✔|✔|✔||✔}}
+{{Moveentry/7|0576|Gothitelle|type=Psychic|1|Human-Like|Human-Like||✔|✔|✔|✔||✔}}
+{{Moveentry/7|0579|Reuniclus|type=Psychic|1|Amorphous|Amorphous||✔|✔|✔|✔||✔}}
+{{Moveentry/7|0585|Deerling|type=Normal|type2=Grass|1|Field|Field|form=All forms||✔|✔|✔|||✔|STAB='''}}
+{{Moveentry/7|0586|Sawsbuck|type=Normal|type2=Grass|1|Field|Field|form=All forms||✔|✔|✔|||✔|STAB='''}}
+{{Moveentry/7|0590|Foongus|type=Grass|type2=Poison|1|Grass|Grass||✔|✔|✔|✔||✔|STAB='''}}
+{{Moveentry/7|0591|Amoonguss|type=Grass|type2=Poison|1|Grass|Grass||✔|✔|✔|✔||✔|STAB='''}}
+{{Moveentry/7|0598|Ferrothorn|type=Grass|type2=Steel|2|Grass|Mineral||✔|✔|✔|✔|||STAB='''}}
+{{Moveentry/7|0604|Eelektross|type=Electric|1|Amorphous|Amorphous||✔|✔|✔|||✔}}
+{{Moveentry/7|0612|Haxorus|type=Dragon|2|Monster|Dragon||✔|✔|✔|✔||✔}}
+{{Moveentry/7|0613|Cubchoo|type=Ice|1|Field|Field||✔|✔|✔|✔||✔}}
+{{Moveentry/7|0614|Beartic|type=Ice|1|Field|Field||✔|✔|✔|✔||✔}}
+{{Moveentry/7|0619|Mienfoo|type=Fighting|2|Field|Human-Like||✔|✔|✔|✔||✔}}
+{{Moveentry/7|0620|Mienshao|type=Fighting|2|Field|Human-Like||✔|✔|✔|✔||✔}}
+{{Moveentry/7|0622|Golett|type=Ground|type2=Ghost|1|Mineral|Mineral||✔|✔|✔|✔||✔}}
+{{Moveentry/7|0623|Golurk|type=Ground|type2=Ghost|1|Mineral|Mineral||✔|✔|✔|✔||✔}}
+{{Moveentry/7|0624|Pawniard|type=Dark|type2=Steel|1|Human-Like|Human-Like||✔|✔|✔|✔||✔}}
+{{Moveentry/7|0625|Bisharp|type=Dark|type2=Steel|1|Human-Like|Human-Like||✔|✔|✔|✔||✔}}
+{{Moveentry/7|0640|Virizion|type=Grass|type2=Fighting|1|No Eggs Discovered|No Eggs Discovered||✔|✔|✔|✔||✔|STAB='''}}
+{{Moveentry/7|0641|Tornadus|type=Flying|1|No Eggs Discovered|No Eggs Discovered|form=All available forms||✔|✔|✔|✔||✔}}
+{{Moveentry/7|0642|Thundurus|type=Electric|type2=Flying|1|No Eggs Discovered|No Eggs Discovered|form=All available forms||✔|✔|✔|✔||✔}}
+{{Moveentry/7|0645|Landorus|type=Ground|type2=Flying|1|No Eggs Discovered|No Eggs Discovered|form=All available forms||✔|✔|✔|✔||✔}}
+{{Moveentry/7|0648|Meloetta|type=Normal|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered||✔|✔|✔|||✔}}
+{{Moveentry/7|0650|Chespin|type=Grass|1|Field|Field|||✔|✔|||✔|STAB='''}}
+{{Moveentry/7|0651|Quilladin|type=Grass|1|Field|Field|||✔|✔|||✔|STAB='''}}
+{{Moveentry/7|0652|Chesnaught|type=Grass|type2=Fighting|1|Field|Field|||✔|✔|||✔|STAB='''}}
+{{Moveentry/7|0653|Fennekin|type=Fire|1|Field|Field|||✔|✔|||✔}}
+{{Moveentry/7|0654|Braixen|type=Fire|1|Field|Field|||✔|✔|||✔}}
+{{Moveentry/7|0655|Delphox|type=Fire|type2=Psychic|1|Field|Field|||✔|✔|||✔}}
+{{Moveentry/7|0656|Froakie|type=Water|1|Water 1|Water 1|||✔|✔|||✔}}
+{{Moveentry/7|0657|Frogadier|type=Water|1|Water 1|Water 1|||✔|✔|||✔}}
+{{Moveentry/7|0658|Greninja|type=Water|type2=Dark|1|Water 1|Water 1|form=All available forms|||✔|✔|||✔}}
+{{Moveentry/7|0659|Bunnelby|type=Normal|1|Field|Field|||✔|✔|✔||}}
+{{Moveentry/7|0660|Diggersby|type=Normal|type2=Ground|1|Field|Field|||✔|✔|✔||}}
+{{Moveentry/7|0669|Flabébé|type=Fairy|1|Fairy|Fairy|form=All forms|||✔|✔|||✔}}
+{{Moveentry/7|0670|Floette|type=Fairy|1|Fairy|Fairy|form=All main forms|||✔|✔|||✔}}
+{{Moveentry/7|0670|formsig=E|Floette|type=Fairy|1|No Eggs Discovered|No Eggs Discovered|form=Eternal Flower|||✔|✔|||}}
+{{Moveentry/7|0671|Florges|type=Fairy|1|Fairy|Fairy|form=All forms|||✔|✔|||✔}}
+{{Moveentry/7|0672|Skiddo|type=Grass|1|Field|Field|||✔|✔|||✔|STAB='''}}
+{{Moveentry/7|0673|Gogoat|type=Grass|1|Field|Field|||✔|✔|||✔|STAB='''}}
+{{Moveentry/7|0674|Pancham|type=Fighting|2|Field|Human-Like|||✔|✔|✔||}}
+{{Moveentry/7|0675|Pangoro|type=Fighting|type2=Dark|2|Field|Human-Like|||✔|✔|✔||}}
+{{Moveentry/7|0676|Furfrou|type=Normal|1|Field|Field|form=All forms|||✔|✔|||}}
+{{Moveentry/7|0688|Binacle|type=Rock|type2=Water|1|Water 3|Water 3|||✔|✔|✔||}}
+{{Moveentry/7|0689|Barbaracle|type=Rock|type2=Water|1|Water 3|Water 3|||✔|✔|✔||}}
+{{Moveentry/7|0694|Helioptile|type=Electric|type2=Normal|2|Monster|Dragon|||✔|✔|✔||}}
+{{Moveentry/7|0695|Heliolisk|type=Electric|type2=Normal|2|Monster|Dragon|||✔|✔|✔||}}
+{{Moveentry/7|0701|Hawlucha|type=Fighting|type2=Flying|2|Flying|Human-Like|||✔|✔|✔||✔}}
+{{Moveentry/7|0702|Dedenne|type=Electric|type2=Fairy|2|Field|Fairy|||✔|✔|✔||✔}}
+{{Moveentry/7|0708|Phantump|type=Ghost|type2=Grass|2|Grass|Amorphous|||✔|✔|✔||✔|STAB='''}}
+{{Moveentry/7|0709|Trevenant|type=Ghost|type2=Grass|2|Grass|Amorphous|||✔|✔|✔||✔|STAB='''}}
+{{Moveentry/7|0710|Pumpkaboo|type=Ghost|type2=Grass|1|Amorphous|Amorphous|form=All forms|||✔|✔|✔|||STAB='''}}
+{{Moveentry/7|0711|Gourgeist|type=Ghost|type2=Grass|1|Amorphous|Amorphous|form=All forms|||✔|✔|✔|||STAB='''}}
+{{Moveentry/7|0716|Xerneas|type=Fairy|1|No Eggs Discovered|No Eggs Discovered|||✔|✔|✔||}}
+{{Moveentry/7|0718|Zygarde|type=Dragon|type2=Ground|1|No Eggs Discovered|No Eggs Discovered|form=All available forms|||✔|✔|✔||}}
+{{Moveentry/7|0720|Hoopa|type=Psychic|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered|form=All available forms|||✔|✔|||✔}}
+{{Moveentry/7|0722|Rowlet|type=Grass|type2=Flying|1|Flying|Flying||||✔|✔||✔|STAB='''}}
+{{Moveentry/7|0723|Dartrix|type=Grass|type2=Flying|1|Flying|Flying||||✔|✔||✔|STAB='''}}
+{{Moveentry/7|0724|Decidueye|type=Grass|type2=Ghost|1|Flying|Flying||||✔|✔||✔|STAB='''}}
+{{Moveentry/7|0724|formsig=H|Decidueye|type=Grass|type2=Fighting|1|Flying|Flying|form=Hisuian Form|||||||✔|STAB='''}}
+{{Moveentry/7|0742|Cutiefly|type=Bug|type2=Fairy|2|Bug|Fairy||||−|−||✔}}
+{{Moveentry/7|0743|Ribombee|type=Bug|type2=Fairy|2|Bug|Fairy||||−|−||✔}}
+{{Moveentry/7|0753|Fomantis|type=Grass|1|Grass|Grass||||✔|✔||✔|STAB='''}}
+{{Moveentry/7|0754|Lurantis|type=Grass|1|Grass|Grass||||✔|✔||✔|STAB='''}}
+{{Moveentry/7|0755|Morelull|type=Grass|type2=Fairy|1|Grass|Grass||||✔|✔|||STAB='''}}
+{{Moveentry/7|0756|Shiinotic|type=Grass|type2=Fairy|1|Grass|Grass||||✔|✔|||STAB='''}}
+{{Moveentry/7|0761|Bounsweet|type=Grass|1|Grass|Grass||||✔|✔||✔|STAB='''}}
+{{Moveentry/7|0762|Steenee|type=Grass|1|Grass|Grass||||✔|✔||✔|STAB='''}}
+{{Moveentry/7|0763|Tsareena|type=Grass|1|Grass|Grass||||✔|✔||✔|STAB='''}}
+{{Moveentry/7|0764|Comfey|type=Fairy|1|Grass|Grass||||✔|✔||✔}}
+{{Moveentry/7|0766|Passimian|type=Fighting|1|Field|Field||||✔|✔||✔}}
+{{Moveentry/7|0777|Togedemaru|type=Electric|type2=Steel|2|Field|Fairy||||✔|✔||}}
+{{Moveentry/7|0780|Drampa|type=Normal|type2=Dragon|2|Monster|Dragon||||✔|✔||}}
+{{Moveentry/7|0781|Dhelmise|type=Ghost|type2=Grass|1|Mineral|Mineral||||✔|✔|||STAB='''}}
+{{Moveentry/7|0785|Tapu Koko|type=Electric|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered||||✔|✔||}}
+{{Moveentry/7|0786|Tapu Lele|type=Psychic|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered||||✔|✔||}}
+{{Moveentry/7|0787|Tapu Bulu|type=Grass|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered||||✔|✔|||STAB='''}}
+{{Moveentry/7|0788|Tapu Fini|type=Water|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered||||✔|✔||}}
+{{Moveentry/7|0793|Nihilego|type=Rock|type2=Poison|1|No Eggs Discovered|No Eggs Discovered||||✔|✔||}}
+{{Moveentry/7|0796|Xurkitree|type=Electric|1|No Eggs Discovered|No Eggs Discovered||||✔|✔||}}
+{{Moveentry/7|0797|Celesteela|type=Steel|type2=Flying|1|No Eggs Discovered|No Eggs Discovered||||✔|✔||}}
+{{Moveentry/7|0801|Magearna|type=Steel|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered|form=All forms||||✔|✔||✔}}
+{{Moveentry/7|0802|Marshadow|type=Fighting|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered||||✔|✔||}}
+{{Moveentry/7|0807|Zeraora|type=Electric|1|No Eggs Discovered|No Eggs Discovered||||✔{{sup/7|USUM}}|✔||}}
+{{Moveentry/7|0810|Grookey|type=Grass|2|Field|Grass|||||✔||✔|STAB='''}}
+{{Moveentry/7|0811|Thwackey|type=Grass|2|Field|Grass|||||✔||✔|STAB='''}}
+{{Moveentry/7|0812|Rillaboom|type=Grass|2|Field|Grass|||||✔||✔|STAB='''}}
+{{Moveentry/7|0828|Thievul|type=Dark|1|Field|Field|||||✔||}}
+{{Moveentry/7|0829|Gossifleur|type=Grass|1|Grass|Grass|||||✔|||STAB='''}}
+{{Moveentry/7|0830|Eldegoss|type=Grass|1|Grass|Grass|||||✔|||STAB='''}}
+{{Moveentry/7|0841|Flapple|type=Grass|type2=Dragon|2|Grass|Dragon|||||✔||✔|STAB='''}}
+{{Moveentry/7|0842|Appletun|type=Grass|type2=Dragon|2|Grass|Dragon|||||✔||✔|STAB='''}}
+{{Moveentry/7|0862|Obstagoon|type=Dark|type2=Normal|1|Field|Field|||||✔||}}
+{{Moveentry/7|0866|Mr. Rime|type=Ice|type2=Psychic|1|Human-Like|Human-Like|||||✔||}}
+{{Moveentry/7|0867|Runerigus|type=Ground|type2=Ghost|2|Mineral|Amorphous|||||✔||}}
+{{Moveentry/7|0893|Zarude|type=Dark|type2=Grass|1|No Eggs Discovered|No Eggs Discovered|form=All forms|||||✔||✔|STAB='''}}
+{{Moveentry/7|0898|Calyrex|type=Psychic|type2=Grass|1|No Eggs Discovered|No Eggs Discovered|form=All forms|||||✔||✔|STAB='''}}
+{{Moveentry/7|0903|Sneasler|type=Fighting|type2=Poison|1|Field|Field|||||||✔}}
+{{Moveentry/7|0905|Enamorus|type=Fairy|type2=Flying|1|No Eggs Discovered|No Eggs Discovered|form=All forms|||||||✔}}
+{{Moveentry/7|0906|Sprigatito|type=Grass|2|Field|Grass|||||||✔|STAB='''}}
+{{Moveentry/7|0907|Floragato|type=Grass|2|Field|Grass|||||||✔|STAB='''}}
+{{Moveentry/7|0908|Meowscarada|type=Grass|type2=Dark|2|Field|Grass|||||||✔|STAB='''}}
+{{Moveentry/7|0917|Tarountula|type=Bug|1|Bug|Bug|||||||✔}}
+{{Moveentry/7|0918|Spidops|type=Bug|1|Bug|Bug|||||||✔}}
+{{Moveentry/7|0923|Pawmot|type=Electric|type2=Fighting|1|Field|Field|||||||✔}}
+{{Moveentry/7|0924|Tandemaus|type=Normal|2|Field|Fairy|||||||✔}}
+{{Moveentry/7|0925|Maushold|type=Normal|2|Field|Fairy|form=All forms|||||||✔}}
+{{Moveentry/7|0928|Smoliv|type=Grass|type2=Normal|1|Grass|Grass|||||||✔|STAB='''}}
+{{Moveentry/7|0929|Dolliv|type=Grass|type2=Normal|1|Grass|Grass|||||||✔|STAB='''}}
+{{Moveentry/7|0930|Arboliva|type=Grass|type2=Normal|1|Grass|Grass|||||||✔|STAB='''}}
+{{Moveentry/7|0946|Bramblin|type=Grass|type2=Ghost|1|Grass|Grass|||||||✔|STAB='''}}
+{{Moveentry/7|0947|Brambleghast|type=Grass|type2=Ghost|1|Grass|Grass|||||||✔|STAB='''}}
+{{Moveentry/7|0948|Toedscool|type=Ground|type2=Grass|1|Grass|Grass|||||||✔|STAB='''}}
+{{Moveentry/7|0949|Toedscruel|type=Ground|type2=Grass|1|Grass|Grass|||||||✔|STAB='''}}
+{{Moveentry/7|0951|Capsakid|type=Grass|1|Grass|Grass|||||||✔|STAB='''}}
+{{Moveentry/7|0952|Scovillain|type=Grass|type2=Fire|1|Grass|Grass|||||||✔|STAB='''}}
+{{Moveentry/7|0964|Palafin|type=Water|2|Field|Water 2|||||||✔}}
+{{Moveentry/7|0981|Farigiraf|type=Normal|type2=Psychic|1|Field|Field|||||||✔}}
+{{Moveentry/7|0983|Kingambit|type=Dark|type2=Steel|1|Human-Like|Human-Like|||||||✔}}
+{{Moveentry/7|0985|Scream Tail|type=Fairy|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered|||||||✔}}
+{{Moveentry/7|0986|Brute Bonnet|type=Grass|type2=Dark|1|No Eggs Discovered|No Eggs Discovered|||||||✔|STAB='''}}
+{{Moveentry/7|1001|Wo-Chien|type=Dark|type2=Grass|1|No Eggs Discovered|No Eggs Discovered|||||||✔|STAB='''}}
+{{Moveentry/7|1006|Iron Valiant|type=Fairy|type2=Fighting|1|No Eggs Discovered|No Eggs Discovered|||||||✔}}
+{{Moveentry/7|1010|Iron Leaves|type=Grass|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered|||||||✔|STAB='''}}
+{{Moveentry/7|1011|Dipplin|type=Grass|type2=Dragon|2|Grass|Dragon|||||||✔|STAB='''}}
+{{Moveentry/7|1015|Munkidori|type=Poison|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered|||||||✔}}
+{{Moveentry/7|1017|Ogerpon|type=Grass|1|No Eggs Discovered|No Eggs Discovered|form=All forms|||||||✔|STAB='''}}
+{{Moveentry/7|1019|Hydrapple|type=Grass|type2=Dragon|2|Grass|Dragon|||||||✔|STAB='''}}
+{{Movefoot|Grass|7}}
+
+===Special move===
+====[[Generation IV]]====
+{{Movehead/Special|Grass}}
+{{Moveentry/1|0025|Pikachu|type=Electric|2|Field|Fairy|[[Hayley's trades#Pikachu|My Pokémon Ranch]]}}
+{{Moveentry/1|0417|Pachirisu|type=Electric|2|Field|Fairy|[[Hayley's trades#Pachirisu|My Pokémon Ranch]]}}
+{{Moveentry/1|0489|Phione|type=Water|2|Water 1|Fairy|[[Hayley's trades#Phione|My Pokémon Ranch]]}}
+{{Movefoot|Grass|1}}
+
+====[[Generation IX]]====
+{{Movehead/Special|Grass}}
+{{Moveentry/1|0026|Raichu|type=Electric|2|Field|Fairy|[[Terastal phenomenon|Wild Tera Pokémon]] - [[North Paldean Sea]]{{sup/9|SV}}}}
+{{Moveentry/1|0080|Slowbro|type=Water|type2=Psychic|2|Monster|Water 1|[[Terastal phenomenon|Wild Tera Pokémon]] - [[Casseroya Lake]]{{sup/9|SV}}}}
+{{Movefoot|Grass|1}}
+
+==In other games==
+==={{g|Mystery Dungeon series}}===
+Grass Knot deals damage depending on the weight of the target. The heavier the target, the greater the damage dealt. In the [[Pokémon Mystery Dungeon: Explorers of Time and Explorers of Darkness|Explorers]] and [[Pokémon Mystery Dungeon (WiiWare)|Adventure Sqaud]] series, the damage calculation is as follows.
+
+{| class="roundy" style="background: #{{Grass color light}}; border: 3px solid #{{Grass color}}"
+|-
+! style="{{roundytl|5px}}" colspan=2 | Target's weight
+! style="{{roundytr|5px}}" rowspan=2 | Multiplier
+|-
+! metric
+! US customary
+|- style="background:#FFF"
+| Less than 20&nbsp;kg
+| Less than 44.1 lbs.
+| 153/256 (60%)
+|- style="background:#FFF"
+| 20&nbsp;kg - 29.9&nbsp;kg
+| 44.1 lbs. - 66.0 lbs.
+| 179/256 (70%)
+|- style="background:#FFF"
+| 30&nbsp;kg - 39.9&nbsp;kg
+| 66.1 lbs. - 88.1 lbs.
+| 204/256 (80%)
+|- style="background:#FFF"
+| 40&nbsp;kg - 49.9&nbsp;kg
+| 88.2 lbs. - 110.1 lbs.
+| 230/256 (90%)
+|- style="background:#FFF"
+| 50&nbsp;kg - 59.9&nbsp;kg
+| 110.2 lbs. - 132.2 lbs.
+| 256/256 (100%)
+|- style="background:#FFF"
+| 60&nbsp;kg - 69.9&nbsp;kg
+| 132.3 lbs. - 154.2 lbs.
+| 281/256 (110%)
+|- style="background:#FFF"
+| 70&nbsp;kg - 79.9&nbsp;kg
+| 154.3 lbs. - 176.3 lbs.
+| 307/256 (120%)
+|- style="background:#FFF"
+| 80&nbsp;kg - 199.9&nbsp;kg
+| 176.4 lbs. - 440.8 lbs.
+| 332/256 (130%)
+|-
+| style="background:#FFF; {{roundybl|5px}}" | 200&nbsp;kg or more
+| style="background:#FFF" | 440.9 lbs. or more
+| style="background:#FFF; {{roundybr|5px}}" | 358/256 (140%)
+|}
+{{-}}
+{{MDMoveheader|type=grass}}
+{{MDMoveRow|game=TDS|pow=1|pp=20|acc=88%|range=Front|target=Enemy|cuts=No}}
+{{MDMoveRow|game=BSL|pow=1|pp=20|acc=88%|range=Front|target=Enemy|cuts=No}}
+{{MDMoveRow|game=GTI|pp=20|ppmax=99|acc=95%|accmax=98%|range=Front|target=Enemy|cuts=No}}
+{{MDMoveRow|game=SMD|pow=1|powmax=99|pp=20|ppmax=99|acc=100%|range=Front|target=Enemy|cuts=No}}
+{{MDMovefoot|type=grass|TDS=yes|BSL=yes|GTI=yes|SMD=yes|RTDX=yes}}
+
+===[[Pokémon GO]]===
+In Pokémon GO, Grass Knot is a Charged Attack that has been available since February 16, 2017.
+
+{{GoChargedAttack
+|id=272
+|move=Grass Knot
+|type=Grass
+|pow=90
+|energy=50
+|duration=2.6
+|damage_window=1.7 - 2.6
+|pow_trainer=90
+|energy_trainer=50
+|users={{MSP/GO|0025GOFest2022Finale|Pikachu|Shaymin scarf}}{{MSP/GO|0026A|Raichu|Alolan Form}}{{MSP/GO|0114|Tangela}}{{MSP/GO|0151|Mew}}{{MSP/GO|0152|Chikorita}}{{MSP/GO|0153|Bayleef}}{{MSP/GO|0161|Sentret}}{{MSP/GO|0173|Cleffa}}{{MSP/GO|0187|Hoppip}}{{MSP/GO|0188|Skiploom}}{{MSP/GO|0191|Sunkern}}{{MSP/GO|0252|Treecko}}{{MSP/GO|0253|Grovyle}}{{MSP/GO|0263|Zigzagoon}}{{MSP/GO|0264|Linoone}}{{MSP/GO|0271|Lombre}}{{MSP/GO|0273|Seedot}}{{MSP/GO|0274|Nuzleaf}}{{MSP/GO|0285|Shroomish}}{{MSP/GO|0311|Plusle}}{{MSP/GO|0312|Minun}}{{MSP/GO|0331|Cacnea}}{{MSP/GO|0332|Cacturne}}{{MSP/GO|0345|Lileep}}{{MSP/GO|0346|Cradily}}{{MSP/GO|0399|Bidoof}}{{MSP/GO|0406|Budew}}{{MSP/GO|0407|Roserade}}{{MSP/GO|0492|Shaymin|Land Forme}}{{MSP/GO|0492S|Shaymin|Sky Forme}}{{MSP/GO|0496|Servine}}{{MSP/GO|0497|Serperior}}{{MSP/GO|0504|Patrat}}{{MSP/GO|0505|Watchog}}{{MSP/GO|0512|Simisage}}{{MSP/GO|0546|Cottonee}}{{MSP/GO|0547|Whimsicott}}{{MSP/GO|0590|Foongus}}{{MSP/GO|0591|Amoonguss}}{{MSP/GO|0620|Mienshao}}{{MSP/GO|0641|Tornadus|Incarnate Forme}}{{MSP/GO|0676|Furfrou}}{{MSP/GO|0689|Barbaracle}}{{MSP/GO|0695|Heliolisk}}{{MSP/GO|0710|Pumpkaboo}}{{MSP/GO|0753|Fomantis}}{{MSP/GO|0762|Steenee}}{{MSP/GO|0763|Tsareena}}{{MSP/GO|0764|Comfey}}{{MSP/GO|0787|Tapu Bulu}}{{MSP/GO|0810|Grookey}}{{MSP/GO|0811|Thwackey}}{{MSP/GO|0812|Rillaboom}}{{MSP/GO|0829|Gossifleur}}{{MSP/GO|0830|Eldegoss}}{{MSP/GO|0905|Enamorus|Incarnate Forme}}{{MSP/GO|0906|Sprigatito}}{{MSP/GO|0907|Floragato}}{{MSP/GO|0908|Meowscarada}}
+|elite_users={{MSP/GO|0286|Breloom}}{{MSP/GO|0488|Cresselia}}
+|snapshot_users={{MSP/GO|0235|Smeargle}}
+}}
+
+==={{g|Rumble Rush}}===
+{{RumbleRushPhysicalAttack|move=Grass Knot|type=Grass
+|stars=3
+|pow=33.04546
+|charge=0.54
+|range=Arc (melee)
+|hits=1
+|projectiles=1
+|crit=1.5
+|effect=None}}
+
+===Description===
+{{movedesc|Grass}}
+{{movedescentry|{{gameabbrevmd|TDS}}|Inflicts damage on the target. Its damage rises with the target's weight.}}
+{{movedescentry|{{gameabbrevmd|BSL}}|{{tt|てきポケモンに ダメージをあたえる あいての たいじゅうが おもいほど ダメージも おおきくなる|Inflicts damage on the target. Its damage rises with the target's weight}}}}
+{{movedescentry|{{gameabbrevmd|GTI}}|It damages an enemy. The heavier the enemy, the greater the damage the move causes.}}
+{{movedescentry|{{gameabbrevmd|SMD}}<br/>{{gameabbrevmd|RTDX}}|It damages an enemy. The heavier the enemy, the greater the damage caused by the move.}}
+|}
+|}{{left clear}}
+
+==In animation==
+===Pokémon animated series===
+{{moveanime|type=grass|exp=yes|gen=The user snares the target with grass and trips it.|image1=Grass Knot effect anime.png|image1p=Stumbling on the knot|image2=Snover Grass Knot.png|image2p=Snover|image3=Gardenia Roserade Grass Knot 1.png|image3p=Roserade|image4=Ramos Weepinbell Grass Knot.png|image4p=Weepinbell}}
+{{movep|type=grass|ms=407|pkmn=Roserade|method=Roserade's eyes glow in green. Then two blades of grass near the opponent glow green and tie in a knot, causing the opponent to stumble on the knot.}}
+{{movemid|type=grass|user=Gardenia|user1=Gardenia's Roserade|startcode=DP037|startname=The Grass Menagerie!|notes=Debut}}
+{{movep|type=grass|ms=459|pkmn=Snover|method=Snover's eyes glow light green. Then, two blades of grass near the opponent's feet tie themselves into a knot, causing the opponent to trip.}}
+{{movemid|type=grass|user=Teacher (DP121)|user1=A wild Snover|startcode=DP121|startname=The Lonely Snover!}}
+{{movep|type=grass|ms=673|pkmn=Gogoat|method=Gogoat makes multiple green-glowing vines grow out of the ground and bind the opponent's feet, preventing them from moving.}}
+{{movemid|type=grass|user=Ramos|user1=Ramos's Gogoat|startcode=XY057|startname=Thawing an Icy Panic!}}
+{{movep|type=grass|ms=070|pkmn=Weepinbell|method=Weepinbell's eyes glow light green. Then, two green-glowing vines grow out of the ground near the opponent's feet and tie themselves into a knot, causing the opponent to trip. Weepinbell can also make the vines grab an airborne opponent and slam it into the ground.}}
+{{movemid|type=grass|user=Ramos|user1=Ramos's Weepinbell|startcode=XY058|startname=The Green, Green Grass Types of Home!}}
+{{movep|type=grass|ms=929|pkmn=Dolliv|method=Dolliv creates two blades of grass near the opponent's feet that tie themselves into a knot and cause the opponent to trip.}}
+{{movemid|type=grass|user=Brassius|user1=Brassius's Dolliv|startcode=HZ055|startname=Showdown! The Paldea Elite Four}}
+{{movep|type=grass|ms=311|pkmn=Plusle|method=Plusle slams its paws on the ground, and a burst of green energy then rushes towards the opponents. When the energy reaches them, it ties their feet together with a green knot.}}
+{{movebtm|type=grass|user=Lacey|user1=Lacey's Plusle|startcode=HZ115|startname=HZ115}}
+
+==In the manga==
+===Pocket Monsters Platinum: Aim to Be Battle King!!===
+{{movemanga|type=grass|exp=yes|gen=The opponent is caught by a piece of grass.|image1=Yuu Shirogane Infernape Grass Knot.png|image1p=Caught in grass}}
+{{movep|type=grass|ms=392|pkmn=Infernape|method=Infernape snares the opponent with pieces of grass.}}
+{{movebtmManga|type=grass|user=Yū Shirogane's Infernape|startcode=PBK2|notes=Debut}}
+
+===Pokémon Adventures===
+{{movemanga|type=grass|exp=yes|gen=The user trips the opponent with blades of grass. The heavier the opponent, the more damage it does.|image1=Gardenia Cherubi Grass Knot Adventures.png|image1p=Cherubi (effect)|image2=Gardenia Roserade Grass Knot Adventures.png|image2p=Roserade (effect)}}
+{{movep|type=grass|ms=407|pkmn=Roserade|method=Roserade stares at a patch of grass by the opponent's feet. Suddenly, two bunches of grass fold toward each other. When the tips touch, they wrap around each other and the opponent trips over the tied grass.}}
+{{movemid|type=grass|user=Gardenia|user1=Gardenia's Roserade|startcode=PS346|startname=Ring Around the Roserade I|notes=Debut}}
+{{movep|type=grass|ms=420|pkmn=Cherubi|method=Cherubi stares at a patch of grass by the opponent. Two patches of grass then begin to move toward each other and ties up a body part on the opponent closest to the grass patches.}}
+{{movebtmManga|type=grass|user=Gardenia|user1=Gardenia's Cherubi|startcode=PS347|startname=Ring Around the Roserade Roserade II}}
+
+===Pokémon Diamond and Pearl Adventure!===
+{{movemanga|type=grass|exp=yes|gen=The foe's foot is caught in a piece of grass, tripping it.|image1=Gardenia Turtwig Grass Knot DPA.png|image1p=Caught in grass}}
+{{movep|type=grass|ms=387|pkmn=Turtwig|method=Turtwig manipulates the grass and pieces of it wrap around the opponent's foot.}}
+{{movebtmManga|type=grass|user=Gardenia|user1=Gardenia's Turtwig|startcode=DPA04|startname=Win with Teamwork!!|notes=Debut}}
+
+==In other generations==
+===Core series games===
+{{Movegen|
+type=Grass|
+genIV=Grass Knot IV|
+genV=Grass Knot V|
+genVI=Grass Knot VI|
+genVI2=Grass Knot VI 2|
+}}
+{{Movegen|
+type=Grass|
+genVII=Grass Knot VII|
+genVIII=Grass Knot VIII|
+}}
+
+===Side series games===
+{{movegen|
+type=Grass|
+PBR=Grass Knot PBR
+}}
+
+===Spin-off series games===
+{{movegen|
+type=Grass|
+PMDTDS=Grass Knot PMD TDS|
+PMDGTI=Grass Knot PMD GTI|
+PSMD=Grass Knot PSMD
+}}
+
+==In other languages==
+{{Langtable|color={{grass color}}|bordercolor={{grass color light}}
+|zh_yue=打草結 ''{{tt|Dáchóugit|Tie Grass Knot}}''
+|zh_cmn=打草結 / 打草结 ''{{tt|Dǎcǎojié|Tie Grass Knot}}''
+|cs=Travní uzel
+|nl=Grasknoop
+|fr=Nœud Herbe<sup>{{gen|V}}+</sup><br>Noeud Herbe<sup>{{gen|IV}}</sup>
+|de=Strauchler
+|el=Φυτικός Κόμπος ''Fytikós Kómpos''
+|he=קשר עשב ''Kesher Esev''
+|hi='ग्रास नॉट ''Grass Knot'' {{tt|*|Pokémon GO}}<br>घास की घाट ''{{tt|Ghaas Ki Ghat|Grass Pier}}''
+|it=Laccioerboso
+|ko=풀묶기 ''{{tt|Pulmukgi|Grass Lash}}''
+|pl=Trawiasty Węzeł
+|pt_br=Nó de Grama (games, [[DP121]]–present, TCG, manga)<br>Peso-pesado ([[DP037]])
+|pt_eu=Nó de Erva
+|ro=Nod de Iarbă
+|ru=Травяной Узел ''{{tt|Travyanoy Uzel|Grass Knot}}''
+|es_la=Nudo de Pasto (games, [[HZ055]]–present)<br>Hierba Lazo ([[XY057]]–[[XY136]])<br>Pasto Nudo ([[DP037]]–[[DP121]])
+|es_eu=Hierba Lazo
+|th=ปมหญ้า ''{{tt|Pom Ya|Grass Knot}}''
+|tr=Çimen Düğümü
+|vi=Nút Thắt Cỏ
+}}
+{{Low Kick|Grass}}
+{{Generation IV TMs}}
+{{Generation V TMs}}
+{{Generation VI TMs}}
+{{Generation VII TMs}}
+{{Generation VIII TMs}}
+{{Generation IX TMs}}
+{{Project Moves and Abilities notice}}
+
+[[Category:Moves affected by weight]]
+[[Category:Moves that have variable power]]
+[[Category:Moves usable in Pokémon Sword and Shield]]
+[[Category:Moves usable in Pokémon Scarlet and Violet]]
+
+[[de:Strauchler]]
+[[es:Nudo de Pasto/Hierba Lazo]]
+[[fr:Nœud Herbe]]
+[[it:Laccioerboso]]
+[[ja:くさむすび]]
+[[zh:打草结（招式）]]

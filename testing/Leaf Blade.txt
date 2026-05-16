@@ -1,0 +1,484 @@
+{{MoveInfobox
+|n=348
+|name=Leaf Blade
+|jname=リーフブレード
+|jtrans=Leaf Blade
+|jtranslit=Rīfu Burēdo
+|gameimage=Leaf Blade IX.png
+|gameimagewidth=300
+|type=Grass
+|damagecategory=Physical
+|basepp=15
+|maxpp=24
+|power={{tt|90|70 in Generation III}}
+|accuracy=100
+|gen=III
+|category=Cool
+|appeal=3
+|jam=0
+|cdesc=Affected by how well the appeal in front goes.
+|appealsc=2
+|scdesc=Earn +2 if the Pokémon performs first in the turn.
+|appeal6=3
+|jam6=0
+|cdesc6=An appealing move that can be used repeatedly without boring the audience.
+|pokefordex=Leaf%20Blade
+|touches=yes
+|protect=yes
+|magiccoat=no
+|snatch=no
+|mirrormove=yes
+|kingsrock=yes
+|flag7=no
+|flag8=no
+|sound=no
+|target=anyadjacent
+|tr8=yes
+||tr#8=50
+|na=no
+|footnotes= }}
+
+'''Leaf Blade''' (Japanese: '''リーフブレード''' ''Leaf Blade'') is a damage-dealing {{type|Grass}} [[move]] introduced in [[Generation III]]. Prior to [[Generation IV]], it was the [[signature move]] of {{p|Grovyle}} and {{p|Sceptile}}. It was [[TR50]] in {{g|Sword and Shield}}.
+
+==Effect==
+===Generation III===
+Leaf Blade inflicts damage and has an increased [[critical hit]] ratio. It has a base power of 70 in this generation.
+
+===Generation IV onwards===
+Leaf Blade's base power [[List of modified moves|increased]] from 70 to 90. If used by a Pokémon with {{a|Sharpness}}, its power is increased by 50%.
+
+Leaf Blade can also be used as part of a [[Contest combination|Contest Spectacular combination]], with the user gaining extra three appeal points if the move {{m|Focus Energy}} was used in the prior turn.
+
+===Generation VIII===
+====Pokémon Legends: Arceus====
+Leaf Blade's PP has been reduced to 10, and its power has been lowered to 85.
+
+{{LegendsMove
+|type=Grass
+|damagecategory=Physical
+|basepp=10
+|power=85
+|power-agile=65
+|power-strong=105
+|accuracy=100
+|accuracy-strong=100
+|actionspeed-user=0
+|actionspeed-user-agile=0
+|actionspeed-user-strong=+5
+|actionspeed-target=0
+|actionspeed-target-agile=+3
+|effect=Has a high critical-hit ratio
+|param=[[Critical hit|Crit. stage]]
+|param-val=+1
+|param-val-agile=+1
+|param-val-strong=+2}}
+
+===Generation IX===
+====Pokémon Legends: Z-A====
+{{LegendsZAMove
+|type=Grass
+|damagecategory=Physical
+|power=90
+|cooldown=8
+|charge-time=10
+}}
+
+==Description==
+{{movedesc|Grass}}
+{{movedescentry|{{gameabbrev3|RSE}}{{gameabbrevss|Colo}}{{gameabbrevss|XD}}|Slashes with a sharp leaf. High critical-hit ratio.}}
+{{movedescentry|{{gameabbrev3|FRLG}}<br>{{gameabbrev4|DPPtHGSS}}{{gameabbrevss|PBR}}|The foe is slashed with a sharp leaf. It has a high critical-hit ratio.}}
+{{movedescentry|{{gameabbrev5|BWB2W2}}<br>{{gameabbrev6|XYORAS}}<br>{{gameabbrev7|SMUSUMPE}}<br>{{gameabbrev8|SwShBDSP}}|The user handles a sharp leaf like a sword and attacks by cutting its target. Critical hits land more easily.}}
+{{movedescentry|{{gameabbrev8|LA}}|The user handles a sharp leaf like a sword and attacks by cutting its target. This move has a heightened chance of landing a critical hit.}}
+{{movedescentry|{{gameabbrev9|SV}}|The user handles a sharp leaf like a sword and cuts the target to inflict damage. This move has a heightened chance of landing a critical hit.}}
+{{movedescentry|{{gameabbrev9|ZA}}|The user attacks by using a leaf like a sword to slice targets. This move has a heightened chance of landing a critical hit.}}
+|}
+|}{{left clear}}
+
+==Learnset==
+===By [[Level|leveling up]]===
+{{Movehead/Games|Grass|g1=none|g2=none|g7=1|g7g={{gameabbrev7|SMUSUM}}|g8=3|g9=2}}
+{{Moveentry/10|0071|Victreebel|type=Grass|type2=Poison|1|Grass|Grass|−|47{{sup/4|PtHGSS}}|47|47|44||44||44|−|STAB='''}}
+{{Moveentry/10|0083|Farfetch'd|type=Normal|type2=Flying|2|Flying|Field|−|−|−|−|−|55|55|||42}}
+{{Moveentry/10|0083|formsig=G|Farfetch'd|type=Fighting|2|Flying|Field|form=Galarian Form||||||55||||42}}
+{{Moveentry/10|0154|Meganium|type=Grass|2|Monster|Grass|−|−|−|−|−||−||−|{{tt|Evo.|Learned upon evolving}}|STAB='''}}
+{{Moveentry/10|0182|Bellossom|type=Grass|1|Grass|Grass|−|1{{sup/4|PtHGSS}}|1|1|1|−|−||−|STAB='''}}
+{{Moveentry/10|0253|Grovyle|type=Grass|2|Monster|Dragon|29|29|29|29{{sup/6|XY}}<br>23{{sup/6|ORAS}}|23|40|40||40|38|STAB='''}}
+{{Moveentry/10|0254|Sceptile|type=Grass|2|Monster|Dragon|29|29|29|29{{sup/6|XY}}<br>23{{sup/6|ORAS}}|23|42|42||{{tt|Evo.|Learned upon evolving}}|38|STAB='''}}
+{{Moveentry/10|0274|Nuzleaf|type=Grass|type2=Dark|2|Field|Grass|−|−|−|28{{sup/6|ORAS}}|28|57|57||57|STAB='''}}
+{{Moveentry/10|0275|Shiftry|type=Grass|type2=Dark|2|Field|Grass|−|−|−|−|−|1|1||{{tt|Evo.|Learned upon evolving}}|STAB='''}}
+{{Moveentry/10|0387|Turtwig|type=Grass|2|Monster|Grass||−|−|−|−||−|34|−|STAB='''}}
+{{Moveentry/10|0388|Grotle|type=Grass|2|Monster|Grass||−|−|−|−||−|34|−|STAB='''}}
+{{Moveentry/10|0389|Torterra|type=Grass|type2=Ground|2|Monster|Grass||−|−|−|−||−|34|−|STAB='''}}
+{{Moveentry/10|0470|Leafeon|type=Grass|1|Field|Field||71|71{{sup/5|BW}}<br>45{{sup/5|B2W2}}|45|45|50|50|25|50|35|STAB='''}}
+{{Moveentry/10|0475|Gallade|type=Psychic|type2=Fighting|2|Human-Like|Amorphous||1|1|1|1|−|−|43|1|50}}
+{{Moveentry/10|0495|Snivy|type=Grass|2|Field|Grass|||28|28|28||||28|STAB='''}}
+{{Moveentry/10|0496|Servine|type=Grass|2|Field|Grass|||32|32|32||||32|STAB='''}}
+{{Moveentry/10|0497|Serperior|type=Grass|2|Field|Grass|||32|32|32||||32|STAB='''}}
+{{Moveentry/10|0542|Leavanny|type=Bug|type2=Grass|1|Bug|Bug|||36|36|36||||36|STAB='''}}
+{{Moveentry/10|0549|formsig=H|Lilligant|type=Grass|type2=Fighting|1|Grass|Grass|form=Hisuian Form||||||||37|1|STAB='''}}
+{{Moveentry/10|0640|Virizion|type=Grass|type2=Fighting|1|No Eggs Discovered|No Eggs Discovered|||67|1, 67|1, 55|63|||63|63|STAB='''}}
+{{Moveentry/10|0672|Skiddo|type=Grass|1|Field|Field||||45|45||||45|45|STAB='''}}
+{{Moveentry/10|0673|Gogoat|type=Grass|1|Field|Field||||55|55||||55|45|STAB='''}}
+{{Moveentry/10|0722|Rowlet|type=Grass|type2=Flying|1|Flying|Flying|||||36|30||34|30|STAB='''}}
+{{Moveentry/10|0723|Dartrix|type=Grass|type2=Flying|1|Flying|Flying|||||42|40||34|40|STAB='''}}
+{{Moveentry/10|0724|Decidueye|type=Grass|type2=Ghost|1|Flying|Flying|||||44|44|||44|STAB='''}}
+{{Moveentry/10|0724|formsig=H|Decidueye|type=Grass|type2=Fighting|1|Flying|Flying|form=Hisuian Form||||||||34|44|STAB='''}}
+{{Moveentry/10|0753|Fomantis|type=Grass|1|Grass|Grass|||||23|40|||40|STAB='''}}
+{{Moveentry/10|0754|Lurantis|type=Grass|1|Grass|Grass|||||23|44|||44|STAB='''}}
+{{Moveentry/10|0798|Kartana|type=Grass|type2=Steel|1|No Eggs Discovered|No Eggs Discovered|||||43|55|STAB='''}}
+{{Moveentry/10|0865|Sirfetch'd|type=Fighting|2|Flying|Field||||||55||||42}}
+{{Moveentry/10|1006|Iron Valiant|type=Fairy|type2=Fighting|1|No Eggs Discovered|No Eggs Discovered|||||||||49}}
+{{Moveentry/10|1010|Iron Leaves|type=Grass|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered|||||||||49|STAB='''}}
+{{Movefoot|Grass|10}}
+
+===By {{pkmn|breeding}}===
+{{Movehead/Games|Grass|Egg Move|g1=none|g2=none|g3=none|g7=1|g7g={{gameabbrev7|SMUSUM}}|g8=1|g8g={{gameabbrev8|BDSP}}|g9=1|g9g={{gameabbrev9|SV}}}}
+{{Moveentry/6|0083|Farfetch'd|type=Normal|type2=Flying|2|Flying|Field|✔{{sup/4|HGSS}}|✔|✔|✔|✔}}
+{{Moveentry/6|0357|Tropius|type=Grass|type2=Flying|2|Monster|Grass|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Movefoot|Grass|6}}
+
+===By [[TR]]===
+{{Movehead/TMGames|Grass|g1=none|g2=none|g3=none|g4=none|g5=none|g6=none|g7=none|g9=none
+|g8=1|g8tm=50|g8g={{gameabbrev8|SwSh}}|tmhm8=TR}}
+{{Moveentry/1|0083|Farfetch'd|type=Normal|type2=Flying|2|Flying|Field|✔}}
+{{Moveentry/1|0083|formsig=G|Farfetch'd|type=Fighting|2|Flying|Field|form=Galarian Form|✔}}
+{{Moveentry/1|0151|Mew|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|}}
+{{Moveentry/1|0182|Bellossom|type=Grass|1|Grass|Grass|✔|STAB='''}}
+{{Moveentry/1|0251|Celebi|type=Psychic|type2=Grass|1|No Eggs Discovered|No Eggs Discovered|✔|STAB='''}}
+{{Moveentry/1|0253|Grovyle|type=Grass|2|Monster|Dragon|✔|STAB='''}}
+{{Moveentry/1|0254|Sceptile|type=Grass|2|Monster|Dragon|✔|STAB='''}}
+{{Moveentry/1|0274|Nuzleaf|type=Grass|type2=Dark|2|Field|Grass|✔|STAB='''}}
+{{Moveentry/1|0275|Shiftry|type=Grass|type2=Dark|2|Field|Grass|✔|STAB='''}}
+{{Moveentry/1|0470|Leafeon|type=Grass|1|Field|Field|✔||STAB='''}}
+{{Moveentry/1|0475|Gallade|type=Psychic|type2=Fighting|2|Human-Like|Amorphous|✔}}
+{{Moveentry/1|0549|Lilligant|type=Grass|1|Grass|Grass|✔|STAB='''}}
+{{Moveentry/1|0640|Virizion|type=Grass|type2=Fighting|1|No Eggs Discovered|No Eggs Discovered|✔|STAB='''}}
+{{Moveentry/1|0722|Rowlet|type=Grass|type2=Flying|1|Flying|Flying|✔|STAB='''}}
+{{Moveentry/1|0723|Dartrix|type=Grass|type2=Flying|1|Flying|Flying|✔|STAB='''}}
+{{Moveentry/1|0724|Decidueye|type=Grass|type2=Ghost|1|Flying|Flying|✔|STAB='''}}
+{{Moveentry/1|0753|Fomantis|type=Grass|1|Grass|Grass|✔|STAB='''}}
+{{Moveentry/1|0754|Lurantis|type=Grass|1|Grass|Grass|✔|STAB='''}}
+{{Moveentry/1|0798|Kartana|type=Grass|type2=Steel|1|No Eggs Discovered|No Eggs Discovered|✔|STAB='''}}
+{{Moveentry/1|0865|Sirfetch'd|type=Fighting|2|Flying|Field|✔}}
+{{Movefoot|Grass|1}}
+
+===Special move===
+====[[Generation V]]====
+{{Movehead/Special|Grass}}
+{{Moveentry/1|0083|Farfetch'd|type=Normal|type2=Flying|2|Flying|Field|{{pkmn|Dream World}} - {{dwa|Pleasant Forest}}}}
+{{Movefoot|Grass|1}}
+
+==In other games==
+===[[Pokémon Mystery Dungeon series]]===
+Leaf Blade deals damage. This move has an increased critical hit ratio (50% in the [[Pokémon Mystery Dungeon: Red Rescue Team and Blue Rescue Team|Rescue Team]] series, 30% in the [[Pokémon Mystery Dungeon: Explorers of Time and Explorers of Darkness|Explorers]] and [[Pokémon Mystery Dungeon (WiiWare)|Adventure Squad]] series).
+
+{{MDMoveheader|type=grass}}
+{{MDMoveRow|game=RB|pow=14|pp=12|acc=88%|range=Front|target=Enemy|cuts=No}}
+{{MDMoveRow|game=TDS|pow=14|pp=12|acc=88%|range=Front|target=Enemy|cuts=No}}
+{{MDMoveRow|game=BSL|pow=14|pp=12|acc=88%|range=Front|target=Enemy|cuts=No}}
+{{MDMoveRow|game=GTI|pow=20|powmax=99|pp=16|ppmax=50|acc=95%|accmax=98%|range=Front|target=Enemy|cuts=No}}
+{{MDMoveRow|game=SMD|pow=20|powmax=99|pp=16|ppmax=40|acc=95%|accmax=98%|range=Front|target=Enemy|cuts=No}}
+{{MDMovefoot|type=grass|RB=yes|TDS=yes|BSL=yes|GTI=yes|SMD=yes|RTDX=yes}}
+
+===[[Pokémon Conquest]]===
+{{Conquestmove
+|type=Grass
+|grid={{Conquestmove/Grid/columns}}
+|stars=4
+|pow=45
+|acc=100%
+|eff=Has a high critical hit ratio
+|users={{CSP|253|Grovyle}} &nbsp;&nbsp;{{CSP|470|Leafeon}} &nbsp;&nbsp;{{CSP|496|Servine}}
+}}
+
+===[[Pokémon GO]]===
+{{GoChargedAttack
+|id=117
+|move=Leaf Blade
+|type=Grass
+|pow=70
+|energy=33
+|duration=2.4
+|damage_window=1.25 - 2.2
+|pow_trainer=70
+|energy_trainer=35
+|users={{MSP/GO|071|Victreebel}}{{MSP/GO|083|Farfetch'd}}{{MSP/GO|083G|Farfetch'd|Galarian Form}}{{MSP/GO|182|Bellossom}}{{MSP/GO|253|Grovyle}}{{MSP/GO|254|Sceptile}}{{MSP/GO|274|Nuzleaf}}{{MSP/GO|275|Shiftry}}{{MSP/GO|357|Tropius}}{{MSP/GO|470|Leafeon}}{{MSP/GO|475|Gallade}}{{MSP/GO|542|Leavanny}}{{MSP/GO|640|Virizion}}{{MSP/GO|673|Gogoat}}{{MSP/GO|753|Fomantis}}{{MSP/GO|754|Lurantis}}{{MSP/GO|798|Kartana}}{{MSP/GO|865|Sirfetch'd}}
+|snapshot_users={{MSP/GO|235|Smeargle}}
+}}
+
+====Updates====
+;Gyms & Raids
+* '''July 30, 2016'''
+** '''Power''': 45 → 55
+* '''February 16, 2017'''
+** '''Power''': 55 → 70
+** '''Energy cost''': 50 → 33
+** '''Duration''': 2.8 → 2.4 seconds
+
+===[[Pokémon Masters EX]]===
+{| class="roundy" style="margin:auto; background:#{{grass color}}; border:3px solid #{{grass color dark}}; text-align:center; width:80%"
+|- style="background: #{{grass color light}}"
+! style="{{roundytl|5px}}" | Name
+! {{color2|000|Damage category|Category}}
+! Move gauge cost
+! MP<br>(uses)
+! Base {{color2|000|power}}
+! Max {{color2|000|power}}
+! {{color2|000|Accuracy}}
+! Target
+! Effect tag
+! Description
+! style="{{roundytr|5px}}" | Playable {{color2|000|Sync pair|sync pair(s)}}
+|- style="background:#fff"
+|Leaf Blade
+{{statustable|Physical}}
+|3
+|—
+|80
+|96
+|100%
+|An opponent
+|—
+|Critical hits land more easily.
+|{{sync|Selene|Rowlet}}/Dartrix/Decidueye<hr>{{sync|Adaman|Leafeon}}
+|- style="background:#{{grass color dark}}"
+! colspan=12 |{{color2|fff|Sync move|Sync moves}}
+|- style="background: #{{grass color light}}"
+!Name
+!{{color2|000|Damage category|Category}}
+!colspan="2" |State
+!Base {{color2|000|power}}
+!Max {{color2|000|power}}
+!colspan="2" |Target
+!Effect tag
+!Description
+!Playable {{color2|000|sync pair}}
+|- style="background:#fff"
+| Leaf Blade of Sundering
+{{statustable|Physical}}
+| colspan=2 | Default<hr>'''6★ EX'''
+| 250
+| 300
+| colspan=2 | An opponent<hr>'''All opponents'''
+| —
+| Become {{me|Sceptile}} until the end of battle.
+| {{sync|Brendan|Sceptile}}
+|- style="background:#fff"
+| Moonlight Leaf Blade
+{{statustable|Physical}}
+| colspan=2 | Default<hr>'''6★ EX'''
+| 200
+| 240
+| colspan=2 | An opponent<hr>'''All opponents'''
+| —
+| Critical hits land more easily.
+| {{sync|Selene|Decidueye}}
+|- style="background:#fff"
+| style="{{roundybl|5px}}" | Sunny Snooze Leaf Blade
+{{statustable|Physical}}
+| colspan=2 | Default<hr>'''6★ EX'''
+| 200<hr>'''300'''
+| 240<hr>'''360'''
+| colspan=2 | An opponent
+| —
+| Critical hits land more easily. This attack's power increases when the {{mas|weather}} is sunny.
+| style="{{roundybr|5px}}" | {{sync|Erika|Leafeon|sygna=y}}
+|}
+Notes:
+* '''Leaf Blade of Sundering:'''
+** Prior to June 22, 2023, this [[sync move]] had no additional effect.
+
+==={{g|Rumble Rush}}===
+{{RumbleRushPhysicalAttack|move=Leaf Blade|type=Grass
+|stars=4
+|pow=37.19508
+|charge=0.5
+|range=Arc (melee)
+|hits=1
+|projectiles=1
+|crit=3
+|effect=None}}
+
+===Description===
+{{movedesc|Grass}}
+{{movedescentry|{{gameabbrevmd|RB}}<br>{{gameabbrevmd|TDS}}|Inflicts damage on the target. It has a high critical-hit rate.}}
+{{movedescentry|{{gameabbrevmd|BSL}}|{{tt|てきポケモンに ダメージをあたえる きゅうしょに あたりやすい|Inflicts damage on the target. It has a high critical-hit rate}}}}
+{{movedescentry|{{gameabbrevss|Conq}}|The target is slashed with a sharp leaf. It has a high critical-hit ratio.}}
+{{movedescentry|{{gameabbrevmd|GTI}}<br>{{gameabbrevmd|SMD}}<br/>{{gameabbrevmd|RTDX}}|It damages an enemy. It has a high critical-hit rate.}}
+|}
+|}{{left clear}}
+
+==In animation==
+===Pokémon animated series===
+{{moveanime|type=grass|exp=yes|gen=A leaf-like part of the user's body begins to glow. It then slashes the opponent with it.|image1=Ash Snivy Leaf Blade.png|image1p=Snivy|image2=Sawyer Grovyle Leaf Blade.png|image2p=Grovyle|image3=Zoey Leafeon Leaf Blade.png|image3p=Leafeon|image4=Hau Dartrix Leaf Blade.png|image4p=Dartrix}}
+{{movep|type=grass|ms=253|pkmn=Grovyle|method=The three leaves on one or both of Grovyle's forearms glow white or green and combine into one long sharp blade. It then slashes the opponent with it.}}
+{{movemid|type=grass|user=Natasha|user1=Natasha's Grovyle|startcode=AG041|startname=What You Seed is What You Get|notes=Debut}}
+{{movemid|type=grass|user=Ash's Grovyle|startcode=AG066|startname=Exploud and Clear}}
+{{movemid|type=grass|user=Sawyer's Grovyle|startcode=XY075|startname=Rivals: Today and Tomorrow!}}
+{{movep|type=grass|ms=254|pkmn=Sceptile|method=The four leaves on Sceptile's wrists glow light green and form into two. Sceptile then slices the opponent or sends blades of light green energy from the leaves at the opponent.}}
+{{movemid|type=grass|user=Ash's Sceptile|startcode=AG163|startname=Cutting the Ties that Bind!}}
+{{movemid|type=grass|user=Sawyer's Sceptile|startcode=XY106|startname=A Meeting of Two Journeys!}}
+{{movep|type=grass|ms=470|pkmn=Leafeon|method=The leaf on Leafeon's head and its tail start to glow light green, and they form into long blades. Leafeon then slashes the opponent with one of them; or, Leafeon's tail glows light green, and it slashes the opponent with it.}}
+{{movemid|type=grass|user=Zoey|user1=Zoey's Leafeon|startcode=DP176|startname=Coming Full Festival Circle!}}
+{{movemid|type=grass|user=Perrin|user1=Perrin's Leafeon|startcode=HZ071|startname=Encounters at the Crystal Pool}}
+{{movep|type=grass|ms=496|pkmn=Servine|method=The leaf at the end of Servine's tail glows light green and it slashes the opponent with it.}}
+{{movemid|type=grass|user=Pokémon Trainer|user1=A Trainer's Servine|startcode=BW004|startname=The Battle Club and Tepig's Choice!}}
+{{movep|type=grass|ms=495|pkmn=Snivy|method=The leaf at the end of Snivy's tail becomes surrounded by a wavy light green aura. Snivy then slashes the opponent with its tail. It leaves behind a light green trail of energy where it slashes the opponent. It can also make the leaf on its tail grow to enormous proportions before slashing the opponent.}}
+{{movemid|type=grass|user=Ash's Snivy|startcode=BW010|startname=A Rival Battle for Club Champ!}}
+{{movep|type=grass|ms=447|pkmn=Riolu|method=Riolu's tail becomes surrounded by a wavy light green aura. Riolu then slashes the opponent with its tail.}}
+{{movemid|type=grass|user=Cameron's Riolu|startcode=BW107|startname=Cameron's Secret Weapon!|notes=Used via {{mcolor|Copycat|000}}}}
+{{movep|type=grass|ms=254M|pkmn=Sceptile|method=The four leaves on Mega Sceptile's wrists glow light green and form into two. Mega Sceptile then slices the opponent.}}
+{{movemid|type=grass|user=Sawyer's Sceptile|startcode=XY128|startname=A Riveting Rivalry!}}
+{{movep|type=grass|ms=723|pkmn=Dartrix|method=The two green feathers on Dartrix's back glow light green and grow longer. Dartrix then attacks the opponent with them.}}
+{{movemid|type=grass|user=Hau|user1=Hau's Dartrix|startcode=SM097|startname=No Stone Unturned!}}
+{{movep|type=grass|ms=724|pkmn=Decidueye|method=The edge of Decidueye's wings or the entirety of both of its wings glow light green. Decidueye then slashes the opponent with that wing.}}
+{{movemid|type=grass|user=Hau|user1=Hau's Decidueye|startcode=SM132|startname=Imitation Is the Sincerest Form of Strategy!}}
+{{movemid|type=grass|user=Nemona (anime)|user1=Nemona's Decidueye|startcode=HZ115}}
+{{movep|type=grass|ms=754|pkmn=Lurantis|method=Lurantis's arm blades glow light green, and it slashes the opponent with them.}}
+{{movemid|type=grass|user=Rocket Prize Master|user1=Team Rocket's Lurantis|startcode=JN094|startname=Suffering the Flings and Arrows!}}
+{{movep|type=grass|ms=275|pkmn=Shiftry|method=Shiftry's leaves glow light green, and it slashes the opponent with them.}}
+{{movebtm|type=grass|user=Pokémon Trainer|user1=A Trainer's Shiftry|startcode=JN110|startname=Narrowing the Chaser Chase!}}
+
+===Pokémon Generations===
+{{moveanime|type=grass|exp=yes|gen=The user slashes the opponent with protruding leaves that stick out of its body.|image1=Brendan Sceptile Leaf Blade PG.png|image1p=Sceptile|image2=Burgh Leavanny Leaf Blade PG.png|image2p=Leavanny}}
+{{movep|type=grass|ms=254|pkmn=Sceptile|method=The leaves on one of Sceptile's wrists converge and form a light-green blade of energy in between them. Sceptile then slashes the opponent with the blade.}}
+{{movemid|type=grass|user=Brendan (game)|user1=Brendan's Sceptile|startcode=PG07|startname=The Vision|notes=Debut}}
+{{movep|type=grass|ms=542|pkmn=Leavanny|method=The leaves on Leavanny's arms glow green and slashes the opponent with them.}}
+{{movebtm|type=grass|user=Burgh|user1=Burgh's Leavanny|startcode=PG13|startname=The Uprising}}
+
+==In the manga==
+===Ash & Pikachu===
+{{Movemanga|type=grass|exp=yes|gen=The user slashes the opponent with powerful blades from the arms.|image1=Ash Grovyle Leaf Blade AP.png|image1p=Grovyle}}
+{{movep|type=grass|ms=253|pkmn=Grovyle|method=Grovyle moves its arms quickly and attacks the opponent with the blades coming out from them.}}
+{{MovebtmManga|type=grass|user=Ash's Grovyle|startcode=SP25|startname=I'll Win With My Own Battle Style!!|notes=Debut}}
+
+===Be the Best! Pokémon B+W===
+{{movemanga|type=grass|exp=yes|gen=The user slashes the opponent with a sword-like blade.|image1=Monta Servine Leaf Blade.png|image1p=Servine|image2=Monta Serperior Leaf Blade.png|image2p=Serperior}}
+{{movep|type=grass|ms=496|pkmn=Servine|method=Servine slashes the opponent with a sword-like blade.}}
+{{movemid|type=grass|user=Monta's Servine|startcode=PBW5|startname=Let's Master Pokémon Capturing!|notes=Debut}}
+{{movep|type=grass|ms=497|pkmn=Serperior|method=Serperior slashes the opponent with a sword-like blade.}}
+{{movebtmManga|type=grass|user=Monta's Serperior|startcode=PBW6|startname=Pokédex Complete!}}
+
+===Phantom Thief Pokémon 7===
+{{Movemanga|type=grass|exp=yes|gen=The user slashes the opponent with powerful blades.|image1=Hiori Gallade Leaf Blade.png|image1p=Gallade}}
+{{movep|type=grass|ms=475|pkmn=Gallade|method=Gallade slashes the opponent with his arms.}}
+{{MovebtmManga|type=grass|user=Hiori|user1=Hiori's Gallade|startcode=P7-04|startname=A Fated Reunion|notes=Debut}}
+
+===Pokémon Adventures===
+{{movemanga|type=grass|exp=yes|gen=The user slashes the opponent with protruding leaves that stick out of its body.|image1=Wally Grovyle Leaf Blade.png|image1p=Grovyle|image2=Emerald Sceptile Leaf Blade.png|image2p=Sceptile|image3=Burgh Leavanny Leaf Blade Adventures.png|image3p=Leavanny|image4=Henry Lancelot Leaf Blade.png|image4p=Sirfetch'd}}
+{{movep|type=grass|ms=253|pkmn=Grovyle|method=Grovyle uses the leaves on its forearms and slashes the opponent with them.}}
+{{movemid|type=grass|user=Emerald's Sceptile|user1=Wally's Grovyle|startcode=PS241|startname=Dreadful Dealing with Dusclops|notes=Debut}}
+{{movemid|type=grass|user=Grovyle (Pokémon)|user1=The Battle Factory's Grovyle|startcode=PS306|startname=Pinsir Me, I Must Be Dreaming}}
+{{movep|type=grass|ms=254|pkmn=Sceptile|method=Sceptile slashes the opponent using the leaves protruding from one its arms.}}
+{{movemid|type=grass|user=Emerald's Sceptile|startcode=PS307|startname=Gotcha Where I Wantcha, Glalie}}
+{{movep|type=grass|ms=542|pkmn=Leavanny|method=Leavanny uses one of its leaf-like hands and slashes the opponent with it.}}
+{{movemid|type=grass|user=Burgh|user1=Burgh's Leavanny|startcode=PS479|startname=The Case of the Missing Pokémon}}
+{{movep|type=grass|ms=865|pkmn=Sirfetch'd|method=Sirfetch'd slashes the opponent with its leek.}}
+{{movebtmManga|type=grass|user=Lancelot|user1=Henry's Lancelot|startcode=PASS12|startname=Thump!! The Gazing Sage}}
+
+* {{DL|Swords of Justice (Adventures)|Virizion}} was revealed to know Leaf Blade on the official website, but it was never shown using the move.
+
+===Pokémon Battle Frontier===
+{{Movemanga|type=grass|exp=yes|gen=The user slashes the opponent with powerful blades from the arms.|image1=Rald Sceptile Leaf Blade.png|image1p=Sceptile}}
+{{movep|type=grass|ms=254|pkmn=Sceptile|method=Sceptile moves its arms quickly and attacks the opponent with the blades coming out from them.}}
+{{MovebtmManga|type=grass|user=Rald|user1=Rald's Sceptile|startcode=CBF3|startname=Battle Between Student and Master!|notes=Debut}}
+
+===Pokémon Diamond and Pearl Adventure!===
+{{movemanga|type=grass|exp=yes|gen=The user slashes the opponent with sharp leaves.|image1=Mitsumi Leafeon Leaf Blade.png|image1p=Leafeon|image2=Saturn Gallade Leaf Blade DPA.png|image2p=Gallade}}
+{{movep|type=grass|ms=470|pkmn=Leafeon|method=Leafeon fires out leaves with sharp blades at the opponent.}}
+{{movemid|type=grass|user=Mitsumi|user1=Mitsumi's Leafeon|startcode=DPA08|startname=Team Galactic's Conspiracy, Revealed!!|notes=Debut}}
+{{movep|type=grass|ms=475|pkmn=Gallade|method=Gallade slashes the opponent with one of his arms shaped as a sharp leaf.}}
+{{movebtmManga|type=grass|user=Saturn|user1=Saturn's Gallade|startcode=DPA11|startname=The Legendary Pokémon Captured}}
+
+===Pokémon Omega Ruby Crimson Passion and Pokémon Alpha Sapphire Indigo Wisdom===
+{{movemanga|type=grass|exp=yes|gen=The user hits the foe with a sword-like blade.|image1=Alpha Grovyle Leaf Blade CPIW.png|image1p=Grovyle|image2=Alpha Sceptile Leaf Blade CPIW.png|image2p=Sceptile}}
+{{movep|type=grass|ms=253|pkmn=Grovyle|method=Grovyle hits the foe with a sword-like blade coming from the arms.}}
+{{movemid|type=grass|user=Alpha (CPIW)|user1=Alpha's Grovyle|startcode=Pokémon Omega Ruby Crimson Passion and Pokémon Alpha Sapphire Indigo Wisdom|notes=Debut}}
+{{movep|type=grass|ms=254|pkmn=Sceptile|method=Sceptile hits the foe with a sword-like blade coming from the arms.}}
+{{movebtmManga|type=grass|user=Alpha (CPIW)|user1=Alpha's Sceptile|startcode=Pokémon Omega Ruby Crimson Passion and Pokémon Alpha Sapphire Indigo Wisdom}}
+
+==In other generations==
+===Core series games===
+{{Movegen|
+type=Grass|
+genIII=Leaf Blade III|
+genIV=Leaf Blade IV|
+genV=Leaf Blade V|
+genVI=Leaf Blade VI
+}}
+{{Movegen|
+type=Grass|
+genVII=Leaf Blade VII|
+genVIII=Leaf Blade VIII|
+LA=Leaf Blade LA|
+ZA=Leaf Blade ZA
+}}
+
+===Side series games===
+{{Movegen|
+type=Grass|
+Colo=Leaf Blade Colo|
+XD=Leaf Blade XD|
+PBR=Leaf Blade PBR|
+}}
+
+===Spin-off series games===
+{{Movegen|
+type=Grass|
+PMDRB=Leaf Blade PMD RB|
+PMDTDS=Leaf Blade PMD TDS|
+PMDGTI=Leaf Blade PMD GTI|
+PSMD=Leaf Blade PSMD
+}}
+{{Movegen
+|type=Grass
+|Masters=Leaf Blade Masters
+}}
+
+==Trivia==
+* In the {{pmin|Brazil|Brazilian Portuguese}} [[dub]] of ''[[Pokémon the Series: Ruby and Sapphire]]'', from ''[[AG093|Clamperl of Wisdom]]'' to ''[[AG156|From Cradle to Save]]'', Leaf Blade is referred to as either ''Folha Navalha'' or some slight variation of it, a name that had been present in the Brazilian dub since ''[[EP112|Enter the Dragonite]]'' as the national name for {{m|Razor Leaf}}.
+** Interestingly, Leaf Blade is referred to as ''Lâmina de Folha'', its most fitting, and now official, name, from its [[AG041|animated series debut]] to [[AG088|forty-seven episodes later]]. It is currently unknown why this name would disappear from the dub until ''[[AG161|Odd Pokémon Out!]]''.
+
+==In other languages==
+{{Langtable|color={{grass color}}|bordercolor={{grass color light}}
+|zh_yue=葉刃 ''{{tt|Yihpyahn|Leaf Blade}}'' {{tt|*|Games}}<br>刀葉 ''{{tt|Dōuyihp|Leaf Blade}}'' {{tt|*|Animated series}}
+|zh_cmn=葉刃 / 叶刃 ''{{tt|Yèrèn|Leaf Blade}}'' {{tt|*|Games}}<br>刀葉 ''{{tt|Dāoyè|Leaf Blade}}'' {{tt|*|Animated series}}
+|cs=Listové ostří
+|nl=Bladmes
+|fi=Lehtiterä{{tt|*|Also used for Razor Leaf during the AG series, names likely mixed up.}}
+|fr=Lame Feuille<sup>{{gen|VIII}}+</sup><br>Lame-Feuille<sup>{{gen|III}}–{{gen|VII}}</sup>
+|de=Laubklinge
+|el=Φυλλόξιφος ''Phylloxiphos''
+|hi=लीफ़ ब्लेड ''Leaf Blade'' {{tt|*|Pokémon GO}}<br>चाकू पत्ता ''{{tt|Chaku Patta|Leaf Knife}}''
+|id=Leaf Blade{{tt|*|Pokémon GO}}<br>Pedang Daun
+|it=Fendifoglia
+|ko=리프블레이드 {{tt|''Ripeubeulleideu''|Leaf Blade}}
+|pl=Ostrze Liścia
+|pt_br=Lâmina de Folha ({{pkmn|GO}}, [[AG041]]–[[AG088]], [[AG161]]–present, TCG, manga)<br>Folha Navalha{{tt|*|Mixed up with Razor Leaf's dub name; sometimes called ''Folha de Navalha''.}} ([[AG093]]–[[AG156]])
+|pt_eu=Lâmina<br>Espada Folha
+|ru=Лист-Лезвие ''{{tt|List-Lezviye|Leaf Blade}}''
+|es_la=Hoja Aguda (games, [[SM097]]–present)<br>Hojas Navaja{{tt|*|This is also the term used for Razor Leaf, possibly mistaking both moves.}} ([[AG066]]–[[AG192]], [[BW004]]–[[XY132]])<br>Hoja Afilada{{tt|*|Used for Razor Leaf as well during those episodes.}} ([[DP176]]–[[DP189]])<!--<br>Hoja Sable ([[AG041]])-->
+|es_eu=Hoja Aguda
+|sr=Lisnato sečivo
+|th=ลีฟเบลด ''Leaf Blade''
+|tr=Yaprak Bıçağı
+|vi=Lưỡi Kiếm Lá
+}}
+
+{{Leaf Blade}}
+{{Slash|Grass}}
+{{Generation VIII TMs}}
+{{Project Moves and Abilities notice}}
+
+[[Category:Slicing moves]]
+[[Category:Moves usable in Pokémon Sword and Shield]]
+[[Category:Moves in Pokémon Legends: Arceus]]
+[[Category:Moves usable in Pokémon Scarlet and Violet]]
+[[Category:Moves in Pokémon Legends: Z-A]]
+
+[[de:Laubklinge]]
+[[es:Hoja Aguda]]
+[[fr:Lame Feuille]]
+[[it:Fendifoglia]]
+[[ja:リーフブレード]]
+[[zh:叶刃（招式）]]

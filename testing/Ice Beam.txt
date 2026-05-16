@@ -1,0 +1,1160 @@
+{{MoveInfobox
+|n=58
+|name=Ice Beam
+|jname=れいとうビーム
+|jtranslit=Reitō Bīmu
+|jtrans=Freezing Beam
+|gameimage=Ice Beam IX.png
+|gameimage2=
+|gameimagewidth=300
+|type=Ice
+|damagecategory=Special
+|basepp=10
+|maxpp=16
+|power={{tt|90|95 in Generations I-V}}
+|accuracy=100
+|target=anyadjacent
+|gen=I
+|category=Beauty
+|appeal=2
+|jam=1
+|cdesc=Startles Pokémon that made a same-type appeal.
+|appealsc=2
+|scdesc=Earn +2 if the Pokémon performs first in the turn.
+|category6=Beautiful
+|appeal6=1
+|jam6=4
+|cdesc6=Badly startles the last Pokémon to act before the user.
+|touches=no
+|protect=yes
+|magiccoat=no
+|snatch=no
+|mirrormove=yes
+|kingsrock=yes
+|sound=no
+|tm1=yes
+|tm#1=13
+|tm3=yes
+|tm#3=13
+|tm4=yes
+|tm#4=13
+|tm5=yes
+|tm#5=13
+|tm6=yes
+|tm#6=13
+|tm7=yes
+|tm#7=13
+|tmpe=yes
+|tm#pe=55
+|tr8=yes
+|tr#8=05
+|tmbdsp=yes
+|tm#bdsp=13
+|tm9=yes
+|tm#9=135
+|tmza=yes
+|tm#za=013
+|mtc=yes
+|mtla=yes
+|na=no
+}}
+'''Ice Beam''' (Japanese: '''れいとうビーム''' ''Freezing Beam'') is a damage-dealing {{type|Ice}} [[move]] introduced in [[Generation I]].
+
+It is:
+* [[TM13]] in [[Generation I]], from [[Generation III]] to {{g|Ultra Sun and Ultra Moon}}, in {{g|Brilliant Diamond and Shining Pearl}}, as well as in [[Pokémon Legends: Z-A]].
+* [[TM55]] in [[Pokémon: Let's Go, Pikachu! and Let's Go, Eevee!]].
+* [[TR05]] in {{g|Sword and Shield}}.
+* [[TM135]] in {{g|Scarlet and Violet}}.
+
+==Effect==
+===Generation I to V===
+Ice Beam inflicts damage and has a 10% chance of {{status|Freeze|freezing}} the target.
+
+===Generation VI onwards===
+Ice Beam's power was lowered from 95 to 90.
+
+===Generation VIII===
+====Pokémon Legends: Arceus====
+{{LegendsMove
+|type=Ice
+|damagecategory=Special
+|basepp=10
+|power=80
+|power-agile=60
+|power-strong=100
+|accuracy=100
+|accuracy-strong=100
+|actionspeed-user=0
+|actionspeed-user-agile=0
+|actionspeed-user-strong=+5
+|actionspeed-target=0
+|actionspeed-target-agile=+3
+|effect=Inflicts the target with frostbite
+|param=Chance
+|param-val=20%
+|param-val-agile=20%
+|param-val-strong=40%
+|param2=Turns
+|param2-val=3
+|param2-val-agile=2
+|param2-val-strong=4}}
+
+===Generation IX===
+====Pokémon Legends: Z-A====
+{{LegendsZAMove
+|type=Ice
+|damagecategory=Special
+|power=90
+|cooldown=8
+|charge-time=30
+|effect=May freeze the target.
+|param=Chance
+|param-val=10%
+}}
+
+==Description==
+{{movedesc|ice}}
+{{movedescentry|{{gameabbrevss|Stad}}{{gameabbrevss|Stad2}}|An <sc>Ice</sc>-type attack. Has a one-in-ten chance of freezing the target solid.}}
+{{movedescentry|{{gameabbrev2|GSC}}|An attack that may freeze the foe.}}
+{{movedescentry|{{gameabbrev3|RSE}}|Blasts the foe with an icy beam that may freeze it. <small>(move)</small><br>Fires an icy cold beam that may freeze the foe. <small>(TM)</small>}}
+{{movedescentry|{{gameabbrevss|Colo}}{{gameabbrevss|XD}}|Blasts the target with an icy beam that may freeze it. <small>(move)</small><br>Fires an icy cold beam that may freeze the target. <small>(TM)</small>}}
+{{movedescentry|{{gameabbrev3|FRLG}}|The foe is struck with an icy beam. It may freeze the foe solid.}}
+{{movedescentry|{{gameabbrev4|DPPtHGSS}}{{gameabbrevss|PBR}}|The foe is struck with an icy-cold beam of energy. It may also freeze the target solid.}}
+{{movedescentry|{{gameabbrev5|BWB2W2}}|The target is struck with an icy-cold beam of energy. It may also freeze the target solid.}}
+{{movedescentry|{{gameabbrev6|XYORAS}}<br>{{gameabbrev7|SMUSUMPE}}<br>{{gameabbrev8|SwShBDSP}}<br>{{gameabbrev9|SV}}|The target is struck with an icy-cold beam of energy. This may also leave the target frozen.}}
+{{movedescentry|{{gameabbrev8|LA}}|The target is struck with an icy-cold beam of energy. This may also leave the target with frostbite.}}
+{{movedescentry|{{gameabbrev9|ZA}}|The user attacks by shooting out a beam of icy-cold energy. This may also leave targets frozen.}}
+|}
+|}{{left clear}}
+
+==Learnset==
+===By [[Level|leveling up]]===
+{{Movehead/Games|Ice|g7=2|g8=3|g9=2}}
+{{Moveentry/13|0037|formsig=A|Vulpix|type=Ice|1|Field|Field|form=Alolan Form|||||||36|24|32||37|32|STAB='''}}
+{{Moveentry/13|0038|formsig=A|Ninetales|type=Ice|type2=Fairy|1|Field|Field|form=Alolan Form|||||||1|−|1||37|{{tt|Rem.|Can only be learned via Move Reminder}}|STAB='''}}
+{{Moveentry/13|0086|Seel|type=Water|2|Water 1|Field|50|37|41|47|47|47|47|44||47||47|STAB=''}}
+{{Moveentry/13|0087|Dewgong|type=Water|type2=Ice|2|Water 1|Field|56|43|51|47|55|55|55|52||55||55|STAB='''}}
+{{Moveentry/13|0090|Shellder|type=Water|1|Water 3|Water 3|50|49|49{{sup/3|RSE}}<br>50{{sup/3|FRLG}}|49|52|52|52|36|40|40||40|STAB=''}}
+{{Moveentry/13|0091|Cloyster|type=Water|type2=Ice|1|Water 3|Water 3|−|−|−|−|−|−|−|−|1|1||1|STAB='''}}
+{{Moveentry/13|0131|Lapras|type=Water|type2=Ice|2|Monster|Water 1|38|36|31|32|32|32|32|39|45|45||45|STAB='''}}
+{{Moveentry/13|0144|Articuno|type=Ice|type2=Flying|1|No Eggs Discovered|No Eggs Discovered|1|49|49|43|43|43|71|32|45|45||45|STAB='''}}
+{{Moveentry/13|0223|Remoraid|type=Water|2|Water 1|Water 2||44|44|40|40{{sup/5|BW}}<br>34{{sup/5|B2W2}}|34|34||32|32|25}}
+{{Moveentry/13|0224|Octillery|type=Water|2|Water 1|Water 2||54|54|48|48{{sup/5|BW}}<br>40{{sup/5|B2W2}}|40|40||36|36|25}}
+{{Moveentry/13|0361|Snorunt|type=Ice|2|Fairy|Mineral|||34|−|−|−|−||−|−|−|−|−|STAB='''}}
+{{Moveentry/13|0362|Glalie|type=Ice|2|Fairy|Mineral|||34|37|37|37{{sup/6|XY}}|−||−|−|−|−|−|STAB='''}}
+{{Moveentry/13|0363|Spheal|type=Ice|type2=Water|2|Water 1|Field|||−|−|−|−|−||−|−|34|STAB='''}}
+{{Moveentry/13|0364|Sealeo|type=Ice|type2=Water|2|Water 1|Field|||−|−|−|−|−||−|−|34|STAB='''}}
+{{Moveentry/13|0365|Walrein|type=Ice|type2=Water|2|Water 1|Field|||−|−|−|−|−||−|−|34|STAB='''}}
+{{Moveentry/13|0378|Regice|type=Ice|1|No Eggs Discovered|No Eggs Discovered|||−|73|73|73{{sup/6|XY}}<br>43{{sup/6|ORAS}}|43||24|24||24|STAB='''}}
+{{Moveentry/13|0382|Kyogre|type=Water|1|No Eggs Discovered|No Eggs Discovered|||35|35|35|35|35||36|36||36|36}}
+{{Moveentry/13|0471|Glaceon|type=Ice|1|Field|Field||||−|−|−|−||−|−|25|−|36|STAB='''}}
+{{Moveentry/13|0582|Vanillite|type=Ice|1|Mineral|Mineral|||||35|35|35||40||||35|STAB='''}}
+{{Moveentry/13|0583|Vanillish|type=Ice|1|Mineral|Mineral|||||36|36|36||44||||35|STAB='''}}
+{{Moveentry/13|0584|Vanilluxe|type=Ice|1|Mineral|Mineral|||||36|36|36||44||||35|STAB='''}}
+{{Moveentry/13|0615|Cryogonal|type=Ice|1|Mineral|Mineral|||||33|33|25||48|||48|48|STAB='''}}
+{{Moveentry/13|0646|Kyurem|type=Dragon|type2=Ice|1|No Eggs Discovered|No Eggs Discovered|form=All available forms|||||22|22|22||32|||32|STAB='''}}
+{{Moveentry/13|0698|Amaura|type=Rock|type2=Ice|1|Monster|Monster||||||50|50||40||||40|STAB='''}}
+{{Moveentry/13|0699|Aurorus|type=Rock|type2=Ice|1|Monster|Monster||||||56|56||42||||40|STAB='''}}
+{{Moveentry/13|0991|Iron Bundle|type=Ice|type2=Water|1|No Eggs Discovered|No Eggs Discovered||||||||||||56|STAB='''}}
+{{Moveentry/13|0996|Frigibax|type=Dragon|type2=Ice|2|Dragon|Mineral||||||||||||40|40|STAB='''}}
+{{Moveentry/13|0997|Arctibax|type=Dragon|type2=Ice|2|Dragon|Mineral||||||||||||45|40|STAB='''}}
+{{Moveentry/13|0998|Baxcalibur|type=Dragon|type2=Ice|2|Dragon|Mineral||||||||||||48|40|STAB='''}}
+{{Movefoot|Ice|13}}
+
+===By [[TM]]/[[TR]]/[[Move Tutor]]===
+{{Movehead/TMGames|Ice|g1tm=13
+|g2tm=tutor|g2g={{gameabbrev2|C}}
+|g3tm=13
+|g4tm=13
+|g5tm=13
+|g6tm=13
+|g7=2|g7tm-1=13|g7tm-2=55
+|g8=3|g8tm-1=05|tmhm8-1=TR|g8tm-2=13|g8tm-3=tutor
+|g9=2|g9tm-1=135|g9tm-2=013}}
+{{Moveentry/13|0007|Squirtle|type=Water|2|Monster|Water 1|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/13|0008|Wartortle|type=Water|2|Monster|Water 1|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/13|0009|Blastoise|type=Water|2|Monster|Water 1|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/13|0019|Rattata|type=Normal|1|Field|Field|−|−|✔|✔|✔|✔|✔|||✔||}}
+{{Moveentry/13|0019|formsig=A|Rattata|type=Dark|type2=Normal|1|Field|Field|form=Alolan Form|||||||✔|✔||||}}
+{{Moveentry/13|0020|Raticate|type=Normal|1|Field|Field|✔|✔|✔|✔|✔|✔|✔|✔||✔||}}
+{{Moveentry/13|0020|formsig=A|Raticate|type=Dark|type2=Normal|1|Field|Field|form=Alolan Form|||||||✔|✔||||}}
+{{Moveentry/13|0027|formsig=A|Sandshrew|type=Ice|type2=Steel|1|Field|Field|form=Alolan Form|||||||−|✔|✔|||✔|STAB='''}}
+{{Moveentry/13|0028|formsig=A|Sandslash|type=Ice|type2=Steel|1|Field|Field|form=Alolan Form|||||||−|✔|✔|||✔|STAB='''}}
+{{Moveentry/13|0029|Nidoran♀|type=Poison|2|Monster|Field|−|−|✔|✔|✔|✔|✔|✔|✔|✔||}}
+{{Moveentry/13|0030|Nidorina|type=Poison|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||}}
+{{Moveentry/13|0031|Nidoqueen|type=Poison|type2=Ground|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||}}
+{{Moveentry/13|0032|Nidoran♂|type=Poison|2|Monster|Field|−|−|✔|✔|✔|✔|✔|✔|✔|✔||}}
+{{Moveentry/13|0033|Nidorino|type=Poison|2|Monster|Field|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||}}
+{{Moveentry/13|0034|Nidoking|type=Poison|type2=Ground|2|Monster|Field|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||}}
+{{Moveentry/13|0035|Clefairy|type=Fairy|1|Fairy|Fairy|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/13|0036|Clefable|type=Fairy|1|Fairy|Fairy|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/13|0037|formsig=A|Vulpix|type=Ice|1|Field|Field|form=Alolan Form|||||||✔|✔|✔||✔|✔|STAB='''}}
+{{Moveentry/13|0038|formsig=A|Ninetales|type=Ice|type2=Fairy|1|Field|Field|form=Alolan Form|||||||✔|✔|✔||✔|✔|STAB='''}}
+{{Moveentry/13|0039|Jigglypuff|type=Normal|type2=Fairy|1|Fairy|Fairy|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/13|0040|Wigglytuff|type=Normal|type2=Fairy|1|Fairy|Fairy|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/13|0054|Psyduck|type=Water|2|Water 1|Field|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/13|0055|Golduck|type=Water|2|Water 1|Field|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/13|0060|Poliwag|type=Water|1|Water 1|Water 1|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔}}
+{{Moveentry/13|0061|Poliwhirl|type=Water|1|Water 1|Water 1|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔}}
+{{Moveentry/13|0062|Poliwrath|type=Water|type2=Fighting|1|Water 1|Water 1|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔}}
+{{Moveentry/13|0072|Tentacool|type=Water|type2=Poison|1|Water 3|Water 3|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/13|0073|Tentacruel|type=Water|type2=Poison|1|Water 3|Water 3|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/13|0079|Slowpoke|type=Water|type2=Psychic|2|Monster|Water 1|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/13|0079|formsig=G|Slowpoke|type=Psychic|2|Monster|Water 1|form=Galarian Form|||||||||✔|||✔|✔}}
+{{Moveentry/13|0080|Slowbro|type=Water|type2=Psychic|2|Monster|Water 1|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/13|0080|formsig=G|Slowbro|type=Poison|type2=Psychic|2|Monster|Water 1|form=Galarian Form|||||||||✔|||✔|✔}}
+{{Moveentry/13|0086|Seel|type=Water|2|Water 1|Field|✔|✔|✔|✔|✔|✔|✔|✔||✔||✔|STAB=''}}
+{{Moveentry/13|0087|Dewgong|type=Water|type2=Ice|2|Water 1|Field|✔|✔|✔|✔|✔|✔|✔|✔||✔||✔|STAB='''}}
+{{Moveentry/13|0090|Shellder|type=Water|1|Water 3|Water 3|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔|STAB=''}}
+{{Moveentry/13|0091|Cloyster|type=Water|type2=Ice|1|Water 3|Water 3|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔|STAB='''}}
+{{Moveentry/13|0098|Krabby|type=Water|1|Water 3|Water 3|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||}}
+{{Moveentry/13|0099|Kingler|type=Water|1|Water 3|Water 3|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||}}
+{{Moveentry/13|0104|Cubone|type=Ground|1|Monster|Monster|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|||✔}}
+{{Moveentry/13|0105|Marowak|type=Ground|1|Monster|Monster|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|||✔}}
+{{Moveentry/13|0105|formsig=A|Marowak|type=Fire|type2=Ghost|1|Monster|Monster|form=Alolan Form|||||||✔||✔||||✔}}
+{{Moveentry/13|0108|Lickitung|type=Normal|1|Monster|Monster|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|}}
+{{Moveentry/13|0111|Rhyhorn|type=Ground|type2=Rock|2|Monster|Field|−|✔|✔|✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/13|0112|Rhydon|type=Ground|type2=Rock|2|Monster|Field|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/13|0113|Chansey|type=Normal|1|Fairy|Fairy|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/13|0115|Kangaskhan|type=Normal|1|Monster|Monster|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|||✔}}
+{{Moveentry/13|0116|Horsea|type=Water|2|Water 1|Dragon|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔}}
+{{Moveentry/13|0117|Seadra|type=Water|2|Water 1|Dragon|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔}}
+{{Moveentry/13|0118|Goldeen|type=Water|1|Water 2|Water 2|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||}}
+{{Moveentry/13|0119|Seaking|type=Water|1|Water 2|Water 2|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||}}
+{{Moveentry/13|0120|Staryu|type=Water|1|Water 3|Water 3|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|||✔}}
+{{Moveentry/13|0121|Starmie|type=Water|type2=Psychic|1|Water 3|Water 3|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|||✔}}
+{{Moveentry/13|0122|formsig=G|Mr. Mime|type=Ice|type2=Psychic|1|Human-Like|Human-Like|form=Galarian Form|||||||||✔||||✔|STAB='''}}
+{{Moveentry/13|0124|Jynx|type=Ice|type2=Psychic|1|Human-Like|Human-Like|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|||STAB='''}}
+{{Moveentry/13|0128|Tauros|type=Normal|1|Field|Field|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔}}
+{{Moveentry/13|0130|Gyarados|type=Water|type2=Flying|2|Water 2|Dragon|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/13|0131|Lapras|type=Water|type2=Ice|2|Monster|Water 1|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/13|0134|Vaporeon|type=Water|1|Field|Field|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/13|0137|Porygon|type=Normal|1|Mineral|Mineral|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/13|0138|Omanyte|type=Rock|type2=Water|2|Water 1|Water 3|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||}}
+{{Moveentry/13|0139|Omastar|type=Rock|type2=Water|2|Water 1|Water 3|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||}}
+{{Moveentry/13|0140|Kabuto|type=Rock|type2=Water|2|Water 1|Water 3|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||}}
+{{Moveentry/13|0141|Kabutops|type=Rock|type2=Water|2|Water 1|Water 3|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||}}
+{{Moveentry/13|0143|Snorlax|type=Normal|1|Monster|Monster|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/13|0144|Articuno|type=Ice|type2=Flying|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔|STAB='''}}
+{{Moveentry/13|0147|Dratini|type=Dragon|2|Water 1|Dragon|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/13|0148|Dragonair|type=Dragon|2|Water 1|Dragon|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/13|0149|Dragonite|type=Dragon|type2=Flying|2|Water 1|Dragon|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/13|0150|Mewtwo|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/13|0151|Mew|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|✔|✔|✔|✔|✔|✔|✔|✔|✔||✔}}
+{{Moveentry/13|0158|Totodile|type=Water|2|Monster|Water 1||✔|✔|✔|✔|✔|✔||✔|✔||✔|✔}}
+{{Moveentry/13|0159|Croconaw|type=Water|2|Monster|Water 1||✔|✔|✔|✔|✔|✔||✔|✔||✔|✔}}
+{{Moveentry/13|0160|Feraligatr|type=Water|2|Monster|Water 1||✔|✔|✔|✔|✔|✔||✔|✔||✔|✔}}
+{{Moveentry/13|0161|Sentret|type=Normal|1|Field|Field||−|✔|✔|✔|✔|✔|||✔||✔}}
+{{Moveentry/13|0162|Furret|type=Normal|1|Field|Field||−|✔|✔|✔|✔|✔|||✔||✔}}
+{{Moveentry/13|0170|Chinchou|type=Water|type2=Electric|1|Water 2|Water 2||✔|✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/13|0171|Lanturn|type=Water|type2=Electric|1|Water 2|Water 2||✔|✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/13|0173|Cleffa|type=Fairy|1|No Eggs Discovered|No Eggs Discovered||–|–|–|–|–|–||–|–|–|–|✔}}
+{{Moveentry/13|0183|Marill|type=Water|type2=Fairy|2|Water 1|Fairy||✔|✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/13|0184|Azumarill|type=Water|type2=Fairy|2|Water 1|Fairy||✔|✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/13|0186|Politoed|type=Water|1|Water 1|Water 1||✔|✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/13|0194|Wooper|type=Water|type2=Ground|2|Water 1|Field||✔|✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/13|0195|Quagsire|type=Water|type2=Ground|2|Water 1|Field||✔|✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/13|0199|Slowking|type=Water|type2=Psychic|2|Monster|Water 1||✔|✔|✔|✔|✔|✔||✔|✔||✔|✔}}
+{{Moveentry/13|0199|formsig=G|Slowking|type=Poison|type2=Psychic|2|Monster|Water 1|form=Galarian Form|||||||||✔|||✔|✔}}
+{{Moveentry/13|0206|Dunsparce|type=Normal|1|Field|Field||−|✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/13|0211|Qwilfish|type=Water|type2=Poison|1|Water 2|Water 2||✔|✔|✔|✔|✔|✔||✔|✔||✔|✔}}
+{{Moveentry/13|0211|formsig=H|Qwilfish|type=Dark|type2=Poison|1|Water 2|Water 2|form=Hisuian Form|||||||||||✔|✔|✔}}
+{{Moveentry/13|0215|Sneasel|type=Dark|type2=Ice|1|Field|Field||✔|✔|✔|✔|✔|✔||✔|✔|✔|✔|STAB='''}}
+{{Moveentry/13|0220|Swinub|type=Ice|type2=Ground|1|Field|Field||✔|✔|✔|✔|✔|✔||✔|✔|✔|✔|STAB='''}}
+{{Moveentry/13|0221|Piloswine|type=Ice|type2=Ground|1|Field|Field||✔|✔|✔|✔|✔|✔||✔|✔|✔|✔|STAB='''}}
+{{Moveentry/13|0222|Corsola|type=Water|type2=Rock|2|Water 1|Water 3||✔|✔|✔|✔|✔|✔||✔|✔||}}
+{{Moveentry/13|0222|formsig=G|Corsola|type=Ghost|2|Water 1|Water 3|form=Galarian Form|||||||||✔|||}}
+{{Moveentry/13|0223|Remoraid|type=Water|2|Water 1|Water 2||✔|✔|✔|✔|✔|✔||✔|✔|✔|}}
+{{Moveentry/13|0224|Octillery|type=Water|2|Water 1|Water 2||✔|✔|✔|✔|✔|✔||✔|✔|✔|}}
+{{Moveentry/13|0225|Delibird|type=Ice|type2=Flying|2|Water 1|Field||✔|✔|✔|✔|✔|✔||✔|✔||✔|✔|STAB='''}}
+{{Moveentry/13|0226|Mantine|type=Water|type2=Flying|1|Water 1|Water 1||✔|✔|✔|✔|✔|✔||✔|✔|✔|}}
+{{Moveentry/13|0230|Kingdra|type=Water|type2=Dragon|2|Water 1|Dragon||✔|✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/13|0233|Porygon2|type=Normal|1|Mineral|Mineral||✔|✔|✔|✔|✔|✔||✔|✔|✔|✔|✔}}
+{{Moveentry/13|0238|Smoochum|type=Ice|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered||✔|✔|✔|✔|✔|✔||✔|✔|||STAB='''}}
+{{Moveentry/13|0241|Miltank|type=Normal|1|Field|Field||✔|✔|✔|✔|✔|✔||✔|✔||}}
+{{Moveentry/13|0242|Blissey|type=Normal|1|Fairy|Fairy||✔|✔|✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/13|0245|Suicune|type=Water|1|No Eggs Discovered|No Eggs Discovered||✔|✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/13|0248|Tyranitar|type=Rock|type2=Dark|1|Monster|Monster||✔|✔|✔|✔|✔|✔||✔|✔||✔|✔}}
+{{Moveentry/13|0249|Lugia|type=Psychic|type2=Flying|1|No Eggs Discovered|No Eggs Discovered||✔|✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/13|0258|Mudkip|type=Water|2|Monster|Water 1|||✔|✔|✔|✔|✔||✔|✔||✔|✔}}
+{{Moveentry/13|0259|Marshtomp|type=Water|type2=Ground|2|Monster|Water 1|||✔|✔|✔|✔|✔||✔|✔||✔|✔}}
+{{Moveentry/13|0260|Swampert|type=Water|type2=Ground|2|Monster|Water 1|||✔|✔|✔|✔|✔||✔|✔||✔|✔}}
+{{Moveentry/13|0263|Zigzagoon|type=Normal|1|Field|Field|||✔|✔|✔|✔|✔||✔|✔||}}
+{{Moveentry/13|0263|formsig=G|Zigzagoon|type=Dark|type2=Normal|1|Field|Field|form=Galarian Form|||||||||✔|||}}
+{{Moveentry/13|0264|Linoone|type=Normal|1|Field|Field|||✔|✔|✔|✔|✔||✔|✔||}}
+{{Moveentry/13|0264|formsig=G|Linoone|type=Dark|type2=Normal|1|Field|Field|form=Galarian Form|||||||||✔|||}}
+{{Moveentry/13|0270|Lotad|type=Water|type2=Grass|2|Water 1|Grass|||✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/13|0271|Lombre|type=Water|type2=Grass|2|Water 1|Grass|||✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/13|0272|Ludicolo|type=Water|type2=Grass|2|Water 1|Grass|||✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/13|0278|Wingull|type=Water|type2=Flying|2|Water 1|Flying|||✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/13|0279|Pelipper|type=Water|type2=Flying|2|Water 1|Flying|||✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/13|0280|Ralts|type=Psychic|type2=Fairy|2|Human-Like|Amorphous|||−|−|−|−|−||−|−|✔|−|−}}
+{{Moveentry/13|0281|Kirlia|type=Psychic|type2=Fairy|2|Human-Like|Amorphous|||−|−|−|−|−||−|−|✔|−|−}}
+{{Moveentry/13|0282|Gardevoir|type=Psychic|type2=Fairy|2|Human-Like|Amorphous|||−|−|−|−|−||−|−|✔|−|−}}
+{{Moveentry/13|0283|Surskit|type=Bug|type2=Water|2|Water 1|Bug|||✔|✔|✔|✔|✔|||✔||✔}}
+{{Moveentry/13|0284|Masquerain|type=Bug|type2=Flying|2|Water 1|Bug|||✔|✔|✔|✔|✔|||✔||✔}}
+{{Moveentry/13|0287|Slakoth|type=Normal|1|Field|Field|||✔|✔|✔|✔|✔|||✔||✔}}
+{{Moveentry/13|0288|Vigoroth|type=Normal|1|Field|Field|||✔|✔|✔|✔|✔|||✔||✔}}
+{{Moveentry/13|0289|Slaking|type=Normal|1|Field|Field|||✔|✔|✔|✔|✔|||✔||✔}}
+{{Moveentry/13|0293|Whismur|type=Normal|2|Monster|Field|||✔|✔|✔|✔|✔||✔|✔||}}
+{{Moveentry/13|0294|Loudred|type=Normal|2|Monster|Field|||✔|✔|✔|✔|✔||✔|✔||}}
+{{Moveentry/13|0295|Exploud|type=Normal|2|Monster|Field|||✔|✔|✔|✔|✔||✔|✔||}}
+{{Moveentry/13|0298|Azurill|type=Normal|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered|||✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/13|0300|Skitty|type=Normal|2|Field|Fairy|||✔|✔|✔|✔|✔|||✔||}}
+{{Moveentry/13|0301|Delcatty|type=Normal|2|Field|Fairy|||✔|✔|✔|✔|✔|||✔||}}
+{{Moveentry/13|0303|Mawile|type=Steel|type2=Fairy|2|Field|Fairy|||✔|✔|✔|✔|✔||✔|✔|||✔}}
+{{Moveentry/13|0306|Aggron|type=Steel|type2=Rock|1|Monster|Monster|||✔|✔|✔|✔|✔||✔|✔|||✔}}
+{{Moveentry/13|0316|Gulpin|type=Poison|1|Amorphous|Amorphous|||✔|✔|✔|✔|✔|||✔||✔|✔}}
+{{Moveentry/13|0317|Swalot|type=Poison|1|Amorphous|Amorphous|||✔|✔|✔|✔|✔|||✔||✔|✔}}
+{{Moveentry/13|0318|Carvanha|type=Water|type2=Dark|1|Water 2|Water 2|||✔|✔|✔|✔|✔||✔|✔|||✔}}
+{{Moveentry/13|0319|Sharpedo|type=Water|type2=Dark|1|Water 2|Water 2|||✔|✔|✔|✔|✔||✔|✔|||✔}}
+{{Moveentry/13|0320|Wailmer|type=Water|2|Field|Water 2|||✔|✔|✔|✔|✔||✔|✔||}}
+{{Moveentry/13|0321|Wailord|type=Water|2|Field|Water 2|||✔|✔|✔|✔|✔||✔|✔||}}
+{{Moveentry/13|0333|Swablu|type=Normal|type2=Flying|2|Flying|Dragon|||✔|✔|✔|✔|✔||✔|✔||✔|✔}}
+{{Moveentry/13|0334|Altaria|type=Dragon|type2=Flying|2|Flying|Dragon|||✔|✔|✔|✔|✔||✔|✔||✔|✔}}
+{{Moveentry/13|0335|Zangoose|type=Normal|1|Field|Field|||✔|✔|✔|✔|✔|||✔||✔|✔}}
+{{Moveentry/13|0337|Lunatone|type=Rock|type2=Psychic|1|Mineral|Mineral|||✔|✔|✔|✔|✔||✔|✔||}}
+{{Moveentry/13|0339|Barboach|type=Water|type2=Ground|1|Water 2|Water 2|||✔|✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/13|0340|Whiscash|type=Water|type2=Ground|1|Water 2|Water 2|||✔|✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/13|0341|Corphish|type=Water|2|Water 1|Water 3|||✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/13|0342|Crawdaunt|type=Water|type2=Dark|2|Water 1|Water 3|||✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/13|0343|Baltoy|type=Ground|type2=Psychic|1|Mineral|Mineral|||✔|✔|✔|✔|✔||✔|✔||}}
+{{Moveentry/13|0344|Claydol|type=Ground|type2=Psychic|1|Mineral|Mineral|||✔|✔|✔|✔|✔||✔|✔||}}
+{{Moveentry/13|0349|Feebas|type=Water|2|Water 1|Dragon|||✔|✔|✔|✔|✔||✔|✔||✔|✔}}
+{{Moveentry/13|0350|Milotic|type=Water|2|Water 1|Dragon|||✔|✔|✔|✔|✔||✔|✔||✔|✔}}
+{{Moveentry/13|0351|Castform|type=Normal|2|Fairy|Amorphous|||✔|✔|✔|✔|✔|||✔|||STAB=''}}
+{{Moveentry/13|0352|Kecleon|type=Normal|1|Field|Field|||✔|✔|✔|✔|✔|||✔|||✔}}
+{{Moveentry/13|0355|Duskull|type=Ghost|1|Amorphous|Amorphous|||✔|✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/13|0356|Dusclops|type=Ghost|1|Amorphous|Amorphous|||✔|✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/13|0359|Absol|type=Dark|1|Field|Field|||✔|✔|✔|✔|✔||✔|✔|||✔}}
+{{Moveentry/13|0361|Snorunt|type=Ice|2|Fairy|Mineral|||✔|✔|✔|✔|✔||✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/13|0362|Glalie|type=Ice|2|Fairy|Mineral|||✔|✔|✔|✔|✔||✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/13|0363|Spheal|type=Ice|type2=Water|2|Water 1|Field|||✔|✔|✔|✔|✔||✔|✔|✔||STAB='''}}
+{{Moveentry/13|0364|Sealeo|type=Ice|type2=Water|2|Water 1|Field|||✔|✔|✔|✔|✔||✔|✔|✔||STAB='''}}
+{{Moveentry/13|0365|Walrein|type=Ice|type2=Water|2|Water 1|Field|||✔|✔|✔|✔|✔||✔|✔|✔||STAB='''}}
+{{Moveentry/13|0366|Clamperl|type=Water|1|Water 1|Water 1|||✔|✔|✔|✔|✔|||✔||}}
+{{Moveentry/13|0367|Huntail|type=Water|1|Water 1|Water 1|||✔|✔|✔|✔|✔|||✔||}}
+{{Moveentry/13|0368|Gorebyss|type=Water|1|Water 1|Water 1|||✔|✔|✔|✔|✔|||✔||}}
+{{Moveentry/13|0369|Relicanth|type=Water|type2=Rock|2|Water 1|Water 2|||✔|✔|✔|✔|✔||✔|✔||}}
+{{Moveentry/13|0370|Luvdisc|type=Water|1|Water 2|Water 2|||✔|✔|✔|✔|✔|||✔||✔}}
+{{Moveentry/13|0378|Regice|type=Ice|1|No Eggs Discovered|No Eggs Discovered|||✔|✔|✔|✔|✔||✔|✔||✔|STAB='''}}
+{{Moveentry/13|0380|Latias|type=Dragon|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered|||✔|✔|✔|✔|✔||✔|✔||✔|✔}}
+{{Moveentry/13|0381|Latios|type=Dragon|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered|||✔|✔|✔|✔|✔||✔|✔||✔|✔}}
+{{Moveentry/13|0382|Kyogre|type=Water|1|No Eggs Discovered|No Eggs Discovered|||✔|✔|✔|✔|✔||✔|✔||✔|✔}}
+{{Moveentry/13|0384|Rayquaza|type=Dragon|type2=Flying|1|No Eggs Discovered|No Eggs Discovered|||✔|✔|✔|✔|✔||✔|✔||✔|✔}}
+{{Moveentry/13|0386|Deoxys|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|form=All forms|||✔|✔|✔|✔|✔||✔|✔||✔}}
+{{Moveentry/13|0393|Piplup|type=Water|2|Water 1|Field||||✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/13|0394|Prinplup|type=Water|2|Water 1|Field||||✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/13|0395|Empoleon|type=Water|type2=Steel|2|Water 1|Field||||✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/13|0399|Bidoof|type=Normal|2|Water 1|Field||||✔|✔|✔|✔|||✔|✔|}}
+{{Moveentry/13|0400|Bibarel|type=Normal|type2=Water|2|Water 1|Field||||✔|✔|✔|✔|||✔|✔|}}
+{{Moveentry/13|0408|Cranidos|type=Rock|1|Monster|Monster||||✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/13|0409|Rampardos|type=Rock|1|Monster|Monster||||✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/13|0410|Shieldon|type=Rock|type2=Steel|1|Monster|Monster||||✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/13|0411|Bastiodon|type=Rock|type2=Steel|1|Monster|Monster||||✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/13|0418|Buizel|type=Water|2|Water 1|Field||||✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/13|0419|Floatzel|type=Water|2|Water 1|Field||||✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/13|0422|Shellos|type=Water|2|Water 1|Amorphous|form=All forms||||✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/13|0423|Gastrodon|type=Water|type2=Ground|2|Water 1|Amorphous|form=All forms||||✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/13|0427|Buneary|type=Normal|2|Field|Human-Like||||✔|✔|✔|✔||✔|✔|✔||✔}}
+{{Moveentry/13|0428|Lopunny|type=Normal|2|Field|Human-Like||||✔|✔|✔|✔||✔|✔|✔||✔}}
+{{Moveentry/13|0446|Munchlax|type=Normal|1|No Eggs Discovered|No Eggs Discovered||||✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/13|0456|Finneon|type=Water|1|Water 2|Water 2||||✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/13|0457|Lumineon|type=Water|1|Water 2|Water 2||||✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/13|0458|Mantyke|type=Water|type2=Flying|1|No Eggs Discovered|No Eggs Discovered||||✔|✔|✔|✔||✔|✔|✔|}}
+{{Moveentry/13|0459|Snover|type=Grass|type2=Ice|2|Monster|Grass||||✔|✔|✔|✔||✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/13|0460|Abomasnow|type=Grass|type2=Ice|2|Monster|Grass||||✔|✔|✔|✔||✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/13|0461|Weavile|type=Dark|type2=Ice|1|Field|Field||||✔|✔|✔|✔||✔|✔|✔|✔|STAB='''}}
+{{Moveentry/13|0463|Lickilicky|type=Normal|1|Monster|Monster||||✔|✔|✔|✔||✔|✔|✔|}}
+{{Moveentry/13|0464|Rhyperior|type=Ground|type2=Rock|2|Monster|Field||||✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/13|0471|Glaceon|type=Ice|1|Field|Field||||✔|✔|✔|✔||✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/13|0473|Mamoswine|type=Ice|type2=Ground|1|Field|Field||||✔|✔|✔|✔||✔|✔|✔|✔|STAB='''}}
+{{Moveentry/13|0474|Porygon-Z|type=Normal|1|Mineral|Mineral||||✔|✔|✔|✔||✔|✔|✔|✔|✔}}
+{{Moveentry/13|0475|Gallade|type=Psychic|type2=Fighting|2|Human-Like|Amorphous||||−|−|−|−||−|−|✔|−|−}}
+{{Moveentry/13|0477|Dusknoir|type=Ghost|1|Amorphous|Amorphous||||✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/13|0478|Froslass|type=Ice|type2=Ghost|2|Fairy|Mineral||||✔|✔|✔|✔||✔|✔|✔|✔|✔|STAB='''}}
+{{Moveentry/13|0481|Mesprit|type=Psychic|1|No Eggs Discovered|No Eggs Discovered||||✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/13|0483|Dialga|type=Steel|type2=Dragon|1|No Eggs Discovered|No Eggs Discovered|form=All available forms||||✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/13|0484|Palkia|type=Water|type2=Dragon|1|No Eggs Discovered|No Eggs Discovered|form=All available forms||||✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/13|0488|Cresselia|type=Psychic|1|No Eggs Discovered|No Eggs Discovered||||✔|✔|✔|✔||✔|✔|✔|✔}}
+{{Moveentry/13|0489|Phione|type=Water|2|Water 1|Fairy||||✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/13|0490|Manaphy|type=Water|2|Water 1|Fairy||||✔|✔|✔|✔|||✔|✔|✔}}
+{{Moveentry/13|0491|Darkrai|type=Dark|1|No Eggs Discovered|No Eggs Discovered||||✔|✔|✔|✔|||✔|✔|✔|✔}}
+{{Moveentry/13|0493|Arceus|type=Normal|1|No Eggs Discovered|No Eggs Discovered|form=All available forms||||✔|✔|✔|✔|||✔|✔|✔|STAB=''}}
+{{Moveentry/13|0501|Oshawott|type=Water|1|Field|Field|||||✔|✔|✔||||✔|✔}}
+{{Moveentry/13|0502|Dewott|type=Water|1|Field|Field|||||✔|✔|✔||||✔|✔}}
+{{Moveentry/13|0503|Samurott|type=Water|1|Field|Field|||||✔|✔|✔|||||✔}}
+{{Moveentry/13|0503|formsig=H|Samurott|type=Water|type2=Dark|1|Field|Field|form=Hisuian Form|||||||||||✔|✔}}
+{{Moveentry/13|0515|Panpour|type=Water|1|Field|Field|||||✔|✔|✔||||||✔}}
+{{Moveentry/13|0516|Simipour|type=Water|1|Field|Field|||||✔|✔|✔||||||✔}}
+{{Moveentry/13|0531|Audino|type=Normal|1|Fairy|Fairy|||||✔|✔|✔||✔||||✔}}
+{{Moveentry/13|0550|Basculin|type=Water|1|Water 2|Water 2|form=Red- and<br>Blue-Striped Forms|||||✔|✔|✔||✔|||✔}}
+{{Moveentry/13|0550|formsig=W|Basculin|type=Water|1|Water 2|Water 2|form=White-Striped Form|||||||||||✔|✔}}
+{{Moveentry/13|0554|formsig=G|Darumaka|type=Ice|1|Field|Field|form=Galarian Form|||||||||✔||||STAB='''}}
+{{Moveentry/13|0555|formsig=G|Darmanitan|type=Ice|1|Field|Field|form=Galarian Form|||||||||✔||||STAB='''}}
+{{Moveentry/13|0561|Sigilyph|type=Psychic|type2=Flying|1|Flying|Flying|||||✔|✔|✔||✔|||}}
+{{Moveentry/13|0564|Tirtouga|type=Water|type2=Rock|2|Water 1|Water 3|||||✔|✔|✔||✔|||}}
+{{Moveentry/13|0565|Carracosta|type=Water|type2=Rock|2|Water 1|Water 3|||||✔|✔|✔||✔|||}}
+{{Moveentry/13|0580|Ducklett|type=Water|type2=Flying|2|Water 1|Flying|||||✔|✔|✔|||||✔}}
+{{Moveentry/13|0581|Swanna|type=Water|type2=Flying|2|Water 1|Flying|||||✔|✔|✔|||||✔}}
+{{Moveentry/13|0582|Vanillite|type=Ice|1|Mineral|Mineral|||||✔|✔|✔||✔||||✔|STAB='''}}
+{{Moveentry/13|0583|Vanillish|type=Ice|1|Mineral|Mineral|||||✔|✔|✔||✔||||✔|STAB='''}}
+{{Moveentry/13|0584|Vanilluxe|type=Ice|1|Mineral|Mineral|||||✔|✔|✔||✔||||✔|STAB='''}}
+{{Moveentry/13|0592|Frillish|type=Water|type2=Ghost|1|Amorphous|Amorphous|form=All forms|||||✔|✔|✔||✔|||}}
+{{Moveentry/13|0593|Jellicent|type=Water|type2=Ghost|1|Amorphous|Amorphous|form=All forms|||||✔|✔|✔||✔|||}}
+{{Moveentry/13|0594|Alomomola|type=Water|2|Water 1|Water 2|||||✔|✔|✔|||||✔}}
+{{Moveentry/13|0613|Cubchoo|type=Ice|1|Field|Field|||||✔|✔|✔||✔|||✔|STAB='''}}
+{{Moveentry/13|0614|Beartic|type=Ice|1|Field|Field|||||✔|✔|✔||✔|||✔|STAB='''}}
+{{Moveentry/13|0615|Cryogonal|type=Ice|1|Mineral|Mineral|||||✔|✔|✔||✔|||✔|✔|STAB='''}}
+{{Moveentry/13|0622|Golett|type=Ground|type2=Ghost|1|Mineral|Mineral|||||✔|✔|✔||✔|||✔|✔}}
+{{Moveentry/13|0623|Golurk|type=Ground|type2=Ghost|1|Mineral|Mineral|||||✔|✔|✔||✔|||✔|✔}}
+{{Moveentry/13|0646|Kyurem|type=Dragon|type2=Ice|1|No Eggs Discovered|No Eggs Discovered|form=All available forms|||||✔|✔|✔||✔|||✔|STAB='''}}
+{{Moveentry/13|0647|Keldeo|type=Water|type2=Fighting|1|No Eggs Discovered|No Eggs Discovered|form=All forms|||||−|−|−||−|||−|✔}}
+{{Moveentry/13|0649|Genesect|type=Bug|type2=Steel|1|No Eggs Discovered|No Eggs Discovered|form=All forms|||||✔|✔|✔||✔||||✔}}
+{{Moveentry/13|0656|Froakie|type=Water|1|Water 1|Water 1||||||✔|✔|||||✔|✔}}
+{{Moveentry/13|0657|Frogadier|type=Water|1|Water 1|Water 1||||||✔|✔|||||✔|✔}}
+{{Moveentry/13|0658|Greninja|type=Water|type2=Dark|1|Water 1|Water 1|form=All available forms||||||✔|✔|||||✔|✔}}
+{{Moveentry/13|0688|Binacle|type=Rock|type2=Water|1|Water 3|Water 3||||||✔|✔||✔||||✔}}
+{{Moveentry/13|0689|Barbaracle|type=Rock|type2=Water|1|Water 3|Water 3||||||✔|✔||✔||||✔}}
+{{Moveentry/13|0692|Clauncher|type=Water|2|Water 1|Water 3||||||✔|✔||✔|||✔|✔}}
+{{Moveentry/13|0693|Clawitzer|type=Water|2|Water 1|Water 3||||||✔|✔||✔|||✔|✔}}
+{{Moveentry/13|0698|Amaura|type=Rock|type2=Ice|1|Monster|Monster||||||✔|✔||✔||||✔|STAB='''}}
+{{Moveentry/13|0699|Aurorus|type=Rock|type2=Ice|1|Monster|Monster||||||✔|✔||✔||||✔|STAB='''}}
+{{Moveentry/13|0705|Sliggoo|type=Dragon|1|Dragon|Dragon||||||✔|✔||✔|||✔|✔}}
+{{Moveentry/13|0705|formsig=H|Sliggoo|type=Steel|type2=Dragon|1|Dragon|Dragon|form=Hisuian Form|||||||||||✔|✔|✔}}
+{{Moveentry/13|0706|Goodra|type=Dragon|1|Dragon|Dragon||||||✔|✔||✔|||✔|✔}}
+{{Moveentry/13|0706|formsig=H|Goodra|type=Steel|type2=Dragon|1|Dragon|Dragon|form=Hisuian Form|||||||||||✔|✔|✔}}
+{{Moveentry/13|0712|Bergmite|type=Ice|2|Monster|Mineral||||||✔|✔||✔||✔|✔|✔|STAB='''}}
+{{Moveentry/13|0713|Avalugg|type=Ice|2|Monster|Mineral||||||✔|✔||✔|||✔|✔|STAB='''}}
+{{Moveentry/13|0713|formsig=H|Avalugg|type=Ice|type2=Rock|2|Monster|Mineral|form=Hisuian Form|||||||||||✔|✔|✔|STAB='''}}
+{{Moveentry/13|0728|Popplio|type=Water|2|Water 1|Field|||||||✔||✔|||✔}}
+{{Moveentry/13|0729|Brionne|type=Water|2|Water 1|Field|||||||✔||✔|||✔}}
+{{Moveentry/13|0730|Primarina|type=Water|type2=Fairy|2|Water 1|Field|||||||✔||✔|||✔}}
+{{Moveentry/13|0740|Crabominable|type=Fighting|type2=Ice|1|Water 3|Water 3|||||||✔|||||✔|✔|STAB='''}}
+{{Moveentry/13|0746|Wishiwashi|type=Water|1|Water 2|Water 2|||||||✔||✔|||}}
+{{Moveentry/13|0747|Mareanie|type=Poison|type2=Water|1|Water 1|Water 1|||||||✔||✔|||✔}}
+{{Moveentry/13|0748|Toxapex|type=Poison|type2=Water|1|Water 1|Water 1|||||||✔||✔|||✔}}
+{{Moveentry/13|0751|Dewpider|type=Water|type2=Bug|2|Water 1|Bug|||||||✔||✔|||✔}}
+{{Moveentry/13|0752|Araquanid|type=Water|type2=Bug|2|Water 1|Bug|||||||✔||✔|||✔}}
+{{Moveentry/13|0768|Golisopod|type=Bug|type2=Water|2|Bug|Water 3|||||||✔||✔||||✔}}
+{{Moveentry/13|0773|Silvally|type=Normal|1|No Eggs Discovered|No Eggs Discovered|form=All forms|||||||✔||✔||||STAB=''}}
+{{Moveentry/13|0779|Bruxish|type=Water|type2=Psychic|1|Water 2|Water 2|||||||✔|||||✔}}
+{{Moveentry/13|0780|Drampa|type=Normal|type2=Dragon|2|Monster|Dragon|||||||✔||✔||||✔}}
+{{Moveentry/13|0788|Tapu Fini|type=Water|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered|||||||✔||✔|||}}
+{{Moveentry/13|0792|Lunala|type=Psychic|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered|||||||✔||✔|||✔}}
+{{Moveentry/13|0795|Pheromosa|type=Bug|type2=Fighting|1|No Eggs Discovered|No Eggs Discovered|||||||✔||✔|||}}
+{{Moveentry/13|0801|Magearna|type=Steel|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered|form=All forms|||||||✔||✔|||✔|✔}}
+{{Moveentry/13|0809|Melmetal|type=Steel|1|No Eggs Discovered|No Eggs Discovered||||||||✔|✔||||✔}}
+{{Moveentry/13|0818|Inteleon|type=Water|2|Water 1|Field|||||||||✔|||✔}}
+{{Moveentry/13|0834|Drednaw|type=Water|type2=Rock|2|Monster|Water 1|||||||||✔|||✔}}
+{{Moveentry/13|0845|Cramorant|type=Flying|type2=Water|2|Water 1|Flying|||||||||✔|||✔}}
+{{Moveentry/13|0847|Barraskewda|type=Water|1|Water 2|Water 2|||||||||−|||✔}}
+{{Moveentry/13|0862|Obstagoon|type=Dark|type2=Normal|1|Field|Field|||||||||✔|||}}
+{{Moveentry/13|0864|Cursola|type=Ghost|2|Water 1|Water 3|||||||||✔|||}}
+{{Moveentry/13|0866|Mr. Rime|type=Ice|type2=Psychic|1|Human-Like|Human-Like|||||||||✔||||✔|STAB='''}}
+{{Moveentry/13|0873|Frosmoth|type=Ice|type2=Bug|1|Bug|Bug|||||||||✔|||✔|STAB='''}}
+{{Moveentry/13|0875|Eiscue|type=Ice|2|Water 1|Field|||||||||✔|||✔|STAB='''}}
+{{Moveentry/13|0881|Arctozolt|type=Electric|type2=Ice|1|No Eggs Discovered|No Eggs Discovered|||||||||✔||||STAB='''}}
+{{Moveentry/13|0883|Arctovish|type=Water|type2=Ice|1|No Eggs Discovered|No Eggs Discovered|||||||||✔||||STAB='''}}
+{{Moveentry/13|0896|Glastrier|type=Ice|1|No Eggs Discovered|No Eggs Discovered|||||||||✔|||✔|STAB='''}}
+{{Moveentry/13|0898|formsig=I|Calyrex|type=Psychic|type2=Ice|1|No Eggs Discovered|No Eggs Discovered|form=Ice Rider|||||||||✔|||✔|STAB='''}}
+{{Moveentry/13|0902|Basculegion|type=Water|type2=Ghost|1|Water 2|Water 2|form=All forms|||||||||||✔|✔}}
+{{Moveentry/13|0904|Overqwil|type=Dark|type2=Poison|1|Water 2|Water 2|||||||||||✔|✔|✔}}
+{{Moveentry/13|0960|Wiglett|type=Water|1|Water 3|Water 3||||||||||||✔}}
+{{Moveentry/13|0961|Wugtrio|type=Water|1|Water 3|Water 3||||||||||||✔}}
+{{Moveentry/13|0963|Finizen|type=Water|2|Field|Water 2||||||||||||✔}}
+{{Moveentry/13|0964|Palafin|type=Water|2|Field|Water 2||||||||||||✔}}
+{{Moveentry/13|0974|Cetoddle|type=Ice|1|Field|Field||||||||||||✔|STAB='''}}
+{{Moveentry/13|0975|Cetitan|type=Ice|1|Field|Field||||||||||||✔|STAB='''}}
+{{Moveentry/13|0976|Veluza|type=Water|type2=Psychic|1|Water 2|Water 2||||||||||||✔}}
+{{Moveentry/13|0978|Tatsugiri|type=Dragon|type2=Water|1|Water 2|Water 2|form=All forms||||||||||||−|✔}}
+{{Moveentry/13|0982|Dudunsparce|type=Normal|1|Field|Field|form=All forms||||||||||||✔}}
+{{Moveentry/13|0985|Scream Tail|type=Fairy|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered||||||||||||✔}}
+{{Moveentry/13|0991|Iron Bundle|type=Ice|type2=Water|1|No Eggs Discovered|No Eggs Discovered||||||||||||✔|STAB='''}}
+{{Moveentry/13|0995|Iron Thorns|type=Rock|type2=Electric|1|No Eggs Discovered|No Eggs Discovered||||||||||||✔}}
+{{Moveentry/13|0996|Frigibax|type=Dragon|type2=Ice|2|Dragon|Mineral||||||||||||✔|✔|STAB='''}}
+{{Moveentry/13|0997|Arctibax|type=Dragon|type2=Ice|2|Dragon|Mineral||||||||||||✔|✔|STAB='''}}
+{{Moveentry/13|0998|Baxcalibur|type=Dragon|type2=Ice|2|Dragon|Mineral||||||||||||✔|✔|STAB='''}}
+{{Moveentry/13|1024|Terapagos|type=Normal|1|No Eggs Discovered|No Eggs Discovered||||||||||||✔}}
+{{Movefoot|Ice|13}}
+
+===By {{pkmn|breeding}}===
+{{Movehead/Games|Ice|Egg Move|g1=none|g3=none|g4=none|g5=none|g6=none|g7=none|g8=none|g9=none}}
+{{Moveentry/1|0054|Psyduck|type=Water|2|Water 1|Field|✔}}
+{{Movefoot|Ice|9}}
+
+===Special move===
+====[[Generation IV]]====
+{{Movehead/Special|Ice}}
+{{Moveentry/1|0320|Wailmer|type=Water|2|Field|Water 2|[[Hayley's trades#Wailmer|My Pokémon Ranch]]}}
+{{Movefoot|Ice|1}}
+
+====[[Generation IX]]====
+{{Movehead/Special|Ice}}
+{{Moveentry/1|0134|Vaporeon|type=Water|1|Field|Field|[[Terastal phenomenon|Wild Tera Pokémon]] - [[Casseroya Lake]]{{sup/9|SV}}}}
+{{Moveentry/1|0471|Glaceon|type=Ice|1|Field|Field|[[Terastal phenomenon|Wild Tera Pokémon]] - [[North Province (Area One)]]{{sup/9|SV}}|STAB='''}}
+{{Movefoot|Ice|1}}
+
+===By {{pkmn2|event}}===
+====[[Generation IX]]====
+{{Movehead/Special|Ice}}
+{{Moveentry/1|0658|Greninja|type=Water|type2=Dark|1|Water 1|Water 1|[[Poké Portal News#January 27 to 29, 2023 & February 10 to 12, 2023|Greninja the Unrivaled]]}}
+{{Movefoot|Ice|1}}
+
+==In other games==
+===[[Pokémon Mystery Dungeon series]]===
+Ice Beam inflicts damage and may leave the target {{DL|Status condition (Mystery Dungeon)|frozen}}. When used by a [[Gigantic Pokémon]] in [[Pokémon Mystery Dungeon: Gates to Infinity|Gates to Infinity]], Ice Beam has a base PP of 20 and a base accuracy of 90% and requires a turn to charge up.
+
+{{MDMoveheader|type=ice}}
+{{MDMoveRow|game=RB|pow=15|pp=8|acc=88%|range=10 tiles away|target=All|cuts=Yes}}
+{{MDMoveRow|game=TDS|pow=15|pp=8|acc=83.6%|range=10 tiles away|target=All|cuts=Yes}}
+{{MDMoveRow|game=BSL|pow=15|pp=8|acc=83.6%|range=10 tiles away|target=All|cuts=Yes}}
+{{MDMoveRow|game=GTI|pow=25|powmax=99|pp=13|ppmax=50|acc=95%|accmax=98%|range=10 tiles away|target=All|cuts=Yes}}
+{{MDMoveRow|game=SMD|pow=25|powmax=50|pp=10|ppmax=30|acc=95%|accmax=98%|range=4 tiles away|target=Enemy|cuts=Yes}}
+{{MDMovefoot|type=ice|RB=yes|TDS=yes|BSL=yes|GTI=yes|SMD=yes|RTDX=yes}}
+
+===[[Pokémon Conquest]]===
+{{Conquestmove
+|type=ice
+|grid={{Conquestmove/Grid/columns|span=3}}
+|stars=4
+|pow=45
+|acc=100%
+|eff=Has a 10% chance to freeze each target.
+|users={{CSP|131|Lapras}} {{CSP|362|Glalie}}
+}}
+
+===[[Pokémon GO]]===
+{{GoChargedAttack
+|id=39
+|move=Ice Beam
+|type=Ice
+|pow=90
+|energy=50
+|duration=3.3
+|damage_window=1.3 - 2.8
+|pow_trainer=90
+|energy_trainer=55
+|users={{MSP/GO|0008|Wartortle}}{{MSP/GO|0009|Blastoise}}{{MSP/GO|0033|Nidorino}}{{MSP/GO|0037A|Vulpix|Alolan Form}}{{MSP/GO|0038A|Ninetales|Alolan Form}}{{MSP/GO|0040|Wigglytuff}}{{MSP/GO|0055|Golduck}}{{MSP/GO|0080|Slowbro}}{{MSP/GO|0119|Seaking}}{{MSP/GO|0121|Starmie}}{{MSP/GO|0144|Articuno}}{{MSP/GO|0150|Mewtwo}}{{MSP/GO|0151|Mew}}{{MSP/GO|0160|Feraligatr}}{{MSP/GO|0184|Azumarill}}{{MSP/GO|0211|Qwilfish}}{{MSP/GO|0211H|Qwilfish|Hisuian Form}}{{MSP/GO|0226|Mantine}}{{MSP/GO|0238|Smoochum}}{{MSP/GO|0241|Miltank}}{{MSP/GO|0245|Suicune}}{{MSP/GO|0271|Lombre}}{{MSP/GO|0272|Ludicolo}}{{MSP/GO|0278|Wingull}}{{MSP/GO|0298|Azurill}}{{MSP/GO|0316|Gulpin}}{{MSP/GO|0317|Swalot}}{{MSP/GO|0333|Swablu}}{{MSP/GO|0339|Barboach}}{{MSP/GO|0344|Claydol}}{{MSP/GO|0351H|Castform}}{{MSP/GO|0352|Kecleon}}{{MSP/GO|0366|Clamperl}}{{MSP/GO|0367|Huntail}}{{MSP/GO|0456|Finneon}}{{MSP/GO|0458|Mantyke}}{{MSP/GO|0459|Snover}}{{MSP/GO|0471|Glaceon}}{{MSP/GO|0554G|Darumaka|Galarian Form}}{{MSP/GO|0581|Swanna}}{{MSP/GO|0582|Vanillite}}{{MSP/GO|0583|Vanillish}}{{MSP/GO|0592|Frillish}}{{MSP/GO|0593|Jellicent}}{{MSP/GO|0649W|Genesect|Chill Drive}}{{MSP/GO|0693|Clawitzer}}{{MSP/GO|0788|Tapu Fini}}{{MSP/GO|0904|Overqwil}}
+|elite_users={{MSP/GO|0131|Lapras}}{{MSP/GO|0186|Politoed}}
+|snapshot_users={{MSP/GO|0235|Smeargle}}
+|updates=
+====Updates====
+;Gyms & Raids
+* '''July 30, 2016'''
+** '''Power''': 50 → 65
+* '''February 16, 2017'''
+** '''Power''': 65 → 90
+** '''Duration''': 3.65 → 3.3 seconds
+** '''Damage window''': 2.15 - 3.5 → 1.3 - 2.8 seconds
+}}
+
+==={{g|Rumble Rush}}===
+{{RumbleRushPhysicalAttack|move=Ice Beam|type=Ice
+|stars=4
+|pow=31.24387
+|charge=1.26
+|range=Rectangle (Beam)
+|hits=3
+|projectiles=1
+|crit=1.5
+|effect=May freeze the foe}}
+
+===[[Pokémon Masters EX]]===
+{| class="roundy" style="margin:auto; background:#{{ice color}}; border:3px solid #{{ice color dark}}; text-align:center; width:80%"
+|- style="background: #{{ice color light}}"
+! style="{{roundytl|5px}}" | Name
+! {{color2|000|Damage category|Category}}
+! Move gauge cost
+! MP<br>(uses)
+! Base {{color2|000|power}}
+! Max {{color2|000|power}}
+! {{color2|000|Accuracy}}
+! Target
+! Effect tag
+! Description
+! style="{{roundytr|5px}}" | Playable {{color2|000|Sync pair|sync pair(s)}}
+|- style="background:#fff"
+|Ice Beam
+{{statustable|Special}}
+|2
+|—
+|46
+|55
+|100%
+|An opponent
+|—
+|Has a chance (10%) of leaving the target frozen.
+|{{sync|Lorelei|Lapras}}<hr>{{sync|Pryce|Seel}}/Dewgong<hr>{{sync|Brycen|Cryogonal}}<hr>{{sync|Glacia|Glalie}} <small>(Only before [[Mega Evolution (Masters)|Mega Evolving]])</small><hr>{{sync|Melony|Lapras}}<hr>{{sync|N|Kyurem|sygna=y}}<hr>{{sync|Sina|Glaceon}}<hr>{{sync|Iris|Lapras|Academy}}<hr>{{sync|Hilbert|Kyurem|Champion}}{{shinystar}}<hr>{{sync/player|egg|Seel/Dewgong}} <small>(Support/tech roles only)</small><hr>{{sync/player|egg|Shellder/Cloyster}} <small>(Strike role only)</small><hr>{{sync/player|egg|Lapras}}<hr>{{sync/player|egg|Smoochum/Jynx}} <small>(Tech role only)</small><hr>{{sync/player|egg|Glaceon}}
+|- style="background:#{{ice color light}}"
+! colspan=12 |{{color2|000|Buddy move|Buddy moves}}
+|- style="background:#fff"
+|Dancing Ice Beam
+{{statustable|Special}}
+|2
+|1
+|200
+|240
+|—%
+|An opponent
+|Sure Hit
+|'''Activation Condition:''' When a hailstorm is caused.
+
+'''Deactivation Condition:''' When the weather condition is no longer a hailstorm.
+
+Never misses. Has a chance (10%) of leaving the target frozen. Lowers the target's Sp. Def by 4 stat ranks. Applies the Move Gauge Acceleration effect to the allied field of play. Applies the Free Move Next effect to the user.
+|{{sync|Irida|Glaceon}}
+|- style="background:#{{white color light}}"
+|Frozen Wings Ice Beam
+{{statustable|Special}}
+|2
+|—
+|150
+|180
+|100%
+|An opponent
+|—
+|'''Activation Condition:''' When there is at least one Pokémon with a lowered Type Rebuff on the opponent's field of play.
+
+'''Deactivation Condition:''' When there are no longer any Pokémon with a lowered Type Rebuff on the opponent's field of play.
+
+Ignores passive skills that would reduce the damage of this attack. Ignores passive skills that would protect the target against a critical hit. Ignores the target's Enduring effect. Leaves the target frozen.
+|{{sync|Red|Articuno|Champion}}
+|- style="background:#{{ice color dark}}"
+! colspan=12 |{{color2|fff|Sync move|Sync move}}
+|- style="background: #{{ice color light}}"
+!Name
+!{{color2|000|Damage category|Category}}
+!colspan="2" |State
+!Base {{color2|000|power}}
+!Max {{color2|000|power}}
+!colspan="2" |Target
+!Effect tag
+!Description
+!Playable {{color2|000|sync pair}}
+|- style="background:#fff"
+| style="{{roundybl|5px}}" rowspan=3 | Great Wide World Ice Beam
+| rowspan=3 align="center" style="background:#{{special color}}"|{{color2|{{special textcolor}}|Special move|Special}}
+| colspan=2 | Default
+| 200
+| 240
+| colspan=2 rowspan=3 | An opponent
+| rowspan=3 | —
+| rowspan=2 | This attack's power increases during a hailstorm.
+| style="{{roundybr|5px}}" rowspan=3 | {{sync|Irida|Glaceon}}
+|- style="background:#fff"
+! colspan=2 | 6★ EX
+! rowspan=2 | 300
+! rowspan=2 | 360
+|- style="background:#fff"
+! colspan=2 | 6★ EX with EX role
+! The sync buff is doubled the first time a sync move is used.
+|}
+Notes:
+* '''Ice Beam:'''
+** Description prior to Version 2.10.0 (from June 28, 2021): Has a very small chance of leaving the target frozen.
+* '''Dancing Ice Beam:'''
+** This buddy move was known as B Ice Beam prior to version 2.38.0.
+
+==={{g|UNITE}}===
+{{MoveUNITE/Header|move=Ice Beam|type=Ice}}
+{{MoveUNITE|move=Ice Beam|pokemon=Lapras|level=7|cooldown=8|description=Has the user unleash an icy-cold beam of energy in the designated direction, dealing damage to opposing Pokémon it hits and freezing the ground. Opposing Pokémon on the frozen ground take damage over time and have their movement speed decreased, and they become frozen if they remain on the frozen ground for a set amount of time. When the user is on the frozen ground, its movement speed is increased.|upgradelevel=13|upgrade=Increases the length of time opposing Pokémon are frozen.}}
+{{MoveUNITE|move=Ice Beam|pokemon=Suicune|level=7|cooldown=7.5|description=Has the user fire an icy-cold beam of energy in the designated direction, dealing damage and applying a slowing effect to opposing Pokémon it hits. If the opposing Pokémon are drenched when hit, they are left frozen. If this move hits a flooded area, that area becomes frozen. A maximum of 2 uses can be kept in reserve for this move.|upgradelevel=13|upgrade=Strengthens the slowing effect applied to the opposing Pokémon hit by this move.}}
+|}</div></div>
+
+===Description===
+{{movedesc|ice}}
+{{movedescentry|{{gameabbrevmd|RB}}|Inflicts damage on the target, even at a distance. It may also leave the target frozen and incapable of action.}}
+{{movedescentry|{{gameabbrevmd|TD}}<br>{{gameabbrevmd|S}}{{tt|*|US version}}|Inflicts damage on the target, even at a distance. It may also afflict the targeted enemy with a Frozen status condition. A Pokémon with the Frozen status is incapable of action.}}
+{{movedescentry|{{gameabbrevmd|S}}{{tt|*|PAL version}}|Inflicts damage on the target, even at a distance. It may also afflict the target with a Frozen status condition. A Pokémon with the Frozen status is incapable of action.}}
+{{movedescentry|{{gameabbrevmd|BSL}}|{{tt|はなれたポケモンに ダメージをあたえる いっていのかくりつで こおりじょうたいにかえる こおりじょうたいの ポケモンは こうどうできない|Inflicts damage on the target, even at a distance. It may also afflict the targeted enemy with a Frozen status condition. A Pokémon with the Frozen status is incapable of action}}}}
+{{movedescentry|{{gameabbrevss|Conq}}|The target is struck with an icy-cold beam of energy. It may also freeze the target solid.}}
+{{movedescentry|{{gameabbrevmd|GTI}}|It damages even a faraway Pokémon. It could also cause the Frozen status condition. With the Frozen  status, the Pokémon can't do anything.}}
+{{movedescentry|{{gameabbrevmd|SMD}}|It damages a Pokémon, even one far away. It could also make the enemy frozen.}}
+|}
+|}{{left clear}}
+
+==In animation==
+===Pokémon animated series===
+{{moveanime|exp=yes|type=ice|gen=The user strikes the target with an icy-cold blast. This may also leave the target frozen.|image1=Nurse Joy Latias Ice Beam.png|image1p=Latias|image2=Lusamine Absol Ice Beam.png|image2p=Absol|image3=Santa Claus Lapras Ice Beam.png|image3p=Lapras|image4=Goh Suicune Ice Beam.png|image4p=Suicune}}
+{{movep|type=ice|ms=131|pkmn=Lapras|method=Lapras opens its mouth and a stream of water comes out. As soon as the water makes contact with the opponent, it instantly freezes; or, a white or light blue ball of energy forms in front of Lapras's mouth, and similarly-colored beams of energy shoot out of it at the opponent, freezing it.}}
+{{movemid|type=ice|user=Santa Claus|user1=Santa Claus's Lapras|startcode=Holiday Hi-Jynx|notes=Debut}}
+{{movemid|type=ice|user=Ash's Lapras|startcode=EP085|startname=Fit To Be Tide}}
+{{movemid|type=ice|user=Lapras herd|user1=Multiple wild Lapras|startcode=EP113|startname=Viva Las Lapras}}
+{{movemid|type=ice|user=Pryce|user1=Mahogany Gym's Lapras|startcode=EP238|startname=Nice Pryce, Baby!}}
+{{movemid|type=ice|user=Lapras (Pokémon)|user1=Multiple wild Lapras|startcode=EP257|startname=Lapras of Luxury}}
+{{movemid|type=ice|user=Angie|user1=A Lapras Angie used briefly|startcode=DP091|startname=One Team, Two Team, Red Team, Blue Team!}}
+{{movemid|type=ice|user=Lapras (Pokémon)|user1=Two wild Lapras|startcode=XY049|startname=Bonnie for the Defense!}}
+{{movemid|type=ice|user=Lana (anime)|user1=Lana's Lapras|startcode=SM005|startname=Yo, Ho, Ho! Go, Popplio!}}
+{{movemid|type=ice|user=Pokémon Trainer|user1=A Trainer's Lapras|startcode=JN025|startname=A Festival Reunion!}}
+{{movemid|type=ice|user=Lucius's Lapras|startcode=HZ032|startname=Lapras's Feelings for its Friends}}
+{{movep|type=ice|ms=134|pkmn=Vaporeon|method=Vaporeon opens its mouth and a stream of water comes out. As soon as the water makes contact with the opponent, it instantly freezes.}}
+{{movemid|type=ice|user=Pokémon League entrance exam instructor|user1=Pokémon League entrance exam instructor's Vaporeon|startcode=EP056|startname=The Ultimate Test}}
+{{movep|type=ice|ms=087|pkmn=Dewgong|method=A light blue ball of energy forms on Dewgong's horn or in front of its mouth. Then, multiple light blue or white beams of energy fire at the opponent, freezing it.}}
+{{movemid|type=ice|user=Dewgong (Cerulean Gym)|user1=Cerulean Gym's Dewgong|startcode=EP061|startname=The Misty Mermaid}}
+{{movemid|type=ice|user=Pryce|user1=Pryce's Dewgong|startcode=EP236|startname=Rage of Innocence}}
+{{movemid|type=ice|user=Pryce|user1=Mahogany Gym's Dewgong|startcode=EP238|startname=Nice Pryce, Baby!}}
+{{movemid|type=ice|user=Pokémon Coordinator|user1=A Coordinator's Dewgong|startcode=DP171|startname=Dawn of a Royal Day!}}
+{{movemid|type=ice|user=Goh's Dewgong|startcode=JN023|startname=Panic in the Park!}}
+{{movep|type=ice|ms=090|pkmn=Shellder|method=Shellder shoots two light blue beams of energy from the horns on its head at the opponent; or, a light blue ball of energy is formed above Shellder's tongue where it fires light blue beams of energy from the ball at the opponent, freezing it.}}
+{{movemid|type=ice|user=List of Pokémon temporarily owned by the Team Rocket trio#Shellder|user1=Jessie's Shellder|startcode=EP066|startname=The Evolution Solution}}
+{{movemid|type=ice|user=Marilyn|user1=Marilyn's Shellder|startcode=DP125|startname=Battling a Cute Drama!}}
+{{movep|type=ice|ms=031|pkmn=Nidoqueen|method=A light blue ball of energy forms in front of Nidoqueen's horn. Light blue beams of energy are released from the ball, freezing anything they touch.}}
+{{movemid|type=ice|user=Danny|user1=Danny's Nidoqueen|startcode=EP093|startname=Navel Maneuvers}}
+{{movep|type=ice|ms=062|pkmn=Poliwrath|method=A light blue ball of energy forms in Poliwrath's hands or in front of its body. The ball moves forward and releases light blue beams of energy, freezing anything they touch.}}
+{{movemid|type=ice|user=Tad|user1=Tad's Poliwrath|startcode=EP105|startname=Charizard Chills}}
+{{movemid|type=ice|user=Pokémon Trainer|user1=A Trainer's Poliwrath|startcode=JN025|startname=A Festival Reunion!}}
+{{movep|type=ice|ms=144|pkmn=Articuno|method=A light blue ball of energy forms in front of Articuno's beak. Light blue beams of energy are released from the ball, freezing anything they touch.}}
+{{movemid|type=ice|user=Legendary birds (M02)#Articuno|user1=Articuno (M02)|startcode=M02|startname=The Power of One}}
+{{movemid|type=ice|user=Articuno (Johto)|startcode=EP189|startname=Freeze Frame}}
+{{movemid|type=ice|user=Noland's Articuno|startcode=AG135|startname=Numero Uno Articuno}}
+{{movemid|type=ice|user=Dr. Yung|user1=A mirage Articuno|startcode=The Mastermind of Mirage Pokémon|startname=The Mastermind of Mirage Pokémon}}
+{{movep|type=ice|ms=149|pkmn=Dragonite|method=A white ball of energy is formed in front of Dragonite's mouth. Light blue beams of energy are fired at the target, freezing anything they touch; or, Dragonite opens its mouth and forms an orb of light blue energy in front of its mouth where it fires multiple light blue beams of energy from the orb at the opponent, freezing it.}}
+{{movemid|type=ice|user=Drake (Orange League)|user1=Drake's Dragonite|startcode=EP112|startname=Enter the Dragonite}}
+{{movemid|type=ice|user=Iris's Dragonite|startcode=BW089|startname=Iris and the Rogue Dragonite!}}
+{{movep|type=ice|ms=223|pkmn=Remoraid|method=A white ball of energy of energy forms in front of Remoraid's mouth. White beams of energy are released from the ball, freezing anything they touch.}}
+{{movemid|type=ice|user=Remoraid (Pokémon)|user1=Multiple wild Remoraid|startcode=EP185|startname=The Light Fantastic}}
+{{movep|type=ice|ms=086|pkmn=Seel|method=A white ball of energy forms on top of Seel's horns. Light blue beams of energy are released from the ball at the opponent, freezing anything they touch; or, a light blue ball of energy forms in front of Seel's mouth where it releases light blue beams of energy from the ball at the opponent, freezing anything they touch.}}
+{{movemid|type=ice|user=Pokémon Trainer|user1=A Trainer's Seel|startcode=EP215|startname=Octillery the Outcast}}
+{{movemid|type=ice|user=Pryce|user1=Mahogany Gym's Seel|startcode=EP238|startname=Nice Pryce, Baby!}}
+{{movemid|type=ice|user=Pokémon Coordinator|user1=A Coordinator's Seel|startcode=AG191|startname=Once More with Reeling!}}
+{{movep|type=ice|ms=306|pkmn=Aggron|method=A light blue ball of energy forms in Aggron's mouth. Light blue beams of energy are released from the ball, freezing anything they touch.}}
+{{movemid|type=ice|user=Brendan (game)|user1=Brendan's Aggron|startcode=M06|startname=Jirachi: Wish Maker}}
+{{movemid|type=ice|user=Aggron (Pokémon)|user1=A wild Aggron|startcode=M11|startname=Giratina and the Sky Warrior}}
+{{movemid|type=ice|user=Aggron (Pokémon)|user1=A wild Aggron|startcode=DP119|startname=Trials and Adulations!}}
+{{movep|type=ice|ms=301|pkmn=Delcatty|method=A light blue ball of energy forms in Delcatty's mouth where it fires light blue beams of energy from the ball at the opponent.}}
+{{movemid|type=ice|user=Georgio|user1=Georgio's Delcatty|startcode=HS11|startname=A Date with Delcatty}}
+{{movep|type=ice|ms=284|pkmn=Masquerain|method=A light blue ball of energy appears above Masquerain's head and it shoots light blue beams of energy from the ball and freezes the opponent.}}
+{{movemid|type=ice|user=Drew|user1=Drew's Masquerain|startcode=AG078|startname=Cruisin' for a Losin'}}
+{{movep|type=ice|ms=384|pkmn=Rayquaza|method=A light blue ball of energy with a red aura forms in Rayquaza's mouth. Light blue beams of energy are fired from the ball at the opponent and freeze it.}}
+{{movemid|type=ice|user=Rayquaza (M07)|startcode=M07|startname=Destiny Deoxys}}
+{{movemid|type=ice|user=Mismagius (Pokémon)|user1=An illusionary Rayquaza created by Mismagius|startcode=DP043|startname=Malice in Wonderland!}}
+{{movep|type=ice|ms=370|pkmn=Luvdisc|method=Luvdisc releases a light blue beam of energy from its mouth that freezes anything it touches.}}
+{{movemid|type=ice|user=Caserin and Luverin|user1=Misty's Caserin|startcode=HS16|startname=Luvdisc is a Many Splendored Thing!}}
+{{movep|type=ice|ms=337|pkmn=Lunatone|method=Lunatone forms a light blue ball of energy in front of its nose, in between the two corners of its body. The ball releases light blue beams of energy from it that freezes anything it touches.}}
+{{movemid|type=ice|user=Liza's Lunatone|startcode=AG099|startname=It's Still Rocket Roll to Me!}}
+{{movep|type=ice|ms=344|pkmn=Claydol|method=Claydol points one or both of its arms at the opponent and fires multiple light blue beams of energy from the point in its arms at the opponent. Anything the beams touch becomes frozen; or, Claydol points both of its arms at the opponent and two light blue orbs of energy appear at the end of Claydol's arms and fire multiple light blue beams of energy from the balls at the opponent, freezing it.}}
+{{movemid|type=ice|user=Giant Pokémon|user1=A giant Claydol|startcode=AG104|startname=Claydol Big and Tall}}
+{{movemid|type=ice|user=Buck|user1=Buck's Claydol|startcode=DP181|startname=Bucking the Treasure Trend!}}
+{{movep|type=ice|ms=361|pkmn=Snorunt|method=A light blue ball of energy appears in front of Snorunt's mouth. Light blue beams of energy are fired at the opponent from the ball, freezing anything they touch.}}
+{{movemid|type=ice|user=Ash's Snorunt|startcode=AG114|startname=Date Expectations|notes=Mastered in ''{{color2|000|AG123|Rhapsody in Drew}}''}}
+{{movemid|type=ice|user=Rising Volt Tacklers|user1=Rising Volt Tacklers' Snorunt|startcode=HZ032|startname=HZ032|notes={{color2|000|Terapagos's Exploration Diary}} segment}}
+{{movep|type=ice|ms=362|pkmn=Glalie|method=Glalie charges a light blue ball of energy in between the horns on top of its head and fires light blue beams of energy from the ball. Anything the beams touch becomes frozen.}}
+{{movemid|type=ice|user=Ash's Glalie|startcode=AG123|startname=Rhapsody in Drew}}
+{{movep|type=ice|ms=105|pkmn=Marowak|method=A light blue ball of energy appears in front of Marowak's mouth, and it fires light blue beams of energy at the opponent from the ball that freezes anything it touches.}}
+{{movemid|type=ice|user=Gavin|user1=Gavin's Marowak|startcode=AG127|startname=From Brags to Riches}}
+{{movemid|type=ice|user=Pokémon Trainer|user1=A Trainer's Marowak|startcode=JN024|startname=A Little Rocket R & R!}}
+{{movep|type=ice|ms=365|pkmn=Walrein|method=A light blue ball of energy forms in front of Walrein's mouth and fires light blue beams of energy at the opponent from the ball, freezing anything they touch.}}
+{{movemid|type=ice|user=Katie (Hoenn)|user1=Katie's Walrein|startcode=AG129|startname=A Judgment Brawl}}
+{{movemid|type=ice|user=Mirage Pokémon|user1=A mirage Walrein merged with a mirage Mewtwo|startcode=The Mastermind of Mirage Pokémon}}
+{{movep|type=ice|ms=461|pkmn=Weavile|method=Weavile puts its hands together and a light blue ball of energy forms in between its hands. Weavile fires light blue beams of energy from the ball at the opponent, freezing it; or, Weavile opens its mouth and a light blue ball of energy appears in front of it and fires a light blue beam of energy from the ball at the opponent, freezing it; or, a light blue ball of energy appears in front of Weavile's hands and Weavile points the ball in front of the opponent. It fires a light blue beam of energy from the ball at the opponent, freezing it.}}
+{{movemid|type=ice|user=Kidd Summers|user1=Kidd Summers's two Weavile|startcode=M08|startname=Lucario and the Mystery of Mew}}
+{{movemid|type=ice|user=Paul|user1=Paul's Weavile|startcode=DP040|startname=Top-Down Training!}}
+{{movemid|type=ice|user=Mable|user1=Mable's Weavile|startcode=XY107|startname=An Explosive Operation!}}
+{{movemid|type=ice|user=Alain|user1=Alain's Weavile|startcode=XY130|startname=Finals Not for the Faint-Hearted!}}
+{{movep|type=ice|ms=378|pkmn=Regice|method=Regice forms a light blue ball of energy in front of the braille pattern on its face, and fires light blue beams of energy from the ball that freeze the opponent.}}
+{{movemid|type=ice|user=Legendary giants (M08)#Regice|user1=Regice (M08)|startcode=M08|startname=Lucario and the Mystery of Mew}}
+{{movemid|type=ice|user=Brandon's legendary giants#Regice|user1=Brandon's Regice|startcode=AG190|startname=Pace - The Final Frontier}}
+{{movemid|type=ice|user=Project Mew|user1=Project Mew's Regice|startcode=JN071|startname=Leaping Toward the Dream!}}
+{{movep|type=ice|ms=007|pkmn=Squirtle|method=A light blue ball of energy forms in front of Squirtle's mouth and it fires light blue beams of energy at the opponent from the ball that freezes anything they touch.}}
+{{movemid|type=ice|user=May's Squirtle|startcode=AG143|startname=The Saffron Con}}
+{{movep|type=ice|ms=283|pkmn=Surskit|method=A small light blue ball of energy forms on top of the horn on Surskit's head. Surskit fires light blue beams of energy from the ball, freezing anything they touch.}}
+{{movemid|type=ice|user=Brianna|user1=Brianna's Surskit|startcode=AG162|startname=Spontaneous Combusken!}}
+{{movemid|type=ice|user=Viola|user1=Viola's Surskit|startcode=XY005|startname=A Blustery Santalune Gym Battle!}}
+{{movep|type=ice|ms=124|pkmn=Jynx|method=A light blue ball of energy forms in Jynx's mouth and it fires light blue beams of energy from the ball at the opponent. Anything the beams touch instantly freezes.}}
+{{movemid|type=ice|user=Jynx (Pokémon)|user1=Three wild Jynx|startcode=AG168|startname=Three Jynx and a Baby!}}
+{{movep|type=ice|ms=260|pkmn=Swampert|method=A light blue ball of energy appears inside of Swampert's mouth and it fires light blue beams of energy at the opponent from the blue ball, freezing anything they touch.}}
+{{movemid|type=ice|user=Brendan (game)|user1=Brendan's Swampert|startcode=M09|startname=Pokémon Ranger and the Temple of the Sea}}
+{{movep|type=ice|ms=427|pkmn=Buneary|method=A light blue ball of energy forms in front of Buneary's mouth. Light blue beams of energy are released out of its mouth at the opponent.}}
+{{movemid|type=ice|user=Dawn's Buneary|startcode=DP009|startname=Setting The World On Its Buneary!}}
+{{movemid|type=ice|user=Pokémon Trainer|user1=A Trainer's Buneary|startcode=JN024|startname=A Little Rocket R & R!}}
+{{movep|type=ice|ms=349|pkmn=Feebas|method=A light blue ball of energy forms in front of Feebas's mouth. Light blue beams of energy are released from the ball at the opponent, freezing it.}}
+{{movemid|type=ice|user=Haley|user1=Haley's Feebas|startcode=DP021|startname=Ya See We Want an Evolution!}}
+{{movep|type=ice|ms=395|pkmn=Empoleon|method=Empoleon opens its beak and a light blue ball of energy appears in front of it and it fires light blue beams of energy from the ball at the opponent, freezing it.}}
+{{movemid|type=ice|user=Kai (M10)|user1=Kai's Empoleon|startcode=M10|startname=The Rise of Darkrai}}
+{{movep|type=ice|ms=184|pkmn=Azumarill|method=A light blue ball of energy forms in front of Azumarill's mouth and it fires light blue beams of energy from the ball at the opponent, freezing it.}}
+{{movemid|type=ice|user=Azumarill (Pokémon)|user1=A wild Azumarill|startcode=M10|startname=The Rise of Darkrai}}
+{{movemid|type=ice|user=Danika|user1=Danika's Azumarill|startcode=JN134|startname=In the Palms of our Hands!}}
+{{movep|type=ice|ms=183|pkmn=Marill|method=A light blue ball of energy forms in front of Marill's mouth and it fires light blue beams of energy from the ball at the opponent, freezing it.}}
+{{movemid|type=ice|user=Marill (Pokémon)|user1=A wild Marill|startcode=M10|startname=The Rise of Darkrai}}
+{{movep|type=ice|ms=298|pkmn=Azurill|method=A light blue ball of energy forms in front of Azurill's mouth and it fires light blue beams of energy from the ball at the opponent, freezing it.}}
+{{movemid|type=ice|user=Azurill (Pokémon)|user1=A wild Azurill|startcode=M10|startname=The Rise of Darkrai}}
+{{movep|type=ice|ms=400|pkmn=Bibarel|method=A light blue ball of energy forms in front of Bibarel's mouth. Light blue beams of energy are released from the ball at the opponent, freezing it.}}
+{{movemid|type=ice|user=Reggie|user1=Reggie's Bibarel|startcode=DP066|startname=Lost Leader Strategy!}}
+{{movemid|type=ice|user=Bibarel (Pokémon)|user1=Multiple wild Bibarel|startcode=M11|startname=Giratina and the Sky Warrior}}
+{{movep|type=ice|ms=471|pkmn=Glaceon|method=Glaceon opens its mouth and a light blue ball of energy forms in front of it and it fires light blue beams of energy from the ball at the opponent, freezing it. Sometimes its forehead glows light blue before using the move.}}
+{{movemid|type=ice|user=May's Glaceon|startcode=DP076|startname=A Full Course Tag Battle!}}
+{{movemid|type=ice|user=Cynthia (anime)|user1=Cynthia's Glaceon|startcode=BW085|startname=All for the Love of Meloetta!}}
+{{movemid|type=ice|user=Virgil|user1=Virgil's Glaceon|startcode=BW102|startname=Team Eevee and the Pokémon Rescue Squad!}}
+{{movemid|type=ice|user=Glaceon (Pokémon)|user1=A wild Glaceon|startcode=PK25|startname=Eevee & Friends}}
+{{movemid|type=ice|user=Sara Lee|user1=Sara Lee's Glaceon|startcode=XY101|startname=A Dancing Debut!}}
+{{movemid|type=ice|user=Regina|user1=Regina's Mirche|startcode=JN087|startname=Breaking the Ice!}}
+{{movep|type=ice|ms=171|pkmn=Lanturn|method=The front orb on Lanturn's antennae glows light blue and it fires light blue beams of energy from the orb, freezing the opponent.}}
+{{movemid|type=ice|user=Kyle (Sinnoh)|user1=Kyle's Lanturn|startcode=DP078|startname=Pruning a Passel of Pals!}}
+{{movep|type=ice|ms=195|pkmn=Quagsire|method=A light blue ball of energy forms in front of Quagsire's mouth. Light blue beams of energy are released from the ball at the opponent, freezing it.}}
+{{movemid|type=ice|user=Crasher Wake|user1=Crasher Wake's Quagsire|startcode=DP083|startname=A Crasher Course in Power!}}
+{{movep|type=ice|ms=410|pkmn=Shieldon|method=Shieldon opens its mouth and forms a light blue ball of energy in front of it and it fires light blue beams of energy from the ball at the opponent.}}
+{{movemid|type=ice|user=Newton Graceland|user1=Newton Graceland's Shieldon|startcode=M11|startname=Giratina and the Sky Warrior}}
+{{movep|type=ice|ms=399|pkmn=Bidoof|method=Bidoof opens its mouth and a light blue ball of energy forms in front of it. It then fires light blue beams of energy from the ball at the opponent, freezing it.}}
+{{movemid|type=ice|user=Bidoof (Pokémon)|user1=Multiple wild Bidoof|startcode=M11|startname=Giratina and the Sky Warrior}}
+{{movep|type=ice|ms=460|pkmn=Abomasnow|method=A light blue ball of energy forms in front of Abomasnow's mouth and it fires light blue beams of energy from the ball at the opponent, freezing it.}}
+{{movemid|type=ice|user=Abomasnow (Pokémon)|user1=A wild Abomasnow|startcode=M11|startname=Giratina and the Sky Warrior}}
+{{movemid|type=ice|user=Abomasnow (Pokémon)|user1=A wild Abomasnow|startcode=XY083|startname=Over the Mountain of Snow!}}
+{{movep|type=ice|ms=459|pkmn=Snover|method=A light blue ball of energy forms in front of Snover's face or in front of one of its hands and it fires light blue beams of energy from the ball at the opponent, freezing it.}}
+{{movemid|type=ice|user=Snover (Pokémon)|user1=A wild Snover|startcode=M11|startname=Giratina and the Sky Warrior}}
+{{movemid|type=ice|user=Candice|user1=Candice's Snover|startcode=DP127|startname=Sliding into Seventh!}}
+{{movep|type=ice|ms=478|pkmn=Froslass|method=A light blue ball of energy forms in front of Froslass's face or her hand. She fires light blue beams of energy from the ball at the opponent, freezing it.}}
+{{movemid|type=ice|user=Froslass (Pokémon)|user1=A wild Froslass|startcode=M11|startname=Giratina and the Sky Warrior}}
+{{movemid|type=ice|user=Froslass (Pokémon)|user1=A wild Froslass|startcode=DP116|startname=The Drifting Snorunt!}}
+{{movemid|type=ice|user=Paul|user1=Paul's Froslass|startcode=DP187|startname=A Real Rival Rouser!}}
+{{movep|type=ice|ms=161|pkmn=Sentret|method=The inside of Sentret's mouth glows light blue and it fires light blue beams of energy from its mouth at the opponent, freezing it.}}
+{{movemid|type=ice|user=Sentret (Pokémon)|user1=Multiple wild Sentret|startcode=M11|startname=Giratina and the Sky Warrior}}
+{{movep|type=ice|ms=162|pkmn=Furret|method=The inside of Furret's mouth glows light blue and it fires light blue beams of energy from its mouth at the opponent, freezing it.}}
+{{movemid|type=ice|user=Furret (Pokémon)|user1=Multiple wild Furret|startcode=M11|startname=Giratina and the Sky Warrior}}
+{{movep|type=ice|ms=363|pkmn=Spheal|method=A light blue ball of energy forms in front of Spheal's mouth and it fires light blue beams of energy from the ball at the opponent, freezing it.}}
+{{movemid|type=ice|user=Spheal (Pokémon)|user1=Three wild Spheal|startcode=DP109|startname=Leading a Stray!}}
+{{movep|type=ice|ms=489|pkmn=Phione|method=A light blue ball of energy forms in front of Phione's mouth and it fires light blue beams of energy from the ball at the opponent. When the beams hit the opponent, its whole body glows light blue and it freezes.}}
+{{movemid|type=ice|user=Phione (Pokémon)|user1=A wild Phione|startcode=DP113|startname=Hold the Phione!}}
+{{movep|type=ice|ms=350|pkmn=Milotic|method=A white ball of energy forms in front of Milotic's mouth and it releases multiple white beams of energy with light blue outlines at the opponent, freezing it.}}
+{{movemid|type=ice|user=Palmer|user1=Palmer's Milotic|startcode=M12|startname=Arceus and the Jewel of Life}}
+{{movep|type=ice|ms=334|pkmn=Altaria|method=Altaria opens its beak and a light blue ball of energy forms in front of it. It then fires one or more light blue beams of energy from the ball at the opponent, freezing it.}}
+{{movemid|type=ice|user=Pokémon Trainer|user1=A Trainer's Altaria|startcode=DP156|startname=A Meteoric Rise to Excellence!}}
+{{movemid|type=ice|user=Ultra Guardians|user1=The Ultra Guardians' Altaria|startcode=SM069|startname=Rise and Shine, Starship!}}
+{{movemid|type=ice|user=Grusha|user1=Grusha's Altaria|startcode=HZ063|startname=Ice Battle! Cold-Eyed Grusha|notes=Enhanced by {{color2|000|Terastal phenomenon|Terastallization}}}}
+{{movep|type=ice|ms=160|pkmn=Feraligatr|method=A light blue ball of energy forms in front of Feraligatr's mouth. The ball condenses and fires multiple light blue beams of energy from it at the opponent, freezing it.}}
+{{movemid|type=ice|user=Ben (Ranger)|user1=A Feraligatr summoned by Ben's Ranger Sign|startcode=DP169|startname=Pokémon Ranger: Heatran Rescue!}}
+{{movep|type=ice|ms=245|pkmn=Suicune|method=Suicune opens its mouth and a light blue ball forms in front of its mouth and it fires multiple light blue beams from the ball at the opponent, freezing it. Sometimes, the crest on Suicune's head glows light blue while using the move.}}
+{{movemid|type=ice|user=Legendary beasts (M13)#Suicune|user1=Suicune (M13)|startcode=M13|startname=Zoroark: Master of Illusions}}
+{{movemid|type=ice|user=Goh's Suicune|startcode=JN053|startname=Healing the Healer!}}
+{{movep|type=ice|ms=423E|pkmn=Gastrodon|method=A light blue ball of energy forms in front of Gastrodon's third eye and it fires light blue beams of energy from the ball at the opponent, freezing it.}}
+{{movemid|type=ice|user=Paul|user1=Paul's Gastrodon|startcode=DP186|startname=Familiarity Breeds Strategy!}}
+{{movep|type=ice|ms=491|pkmn=Darkrai|method=Darkrai puts its hands together and forms a light blue ball of energy in between them and it puts its hands in front of it and the ball grows slightly larger. It then fires light blue beams of energy from the ball at the opponent, freezing it.}}
+{{movemid|type=ice|user=Tobias (Sinnoh)|user1=Tobias's Darkrai|startcode=DP189|startname=The Semi-Final Frontier!}}
+{{movep|type=ice|ms=380|pkmn=Latias|method=Latias opens her mouth and a light blue ball of energy forms in front of her. She fires light blue beams of energy from the ball at the opponent, freezing it.}}
+{{movemid|type=ice|user=Nurse Joy|user1=Nurse Joy's Latias|startcode=DPS02}}
+{{movep|type=ice|ms=580|pkmn=Ducklett|method=Ducklett opens its beak and forms a light blue ball of energy inside it and it fires multiple light blue beams of energy from the ball at the opponent. When it hits the opponent, it freezes it.}}
+{{movemid|type=ice|user=Ducklett (Pokémon)|user1=A wild Ducklett|startcode=BW020|startname=Dancing With the Ducklett Trio!}}
+{{movep|type=ice|ms=582|pkmn=Vanillite|method=Vanillite forms a light blue orb of energy at the top of its head or in front of its mouth and it fires multiple light blue beams of energy from the orb at the opponent, freezing it.}}
+{{movemid|type=ice|user=Trip|user1=Trip's Vanillite|startcode=BW031|startname=Ash and Trip's Third Battle!}}
+{{movemid|type=ice|user=Dr. Ferrara's henchmen|user1=Cryogonal Man's henchman's Vanillite|startcode=BW057|startname=The Mighty Accelguard to the Rescue!}}
+{{movemid|type=ice|user=Teaque|user1=Teaque's Vanillite|startcode=BW125|startname=Cilan and the Case of the Purrloin Witness!}}
+{{movep|type=ice|ms=614|pkmn=Beartic|method=Beartic opens its mouth and a light blue orb of energy forms in front of it and it fires multiple light blue beams of energy from the orb at the opponent. Sometimes, the beams freeze the opponent.}}
+{{movemid|type=ice|user=Georgia's Beartic|startcode=BW033|startname=Iris and Excadrill Against the Dragon Buster!}}
+{{movemid|type=ice|user=Beartic (Pokémon)|user1=A wild Beartic|startcode=BW112|startname=Team Plasma's Pokémon Power Plot!}}
+{{movep|type=ice|ms=531|pkmn=Audino|method=Audino opens its mouth and forms an orb of light blue energy in front of its mouth and it fires multiple light blue beams of energy from the orb at the opponent.}}
+{{movemid|type=ice|user=Pokémon Trainer|user1=A Trainer's Audino|startcode=BW035|startname=Where Did You Go, Audino?}}
+{{movep|type=ice|ms=592|pkmn=Frillish|method=Frillish opens its mouth and a light blue ball of energy forms in front of it and it fires light blue beams from the ball at the opponent, freezing it.}}
+{{movemid|type=ice|user=Frillish (Pokémon)|user1=Multiple wild Frillish|startcode=BW069|startname=Climbing the Tower of Success!}}
+{{movep|type=ice|ms=592F|pkmn=Frillish|method=Frillish opens its mouth and a light blue ball of energy forms in front of it and it fires light blue beams from the ball at the opponent, freezing it.}}
+{{movemid|type=ice|user=Frillish (Pokémon)|user1=Multiple wild Frillish|startcode=BW069|startname=Climbing the Tower of Success!}}
+{{movep|type=ice|ms=502|pkmn=Dewott|method=Dewott opens its mouth and a light blue ball of energy forms in front of it and it fires light blue beams of energy from the ball at the opponent, freezing it.}}
+{{movemid|type=ice|user=Burgundy|user1=Burgundy's Dewott|startcode=BW071|startname=Search for the Clubultimate!}}
+{{movep|type=ice|ms=646|pkmn=Kyurem|method=A light blue ball of energy forms at Kyurem's mouth. Multiple similarly colored beams of energy are shot from the ball at the target, freezing it.}}
+{{movemid|type=ice|user=Kyurem (M15)|startcode=M15|startname=Kyurem VS. The Sword of Justice}}
+{{movemid|type=ice|user=Hoopa (anime)|user1=A Kyurem summoned by Hoopa|startcode=M18|startname=Hoopa and the Clash of Ages}}
+{{movep|type=ice|ms=615|pkmn=Cryogonal|method=A light blue ball of energy forms at Cryogonal's mouth. Multiple similarly colored beams of energy are shot from the ball at the target, freezing it.}}
+{{movemid|type=ice|user=Cryogonal (Pokémon)|user1=Multiple wild Cryogonal|startcode=M15|startname=Kyurem VS. The Sword of Justice}}
+{{movemid|type=ice|user=Cryogonal (Pokémon)|user1=Multiple wild Cryogonal|startcode=BW102|startname=Team Eevee and the Pokémon Rescue Squad!}}
+{{movep|type=ice|ms=581|pkmn=Swanna|method=Swanna opens its beak and forms a light blue ball of energy inside it and fires multiple light blue beams of energy from the ball at the opponent. When it hits the opponent, it freezes it.}}
+{{movemid|type=ice|user=Officer Jenny|user1=Officer Jenny's Swanna|startcode=BW081|startname=Crisis at Ferroseed Research!}}
+{{movep|type=ice|ms=393|pkmn=Piplup|method=Piplup opens its beak and forms a light blue ball inside it and fires multiple light blue beams from the ball at the opponent. When it hits the opponent, it freezes it.}}
+{{movemid|type=ice|user=Dawn's Piplup|startcode=BW086|startname=Piplup, Pansage, and a Meeting of the Times!}}
+{{movep|type=ice|ms=473|pkmn=Mamoswine|method=Mamoswine forms a light blue ball of energy in between its tusks. Multiple similarly colored beams of energy are shot from the ball at the target, freezing it.}}
+{{movemid|type=ice|user=Morana|user1=Morana's Mamoswine|startcode=BW140|startname=Survival of the Striaton Gym!}}
+{{movep|type=ice|ms=382P|pkmn=Kyogre|method=Primal Kyogre fires multiple light blue beams at the opponent.}}
+{{movemid|type=ice|user=Super-ancient Pokémon (XY series)#Kyogre|user1=Kyogre (anime)|startcode=XYS03|startname=Mega Evolution Special III}}
+{{movep|type=ice|ms=706|pkmn=Goodra|method=Goodra forms a light blue ball of energy in front of its mouth and fires multiple light blue beams of energy from the ball at the opponent.}}
+{{movemid|type=ice|user=Ash's Goodra|startcode=XY069|startname=Defending the Homeland!}}
+{{movep|type=ice|ms=646W|pkmn=Kyurem|method=A light blue ball of energy forms at White Kyurem's mouth. Multiple similarly colored beams of energy are shot from the ball at the target, freezing it.}}
+{{movemid|type=ice|user=Hoopa (anime)|user1=A Kyurem summoned by Hoopa|startcode=M18|startname=Hoopa and the Clash of Ages}}
+{{movep|type=ice|ms=516|pkmn=Simipour|method=Simipour forms a light blue ball of energy in front of its mouth and fires multiple light blue beams of energy from the ball at the opponent.}}
+{{movemid|type=ice|user=Simipour (Pokémon)|user1=A ninja's Simipour|startcode=XY099|startname=The Legend of the Ninja Hero!}}
+{{movep|type=ice|ms=215|pkmn=Sneasel|method=Sneasel forms a light blue ball of energy in front of its mouth and fires multiple light blue beams of energy from the ball at the opponent.}}
+{{movemid|type=ice|user=Team Flare Grunt (Trainer class)|user1=A Team Flare Grunt's Sneasel|startcode=XY107|startname=An Explosive Operation!}}
+{{movep|type=ice|ms=148|pkmn=Dragonair|method=Dragonair forms a light blue ball of energy in front of its mouth or the horn on its head and fires multiple light blue beams of energy from the ball at the opponent.}}
+{{movemid|type=ice|user=Amelia (XY109)|user1=Amelia's Dragonair|startcode=XY109|startname=Master Class Choices!}}
+{{movemid|type=ice|user=Ultra Guardians|user1=The Ultra Guardians' Dragonair|startcode=SM069|startname=Rise and Shine, Starship!}}
+{{movep|type=ice|ms=693|pkmn=Clawitzer|method=Clawitzer forms a light blue ball of energy in front of its large claw and fires multiple light blue beams of energy from the ball at the opponent.}}
+{{movemid|type=ice|user=Sawyer|user1=Sawyer's Clawitzer|startcode=XY119|startname=A Full-Strength Battle Surprise!}}
+{{movep|type=ice|ms=009|pkmn=Blastoise|method=A light blue ball of energy is formed in front of each one of Blastoise's cannons or from its open mouth. Light blue beams of energy are then shot from the light blue balls and are sent toward the opponent; or, Blastoise forms a light blue ball of icy energy from its mouth and then fires a beam from the energy ball at the opponent. On occasion, this will freeze the opponent.}}
+{{movemid|type=ice|user=Tierno's Blastoise|startcode=XY126|startname=Valuable Experience for All!}}
+{{movemid|type=ice|user=Neesha|user1=Neesha's Blastoise|startcode=M20|startname=I Choose You!}}
+{{movep|type=ice|ms=362M|pkmn=Glalie|method=Light blue lines of energy appear in front of Mega Glalie's mouth and then a light blue ball of energy forms in front of its mouth, until a light blue beam of energy is fired from the ball towards the opponent, freezing it; or, Mega Glalie forms a light blue ball of energy in front its mouth and then fires a beam of energy from the ball at the opponent.}}
+{{movemid|type=ice|user=Levi|user1=Levi's Glalie|startcode=M19|startname=Volcanion and the Mechanical Marvel}}
+{{movep|type=ice|ms=263|pkmn=Zigzagoon|method=Light blue lines of energy appear in front of Zigzagoon's mouth and then a light blue ball of energy forms in front of its mouth, until a light blue beam of energy is fired from the ball towards the opponent.}}
+{{movemid|type=ice|user=Zigzagoon (Pokémon)|user1=A wild Zigzagoon|startcode=M19|startname=Volcanion and the Mechanical Marvel}}
+{{movep|type=ice|ms=698|pkmn=Amaura|method=Light blue lines of energy appear in front of Amaura's mouth and then a light blue ball of energy forms in front of its mouth, until a light blue beam of energy is fired from the ball towards the opponent.}}
+{{movemid|type=ice|user=Amaura (Pokémon)|user1=A wild Amaura|startcode=M19|startname=Volcanion and the Mechanical Marvel}}
+{{movep|type=ice|ms=111|pkmn=Rhyhorn|method=A light blue ball of energy is formed in Rhyhorn's mouth and fires multiple light blue beams of energy from the ball at the opponent..}}
+{{movemid|type=ice|user=Rhyhorn (Pokémon)|user1=A wild Rhyhorn|startcode=M20|startname=I Choose You!}}
+{{movep|type=ice|ms=359|pkmn=Absol|method=Absol forms a light blue ball of energy in front of its mouth and fires multiple light blue beams of energy from the ball at the opponent.}}
+{{movemid|type=ice|user=Lusamine (anime)|user1=Lusamine's Absol|startcode=SM053|startname=Rescuing the Unwilling!}}
+{{movep|type=ice|ms=008|pkmn=Wartortle|method=Wartortle forms a light blue ball of energy in front of its mouth and fires multiple light blue beams of energy from the ball at the opponent.}}
+{{movemid|type=ice|user=Pokémon Trainer|user1=A Trainer's Wartortle|startcode=JN002|startname=Legend? Go! Friends? Go!}}
+{{movep|type=ice|ms=072|pkmn=Tentacool|method=Tentacool forms a light blue ball of energy in front of the red orb at the front of its body and fires multiple light blue beams of energy from the ball at the opponent.}}
+{{movemid|type=ice|user=Goh|user1=Goh's Tentacool|startcode=JN023|startname=Panic in the Park!}}
+{{movep|type=ice|ms=060|pkmn=Poliwag|method=Poliwag forms a light blue ball of energy in front of its mouth and fires multiple light blue beams of energy from the ball at the opponent.}}
+{{movemid|type=ice|user=Goh|user1=Goh's Poliwag|startcode=JN023|startname=Panic in the Park!}}
+{{movep|type=ice|ms=038A|pkmn=Ninetales|method=Alolan Ninetales forms a light blue ball of energy in front of its mouth and fires multiple light blue beams of energy from the ball at the opponent.}}
+{{movemid|type=ice|user=Goh|user1=Goh's Ninetales|startcode=JN071|startname=Leaping Toward the Dream!}}
+{{movep|type=ice|ms=133|pkmn=Eevee|method=Eevee opens its mouth and a light blue ball of energy forms in front of it and fires light blue beams of energy from the ball at the opponent, freezing it.}}
+{{movemid|type=ice|user=Chloe's Eevee|startcode=JN087|startname=Breaking the Ice!|notes=Used via {{mcolor|Copycat|000}}}}
+{{movep|type=ice|ms=458|pkmn=Mantyke|method=Mantyke forms a light blue ball of energy at the top of each of its antennae and fires a light blue beam of energy from each ball at the opponent.}}
+{{movemid|type=ice|user=Goh's Mantyke|startcode=JN088|startname=Looking Out for Number Two!}}
+{{movep|type=ice|ms=382|pkmn=Kyogre|method=Kyogre forms a light blue ball of energy in front of its mouth and fires multiple light blue beams of energy from the ball at the opponent.}}
+{{movebtm|type=ice|user=Mew (anime)|user1=Recurring Mew in the form of Kyogre|startcode=JN134|startname=In the Palms of our Hands!|notes=Used via {{mcolor|Transform|000}}}}
+
+* In the English [[dub]] of ''[[EP099|The Mandrin Island Miss Match]]'', [[Lorelei|Prima]]'s {{p|Jynx}}'s {{m|Ice Punch}} is erroneously referred to as Ice Beam.
+
+===Pokémon Black 2 and White 2 Animated Trailer===
+{{moveanime|type=ice|exp=yes|gen=The user fires a freezing ray of energy at the opponent.|image1=Hugh Samurott Ice Beam B2W2 Trailer.png |image1p=Samurott}}
+{{movep|type=ice|ms=503|pkmn=Samurott|method=Samurott opens its mouth, forming a ball of light blue energy in front of it and fires light blue beams of energy from the ball at the opponent, freezing it.}}
+{{movebtm|type=ice|user=Hugh|user1=Hugh's Samurott|startcode=Pokémon Black Version 2 and Pokémon White Version 2 Animated Trailer}}
+
+===Pokémon Origins===
+{{moveanime|exp=yes|type=ice|gen=The opponent is hit by a bolt of icy cold energy from the user.|image1=Lance Dragonite PO.png|image1p=Lapras}}
+{{movep|type=ice|ms=131|pkmn=Lapras|method=Lapras fires a light blue beam from its mouth at the opponent.}}
+{{movebtm|type=ice|user=Red (Origins)|user1=Red's Lapras|startcode=PO04|startname=File 4: Charizard|notes=Debut}}
+
+===Pokémon Generations===
+{{moveanime|exp=yes|type=ice|gen=The user fires a beam of icy cold energy at the opponent.|image1=Buck Claydol Ice Beam PG.png|image1p=Claydol|image2=Zinzolin Weavile Cryogonal Ice Beam PG.png|image2p=Cryogonal and Weavile}}
+{{movep|type=ice|ms=344|pkmn=Claydol|method=Claydol fires a beam of light blue energy from in front of its body at the opponent.}}
+{{movemid|type=ice|user=Buck|user1=Buck's Claydol|startcode=PG12|startname=The Magma Stone|notes=Debut}}
+{{movep|type=ice|ms=615|pkmn=Cryogonal|method=Cryogonal fires a light blue beam from in front of its body at the opponent.}}
+{{movemid|type=ice|user=Zinzolin|user1=Zinzolin's Cryogonal|startcode=PG14|startname=The Frozen World}}
+{{movep|type=ice|ms=461|pkmn=Weavile|method=Weavile puts its hands together and fires a beam of light blue energy from them at the opponent.}}
+{{movebtm|type=ice|user=Zinzolin|user1=Zinzolin's Weavile|startcode=PG14|startname=The Frozen World}}
+
+===Pokémon Masters Animated Trailer===
+{{moveanime|exp=yes|type=ice|gen=The opponent is hit by a bolt of icy cold energy from the user.|image1=Barry Piplup Ice Beam Masters Trailer.png|image1p=Piplup}}
+{{movep|type=ice|ms=393|pkmn=Piplup|method=Piplup fires a beam of light blue energy from its mouth at the opponent.}}
+{{movebtm|type=ice|user=Barry (Masters)|user1=Barry's Piplup|startcode=Pokémon Masters Animated Trailer}}
+
+==In the manga==
+===Ash & Pikachu===
+{{Movemanga|type=Ice|gen= The user strikes the target with an icy-cold beam of energy.|image1=Noland Articuno Ice Beam AP.png|image1p=Articuno}}
+{{movep|type=Ice|ms=144|pkmn=Articuno|method=Articuno fires a beam of icy energy from its beak at the opponent.}}
+{{movebtmManga|type=Ice|user=Noland's Articuno|startcode=SP33|startname=Off To The Battle Frontier!!|notes=Debut}}
+
+===Pokémon Battrio: Aim to be Battrio Master!===
+{{movemanga|type=ice|exp=yes|gen=The user fires a freezing beam of energy at the opponent.|image1=Ryuu Kyogre Ice Beam.png|image1p=Kyogre}}
+{{movep|type=ice|ms=382|pkmn=Kyogre|method=Kyogre fires a freezing beam of energy from its mouth at the opponent.}}
+{{movebtmManga|type=ice|user=Ryū Tendō|user1=Ryū's Kyogre|startcode=ABM15|notes=Debut}}
+
+===The Electric Tale of Pikachu===
+{{Movemanga|type=ice|exp=yes|gen=The user strikes the target with an icy-cold blast. This may also leave the target frozen.|image1=Drake Dragonite Ice Beam EToP.png|image1p=Dragonite|image2=Gary Slowpoke Ice Beam EToP.png|image2p=Slowpoke}}
+{{movep|type=ice|ms=149|pkmn=Dragonite|method=Dragonite shoots a beam of energy from its mouth at the opponent. While the beam travels through the air, it turns into ice.}}
+{{movemid|type=ice|user=Drake's Dragonite|startcode=ET18|startname=Pikachu's Plan|notes=Debut}}
+{{movep|type=ice|ms=079|pkmn=Slowpoke|method=Slowpoke shoots a beam of icy energy from its mouth, freezing the opponent.}}
+{{movebtmManga|type=ice|user=Gary Oak|user1=Gary's Slowpoke|startcode=ET19|startname=Ash vs. Gary}}
+
+===How I Became a Pokémon Card===
+{{Movemanga|type=Ice|gen=The user fires a transparent ray of freezing energy at the opponent.|image1=Shellder Ice Beam HIBAPC.png|image1p=Shellder}}
+{{movep|type=Tcg water|ms=090|pkmn=Shellder|method=Shellder fires a ray of freezing energy from its body at the opponent.}}
+{{movebtmManga|type=Tcg water|user=Shellder (Pokémon)|user1=A wild Shellder|startcode=PW02|startname=Team Rocket and Dark Charmeleon|notes=Debut}}
+
+===Movie adaptations===
+{{Movemanga|type=Ice|gen=The user fires a beam of freezing energy at the opponent.|image1=Kai Empoleon Ice Beam M10 manga.png|image1p=Empoleon}}
+{{movep|type=Ice|ms=395|pkmn=Empoleon|method=Empoleon fires a beam of freezing energy from its mouth at the opponent.}}
+{{movebtmManga|type=Ice|user=Kai (movie)|user1=Kai's Empoleon|startcode=The Rise of Darkrai (manga)|startname=The Rise of Darkrai|notes=Debut}}
+
+===Magical Pokémon Journey===
+{{movemanga|type=ice|exp=yes|gen=The user fires a beam of freezing energy at the opponent, freezing them.|image1=Marimaru Ice Beam.png|image1p=Marill}}
+{{movep|type=ice|ms=183|pkmn=Marill|method=Marill fires a beam of freezing energy from its mouth at the opponent, freezing them.}}
+{{movebtmManga|type=ice|user=Marimaru|startcode=PPP44|startname=Apricot, the Super Heroine!!|notes=Debut}}
+
+===Phantom Thief Pokémon 7===
+{{Movemanga|type=ice|exp=yes|gen=The user shoots a freezing blast of energy at the opponent.|image1=Lily Dusknoir Ice Beam P7.png|image1p=Dusknoir|image2=Galactic 2 Rampardos Ice Beam P7.png|image2p=Rampardos}}
+{{movep|type=ice|ms=477|pkmn=Dusknoir|method=Dusknoir fires a beam of energy from its eye at the opponent. The beam freezes anything it hits.}}
+{{Movemid|type=ice|user=Lily (Pokémon 7)|user1=Lily's Dusknoir|startcode=P7-07|startname=Stolen Memories|notes=Debut}}
+{{movep|type=ice|ms=409|pkmn=Rampardos|method=Rampardos fires a freezing beam of energy from its mouth at the opponent.}}
+{{movebtmManga|type=ice|user=Team Galactic Grunt (Trainer class)|user1=Team Galactic's Rampardos|startcode=P7-10|startname=Breaking Into An Enemy's Lair!}}
+
+===Pokémon Adventures===
+{{movemanga|type=ice|exp=yes|gen=The foe is struck with an icy-cold beam of energy. It may also freeze the target solid.|image1=Poli Ice Beam.png|image1p=Poliwrath|image2=Feefee Feebas Ice Beam Adventures.png|image2p=Feebas|image3=Costa Ice Beam.png|image3p=Carracosta|image4=Latias Ice Beam Adventures.png|image4p=Latias}}
+{{movep|type=ice|ms=061|pkmn=Poliwhirl|method=Poliwhirl releases a beam of cold wind from its stomach or the palm of its hand at the opponent, freezing it.}}
+{{movemid|type=ice|user=Poli|user1=Red's Poli|startcode=PS005|startname=Onix Is On!|notes=Debut}}
+{{movep|type=ice|ms=062|pkmn=Poliwrath|method=Poliwrath fires a see-through beam from its hand at the opponent, freezing it.}}
+{{movemid|type=ice|user=Poli|user1=Red's Poli|startcode=PS012|startname=Wake Up—You're Snorlax!}}
+{{movep|type=ice|ms=144|pkmn=Articuno|method=Articuno releases a powerful wind from its body at the opponent, freezing it.}}
+{{movemid|type=ice|user=Legendary birds (Adventures)#Articuno|user1=Green's Articuno|startcode=PS031|startname=The Art of Articuno}}
+{{movep|type=ice|ms=087|pkmn=Dewgong|method=Dewgong opens its mouth and a ball of energy forms inside it and fires a beam from the orb at the opponent, freezing it.}}
+{{movemid|type=ice|user=Lorelei|user1=Lorelei's Dewgong|startcode=PS045|startname=Cloystered}}
+{{movep|type=ice|ms=138|pkmn=Omanyte|method=Omanyte releases a sparkling beam from under its tentacles at the opponent, freezing it.}}
+{{movemid|type=ice|user=Omny|user1=Yellow's Omny|startcode=PS056|startname=The Coming of Slowpoke (Eventually)}}
+{{movep|type=ice|ms=124|pkmn=Jynx|method=Jynx creates a doll out of ice that resembles a person. If the ice doll has a mark put on it, an ice handcuff will appear on the person the doll resembles.}}
+{{movemid|type=ice|user=Lorelei|user1=Lorelei's Jynx|startcode=PS068|startname=Jigglypuff Jive}}
+{{movep|type=ice|ms=091|pkmn=Cloyster|method=Cloyster releases two sparkling beams from the larger horns on both sides of its shell at the opponent.}}
+{{movemid|type=ice|user=Lorelei's Cloyster|startcode=PS073|startname=Valiant Venomoth!}}
+{{movep|type=ice|ms=139|pkmn=Omastar|method=An orb of energy forms in front of Omastar's mouth and it fires a beam from the ball at the opponent.}}
+{{movemid|type=ice|user=Omny|user1=Yellow's Omny|startcode=PS090|startname=The Legend}}
+{{movep|type=ice|ms=224|pkmn=Octillery|method=Octillery releases a sparkling beam of ice at the opponent.}}
+{{movemid|type=ice|user=Team Rocket Elite Trio|user1=Ken's Octillery|startcode=PS127|startname=Miltank Melee}}
+{{movep|type=ice|ms=349|pkmn=Feebas|method=Feebas releases a beam of energy from its mouth at the opponent, freezing it.}}
+{{movemid|type=ice|user=Feefee|user1=Ruby's Feefee|startcode=PS211|startname=Hanging Around With Slaking III}}
+{{movep|type=ice|ms=362|pkmn=Glalie|method=Glalie releases two beams of energy from its eyes at the opponent, freezing whatever it touches.}}
+{{movemid|type=ice|user=Glalie (Pokémon)|user1=The Battle Factory's Glalie|startcode=PS307|startname=Gotcha Where I Wantcha, Glalie}}
+{{movep|type=ice|ms=394|pkmn=Prinplup|method=Prinplup releases a beam of energy from its beak at the opponent, freezing it.}}
+{{movemid|type=ice|user=Platinum's Prinplup|startcode=PS351|startname=Perturbed by Pachirisu}}
+{{movep|type=ice|ms=565|pkmn=Carracosta|method=Carracosta fires a beam of energy from its mouth at the opponent, freezing it.}}
+{{movemid|type=ice|user=Costa|user1=Black's Costa|startcode=PS517|startname=Something Suspicious}}
+{{movep|type=ice|ms=615|pkmn=Cryogonal|method=Cryogonal fires a beam of energy from its mouth at the opponent, freezing it.}}
+{{movemid|type=ice|user=Zinzolin|user1=Zinzolin's Cryogonal|startcode=PS518|startname=True Friends|notes=First mentioned in ''{{color2|000|PS514|The Tournament Continues}}''}}
+{{movep|type=ice|ms=380|pkmn=Latias|method=Latias fires a beam of energy from the triangle on her chest at the opponent, freezing it.}}
+{{movebtmManga|type=ice|user=Eon duo (Adventures)#Latias|user1=Latias (Adventures)|startcode=PS609|startname=Kyogre Returns}}
+
+* In ''[[PS050|Lapras Lazily]]'', [[Evan]]'s {{p|Lapras}} was revealed to know Ice Beam by {{adv|Blue}}'s [[Pokédex]] .
+* In ''[[PS310|Just My Luck...Shuckle]]'', {{adv|Crystal}}'s {{p|Starmie}} and [[Lucy]]'s {{p|Milotic}} were revealed to know Ice Beam by {{adv|Emerald}}'s Pokédex.
+
+===Pocket Monsters Diamond & Pearl===
+{{movemanga|type=ice|exp=yes|gen=The user releases a beam of freezing energy at the opponent.|image1=Dawn Buneary Ice Beam PDP.png|image1p=Buneary}}
+{{movep|type=ice|ms=427|pkmn=Buneary|method=Buneary releases a beam of freezing energy from its mouth at the opponent.}}
+{{movebtmManga|type=ice|user=Dawn's Buneary|startcode=PDP22|startname=Saving Sharpedo!|notes=Debut}}
+
+===Pokémon Diamond and Pearl Adventure!===
+{{Movemanga|type=ice|exp=yes|gen=The user fires a beam of freezing energy at the opponent, freezing them.|image1=Cyrus Weavile Ice Beam DPA.png|image1p=Weavile|image2=Candice Regice Ice Beam DPA.png|image2p=Regice}}
+{{movep|type=ice|ms=461|pkmn=Weavile|method=Weavile forms a ball of energy in front of its hand and fires a beam of freezing energy from it at the opponent.}}
+{{Movemid|type=ice|user=Cyrus|user1=Cyrus's Weavile|startcode=DPA08|startname=Team Galactic's Conspiracy, Revealed!!|notes=Debut}}
+{{movep|type=ice|ms=378|pkmn=Regice|method=Regice fires beams of energy from its hands at the opponent, freezing them.}}
+{{movebtmManga|type=ice|user=Candice|user1=Candice's Regice|startcode=DPA14|startname=A Novel Test!!}}
+
+* [[Mitsumi]] mentioned that her {{p|Glaceon}} used Ice Beam in ''[[DPA23|A New Battle Begins!]]'', but the move was executed off-panel.
+
+===Pokémon Gold & Silver: The Golden Boys===
+{{Movemanga|type=ice|exp=yes|gen=The user fires a freezing beam of energy at the opponent.|image1=Falkner Articuno Ice Beam Golden Boys.png|image1p=Articuno}}
+{{movep|type=ice|ms=144|pkmn=Articuno|method=Articuno fires a beam of freezing energy from its mouth at the opponent.}}
+{{movebtmManga|type=ice|user=Falkner|user1=Falkner's Articuno|startcode=GB03|startname=The Legendary Pokémon Appears!|notes=Debut}}
+
+===Pocket Monsters Platinum: Aim to Be Battle King!!===
+{{movemanga|type=ice|exp=yes|gen=The user fires a beam of energy at the opponent.|image1=Yuu Shirogane Glaceon Ice Beam.png|image1p=Glaceon}}
+{{movep|type=ice|ms=471|pkmn=Glaceon|method=Glaceon fires a beam of energy from its mouth at the opponent.}}
+{{movebtmManga|type=ice|user=Yū Shirogane|user1=Yū's Glaceon|startcode=PBK2|notes=Debut}}
+
+===Pokémon Pocket Monsters===
+{{Movemanga|type=Ice|gen=The user fires a beam of ice at the oppponent.|image1=Articuno Ice Beam PM.png|image1p=Articuno|image2=Lorelei Lapras Ice Beam PM.png|image2p=Lapras|image3=Red Articuno Ice Beam PM.png|image3p=Red's Articuno}}
+{{movep|type=Ice|ms=144|pkmn=Articuno|method=Articuno flaps its wings, releasing freezing energy from them at the opponent. When the energy hits the opponent, they get frozen.}}
+{{movemid|type=Ice|user=Red (Pocket Monsters)|user1=Red's Articuno|startcode=PM013|startname=The Legendary Pokémon Appears!!|notes=Debut}}
+{{movemid|type=Ice|user=Legendary birds (M02)|user1=Articuno (M02)|startcode=PM058|startname=Get Lugia!}}
+{{movep|type=Ice|ms=131|pkmn=Lapras|method=Lapras fires a beam of cold air at the opponent, freezing them.}}
+{{movebtmManga|type=Ice|user=Lorelei|user1=Lorelei's Lapras|startcode=PM033|startname=To the Pokémon League!!}}
+
+===Pokémon Try Adventure===
+{{movemanga|type=ice|exp=yes|gen=The user fires a beam of freezing energy at the opponent.|image1=Chacha Ice Beam.png|image1p=Piplup}}
+{{movep|type=ice|ms=393|pkmn=Piplup|method=Piplup fires a beam of energy from its mouth at the opponentr.}}
+{{movebtmManga|type=ice|user=Katsuya|user1=Katsuya's Chacha|startcode=TA21|notes=Debut}}
+
+==In other generations==
+===Core series games===
+{{Movegen
+|type=ice
+|genI=Ice Beam I
+|genII=Ice Beam II
+|genIII=Ice Beam III
+|genIV=Ice Beam IV
+}}
+{{Movegen
+|type=Ice
+|genV=Ice Beam V
+|genVI=Ice Beam VI
+|genVI2=Ice Beam VI 2
+|SMUSUM=Ice Beam VII
+|SMUSUM2=Ice Beam VII 2
+|LGPE=Ice Beam PE
+|LGPE2=Ice Beam PE 2
+}}
+{{Movegen
+|type=Ice
+|genVIII=Ice Beam VIII
+|genVIII2=Ice Beam VIII 2
+|LA=Ice Beam LA
+|ZA=Ice Beam ZA
+}}
+
+===Side series games===
+{{Movegen
+|type=ice
+|Stad=Ice Beam Stad
+|Stad2=Ice Beam Stad2
+|Colo=Ice Beam Colo
+|XD=Ice Beam XD
+}}
+
+{{Movegen
+|type=ice
+|PBR=Ice Beam PBR
+}}
+
+===Spin-off series games===
+{{Movegen
+|type=ice
+|PMDRB=Ice Beam PMD RB
+|PMDTDS=Ice Beam PMD TDS
+|PMDGTI=Ice Beam PMD GTI
+|PSMD=Ice Beam PSMD
+}}
+{{Movegen
+|type=Ice
+|Masters=Ice Beam Masters
+}}
+
+==Trivia==
+* Though Ice Beam freezes its targets very often in the {{pkmn|animated series}}, it has a very low chance of freezing the opponent in the {{pkmn|games}} (10%).
+* Every {{type|Ice}} Pokémon can learn this move except for {{p|Snom}}, {{p|Chien-Pao}}, and {{p|Rotom|Frost Rotom}}.
+
+==In other languages==
+{{Langtable|color={{ice color}}|bordercolor={{ice color dark}}
+|zh_yue=冰凍光束 ''{{tt|Bīngdung Gwōngchūk|Freezing Beam}}'' {{tt|*|Games}}<br>急凍光線 ''{{tt|Gāpdung Gwōngsin|Quick-Freezing Ray}}'' {{tt|*|Animated series}}<br>冷凍光束 ''{{tt| 	Láahngdung Gwōngchūk|Freezing Beam}}'' {{tt|*|EP105}}<br>冷凍光線 ''{{tt|Láahngdung Gwōngsin|Freezing Ray}}'' {{tt|*|M10}}
+|zh_cmn=冰凍光束 / 冰冻光束 ''{{tt|Bīngdòng Guāngshù|Freezing Beam}}'' {{tt|*|Games, Adventures (Jilin edition)}}<br>急凍光線 ''{{tt|Jídòng Guāngxiàn|Quick-Freezing Ray}}'' {{tt|*|Animated series}}<br>冷凍光束 ''{{tt|Jídòng Guāngxiàn|Freezing Beam}}'' {{tt|*|Electric Tales of Pikachu}}<br>冷冻光线 ''{{tt|Lěngdòng Guāngxiàn|Freezing Ray}}'' {{tt|*|21st Century Publishing}}
+|cs=Ledový paprsek
+|da=Isstråle
+|nl=IJsstraal
+|fi=Jääsäde
+|fr=Laser Glace
+|de=Eisstrahl
+|el=Ακτίνα Πάγου ''Aktína Págou''
+|he=קרן קרח ''Keren Kerakh''
+|hi=आइस बीम ''Ice Beam'' {{tt|*|Pokémon GO}}<br>बर्फीली बीम ''{{tt|Barfeeli Beam|Icy Beam}}''
+|hu=Jégsugár
+|id=Sinar Pembeku{{tt|*|Pokémon GO}}<br>Ice Beam
+|it=Geloraggio
+|ko=냉동빔 ''{{tt|Naengdongbim|Freeze Beam}}''
+|no=Isstråle
+|pl=Lodowy Promień{{tt|*|Animated series}}<!---{{tt|*|EP056, EP066, EP112, EP189-EP215, EP237-EP257, Diamond and Pearl series onwards}}<br>Lodowy Błysk{{tt|*|EP236}}<br>Lodowy Atak{{tt|*|EP061, EP093-EP105, EP185}}<br>Lodowy Podmuch{{tt|*|EP185}}<br>Lodowy Strumień{{tt|*|EP111}}---><br>Wiatr Zamrażający{{tt|*|Manga}}
+|pt_br=Raio Congelante (games, [[BW101]]–present, TCG, [[PS005]]–present)<br>Raio de Gelo (early animated series{{specify|which episodes/seasons/series?}}, [[PS516]]–[[PS518]], The Official Pokémon Handbook)
+|pt_eu=Raio de Gelo ([[Pokémon Chronicles]])<BR>Feixe de Gelo ([[Pokémon the Series: Ruby and Sapphire|AG]] & [[Pokémon the Series: Diamond and Pearl|DP]] series)''
+|ro=Raza de Gheață
+|ru=Ледяной Луч ''{{tt|Ledyanoy Luch|Ice Beam}}
+|sr=Ledeni Zrak
+|es_la=Rayo de Hielo<!-- (games, [[EP056]], [[EP085]]–present)<br>Rayo Hielo ([[EP061]]–[[EP066]], [[BW092]], [[XY126]])<br>Ataque de Hielo ([[DP053]])<br>Disparo de Hielo ([[AG157]])<br>Giro de Hielo ([[AG114]])-->
+|es_eu=Rayo Hielo
+|sv=Isstråle
+|th=ลำแสงเยือกแข็ง ''{{tt|Lamsaeng Yueakkhaeng|Freezing Beam}}
+|tr=Buz Işını
+|vi=Chùm Tia Băng
+|ca=Raig Gel{{tt|*|JN002}}<br>Raig de Gel{{tt|*|JN023-onwards}}
+}}
+{{Flamethrower|Ice}}
+{{Generation I TMs}}
+{{Generation III TMs}}
+{{Generation IV TMs}}
+{{Generation V TMs}}
+{{Generation VI TMs}}
+{{Generation VII TMs}}
+{{Generation VIII TMs}}
+{{Generation IX TMs}}
+{{Project Moves and Abilities notice}}
+
+[[Category:Moves that can inflict freeze]]
+[[Category:Moves that can jam]]
+[[Category:Moves in Pokémon: Let's Go, Pikachu! and Let's Go, Eevee!]]
+[[Category:Moves usable in Pokémon Sword and Shield]]
+[[Category:Moves in Pokémon Legends: Arceus]]
+[[Category:Moves usable in Pokémon Scarlet and Violet]]
+[[Category:Moves in Pokémon Legends: Z-A]]
+
+[[de:Eisstrahl]]
+[[es:Rayo de Hielo/Rayo Hielo]]
+[[fr:Laser Glace]]
+[[it:Geloraggio]]
+[[ja:れいとうビーム]]
+[[zh:冰冻光束（招式）]]

@@ -1,0 +1,955 @@
+{{MoveInfobox
+|n=174
+|name=Curse
+|jname=のろい
+|jtrans={{tt|Curse/Slow|can mean either; is a pun on both}}
+|jtranslit=Noroi
+|gameimage=Curse IX ghost.png
+|gameimage2=Curse IX other.png
+|gameimagewidth=300
+|type=Ghost
+|damagecategory=Status
+|basepp=10
+|maxpp=16
+|power=—
+|accuracy=—
+|gen=II
+|category=Tough
+|appeal=3
+|jam=0
+|cdesc=The next appeal can be made later next turn.
+|appealsc=0
+|scdesc=Earn a higher score the later the Pokémon performs.
+|appeal6=3
+|jam6=0
+|cdesc6=Causes the user to move later on the next turn.
+|tm2=yes
+|tm#2=03
+|tm9=yes
+|tm#9=224
+|tmza=yes
+|tm#za=091
+|touches=no
+|protect=no
+|magiccoat=no
+|snatch=no
+|mirrormove=no
+|kingsrock=no
+|sound=no
+|na=no
+|target=varies
+}}
+'''Curse''' (Japanese: '''のろい''' ''{{tt|Curse/Slow|can mean either; is a pun on both}}'') is a non-damaging {{type|Ghost}} [[move]] introduced in [[Generation II]]. Prior to [[Generation V]], it was a {{type|???}} move, and the only move of that [[type]].
+
+It is:
+* [[TM03]] in Generation II.
+* [[TM224]] in {{g|Scarlet and Violet}}.
+* [[TM091]] in [[Pokémon Legends: Z-A]].
+
+==Effect==
+In all generations, Curse acts differently depending on whether the user has the {{t|Ghost}} type or not.
+
+Curse is only affected by the Pokémon's current type rather than its original type. Thus, if the user's type has changed (such as gaining the Ghost type from {{m|Trick-or-Treat}}, losing this type by becoming a pure {{type|Water}} from {{m|Soak}}, changing species by using {{m|Transform}}, or {{Tera}}stallizing, the move will consider its current type rather than its previous one.
+
+===Ghost-type Pokémon===
+The user will lose half of its maximum [[HP]] (rounded down) and put a curse on the target. If this causes the user's HP to drop to 0, the move will execute fully but cause the user to faint. A cursed Pokémon will lose ¼ of its maximum HP at the end of each turn. The curse will remain until the Pokémon switches out or the battle ends. However, if a Pokémon switches out with {{m|Baton Pass}}, it will be transferred to the Pokémon switched in. This move is not blocked by {{m|Protect}}, {{m|Detect}}, or {{m|Spiky Shield}}, but is blocked by {{m|Crafty Shield}}.
+
+The user does not lose HP if Curse misses (due to a move with a [[semi-invulnerable turn]]), fails (due to the target already being affected by Curse), or is blocked by Crafty Shield.
+
+If powered up by a [[Ghostium Z]] into Z-Curse, the user restores all of its HP.
+
+===Non-Ghost-type Pokémon===
+The user's {{stat|Speed}} stat will drop by one stage and its {{stat|Attack}} stat and {{stat|Defense}} stat will rise by one stage each. Despite being an effect acting on the user, this move will fail if there are no opponents on the field.
+
+If powered up by a Ghostium Z into Z-Curse, the user's Attack stat raises another stage.
+
+===In different generations===
+====Generation II====
+Curse is a {{type|???}} move.
+
+If used by a non-{{type|Ghost}} Pokémon, Curse will fail if the user's Attack and Defense stats both are at +6 stages, even if its Speed stat is not at -6 stages.
+
+If a cursed Pokémon defeats its opponent, it will not take curse damage on that turn.
+
+Curse cannot hit through a {{OBP|substitute|doll}}.
+
+====Generation III====
+If used by a non-{{type|Ghost}} Pokémon, Curse can now reduce the user's Speed stat even if its Attack and Defense stats both are at +6 stages. (However, Curse will still fail if the user's Attack and Defense stats both are at +6 stages, and its Speed stat is at -6 stages.)
+
+If a cursed Pokémon defeats its opponent, it now takes curse damage on that turn.
+
+If the user changes type before using Curse, Curse will obey the user's type at the time of the move's execution. In a [[Double Battle]], if the user gains the Ghost type before Curse executes, Curse will prioritize the opponent directly opposite the user as its target.
+
+Curse can be used as the first move of a [[Contest combination|Pokémon Contest combination]], causing {{m|Destiny Bond}}, {{m|Grudge}}, {{m|Mean Look}}, and {{m|Spite}} to score double the normal appeal if used in the next turn.
+
+====Generation IV====
+In this generation only, due to an [[Rage glitch|oversight]], if a Pokémon afflicted by Curse has used {{m|Rage}} and then selects a different move, it will be freed from the curse, but its rage will still be building.
+
+====Generation V====
+Curse is now a Ghost-type move.
+
+Curse can now hit through a substitute.
+
+In a [[Triple Battle]], if the user gains the Ghost type before Curse executes, Curse will prioritize the opponent directly opposite the user as its target.
+
+====Generation VI====
+In a Single Battle, if the user is not already Ghost-type and becomes Ghost-type before executing Curse (due to [[Mega Evolution]], {{a|Color Change}}, or {{m|Trick-or-Treat}}), Curse will execute as it does for all Ghost types, hurting the user and inflicting the curse.
+
+In a Triple Battle or [[Horde Encounter]], if the user is not already Ghost-type and becomes Ghost-type before executing Curse (due to Mega Evolution, Color Change, or Trick-or-Treat), Curse will now target a random adjacent opponent.
+
+Due to a [[List of battle glitches in Generation VI#Type-changing Curse glitch|glitch]], Curse can have an unusual behavior in some situations when the user has its type changed right before using the move.
+
+In a Double Battle, if the user is not already Ghost-type and becomes Ghost-type before executing Curse (due to Mega Evolution, Color Change, or Trick-or-Treat), Curse may target a different Pokémon depending on the user's position. If the user is on the right side (from its Trainer's perspective), Curse will target the user's ally (or fail if there is none). If the user is on the left side (from its Trainer's perspective) Curse will target a random opponent. {{m|Follow Me}} and {{m|Rage Powder}} will still redirect Curse as normal.
+
+If the user is not already Ghost-type and becomes Ghost-type due to {{a|Protean}} upon executing Curse, the user will use the Ghost-type Curse on itself (regardless of {{m|Follow Me}} or {{m|Rage Powder}}). This cannot be blocked by {{m|Crafty Shield}}.
+
+====Generation VII====
+In a Double Battle, if the user is not already Ghost-type and becomes Ghost-type before executing Curse (due to Mega Evolution, Color Change, or Trick-or-Treat), Curse will now target a random opponent.
+
+====Generation VIII====
+A [[Dynamax]] Pokémon can be cursed; however, it only takes damage equal to 1/4 of its pre-Dynamax maximum HP, which will be between 1/6 and 1/8 of its Dynamax HP, or as little as 1/12 for the boss in a [[Max Raid Battle]].
+
+Ghost-type Pokémon are no longer able to choose targets for Curse in a Double Battle, and will always attempt to inflict the curse on a random opponent.
+
+===Generation IX===
+====Pokémon Legends: Z-A====
+{{LegendsZAMove
+|type=Ghost
+|damagecategory=Status
+|cooldown=15
+|charge-time=1
+}}
+
+==Description==
+{{movedesc|Ghost}}
+{{movedescentry|{{gameabbrevss|Stad2}}|Raises <sc>Attack</sc> and <sc>Defense</sc> at the expense of <sc>Speed</sc>. It works differently for the <sc>Ghost</sc> type.}}
+{{movedescentry|{{gameabbrev2|GSC}}|Works differently for ghost-types.}}
+{{movedescentry|{{gameabbrev3|RSE}}{{gameabbrevss|Colo}}{{gameabbrevss|XD}}|A move that functions differently for <sc>Ghosts</sc>.}}
+{{movedescentry|{{gameabbrev3|FRLG}}|A move that works differently for the <sc>Ghost</sc>-type and all the other types.}}
+{{movedescentry|{{gameabbrev4|DPPtHGSS}}{{gameabbrevss|PBR}}|A move that works differently for the Ghost type than for all the other types.}}
+{{movedescentry|{{gameabbrev5|BWB2W2}}<br>{{gameabbrev6|XYORAS}}<br>{{gameabbrev7|SMUSUMPE}}<br>{{gameabbrev8|SwShBDSPLA}}|A move that works differently for the Ghost type than for all other types.}}
+{{movedescentry|{{gameabbrev9|SV}}|A move that has different effects depending on whether the user is a Ghost type or not.}}
+{{movedescentry|{{gameabbrev9|ZA}}|The user boosts its Attack and Defense stats in exchange for lowering its movement speed for a short time. When Ghost types use this move, the effect is different.}}
+|}
+|}{{left clear}}
+
+==Learnset==
+===By [[Level|leveling up]]===
+{{Movehead/Games|Ghost|g1=none|g7=1|g7g={{gameabbrev7|SMUSUM}}|g8=2|g9=2}}
+{{Moveentry/10|0079|Slowpoke|type=Water|type2=Psychic|2|Monster|Water 1|1|1|1|1|1|1|1|1|1|1}}
+{{Moveentry/10|0079|formsig=G|Slowpoke|type=Psychic|2|Monster|Water 1|form=Galarian Form|||||||1||1|1}}
+{{Moveentry/10|0080|Slowbro|type=Water|type2=Psychic|2|Monster|Water 1|1|1|1|1|1|1|1|1|1|1}}
+{{Moveentry/10|0080|formsig=G|Slowbro|type=Poison|type2=Psychic|2|Monster|Water 1|form=Galarian Form|||||||1||1|1}}
+{{Moveentry/10|0092|Gastly|type=Ghost|type2=Poison|1|Amorphous|Amorphous|16|16{{sup/3|RSE}}<br>13{{sup/3|FRLG}}|12|12|12|12|20|20|20|20}}
+{{Moveentry/10|0093|Haunter|type=Ghost|type2=Poison|1|Amorphous|Amorphous|16|16{{sup/3|RSE}}<br>13{{sup/3|FRLG}}|12|12|12|12|20|20|20|20}}
+{{Moveentry/10|0094|Gengar|type=Ghost|type2=Poison|1|Amorphous|Amorphous|16|16{{sup/3|RSE}}<br>13{{sup/3|FRLG}}|12|12|12|12|20|20|20|20}}
+{{Moveentry/10|0095|Onix|type=Rock|type2=Ground|1|Mineral|Mineral|−|−|38{{sup/4|PtHGSS}}|46{{sup/5|BW}}<br>4{{sup/5|B2W2}}|4|4|16|16||16}}
+{{Moveentry/10|0199|Slowking|type=Water|type2=Psychic|2|Monster|Water 1|1|1|1|1|1|1|1|1|1|1}}
+{{Moveentry/10|0199|formsig=G|Slowking|type=Poison|type2=Psychic|2|Monster|Water 1|form=Galarian Form|||||||1||1|1}}
+{{Moveentry/10|0204|Pineco|type=Bug|1|Bug|Bug|−|−|−|−|−|−||−|23}}
+{{Moveentry/10|0205|Forretress|type=Bug|type2=Steel|1|Bug|Bug|−|−|−|−|−|−||−|23}}
+{{Moveentry/10|0208|Steelix|type=Steel|type2=Ground|1|Mineral|Mineral|−|−|38{{sup/4|PtHGSS}}|46{{sup/5|BW}}<br>4{{sup/5|B2W2}}|4|4|16|16||16}}
+{{Moveentry/10|0222|formsig=G|Corsola|type=Ghost|2|Water 1|Water 3|form=Galarian Form|||||||30}}
+{{Moveentry/10|0322|Numel|type=Fire|type2=Ground|1|Field|Field||−|−|29{{sup/5|B2W2}}|29|29||29|29|29}}
+{{Moveentry/10|0323|Camerupt|type=Fire|type2=Ground|1|Field|Field||−|−|29{{sup/5|B2W2}}|29|29||29|29|29}}
+{{Moveentry/10|0324|Torkoal|type=Fire|1|Field|Field||7|12|12|12{{sup/6|XY}}<br>22{{sup/6|ORAS}}|22|44|44|44}}
+{{Moveentry/10|0335|Zangoose|type=Normal|1|Field|Field||−|−|−|−|−||−|{{tt|Rem.|Can only be learned via Move Reminder}}|−}}
+{{Moveentry/10|0353|Shuppet|type=Ghost|1|Amorphous|Amorphous||20|13|13{{sup/5|BW}}<br>19{{sup/5|B2W2}}|19{{sup/6|XY}}<br>26{{sup/6|ORAS}}|26||26|26|26}}
+{{Moveentry/10|0354|Banette|type=Ghost|1|Amorphous|Amorphous||1, 20|1, 13|1, 13{{sup/5|BW}}<br>1, 19{{sup/5|B2W2}}|1, 19{{sup/6|XY}}<br>26{{sup/6|ORAS}}|26||26|26|26}}
+{{Moveentry/10|0355|Duskull|type=Ghost|1|Amorphous|Amorphous||34|30|30|30{{sup/6|XY}}<br>33{{sup/6|ORAS}}|33|36|36|36}}
+{{Moveentry/10|0356|Dusclops|type=Ghost|1|Amorphous|Amorphous||34|30|30|30{{sup/6|XY}}<br>33{{sup/6|ORAS}}|33|36|36|36}}
+{{Moveentry/10|0377|Regirock|type=Rock|1|No Eggs Discovered|No Eggs Discovered||17|17|17|17{{sup/6|XY}}<br>25{{sup/6|ORAS}}|25|30|30|30}}
+{{Moveentry/10|0378|Regice|type=Ice|1|No Eggs Discovered|No Eggs Discovered||17|17|17|17{{sup/6|XY}}<br>25{{sup/6|ORAS}}|25|30|30|30}}
+{{Moveentry/10|0379|Registeel|type=Steel|1|No Eggs Discovered|No Eggs Discovered||17|17|17|17{{sup/6|XY}}<br>25{{sup/6|ORAS}}|25|30|30|30}}
+{{Moveentry/10|0387|Turtwig|type=Grass|2|Monster|Grass|||17|17|17|17||17|17}}
+{{Moveentry/10|0388|Grotle|type=Grass|2|Monster|Grass|||17|17|17|17||17|17}}
+{{Moveentry/10|0389|Torterra|type=Grass|type2=Ground|2|Monster|Grass|||17|17|17|17||17|17}}
+{{Moveentry/10|0399|Bidoof|type=Normal|2|Water 1|Field|||45{{sup/4|PtHGSS}}|45|45|49||49}}
+{{Moveentry/10|0400|Bibarel|type=Normal|type2=Water|2|Water 1|Field|||53{{sup/4|PtHGSS}}|53|53|58||58}}
+{{Moveentry/10|0442|Spiritomb|type=Ghost|type2=Dark|1|Amorphous|Amorphous|||1|1|1|1|40|40|40}}
+{{Moveentry/10|0449|Hippopotas|type=Ground|1|Field|Field|||–|–|–|–|–|–|–|8}}
+{{Moveentry/10|0477|Dusknoir|type=Ghost|1|Amorphous|Amorphous|||30|30|30{{sup/6|XY}}<br>33{{sup/6|ORAS}}|33|36|36|36}}
+{{Moveentry/10|0478|Froslass|type=Ice|type2=Ghost|2|Fairy|Mineral|||–|–|–|–|–|–|–|60}}
+{{Moveentry/10|0562|Yamask|type=Ghost|2|Mineral|Amorphous||||29|29|29|36|||36}}
+{{Moveentry/10|0562|formsig=G|Yamask|type=Ground|type2=Ghost|2|Mineral|Amorphous|form=Galarian Form|||||||36|||36}}
+{{Moveentry/10|0563|Cofagrigus|type=Ghost|2|Mineral|Amorphous||||29|29|29|38|||36}}
+{{Moveentry/10|0564|Tirtouga|type=Water|type2=Rock|2|Water 1|Water 3||||35|35|35|30}}
+{{Moveentry/10|0565|Carracosta|type=Water|type2=Rock|2|Water 1|Water 3||||35|35|35|30}}
+{{Moveentry/10|0570|formsig=H|Zorua|type=Normal|type2=Ghost|1|Field|Field|form=Hisuian Form|||||||||16}}
+{{Moveentry/10|0571|formsig=H|Zoroark|type=Normal|type2=Ghost|1|Field|Field|form=Hisuian Form|||||||||16}}
+{{Moveentry/10|0597|Ferroseed|type=Grass|type2=Steel|2|Grass|Mineral||||9|9|9|41}}
+{{Moveentry/10|0598|Ferrothorn|type=Grass|type2=Steel|2|Grass|Mineral||||1, 9|1, 9|1, 9|43}}
+{{Moveentry/10|0607|Litwick|type=Ghost|type2=Fire|1|Amorphous|Amorphous||||43|43|43|32||32|44}}
+{{Moveentry/10|0608|Lampent|type=Ghost|type2=Fire|1|Amorphous|Amorphous||||45|45|45|32||32|44}}
+{{Moveentry/10|0609|Chandelure|type=Ghost|type2=Fire|1|Amorphous|Amorphous||||−|−|−|1||1|44}}
+{{Moveentry/10|0616|Shelmet|type=Bug|1|Bug|Bug||||13|13|13|8}}
+{{Moveentry/10|0617|Accelgor|type=Bug|1|Bug|Bug||||−|−|−|1}}
+{{Moveentry/10|0622|Golett|type=Ground|type2=Ghost|1|Mineral|Mineral||||40|40|45|16||16|16}}
+{{Moveentry/10|0623|Golurk|type=Ground|type2=Ghost|1|Mineral|Mineral||||40|40|47|16||16|16}}
+{{Moveentry/10|0704|Goomy|type=Dragon|1|Dragon|Dragon|||||−|−|41||41|41}}
+{{Moveentry/10|0705|Sliggoo|type=Dragon|1|Dragon|Dragon|||||−|−|43||43|41}}
+{{Moveentry/10|0705|formsig=H|Sliggoo|type=Steel|type2=Dragon|1|Dragon|Dragon|form=Hisuian Form|||||||||43|41}}
+{{Moveentry/10|0706|Goodra|type=Dragon|1|Dragon|Dragon|||||−|−|43||43|41}}
+{{Moveentry/10|0706|formsig=H|Goodra|type=Steel|type2=Dragon|1|Dragon|Dragon|form=Hisuian Form|||||||||43|41}}
+{{Moveentry/10|0708|Phantump|type=Ghost|type2=Grass|2|Grass|Amorphous|||||28|28|32||32|50}}
+{{Moveentry/10|0709|Trevenant|type=Ghost|type2=Grass|2|Grass|Amorphous|||||28|28|32||32|50}}
+{{Moveentry/10|0712|Bergmite|type=Ice|2|Monster|Mineral|||||22|22|9||9|9}}
+{{Moveentry/10|0713|Avalugg|type=Ice|2|Monster|Mineral|||||22|22|9||9|9}}
+{{Moveentry/10|0713|formsig=H|Avalugg|type=Ice|type2=Rock|2|Monster|Mineral|form=Hisuian Form|||||||||9|9}}
+{{Moveentry/10|0771|Pyukumuku|type=Water|1|Water 1|Water 1||||||25|30}}
+{{Moveentry/10|0842|Appletun|type=Grass|type2=Dragon|2|Grass|Dragon|||||||4||4}}
+{{Moveentry/10|0855|Polteageist|type=Ghost|2|Mineral|Amorphous|form=All forms|||||||66||66}}
+{{Moveentry/10|0864|Cursola|type=Ghost|2|Water 1|Water 3|||||||30}}
+{{Moveentry/10|0867|Runerigus|type=Ground|type2=Ghost|2|Mineral|Amorphous|||||||38|||36}}
+{{Moveentry/10|0871|Pincurchin|type=Electric|2|Water 1|Amorphous|||||||35||35}}
+{{Moveentry/10|0946|Bramblin|type=Grass|type2=Ghost|1|Grass|Grass|||||||||45}}
+{{Moveentry/10|0947|Brambleghast|type=Grass|type2=Ghost|1|Grass|Grass|||||||||45}}
+{{Moveentry/10|0977|Dondozo|type=Water|1|Water 2|Water 2|||||||||−|12}}
+{{Movefoot|Ghost|10}}
+
+===By [[TM]]===
+In [[Generation II]], Curse can be learned by every Pokémon capable of learning TMs.{{Movehead/TMGames|Ghost|g1=none|g3=none|g4=none|g5=none|g6=none|g7=none|g8=none
+|g2tm=03
+|g9=2|g9tm-1=224|g9tm-2=091}}
+{{Moveentry/3|0001|Bulbasaur|type=Grass|type2=Poison|2|Monster|Grass|✔|✔|–}}
+{{Moveentry/3|0002|Ivysaur|type=Grass|type2=Poison|2|Monster|Grass|✔|✔|–}}
+{{Moveentry/3|0003|Venusaur|type=Grass|type2=Poison|2|Monster|Grass|✔|✔|–}}
+{{Moveentry/3|0004|Charmander|type=Fire|2|Monster|Dragon|✔|−|–}}
+{{Moveentry/3|0005|Charmeleon|type=Fire|2|Monster|Dragon|✔|−|–}}
+{{Moveentry/3|0006|Charizard|type=Fire|type2=Flying|2|Monster|Dragon|✔|−|–}}
+{{Moveentry/3|0007|Squirtle|type=Water|2|Monster|Water 1|✔|−|–}}
+{{Moveentry/3|0008|Wartortle|type=Water|2|Monster|Water 1|✔|−|–}}
+{{Moveentry/3|0009|Blastoise|type=Water|2|Monster|Water 1|✔|−|–}}
+{{Moveentry/3|0012|Butterfree|type=Bug|type2=Flying|1|Bug|Bug|✔|}}
+{{Moveentry/3|0015|Beedrill|type=Bug|type2=Poison|1|Bug|Bug|✔||–}}
+{{Moveentry/3|0016|Pidgey|type=Normal|type2=Flying|1|Flying|Flying|✔||–}}
+{{Moveentry/3|0017|Pidgeotto|type=Normal|type2=Flying|1|Flying|Flying|✔||–}}
+{{Moveentry/3|0018|Pidgeot|type=Normal|type2=Flying|1|Flying|Flying|✔||–}}
+{{Moveentry/3|0019|Rattata|type=Normal|1|Field|Field|✔|}}
+{{Moveentry/3|0020|Raticate|type=Normal|1|Field|Field|✔|}}
+{{Moveentry/3|0021|Spearow|type=Normal|type2=Flying|1|Flying|Flying|✔|}}
+{{Moveentry/3|0022|Fearow|type=Normal|type2=Flying|1|Flying|Flying|✔|}}
+{{Moveentry/3|0023|Ekans|type=Poison|2|Field|Dragon|✔|−|–}}
+{{Moveentry/3|0024|Arbok|type=Poison|2|Field|Dragon|✔|−|–}}
+{{Moveentry/3|0025|Pikachu|type=Electric|2|Field|Fairy|✔|−|–}}
+{{Moveentry/3|0026|Raichu|type=Electric|2|Field|Fairy|✔|−|–}}
+{{Moveentry/3|0027|Sandshrew|type=Ground|1|Field|Field|✔|✔}}
+{{Moveentry/3|0027|formsig=A|Sandshrew|type=Ice|type2=Steel|1|Field|Field|form=Alolan Form||✔}}
+{{Moveentry/3|0028|Sandslash|type=Ground|1|Field|Field|✔|✔}}
+{{Moveentry/3|0028|formsig=A|Sandslash|type=Ice|type2=Steel|1|Field|Field|form=Alolan Form||✔}}
+{{Moveentry/3|0029|Nidoran♀|type=Poison|2|Monster|Field|✔|}}
+{{Moveentry/3|0030|Nidorina|type=Poison|1|No Eggs Discovered|No Eggs Discovered|✔|}}
+{{Moveentry/3|0031|Nidoqueen|type=Poison|type2=Ground|1|No Eggs Discovered|No Eggs Discovered|✔|}}
+{{Moveentry/3|0032|Nidoran♂|type=Poison|2|Monster|Field|✔|}}
+{{Moveentry/3|0033|Nidorino|type=Poison|2|Monster|Field|✔|}}
+{{Moveentry/3|0034|Nidoking|type=Poison|type2=Ground|2|Monster|Field|✔|}}
+{{Moveentry/3|0035|Clefairy|type=Fairy|1|Fairy|Fairy|✔|−|–}}
+{{Moveentry/3|0036|Clefable|type=Fairy|1|Fairy|Fairy|✔|−|–}}
+{{Moveentry/3|0037|Vulpix|type=Fire|1|Field|Field|✔|−}}
+{{Moveentry/3|0038|Ninetales|type=Fire|1|Field|Field|✔|−}}
+{{Moveentry/3|0039|Jigglypuff|type=Normal|type2=Fairy|1|Fairy|Fairy|✔|−|−}}
+{{Moveentry/3|0040|Wigglytuff|type=Normal|type2=Fairy|1|Fairy|Fairy|✔|−|−}}
+{{Moveentry/3|0041|Zubat|type=Poison|type2=Flying|1|Flying|Flying|✔||✔}}
+{{Moveentry/3|0042|Golbat|type=Poison|type2=Flying|1|Flying|Flying|✔||✔}}
+{{Moveentry/3|0043|Oddish|type=Grass|type2=Poison|1|Grass|Grass|✔|−}}
+{{Moveentry/3|0044|Gloom|type=Grass|type2=Poison|1|Grass|Grass|✔|−}}
+{{Moveentry/3|0045|Vileplume|type=Grass|type2=Poison|1|Grass|Grass|✔|−}}
+{{Moveentry/3|0046|Paras|type=Bug|type2=Grass|2|Bug|Grass|✔|}}
+{{Moveentry/3|0047|Parasect|type=Bug|type2=Grass|2|Bug|Grass|✔|}}
+{{Moveentry/3|0048|Venonat|type=Bug|type2=Poison|1|Bug|Bug|✔|−}}
+{{Moveentry/3|0049|Venomoth|type=Bug|type2=Poison|1|Bug|Bug|✔|−}}
+{{Moveentry/3|0050|Diglett|type=Ground|1|Field|Field|✔|✔}}
+{{Moveentry/3|0051|Dugtrio|type=Ground|1|Field|Field|✔|✔}}
+{{Moveentry/3|0051|formsig=A|Dugtrio|type=Ground|type2=Steel|1|Field|Field|form=Alolan Form||✔}}
+{{Moveentry/3|0052|Meowth|type=Normal|1|Field|Field|✔|−|✔}}
+{{Moveentry/3|0052|formsig=A|Meowth|type=Dark|1|Field|Field|form=Alolan Form||✔|✔}}
+{{Moveentry/3|0052|formsig=G|Meowth|type=Steel|1|Field|Field|form=Galarian Form||✔|✔}}
+{{Moveentry/3|0053|Persian|type=Normal|1|Field|Field|✔|−|✔}}
+{{Moveentry/3|0053|formsig=A|Persian|type=Dark|1|Field|Field|form=Alolan Form||✔|✔}}
+{{Moveentry/3|0054|Psyduck|type=Water|2|Water 1|Field|✔|−}}
+{{Moveentry/3|0055|Golduck|type=Water|2|Water 1|Field|✔|−}}
+{{Moveentry/3|0056|Mankey|type=Fighting|1|Field|Field|✔|✔|✔}}
+{{Moveentry/3|0057|Primeape|type=Fighting|1|Field|Field|✔|✔|✔}}
+{{Moveentry/3|0058|Growlithe|type=Fire|1|Field|Field|✔|✔}}
+{{Moveentry/3|0059|Arcanine|type=Fire|1|Field|Field|✔|✔}}
+{{Moveentry/3|0060|Poliwag|type=Water|1|Water 1|Water 1|✔|−}}
+{{Moveentry/3|0061|Poliwhirl|type=Water|1|Water 1|Water 1|✔|−}}
+{{Moveentry/3|0062|Poliwrath|type=Water|type2=Fighting|1|Water 1|Water 1|✔|−}}
+{{Moveentry/3|0063|Abra|type=Psychic|1|Human-Like|Human-Like|✔||–}}
+{{Moveentry/3|0064|Kadabra|type=Psychic|1|Human-Like|Human-Like|✔||–}}
+{{Moveentry/3|0065|Alakazam|type=Psychic|1|Human-Like|Human-Like|✔||–}}
+{{Moveentry/3|0066|Machop|type=Fighting|1|Human-Like|Human-Like|✔||–}}
+{{Moveentry/3|0067|Machoke|type=Fighting|1|Human-Like|Human-Like|✔||–}}
+{{Moveentry/3|0068|Machamp|type=Fighting|1|Human-Like|Human-Like|✔||–}}
+{{Moveentry/3|0069|Bellsprout|type=Grass|type2=Poison|1|Grass|Grass|✔|−|–}}
+{{Moveentry/3|0070|Weepinbell|type=Grass|type2=Poison|1|Grass|Grass|✔|−|–}}
+{{Moveentry/3|0071|Victreebel|type=Grass|type2=Poison|1|Grass|Grass|✔|−|–}}
+{{Moveentry/3|0072|Tentacool|type=Water|type2=Poison|1|Water 3|Water 3|✔|−}}
+{{Moveentry/3|0073|Tentacruel|type=Water|type2=Poison|1|Water 3|Water 3|✔|−}}
+{{Moveentry/3|0074|Geodude|type=Rock|type2=Ground|1|Mineral|Mineral|✔|✔}}
+{{Moveentry/3|0074|formsig=A|Geodude|type=Rock|type2=Electric|1|Mineral|Mineral|form=Alolan Form||✔}}
+{{Moveentry/3|0075|Graveler|type=Rock|type2=Ground|1|Mineral|Mineral|✔|✔}}
+{{Moveentry/3|0075|formsig=A|Graveler|type=Rock|type2=Electric|1|Mineral|Mineral|form=Alolan Form||✔}}
+{{Moveentry/3|0076|Golem|type=Rock|type2=Ground|1|Mineral|Mineral|✔|✔}}
+{{Moveentry/3|0076|formsig=A|Golem|type=Rock|type2=Electric|1|Mineral|Mineral|form=Alolan Form||✔}}
+{{Moveentry/3|0077|Ponyta|type=Fire|1|Field|Field|✔|}}
+{{Moveentry/3|0078|Rapidash|type=Fire|1|Field|Field|✔|}}
+{{Moveentry/3|0079|Slowpoke|type=Water|type2=Psychic|2|Monster|Water 1|✔|✔|✔}}
+{{Moveentry/3|0079|formsig=G|Slowpoke|type=Psychic|2|Monster|Water 1|form=Galarian Form||✔|✔}}
+{{Moveentry/3|0080|Slowbro|type=Water|type2=Psychic|2|Monster|Water 1|✔|✔|✔}}
+{{Moveentry/3|0080|formsig=G|Slowbro|type=Poison|type2=Psychic|2|Monster|Water 1|form=Galarian Form||✔|✔}}
+{{Moveentry/3|0081|Magnemite|type=Electric|type2=Steel|1|Mineral|Mineral|✔|−}}
+{{Moveentry/3|0082|Magneton|type=Electric|type2=Steel|1|Mineral|Mineral|✔|−}}
+{{Moveentry/3|0083|Farfetch'd|type=Normal|type2=Flying|2|Flying|Field|✔||✔}}
+{{Moveentry/3|0083|formsig=G|Farfetch'd|type=Fighting|2|Flying|Field|form=Galarian Form|||✔}}
+{{Moveentry/3|0084|Doduo|type=Normal|type2=Flying|1|Flying|Flying|✔|−}}
+{{Moveentry/3|0085|Dodrio|type=Normal|type2=Flying|1|Flying|Flying|✔|−}}
+{{Moveentry/3|0086|Seel|type=Water|2|Water 1|Field|✔|✔}}
+{{Moveentry/3|0087|Dewgong|type=Water|type2=Ice|2|Water 1|Field|✔|✔}}
+{{Moveentry/3|0088|Grimer|type=Poison|1|Amorphous|Amorphous|✔|✔}}
+{{Moveentry/3|0088|formsig=A|Grimer|type=Poison|type2=Dark|1|Amorphous|Amorphous|form=Alolan Form||✔}}
+{{Moveentry/3|0089|Muk|type=Poison|1|Amorphous|Amorphous|✔|✔}}
+{{Moveentry/3|0089|formsig=A|Muk|type=Poison|type2=Dark|1|Amorphous|Amorphous|form=Alolan Form||✔}}
+{{Moveentry/3|0090|Shellder|type=Water|1|Water 3|Water 3|✔|−}}
+{{Moveentry/3|0091|Cloyster|type=Water|type2=Ice|1|Water 3|Water 3|✔|−}}
+{{Moveentry/3|0092|Gastly|type=Ghost|type2=Poison|1|Amorphous|Amorphous|✔|✔|✔}}
+{{Moveentry/3|0093|Haunter|type=Ghost|type2=Poison|1|Amorphous|Amorphous|✔|✔|✔}}
+{{Moveentry/3|0094|Gengar|type=Ghost|type2=Poison|1|Amorphous|Amorphous|✔|✔|✔}}
+{{Moveentry/3|0095|Onix|type=Rock|type2=Ground|1|Mineral|Mineral|✔||✔}}
+{{Moveentry/3|0096|Drowzee|type=Psychic|1|Human-Like|Human-Like|✔|✔}}
+{{Moveentry/3|0097|Hypno|type=Psychic|1|Human-Like|Human-Like|✔|✔}}
+{{Moveentry/3|0098|Krabby|type=Water|1|Water 3|Water 3|✔|}}
+{{Moveentry/3|0099|Kingler|type=Water|1|Water 3|Water 3|✔|}}
+{{Moveentry/3|0100|Voltorb|type=Electric|1|Mineral|Mineral|✔|−}}
+{{Moveentry/3|0101|Electrode|type=Electric|1|Mineral|Mineral|✔|✔}}
+{{Moveentry/3|0101|formsig=H|Electrode|type=Electric|type2=Grass|1|Mineral|Mineral|form=Hisuian Form||✔}}
+{{Moveentry/3|0102|Exeggcute|type=Grass|type2=Psychic|1|Grass|Grass|✔|✔}}
+{{Moveentry/3|0103|Exeggutor|type=Grass|type2=Psychic|1|Grass|Grass|✔|✔}}
+{{Moveentry/3|0103|formsig=A|Exeggutor|type=Grass|type2=Dragon|1|Grass|Grass|form=Alolan Form||✔}}
+{{Moveentry/3|0104|Cubone|type=Ground|1|Monster|Monster|✔||✔}}
+{{Moveentry/3|0105|Marowak|type=Ground|1|Monster|Monster|✔||✔}}
+{{Moveentry/3|0105|formsig=A|Marowak|type=Fire|type2=Ghost|1|Monster|Monster|form=Alolan Form|||✔}}
+{{Moveentry/3|0106|Hitmonlee|type=Fighting|1|Human-Like|Human-Like|✔|−}}
+{{Moveentry/3|0107|Hitmonchan|type=Fighting|1|Human-Like|Human-Like|✔|−}}
+{{Moveentry/3|0108|Lickitung|type=Normal|1|Monster|Monster|✔|}}
+{{Moveentry/3|0109|Koffing|type=Poison|1|Amorphous|Amorphous|✔|✔}}
+{{Moveentry/3|0110|Weezing|type=Poison|1|Amorphous|Amorphous|✔|✔}}
+{{Moveentry/3|0110|formsig=G|Weezing|type=Poison|type2=Fairy|1|Amorphous|Amorphous|form=Galarian Form||✔}}
+{{Moveentry/3|0111|Rhyhorn|type=Ground|type2=Rock|2|Monster|Field|✔|✔}}
+{{Moveentry/3|0112|Rhydon|type=Ground|type2=Rock|2|Monster|Field|✔|✔}}
+{{Moveentry/3|0113|Chansey|type=Normal|1|Fairy|Fairy|✔|−}}
+{{Moveentry/3|0114|Tangela|type=Grass|1|Grass|Grass|✔|}}
+{{Moveentry/3|0115|Kangaskhan|type=Normal|1|Monster|Monster|✔||−}}
+{{Moveentry/3|0116|Horsea|type=Water|2|Water 1|Dragon|✔|−}}
+{{Moveentry/3|0117|Seadra|type=Water|2|Water 1|Dragon|✔|−}}
+{{Moveentry/3|0118|Goldeen|type=Water|1|Water 2|Water 2|✔|}}
+{{Moveentry/3|0119|Seaking|type=Water|1|Water 2|Water 2|✔|}}
+{{Moveentry/3|0120|Staryu|type=Water|1|Water 3|Water 3|✔||−}}
+{{Moveentry/3|0121|Starmie|type=Water|type2=Psychic|1|Water 3|Water 3|✔||−}}
+{{Moveentry/3|0122|Mr. Mime|type=Psychic|type2=Fairy|1|Human-Like|Human-Like|✔||−}}
+{{Moveentry/3|0123|Scyther|type=Bug|type2=Flying|1|Bug|Bug|✔|−|−}}
+{{Moveentry/3|0124|Jynx|type=Ice|type2=Psychic|1|Human-Like|Human-Like|✔|}}
+{{Moveentry/3|0125|Electabuzz|type=Electric|1|Human-Like|Human-Like|✔|−}}
+{{Moveentry/3|0126|Magmar|type=Fire|1|Human-Like|Human-Like|✔|✔}}
+{{Moveentry/3|0127|Pinsir|type=Bug|1|Bug|Bug|✔||−}}
+{{Moveentry/3|0128|Tauros|type=Normal|1|Field|Field|✔|✔}}
+{{Moveentry/3|0128|formsig=PC|Tauros|type=Fighting|1|Field|Field|form=Paldean Form<br>(Combat Breed)||✔}}
+{{Moveentry/3|0128|formsig=PB|Tauros|type=Fighting|type2=Fire|1|Field|Field|form=Paldean Form<br>(Blaze Breed)||✔}}
+{{Moveentry/3|0128|formsig=PA|Tauros|type=Fighting|type2=Water|1|Field|Field|form=Paldean Form<br>(Aqua Breed)||✔}}
+{{Moveentry/3|0130|Gyarados|type=Water|type2=Flying|2|Water 2|Dragon|✔|−|−}}
+{{Moveentry/3|0131|Lapras|type=Water|type2=Ice|2|Monster|Water 1|✔|✔}}
+{{Moveentry/3|0133|Eevee|type=Normal|1|Field|Field|✔|✔|−}}
+{{Moveentry/3|0134|Vaporeon|type=Water|1|Field|Field|✔|✔|−}}
+{{Moveentry/3|0135|Jolteon|type=Electric|1|Field|Field|✔|✔|−}}
+{{Moveentry/3|0136|Flareon|type=Fire|1|Field|Field|✔|✔|−}}
+{{Moveentry/3|0137|Porygon|type=Normal|1|Mineral|Mineral|✔|−|−}}
+{{Moveentry/3|0138|Omanyte|type=Rock|type2=Water|2|Water 1|Water 3|✔|}}
+{{Moveentry/3|0139|Omastar|type=Rock|type2=Water|2|Water 1|Water 3|✔|}}
+{{Moveentry/3|0140|Kabuto|type=Rock|type2=Water|2|Water 1|Water 3|✔|}}
+{{Moveentry/3|0141|Kabutops|type=Rock|type2=Water|2|Water 1|Water 3|✔|}}
+{{Moveentry/3|0142|Aerodactyl|type=Rock|type2=Flying|1|Flying|Flying|✔||−}}
+{{Moveentry/3|0143|Snorlax|type=Normal|1|Monster|Monster|✔|✔}}
+{{Moveentry/3|0144|Articuno|type=Ice|type2=Flying|1|No Eggs Discovered|No Eggs Discovered|✔|−}}
+{{Moveentry/3|0145|Zapdos|type=Electric|type2=Flying|1|No Eggs Discovered|No Eggs Discovered|✔|−}}
+{{Moveentry/3|0146|Moltres|type=Fire|type2=Flying|1|No Eggs Discovered|No Eggs Discovered|✔|−}}
+{{Moveentry/3|0147|Dratini|type=Dragon|2|Water 1|Dragon|✔|−|−}}
+{{Moveentry/3|0148|Dragonair|type=Dragon|2|Water 1|Dragon|✔|−|−}}
+{{Moveentry/3|0149|Dragonite|type=Dragon|type2=Flying|2|Water 1|Dragon|✔|−|−}}
+{{Moveentry/3|0150|Mewtwo|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|✔|−}}
+{{Moveentry/3|0151|Mew|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|✔}}
+{{Moveentry/3|0152|Chikorita|type=Grass|2|Monster|Grass|✔|✔|✔}}
+{{Moveentry/3|0153|Bayleef|type=Grass|2|Monster|Grass|✔|✔|✔}}
+{{Moveentry/3|0154|Meganium|type=Grass|2|Monster|Grass|✔|✔|✔}}
+{{Moveentry/3|0155|Cyndaquil|type=Fire|1|Field|Field|✔|✔}}
+{{Moveentry/3|0156|Quilava|type=Fire|1|Field|Field|✔|✔}}
+{{Moveentry/3|0157|Typhlosion|type=Fire|1|Field|Field|✔|✔}}
+{{Moveentry/3|0157|formsig=H|Typhlosion|type=Fire|type2=Ghost|1|Field|Field|form=Hisuian Form||✔}}
+{{Moveentry/3|0158|Totodile|type=Water|2|Monster|Water 1|✔|✔|✔}}
+{{Moveentry/3|0159|Croconaw|type=Water|2|Monster|Water 1|✔|✔|✔}}
+{{Moveentry/3|0160|Feraligatr|type=Water|2|Monster|Water 1|✔|✔|✔}}
+{{Moveentry/3|0161|Sentret|type=Normal|1|Field|Field|✔|−}}
+{{Moveentry/3|0162|Furret|type=Normal|1|Field|Field|✔|−}}
+{{Moveentry/3|0163|Hoothoot|type=Normal|type2=Flying|1|Flying|Flying|✔|−}}
+{{Moveentry/3|0164|Noctowl|type=Normal|type2=Flying|1|Flying|Flying|✔|✔}}
+{{Moveentry/3|0165|Ledyba|type=Bug|type2=Flying|1|Bug|Bug|✔|}}
+{{Moveentry/3|0166|Ledian|type=Bug|type2=Flying|1|Bug|Bug|✔|}}
+{{Moveentry/3|0167|Spinarak|type=Bug|type2=Poison|1|Bug|Bug|✔|−|−}}
+{{Moveentry/3|0168|Ariados|type=Bug|type2=Poison|1|Bug|Bug|✔|−|−}}
+{{Moveentry/3|0169|Crobat|type=Poison|type2=Flying|1|Flying|Flying|✔||✔}}
+{{Moveentry/3|0170|Chinchou|type=Water|type2=Electric|1|Water 2|Water 2|✔|✔}}
+{{Moveentry/3|0171|Lanturn|type=Water|type2=Electric|1|Water 2|Water 2|✔|✔}}
+{{Moveentry/3|0172|Pichu|type=Electric|1|No Eggs Discovered|No Eggs Discovered|✔|−|−}}
+{{Moveentry/3|0173|Cleffa|type=Fairy|1|No Eggs Discovered|No Eggs Discovered|✔|−|−}}
+{{Moveentry/3|0174|Igglybuff|type=Normal|type2=Fairy|1|No Eggs Discovered|No Eggs Discovered|✔|−|−}}
+{{Moveentry/3|0175|Togepi|type=Fairy|1|No Eggs Discovered|No Eggs Discovered|✔|}}
+{{Moveentry/3|0176|Togetic|type=Fairy|type2=Flying|2|Flying|Fairy|✔|}}
+{{Moveentry/3|0177|Natu|type=Psychic|type2=Flying|1|Flying|Flying|✔|}}
+{{Moveentry/3|0178|Xatu|type=Psychic|type2=Flying|1|Flying|Flying|✔|}}
+{{Moveentry/3|0179|Mareep|type=Electric|2|Monster|Field|✔|−|−}}
+{{Moveentry/3|0180|Flaaffy|type=Electric|2|Monster|Field|✔|−|−}}
+{{Moveentry/3|0181|Ampharos|type=Electric|2|Monster|Field|✔|−|−}}
+{{Moveentry/3|0182|Bellossom|type=Grass|1|Grass|Grass|✔|−}}
+{{Moveentry/3|0183|Marill|type=Water|type2=Fairy|2|Water 1|Fairy|✔|−}}
+{{Moveentry/3|0184|Azumarill|type=Water|type2=Fairy|2|Water 1|Fairy|✔|−}}
+{{Moveentry/3|0185|Sudowoodo|type=Rock|1|Mineral|Mineral|✔|✔}}
+{{Moveentry/3|0186|Politoed|type=Water|1|Water 1|Water 1|✔|−}}
+{{Moveentry/3|0187|Hoppip|type=Grass|type2=Flying|2|Fairy|Grass|✔|−}}
+{{Moveentry/3|0188|Skiploom|type=Grass|type2=Flying|2|Fairy|Grass|✔|−}}
+{{Moveentry/3|0189|Jumpluff|type=Grass|type2=Flying|2|Fairy|Grass|✔|−}}
+{{Moveentry/3|0190|Aipom|type=Normal|1|Field|Field|✔|−}}
+{{Moveentry/3|0191|Sunkern|type=Grass|1|Grass|Grass|✔|✔}}
+{{Moveentry/3|0192|Sunflora|type=Grass|1|Grass|Grass|✔|✔}}
+{{Moveentry/3|0193|Yanma|type=Bug|type2=Flying|1|Bug|Bug|✔|−}}
+{{Moveentry/3|0194|Wooper|type=Water|type2=Ground|2|Water 1|Field|✔|✔}}
+{{Moveentry/3|0194|formsig=P|Wooper|type=Poison|type2=Ground|2|Water 1|Field|form=Paldean Form||✔}}
+{{Moveentry/3|0195|Quagsire|type=Water|type2=Ground|2|Water 1|Field|✔|✔}}
+{{Moveentry/3|0196|Espeon|type=Psychic|1|Field|Field|✔|✔|−}}
+{{Moveentry/3|0197|Umbreon|type=Dark|1|Field|Field|✔|✔|✔}}
+{{Moveentry/3|0198|Murkrow|type=Dark|type2=Flying|1|Flying|Flying|✔|−}}
+{{Moveentry/3|0199|Slowking|type=Water|type2=Psychic|2|Monster|Water 1|✔|✔|✔}}
+{{Moveentry/3|0199|formsig=G|Slowking|type=Poison|type2=Psychic|2|Monster|Water 1|form=Galarian Form||✔|✔}}
+{{Moveentry/3|0200|Misdreavus|type=Ghost|1|Amorphous|Amorphous|✔|✔}}
+{{Moveentry/3|0203|Girafarig|type=Normal|type2=Psychic|1|Field|Field|✔|−}}
+{{Moveentry/3|0204|Pineco|type=Bug|1|Bug|Bug|✔|✔}}
+{{Moveentry/3|0205|Forretress|type=Bug|type2=Steel|1|Bug|Bug|✔|✔}}
+{{Moveentry/3|0206|Dunsparce|type=Normal|1|Field|Field|✔|✔}}
+{{Moveentry/3|0207|Gligar|type=Ground|type2=Flying|1|Bug|Bug|✔|−}}
+{{Moveentry/3|0208|Steelix|type=Steel|type2=Ground|1|Mineral|Mineral|✔||✔}}
+{{Moveentry/3|0209|Snubbull|type=Fairy|2|Field|Fairy|✔|✔}}
+{{Moveentry/3|0210|Granbull|type=Fairy|2|Field|Fairy|✔|✔}}
+{{Moveentry/3|0211|Qwilfish|type=Water|type2=Poison|1|Water 2|Water 2|✔|✔|✔}}
+{{Moveentry/3|0211|formsig=H|Qwilfish|type=Dark|type2=Poison|1|Water 2|Water 2|form=Hisuian Form||✔|✔}}
+{{Moveentry/3|0212|Scizor|type=Bug|type2=Steel|1|Bug|Bug|✔|✔|✔}}
+{{Moveentry/3|0213|Shuckle|type=Bug|type2=Rock|1|Bug|Bug|✔|}}
+{{Moveentry/3|0214|Heracross|type=Bug|type2=Fighting|1|Bug|Bug|✔|✔|✔}}
+{{Moveentry/3|0215|Sneasel|type=Dark|type2=Ice|1|Field|Field|✔|−}}
+{{Moveentry/3|0216|Teddiursa|type=Normal|1|Field|Field|✔|−}}
+{{Moveentry/3|0217|Ursaring|type=Normal|1|Field|Field|✔|−}}
+{{Moveentry/3|0218|Slugma|type=Fire|1|Amorphous|Amorphous|✔|✔}}
+{{Moveentry/3|0219|Magcargo|type=Fire|type2=Rock|1|Amorphous|Amorphous|✔|✔}}
+{{Moveentry/3|0220|Swinub|type=Ice|type2=Ground|1|Field|Field|✔|✔}}
+{{Moveentry/3|0221|Piloswine|type=Ice|type2=Ground|1|Field|Field|✔|✔}}
+{{Moveentry/3|0222|Corsola|type=Water|type2=Rock|2|Water 1|Water 3|✔|}}
+{{Moveentry/3|0223|Remoraid|type=Water|2|Water 1|Water 2|✔|}}
+{{Moveentry/3|0224|Octillery|type=Water|2|Water 1|Water 2|✔|}}
+{{Moveentry/3|0225|Delibird|type=Ice|type2=Flying|2|Water 1|Field|✔|−|−}}
+{{Moveentry/3|0226|Mantine|type=Water|type2=Flying|1|Water 1|Water 1|✔|}}
+{{Moveentry/3|0227|Skarmory|type=Steel|type2=Flying|1|Flying|Flying|✔|✔|✔}}
+{{Moveentry/3|0228|Houndour|type=Dark|type2=Fire|1|Field|Field|✔|−|−}}
+{{Moveentry/3|0229|Houndoom|type=Dark|type2=Fire|1|Field|Field|✔|−|−}}
+{{Moveentry/3|0230|Kingdra|type=Water|type2=Dragon|2|Water 1|Dragon|✔|−}}
+{{Moveentry/3|0231|Phanpy|type=Ground|1|Field|Field|✔|✔}}
+{{Moveentry/3|0232|Donphan|type=Ground|1|Field|Field|✔|✔}}
+{{Moveentry/3|0233|Porygon2|type=Normal|1|Mineral|Mineral|✔|−|−}}
+{{Moveentry/3|0234|Stantler|type=Normal|1|Field|Field|✔|✔}}
+{{Moveentry/3|0236|Tyrogue|type=Fighting|1|No Eggs Discovered|No Eggs Discovered|✔|−}}
+{{Moveentry/3|0237|Hitmontop|type=Fighting|1|Human-Like|Human-Like|✔|−}}
+{{Moveentry/3|0238|Smoochum|type=Ice|type2=Psychic|1|No Eggs Discovered|No Eggs Discovered|✔|}}
+{{Moveentry/3|0239|Elekid|type=Electric|1|No Eggs Discovered|No Eggs Discovered|✔|−}}
+{{Moveentry/3|0240|Magby|type=Fire|1|No Eggs Discovered|No Eggs Discovered|✔|✔}}
+{{Moveentry/3|0241|Miltank|type=Normal|1|Field|Field|✔|}}
+{{Moveentry/3|0242|Blissey|type=Normal|1|Fairy|Fairy|✔|−}}
+{{Moveentry/3|0243|Raikou|type=Electric|1|No Eggs Discovered|No Eggs Discovered|✔|−}}
+{{Moveentry/3|0244|Entei|type=Fire|1|No Eggs Discovered|No Eggs Discovered|✔|−}}
+{{Moveentry/3|0245|Suicune|type=Water|1|No Eggs Discovered|No Eggs Discovered|✔|−}}
+{{Moveentry/3|0246|Larvitar|type=Rock|type2=Ground|1|Monster|Monster|✔|✔|✔}}
+{{Moveentry/3|0247|Pupitar|type=Rock|type2=Ground|1|Monster|Monster|✔|✔|✔}}
+{{Moveentry/3|0248|Tyranitar|type=Rock|type2=Dark|1|Monster|Monster|✔|✔|✔}}
+{{Moveentry/3|0249|Lugia|type=Psychic|type2=Flying|1|No Eggs Discovered|No Eggs Discovered|✔|✔}}
+{{Moveentry/3|0250|Ho-Oh|type=Fire|type2=Flying|1|No Eggs Discovered|No Eggs Discovered|✔|−}}
+{{Moveentry/3|0251|Celebi|type=Psychic|type2=Grass|1|No Eggs Discovered|No Eggs Discovered|✔|}}
+{{Moveentry/3|0255|Torchic|type=Fire|1|Field|Field||✔|✔}}
+{{Moveentry/3|0256|Combusken|type=Fire|type2=Fighting|1|Field|Field||✔|✔}}
+{{Moveentry/3|0257|Blaziken|type=Fire|type2=Fighting|1|Field|Field||✔|✔}}
+{{Moveentry/3|0258|Mudkip|type=Water|2|Monster|Water 1||✔|✔}}
+{{Moveentry/3|0259|Marshtomp|type=Water|type2=Ground|2|Monster|Water 1||✔|✔}}
+{{Moveentry/3|0260|Swampert|type=Water|type2=Ground|2|Monster|Water 1||✔|✔}}
+{{Moveentry/3|0273|Seedot|type=Grass|2|Field|Grass||✔}}
+{{Moveentry/3|0274|Nuzleaf|type=Grass|type2=Dark|2|Field|Grass||✔}}
+{{Moveentry/3|0275|Shiftry|type=Grass|type2=Dark|2|Field|Grass||✔}}
+{{Moveentry/3|0287|Slakoth|type=Normal|1|Field|Field||✔}}
+{{Moveentry/3|0288|Vigoroth|type=Normal|1|Field|Field||✔}}
+{{Moveentry/3|0289|Slaking|type=Normal|1|Field|Field||✔}}
+{{Moveentry/3|0297|Hariyama|type=Fighting|1|Human-Like|Human-Like||✔}}
+{{Moveentry/3|0299|Nosepass|type=Rock|1|Mineral|Mineral||✔}}
+{{Moveentry/3|0316|Gulpin|type=Poison|1|Amorphous|Amorphous||✔|✔}}
+{{Moveentry/3|0317|Swalot|type=Poison|1|Amorphous|Amorphous||✔|✔}}
+{{Moveentry/3|0322|Numel|type=Fire|type2=Ground|1|Field|Field||✔|−}}
+{{Moveentry/3|0323|Camerupt|type=Fire|type2=Ground|1|Field|Field||✔|−}}
+{{Moveentry/3|0324|Torkoal|type=Fire|1|Field|Field||✔}}
+{{Moveentry/3|0331|Cacnea|type=Grass|2|Grass|Human-Like||✔}}
+{{Moveentry/3|0332|Cacturne|type=Grass|type2=Dark|2|Grass|Human-Like||✔}}
+{{Moveentry/3|0335|Zangoose|type=Normal|1|Field|Field||✔|✔}}
+{{Moveentry/3|0336|Seviper|type=Poison|2|Field|Dragon||✔|✔}}
+{{Moveentry/3|0340|Whiscash|type=Water|type2=Ground|1|Water 2|Water 2||✔}}
+{{Moveentry/3|0353|Shuppet|type=Ghost|1|Amorphous|Amorphous||✔|✔}}
+{{Moveentry/3|0354|Banette|type=Ghost|1|Amorphous|Amorphous||✔|✔}}
+{{Moveentry/3|0355|Duskull|type=Ghost|1|Amorphous|Amorphous||✔}}
+{{Moveentry/3|0356|Dusclops|type=Ghost|1|Amorphous|Amorphous||✔}}
+{{Moveentry/3|0357|Tropius|type=Grass|type2=Flying|2|Monster|Grass||✔}}
+{{Moveentry/3|0358|Chimecho|type=Psychic|1|Amorphous|Amorphous||✔|✔}}
+{{Moveentry/3|0377|Regirock|type=Rock|1|No Eggs Discovered|No Eggs Discovered||✔}}
+{{Moveentry/3|0378|Regice|type=Ice|1|No Eggs Discovered|No Eggs Discovered||✔}}
+{{Moveentry/3|0379|Registeel|type=Steel|1|No Eggs Discovered|No Eggs Discovered||✔}}
+{{Moveentry/3|0387|Turtwig|type=Grass|2|Monster|Grass||✔}}
+{{Moveentry/3|0388|Grotle|type=Grass|2|Monster|Grass||✔}}
+{{Moveentry/3|0389|Torterra|type=Grass|type2=Ground|2|Monster|Grass||✔}}
+{{Moveentry/3|0408|Cranidos|type=Rock|1|Monster|Monster||✔}}
+{{Moveentry/3|0409|Rampardos|type=Rock|1|Monster|Monster||✔}}
+{{Moveentry/3|0410|Shieldon|type=Rock|type2=Steel|1|Monster|Monster||✔}}
+{{Moveentry/3|0411|Bastiodon|type=Rock|type2=Steel|1|Monster|Monster||✔}}
+{{Moveentry/3|0422|Shellos|type=Water|2|Water 1|Amorphous|form=All forms||✔}}
+{{Moveentry/3|0423|Gastrodon|type=Water|type2=Ground|2|Water 1|Amorphous|form=All forms||✔}}
+{{Moveentry/3|0425|Drifloon|type=Ghost|type2=Flying|1|Amorphous|Amorphous||✔}}
+{{Moveentry/3|0426|Drifblim|type=Ghost|type2=Flying|1|Amorphous|Amorphous||✔}}
+{{Moveentry/3|0429|Mismagius|type=Ghost|1|Amorphous|Amorphous||✔}}
+{{Moveentry/3|0433|Chingling|type=Psychic|1|No Eggs Discovered|No Eggs Discovered||✔|✔}}
+{{Moveentry/3|0438|Bonsly|type=Rock|1|No Eggs Discovered|No Eggs Discovered||✔}}
+{{Moveentry/3|0442|Spiritomb|type=Ghost|type2=Dark|1|Amorphous|Amorphous||✔}}
+{{Moveentry/3|0446|Munchlax|type=Normal|1|No Eggs Discovered|No Eggs Discovered||✔}}
+{{Moveentry/3|0449|Hippopotas|type=Ground|1|Field|Field||✔|✔}}
+{{Moveentry/3|0450|Hippowdon|type=Ground|1|Field|Field||✔|✔}}
+{{Moveentry/3|0459|Snover|type=Grass|type2=Ice|2|Monster|Grass||✔|–}}
+{{Moveentry/3|0460|Abomasnow|type=Grass|type2=Ice|2|Monster|Grass||✔|✔}}
+{{Moveentry/3|0464|Rhyperior|type=Ground|type2=Rock|2|Monster|Field||✔}}
+{{Moveentry/3|0467|Magmortar|type=Fire|1|Human-Like|Human-Like||✔}}
+{{Moveentry/3|0470|Leafeon|type=Grass|1|Field|Field||✔|−}}
+{{Moveentry/3|0471|Glaceon|type=Ice|1|Field|Field||✔|−}}
+{{Moveentry/3|0473|Mamoswine|type=Ice|type2=Ground|1|Field|Field||✔}}
+{{Moveentry/3|0476|Probopass|type=Rock|type2=Steel|1|Mineral|Mineral||✔}}
+{{Moveentry/3|0477|Dusknoir|type=Ghost|1|Amorphous|Amorphous||✔}}
+{{Moveentry/3|0478|Froslass|type=Ice|type2=Ghost|2|Fairy|Mineral||✔|✔}}
+{{Moveentry/3|0479|Rotom|type=Electric|type2=Ghost|1|Amorphous|Amorphous|form=All forms||−|✔}}
+{{Moveentry/3|0487|Giratina|type=Ghost|type2=Dragon|1|No Eggs Discovered|No Eggs Discovered|form=All forms||✔}}
+{{Moveentry/3|0491|Darkrai|type=Dark|1|No Eggs Discovered|No Eggs Discovered||✔|✔}}
+{{Moveentry/3|0498|Tepig|type=Fire|1|Field|Field||✔|–}}
+{{Moveentry/3|0499|Pignite|type=Fire|type2=Fighting|1|Field|Field||✔|−}}
+{{Moveentry/3|0500|Emboar|type=Fire|type2=Fighting|1|Field|Field||✔|✔}}
+{{Moveentry/3|0517|Munna|type=Psychic|1|Field|Field|||✔}}
+{{Moveentry/3|0518|Musharna|type=Psychic|1|Field|Field|||✔}}
+{{Moveentry/3|0529|Drilbur|type=Ground|1|Field|Field||✔|−}}
+{{Moveentry/3|0530|Excadrill|type=Ground|type2=Steel|1|Field|Field||✔|−}}
+{{Moveentry/3|0532|Timburr|type=Fighting|1|Human-Like|Human-Like||✔}}
+{{Moveentry/3|0533|Gurdurr|type=Fighting|1|Human-Like|Human-Like||✔}}
+{{Moveentry/3|0534|Conkeldurr|type=Fighting|1|Human-Like|Human-Like||✔}}
+{{Moveentry/3|0551|Sandile|type=Ground|type2=Dark|1|Field|Field||✔|−}}
+{{Moveentry/3|0552|Krokorok|type=Ground|type2=Dark|1|Field|Field||✔|✔}}
+{{Moveentry/3|0553|Krookodile|type=Ground|type2=Dark|1|Field|Field||✔|✔}}
+{{Moveentry/3|0559|Scraggy|type=Dark|type2=Fighting|2|Field|Dragon||✔|✔}}
+{{Moveentry/3|0560|Scrafty|type=Dark|type2=Fighting|2|Field|Dragon||✔|✔}}
+{{Moveentry/3|0562|Yamask|type=Ghost|2|Mineral|Amorphous|||✔}}
+{{Moveentry/3|0562|formsig=G|Yamask|type=Ground|type2=Ghost|2|Mineral|Amorphous|form=Galarian Form|||✔}}
+{{Moveentry/3|0563|Cofagrigus|type=Ghost|2|Mineral|Amorphous|||✔}}
+{{Moveentry/3|0570|formsig=H|Zorua|type=Normal|type2=Ghost|1|Field|Field|form=Hisuian Form||✔}}
+{{Moveentry/3|0571|formsig=H|Zoroark|type=Normal|type2=Ghost|1|Field|Field|form=Hisuian Form||✔}}
+{{Moveentry/3|0586|Sawsbuck|type=Normal|type2=Grass|1|Field|Field|form=All forms||✔}}
+{{Moveentry/3|0607|Litwick|type=Ghost|type2=Fire|1|Amorphous|Amorphous||✔|✔}}
+{{Moveentry/3|0608|Lampent|type=Ghost|type2=Fire|1|Amorphous|Amorphous||✔|✔}}
+{{Moveentry/3|0609|Chandelure|type=Ghost|type2=Fire|1|Amorphous|Amorphous||✔|✔}}
+{{Moveentry/3|0614|Beartic|type=Ice|1|Field|Field||✔}}
+{{Moveentry/3|0618|Stunfisk|type=Ground|type2=Electric|2|Water 1|Amorphous|||✔}}
+{{Moveentry/3|0618|formsig=G|Stunfisk|type=Ground|type2=Steel|2|Water 1|Amorphous|form=Galarian Form|||✔}}
+{{Moveentry/3|0622|Golett|type=Ground|type2=Ghost|1|Mineral|Mineral||✔|✔}}
+{{Moveentry/3|0623|Golurk|type=Ground|type2=Ghost|1|Mineral|Mineral||✔|✔}}
+{{Moveentry/3|0650|Chespin|type=Grass|1|Field|Field||✔|✔}}
+{{Moveentry/3|0651|Quilladin|type=Grass|1|Field|Field||✔|✔}}
+{{Moveentry/3|0652|Chesnaught|type=Grass|type2=Fighting|1|Field|Field||✔|✔}}
+{{Moveentry/3|0700|Sylveon|type=Fairy|1|Field|Field||✔|✔}}
+{{Moveentry/3|0704|Goomy|type=Dragon|1|Dragon|Dragon||✔|✔}}
+{{Moveentry/3|0705|Sliggoo|type=Dragon|1|Dragon|Dragon||✔|✔}}
+{{Moveentry/3|0705|formsig=H|Sliggoo|type=Steel|type2=Dragon|1|Dragon|Dragon|form=Hisuian Form||✔|✔}}
+{{Moveentry/3|0706|Goodra|type=Dragon|1|Dragon|Dragon||✔|✔}}
+{{Moveentry/3|0706|formsig=H|Goodra|type=Steel|type2=Dragon|1|Dragon|Dragon|form=Hisuian Form||✔|✔}}
+{{Moveentry/3|0708|Phantump|type=Ghost|type2=Grass|2|Grass|Amorphous||✔|✔}}
+{{Moveentry/3|0709|Trevenant|type=Ghost|type2=Grass|2|Grass|Amorphous||✔|✔}}
+{{Moveentry/3|0710|Pumpkaboo|type=Ghost|type2=Grass|1|Amorphous|Amorphous|form=All forms|||✔}}
+{{Moveentry/3|0711|Gourgeist|type=Ghost|type2=Grass|1|Amorphous|Amorphous|form=All forms|||✔}}
+{{Moveentry/3|0712|Bergmite|type=Ice|2|Monster|Mineral||✔|✔}}
+{{Moveentry/3|0713|Avalugg|type=Ice|2|Monster|Mineral||✔|✔}}
+{{Moveentry/3|0713|formsig=H|Avalugg|type=Ice|type2=Rock|2|Monster|Mineral|form=Hisuian Form||✔|✔}}
+{{Moveentry/3|0724|Decidueye|type=Grass|type2=Ghost|1|Flying|Flying||✔}}
+{{Moveentry/3|0735|Gumshoos|type=Normal|1|Field|Field||✔}}
+{{Moveentry/3|0749|Mudbray|type=Ground|1|Field|Field||✔}}
+{{Moveentry/3|0750|Mudsdale|type=Ground|1|Field|Field||✔}}
+{{Moveentry/3|0766|Passimian|type=Fighting|1|Field|Field||✔}}
+{{Moveentry/3|0769|Sandygast|type=Ghost|type2=Ground|1|Amorphous|Amorphous||✔|✔}}
+{{Moveentry/3|0770|Palossand|type=Ghost|type2=Ground|1|Amorphous|Amorphous||✔|✔}}
+{{Moveentry/3|0775|Komala|type=Normal|1|Field|Field||✔}}
+{{Moveentry/3|0778|Mimikyu|type=Ghost|type2=Fairy|1|Amorphous|Amorphous||✔|✔}}
+{{Moveentry/3|0819|Skwovet|type=Normal|1|Field|Field||✔}}
+{{Moveentry/3|0820|Greedent|type=Normal|1|Field|Field||✔}}
+{{Moveentry/3|0823|Corviknight|type=Flying|type2=Steel|1|Flying|Flying||✔|✔}}
+{{Moveentry/3|0837|Rolycoly|type=Rock|1|Mineral|Mineral||✔}}
+{{Moveentry/3|0838|Carkol|type=Rock|type2=Fire|1|Mineral|Mineral||✔}}
+{{Moveentry/3|0839|Coalossal|type=Rock|type2=Fire|1|Mineral|Mineral||✔}}
+{{Moveentry/3|0842|Appletun|type=Grass|type2=Dragon|2|Grass|Dragon||✔}}
+{{Moveentry/3|0854|Sinistea|type=Ghost|2|Mineral|Amorphous|form=All forms||✔}}
+{{Moveentry/3|0855|Polteageist|type=Ghost|2|Mineral|Amorphous|form=All forms||✔}}
+{{Moveentry/3|0863|Perrserker|type=Steel|1|Field|Field||✔|✔}}
+{{Moveentry/3|0865|Sirfetch'd|type=Fighting|2|Flying|Field|||✔}}
+{{Moveentry/3|0867|Runerigus|type=Ground|type2=Ghost|2|Mineral|Amorphous|||✔}}
+{{Moveentry/3|0871|Pincurchin|type=Electric|2|Water 1|Amorphous||✔}}
+{{Moveentry/3|0874|Stonjourner|type=Rock|1|Mineral|Mineral||✔}}
+{{Moveentry/3|0878|Cufant|type=Steel|2|Field|Mineral||✔}}
+{{Moveentry/3|0879|Copperajah|type=Steel|2|Field|Mineral||✔}}
+{{Moveentry/3|0885|Dreepy|type=Dragon|type2=Ghost|2|Amorphous|Dragon||✔}}
+{{Moveentry/3|0886|Drakloak|type=Dragon|type2=Ghost|2|Amorphous|Dragon||✔}}
+{{Moveentry/3|0887|Dragapult|type=Dragon|type2=Ghost|2|Amorphous|Dragon||✔}}
+{{Moveentry/3|0896|Glastrier|type=Ice|1|No Eggs Discovered|No Eggs Discovered||✔}}
+{{Moveentry/3|0897|Spectrier|type=Ghost|1|No Eggs Discovered|No Eggs Discovered||✔}}
+{{Moveentry/3|0898|formsig=I|Calyrex|type=Psychic|type2=Ice|1|No Eggs Discovered|No Eggs Discovered|form=Ice Rider||✔}}
+{{Moveentry/3|0898|formsig=S|Calyrex|type=Psychic|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered|form=Shadow Rider||✔}}
+{{Moveentry/3|0899|Wyrdeer|type=Normal|type2=Psychic|1|Field|Field||✔}}
+{{Moveentry/3|0901|Ursaluna|type=Ground|type2=Normal|1|Field|Field||✔}}
+{{Moveentry/3|0904|Overqwil|type=Dark|type2=Poison|1|Water 2|Water 2||✔|✔}}
+{{Moveentry/3|0909|Fuecoco|type=Fire|1|Field|Field||✔}}
+{{Moveentry/3|0910|Crocalor|type=Fire|1|Field|Field||✔}}
+{{Moveentry/3|0911|Skeledirge|type=Fire|type2=Ghost|1|Field|Field||✔}}
+{{Moveentry/3|0915|Lechonk|type=Normal|1|Field|Field||✔}}
+{{Moveentry/3|0916|Oinkologne|type=Normal|1|Field|Field|form=All forms||✔}}
+{{Moveentry/3|0932|Nacli|type=Rock|1|Mineral|Mineral||✔|✔}}
+{{Moveentry/3|0933|Naclstack|type=Rock|1|Mineral|Mineral||✔|✔}}
+{{Moveentry/3|0934|Garganacl|type=Rock|1|Mineral|Mineral||✔|✔}}
+{{Moveentry/3|0937|Ceruledge|type=Fire|type2=Ghost|1|Human-Like|Human-Like||✔|✔}}
+{{Moveentry/3|0943|Mabosstiff|type=Dark|1|Field|Field||✔|✔}}
+{{Moveentry/3|0946|Bramblin|type=Grass|type2=Ghost|1|Grass|Grass||✔}}
+{{Moveentry/3|0947|Brambleghast|type=Grass|type2=Ghost|1|Grass|Grass||✔}}
+{{Moveentry/3|0962|Bombirdier|type=Flying|type2=Dark|1|Flying|Flying||✔}}
+{{Moveentry/3|0965|Varoom|type=Steel|type2=Poison|1|Mineral|Mineral||✔}}
+{{Moveentry/3|0966|Revavroom|type=Steel|type2=Poison|1|Mineral|Mineral||✔}}
+{{Moveentry/3|0968|Orthworm|type=Steel|1|Field|Field||✔}}
+{{Moveentry/3|0974|Cetoddle|type=Ice|1|Field|Field||✔}}
+{{Moveentry/3|0975|Cetitan|type=Ice|1|Field|Field||✔}}
+{{Moveentry/3|0977|Dondozo|type=Water|1|Water 2|Water 2||✔|✔}}
+{{Moveentry/3|0979|Annihilape|type=Fighting|type2=Ghost|1|Field|Field||✔|✔}}
+{{Moveentry/3|0980|Clodsire|type=Poison|type2=Ground|2|Water 1|Field||✔}}
+{{Moveentry/3|0981|Farigiraf|type=Normal|type2=Psychic|1|Field|Field||✔}}
+{{Moveentry/3|0982|Dudunsparce|type=Normal|1|Field|Field|form=All forms||✔}}
+{{Moveentry/3|0988|Slither Wing|type=Bug|type2=Fighting|1|No Eggs Discovered|No Eggs Discovered||✔}}
+{{Moveentry/3|0995|Iron Thorns|type=Rock|type2=Electric|1|No Eggs Discovered|No Eggs Discovered||✔}}
+{{Moveentry/3|1012|Poltchageist|type=Grass|type2=Ghost|2|Mineral|Amorphous|form=All forms||✔}}
+{{Moveentry/3|1013|Sinistcha|type=Grass|type2=Ghost|2|Mineral|Amorphous|form=All forms||✔}}
+{{Moveentry/3|1014|Okidogi|type=Poison|type2=Fighting|1|No Eggs Discovered|No Eggs Discovered||✔}}
+{{Moveentry/3|1019|Hydrapple|type=Grass|type2=Dragon|2|Grass|Dragon||✔}}
+{{Moveentry/3|1025|Pecharunt|type=Poison|type2=Ghost|1|No Eggs Discovered|No Eggs Discovered||✔}}
+{{Movefoot|Ghost|3}}
+
+===By {{pkmn|breeding}}===
+{{Movehead/Games|Ghost|Egg Move|g1=none|g2=none|g7=1|g7g={{gameabbrev7|SMUSUM}}|g8=2|g9=1|g9g={{gameabbrev9|SV}}}}
+{{Moveentry/8|0001|Bulbasaur|type=Grass|type2=Poison|2|Monster|Grass|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/8|0027|formsig=A|Sandshrew|type=Ice|type2=Steel|1|Field|Field|form=Alolan Form|||||✔|✔||✔}}
+{{Moveentry/8|0041|Zubat|type=Poison|type2=Flying|1|Flying|Flying|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/8|0052|formsig=G|Meowth|type=Steel|1|Field|Field|form=Galarian Form||||||✔||✔}}
+{{Moveentry/8|0056|Mankey|type=Fighting|1|Field|Field|−|−|−|−|−||−|✔}}
+{{Moveentry/8|0074|Geodude|type=Rock|type2=Ground|1|Mineral|Mineral|−|✔{{sup/4|HGSS}}|✔|✔|✔||✔|✔}}
+{{Moveentry/8|0074|formsig=A|Geodude|type=Rock|type2=Electric|1|Mineral|Mineral|form=Alolan Form|||||✔|||✔}}
+{{Moveentry/8|0083|Farfetch'd|type=Normal|type2=Flying|2|Flying|Field|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/8|0083|formsig=G|Farfetch'd|type=Fighting|2|Flying|Field|form=Galarian Form||||||✔}}
+{{Moveentry/8|0088|Grimer|type=Poison|1|Amorphous|Amorphous|✔|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/8|0088|formsig=A|Grimer|type=Poison|type2=Dark|1|Amorphous|Amorphous|form=Alolan Form|||||✔|||✔<sup>2.0.1+</sup>}}
+{{Moveentry/8|0102|Exeggcute|type=Grass|type2=Psychic|1|Grass|Grass|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/8|0104|Cubone|type=Ground|1|Monster|Monster|−|−|−|−|✔{{sup/7|USUM}}|✔|✔}}
+{{Moveentry/8|0108|Lickitung|type=Normal|1|Monster|Monster|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/8|0109|Koffing|type=Poison|1|Amorphous|Amorphous|−|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/8|0111|Rhyhorn|type=Ground|type2=Rock|2|Monster|Field|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/8|0128|Tauros|type=Normal|1|Field|Field|−|−|−|−|−|−|−|✔}}
+{{Moveentry/8|0128|formsig=PC|Tauros|type=Fighting|1|Field|Field|form=Paldean Form<br>(Combat Breed)||||||||✔}}
+{{Moveentry/8|0128|formsig=PB|Tauros|type=Fighting|type2=Fire|1|Field|Field|form=Paldean Form<br>(Blaze Breed)||||||||✔}}
+{{Moveentry/8|0128|formsig=PA|Tauros|type=Fighting|type2=Water|1|Field|Field|form=Paldean Form<br>(Aqua Breed)||||||||✔}}
+{{Moveentry/8|0131|Lapras|type=Water|type2=Ice|2|Monster|Water 1|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/8|0133|Eevee|type=Normal|1|Field|Field|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/8|0142|Aerodactyl|type=Rock|type2=Flying|1|Flying|Flying|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/8|0143|Snorlax|type=Normal|1|Monster|Monster|✔|✔|✔|✔|✔|✔|✔|−}}
+{{Moveentry/8|0155|Cyndaquil|type=Fire|1|Field|Field|−|−|−|−|−||−|✔}}
+{{Moveentry/8|0185|Sudowoodo|type=Rock|1|Mineral|Mineral|−|−|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/8|0191|Sunkern|type=Grass|1|Grass|Grass|✔|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/8|0194|Wooper|type=Water|type2=Ground|2|Water 1|Field|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/8|0194|formsig=P|Wooper|type=Poison|type2=Ground|2|Water 1|Field|form=Paldean Form||||||||✔}}
+{{Moveentry/8|0200|Misdreavus|type=Ghost|1|Amorphous|Amorphous|−|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/8|0206|Dunsparce|type=Normal|1|Field|Field|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/8|0218|Slugma|type=Fire|1|Amorphous|Amorphous|−|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/8|0220|Swinub|type=Ice|type2=Ground|1|Field|Field|−|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/8|0222|Corsola|type=Water|type2=Rock|2|Water 1|Water 3|−|✔{{sup/4|HGSS}}|✔|✔|✔|✔|✔}}
+{{Moveentry/8|0227|Skarmory|type=Steel|type2=Flying|1|Flying|Flying|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/8|0241|Miltank|type=Normal|1|Field|Field|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/8|0246|Larvitar|type=Rock|type2=Ground|1|Monster|Monster|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/8|0255|Torchic|type=Fire|1|Field|Field|−|−|✔|✔|✔|✔|✔|−}}
+{{Moveentry/8|0258|Mudkip|type=Water|2|Monster|Water 1|✔|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/8|0287|Slakoth|type=Normal|1|Field|Field|✔|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/8|0304|Aron|type=Steel|type2=Rock|1|Monster|Monster|−|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/8|0309|Electrike|type=Electric|1|Field|Field|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/8|0316|Gulpin|type=Poison|1|Amorphous|Amorphous|−|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/8|0320|Wailmer|type=Water|2|Field|Water 2|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/8|0335|Zangoose|type=Normal|1|Field|Field|✔|✔|✔|✔|✔||✔|−}}
+{{Moveentry/8|0345|Lileep|type=Rock|type2=Grass|1|Water 3|Water 3|−|✔{{sup/4|HGSS}}|✔|✔|✔|✔|✔}}
+{{Moveentry/8|0347|Anorith|type=Rock|type2=Bug|1|Water 3|Water 3|−|✔{{sup/4|HGSS}}|✔|✔|✔|✔|✔}}
+{{Moveentry/8|0357|Tropius|type=Grass|type2=Flying|2|Monster|Grass|−|✔|✔|✔|✔||✔|✔}}
+{{Moveentry/8|0358|Chimecho|type=Psychic|1|Amorphous|Amorphous|✔|✔|✔|✔|✔||✔|−}}
+{{Moveentry/8|0359|Absol|type=Dark|1|Field|Field|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/8|0363|Spheal|type=Ice|type2=Water|2|Water 1|Field|✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/8|0408|Cranidos|type=Rock|1|Monster|Monster||✔{{sup/4|HGSS}}|✔|✔|✔||✔|−}}
+{{Moveentry/8|0410|Shieldon|type=Rock|type2=Steel|1|Monster|Monster||✔|✔|✔|✔||✔|−}}
+{{Moveentry/8|0422|Shellos|type=Water|2|Water 1|Amorphous|form=All forms||✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/8|0433|Chingling|type=Psychic|1|No Eggs Discovered|No Eggs Discovered||✔|✔|✔|✔||✔|✔}}
+{{Moveentry/8|0438|Bonsly|type=Rock|1|No Eggs Discovered|No Eggs Discovered||−|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/8|0446|Munchlax|type=Normal|1|No Eggs Discovered|No Eggs Discovered||✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/8|0449|Hippopotas|type=Ground|1|Field|Field||✔|✔|✔|✔|✔|✔|✔}}
+{{Moveentry/8|0498|Tepig|type=Fire|1|Field|Field|||✔|✔|✔|||−}}
+{{Moveentry/8|0517|Munna|type=Psychic|1|Field|Field|||✔|✔|✔|✔}}
+{{Moveentry/8|0524|Roggenrola|type=Rock|1|Mineral|Mineral|||✔|✔|✔|✔}}
+{{Moveentry/8|0557|Dwebble|type=Bug|type2=Rock|2|Bug|Mineral|||✔|✔|✔|✔}}
+{{Moveentry/8|0568|Trubbish|type=Poison|1|Mineral|Mineral|||✔|✔|✔|✔}}
+{{Moveentry/8|0618|Stunfisk|type=Ground|type2=Electric|2|Water 1|Amorphous|||✔|✔|✔|✔}}
+{{Moveentry/8|0618|formsig=G|Stunfisk|type=Ground|type2=Steel|2|Water 1|Amorphous|form=Galarian Form||||||✔}}
+{{Moveentry/8|0631|Heatmor|type=Fire|1|Field|Field|||✔|✔|✔|✔}}
+{{Moveentry/8|0650|Chespin|type=Grass|1|Field|Field||||✔|✔|||✔}}
+{{Moveentry/8|0696|Tyrunt|type=Rock|type2=Dragon|2|Monster|Dragon||||✔|✔|✔}}
+{{Moveentry/8|0704|Goomy|type=Dragon|1|Dragon|Dragon||||✔|✔|−||−}}
+{{Moveentry/8|0710|Pumpkaboo|type=Ghost|type2=Grass|1|Amorphous|Amorphous|form=All forms||||−|✔{{sup/7|USUM}}|✔}}
+{{Moveentry/8|0722|Rowlet|type=Grass|type2=Flying|1|Flying|Flying|||||✔|−||−}}
+{{Moveentry/8|0769|Sandygast|type=Ghost|type2=Ground|1|Amorphous|Amorphous|||||✔{{sup/7|USUM}}|✔||✔}}
+{{Moveentry/8|0776|Turtonator|type=Fire|type2=Dragon|2|Monster|Dragon|||||−|✔}}
+{{Moveentry/8|0778|Mimikyu|type=Ghost|type2=Fairy|1|Amorphous|Amorphous|||||✔|✔||✔}}
+{{Moveentry/8|0874|Stonjourner|type=Rock|1|Mineral|Mineral||||||✔||✔}}
+{{Moveentry/8|0878|Cufant|type=Steel|2|Field|Mineral||||||✔||✔}}
+{{Moveentry/8|0885|Dreepy|type=Dragon|type2=Ghost|2|Amorphous|Dragon||||||✔||✔}}
+{{Moveentry/8|0909|Fuecoco|type=Fire|1|Field|Field||||||||✔}}
+{{Moveentry/8|0932|Nacli|type=Rock|1|Mineral|Mineral||||||||✔}}
+{{Moveentry/8|0968|Orthworm|type=Steel|1|Field|Field||||||||✔}}
+{{Moveentry/8|0977|Dondozo|type=Water|1|Water 2|Water 2||||||||✔}}
+{{Movefoot|Ghost|8}}
+
+===Special move===
+====[[Generation III]]====
+{{Movehead/Special|Unknown}}
+{{Moveentry/1|0143|Snorlax|type=Normal|1|Monster|Monster|[[Purification|Purified]] [[Shadow Pokémon]]{{sup/ss|XD}}}}
+{{Movefoot|Unknown|1}}
+
+====[[Generation V]]====
+{{Movehead/Special|Ghost}}
+{{Moveentry/1|0241|Miltank|type=Normal|1|Field|Field|{{pkmn|Dream World}} - {{dwa|Pleasant Forest}}}}
+{{Moveentry/1|0525|Boldore|type=Rock|1|Mineral|Mineral|{{pkmn|Dream World}} - {{dwa|Icy Cave}}}}
+{{Moveentry/1|0618|Stunfisk|type=Ground|type2=Electric|2|Water 1|Amorphous|{{pkmn|Dream World}} - {{dwa|Sparkling Sea}}}}
+{{Movefoot|Ghost|1}}
+
+====[[Generation VIII]]====
+{{Movehead/Special|Ghost}}
+{{Moveentry/1|0105|formsig=A|Marowak|type=Fire|type2=Ghost|1|Monster|Monster|[[In-game trade#The Isle of Armor|Regina's Marowak]]{{sup/8|SwSh}}{{sup/8|IA}}|form=Alolan Form}}
+{{Moveentry/1|0879|Copperajah|type=Steel|2|Field|Mineral|{{DL|Watchtower Lair|★Sgr6879}} [[Gigantamax]] Copperajah{{sup/8|SwSh}}}}
+{{Movefoot|Ghost|1}}
+
+====[[Generation IX]]====
+{{Movehead/Special|Ghost}}
+{{Moveentry/1|0134|Vaporeon|type=Water|1|Field|Field|[[Terastal phenomenon|Wild Tera Pokémon]] - [[Casseroya Lake]]{{sup/9|SV}}}}
+{{Moveentry/1|0136|Flareon|type=Fire|1|Field|Field|[[Terastal phenomenon|Wild Tera Pokémon]] - [[South Province (Area Five)]]{{sup/9|SV}}}}
+{{Moveentry/1|0197|Umbreon|type=Dark|1|Field|Field|[[Terastal phenomenon|Wild Tera Pokémon]] - [[Alfornada Cavern]]{{sup/9|SV}}}}
+{{Moveentry/1|0446|Munchlax|type=Normal|1|No Eggs Discovered|No Eggs Discovered|[[Terastal phenomenon|Wild Tera Pokémon]] - [[Kitakami Road]]{{sup/9|SV}}{{sup/9|TM}}}}
+{{Moveentry/1|0471|Glaceon|type=Ice|1|Field|Field|[[Terastal phenomenon|Wild Tera Pokémon]] - [[North Province (Area One)]]{{sup/9|SV}}}}
+{{Moveentry/1|0769|Sandygast|type=Ghost|type2=Ground|1|Amorphous|Amorphous|[[Terastal phenomenon|Wild Tera Pokémon]] - [[Asado Desert]]{{sup/9|SV}}}}
+{{Moveentry/1|0778|Mimikyu|type=Ghost|type2=Fairy|1|Amorphous|Amorphous|[[Terastal phenomenon|Wild Tera Pokémon]] - [[North Province (Area Two)]]{{sup/9|SV}}}}
+{{Moveentry/1|0933|Naclstack|type=Rock|1|Mineral|Mineral|[[Terastal phenomenon|Wild Tera Pokémon]] - [[West Province (Area Two)]]{{sup/9|SV}}}}
+{{Movefoot|Ghost|1}}
+
+===By {{pkmn2|event}}===
+====[[Generation IV]]====
+{{Movehead/Special|Unknown}}
+{{Moveentry/1|0446|Munchlax|type=Normal|1|No Eggs Discovered|No Eggs Discovered|[[List of local Korean event Pokémon distributions in Generation IV#Munchlax|Shinsegae Munchlax]]}}
+{{Movefoot|Unknown|1}}
+
+==In other games==
+===[[Pokémon Mystery Dungeon series]]===
+When Curse is used by a Pokémon that is not a {{type|Ghost}}, the user's Attack and Defense is raised by one stage, and their [[Travel Speed]] is lowered by one stage. When used by a Ghost-type, Curse will inflict the {{DL|Status condition (Mystery Dungeon)|Cursed}} status condition on the target at the cost of half of the user's current HP. This status causes the inflicted Pokémon to lose 1/4 of its maximum HP at the end of the next turn and every 10 turns thereafter{{sup/md|RB}}{{sup/md|TDS}}, or at the end of every turn{{sup/md|GtI}}{{sup/md|SMD}}. This lasts for 4-5{{sup/md|RB}}{{sup/md|TDS}} / 2{{sup/md|GtI}}{{sup/md|SMD}} turns.
+
+Curse is classified as a Ghost-type move starting from [[Pokémon Mystery Dungeon: Gates to Infinity|Gates to Infinity]] (being classed as a {{type|Normal}} prior to this). In Gates to Infinity only, the Travel Speed drop will only last one turn.
+
+{{MDMoveheader|type=ghost}}
+{{MDMoveRow|game=RB|pp=17|acc=100%|range=User<sup>non-Ghost</sup><br>Front<sup>Ghost</sup>|target=User<sup>non-Ghost</sup><br>Enemy<sup>Ghost</sup>|cuts=No}}
+{{MDMoveRow|game=TDS|pp=17|acc=100%|range=User<sup>non-Ghost</sup><br>Front<sup>Ghost</sup>|target=User<sup>non-Ghost</sup><br>Enemy<sup>Ghost</sup>|cuts=No}}
+{{MDMoveRow|game=BSL|pp=17|acc=100%|range=User<sup>non-Ghost</sup><br>Front<sup>Ghost</sup>|target=User<sup>non-Ghost</sup><br>Enemy<sup>Ghost</sup>|cuts=No}}
+{{MDMoveRow|game=GTI|pp=20|ppmax=99|acc=—%|range=User<sup>non-Ghost</sup><br>Front<sup>Ghost</sup>|target=User <sup>non-Ghost</sup><br>Enemy<sup>Ghost</sup>|cuts=No}}
+{{MDMoveRow|game=SMD|pp=20|ppmax=99|acc=—%|range=User<sup>non-Ghost</sup><br>Front<sup>Ghost</sup>|target=User<sup>non-Ghost</sup><br>Enemy<sup>Ghost</sup>|cuts=No}}
+{{MDMovefoot|type=ghost|RB=yes|TDS=yes|BSL=yes|GTI=yes|SMD=yes|RTDX=yes}}
+
+===[[Pokémon Rumble Blast]]===
+When used by a non-Ghost-type Pokémon, Curse is the same as in Generation V. When used by a Ghost-type Pokémon, Curse deals damage and then drains the opponent's health over time.
+
+==={{g|Rumble Rush}}===
+In {{g|Rumble Rush}}, all [[status move]]s including Curse could only be used by opposing Pokémon and could not be obtained on any caught Pokémon. Curse could be seen as a move used by Boss {{p|Haunter}}.
+
+{{RumbleRushOtherAttack|move=Curse|type=Ghost
+|charge=1.1
+|range=Circular (ranged)
+|target=Enemy
+|effect=Puts a curse on the foe}}
+
+==={{g|UNITE}}===
+In Pokémon UNITE, Curse is {{p|Trevenant}}'s first move. It is obtained by evolving at level 5 and upgrading {{m|Will-O-Wisp}} into it instead of {{m|Wood Hammer}}. The user creates a cursed zone in exchange for 4% max HP per second for 6 seconds, dealing damage over time to enemies in the area of effect every .5s for 6s and decreasing their movement speed. The lower the user's HP is, the greater the decrease in movement speed. While using this move, the user builds up curse power every time it deals or receives damage. Releasing this built-up power will deal additional damage to enemies in the area of effect. If the curse power is at maximum when it's released, the cooldowns of Branch Poke, Horn Leech, and Pain Split are reset. At level 11, the move's radius increases.
+
+===Description===
+{{movedesc|Ghost}}
+{{movedescentry|{{gameabbrevmd|RB}}|Boosts the user's Attack and Defense by one level, but also lowers Movement Speed by one level. If used by a Ghost type, the target is cursed, and the user's HP halved.}}
+{{movedescentry|{{gameabbrevmd|TDS}}|Boosts the user's Attack and Defense by 1 level but also reduces Movement Speed by 1 level. If this move is used by a Ghost-type Pokémon, it afflicts the target with a Cursed status condition but halves the user's HP.}}
+{{movedescentry|{{gameabbrevmd|BSL}}|{{tt|じぶんの こうげき ぼうぎょを １だんかいあげるが いどうそくどが １だんかいさがる ゴーストタイプが つかったときは てきポケモンを のろいじょうたいに するが じぶんの ＨＰは はんぶんになる|Boosts the user's Attack and Defense by 1 level but also reduces Movement Speed by 1 level. If this move is used by a Ghost-type Pokémon, it afflicts the target with a Cursed status condition but halves the user's HP}}}}
+{{movedescentry|{{gameabbrevmd|GTI}}|It boosts your Attack and Defense, but it lowers your Travel Speed. If this is used by a Ghost-type Pokémon, it causes the Cursed status condition to the enemy. But it halves your HP.}}
+{{movedescentry|{{gameabbrevmd|SMD}}|It boosts your Attack and Defense, but it lowers your Travel Speed. If this is used by a Ghost-type Pokémon, it makes the enemy cursed but halves your HP.}}
+|}
+|}{{left clear}}
+
+==In the manga==
+===Pokémon Adventures===
+{{movemanga|type=???|exp=yes|gen=The user cuts its own health in order to lay a curse on the opponent.|image1=Masked Man Gastly Curse.png|image1p=Gastly}}
+{{movep|type=???|ms=092|pkmn=Gastly|method=Gastly's opponent starts suffering from an intense pain and becomes unable to move.}}
+{{movebtmManga|type=???|user=Masked Man|user1=The Masked Man's Gastly|startcode=PS171|startname=The Last Battle V|notes=Debut}}
+
+==In other generations==
+===Core series games===
+====Ghost-type Pokémon====
+{{Movegen
+|type=???
+|genII=Curse II Ghost
+|genIII=Curse III Ghost
+|genIV=Curse IV Ghost
+}}
+
+{{Movegen
+|type=Ghost
+|genV=Curse V Ghost
+|genVI=Curse VI Ghost
+|genVII=Curse VII Ghost
+|genVIII=Curse VIII ghost
+}}
+{{Movegen
+|type=Ghost
+|ZA=Curse ZA Ghost
+}}
+====Non-Ghost-type Pokémon====
+{{Movegen
+|type=???
+|genII=Curse II other
+|genIII=Curse III other
+|genIV=Curse IV other
+}}
+
+{{Movegen
+|type=Ghost
+|genV=Curse V other
+|genVI=Curse VI other
+|genVII=Curse VII other
+|genVIII=Curse VIII other
+}}
+
+{{Movegen
+|type=Ghost
+|ZA=Curse ZA other
+}}
+
+===Side series games===
+====Ghost-type Pokémon====
+{{Movegen
+|type=???
+|Stad2=Curse Stad2 Ghost
+|Colo=Curse Colo Ghost
+|XD=Curse XD Ghost
+|PBR=Curse PBR Ghost
+}}
+====Non-Ghost-type Pokémon====
+{{Movegen
+|type=???
+|Stad2=Curse Stad2 other
+|Colo=Curse Colo other
+|XD=Curse XD other
+|PBR=Curse PBR other
+}}
+===Spin-off series games===
+====Ghost-type Pokémon====
+{{Movegen
+|type=Normal
+|PMDRB=Curse PMD RB Ghost
+|PMDTDS=Curse PMD TDS Ghost
+}}
+{{Movegen
+|type=Ghost
+|PMDGTI=Curse PMD GTI Ghost 2
+|PSMD=Curse PSMD Ghost 2
+}}
+
+====Non-Ghost-type Pokémon====
+{{Movegen
+|type=Normal
+|PMDRB=Curse PMD RB other
+|PMDTDS=Curse PMD TDS other
+}}
+{{Movegen
+|type=Ghost
+|PMDGTI=Curse PMD GTI other
+|PSMD=Curse PSMD other
+}}
+
+==Trivia==
+* Curse and Z-Curse are the only moves with effects that vary depending on the type of the user.
+** Curse's differing effects are a play on its Japanese name, のろい ''Noroi'', which can mean either "curse" (呪い) or "dull/slow" (鈍い), depending on the kanji used. This is why it bestows an actual curse when used by Ghost-type Pokémon but lowers Speed when used by non-Ghost-type Pokémon.
+* In [[Generation II]], three Pokémon could legitimately use both effects of the move by using {{m|Conversion}} or {{m|Conversion 2}} to alter its own type to and from the {{t|Ghost}} type: {{p|Porygon}}, {{p|Porygon2}}, and {{p|Smeargle}}. Technically speaking, any Pokémon that can change its type in battle (e.g. via {{a|Color Change}}, {{m|Reflect Type}} or {{m|Trick-or-Treat}}) can use of both of Curse's effects. Similarly, if a Ghost-type Pokémon uses Curse while under the effect of {{m|Soak}} or {{m|Magic Powder}}, the non-Ghost version will be used. In addition, any user of the move in [[Generation IX]] can use both effects due to [[Terastal phenomenon|Terastallization]].
+* Curse is one of the four moves from [[Generation II]] to have its {{DL|List of modified moves|Type changes|type changed}} in a later [[generation]], the others being {{m|Charm}}, {{m|Moonlight}}, and {{m|Sweet Kiss}}. Of these four, it is the only move of the four to not change in [[Generation VI]] making it the only move not to change into a {{type|Fairy}} move.
+** Of the eight moves that have changed their type (adding {{m|Gust}}, {{m|Sand Attack}}, {{m|Karate Chop}} and {{m|Bite}}), Curse is the only one that wasn't originally a {{type|Normal}} move.
+* This move was {{TCG ID|Fossil|Gengar|5}}'s {{TCG|Pokémon Power}} in the {{TCG|Fossil}} set of the [[Pokémon Trading Card Game]], before it was introduced in the Generation II games.
+* In [[Generation II]], [[TM03]], which contains Curse, is given away only at night by a man telling the following story:
+::''"Let me recount a terrifying tale... Once upon a time, there was a little boy who was given a new Bicycle... He wanted to try it right away... He was having so much fun that he didn't notice the sun had set... While riding home in the pitch-black night, the bike suddenly slowed! The pedals became heavy! When he stopped pedaling, the bike began slipping backwards! It was as if the bike were cursed and trying to drag him into oblivion! ... ... Shrieeeek! The boy had been riding uphill on Cycling Road! ... Ba-dum ba-dum! For listening so patiently, you may take this—TM03! TM03 is Curse. It's a terrifying move that slowly whittles down the victim's HP."''
+* In [[Pokémon Stadium 2]], an unused item description for TM03 lists Curse's type as '''N & G''' (Japanese: '''Ｎ＆Ｇ'''), an abbreviation for Normal and Ghost.
+* Ghost-type Curse is likely inspired by the traditional Japanese ritual ''{{wp|Ushi no toki mairi|ushi no toki mairi}}'', in which a curse is placed on a target by driving nails into a straw effigy and onto a tree.
+
+==In other languages==
+{{Langtable|color={{ghost color}}|bordercolor={{unknown color dark}}
+|zh_yue=詛咒 ''{{tt|Jojau|Curse}}'' {{tt|*|Games}}<br>咒語 ''{{tt|Jauyúh|Curse}}'' {{tt|*|Pre-Gen VII Media}}
+|zh_cmn=詛咒 / 诅咒 ''{{tt|Zǔzhòu|Curse}}'' {{tt|*|Games (Traditional; Simplified Pre-BDSP)}}<br>咒术 ''{{tt|Zhòushù|Incantation}}'' {{tt|*|Games (Simplified BDSP onwards)}}<br>咒語 / 咒语 ''{{tt|Zhòuyǔ|Curse}}'' {{tt|*|Pre-Gen VII Media}}
+|cs=Prokletí
+|fr=Malédiction
+|de=Fluch
+|el=Κατάρα ''Katára''
+|it=Maledizione
+|ko=저주 ''Jeoju''
+|nl=Vloek
+|pt_br=Maldição
+|sr=Kletva
+|es=Maldición
+|vi=Nguyền Rủa
+}}
+{{Generation II TMs}}
+{{Generation IX TMs}}
+{{Project Moves and Abilities notice}}
+
+[[Category:???-type moves]]
+[[Category:Moves that can raise the user's Attack]]
+[[Category:Moves that can raise the user's Defense]]
+[[Category:Moves that can lower the user's Speed]]
+[[Category:Moves that have had their type changed]]
+[[Category:Moves that cost HP to use]]
+[[Category:Moves usable in Pokémon Sword and Shield]]
+[[Category:Moves usable in Pokémon Scarlet and Violet]]
+[[Category:Moves in Pokémon Legends: Z-A]]
+
+[[de:Fluch]]
+[[es:Maldición]]
+[[fr:Malédiction]]
+[[it:Maledizione]]
+[[ja:のろい]]
+[[zh:咒术（招式）]]

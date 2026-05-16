@@ -1,0 +1,523 @@
+{{MoveInfobox
+|n=237
+|name=Hidden Power
+|jname=めざめるパワー
+|jtrans=Awakening Power
+|jtranslit=Mezameru Pawā
+|gameimage=Hidden Power VIII.png
+|gameimage2=Hidden Power VIII 2.png
+|gameimagewidth=300
+|type=Normal
+|damagecategory=Special
+|basepp=15
+|maxpp=24
+|power={{tt|60|Varies in Generations II-V}}
+|accuracy=100
+|gen=II
+|category=Clever
+|appeal=3
+|jam=0
+|cdesc=Can be repeatedly used without boring the judge.
+|appealsc=1
+|scdesc=Earn +3 if the Pokémon gets the lowest score.
+|category6=Clever
+|appeal6=3
+|jam6=0
+|cdesc6=An appealing move that can be used repeatedly without boring the audience.
+|tm2=yes
+|tm#2=10
+|tm3=yes
+|tm#3=10
+|tm4=yes
+|tm#4=10
+|tm5=yes
+|tm#5=10
+|tm6=yes
+|tm#6=10
+|tm7=yes
+|tm#7=10
+|na=no
+|touches=no
+|protect=yes
+|magiccoat=no
+|snatch=no
+|mirrormove=yes
+|kingsrock=yes
+|sound=no
+|target=anyadjacent
+}}
+
+'''Hidden Power''' (Japanese: '''めざめるパワー''' ''Awakening Power'') is a damage-dealing {{type|Normal}} [[move]] introduced in [[Generation II]]. Although it appears as a Normal-type move, Hidden Power's actual type varies. It was [[TM10]] from Generation II to [[Pokémon Ultra Sun and Ultra Moon]]. From [[Generation VIII]] onward, it is the [[signature move]] of {{p|Unown}}.
+
+==Effect==
+{{main|Hidden Power (move)/Calculation}}
+{{moveResearch|Does {{a|Protean}} change the user's type to match the type Hidden Power becomes, or does it always change the user's type to Normal?}}
+Hidden Power deals damage.
+
+Hidden Power can be any type, other than {{t|Normal}} and {{t|Fairy}}, based on its user's {{IV}}s. In [[Pokémon Legends: Arceus]], it instead changes its type to be super effective against the opposing Pokémon. Hidden Power receives a [[same-type attack bonus]] if its type matches the user's type.
+
+From Generation III to V, its power also depends on its user's IVs. From Generation VI onward, its power is fixed at 60.
+
+{| class="roundtable" style="margin:auto; background: #{{normal color}}; border: 2px solid #{{normal color dark}}; text-align: center"
+!
+! style="background: #{{normal color light}}" | [[Generation II|Gen II]]
+! style="background: #{{normal color light}}" | [[Generation III|Gen III]]
+! style="background: #{{normal color light}}" | [[Generation IV|Gen IV]]
+! style="background: #{{normal color light}}" | [[Generation V|Gen V]]
+! style="background: #{{normal color light}}" | [[Generation VI|Gen VI]]–[[Generation VII|VII]], [[Pokémon Brilliant Diamond and Shining Pearl|BDSP]]
+! style="background: #{{normal color light}}" | [[Pokémon Legends: Arceus|LA]]
+|-
+! style="background: #{{normal color light}}" | [[Type]]
+| colspan=6 | ''Varies''
+|-
+! style="background: #{{normal color light}}" | [[Power]]
+| 31–70 || colspan=3 | 30–70 || 60 || ''See [[#Pokémon Legends: Arceus|below]]''
+|-
+! style="background: #{{normal color light}}" | [[Damage category|Category]]
+| colspan=2 | ''Varies'' || colspan=4 | [[special move|Special]]
+|-
+! style="background: #{{normal color light}}" | Thaws a {{status|frozen}} target<br><small>(if Fire-type)</small>
+| colspan=2 {{no}} || style="{{roundybr|8px}}" colspan=4 {{yes}}
+|-
+! style="background: #{{normal color light}};" | Affected by {{a|Normalize}}
+| colspan=2 | ''N/A'' || {{yes}} || colspan=3 {{No}}
+|}
+
+In [[Generation]] {{gen|II}} and {{gen|III}}, it can be either [[physical move|physical]] or [[special move|special]], corresponding to its type. Due to being treated as a {{type|Normal}} move regardless, it can only activate {{m|Counter}} and will never activate {{m|Mirror Coat}}. Starting in [[Generation IV]], it is always special.
+
+Due to never being a Normal-type move, Hidden Power is unaffected by {{a|Pixilate}}, {{a|Refrigerate}}, {{a|Aerilate}}, and {{m|Ion Deluge}}. If the user is under the effect of {{m|Electrify}}, Hidden Power's type will become {{t|Electric}}.
+
+Hidden Power is always treated as {{type|Normal}} for [[Z-Move]] mechanics, and can be upgraded to {{m|Breakneck Blitz}} by a [[Normalium Z]].
+
+===Generation VIII===
+====Pokémon Sword and Shield====
+Hidden Power cannot be selected in a battle.
+
+====Pokémon Legends: Arceus====
+{{LegendsMove
+|type=Normal
+|damagecategory=Special
+|basepp=15
+|power=50
+|power-agile=30
+|power-strong=70
+|accuracy=100
+|accuracy-strong=100
+|actionspeed-user=0
+|actionspeed-user-agile=0
+|actionspeed-user-strong=+5
+|actionspeed-target=0
+|actionspeed-target-agile=+3
+}}
+
+Hidden Power now changes its own type to be super effective against the opposing Pokémon, prioritizing any double weaknesses of dual-typed opponents. While selecting a move, Hidden Power displays the type that it will become against the selected opponent if used that turn. If multiple types are equally effective, Hidden Power's type is chosen at random from those types. This calculation is done on each turn, so if there are multiple valid types, Hidden Power's type may vary between them each turn.
+
+===Generation IX===
+Hidden Power cannot be selected in a battle.
+
+==Description==
+{{movedesc|Normal}}
+{{movedescentry|{{gameabbrevss|Stad2}}|A peculiar move that changes type and power depending on the {{ScPkmn}} using it.}}
+{{movedescentry|{{gameabbrev2|GSC}}|The power varies with the {{ScPkmn}}.}}
+{{movedescentry|{{gameabbrev3|RSE}}{{gameabbrevss|Colo}}{{gameabbrevss|XD}}|The effectiveness varies with the user. <small>(move)</small><br>The attack power varies among different {{ScPkmn}}.{{tt|*|TM}}}}
+{{movedescentry|{{gameabbrev3|FRLG}}|An attack that varies in type and intensity depending on the user.}}
+{{movedescentry|{{gameabbrev4|DPPtHGSS}}|A unique attack that varies in type and intensity depending on the Pokémon using it. <small>(move)</small><br>A variable move that changes type and power depending on the hidden ability of the Pokémon using it.{{tt|*|TM}}}}
+{{movedescentry|{{gameabbrevss|PBR}}<br/>{{gameabbrev5|BWB2W2}}|A unique attack that varies in type and intensity depending on the Pokémon using it.}}
+{{movedescentry|{{gameabbrev6|XYORAS}}<br>{{gameabbrev7|SMUSUMPE}}<br>{{gameabbrev8|BDSP}}|A unique attack that varies in type depending on the Pokémon using it.}}
+{{movedescentry|{{gameabbrev8|SwSh}}<br>{{gameabbrev9|SV}}|This move can't be used. It's recommended that this move is forgotten. Once forgotten, this move can't be remembered.}}
+{{movedescentry|{{gameabbrev8|LA}}|Through some mysterious power, this move changes type to deal supereffective damage to the target.}}
+|}
+|}{{left clear}}
+
+==Learnset==
+===By [[Level|leveling up]]===
+{{Movehead/Games|Normal|g1=none|g7=1|g7g={{gameabbrev7|SMUSUM}}|g8=2|g8g-1={{gameabbrev8|BDSP}}|g8g-2={{gameabbrev8|LA}}|g9=none}}
+{{Moveentry/8|0199|Slowking|type=Water|type2=Psychic|2|Monster|Water 1|||1|1|1|1|−}}
+{{Moveentry/8|0201|Unown|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|form=All forms|1|1|1|1|1|1|1|1}}
+{{Moveentry/8|0307|Meditite|type=Fighting|type2=Psychic|1|Human-Like|Human-Like||18{{sup/3|RSE}}<br>17{{sup/3|FRLG}}|15|15|15{{sup/6|XY}}<br>20{{sup/6|ORAS}}|20|−}}
+{{Moveentry/8|0308|Medicham|type=Fighting|type2=Psychic|1|Human-Like|Human-Like||18{{sup/3|RSE}}<br>17{{sup/3|FRLG}}|15|15|15{{sup/6|XY}}<br>20{{sup/6|ORAS}}|20|−}}
+{{Moveentry/8|0412|Burmy|type=Bug|1|Bug|Bug|form=All forms|||20|20|20|20|−|−}}
+{{Moveentry/8|0413|Wormadam|type=Bug|type2=Grass|1|Bug|Bug|form=All forms|||20|20|20|20|−|−}}
+{{Moveentry/8|0414|Mothim|type=Bug|type2=Flying|1|Bug|Bug|||20|20|20|20|−|−}}
+{{Moveentry/8|0422|Shellos|type=Water|2|Water 1|Amorphous|form=All forms|||16|16|16|16|−|−}}
+{{Moveentry/8|0423|Gastrodon|type=Water|type2=Ground|2|Water 1|Amorphous|form=All forms|||16|16|16|16|−|−}}
+{{Moveentry/8|0577|Solosis|type=Psychic|1|Amorphous|Amorphous||||14|14|14|}}
+{{Moveentry/8|0578|Duosion|type=Psychic|1|Amorphous|Amorphous||||14|14|14|}}
+{{Moveentry/8|0579|Reuniclus|type=Psychic|1|Amorphous|Amorphous||||14|14|14|}}
+{{Moveentry/8|0605|Elgyem|type=Psychic|1|Human-Like|Human-Like||||22|22|22|}}
+{{Moveentry/8|0606|Beheeyem|type=Psychic|1|Human-Like|Human-Like||||22|22|22|}}
+{{Movefoot|Normal|8}}
+
+===By [[TM]]===
+
+{{Movehead/TMGames|Normal|g1=none
+|g2tm=10
+|g3tm=10
+|g4tm=10
+|g5tm=10
+|g6tm=10
+|g7=1|g7tm=10|g7g={{gameabbrev7|SMUSUM}}
+|g8=none
+|g9=none}}
+|-
+| colspan=12 style="text-align: center; background-color: #{{Red color light}}" | '''Every Pokémon can learn this move by TM ''except'' the ones listed below and only if marked with ✘.'''
+|-
+{{Moveentry/6|0010|Caterpie|type=Bug|1|Bug|Bug|✘|✘|✘|✘|✘|✘|}}
+{{Moveentry/6|0011|Metapod|type=Bug|1|Bug|Bug|✘|✘|✘|✘|✘|✘|}}
+{{Moveentry/6|0013|Weedle|type=Bug|type2=Poison|1|Bug|Bug|✘|✘|✘|✘|✘|✘|}}
+{{Moveentry/6|0014|Kakuna|type=Bug|type2=Poison|1|Bug|Bug|✘|✘|✘|✘|✘|✘|}}
+{{Moveentry/6|0129|Magikarp|type=Water|2|Water 2|Dragon|✘|✘|✘|✘|✘|✘|}}
+{{Moveentry/6|0132|Ditto|type=Normal|1|Ditto|Ditto|✘|✘|✘|✘|✘|✘|}}
+{{Moveentry/6|0201|Unown|type=Psychic|1|No Eggs Discovered|No Eggs Discovered|form=All forms|✘|✘|✘|✘|✔|✔|}}
+{{Moveentry/6|0202|Wobbuffet|type=Psychic|1|Amorphous|Amorphous|✘|✘|✘|✘|✘|✘|}}
+{{Moveentry/6|0235|Smeargle|type=Normal|1|Field|Field|✘|✘|✘|✘|✘|✘|}}
+{{Moveentry/6|0265|Wurmple|type=Bug|1|Bug|Bug||✘|✘|✘|✘|✘|}}
+{{Moveentry/6|0266|Silcoon|type=Bug|1|Bug|Bug||✘|✘|✘|✘|✘|}}
+{{Moveentry/6|0268|Cascoon|type=Bug|1|Bug|Bug||✘|✘|✘|✘|✘|}}
+{{Moveentry/6|0360|Wynaut|type=Psychic|1|No Eggs Discovered|No Eggs Discovered||✘|✘|✘|✘|✘|}}
+{{Moveentry/6|0374|Beldum|type=Steel|type2=Psychic|1|Mineral|Mineral||✘|✘|✘|✘|✘|}}
+{{Moveentry/6|0401|Kricketot|type=Bug|1|Bug|Bug|||✘|✘|✘|✘|}}
+{{Moveentry/6|0412|Burmy|type=Bug|1|Bug|Bug|form=All forms|||✘|✘|✔|✔|}}
+{{Moveentry/6|0415|Combee|type=Bug|type2=Flying|1|Bug|Bug|||✘|✘|✘|✘|}}
+{{Moveentry/6|0602|Tynamo|type=Electric|1|Amorphous|Amorphous||||✘|✘|✘|}}
+{{Moveentry/6|0664|Scatterbug|type=Bug|1|Bug|Bug|||||✘|✘|}}
+{{Moveentry/6|0665|Spewpa|type=Bug|1|Bug|Bug|||||✘|✘|}}
+{{Moveentry/6|0771|Pyukumuku|type=Water|1|Water 1|Water 1||||||✘|}}
+{{Moveentry/6|0789|Cosmog|type=Psychic|1|No Eggs Discovered|No Eggs Discovered||||||✘|}}
+{{Moveentry/6|0790|Cosmoem|type=Psychic|1|No Eggs Discovered|No Eggs Discovered||||||✘|}}
+{{Movefoot|Normal|8}}
+
+==In other games==
+===[[Pokémon Mystery Dungeon series]]===
+Hidden Power deals damage, and its type and base power will vary each type the Pokémon enters a new dungeon.
+
+In the [[Pokémon Mystery Dungeon: Red Rescue Team and Blue Rescue Team|Rescue Team]] series, the type is selected among each of the 17 types with roughly equal probability (the game chooses from the 18 types, including typeless, choosing again if typeless is chosen; if this is done 100 times consecutively, Hidden Power will be of the {{type|Fire}}). The base power of the move is chosen among the following values with equal probability: 2, 4, 6, 7, 8, 9, 10, 13, 15, and 17. On the description menu, Hidden Power is shown as a typeless move.
+
+From {{pkmn|Super Mystery Dungeon}} on, Hidden Power has a set power.
+
+{{MDMoveheader|type=normal}}
+{{MDMoveRow|game=RB|pow=2-17|pp=12|acc=88%|range=Front|target=Enemy|cuts=No}}
+{{MDMoveRow|game=TDS|pow=2-15|pp=12|acc=88%|range=Front|target=Enemy|cuts=Yes}}
+{{MDMoveRow|game=BSL|pow=2-15|pp=12|acc=88%|range=Front|target=Enemy|cuts=Yes}}
+{{MDMoveRow|game=GTI|pp=15|ppmax=50|acc=95%|accmax=98%|range=Front|target=Enemy|cuts=No}}
+{{MDMoveRow|game=SMD|pow=10|powmax=99|pp=15|ppmax=30|acc=95%|accmax=98%|range=Front|target=Enemy|cuts=No}}
+{{MDMovefoot|type=normal|RB=yes|TDS=yes|BSL=yes|GTI=yes|SMD=yes|RTDX=yes}}
+
+===[[Pokémon GO]]===
+In Pokémon GO, Hidden Power is a Fast Attack that has been available since February 16, 2017. While Hidden Power is a {{type|Normal}} move in the game data, its actual type varies between individual Pokémon and is visible on the status screen of that Pokémon. Like in the core series, Hidden Power cannot be Normal- or {{type|Fairy}}; however, Hidden Power's type is not dependent on {{IV}}s and is instead randomly determined. If two players catch the same instance of a [[wild Pokémon]] that knows Hidden Power, the resulting Hidden Power type may still differ between the two players. If a Pokémon [[Evolution|evolves]], its Hidden Power type will also be randomly re-rolled. Hidden Power's type cannot be changed using a [[Fast TM]] or [[Elite Fast TM]]. If the player uses an Elite Fast TM on a Pokémon that can learn Hidden Power, its Hidden Power type will be displayed on the move selection screen.
+
+If the player battles against a Pokémon that knows Hidden Power in a {{OBP|Raid Battle|GO}} or [[Team GO Rocket]] Battle, the Hidden Power type will always be {{t|Fighting}}. However, its Hidden Power type will be randomly re-rolled if the player ends up capturing that same Pokémon.
+
+{{GO|Dynamax}} Pokémon with Hidden Power as their Fast Attack always have {{m|Max Strike}} as their attacking Max Move, regardless of Hidden Power's type.<ref>[https://www.reddit.com/r/TheSilphRoad/comments/1kkabrw/suicune_hidden_power_move/ Suicune Hidden power move]</ref>
+
+Unlike other moves, Hidden Power's type effectiveness is not announced in Trainer Battles.
+
+{{GoFastAttack
+|id=281
+|move=Hidden Power
+|type=Normal
+|pow=15
+|energy=15
+|duration=1.5
+|damage_window=1.1 - 1.4
+|pow_trainer=9
+|energy_trainer=8
+|turns=3
+|users={{MSP/GO|0121|Starmie}}{{MSP/GO|0137|Porygon}}{{MSP/GO|0175|Togepi}}{{MSP/GO|0176|Togetic}}{{MSP/GO|0201|Unown}}{{MSP/GO|0233|Porygon2}}{{MSP/GO|0250|Ho-Oh}}{{MSP/GO|0405|Luxray}}{{MSP/GO|0406|Budew}}{{MSP/GO|0422|Shellos}}{{MSP/GO|0422E|Shellos}}{{MSP/GO|0423|Gastrodon}}{{MSP/GO|0423E|Gastrodon}}{{MSP/GO|0468|Togekiss}}{{MSP/GO|0474|Porygon-Z}}{{MSP/GO|0486|Regigigas}}{{MSP/GO|0492|Shaymin|Land Forme}}{{MSP/GO|0492S|Shaymin|Sky Forme}}{{MSP/GO|0548|Petilil}}{{MSP/GO|0549|Lilligant}}{{MSP/GO|0577|Solosis}}{{MSP/GO|0578|Duosion}}{{MSP/GO|0579|Reuniclus}}{{MSP/GO|0594|Alomomola}}{{MSP/GO|0764|Comfey}}{{MSP/GO|0788|Tapu Fini}}
+|elite_users={{MSP/GO|0245|Suicune}}
+|snapshot_users={{MSP/GO|0235|Smeargle}}
+}}
+
+====Updates====
+;Gyms & Raids
+* '''February 21, 2017'''
+** '''Power''': 10 → 15
+
+===[[Pokémon Masters EX]]===
+In Pokémon Masters EX, Hidden Power's [[type]] is always {{t|Psychic}}.
+
+{| class="roundy" style="margin:auto; background:#{{psychic color}}; border:3px solid #{{psychic color dark}}; text-align:center; width:80%"
+|- style="background: #{{psychic color light}}"
+! style="{{roundytl|5px}}" | Name
+! {{color2|000|Damage category|Category}}
+! Move gauge cost
+! MP<br>(uses)
+! Base {{color2|000|power}}
+! Max {{color2|000|power}}
+! {{color2|000|Accuracy}}
+! Target
+! Effect tag
+! Description
+! style="{{roundytr|5px}}" | Playable {{color2|000|Sync pair|sync pair(s)}}
+|- style="background:#fff"
+|style="{{roundybl|5px}}"|Hidden Power
+{{statustable|Special}}
+|2
+|—
+|50
+|60
+|100%
+|An opponent
+|—
+|No additional effect.
+|style="{{roundybr|5px}}"|{{sync|Caitlin|Reuniclus}}<hr>[[Scottie]]/[[Bettie]] & {{p|Tyranitar}} <small>(in {{mas|Victory Road}})</small>
+|}
+
+===[[Pokémon Rumble series]]===
+Hidden Power is randomly assigned any of the 18 types whenever a Toy Pokémon has it as one of its moves. The type does not change for as long as the Pokémon keeps the move.
+<!--Could someone check to see if, when a Pokémon forgets and then relearns Hidden Power, it stays the same type as before?-->
+
+==={{g|Rumble Rush}}===
+In {{g|Rumble Rush}}, Hidden Power can only be used by opposing {{p|Unown}}, and cannot be obtained by the player. Hidden Power's type varies with each opposing Unown.
+
+{{RumbleRushPhysicalAttack|move=Hidden Power|type=Normal
+|stars=3
+|pow=54.82626 (all types except Steel), 57.52357 (Steel-type)
+|charge=0.94
+|range=Circular (self)
+|hits=1
+|projectiles=1
+|crit=1.5
+|effect=None}}
+
+===Description===
+{{movedesc|Normal}}
+{{movedescentry|{{gameabbrevmd|RB}}|Inflicts damage on the target. Its type and power change with the dungeon.}}
+{{movedescentry|{{gameabbrevmd|TDS}}|Inflicts damage on the target. The move's type and power change with the dungeon.}}
+{{movedescentry|{{gameabbrevmd|BSL}}|{{tt|てきポケモンに ダメージをあたえる ダンジョンにはいるごとに タイプと いりょくが へんかする|Inflicts damage on the target. The move's type and power change with the dungeon}}}}
+{{movedescentry|{{gameabbrevmd|GTI}}|It damages an enemy. The move's type and power change on each adventure.}}
+{{movedescentry|{{gameabbrevmd|SMD}}<br/>{{gameabbrevmd|RTDX}}|It damages an enemy. The move's type changes on each adventure.}}
+|}
+|}{{left clear}}
+
+==In animation==
+===Pokémon animated series===
+{{moveanime|type=normal|exp=yes|gen=A unique attack that varies in type and intensity depending on the Pokémon using it.|image1=Unown Hidden Power.png|image1p=Unown|image2=James Amoonguss Hidden Power.png|image2p=Amoonguss|image3=Ash Larvitar Hidden Power.png|image3p=Larvitar|image4=Serena Fennekin Hidden Power.png|image4p=Fennekin}}
+{{movep|type=normal|ms=197|pkmn=Umbreon|method=Umbreon's eyes glow white, and it unleashes black radiating waves of energy.}}
+{{movemid|type=normal|user=Gary's Umbreon|startcode=EP171|startname=Power Play!|notes=Debut}}
+{{movep|type=normal|ms=246|pkmn=Larvitar|method=Larvitar gets surrounded by a white aura and rows of small white orbs circle around it. The opponent then gets surrounded by a white aura and is lifted into the air. Larvitar then sends the opponent flying with energy, or Larvitar becomes surrounded by white orbs that combine into a giant blast of energy that is fired at the opponent, or Larvitar releases a green-yellow orb of energy at the opponent.}}
+{{movemid|type=normal|user=Ash's Larvitar|startcode=EP258|startname=Hatch Me if You Can}}
+{{movemid|type=normal|user=Chris (BW088)|user1=Chris's Larvitar|startcode=BW088|startname=The Mystery of the Missing Cubchoo!}}
+{{movep|type=normal|ms=267|pkmn=Beautifly|method=Two shining silver lines appear around Beautifly and the lines shine brightly, or a bunch of white circles appear in front of Beautifly and they morph with it and it shines brightly, releasing light beams at the opponent.}}
+{{movemid|type=normal|user=Janet|user1=Janet's Beautifly|startcode=AG013|startname=All Things Bright and Beautifly!}}
+{{movep|type=normal|ms=287|pkmn=Slakoth|method=Slakoth's body becomes surrounded in a white aura, and it puts its hands together. A ring of white circles appear in its hands and Slakoth shoots the ring at the opponent. The ring of circles surround the opponent, then pulls in and hits the opponent.}}
+{{movemid|type=normal|user=Norman|user1=Norman's Slakoth|startcode=AG070|startname=Balance of Power}}
+{{movep|type=normal|ms=284|pkmn=Masquerain|method=A ring of white circles appear over Masquerain's head. The ring raises up and shoots at the opponent, hitting it.}}
+{{movemid|type=normal|user=Drew|user1=Drew's Masquerain|startcode=AG078|startname=Cruisin' for a Losin'}}
+{{movep|type=normal|ms=337|pkmn=Lunatone|method=Two rings of white circles appear around Lunatone's body. The rings spin faster until they become two rings and the rings turn into a white beam that fires at the opponent.}}
+{{movemid|type=normal|user=Lunatone (Pokémon)|user1=A wild Lunatone|startcode=AG087|startname=Crazy as a Lunatone}}
+{{movep|type=normal|ms=214|pkmn=Heracross|method=Two rings of white circles appear and spin around Heracross's horn. Then, the rings form together into one big white ball in front of Heracross's horn, and fires a white beam from the ball at the opponent.}}
+{{movemid|type=normal|user=Gordon (AG107)|user1=Gordon's Heracross|startcode=AG107|startname=Absol-ute Disaster}}
+{{movep|type=normal|ms=212|pkmn=Scizor|method=Two rings of white circles appear around Scizor's body. Scizor then shoots the white circles at the opponent.}}
+{{movemid|type=normal|user=Katie (Hoenn)|user1=Katie's Scizor|startcode=AG129|startname=A Judgment Brawl}}
+{{movep|type=normal|ms=207|pkmn=Gligar|method=Two rings of white circles appear and spin around Gligar in an 'X' formation. The rings spin faster until they becomes lines, and a white ball of energy is created in front of where the two lines meet in front of Gligar. Multiple white circles are launched from the ball at the opponent.}}
+{{movemid|type=normal|user=Morrison|user1=Morrison's Gligar|startcode=AG130|startname=Choose It or Lose It!}}
+{{movep|type=normal|ms=231|pkmn=Phanpy|method=Two rings of white circles appear and spin around Phanpy in an 'X' formation. Then, the rings disappear and Phanpy blasts the opponent with a white energy beam from in front of its face.}}
+{{movemid|type=normal|user=Ash's Phanpy|startcode=AG137|startname=Hooked on Onix}}
+{{movep|type=normal|ms=074|pkmn=Geodude|method=Geodude's body becomes outlined in yellow and it crouches together. Light blue circles then appear around Geodude's body, and when it stretches its hands at the opponent, the circles are shot at it.}}
+{{movemid|type=normal|user=Roark|user1=Roark's Geodude|startcode=DP015|startname=Shapes of Things to Come!}}
+{{movep|type=normal|ms=065|pkmn=Alakazam|method=Alakazam's body becomes outlined in yellow and it points its spoons in front of it. Multiple light blue circles are then released and circle around Alakazam.}}
+{{movemid|type=normal|user=Kenny (Sinnoh)|user1=Kenny's Alakazam|startcode=DP027|startname=Settling a Not-So-Old Score!}}
+{{movep|type=normal|ms=412|pkmn=Burmy|method=Burmy's body becomes outlined in yellow and it becomes covered in light blue circles. Burmy then fires the circles at the opponent.}}
+{{movemid|type=normal|user=Cheryl|user1=Cheryl's Burmy|startcode=DP030|startname=Some Enchanted Sweetening!}}
+{{movep|type=normal|ms=422|pkmn=Shellos|method=Shellos jumps into the air and its body becomes surrounded by light blue circles. The balls then form together in front of Shellos and it shoots multiple light blue balls from the ball at the opponent.}}
+{{movemid|type=normal|user=Zoey's Shellos|startcode=DP041|startname=A Stand-Up Sit-Down!}}
+{{movep|type=normal|ms=201|pkmn=Unown|method=Unown shoots a red energy beam out of its eye at the opponent.}}
+{{movemid|type=normal|user=Unown (Pokémon)|user1=Multiple wild Unown|startcode=DP060|startname=Journey to the Unown!}}
+{{movep|type=normal|ms=433|pkmn=Chingling|method=Chingling's body becomes surrounded in a yellow outline and light blue circles appear around Chingling's body. It then points the tassels on its body at the opponent and the circles fire at the opponent.}}
+{{movemid|type=normal|user=Francesca|user1=Francesca's Chingling|startcode=DP070|startname=The Bells Are Singing!}}
+{{movep|type=normal|ms=439|pkmn=Mime Jr.|method=The white ball on Mime Jr.'s head glows white and light blue circles surround its body. It then fires the circles at the opponent.}}
+{{movemid|type=normal|user=James's Mime Jr.|startcode=DP070|startname=The Bells Are Singing!|notes=Used via {{mcolor|Mimic|000}}}}
+{{movep|type=normal|ms=320|pkmn=Wailmer|method=Wailmer's body becomes surrounded by yellow, and blue circles with yellow outlines appear around it. The circles then fire at the opponent in a spiraling motion. Then, Wailmer's eyes glow blue and it can control the circles.}}
+{{movemid|type=normal|user=Pokémon Coordinator|user1=A Coordinator's Wailmer|startcode=DP078|startname=Pruning a Passel of Pals!}}
+{{movep|type=normal|ms=428|pkmn=Lopunny|method=Lopunny's body becomes outlined in yellow and light blue circles move around its body. Lopunny then fires them at the opponent.}}
+{{movemid|type=normal|user=Paris|user1=Paris's Lopunny|startcode=DP086|startname=Arriving in Style!}}
+{{movep|type=normal|ms=054|pkmn=Psyduck|method=Psyduck's body becomes outlined in yellow and the front of its body becomes covered by light blue circles. It then fires the circles at the opponent.}}
+{{movemid|type=normal|user=Psyduck (Pokémon)|user1=Three wild Psyduck|startcode=DP087|startname=The Psyduck Stops Here!}}
+{{movep|type=normal|ms=486|pkmn=Regigigas|method=Regigigas's body becomes outlined in light blue, and the opponent's body glows light blue, healing or hurting it.}}
+{{movemid|normal|user=Regigigas (Pokémon)|user1=A wild Regigigas|startcode=DP129|startname=Pillars of Friendship!}}
+{{movep|type=normal|ms=473|pkmn=Mamoswine|method=Mamoswine's tusks glow yellow and light blue circles appear in between its tusks and circle around them. Mamoswine then fires the circles at the opponent, or Mamoswine releases a green-yellow orb of energy at the opponent.}}
+{{movemid|type=normal|user=Dawn's Mamoswine|startcode=DP134|startname=Promoting Healthy Tangrowth!}}
+{{movep|type=normal|ms=058|pkmn=Growlithe|method=Growlithe's body becomes outlined in yellow and light blue circles appear and circle around Growlithe's body. It then fires the circles at the opponent.}}
+{{movemid|type=normal|user=Officer Jenny's Growlithe|startcode=DP135|startname=Beating the Bustle and Hustle!}}
+{{movep|type=normal|ms=133|pkmn=Eevee|method=Eevee's body becomes outlined in yellow and multiple light blue circles surround and spin around Eevee's body. Eevee can also float through the air while the circles surround its body.}}
+{{movemid|type=normal|user=Ursula|user1=Ursula's two Eevee|startcode=DP174|startname=Last Call - First Round!}}
+{{movep|type=normal|ms=136|pkmn=Flareon|method=Flareon's body becomes outlined in gold and multiple red circles surround and spin around Flareon's body. Flareon then fires the circles at the opponent. Flareon can also float through the air while the circles surround its body.}}
+{{movemid|type=normal|user=Ursula|user1=Ursula's Flareon|startcode=DP174|startname=Last Call - First Round!}}
+{{movep|type=normal|ms=134|pkmn=Vaporeon|method=Vaporeon's body becomes outlined in light blue and multiple light blue circles surround and spin around Vaporeon's body. Vaporeon then fires the circles at the opponent. Vaporeon can also float through the air while the circles surround its body.}}
+{{movemid|type=normal|user=Ursula|user1=Ursula's Vaporeon|startcode=DP174|startname=Last Call - First Round!}}
+{{movep|type=normal|ms=587|pkmn=Emolga|method=Emolga's body becomes outlined in light green and it puts its hands together in front of it. One or three green-yellow orbs of energy then appear in between Emolga's hands and Emolga separates its hands, firing the orbs at the opponent.}}
+{{movemid|type=normal|user=Iris's Emolga|startcode=BW024|startname=Emolga the Irresistible!}}
+{{movep|type=normal|ms=574|pkmn=Gothita|method=The tuft of hair on Gothita's head glows light green and it reaches up into the air. When it does, its body becomes surrounded in light green, and a large green-yellow orb of energy forms above Gothita's hands. Gothita then tosses the orb at the opponent.}}
+{{movemid|type=normal|user=Katharine|user1=Katharine's Gothita|startcode=BW055|startname=Scraggy and the Demanding Gothita!}}
+{{movep|type=normal|ms=641|pkmn=Tornadus|method=Tornadus's body becomes outlined in light green energy, and the structures on his tail start to glow yellow. Tornadus then swings his tail and fires six light green orbs of energy from his tail, one for each glowing yellow structure on his tail, at the opponent.}}
+{{movemid|type=normal|user=Forces of nature (anime)#Tornadus|user1=Tornadus (anime)|startcode=BW059|startname=Stopping the Rage of Legends! Part 1}}
+{{movep|type=normal|ms=614|pkmn=Beartic|method=Beartic throws multiple light green orbs of energy at the opponent.}}
+{{movemid|type=normal|user=Georgia's Beartic|startcode=BW090|startname=Jostling for the Junior Cup!}}
+{{movep|type=normal|ms=641T|pkmn=Tornadus|method=Therian Forme Tornadus's wings glow light green and his body becomes surrounded by a light green aura. Then, a light green orb of energy appears between his wings and Therian Forme Tornadus fires it at the opponent.}}
+{{movemid|type=normal|user=Forces of nature (anime)#Tornadus|user1=Tornadus (anime)|startcode=BW097|startname=Unova's Survival Crisis!}}
+{{movep|type=normal|ms=505|pkmn=Watchog|method=Watchog forms a light green orb of energy between its hands. It then fires the orb at the opponent.}}
+{{movemid|type=normal|user=Mikael|user1=Mikael's Watchog|startcode=BW103|startname=Curtain Up, Unova League!}}
+{{movep|type=normal|ms=591|pkmn=Amoonguss|method=Amoonguss crosses its arms and its body becomes outlined in light green energy. It then opens its arms, and multiple light green orbs of energy appear around it. Amoonguss then points the top if its head at the opponent and spins, firing the orbs at the opponent. It can also control where the orbs are going.}}
+{{movemid|type=normal|user=James's Amoonguss|startcode=BW109|startname=New Places... Familiar Faces!}}
+{{movep|type=normal|ms=527|pkmn=Woobat|method=Woobat forms a light green orb of energy between its wings. It then fires the orb at the opponent.}}
+{{movemid|type=normal|user=Jessie's Woobat|startcode=BW115|startname=The Pokémon Harbor Patrol!}}
+{{movep|type=normal|ms=612|pkmn=Haxorus|method=Haxorus forms a light green orb of energy between its hands. It then fires the orb at the opponent.}}
+{{movemid|type=normal|user=Rhoder|user1=Rhoder's Haxorus|startcode=BW117|startname=Team Plasma's Pokémon Manipulation!}}
+{{movep|type=normal|ms=159|pkmn=Croconaw|method=Croconaw glows green and forms a light green orb of energy, then fires the orb at the opponent.}}
+{{movemid|type=normal|user=Officer Jenny|user1=Officer Jenny's Croconaw|startcode=BW129|startname=The Pirates of Decolore!}}
+{{movep|type=normal|ms=461|pkmn=Weavile|method=Weavile glows green and forms a light green orb of energy between its hands, then fires the orb at the opponent.}}
+{{movemid|type=normal|user=Weavile (Pokémon)|user1=A wild Weavile|startcode=PK25|startname=Eevee & Friends}}
+{{movep|type=normal|ms=632|pkmn=Durant|method=Durant forms a light green orb of energy in front of its body, then fires the orb at the opponent.}}
+{{movemid|type=normal|user=Durant (Pokémon)|user1=Three wild Durant|startcode=M16|startname=Genesect and the Legend Awakened}}
+{{movep|type=normal|ms=429|pkmn=Mismagius|method=Mismagius's body and eyes glow green and it forms several green orbs of energy, then fires the orbs at the opponent. }}
+{{movemid|type=normal|user=Mismagius (Pokémon)|user1=Two wild Mismagius|startcode=BW135|startname=Mystery on a Deserted Island!}}
+{{movep|type=normal|ms=038|pkmn=Ninetales|method=Ninetales's body and eyes glow green and it forms several green orbs of energy, then fires the orbs at the opponent. Ninetales's eyes and body glow green and it forms a light green orb of energy, then fires the orb at the opponent.}}
+{{movemid|type=normal|user=Ninetales (Pokémon)|user1=A wild Ninetales|startcode=BW135|startname=Mystery on a Deserted Island!}}
+{{movep|type=normal|ms=653|pkmn=Fennekin|method=Fennekin opens its mouth and forms a light blue and blue ball of energy in front of it. It then fires the ball at the opponent, or Fennekin forms three light blue orbs of energy around its head. It then fires the orbs at the opponent, which rotate before colliding.}}
+{{movemid|normal|user=Serena's Fennekin|startcode=XY021|startname=A PokéVision of Things to Come!}}
+{{movemid|normal|user=Mirror Serena|user1=Mirror Serena's Fennekin|startcode=XY037|startname=The Cave of Mirrors!}}
+{{movep|type=normal|ms=687|pkmn=Malamar|method=Malamar forms a light blue and blue ball of energy in front of its chest. It then fires the ball at the opponent.}}
+{{movemid|type=normal|user=Malamar (Pokémon)|user1=Multiple wild Malamar|startcode=XY054|startname=Facing the Grand Design!}}
+{{movep|type=normal|ms=326|pkmn=Grumpig|method=Grumpig forms a light blue ball of energy in front of its hands. It then throws the ball at the opponent.}}
+{{movemid|type=normal|user=Grumpig (Pokémon)|user1=A wild Grumpig|startcode=XY061|startname=An Oasis of Hope!}}
+{{movep|type=normal|ms=325|pkmn=Spoink|method=Spoink forms a light blue ball of energy in front of its hands. It then throws the ball at the opponent.}}
+{{movemid|type=normal|user=Spoink (Pokémon)|user1=Multiple wild Spoink|startcode=XY061|startname=An Oasis of Hope!}}
+{{movep|type=normal|ms=675|pkmn=Pangoro|method=Pangoro forms a light blue ball of energy in front of its hands. It then throws the ball at the opponent.}}
+{{movemid|type=normal|user=Pangoro (Pokémon)|user1=Three wild Pangoro|startcode=XY071|startname=So You're Having a Bad Day!}}
+{{movep|type=normal|ms=654|pkmn=Braixen|method=Braixen forms a light blue ball of energy in front of its hands. It then fires the ball at the opponent.}}
+{{movemid|type=normal|user=Serena's Braixen|startcode=XY082|startname=A Festival Trade! A Festival Farewell?}}
+{{movep|type=normal|ms=671B|pkmn=Florges|method=Florges forms a light blue ball of energy in front of her hands. She then fires the ball at the opponent.}}
+{{movemid|type=normal|user=Florges (anime)|startcode=XY123|startname=A Diamond in the Rough!}}
+{{movep|type=normal|ms=112|pkmn=Rhydon|method=Rhydon forms a light green orb of energy in its mouth. It then fires the orb at the opponent.}}
+{{movemid|type=normal|user=Rhydon (Pokémon)|user1=A wild Rhydon|startcode=M20|startname=I Choose You!}}
+{{movep|type=normal|ms=075|pkmn=Graveler|method=Graveler forms a light green orb of energy in its hands. It then fires the orb at the opponent.}}
+{{movebtm|type=normal|user=Graveler (Pokémon)|user1=A wild Graveler|startcode=M20|startname=I Choose You!}}
+
+* In the English [[dub]] of ''[[AG027|A Three Team Scheme!]]'', [[Keanu]] told his {{p|Nincada}} to use Hidden Power. In the original Japanese version, Keanu told Nincada to use {{m|Secret Power}} instead.
+* In the preview for the [[banned episodes|unaired]] {{OBP|AG101|unaired}}, [[Chōta]]'s {{p|Barboach}} is seen using Hidden Power.
+
+==In the manga==
+===Pokémon Adventures===
+{{movemanga|type=normal|exp=yes|gen=A unique attack that varies in type and intensity depending on the Pokémon using it.|image1=Unown Hidden Power Adventures DP.png|image1p=Unown|image2=Paka Burmy Hidden Power.png|image2p=Burmy|image3=Musha Munna Hidden Power.png|image3p=Munna|image4=Musha Hidden Power.png|image4p=Musharna}}
+{{movep|type=normal|ms=201|pkmn=Unown|method=Unown shocks the opponent with bursts of energy. Sometimes, Unown's eyes glow before doing so.}}
+{{movemid|type=normal|user=Unown (Pokémon)|user1=Multiple wild Unown|startcode=PS100|startname=Into the Unown|notes=Debut}}
+{{movemid|type=normal|user=Unown (Pokémon)|user1=Grumpy|startcode=PS406|startname=Halting Honchkrow}}
+{{movemid|type=normal|user=Unown (Pokémon)|user1=Flaky|startcode=PS406|startname=Halting Honchkrow}}
+{{movemid|type=normal|user=Unown (Pokémon)|user1=Multiple wild Unown|startcode=PS406|startname=Halting Honchkrow}}
+{{movep|type=normal|ms=412|pkmn=Burmy|method=Burmy jumps into the air and releases waves of energy from its body all around it, damaging the opponent.}}
+{{movemid|type=normal|user=Paka and Uji|user1=Paka's Burmy|startcode=PS352|startname=Crowded by Croagunk & Advanced on by Abra I}}
+{{movep|type=normal|ms=517|pkmn=Munna|method=Munna releases waves of energy from its body at the opponent.}}
+{{movemid|type=normal|user=Musha|user1=Black's Musha|startcode=PS468|startname=Listening to Pokémon}}
+{{movep|type=normal|ms=518|pkmn=Musharna|method=Musharna fires a blast of energy at the opponent.}}
+{{movebtmManga|type=normal|user=Musha|user1=Black's Musha|startcode=PS523|startname=The Power of Dreams}}
+
+* Multiple wild {{p|Unown}} were revealed to know Hidden Power on the official web site, but they were never shown using the move.
+
+===Pokémon Pocket Monsters===
+{{movemanga|type=normal|exp=yes|gen=The user spins in circles and attacks.|image1=Unown Hidden Power PM.png|image1p=Unown}}
+{{movep|type=normal|ms=201|pkmn=Unown|method=Unown spins in circles and attacks the opponent.}}
+{{movebtmManga|type=normal|user=Unown (Pokémon)|user1=Multiple wild Unown|startcode=PM072|startname=Rampage at the Ruins of Alph!!|notes=Debut}}
+
+==In other generations==
+===Core series games===
+{{Movegen
+|type=normal
+|genII=Hidden Power II
+|genIII=Hidden Power III
+|genIV=Hidden Power DP
+|PtHGSS=Hidden Power PtHGSS
+}}
+{{Movegen
+|type=normal
+|genV=Hidden Power V
+|XY=Hidden Power XY
+|ORAS=Hidden Power ORAS
+|ORAS2=Hidden Power ORAS 2
+|genVII=Hidden Power VII
+|genVII2=Hidden Power VII 2
+}}
+{{Movegen
+|type=normal
+|LA=Hidden Power LA
+}}
+
+===Side series games===
+{{Movegen
+|type=normal
+|Stad2=Hidden Power Stad2
+|Colo=Hidden Power Colo
+|XD=Hidden Power XD
+|PBR=Hidden Power PBR
+}}
+===Spin-off series games===
+{{Movegen
+|type=???
+|PMDRB=Hidden Power PMD RB
+|PMDTDS=Hidden Power PMD TDS
+}}
+{{Movegen
+|type=normal
+|PMDGTI=Hidden Power PMD GTI
+|PSMD=Hidden Power PSMD
+|Masters=Hidden Power Masters
+}}
+
+==Trivia==
+* Despite the only move {{p|Unown}} can learn being Hidden Power—learning it at level 1—it could not learn it via [[TM]] until [[Generation VI]]. However, this makes no functional difference other than cheating other moves onto it or when searching by TM/[[HM]] compatibility, since Unown will always already know Hidden Power and thus be unable to learn it via TM.
+* Prior to [[Generation IV]], Hidden Power, along with {{m|Weather Ball}}, were the only two moves which could vary between being [[physical move|physical]] or [[special move|special]], due to the damage category being determined by the [[type]].
+* In [[Generation II]], due to [[gender]] being determined by IVs, Hidden Power of a female Pokémon of {{cat|Pokémon with a gender ratio of seven males to one female|species with a seven male to one female ratio}} can only be a physical type.
+* In Generation II, due to the spread of [[individual values]] required for Shininess, [[Shiny Pokémon]] could only use a {{t|Grass}}- or {{type|Dragon}} Hidden Power with power 49 or 69.
+* Due to the {{DL|List of battle glitches in Generation III|Roaming Pokémon IV bug}}, a [[roaming Pokémon]] caught in [[Pokémon Ruby and Sapphire Versions|Pokémon Ruby, Sapphire]], [[Pokémon FireRed and LeafGreen Versions|FireRed, or LeafGreen]] will always have a Hidden Power type of Fighting, and a power of 30 or 31.
+* It is impossible for Pokémon in the {{egg3|No Eggs Discovered}} that are {{pkmn2|caught}} or obtained as a {{pkmn2|gift}} in [[Pokémon X and Y]] to have a {{type|Fighting}} Hidden Power. In {{pkmn|Omega Ruby and Alpha Sapphire}} and the [[Generation VII]] games, this is true only for [[Legendary Pokémon]], [[Mythical Pokémon]], and [[Ultra Beast]]s in the No Eggs Discovered Egg Group. This is because these Pokémon are guaranteed to have at least three IVs of 31, whereas a Fighting-type Hidden Power requires at least four IVs that are even numbers.
+* Despite Hidden Power not being able to be used in battle in {{pkmn|Sword and Shield}}, the method of determining its type is still present. This can be seen by entering a battle with a Pokémon that knows it and then entering the move selection, where Hidden Power's {{DL|Type|type effectiveness}} will be displayed if the opposing Pokémon has been seen in the [[Pokédex]].
+* [[Pokémon Masters EX]] is the only game in which Hidden Power can only have one type, Psychic.
+
+==In other languages==
+{{Langtable|color={{normal color}}|bordercolor={{normal color dark}}
+|zh_yue=覺醒力量 ''{{tt|Goksíng Lihkleuhng|Awakening Power}}''
+|zh_cmn=覺醒力量 / 觉醒力量 ''{{tt|Juéxǐng Lìliàng|Awakening Power}}'' {{tt|*|Games}}<br>催醒  ''{{tt|Cuīxǐng|Hasten Awakening}}'' {{tt|*|Later Animated series, Adventures}}{{specify|check tooltips: which animated episodes/seasons/series?}}<br>覺醒的力量 ''{{tt|Juéxǐng de Lìliàng|Awakening Power}}'' {{tt|*|Early Animated series}}{{specify|check tooltips: which episodes/seasons/series?}}<br>出动能量 ''{{tt|Chūdòng Néngliàng|Moving Energy}} {{tt|*|Manga (Mainland China 21st Century edition)}}
+|cs=Skrytá síla
+|da=Skjult Kraft
+|nl=Verborgen kracht
+|fi=Piilovoima
+|fr=Puissance Cachée<sup>{{gen|VI}}+</sup><br>Puis. Cachée<sup>{{gen|II}}–{{gen|V}}</sup>
+|de=Kraftreserve
+|el=Κρυφή Δύναμη
+|hi=हिडन पावर ''Hidden Power'' {{tt|*|Pokémon GO}}<br>छुपी शक्ति ''{{tt|Chupi Shakti|Hidden Power}}''
+|id=Kekuatan yang Bangkit{{tt|*|Pokémon GO}}<br>Kekuatan Tersembunyi<br>Kekuatan Dahsyat
+|it=Introforza
+|ko=잠재파워 ''{{tt|Jamjae Pawo|Potential Power}}''
+|pl=Ukryta Moc<!--{{tt|*|EP263, Diamond and Pearl series onwards, Diamond and Pearl-Mysterious Treasures (TCG)}}<br>Ukryta Siła{{tt|*|EP258, Advanced}}<br>Niszcząca Siła{{tt|*|EP171}}-->
+|pt=Poder Oculto
+|ro=Puterea Ascunsă
+|ru=Скрытая Сила ''{{tt|Skrytaya Sila|Hidden Power}}''
+|sr=Skrivena moć
+|es_la=Poder Oculto (games, [[EP171]]–[[DP086]], <!--[[DP162]], -->[[DP175]]–present)<br>Poder Escondido (<!--[[AG130]], -->[[DP129]]–[[DP175]])
+|es_eu=Poder Oculto
+|sv=Gömda kraften
+|th=พลังเร้นลับ ''{{tt|Phalang Renlap|Mysterious Power}}''
+|tr=Saklı Güç
+|vi=Đánh Thức Sức Mạnh
+}}
+
+{{Generation II TMs}}
+{{Generation III TMs}}
+{{Generation IV TMs}}
+{{Generation V TMs}}
+{{Generation VI TMs}}
+{{Generation VII TMs}}
+{{Project Moves and Abilities notice}}
+
+[[Category:Moves that change type]]
+[[Category:Moves that have variable power]]
+[[Category:Moves unusable in Pokémon Sword and Shield]]
+[[Category:Moves in Pokémon Legends: Arceus]]
+[[Category:Moves unusable in Pokémon Scarlet and Violet]]
+
+[[de:Kraftreserve]]
+[[es:Poder Oculto]]
+[[fr:Puissance Cachée]]
+[[it:Introforza]]
+[[ja:めざめるパワー]]
+[[zh:觉醒力量（招式）]]
