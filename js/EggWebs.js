@@ -70,6 +70,7 @@ function MethodStr(LearnInstance, Delimiter)
 	else if (LearnInstance["LearnMethod"] === LEARNBY_EVENT) str = "From an event";
 	else if (LearnInstance["LearnMethod"] === LEARNBY_TUTOR) str = "Tutor";
 	else if (LearnInstance["LearnMethod"] === LEARNBY_REMINDER) str = "Move Reminder";
+	else if (LearnInstance["LearnMethod"] === LEARNBY_EVOLVE) str = "Upon Evolving";
 	else if (LearnInstance["LearnMethod"] === LEARNBY_SKETCH) str = "Sketch";
 	else str = "UNKNOWN REASON";
 
@@ -723,7 +724,7 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 				//in crystal, tutor moves work like TM moves
 				//Sketch is here because if we can copy a move, then doing so should be the first action of the chain. any breeding before that serves no purpose.
 				//starting in gen 6, children don't inherit moves that they can only learn by tm
-				if (ChildInst["LearnMethod"] === LEARNBY_EVENT || ChildInst["LearnMethod"] === LEARNBY_SPECIAL || ChildInst["LearnMethod"] === LEARNBY_SKETCH || ChildInst["LearnMethod"] === LEARNBY_REMINDER ||
+				if (ChildInst["LearnMethod"] === LEARNBY_EVENT || ChildInst["LearnMethod"] === LEARNBY_SPECIAL || ChildInst["LearnMethod"] === LEARNBY_SKETCH || ChildInst["LearnMethod"] === LEARNBY_REMINDER || ChildInst["LearnMethod"] === LEARNBY_EVOLVE ||
 					(ChildInst["LearnMethod"] === LEARNBY_TUTOR && !(ChildInst["LearnsInGame"]["GenerationNum"] === GENERATION_2 && ChildInst["LearnsInGame"]["GameNum"] === GAME_CRYSTAL)) ||
 					((ChildInst["LearnMethod"] === LEARNBY_TM || ChildInst["LearnMethod"] === LEARNBY_TM_UNIVERSAL) && ChildInst["LearnsInGame"]["GenerationNum"] >= GENERATION_6))
 				{
@@ -1459,6 +1460,7 @@ function GetSettings(FileCount)
 		g_MethodExcludes[LEARNBY_EVENT] = document.getElementById("event1").checked;
 		g_MethodExcludes[LEARNBY_TUTOR] = document.getElementById("tutor1").checked;
 		g_MethodExcludes[LEARNBY_REMINDER] = document.getElementById("reminder1").checked;
+		g_MethodExcludes[LEARNBY_EVOLVE] = document.getElementById("evolve1").checked;
 
 		g_MaxLevel = document.getElementById("maxlevel").value;
 	}
@@ -2068,7 +2070,8 @@ function InstanceCanBeTopLevel(LearnInst, Learner)
 
 function InstanceMustBeTopLevel(LearnInst)
 {
-	if (LearnInst["LearnMethod"] === LEARNBY_SPECIAL || LearnInst["LearnMethod"] === LEARNBY_EVENT || LearnInst["LearnMethod"] === LEARNBY_TUTOR || LearnInst["LearnMethod"] === LEARNBY_REMINDER || LearnInst["LearnMethod"] === LEARNBY_SKETCH)
+	if (LearnInst["LearnMethod"] === LEARNBY_SPECIAL || LearnInst["LearnMethod"] === LEARNBY_EVENT || LearnInst["LearnMethod"] === LEARNBY_TUTOR
+		|| LearnInst["LearnMethod"] === LEARNBY_REMINDER || LearnInst["LearnMethod"] === LEARNBY_EVOLVE || LearnInst["LearnMethod"] === LEARNBY_SKETCH)
 		return true;
 	//
 	return false;
@@ -2832,6 +2835,8 @@ function ParseGameAnnotations()
 				LearnInst["LearnLevel"] = LearnLevel.toString().substring(TTStart + 5, NextPipe);
 				if (LearnInst["LearnLevel"] === "Rem.")
 					LearnInst["LearnMethod"] = LEARNBY_REMINDER;
+				if (LearnInst["LearnLevel"] === "Evo.")
+					LearnInst["LearnMethod"] = LEARNBY_EVOLVE;
 			}
 		}
 	}

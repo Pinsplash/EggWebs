@@ -71,6 +71,7 @@ const LEARNBY_TM = 6;
 const LEARNBY_TM_UNIVERSAL = 7;
 const LEARNBY_EGG = 8;
 const LEARNBY_REMINDER = 9;
+const LEARNBY_EVOLVE = 10;
 
 //matchup results
 const MATCHUP_SUCCESS = -1;
