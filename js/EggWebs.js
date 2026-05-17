@@ -60,7 +60,7 @@ function GetGeneration(WantedGame)
 function MethodStr(LearnInstance, Delimiter)
 {
 	if (!LearnInstance)
-		alert("An error happened. Please report it as a bug that you encountered message #001 (calling MethodStr without null LearnInstance)");
+		alert("An error happened. Please report it as a bug that you encountered message #001 (calling MethodStr with null LearnInstance)");
 	let str;
 	if (LearnInstance["LearnMethod"] === LEARNBY_LEVELUP) str = "Level " + LearnInstance["LearnLevel"];
 	else if (LearnInstance["LearnMethod"] === LEARNBY_TM) str = "By TM";
