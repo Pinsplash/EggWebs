@@ -13,7 +13,7 @@ In any case, you should now have a textbox on screen. Copy everything in it to a
 ### Usage
 Open EggWebs.html in your web browser.
 
-Click the browse button and select the moves you want to put on the Pokemon. Set your settings, then click "Go" at the top. Any number of moves at once will work. The program will be able to do less repeat work if you drop every move you're interested in at once.
+Click the browse button and select the moves you want to put on the Pokemon. Set your settings, then click "Go" at the top. Any number of moves at once will work. The program will be able to do less repeat work if you provide every move you're interested in at once.
 
 When a breeding chain (or combination of chains) is found, it will be presented to you. If the chain is not suitable for you, you can click the arrow next to a Pokemon to make EggWebs find a new breeding chain based on the option you chose.
 
