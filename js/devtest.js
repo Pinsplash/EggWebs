@@ -9,8 +9,8 @@ const g_Tests =
 		//basic
 		["Chikorita", GAME_HEARTGOLD_SOULSILVER, ["Grass Knot", "Leech Seed"], ["Smeargle\nSketch", "Smeargle\nSketch", "Seedot\nBy TM", "Chikorita\nBy TM"], []],
 		["Mismagius", GAME_HEARTGOLD_SOULSILVER, ["Hidden Power", "Shadow Ball", "Thunderbolt"],
-			["Slowking\nLevel 1", "Charmander\nBy universal TM", "Ekans\nBy universal TM", "Pikachu\nBy universal TM\nLearned as Pichu",
-				"Pikachu\nLevel 26", "Castform\nBy TM", "Gastly\nBy TM",
+			["Meditite\nLevel 15", "Electabuzz\nBy universal TM\nLearned as Elekid",
+				"Electabuzz\nLevel 43", "Buneary\nBy TM", "Snubbull\nBy TM", "Castform\nBy TM", "Gastly\nBy TM",
 				"Gastly\nLevel 29", "Mismagius\nLevel 37\nLearned as Misdreavus"],
 			["Smeargle"]],
 		//tests understanding breeding with ditto
@@ -37,7 +37,7 @@ const g_Tests =
 		//combo mode off for all below (it turns off forever once there is a test with a move list with only one move)
 		//tests alternate parents
 		["Nidoqueen", GAME_ULTRASUN_ULTRAMOON, ["Charm"], ["Eevee\nLevel 29", "Nidoqueen\nEgg move\nLearned as Nidoran F"], []],
-		["Volbeat", GAME_ULTRASUN_ULTRAMOON, ["Lunge"], ["Mothim\nLevel 47", "Volbeat\nEgg move"], []],
+		["Volbeat", GAME_ULTRASUN_ULTRAMOON, ["Lunge"], ["Dewpider\nLevel 37", "Volbeat\nEgg move"], []],
 		//tests understanding of forms
 		//both kantonian and alolan sandslash should findable, only kantonian form should give body slam, and only alolan form should give icicle crash
 		["Swinub", GAME_ULTRASUN_ULTRAMOON, ["Body Slam", "Icicle Crash"], ["Sandshrew\nTutor\nin FRLG", "Swinub\nEgg move", "Sandslash\nAlolan\nLevel 1", "Swinub\nEgg move"],

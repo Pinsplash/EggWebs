@@ -2941,6 +2941,19 @@ function CompareGeneration(a, b)
 		return -1;
 }
 
+//sort learners by evolved status to avoid evolved learners appearing in chains when they don't need to, thus creating unneeded "learned as [species]" notes
+//this isn't a *critical* problem but it's annoying and can confuse users
+function SortLearners(a, b)
+{
+	if (a["LearnMonInfo"]["BaseFormOffset"] === b["LearnMonInfo"]["BaseFormOffset"])
+		return 0;
+	if (a["LearnMonInfo"]["BaseFormOffset"] === 0)
+		return -1;
+	if (b["LearnMonInfo"]["BaseFormOffset"] === 0)
+		return 1;
+	return 0;
+}
+
 function SortData()
 {
 	//all learn instances NEED to be sorted to have the newest generation first. this is because the ShowInstance property simply shows
@@ -2951,6 +2964,7 @@ function SortData()
 		let Learner = g_MoveLearners[iLearn];
 		Learner["Instances"].sort(CompareGeneration);
 	}
+	g_MoveLearners.sort(SortLearners);
 }
 
 function NormalStart()
