@@ -2908,10 +2908,33 @@ function PreferTargetGameLearn(a, b)
 	return 0;
 }
 
+//avoid showing "in [game]" and "learned as [species]" notes when we can
+//score variable lets us treat both kinds of notes with equal importance
+function SortAvoidNotes(a, b)
+{
+	let score = 0;
+	if (a["LearnsInGame"] !== b["LearnsInGame"])
+	{
+		if (a["LearnsInGame"] === g_TargetGame)
+			score--;
+		if (b["LearnsInGame"] === g_TargetGame)
+			score++;
+	}
+	if (a["OriginalLearn"] || b["OriginalLearn"])
+	{
+		if (b["OriginalLearn"])
+			score--;
+		if (a["OriginalLearn"])
+			score++;
+	}
+	return score;
+;
+}
+
 function CompareGeneration(a, b)
 {
 	if (a["LearnsInGame"]["GenerationNum"] === b["LearnsInGame"]["GenerationNum"])
-		return PreferTargetGameLearn(a, b);
+		return SortAvoidNotes(a, b);
 	if (GenerationsCompatible(a["LearnsInGame"]["GenerationNum"], b["LearnsInGame"]["GenerationNum"]))
 		return 1;
 	else
