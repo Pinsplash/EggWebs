@@ -750,12 +750,7 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 				}
 
 				//you can't breed these methods
-				//in crystal, tutor moves work like TM moves
-				//Sketch is here because if we can copy a move, then doing so should be the first action of the chain. any breeding before that serves no purpose.
-				//starting in gen 6, children don't inherit moves that they can only learn by tm
-				if (ChildInst["LearnMethod"] === LEARNBY_EVENT || ChildInst["LearnMethod"] === LEARNBY_SPECIAL || ChildInst["LearnMethod"] === LEARNBY_SKETCH || ChildInst["LearnMethod"] === LEARNBY_REMINDER || ChildInst["LearnMethod"] === LEARNBY_EVOLVE ||
-					(ChildInst["LearnMethod"] === LEARNBY_TUTOR && !(ChildInst["LearnsInGame"]["GenerationNum"] === GENERATION_2 && ChildInst["LearnsInGame"]["GameNum"] === GAME_CRYSTAL)) ||
-					((ChildInst["LearnMethod"] === LEARNBY_TM || ChildInst["LearnMethod"] === LEARNBY_TM_UNIVERSAL) && ChildInst["LearnsInGame"]["GenerationNum"] >= GENERATION_6))
+				if (InstanceMustBeTopLevel(ChildInst))
 				{
 					ReasonList.push(BAD_CHILD_METHOD, "Child's learn method (" + MethodStr(ChildInst, ", ") + ") doesn't allow it to learn the move through breeding");
 					continue;
@@ -2097,10 +2092,18 @@ function InstanceCanBeTopLevel(LearnInst, Learner)
 	return true;
 }
 
+//you can't breed these methods
 function InstanceMustBeTopLevel(LearnInst)
 {
-	if (LearnInst["LearnMethod"] === LEARNBY_SPECIAL || LearnInst["LearnMethod"] === LEARNBY_EVENT || LearnInst["LearnMethod"] === LEARNBY_TUTOR
-		|| LearnInst["LearnMethod"] === LEARNBY_REMINDER || LearnInst["LearnMethod"] === LEARNBY_EVOLVE || LearnInst["LearnMethod"] === LEARNBY_SKETCH)
+	//in crystal, tutor moves work like TM moves, as in they can be passed down
+	//starting in gen 6, children don't inherit moves that they can only learn by tm
+	if (LearnInst["LearnMethod"] === LEARNBY_EVENT ||
+		LearnInst["LearnMethod"] === LEARNBY_SPECIAL ||
+		LearnInst["LearnMethod"] === LEARNBY_SKETCH ||
+		LearnInst["LearnMethod"] === LEARNBY_REMINDER ||
+		LearnInst["LearnMethod"] === LEARNBY_EVOLVE ||
+		(LearnInst["LearnMethod"] === LEARNBY_TUTOR && !(LearnInst["LearnsInGame"]["GenerationNum"] === GENERATION_2 && LearnInst["LearnsInGame"]["GameNum"] === GAME_CRYSTAL)) ||
+		((LearnInst["LearnMethod"] === LEARNBY_TM || LearnInst["LearnMethod"] === LEARNBY_TM_UNIVERSAL) && LearnInst["LearnsInGame"]["GenerationNum"] >= GENERATION_6))
 		return true;
 	//
 	return false;
