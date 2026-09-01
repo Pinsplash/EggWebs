@@ -116,7 +116,7 @@ async function Try(TargetSpecies, TargetGame, MoveList, ExpectedData, ExcludeLis
 		{
 			iExpectData++;
 			let Learner = Chain["LearnList"][iLearner];
-			let FullString = Learner["LearnMonInfo"]["SpeciesName"] + InfoStr(Learner, Learner["ShowInstance"]);
+			let FullString = GetLearnerSpecies(Learner) + InfoStr(Learner, Learner["ShowInstance"]);
 			if (!ExpectedData[iExpectData])
 			{
 				alert("ERROR: Unexpected result length at: " + iExpectData);

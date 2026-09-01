@@ -1,12 +1,12 @@
 const Struct = (...keys) => ((...v) => keys.reduce((o, k, i) => { o[k] = v[i]; return o }, {}));
-const SpeciesInfo = Struct("SpeciesName", "EggGroup1", "EggGroup2", "GenderRatio", "Evolutions", "BaseFormOffset", "Forms");
+const SpeciesInfo = Struct("SpeciesName", "EggGroup1", "EggGroup2", "SpeciesGenderRatio", "Evolutions", "BaseFormOffset", "Forms");
 const Generation = Struct("BulbaHeader", "GameCombo", "UniversalTMs", "MonData");
 const GameData = Struct("UIName", "GenerationNum", "Acronym", "GameNum", "GameIsAllowed");
 const LearnInstance = Struct("LearnLevel", "LearnMethod", "LearnsInGame", "OriginalLearn", "TMOfInterest", "EraseMe", "UserRejected", "LearnID");
 const MoveLearner = Struct("Form", "MoveName", "LearnMonInfo", "Instances", "ShowInstance");
 const BreedChain = Struct("LearnList");
 const ComboBreedData = Struct("ComboMoves", "SatisfiedStatus");
-const FormData = Struct("Name", "GenderRatio");
+const FormData = Struct("FormName", "FormGenderRatio");
 const EvolveData = Struct("EvoOffset", "EvoForm", "RequiredForm");
 
 //gender ratios
