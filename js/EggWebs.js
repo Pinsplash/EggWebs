@@ -710,6 +710,8 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 			let FatherLearnsByLevelUp = FatherInst["LearnMethod"] === LEARNBY_LEVELUP;
 			if (FatherLearnsByLevelUp && +FatherInst["LearnLevel"] > +g_MaxLevel)
 			{
+				//i randomly noticed that this pushes g_MaxLevel as a number into the list instead of concatenating it to the string.
+				//i have no clue why i did that but i'll assume i knew what i was doing.
 				ReasonList.push(FATHER_LEVEL_ABOVE_MAX, "Father learns move at level " + FatherInst["LearnLevel"] + ", above maximum set of ", g_MaxLevel);
 				continue;
 			}
@@ -732,9 +734,13 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 				let ChildInst = Child["Instances"][iChildInst];
 
 				//not relevant. getting the move below a certain level would be the only point of passing a level move in the first place
-				//let ChildLearnsByLevelUp = ChildInst["LearnMethod"] === LEARNBY_LEVELUP;
-				//if (ChildLearnsByLevelUp && +ChildInst["LearnLevel"] > +g_MaxLevel)
-				//ReasonList.push(CHILD_LEVEL_ABOVE_MAX);
+				//^actually not true. this check prevents the bogus Seviper Swagger chain seen here https://github.com/Pinsplash/EggWebs/issues/16
+				let ChildLearnsByLevelUp = ChildInst["LearnMethod"] === LEARNBY_LEVELUP;
+				if (ChildLearnsByLevelUp && +ChildInst["LearnLevel"] > +g_MaxLevel)
+				{
+					ReasonList.push(CHILD_LEVEL_ABOVE_MAX, "Child learns move at level " + ChildInst["LearnLevel"] + ", above maximum set of ", g_MaxLevel);
+					continue;
+				}
 
 				//blacklist
 				if (ChildInst["UserRejected"])
@@ -787,9 +793,9 @@ function ValidateMatchup(ClosedList, ParentList, Mother, Child, Father, BottomCh
 
 				Good = true;
 				Child["ShowInstance"] = ChildInst;
-				console.log(GetLearnerSpecies(Child) + " ShowInstance for " + Child["MoveName"] + " set to " + ChildInst);
+				console.log(GetLearnerSpecies(Child) + " ShowInstance for " + Child["MoveName"] + " set to " + MethodStr(ChildInst, ", "));
 				Father["ShowInstance"] = FatherInst;
-				console.log(GetLearnerSpecies(Father) + " ShowInstance for " + Father["MoveName"] + " set to " + FatherInst);
+				console.log(GetLearnerSpecies(Father) + " ShowInstance for " + Father["MoveName"] + " set to " + MethodStr(FatherInst, ", "));
 			}
 		}
 		if (Mother === Child)

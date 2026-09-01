@@ -100,6 +100,7 @@ const CHILD_REJECTED = 22;
 const FATHER_FORCED_TOP_LEVEL = 23;
 const FATHER_GEN_PAST_MAX = 24;
 const CHILD_GEN_PAST_MAX = 25;
+const CHILD_LEVEL_ABOVE_MAX = 26;
 
 //group crawl results
 const CR_SUCCESS = 0;
