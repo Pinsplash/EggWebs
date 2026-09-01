@@ -1,3 +1,5 @@
+//To run a test, select every move in /testing/ and then type DevTest() in the console.
+
 //all of these movesets are designed to test different features (mainly combo mode).
 //all of the answers shown below are correct. most of these movesets have multiple possible chains,
 //however, if a chain doesn't match, this may indicate a problem even if it is valid.
@@ -119,13 +121,13 @@ async function Try(TargetSpecies, TargetGame, MoveList, ExpectedData, ExcludeLis
 			let FullString = GetLearnerSpecies(Learner) + InfoStr(Learner, Learner["ShowInstance"]);
 			if (!ExpectedData[iExpectData])
 			{
-				alert("ERROR: Unexpected result length at: " + iExpectData);
+				alert("ERROR: Unexpected result length at: " + iExpectData + "\nPress Enter to debug.");
 				debugger;
 				return false;
 			}
 			if (FullString !== ExpectedData[iExpectData])
 			{
-				alert("ERROR: Expected:\n" + ExpectedData[iExpectData] + "\nGot:\n" + FullString);
+				alert("ERROR: Expected:\n" + ExpectedData[iExpectData] + "\nGot:\n" + FullString + "\nPress Enter to debug.");
 				debugger;
 				return false;
 			}
@@ -133,7 +135,7 @@ async function Try(TargetSpecies, TargetGame, MoveList, ExpectedData, ExcludeLis
 	}
 	if ((+iExpectData + 1) !== ExpectedData.length)
 	{
-		alert("ERROR: Unexpected chain length. Expected:\n" + ExpectedData.length + " Got: " + (+iExpectData + 1));
+		alert("ERROR: Unexpected chain length. Expected:\n" + ExpectedData.length + " Got: " + (+iExpectData + 1) + "\nPress Enter to debug.");
 		debugger;
 		return false;
 	}
