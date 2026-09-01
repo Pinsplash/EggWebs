@@ -37,6 +37,7 @@ const g_Tests =
 		//combo mode off for all below (it turns off forever once there is a test with a move list with only one move)
 		//tests alternate parents
 		["Nidoqueen", GAME_ULTRASUN_ULTRAMOON, ["Charm"], ["Eevee\nLevel 29", "Nidoqueen\nEgg move\nLearned as Nidoran F"], []],
+		//because we sort learners by if they're evolved or not, we expect dewpider here. otherwise we'd expect mothim.
 		["Volbeat", GAME_ULTRASUN_ULTRAMOON, ["Lunge"], ["Dewpider\nLevel 37", "Volbeat\nEgg move"], []],
 		//tests understanding of forms
 		//both kantonian and alolan sandslash should findable, only kantonian form should give body slam, and only alolan form should give icicle crash
