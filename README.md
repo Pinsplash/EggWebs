@@ -17,6 +17,6 @@ Click the browse button and select the moves you want to put on the Pokemon. Set
 
 When a breeding chain (or combination of chains) is found, it will be presented to you. If the chain is not suitable for you, you can click the arrow next to a Pokemon to make EggWebs find a new breeding chain based on the option you chose.
 
-EggWebs is NOT a team validator. EggWebs assumes that all moves you give it are intended to be acquired through breeding and it will only work toward that end.
+EggWebs is focused only on breeding. EggWebs assumes that all moves you give it are intended to be acquired through breeding and it will only work toward that end. If a move is not meant to be bred, simply don't feed it into EggWebs.
 
 <img width="2560" height="1332" alt="image" src="https://github.com/user-attachments/assets/28526a1b-18e0-4b8e-b0df-6180a4d27b11" />
