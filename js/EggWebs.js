@@ -1009,7 +1009,7 @@ function ProcessMove(ReadFile)
 	let GamesToColumns = [];
 	let TutorColumns = [];
 	let GameForSpecialSection = -1;
-	let Lines = ReadFile.split("\r\n");
+	let Lines = ReadFile.split(/\r?\n/);
 	for (let iLine = 0; iLine < Lines.length; iLine++)
 	{
 		let TextLine = Lines[iLine];
