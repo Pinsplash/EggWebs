@@ -86,7 +86,7 @@
 	g_SlowMode = document.getElementById("slowmode").checked;
 }
 
-function ToggleOptionDropdown(PokemonBox, Child, LearnInst, MatchupResult, Chains, ClosedList, ParentList, Depth, MacroDepth, Father, BottomChild, MaxGen)
+function ToggleOptionDropdown(PokemonBox, Child, LearnInst, MatchupResult, Chains, ClosedList, ParentList, Depth, MaxDepth, MacroDepth, Father, BottomChild, MaxGen)
 {
 	let OptionList = PokemonBox.getElementsByClassName("optionbox")[0];
 	let Show;
@@ -108,7 +108,7 @@ function ToggleOptionDropdown(PokemonBox, Child, LearnInst, MatchupResult, Chain
 			if (MatchupResult.includes(MATCHUP_SUCCESS))
 			{
 				p1.innerText = "Use this father";
-				p1.onclick = () => SlowModePickFather(PokemonBox, Chains, ClosedList, ParentList, Depth, MacroDepth, Father, Child, BottomChild, MaxGen);
+				p1.onclick = () => SlowModePickFather(PokemonBox, Chains, ClosedList, ParentList, Depth, MaxDepth, MacroDepth, Father, Child, BottomChild, MaxGen);
 				OptionList.appendChild(p1);
 			}
 			else
@@ -169,7 +169,7 @@ function ToggleOptionDropdown(PokemonBox, Child, LearnInst, MatchupResult, Chain
 	}
 }
 
-function CreatePokemonInfoBox(Child, Father, LearnInst, Chain, iLearner, MatchupResult, Chains, ClosedList, ParentList, Depth, MacroDepth, BottomChild, MaxGen)
+function CreatePokemonInfoBox(Child, Father, LearnInst, Chain, iLearner, MatchupResult, Chains, ClosedList, ParentList, Depth, MaxDepth, MacroDepth, BottomChild, MaxGen)
 {
 	let PokemonBox = document.createElement("div");
 	PokemonBox.className = "pokemonbox";
@@ -183,7 +183,7 @@ function CreatePokemonInfoBox(Child, Father, LearnInst, Chain, iLearner, Matchup
 	Chevron.style.left = "0px";
 
 	//if (Chain === null)
-	Chevron.onclick = () => ToggleOptionDropdown(PokemonBox, Child, LearnInst, MatchupResult, Chains, ClosedList, ParentList, Depth, MacroDepth, Father, BottomChild, MaxGen);
+	Chevron.onclick = () => ToggleOptionDropdown(PokemonBox, Child, LearnInst, MatchupResult, Chains, ClosedList, ParentList, Depth, MaxDepth, MacroDepth, Father, BottomChild, MaxGen);
 	ImageContainer.appendChild(Chevron);
 
 	let EggGroup2Image = document.createElement("img");
@@ -328,10 +328,10 @@ function ExcludeEvolutionFamily(Learner)
 	RestartSearchByDataChange();
 }
 
-function SlowModePickFather(PokemonBox, Chains, ClosedList, ParentList, Depth, MacroDepth, Father, Child, BottomChild, MaxGen)
+function SlowModePickFather(PokemonBox, Chains, ClosedList, ParentList, Depth, MaxDepth, MacroDepth, Father, Child, BottomChild, MaxGen)
 {
 	PokemonBox.style.outline = "1px black dashed";
-	TestFather(Chains, ClosedList, ParentList, Depth, MacroDepth, Father, Child, BottomChild, MaxGen);
+	TestFather(Chains, ClosedList, ParentList, Depth, MaxDepth, MacroDepth, Father, Child, BottomChild, MaxGen);
 }
 
 function SelectTargetGame(GameNum)
