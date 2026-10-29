@@ -1,3 +1,7 @@
+//group crawl results
+const CR_SUCCESS = 0;
+const CR_FAIL = 1;
+
 //if either string in one pair of strings matches a string in another pair, return the match
 function StringPairMatch(p1s1, p1s2, p2s1, p2s2)
 {

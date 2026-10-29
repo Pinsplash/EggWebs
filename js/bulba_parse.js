@@ -1,4 +1,15 @@
-﻿function ProcessMove(ReadFile)
+﻿//parts of a Moveentry template
+const ME_TEMPLATE_NAME = -1;
+const ME_DEX_NUM = 1;
+const ME_SPECIES_NAME = 2;
+const ME_NUM_EGG_GROUPS = 3;
+const ME_EGG_GROUP_1 = 4;
+const ME_EGG_GROUP_2 = 5;
+const ME_NORMAL_CELL = 6;
+const ME_END = 7;
+const ME_NAMED_PARAM = 8;
+
+function ProcessMove(ReadFile)
 {
 	let TableHeaderLine = "";
 	let Learnset = false;

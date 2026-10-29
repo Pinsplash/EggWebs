@@ -102,20 +102,37 @@ const FATHER_GEN_PAST_MAX = 24;
 const CHILD_GEN_PAST_MAX = 25;
 const CHILD_LEVEL_ABOVE_MAX = 26;
 
-//group crawl results
-const CR_SUCCESS = 0;
-const CR_FAIL = 1;
+const g_Games =
+	[
+		GameData("Red/Blue", GENERATION_1, "RB", GAME_RED_BLUE),
+		GameData("Yellow", GENERATION_1, "Y", GAME_YELLOW),
+		GameData("Gold/Silver", GENERATION_2, "GS", GAME_GOLD_SILVER),
+		GameData("Crystal", GENERATION_2, "C", GAME_CRYSTAL),
+		GameData("Ruby/Sapphire", GENERATION_3, "RS", GAME_RUBY_SAPPHIRE),
+		GameData("FireRed/LeafGreen", GENERATION_3, "FRLG", GAME_FIRERED_LEAFGREEN),
+		GameData("Emerald", GENERATION_3, "E", GAME_EMERALD),
+		GameData("Diamond/Pearl", GENERATION_4, "DP", GAME_DIAMOND_PEARL),
+		GameData("Platinum", GENERATION_4, "Pt", GAME_PLATINUM),
+		GameData("HeartGold/SoulSilver", GENERATION_4, "HGSS", GAME_HEARTGOLD_SOULSILVER),
+		GameData("Black/White", GENERATION_5, "BW", GAME_BLACK1_WHITE1),
+		GameData("Black 2/White 2", GENERATION_5, "B2W2", GAME_BLACK2_WHITE2),
+		GameData("X/Y", GENERATION_6, "XY", GAME_X_Y),
+		GameData("Omega Ruby/Alpha Sapphire", GENERATION_6, "ORAS", GAME_OMEGA_RUBY_ALPHA_SAPPHIRE),
+		GameData("Sun/Moon", GENERATION_7, "SM", GAME_SUN_MOON),
+		GameData("Ultra Sun/Ultra Moon", GENERATION_7, "USUM", GAME_ULTRASUN_ULTRAMOON),
+		GameData("Sword/Shield", GENERATION_8, "SwSh", GAME_SWORD_SHIELD),
+		GameData("Brilliant Diamond/Shining Pearl", GENERATION_8_BDSP, "BDSP", GAME_BRILLIANT_DIAMOND_SHINING_PEARL),
+		GameData("Scarlet/Violet", GENERATION_9, "SV", GAME_SCARLET_VIOLET)
+	];
 
-//parts of a Moveentry template
-const ME_TEMPLATE_NAME = -1;
-const ME_DEX_NUM = 1;
-const ME_SPECIES_NAME = 2;
-const ME_NUM_EGG_GROUPS = 3;
-const ME_EGG_GROUP_1 = 4;
-const ME_EGG_GROUP_2 = 5;
-const ME_NORMAL_CELL = 6;
-const ME_END = 7;
-const ME_NAMED_PARAM = 8;
+const AltParents =
+	[
+		"Volbeat", "Illumise",
+		"Nidoran M", "Nidoran F",
+		//nidorina and nidoqueen are NED, so their mother must be nidoran f
+		"Nidorina", "Nidoran F",
+		"Nidoqueen", "Nidoran F"
+	];
 
 let g_TargetSpecies = "";
 let g_TargetForm = null;

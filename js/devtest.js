@@ -93,6 +93,7 @@ async function DevTest()
 		alert("All tests came back successful");
 	g_DevTest = false;
 }
+
 async function Try(TargetSpecies, TargetGame, MoveList, ExpectedData, ExcludeList)
 {
 	SetTargetGame(TargetGame);
