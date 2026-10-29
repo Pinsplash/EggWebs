@@ -262,7 +262,6 @@ function SuggestChain(Chain)
 	{
 		let Learner = Chain["LearnList"][iLearner];
 		let LearnInst = Learner["ShowInstance"];
-		//todo: hack: make sure original father always shows a reasonable method
 		if (iLearner === Chain["LearnList"].length - 1)
 			LearnInst = GetAnyTopLevelInstance(Learner);
 		if (!LearnInst)
